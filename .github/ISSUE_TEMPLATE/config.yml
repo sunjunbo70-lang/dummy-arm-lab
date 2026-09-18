@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Upstream Dummy-Robot hardware
+    url: https://github.com/peng-zhihui/Dummy-Robot
+    about: Questions about the arm itself, its firmware or DummyStudio belong upstream.
+  - name: Upstream switchpi/dummy
+    url: https://github.com/switchpi/dummy
+    about: The GPL-3.0 reference model and firmware this project builds on.

@@ -1,0 +1,6 @@
+{
+  "scope": "operator_supervised_native_J1_plus_10_deg_only",
+  "motion_sent": false,
+  "samples": [],
+  "error": "Starting pose differs from this session; inspect before moving"
+}

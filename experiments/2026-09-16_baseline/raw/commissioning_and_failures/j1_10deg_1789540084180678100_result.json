@@ -1,0 +1,25 @@
+{
+  "scope": "operator_supervised_native_J1_plus_10_deg_only",
+  "motion_sent": true,
+  "samples": [],
+  "before_deg": [
+    0.0,
+    0.0,
+    90.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "target_deg": [
+    10.0,
+    0.0,
+    90.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "firmware_speed_parameter": 1,
+  "start_sent": false,
+  "error": "No expected response; stop this session and diagnose before retrying",
+  "stop_reply_received": true
+}

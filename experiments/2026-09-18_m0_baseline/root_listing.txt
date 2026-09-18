@@ -1,0 +1,31 @@
+total 60
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 01:05 .
+drwxr-xr-x 3 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 01:59 ..
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 16 07:57 .diagnostics
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8    73 Sep 18 00:55 .gitignore
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 01:04 .venv-loop
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8   620 Sep 18 01:04 AGENTS.md
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8 16369 Aug  4 03:36 Dummy_V2_VLA研究メモ.docx
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8   111 Sep 16 08:22 MuJoCo实机同步.cmd
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  3763 Sep 18 01:05 README.md
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8 15499 Sep 18 00:55 README_实验闭环.md
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8 13830 Jul 27 04:32 VLA学习计划_一周.md
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 00:52 archive
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 00:57 configs
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 02:13 docs
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Jul  7 07:36 dummy robot
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 01:06 dummy_loop
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Jul 27 06:28 dummy_v2
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 01:04 experiments
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  1888 Sep 18 00:47 inspect_sources.py
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 16 05:24 models
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 00:52 outputs
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 01:07 releases
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 00:52 requirements
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8    42 Sep 16 04:52 requirements-loop.txt
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 16 04:23 robot project
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 01:06 tests
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 00:52 tools
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 00:52 vendor
+-rwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8   462 Sep 16 05:35 六轴同时往复仿真.cmd
+drwx------ 1 rcw-01ncyjj6gcodlaok5ry7usn8 rcw-01ncyjj6gcodlaok5ry7usn8  4096 Sep 18 02:12 具身信息

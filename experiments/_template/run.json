@@ -1,0 +1,7 @@
+{
+  "experiment_id": "YYYY-MM-DD_task", "status": "not_started",
+  "purpose": "", "source_version": "", "command": [],
+  "environment_file": "", "config_file": "", "seed": null,
+  "data_split": "", "hardware": {}, "units": "",
+  "metrics": {}, "artifacts": [], "limitations": [], "hardware_motion": false
+}

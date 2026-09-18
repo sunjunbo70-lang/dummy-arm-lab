@@ -1,0 +1,51 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "checks": [
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_arm_discards_preview_then_streams_and_stops (test_live_control.LiveTests.test_arm_discards_preview_then_streams_and_stops) ... ok\ntest_auto_manual_override_rejected_and_stop_cancels (test_live_control.LiveTests.test_auto_manual_override_rejected_and_stop_cancels) ... ok\ntest_bad_values_and_unexpected_motion_rejected (test_live_control.LiveTests.test_bad_values_and_unexpected_motion_rejected) ... ok\ntest_connect_and_preview_never_write (test_live_control.LiveTests.test_connect_and_preview_never_write) ... ok\ntest_home_replaces_auto_and_stops_when_complete (test_live_control.LiveTests.test_home_replaces_auto_and_stops_when_complete) ... ok\ntest_linear_interiors_and_speed_change_have_no_jump (test_live_control.LiveTests.test_linear_interiors_and_speed_change_have_no_jump) ... ok\ntest_native_frame_deadline_rejects_partial_stale_read (test_live_control.LiveTests.test_native_frame_deadline_rejects_partial_stale_read) ... ok\ntest_pose_sequences_have_expected_order_and_final_angles (test_live_control.LiveTests.test_pose_sequences_have_expected_order_and_final_angles) ... ok\ntest_rate_and_lead_bounded_under_stalled_feedback (test_live_control.LiveTests.test_rate_and_lead_bounded_under_stalled_feedback) ... ok\ntest_speed_changes_slew_not_lead_envelope (test_live_control.LiveTests.test_speed_changes_slew_not_lead_envelope) ... ok\ntest_stale_ui_cancels_native_and_pending_pose (test_live_control.LiveTests.test_stale_ui_cancels_native_and_pending_pose) ... ok\ntest_stop_cancels_pending_pose (test_live_control.LiveTests.test_stop_cancels_pending_pose) ... ok\ntest_sweep_covers_full_envelope_and_keeps_running (test_live_control.LiveTests.test_sweep_covers_full_envelope_and_keeps_running) ... ok\ntest_telemetry_loss_stops_and_disconnects (test_live_control.LiveTests.test_telemetry_loss_stops_and_disconnects) ... ok\ntest_ui_heartbeat_loss_stops (test_live_control.LiveTests.test_ui_heartbeat_loss_stops) ... ok\ntest_autonomous_motion_blocked (test_loop.ProtocolTests.test_autonomous_motion_blocked) ... ok\ntest_exact_shape (test_loop.ProtocolTests.test_exact_shape) ... ok\ntest_interleaved_queue_reply (test_loop.ProtocolTests.test_interleaved_queue_reply) ... ok\ntest_readonly_and_split_frames (test_loop.ProtocolTests.test_readonly_and_split_frames) ... ok\ntest_studio_slider_wire_format (test_loop.ProtocolTests.test_studio_slider_wire_format) ... ok\ntest_timeout (test_loop.ProtocolTests.test_timeout) ... ok\ntest_usb_and_uart_mode_handshake (test_loop.ProtocolTests.test_usb_and_uart_mode_handshake) ... ok\ntest_limit (test_loop.SafetyTests.test_limit) ... ok\ntest_nan (test_loop.SafetyTests.test_nan) ... ok\ntest_speed (test_loop.SafetyTests.test_speed) ... ok\ntest_stale (test_loop.SafetyTests.test_stale) ... ok\ntest_unknown_profile (test_loop.SafetyTests.test_unknown_profile) ... ok\ntest_valid (test_loop.SafetyTests.test_valid) ... ok\ntest_wrong_shape (test_loop.SafetyTests.test_wrong_shape) ... ok\ntest_action_is_integrated_not_teleported (test_loop.SimulationTests.test_action_is_integrated_not_teleported) ... ok\ntest_insufficient_goal_diversity_rejected (test_loop.SimulationTests.test_insufficient_goal_diversity_rejected) ... ok\ntest_train_reload_closed_loop_unseen_goal (test_loop.SimulationTests.test_train_reload_closed_loop_unseen_goal) ... ok\ntest_all_joint_frames_match_studio_on_multiple_poses (test_studio_articulation.ArticulationTests.test_all_joint_frames_match_studio_on_multiple_poses) ... ok\ntest_covers_and_motors_stay_on_same_rigid_link (test_studio_articulation.ArticulationTests.test_covers_and_motors_stay_on_same_rigid_link) ... ok\ntest_j5_only_moves_wrist_not_forearm_or_stator (test_studio_articulation.ArticulationTests.test_j5_only_moves_wrist_not_forearm_or_stator) ... ok\n\n----------------------------------------------------------------------\nRan 35 tests in 4.046s\n\nOK\n"
+    },
+    {
+      "command": [
+        "tools/maintenance/verify_evidence.py"
+      ],
+      "returncode": 0,
+      "stdout": "EVIDENCE_OK: 117 files\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "tools/live_mujoco.py",
+        "--smoke-test"
+      ],
+      "returncode": 0,
+      "stdout": "RENDER_OK\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "tools/doctor.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"os\": \"Windows-11-10.0.26200-SP0\",\n  \"python\": \"3.12.14\",\n  \"numpy\": \"2.5.3\",\n  \"mujoco\": \"3.13.0\",\n  \"pyserial\": \"3.5\",\n  \"torch\": null,\n  \"pyrealsense2\": null,\n  \"gpu\": \"NVIDIA GeForce RTX 4080 SUPER, 16376 MiB, 591.86\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "upstream archive SHA-256 verification",
+      "returncode": 0,
+      "files": 11742
+    }
+  ],
+  "hardware_commands_sent": false,
+  "linux_tested": false
+}

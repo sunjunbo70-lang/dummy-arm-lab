@@ -1,0 +1,29 @@
+{"monotonic_s": 401338.343, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 401338.343, "direction": "rx", "raw": "ok 0.94 0.01 90.00 0.00 -0.01 0.00\r\n"}
+{"monotonic_s": 401370.218, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 401370.218, "direction": "rx", "raw": "ok 0.94 0.01 90.00 0.00 -0.01 0.00\r\n"}
+{"monotonic_s": 401375.718, "direction": "tx", "raw": "!START\r\n"}
+{"monotonic_s": 401375.718, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 401378.031, "direction": "tx", "raw": "!STOP\r\n"}
+{"monotonic_s": 401378.046, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 401530.437, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 401530.437, "direction": "rx", "raw": "ok 1.91 0.01 90.00 0.00 -0.01 0.00\r\n"}
+{"monotonic_s": 401566.0, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 401566.0, "direction": "rx", "raw": "ok 1.91 0.01 90.00 0.00 -0.01 0.00\r\n"}
+{"monotonic_s": 402803.734, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 402803.734, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 402809.218, "direction": "tx", "raw": "!START\r\n"}
+{"monotonic_s": 402809.218, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 402810.171, "direction": "tx", "raw": "!STOP\r\n"}
+{"monotonic_s": 402810.171, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 402859.703, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 402859.703, "direction": "rx", "raw": "ok 10.00 0.00 90.00 0.00 -0.00 0.00\r\n"}
+{"monotonic_s": 402872.093, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 402872.093, "direction": "rx", "raw": "ok 10.00 0.00 90.00 0.00 -0.00 0.00\r\n"}
+{"monotonic_s": 402877.578, "direction": "tx", "raw": "!START\r\n"}
+{"monotonic_s": 402877.578, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 402877.578, "direction": "tx", "raw": "&0.00,0.00,90.00,0.00,-0.00,0.00,\n"}
+{"monotonic_s": 402877.578, "direction": "rx", "raw": "15ok\r\n"}
+{"monotonic_s": 402878.531, "direction": "tx", "raw": "!STOP\n"}
+{"monotonic_s": 402878.531, "direction": "rx", "raw": "\r\n"}
+{"monotonic_s": 402878.531, "direction": "rx", "raw": "Stopped ok\r\n"}

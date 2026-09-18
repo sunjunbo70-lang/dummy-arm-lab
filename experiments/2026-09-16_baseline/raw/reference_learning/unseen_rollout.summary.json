@@ -1,0 +1,9 @@
+{
+  "backend": "mujoco_reference",
+  "initial_error_rad": 0.35496478698597694,
+  "final_error_rad": 0.0025455836772872147,
+  "steps": 240,
+  "software_loop_pass": true,
+  "scope": "joint_goal_software_smoke_test_not_real_robot_or_grasp_validation",
+  "log": "outputs\\unseen_rollout.jsonl"
+}

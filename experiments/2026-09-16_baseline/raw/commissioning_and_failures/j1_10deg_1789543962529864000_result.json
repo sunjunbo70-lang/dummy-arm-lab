@@ -1,0 +1,51 @@
+{
+  "scope": "operator_supervised_native_J1_plus_10_deg_only",
+  "motion_sent": true,
+  "samples": [
+    {
+      "time_s": 400620.187,
+      "q_deg": [
+        1.9,
+        0.0,
+        90.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "time_s": 400620.296,
+      "q_deg": [
+        0.94,
+        0.01,
+        90.0,
+        0.0,
+        -0.01,
+        0.0
+      ]
+    }
+  ],
+  "before_deg": [
+    1.9,
+    0.0,
+    90.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "target_deg": [
+    10.0,
+    0.0,
+    90.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "firmware_speed_parameter": "unchanged",
+  "studio_format": true,
+  "command_mode": "unchanged_studio_handoff",
+  "start_sent": true,
+  "target_refresh_count": 1,
+  "error": "Unexpected motion feedback; stopping",
+  "stop_reply_received": true
+}

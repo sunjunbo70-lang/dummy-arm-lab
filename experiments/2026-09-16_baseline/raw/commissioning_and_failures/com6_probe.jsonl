@@ -1,0 +1,6 @@
+{"monotonic_s": 395043.265, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395043.265, "direction": "rx", "raw": "ok -0.40 -72.10 178.21 0.94 -0.02 0.24\r\n"}
+{"monotonic_s": 395043.765, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395043.765, "direction": "rx", "raw": "ok -0.40 -72.10 178.21 0.94 -0.02 0.24\r\n"}
+{"monotonic_s": 395044.265, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395044.265, "direction": "rx", "raw": "ok -0.40 -72.10 178.21 0.94 -0.02 0.24\r\n"}

@@ -1,0 +1,24 @@
+{
+  "scope": "operator_supervised_native_J1_plus_1_deg_only",
+  "motion_sent": false,
+  "samples": [],
+  "before_deg": [
+    -0.4,
+    -72.1,
+    178.21,
+    0.94,
+    -0.02,
+    0.24
+  ],
+  "target_deg": [
+    0.6,
+    -72.1,
+    178.21,
+    0.94,
+    -0.02,
+    0.24
+  ],
+  "firmware_speed_parameter": 1,
+  "error": "Pose changed during startup; abort this test",
+  "stop_reply_received": true
+}

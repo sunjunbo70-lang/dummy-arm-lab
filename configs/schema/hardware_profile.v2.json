@@ -1,0 +1,396 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dummy-arm/hardware_profile.v2.json",
+  "title": "Dummy 机械臂设备档案 v2",
+  "description": "描述一台具体机械臂的标定值、安全包络与外设。v1 只覆盖六轴位置控制；v2 增加 timing、gripper、camera 与 provenance。所有安全限值以规范弧度表示，绝不是电机圈数。",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "profile_id",
+    "calibration_verified",
+    "stop_verified",
+    "physical_stop_verified",
+    "command_mode_verified",
+    "firmware_identity",
+    "calibration_record",
+    "firmware_to_canonical_sign",
+    "firmware_zero_deg",
+    "lower_rad",
+    "upper_rad",
+    "max_step_rad",
+    "max_speed_rad_s",
+    "firmware_speed_parameter",
+    "command_mode",
+    "timing"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "_comment": {
+      "type": "string",
+      "description": "自由说明文字，不参与校验逻辑。"
+    },
+    "schema_version": {
+      "const": 2,
+      "description": "本档案遵循的 schema 版本。程序据此判断是否需要迁移。"
+    },
+    "profile_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "这份档案对应哪台设备，例如 dummy_v2_bench_01。"
+    },
+    "calibration_verified": {
+      "type": "boolean",
+      "description": "方向、零位、限位是否已由实机标定确认。false 时 load_profile 拒绝一切程序化运动。"
+    },
+    "stop_verified": {
+      "type": "boolean",
+      "description": "软件停止命令的应答与行为是否已验证。不等同于物理急停。"
+    },
+    "physical_stop_verified": {
+      "type": "boolean",
+      "description": "运动中实测硬件急停并确认确实停住。必须有影像或记录证据。"
+    },
+    "command_mode_verified": {
+      "type": "boolean",
+      "description": "命令模式握手是否已在本设备上验证。"
+    },
+    "firmware_identity": {
+      "type": "string",
+      "minLength": 1,
+      "description": "固件版本与设备标识，用于确认这份档案属于哪台机器。"
+    },
+    "calibration_record": {
+      "type": "string",
+      "minLength": 1,
+      "description": "标定实验记录的路径，例如 experiments/2026-10-02_calibration/。"
+    },
+    "firmware_to_canonical_sign": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "enum": [
+          -1,
+          1,
+          null
+        ]
+      },
+      "description": "固件角度到规范坐标的符号，逐轴 +1 或 -1。未标定时为 null。映射式：canonical = sign * (firmware - zero)。"
+    },
+    "firmware_zero_deg": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "description": "固件角度零位偏置，单位度。未标定时为 null。"
+    },
+    "lower_rad": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "description": "规范坐标下的逐轴下限，弧度。应比实测机械限位内缩留余量。"
+    },
+    "upper_rad": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "description": "规范坐标下的逐轴上限，弧度。"
+    },
+    "max_step_rad": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "exclusiveMinimum": 0
+      },
+      "description": "单次指令允许的最大角度增量，弧度。"
+    },
+    "max_speed_rad_s": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "exclusiveMinimum": 0
+      },
+      "description": "允许的最大角速度，弧度每秒。"
+    },
+    "firmware_speed_parameter": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "exclusiveMinimum": 0,
+      "maximum": 100,
+      "description": "下发给固件的速度参数。它与实际角速度的对应关系需实测，记录在 provenance 中。"
+    },
+    "command_mode": {
+      "type": "integer",
+      "description": "固件命令模式。当前调试适配器只支持已验证的模式 2。"
+    },
+    "debug_envelope": {
+      "type": "object",
+      "description": "上位机调试用的保守包络，比标定限位更窄。M4 将 GUI 的硬编码范围迁到这里。",
+      "additionalProperties": false,
+      "properties": {
+        "lower_deg": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "number"
+          }
+        },
+        "upper_deg": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "number"
+          }
+        },
+        "home_deg": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "number"
+          }
+        },
+        "fold_deg": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "number"
+          }
+        },
+        "host_speed_deg_s": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            },
+            "default": {
+              "type": "number"
+            }
+          }
+        },
+        "max_lead_deg": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "follow_error_stop_deg": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "description": "时效契约。M2 的核心产物：把「我知道什么、不知道什么」写进配置。",
+      "required": [
+        "control_period_s",
+        "max_observation_age_s",
+        "comm_timeout_s",
+        "per_axis_freshness_available"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "control_period_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0,
+          "description": "标称控制周期，秒。"
+        },
+        "max_observation_age_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0,
+          "description": "观测超过此年龄即视为过期，必须拒绝据此下发动作。"
+        },
+        "comm_timeout_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0,
+          "description": "单次请求的响应超时，秒。"
+        },
+        "per_axis_freshness_available": {
+          "type": "boolean",
+          "description": "固件能否提供逐轴采样时刻。当前旧协议为 false：主机接收时刻不是传感器采样时刻。"
+        },
+        "observation_latency_upper_bound_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0,
+          "description": "逐轴新鲜度不可得时，实测的端到端延迟上界。数据集必须记录这个上界而不是假装接收时刻即采样时刻。"
+        }
+      }
+    },
+    "gripper": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "夹爪。M5 填写；当前硬件结构件未就绪，保留为 null。",
+      "additionalProperties": false,
+      "properties": {
+        "protocol": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "open_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "closed_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "current_limit_a": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "has_position_feedback": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "是否有真实位置反馈。false 表示只能依赖开合指令，不得把指令当反馈。"
+        }
+      }
+    },
+    "camera": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "相机外参。M6 填写。当前 D435 只能固定机位（eye-to-hand）。",
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mount": {
+          "enum": [
+            "eye_to_hand",
+            "eye_in_hand",
+            null
+          ],
+          "description": "固定机位或随动安装。夹爪结构件就绪前只能 eye_to_hand。"
+        },
+        "extrinsics_file": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "外参文件路径，相对于仓库根目录。"
+        },
+        "calibrated_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "calibration_record": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "每个数值的来源。键为本档案中的字段名，值说明它是怎么来的。把「这个数字哪来的」写进文件本身。",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "method",
+          "measured_at",
+          "evidence_path"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "method": {
+            "type": "string",
+            "minLength": 1,
+            "description": "如何得到，例如「J1 ±1° 点动目视确认转向」。"
+          },
+          "measured_at": {
+            "type": "string",
+            "minLength": 1,
+            "description": "测量日期。"
+          },
+          "evidence_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "实验记录路径。"
+          },
+          "evidence_level": {
+            "enum": [
+              "L1",
+              "L2",
+              "L3"
+            ],
+            "description": "证据等级，定义见 AGENTS.md。标定值应为 L3。"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

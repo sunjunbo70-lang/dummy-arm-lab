@@ -1,0 +1,17 @@
+# ── 行尾：Windows 脚本必须保持 CRLF ────────────────────────
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# ── 关于 Git LFS ──────────────────────────────────────────
+# 本仓库当前不使用 LFS：二进制资产合计约 5 MB（models/meshes 下 7 个 STL、
+# 若干验证截图与一个 GIF），这个体量用 LFS 没有收益，还会给克隆方
+# 多加一个必装依赖。
+#
+# 当引入大体积或会反复修改的二进制资产时（新机械臂网格、场景模型、
+# 模型权重、录像），再启用 LFS：
+#
+#     git lfs install
+#     git lfs track "*.stl" "*.obj" "*.step" "*.pt" "*.safetensors" "*.mp4"
+#     git lfs migrate import --include="*.stl,*.obj,*.step,*.pt,*.safetensors,*.mp4"
+#
+# 迁移会重写历史，在仓库历史还短、协作者还少的时候做代价最低。

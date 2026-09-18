@@ -1,0 +1,15 @@
+{
+  "source": "switchpi/dummy auk",
+  "manifest_commit": "3a9d17464308e1532b3d648a80da6db899cc1f01",
+  "urdf_sha256": "5c617dd50509b383d6a1cce078d735992d997762e3aa56ce233817356a8d2fea",
+  "mesh_sha256": {
+    "base_link.stl": "55ece6abb6ecc37f56868df5327991d2676e20f178862f7a9ed3fb6a9669b275",
+    "link1_1_1.stl": "30cd28b038c726f873aa75903fbca368d95e24bfe1779bf303b3fb36f0a6983f",
+    "link2_1_1.stl": "a47ea8c78d80b79874e0cea2a69ad0bd285af239a0d5b7a1d16b9b60f81e419d",
+    "link3_1_1.stl": "ecec6ece159b9c41409f20792937773266b1c9d240576bf4a31c3cee32b5b3d6",
+    "link4_1_1.stl": "35c318fffd8f09e5585024dc2df2ffcdb0b06e7181254eabb14173596681e012",
+    "link5_1_1.stl": "a5a7257d58e3850a0e115f972496e1c8068550725da01f79bea56e6c8cc44bf1",
+    "link6_1_1.stl": "5554538d053939e45d1ad6f8b321ce72d0d181fe55b269ba99d93368acdbaa6f"
+  },
+  "warning": "Reference geometry only. Not calibrated to this Dummy V2. Gravity compensation and disabled contacts; servo/inertial adjustments are demo assumptions."
+}

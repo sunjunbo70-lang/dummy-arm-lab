@@ -1,0 +1,6 @@
+Reference simulation only. No real robot connection.
+SPACE pause/resume; N next target; R reset; close window to exit.
+SIX-AXIS DIAGNOSTIC: 1-6 select joint; [ / ] decrease/increase 5 degrees; R zero; SPACE pause. Uncalibrated geometry.
+VIEWER_READY
+Selected J1
+Selected J1

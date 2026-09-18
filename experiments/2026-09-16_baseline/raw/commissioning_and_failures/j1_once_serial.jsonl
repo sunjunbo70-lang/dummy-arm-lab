@@ -1,0 +1,574 @@
+{"monotonic_s": 395200.328, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395200.328, "direction": "rx", "raw": "ok -0.40 -72.10 178.21 0.94 -0.02 0.24\r\n"}
+{"monotonic_s": 395200.468, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395200.468, "direction": "rx", "raw": "ok -0.40 -72.10 178.21 0.94 -0.02 0.24\r\n"}
+{"monotonic_s": 395200.625, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395200.625, "direction": "rx", "raw": "ok -0.40 -72.10 178.21 0.94 -0.02 0.24\r\n"}
+{"monotonic_s": 395205.25, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395205.25, "direction": "rx", "raw": "ok -0.40 -72.10 178.21 0.94 -0.02 0.24\r\n"}
+{"monotonic_s": 395205.406, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395205.406, "direction": "rx", "raw": "ok -0.40 -72.10 178.21 0.94 -0.02 0.24\r\n"}
+{"monotonic_s": 395205.546, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395205.562, "direction": "rx", "raw": "ok -0.40 -72.10 178.21 0.94 -0.02 0.24\r\n"}
+{"monotonic_s": 395205.562, "direction": "tx", "raw": "!START\r\n"}
+{"monotonic_s": 395205.562, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 395205.562, "direction": "tx", "raw": "#CMDMODE 2\r\n"}
+{"monotonic_s": 395205.562, "direction": "rx", "raw": "ok Set command mode to [2]\r\n"}
+{"monotonic_s": 395205.718, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395205.718, "direction": "rx", "raw": "ok 0.01 -72.31 178.35 0.05 -0.01 0.06\r\n"}
+{"monotonic_s": 395205.718, "direction": "tx", "raw": "!STOP\r\n"}
+{"monotonic_s": 395205.734, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 395380.937, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395380.937, "direction": "rx", "raw": "ok 0.01 -72.31 178.35 0.04 -0.00 -0.01\r\n"}
+{"monotonic_s": 395381.078, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395381.093, "direction": "rx", "raw": "ok 0.01 -72.31 178.35 0.04 -0.00 -0.01\r\n"}
+{"monotonic_s": 395381.234, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395381.234, "direction": "rx", "raw": "ok 0.01 -72.31 178.35 0.04 -0.00 -0.01\r\n"}
+{"monotonic_s": 395387.828, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395387.828, "direction": "rx", "raw": "ok 0.01 -72.31 178.35 0.04 -0.00 -0.01\r\n"}
+{"monotonic_s": 395387.984, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395387.984, "direction": "rx", "raw": "ok 0.01 -72.31 178.35 0.04 -0.00 -0.01\r\n"}
+{"monotonic_s": 395388.14, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395388.14, "direction": "rx", "raw": "ok 0.01 -72.31 178.35 0.04 -0.00 -0.01\r\n"}
+{"monotonic_s": 395388.14, "direction": "tx", "raw": "!START\r\n"}
+{"monotonic_s": 395388.14, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 395388.14, "direction": "tx", "raw": "#CMDMODE 2\r\n"}
+{"monotonic_s": 395388.156, "direction": "rx", "raw": "ok Set command mode to [2]\r\n"}
+{"monotonic_s": 395388.296, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 395388.296, "direction": "rx", "raw": "ok 0.00 -73.02 179.10 -0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 395388.296, "direction": "tx", "raw": "!STOP\r\n"}
+{"monotonic_s": 395388.312, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 396740.531, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396740.531, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396740.671, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396740.687, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396740.828, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396740.828, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396740.828, "direction": "tx", "raw": "#CMDMODE 2\r\n"}
+{"monotonic_s": 396740.843, "direction": "rx", "raw": "ok Set command mode to [2]\r\n"}
+{"monotonic_s": 396741.0, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396741.0, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396741.0, "direction": "tx", "raw": "&10.0000,0.0000,90.0000,0.0000,0.0000,0.0000,1.0000\r\n"}
+{"monotonic_s": 396741.0, "direction": "rx", "raw": "15ok\r\n"}
+{"monotonic_s": 396741.0, "direction": "rx", "raw": "\r\n"}
+{"monotonic_s": 396742.0, "direction": "tx", "raw": "!STOP\r\n"}
+{"monotonic_s": 396742.015, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 396801.953, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396801.953, "direction": "rx", "raw": "ok 0.72 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396802.093, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396802.093, "direction": "rx", "raw": "ok 0.72 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396802.25, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396802.25, "direction": "rx", "raw": "ok 0.72 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396802.25, "direction": "tx", "raw": "#CMDMODE 2\r\n"}
+{"monotonic_s": 396802.265, "direction": "rx", "raw": "ok Set command mode to [2]\r\n"}
+{"monotonic_s": 396802.406, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396802.406, "direction": "rx", "raw": "ok 0.72 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396802.406, "direction": "tx", "raw": "&10.0000,0.0000,90.0000,0.0000,0.0000,0.0000,1.0000\r\n"}
+{"monotonic_s": 396802.406, "direction": "rx", "raw": "15\r\n"}
+{"monotonic_s": 396802.562, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396802.562, "direction": "rx", "raw": "ok\r\n"}
+{"monotonic_s": 396802.562, "direction": "rx", "raw": "ok 0.72 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396802.562, "direction": "tx", "raw": "!START\r\n"}
+{"monotonic_s": 396802.562, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 396802.562, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396802.562, "direction": "rx", "raw": "ok 0.72 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396802.671, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396802.671, "direction": "rx", "raw": "ok 0.79 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396802.765, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396802.765, "direction": "rx", "raw": "ok 0.86 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396802.875, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396802.875, "direction": "rx", "raw": "ok 0.93 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396802.968, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396802.968, "direction": "rx", "raw": "ok 1.01 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396803.078, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396803.078, "direction": "rx", "raw": "ok 1.08 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396803.171, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396803.171, "direction": "rx", "raw": "ok 1.16 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396803.281, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396803.281, "direction": "rx", "raw": "ok 1.22 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396803.375, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396803.375, "direction": "rx", "raw": "ok 1.30 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396803.484, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396803.484, "direction": "rx", "raw": "ok 1.37 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396803.578, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396803.593, "direction": "rx", "raw": "ok 1.45 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396803.687, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396803.687, "direction": "rx", "raw": "ok 1.52 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 396803.796, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396803.796, "direction": "rx", "raw": "ok 1.59 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396803.89, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396803.89, "direction": "rx", "raw": "ok 1.66 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.0, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.0, "direction": "rx", "raw": "ok 1.74 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.093, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.093, "direction": "rx", "raw": "ok 1.79 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.203, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.203, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.296, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.312, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.406, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.406, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.515, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.515, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.609, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.609, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.718, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.718, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.812, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.828, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396804.921, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396804.921, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396805.031, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.031, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396805.125, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.125, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396805.234, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.234, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.01 -0.01\r\n"}
+{"monotonic_s": 396805.328, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.328, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396805.437, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.437, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396805.531, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.531, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396805.64, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.64, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396805.734, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.734, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396805.843, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.843, "direction": "rx", "raw": "ok 1.80 0.00 90.00 -0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396805.937, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396805.953, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396806.046, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.046, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396806.14, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.156, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396806.25, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.25, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396806.343, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.359, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396806.453, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.453, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396806.562, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.562, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 -0.00 -0.01\r\n"}
+{"monotonic_s": 396806.656, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.656, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396806.765, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.765, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396806.859, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.859, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396806.968, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396806.968, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396807.062, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396807.062, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396807.171, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396807.171, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396807.265, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396807.281, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396807.375, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396807.375, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396807.484, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396807.484, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396807.578, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396807.578, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396807.687, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396807.687, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396807.781, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396807.781, "direction": "rx", "raw": "ok 1.80 0.00 10.07 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 396807.796, "direction": "tx", "raw": "!STOP\r\n"}
+{"monotonic_s": 396807.796, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 397878.843, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 397878.843, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 397879.0, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 397879.0, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 397879.14, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 397879.156, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 397879.156, "direction": "tx", "raw": "#CMDMODE 2\n"}
+{"monotonic_s": 397879.156, "direction": "rx", "raw": "ok Set command mode to [2]\r\n"}
+{"monotonic_s": 397879.312, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 397879.312, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 397879.312, "direction": "tx", "raw": "&10.00,0.00,90.00,0.00,0.00,-0.01,\n"}
+{"monotonic_s": 397879.312, "direction": "rx", "raw": "15ok\r\n"}
+{"monotonic_s": 397879.453, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 397879.453, "direction": "rx", "raw": "\r\n"}
+{"monotonic_s": 397879.468, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 397879.468, "direction": "tx", "raw": "!START\n"}
+{"monotonic_s": 397879.468, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 397879.468, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 397879.468, "direction": "rx", "raw": "ok 1.80 0.00 90.00 0.00 0.00 -0.01\r\n"}
+{"monotonic_s": 397879.562, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 397879.562, "direction": "rx", "raw": "ok 1.36 0.00 90.00 0.01 -0.01 -0.01\r\n"}
+{"monotonic_s": 397879.562, "direction": "tx", "raw": "!STOP\n"}
+{"monotonic_s": 397879.578, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 398948.843, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 398948.843, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399030.515, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399030.515, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399030.671, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399030.671, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399030.812, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399030.812, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399030.812, "direction": "tx", "raw": "#CMDMODE 2\r\n"}
+{"monotonic_s": 399030.828, "direction": "rx", "raw": "ok Set command mode to [2]\r\n"}
+{"monotonic_s": 399030.984, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399030.984, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399030.984, "direction": "tx", "raw": "&10.3000,-72.7100,178.1300,1.5600,-1.4400,-0.0100,3.0000\r\n"}
+{"monotonic_s": 399030.984, "direction": "rx", "raw": "15ok\r\n"}
+{"monotonic_s": 399030.984, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399030.984, "direction": "rx", "raw": "\r\n"}
+{"monotonic_s": 399030.984, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399031.078, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399031.078, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399031.187, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399031.187, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399031.281, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399031.296, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399031.39, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399031.39, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399031.5, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399031.5, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399031.593, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399031.593, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399031.703, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399031.703, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399031.796, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399031.796, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399031.906, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399031.906, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.0, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.015, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.109, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.109, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.218, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.218, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.312, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.312, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.421, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.421, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.515, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.515, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.625, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.625, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.718, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.718, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.828, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.828, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399032.937, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399032.937, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.031, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.031, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.14, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.14, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.234, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.234, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.343, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.343, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.437, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.437, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.546, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.546, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.64, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.64, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.75, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.75, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.843, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.859, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399033.953, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399033.953, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399034.062, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399034.062, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399034.062, "direction": "tx", "raw": "!STOP\r\n"}
+{"monotonic_s": 399034.062, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 399072.453, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399072.453, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399072.609, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399072.609, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399072.765, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399072.765, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399072.765, "direction": "tx", "raw": "#CMDMODE 2\r\n"}
+{"monotonic_s": 399072.765, "direction": "rx", "raw": "ok Set command mode to [2]\r\n"}
+{"monotonic_s": 399072.921, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399072.921, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399072.921, "direction": "tx", "raw": "&10.3000,-72.7100,178.1300,1.5600,-1.4400,-0.0100,3.0000\r\n"}
+{"monotonic_s": 399072.921, "direction": "rx", "raw": "15ok\r\n"}
+{"monotonic_s": 399073.078, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.078, "direction": "rx", "raw": "\r\n"}
+{"monotonic_s": 399073.078, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399073.078, "direction": "tx", "raw": "!START\r\n"}
+{"monotonic_s": 399073.078, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 399073.078, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.078, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399073.187, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.187, "direction": "rx", "raw": "ok 0.49 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399073.281, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.281, "direction": "rx", "raw": "ok 0.72 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399073.39, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.39, "direction": "rx", "raw": "ok 0.93 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399073.484, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.484, "direction": "rx", "raw": "ok 1.16 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399073.593, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.593, "direction": "rx", "raw": "ok 1.36 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399073.687, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.687, "direction": "rx", "raw": "ok 1.59 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399073.796, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.796, "direction": "rx", "raw": "ok 1.79 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399073.89, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399073.906, "direction": "rx", "raw": "ok 1.79 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.0, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.0, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.093, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.109, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.203, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.203, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.312, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.312, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.406, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.406, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.515, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.515, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.609, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.609, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.718, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.718, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.828, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.828, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399074.921, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399074.921, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.031, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.031, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.125, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.125, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.234, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.234, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.328, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.328, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.437, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.437, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.531, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.531, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.64, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.64, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.734, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.734, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.843, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.843, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399075.937, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399075.937, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.046, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399076.046, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.14, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399076.156, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.25, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399076.25, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.359, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399076.359, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.453, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399076.453, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.562, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399076.562, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.656, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399076.656, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.765, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399076.765, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.859, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399076.859, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399076.859, "direction": "tx", "raw": "!STOP\r\n"}
+{"monotonic_s": 399076.875, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 399327.484, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399327.484, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399327.64, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399327.64, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399327.781, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399327.781, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399332.796, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399332.796, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399332.796, "direction": "tx", "raw": "#CMDMODE 2\r\n"}
+{"monotonic_s": 399332.796, "direction": "rx", "raw": "ok Set command mode to [2]\r\n"}
+{"monotonic_s": 399332.953, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399332.953, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399332.953, "direction": "tx", "raw": "&11.8100,-72.7100,178.1300,1.5600,-1.4400,-0.0100,3.0000\r\n"}
+{"monotonic_s": 399332.953, "direction": "rx", "raw": "15\r\n"}
+{"monotonic_s": 399333.109, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.109, "direction": "rx", "raw": "ok\r\n"}
+{"monotonic_s": 399333.109, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399333.109, "direction": "tx", "raw": "!START\r\n"}
+{"monotonic_s": 399333.109, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 399333.109, "direction": "tx", "raw": "&11.8100,-72.7100,178.1300,1.5600,-1.4400,-0.0100,3.0000\r\n"}
+{"monotonic_s": 399333.109, "direction": "rx", "raw": "15ok\r\n"}
+{"monotonic_s": 399333.109, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.109, "direction": "rx", "raw": "\r\n"}
+{"monotonic_s": 399333.109, "direction": "rx", "raw": "ok 1.80 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399333.203, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.218, "direction": "rx", "raw": "ok 1.76 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399333.312, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.312, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399333.421, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.421, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399333.515, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.515, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399333.625, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.625, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399333.718, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.734, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399333.828, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.828, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399333.937, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399333.937, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.031, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.031, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.14, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.14, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.234, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.234, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.343, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.343, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.437, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.437, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.546, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.546, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.64, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.656, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.75, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.75, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.843, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.859, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399334.953, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399334.953, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.062, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.062, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.156, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.156, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.265, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.265, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.359, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.359, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.468, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.468, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.562, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.578, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.671, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.671, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.781, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.781, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.875, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.875, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399335.984, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399335.984, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399336.078, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399336.078, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399336.187, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 399336.187, "direction": "rx", "raw": "ok 1.81 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 399336.187, "direction": "tx", "raw": "!STOP\r\n"}
+{"monotonic_s": 399336.203, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 400513.078, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400513.078, "direction": "rx", "raw": "ok 0.00 -0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400513.234, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400513.234, "direction": "rx", "raw": "ok 0.00 -0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400513.375, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400513.375, "direction": "rx", "raw": "ok 0.00 -0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400542.468, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400542.468, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400542.625, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400542.625, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400542.781, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400542.781, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400547.781, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400547.781, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400547.937, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400547.937, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400547.937, "direction": "tx", "raw": "&10.00,0.00,90.00,0.00,0.00,0.00,\n"}
+{"monotonic_s": 400547.937, "direction": "rx", "raw": "15ok\r\n"}
+{"monotonic_s": 400547.937, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400547.937, "direction": "rx", "raw": "\r\n"}
+{"monotonic_s": 400547.937, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.046, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.046, "direction": "rx", "raw": "ok 0.53 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.14, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.14, "direction": "rx", "raw": "ok 1.88 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.25, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.25, "direction": "rx", "raw": "ok 1.89 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.343, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.343, "direction": "rx", "raw": "ok 1.89 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.453, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.453, "direction": "rx", "raw": "ok 1.89 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.546, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.546, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.656, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.656, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.75, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.75, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.859, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.859, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400548.953, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400548.953, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.062, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.062, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.171, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.171, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.265, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.265, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.375, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.375, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.468, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.468, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.578, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.578, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.671, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.687, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.781, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.781, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.89, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.89, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400549.984, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400549.984, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400550.093, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400550.093, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400550.187, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400550.187, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400550.296, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400550.296, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400550.39, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400550.39, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400550.5, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400550.5, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400550.593, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400550.593, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400550.703, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400550.703, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400550.796, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400550.812, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400550.906, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400550.906, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400551.015, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400551.015, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400551.109, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400551.109, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400551.218, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400551.218, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400551.218, "direction": "tx", "raw": "!STOP\n"}
+{"monotonic_s": 400551.218, "direction": "rx", "raw": "Stopped ok\r\n"}
+{"monotonic_s": 400614.562, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400614.562, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400614.718, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400614.718, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400614.875, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400614.875, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400619.875, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400619.875, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400620.031, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400620.031, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400620.031, "direction": "tx", "raw": "&10.00,0.00,90.00,0.00,0.00,0.00,\n"}
+{"monotonic_s": 400620.031, "direction": "rx", "raw": "15ok\r\n"}
+{"monotonic_s": 400620.187, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400620.187, "direction": "rx", "raw": "\r\n"}
+{"monotonic_s": 400620.187, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400620.187, "direction": "tx", "raw": "!START\n"}
+{"monotonic_s": 400620.187, "direction": "rx", "raw": "Started ok\r\n"}
+{"monotonic_s": 400620.187, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400620.187, "direction": "rx", "raw": "ok 1.90 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400620.187, "direction": "tx", "raw": "&10.00,0.00,90.00,0.00,0.00,0.00,\n"}
+{"monotonic_s": 400620.187, "direction": "rx", "raw": "15\r\n"}
+{"monotonic_s": 400620.281, "direction": "tx", "raw": "#GETJPOS\n"}
+{"monotonic_s": 400620.281, "direction": "rx", "raw": "ok\r\n"}
+{"monotonic_s": 400620.296, "direction": "rx", "raw": "ok 0.94 0.01 90.00 0.00 -0.01 0.00\r\n"}
+{"monotonic_s": 400620.296, "direction": "tx", "raw": "!STOP\n"}
+{"monotonic_s": 400620.296, "direction": "rx", "raw": "Stopped ok\r\n"}

@@ -1,0 +1,5 @@
+86c9b5b open-source: GPL-3.0 发布准备
+a906b4f chore: 取证脚本路径指向归档后的 _archive/
+b03312b M1: Profile schema v2 与加载门禁
+41f3f69 docs: 文档收敛与 Agent 工作流落地
+d69cdd3 baseline: Dummy 机械臂主线工程基线 (2026-09-18)

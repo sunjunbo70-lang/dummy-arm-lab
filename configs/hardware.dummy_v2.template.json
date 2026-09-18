@@ -1,0 +1,37 @@
+{
+  "_comment": "模板：M3 标定时复制为 hardware.dummy_v2.calibrated.json 再填写，不要就地修改本文件，也不要把本文件改名成已验证配置。字段含义见 configs/schema/hardware_profile.v2.json，来源要求见 configs/README.md。",
+  "schema_version": 2,
+  "profile_id": "dummy_v2_pending_calibration",
+
+  "calibration_verified": false,
+  "stop_verified": false,
+  "physical_stop_verified": false,
+  "command_mode_verified": false,
+
+  "firmware_identity": "",
+  "calibration_record": "",
+
+  "firmware_to_canonical_sign": [null, null, null, null, null, null],
+  "firmware_zero_deg": [null, null, null, null, null, null],
+
+  "lower_rad": [null, null, null, null, null, null],
+  "upper_rad": [null, null, null, null, null, null],
+  "max_step_rad": [null, null, null, null, null, null],
+  "max_speed_rad_s": [null, null, null, null, null, null],
+
+  "firmware_speed_parameter": null,
+  "command_mode": 2,
+
+  "timing": {
+    "control_period_s": null,
+    "max_observation_age_s": null,
+    "comm_timeout_s": null,
+    "per_axis_freshness_available": false,
+    "observation_latency_upper_bound_s": null
+  },
+
+  "gripper": null,
+  "camera": null,
+
+  "provenance": {}
+}

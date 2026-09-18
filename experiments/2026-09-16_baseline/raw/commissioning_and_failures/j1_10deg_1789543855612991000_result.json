@@ -1,0 +1,23 @@
+{
+  "scope": "operator_supervised_native_J1_plus_10_deg_only",
+  "motion_sent": false,
+  "samples": [],
+  "before_deg": [
+    0.0,
+    -0.0,
+    90.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "target_deg": [
+    10.0,
+    -0.0,
+    90.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "firmware_speed_parameter": "unchanged",
+  "studio_format": true
+}

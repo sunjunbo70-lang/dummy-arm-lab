@@ -1,0 +1,7 @@
+{
+  "_comment": "原生 USB 设备身份。上位机连接前据此校验，避免误连到另一台机械臂。换设备时改这里，不要改源码。也可用环境变量 DUMMY_DEVICE_SERIAL 覆盖 serial_number。",
+  "vendor_id": "0x1209",
+  "product_id": "0x0D32",
+  "serial_number": "325F368F3135",
+  "note": "以上为本实验室 Dummy V2 的枚举值。其他设备必须换成自己的值；serial_number 置为 null 表示跳过序列号校验（不建议，会失去误连保护）。"
+}

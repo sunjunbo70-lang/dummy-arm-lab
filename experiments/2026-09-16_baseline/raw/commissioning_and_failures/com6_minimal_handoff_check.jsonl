@@ -1,0 +1,4 @@
+{"monotonic_s": 396408.281, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396408.281, "direction": "rx", "raw": "ok 0.00 -75.00 180.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396408.781, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396408.781, "direction": "rx", "raw": "ok 0.00 -75.00 180.00 0.00 0.00 0.00\r\n"}

@@ -1,0 +1,55 @@
+from pathlib import Path
+import time
+import numpy as np
+import mujoco
+from .core import Observation, six
+
+MODEL = Path(__file__).resolve().parents[1] / 'models' / 'dummy_reference.xml'
+
+
+class SimRobot:
+    def __init__(self, model=MODEL, dt=0.05):
+        if not np.isfinite(dt) or dt <= 0:
+            raise ValueError('dt must be positive')
+        model=Path(model)
+        import xml.etree.ElementTree as ET
+        doc = ET.fromstring(model.read_text(encoding='utf-8'))
+        compiler = doc.find('compiler')
+        meshdir = compiler.get('meshdir', '') if compiler is not None else ''
+        assets = {}
+        for mesh in doc.findall('asset/mesh'):
+            filename = (Path(meshdir) / mesh.get('file')).as_posix()
+            assets[filename] = (model.parent / filename).read_bytes()
+        self.model = mujoco.MjModel.from_xml_string(model.read_text(encoding='utf-8'), assets)
+        self.data = mujoco.MjData(self.model)
+        self.dt = dt
+        self.steps = round(dt / self.model.opt.timestep)
+        if self.steps < 1 or abs(self.steps*self.model.opt.timestep-dt) > 1e-8:
+            raise ValueError('dt must be a multiple of simulation timestep')
+        self.jids = [mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_JOINT, f'Joint{i}') for i in range(1,7)]
+        if min(self.jids) < 0 or self.model.nu != 6:
+            raise ValueError('Expected six named reference joints and six actuators')
+        self.qids = self.model.jnt_qposadr[self.jids]
+        self.vids = self.model.jnt_dofadr[self.jids]
+
+    def connect(self):
+        self.reset(np.zeros(6))
+
+    def reset(self, q):
+        mujoco.mj_resetData(self.model, self.data)
+        self.data.qpos[self.qids] = six(q)
+        self.data.ctrl[:] = q
+        mujoco.mj_forward(self.model, self.data)
+
+    def get_state(self):
+        return Observation(self.data.qpos[self.qids].copy(), time.monotonic(), 'mujoco', True)
+
+    def send_action(self, q):
+        self.data.ctrl[:] = six(q)
+        for _ in range(self.steps):
+            mujoco.mj_step(self.model, self.data)
+        if not np.all(np.isfinite(self.data.qpos)):
+            raise RuntimeError('Non-finite simulation state')
+
+    def close(self):
+        pass

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="DummyStudio_COMPLETE_VISUAL_UNCALIBRATED">
+  <compiler angle="radian" autolimits="true" meshdir="studio_meshes" />
+  <option timestep=".002" integrator="implicitfast" />
+  <asset>
+    <mesh name="part113_0" file="113_dummy_j4_cover_0.stl" />
+    <mesh name="part114_0" file="114_dummy_j6_motor_0.stl" />
+    <mesh name="part115_0" file="115_dummy_j6_0.stl" />
+    <mesh name="part116_0" file="116_dummy_base_ctrl_0.stl" />
+    <mesh name="part116_1" file="116_dummy_base_ctrl_1.stl" />
+    <mesh name="part116_2" file="116_dummy_base_ctrl_2.stl" />
+    <mesh name="part117_0" file="117_dummy_j2_j3_0.stl" />
+    <mesh name="part118_0" file="118_dummy_j1_0.stl" />
+    <mesh name="part119_0" file="119_dummy_j5_0.stl" />
+    <mesh name="part120_0" file="120_dummy_base_0.stl" />
+    <mesh name="part121_0" file="121_dummy_j2_j3_cover_0.stl" />
+    <mesh name="part122_0" file="122_dummy_j6_cover_0.stl" />
+    <mesh name="part123_0" file="123_dummy_j4_0.stl" />
+    <mesh name="part124_0" file="124_dummy_j4_motor_0.stl" />
+    <mesh name="part125_0" file="125_dummy_j2_j3_gear_motor_0.stl" />
+    <mesh name="part125_1" file="125_dummy_j2_j3_gear_motor_1.stl" />
+    <mesh name="part125_2" file="125_dummy_j2_j3_gear_motor_2.stl" />
+    <mesh name="part126_0" file="126_dummy_j5_motor_0.stl" />
+    <mesh name="part127_0" file="127_dummy_j5_cover_0.stl" />
+    <mesh name="part128_0" file="128_dummy_base_ring_0.stl" />
+    <mesh name="part129_0" file="129_dummy_base_board_0.stl" />
+  </asset>
+  <worldbody>
+    <body name="base">
+      <body name="link1" pos="0.0 0.0 0.109" gravcomp="1">
+        <inertial pos="0 0 0" mass="0.4" diaginertia=".001 .001 .001" />
+        <joint name="Joint1" axis="0 0 1" range="-.7 .7" damping=".3" armature=".02" />
+        <body name="link2" pos="0.0 -0.035 0.0" gravcomp="1">
+          <inertial pos="0 0 0" mass="0.96" diaginertia=".001 .001 .001" />
+          <joint name="Joint2" axis="1 0 0" range="-.7 .7" damping=".3" armature=".02" />
+          <body name="link3" pos="0.0 0.0 0.14600000000000002" gravcomp="1">
+            <inertial pos="0 0 0" mass="0.38" diaginertia=".001 .001 .001" />
+            <joint name="Joint3" axis="1 0 0" range="-.7 .7" damping=".3" armature=".02" />
+            <body name="link4" pos="0.0 0.0 0.05199999999999999" gravcomp="1">
+              <inertial pos="0 0 0" mass="0.44" diaginertia=".001 .001 .001" />
+              <joint name="Joint4" axis="0 -1 0" range="-.7 .7" damping=".3" armature=".02" />
+              <body name="link5" pos="0.0 -0.11499999999999999 0.0" gravcomp="1">
+                <inertial pos="0 0 0" mass="0.13" diaginertia=".001 .001 .001" />
+                <joint name="Joint5" axis="1 0 0" range="-.7 .7" damping=".3" armature=".02" />
+                <body name="link6" pos="0.0 -0.07200000000000001 0.0" gravcomp="1">
+                  <inertial pos="0 0 0" mass="0.01" diaginertia=".001 .001 .001" />
+                  <joint name="Joint6" axis="0 -1 0" range="-.7 .7" damping=".3" armature=".02" />
+                </body>
+                <geom name="dummy_j6_motor_0" type="mesh" mesh="part114_0" rgba="0.12 0.14 0.17 1" contype="0" conaffinity="0" density="0" group="0" />
+                <geom name="dummy_j6_0" type="mesh" mesh="part115_0" rgba="0.65 0.68 0.72 1" contype="0" conaffinity="0" density="0" group="0" />
+                <geom name="dummy_j6_cover_0" type="mesh" mesh="part122_0" rgba="0.12 0.35 0.48 1" contype="0" conaffinity="0" density="0" group="2" />
+              </body>
+              <geom name="dummy_j5_0" type="mesh" mesh="part119_0" rgba="0.65 0.68 0.72 1" contype="0" conaffinity="0" density="0" group="0" />
+              <geom name="dummy_j5_motor_0" type="mesh" mesh="part126_0" rgba="0.12 0.14 0.17 1" contype="0" conaffinity="0" density="0" group="0" />
+              <geom name="dummy_j5_cover_0" type="mesh" mesh="part127_0" rgba="0.12 0.35 0.48 1" contype="0" conaffinity="0" density="0" group="2" />
+            </body>
+            <geom name="dummy_j4_cover_0" type="mesh" mesh="part113_0" rgba="0.12 0.35 0.48 1" contype="0" conaffinity="0" density="0" group="2" />
+            <geom name="dummy_j4_0" type="mesh" mesh="part123_0" rgba="0.65 0.68 0.72 1" contype="0" conaffinity="0" density="0" group="0" />
+            <geom name="dummy_j4_motor_0" type="mesh" mesh="part124_0" rgba="0.12 0.14 0.17 1" contype="0" conaffinity="0" density="0" group="0" />
+          </body>
+          <geom name="dummy_j2_j3_0" type="mesh" mesh="part117_0" rgba="0.65 0.68 0.72 1" contype="0" conaffinity="0" density="0" group="0" />
+          <geom name="dummy_j2_j3_cover_0" type="mesh" mesh="part121_0" rgba="0.12 0.35 0.48 1" contype="0" conaffinity="0" density="0" group="2" />
+          <geom name="dummy_j2_j3_gear_motor_0" type="mesh" mesh="part125_0" rgba="0.12 0.14 0.17 1" contype="0" conaffinity="0" density="0" group="0" />
+          <geom name="dummy_j2_j3_gear_motor_1" type="mesh" mesh="part125_1" rgba="0.12 0.14 0.17 1" contype="0" conaffinity="0" density="0" group="0" />
+          <geom name="dummy_j2_j3_gear_motor_2" type="mesh" mesh="part125_2" rgba="0.12 0.14 0.17 1" contype="0" conaffinity="0" density="0" group="0" />
+        </body>
+        <geom name="dummy_j1_0" type="mesh" mesh="part118_0" rgba="0.65 0.68 0.72 1" contype="0" conaffinity="0" density="0" group="0" />
+      </body>
+      <geom name="dummy_base_ctrl_0" type="mesh" mesh="part116_0" rgba="0.10 0.32 0.15 1" contype="0" conaffinity="0" density="0" group="0" />
+      <geom name="dummy_base_ctrl_1" type="mesh" mesh="part116_1" rgba="0.10 0.32 0.15 1" contype="0" conaffinity="0" density="0" group="0" />
+      <geom name="dummy_base_ctrl_2" type="mesh" mesh="part116_2" rgba="0.10 0.32 0.15 1" contype="0" conaffinity="0" density="0" group="0" />
+      <geom name="dummy_base_0" type="mesh" mesh="part120_0" rgba="0.65 0.68 0.72 1" contype="0" conaffinity="0" density="0" group="0" />
+      <geom name="dummy_base_ring_0" type="mesh" mesh="part128_0" rgba="0.65 0.68 0.72 1" contype="0" conaffinity="0" density="0" group="0" />
+      <geom name="dummy_base_board_0" type="mesh" mesh="part129_0" rgba="0.65 0.68 0.72 1" contype="0" conaffinity="0" density="0" group="0" />
+    </body>
+    <geom name="floor" type="plane" size="1 1 .01" pos="0 0 -.021" rgba=".18 .20 .24 1" contype="0" conaffinity="0" />
+    <light pos="0 -1 2" dir="0 0 -1" diffuse=".8 .8 .8" ambient=".3 .3 .3" />
+    <light pos="1 1 1" dir="-1 -1 -1" diffuse=".5 .5 .5" castshadow="false" />
+  </worldbody>
+  <actuator>
+    <position name="servo1" joint="Joint1" kp="35" kv="4" ctrlrange="-.7 .7" forcerange="-5 5" />
+    <position name="servo2" joint="Joint2" kp="35" kv="4" ctrlrange="-.7 .7" forcerange="-5 5" />
+    <position name="servo3" joint="Joint3" kp="35" kv="4" ctrlrange="-.7 .7" forcerange="-5 5" />
+    <position name="servo4" joint="Joint4" kp="35" kv="4" ctrlrange="-.7 .7" forcerange="-5 5" />
+    <position name="servo5" joint="Joint5" kp="35" kv="4" ctrlrange="-.7 .7" forcerange="-5 5" />
+    <position name="servo6" joint="Joint6" kp="35" kv="4" ctrlrange="-.7 .7" forcerange="-5 5" />
+  </actuator>
+  <visual>
+    <global offwidth="960" offheight="720" />
+    <headlight ambient=".35 .35 .35" diffuse=".7 .7 .7" />
+  </visual>
+</mujoco>

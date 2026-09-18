@@ -1,0 +1,2 @@
+{"monotonic_s": 402762.703, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 402762.703, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}

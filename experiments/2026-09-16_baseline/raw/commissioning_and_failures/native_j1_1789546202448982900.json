@@ -1,0 +1,32 @@
+{
+  "samples": [],
+  "motion_sent": false,
+  "master_speed_changed": false,
+  "polling": "native_angle_properties",
+  "direct_motor": false,
+  "before_deg": [
+    10.000547409057617,
+    0.00304412841796875,
+    90.00083923339844,
+    0.0,
+    -0.0012656250037252903,
+    0.0
+  ],
+  "target_deg": [
+    0.0,
+    0.00304412841796875,
+    90.00083923339844,
+    0.0,
+    -0.0012656250037252903,
+    0.0
+  ],
+  "native_offsets": [
+    -0.0,
+    -75.0,
+    180.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "target_transport": "studio_ascii"
+}

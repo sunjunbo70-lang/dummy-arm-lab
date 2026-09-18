@@ -1,0 +1,6 @@
+{"monotonic_s": 396708.359, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396708.375, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396708.859, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396708.859, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 396709.359, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 396709.359, "direction": "rx", "raw": "ok 0.00 0.00 90.00 0.00 0.00 0.00\r\n"}

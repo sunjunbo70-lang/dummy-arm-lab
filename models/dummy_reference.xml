@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="Dummy_auk_REFERENCE_NOT_CALIBRATED">
+  <compiler angle="radian" boundinertia="1e-06" meshdir="meshes" autolimits="true" />
+  <asset>
+    <mesh name="base_link" content_type="model/stl" file="base_link.stl" scale="0.001 0.001 0.001" />
+    <mesh name="link1_1_1" content_type="model/stl" file="link1_1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="link2_1_1" content_type="model/stl" file="link2_1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="link3_1_1" content_type="model/stl" file="link3_1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="link4_1_1" content_type="model/stl" file="link4_1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="link5_1_1" content_type="model/stl" file="link5_1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="link6_1_1" content_type="model/stl" file="link6_1_1.stl" scale="0.001 0.001 0.001" />
+  </asset>
+  <worldbody>
+    <body name="base_link" quat="0 -5.10341e-12 -5.10341e-12 -1" gravcomp="1">
+      <inertial pos="-0.0192864 0.000581749 0.0554629" quat="-0.225074 0.672473 -0.0750361 0.701065" mass="3.40542" diaginertia="0.00679912 0.00636827 0.0063166" />
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="base_link" />
+      <geom type="mesh" mesh="base_link" contype="0" conaffinity="0" rgba="0.25 0.52 0.65 1" />
+      <body name="link1_1_1" pos="-0.019225 -0.000523 0.100684" gravcomp="1">
+        <inertial pos="-0.00574474 0.00546433 0.0120456" quat="0.229177 0.707106 -0.375567 0.553559" mass="0.400012" diaginertia="0.000265299 0.000221443 9.02581e-05" />
+        <joint name="Joint1" range="-3.14 3.14" actuatorfrcrange="-150 150" axis="0 0 -1" damping="0.3" armature="0.02" />
+        <geom pos="0.019225 0.000523 -0.100684" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link1_1_1" />
+        <geom pos="0.019225 0.000523 -0.100684" quat="1 0 0 0" type="mesh" mesh="link1_1_1" contype="0" conaffinity="0" rgba="0.25 0.52 0.65 1" />
+        <body name="link2_1_1" pos="-0.0155 0.035 0.0285" gravcomp="1">
+          <inertial pos="0.0224763 0.00158367 0.0701479" quat="0.553384 -0.0330244 -0.0244233 0.831913" mass="0.964419" diaginertia="0.00385278 0.00382781 0.000477409" />
+          <joint name="Joint2" range="-3.14 3.14" actuatorfrcrange="-150 150" axis="-1 0 0" damping="0.3" armature="0.02" />
+          <geom pos="0.034725 -0.034477 -0.129184" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link2_1_1" />
+          <geom pos="0.034725 -0.034477 -0.129184" quat="1 0 0 0" type="mesh" mesh="link2_1_1" contype="0" conaffinity="0" rgba="0.25 0.52 0.65 1" />
+          <body name="link3_1_1" pos="0.03665 0 0.146" gravcomp="1">
+            <inertial pos="-0.0107303 -0.0223691 0.0364676" quat="0.660228 -0.0213283 -0.201254 0.723285" mass="0.381723" diaginertia="0.000390745 0.000349731 0.000106524" />
+            <joint name="Joint3" range="-3.14 3.14" actuatorfrcrange="-150 150" axis="-1 0 0" damping="0.3" armature="0.02" />
+            <geom pos="-0.001925 -0.034477 -0.275184" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link3_1_1" />
+            <geom pos="-0.001925 -0.034477 -0.275184" quat="1 0 0 0" type="mesh" mesh="link3_1_1" contype="0" conaffinity="0" rgba="0.25 0.52 0.65 1" />
+            <body name="link4_1_1" pos="-0.01855 -0.01 0.052" gravcomp="1">
+              <inertial pos="-0.00422131 0.0902137 0.000268283" quat="0.706746 0.707004 -0.0254825 0.00248836" mass="0.4437" diaginertia="0.00110508 0.00107896 0.000119958" />
+              <joint name="Joint4" range="-3.14 3.14" actuatorfrcrange="-150 150" axis="0 -1 0" damping="0.3" armature="0.02" />
+              <geom pos="0.016625 -0.024477 -0.327184" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link4_1_1" />
+              <geom pos="0.016625 -0.024477 -0.327184" quat="1 0 0 0" type="mesh" mesh="link4_1_1" contype="0" conaffinity="0" rgba="0.25 0.52 0.65 1" />
+              <body name="link5_1_1" pos="0.0168 0.127 0" gravcomp="1">
+                <inertial pos="-0.000704496 0.0418159 1.98565e-05" quat="0.435418 0.557145 -0.435418 0.557145" mass="0.132942" diaginertia="0.000161 0.000156471 2.85293e-05" />
+                <joint name="Joint5" range="-3.14 3.14" actuatorfrcrange="-150 150" axis="-1 0 0" damping="0.3" armature="0.02" />
+                <geom pos="-0.000175 -0.151477 -0.327184" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link5_1_1" />
+                <geom pos="-0.000175 -0.151477 -0.327184" quat="1 0 0 0" type="mesh" mesh="link5_1_1" contype="0" conaffinity="0" rgba="0.25 0.52 0.65 1" />
+                <body name="link6_1_1" pos="-0.018506 0.077 -0.000106" gravcomp="1">
+                  <inertial pos="8.86655e-08 0.00150048 2.70146e-07" quat="0.707107 0 0 0.707107" mass="0.00918018" diaginertia="2e-06 1e-06 1e-06" />
+                  <joint name="Joint6" range="-3.14 3.14" actuatorfrcrange="-150 150" axis="0 -1 0" damping="0.3" armature="0.02" />
+                  <geom pos="0.018331 -0.228477 -0.327078" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link6_1_1" />
+                  <geom pos="0.018331 -0.228477 -0.327078" quat="1 0 0 0" type="mesh" mesh="link6_1_1" contype="0" conaffinity="0" rgba="0.25 0.52 0.65 1" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <light pos="0 -1 2" dir="0 0 -1" />
+    <geom name="floor" type="plane" size="1 1 0.01" pos="0 0 -0.01" rgba="0.18 0.20 0.24 1" contype="0" conaffinity="0" />
+  </worldbody>
+  <option timestep="0.002" integrator="implicitfast" />
+  <actuator>
+    <position name="servo1" joint="Joint1" kp="35" kv="4" ctrlrange="-0.7 0.7" forcerange="-5 5" />
+    <position name="servo2" joint="Joint2" kp="35" kv="4" ctrlrange="-0.7 0.7" forcerange="-5 5" />
+    <position name="servo3" joint="Joint3" kp="35" kv="4" ctrlrange="-0.7 0.7" forcerange="-5 5" />
+    <position name="servo4" joint="Joint4" kp="35" kv="4" ctrlrange="-0.7 0.7" forcerange="-5 5" />
+    <position name="servo5" joint="Joint5" kp="35" kv="4" ctrlrange="-0.7 0.7" forcerange="-5 5" />
+    <position name="servo6" joint="Joint6" kp="35" kv="4" ctrlrange="-0.7 0.7" forcerange="-5 5" />
+  </actuator>
+  <visual>
+    <global offwidth="960" offheight="720" />
+  </visual>
+</mujoco>

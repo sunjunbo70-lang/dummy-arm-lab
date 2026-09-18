@@ -1,0 +1,16 @@
+[
+  {
+    "phase": "initial",
+    "rx_hex": ""
+  },
+  {
+    "phase": "query",
+    "port": "COM5",
+    "baud": 115200,
+    "tx_hex": "234745544a504f530d0a",
+    "tx_bytes": 10,
+    "rx_hex": "",
+    "rx_bytes": 0,
+    "rx_text": ""
+  }
+]

@@ -1,0 +1,28 @@
+# 运行环境：不随源码迁移，目标电脑重建
+.venv*/
+__pycache__/
+*.pyc
+
+# 程序输出与打包产物
+outputs/
+releases/
+
+# 编辑器与系统
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# ── 实验证据随仓库分发 ────────────────────────────────────────
+# STATUS.md 的证据链接指向 experiments/，随仓库带走才能在任何副本上核对。
+# 以下例外见 THIRD_PARTY.md：DummyStudio 衍生物无上游许可，本机专属取证无复用价值。
+experiments/**/studio_protocol/
+experiments/**/machine_specific_usb/
+experiments/**/studio_preview.png
+experiments/**/studio_motion_preview.png
+
+# ── 不可再分发的第三方资产（见 THIRD_PARTY.md）────────────────
+# 从 DummyStudio 提取的网格与源文件。上游无许可声明，不得进入本仓库。
+# 本地跑 Studio 可视化时把它们放回下列路径即可，git 会忽略。
+models/studio_meshes/
+models/studio_source/

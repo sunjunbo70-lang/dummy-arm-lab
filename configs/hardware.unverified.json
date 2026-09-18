@@ -1,0 +1,17 @@
+{
+  "profile_id": "dummy_v2_pending_calibration",
+  "calibration_verified": false,
+  "stop_verified": false,
+  "physical_stop_verified": false,
+  "command_mode_verified": false,
+  "firmware_identity": "",
+  "calibration_record": "",
+  "firmware_to_canonical_sign": [null, null, null, null, null, null],
+  "firmware_zero_deg": [null, null, null, null, null, null],
+  "lower_rad": [null, null, null, null, null, null],
+  "upper_rad": [null, null, null, null, null, null],
+  "max_step_rad": [null, null, null, null, null, null],
+  "max_speed_rad_s": [null, null, null, null, null, null],
+  "firmware_speed_parameter": null,
+  "command_mode": 2
+}

@@ -1,0 +1,13 @@
+{
+  "serial": "55384518635829",
+  "operation": "read_only_discovery",
+  "joint_angle_properties_deg": [
+    0.9428907036781311,
+    75.00698852539062,
+    -89.99789428710938,
+    0.0026718750596046448,
+    -0.010265625081956387,
+    -0.0
+  ],
+  "motion_command_sent": false
+}

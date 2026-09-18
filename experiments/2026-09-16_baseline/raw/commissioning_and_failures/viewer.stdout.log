@@ -1,0 +1,3 @@
+Reference simulation only. No real robot connection.
+SPACE pause/resume; N next target; R reset; close window to exit.
+VIEWER_READY

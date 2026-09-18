@@ -1,0 +1,181 @@
+{
+  "source": "User-provided DummyStudio extracted OBJ files in dummy_robot_unified_demo/models/dummy/meshes",
+  "articulation_source": "Working DummyStudio level0 transforms and DummyRobotBridge.Update; outputs/studio_actual_transforms.json. jointBodys=[135,149,136,138,148,133]. Supersedes cyclic robot_hierarchy export.",
+  "warning": "Masses, inertia and servos remain illustrative. NOT calibrated hardware dynamics. No contact or gripper. J6 end_anchor contains no separate source mesh; wrist housing stays on J5. Source licensing not independently established; retain original notices before redistribution.",
+  "parts": [
+    {
+      "part": 113,
+      "label": "dummy_j4_cover",
+      "triangles": 5184,
+      "source_sha256": "33a4bc28125c34fce90688e3f4719b09348329d57672f4b043def44518cee89a",
+      "stl_sha256": {
+        "113_dummy_j4_cover_0.stl": "245c137f2d562dea68908d996b5524b986a3d4e45fdbb38ac21f5f4b0db811b7"
+      },
+      "articulated_body": 3
+    },
+    {
+      "part": 114,
+      "label": "dummy_j6_motor",
+      "triangles": 8278,
+      "source_sha256": "143b5e263bce82742a43a52d09fb5dadd89c5655ba29273293fe3b350c547075",
+      "stl_sha256": {
+        "114_dummy_j6_motor_0.stl": "b7c175dc751494538108bd565b427913df736198f169ab7d334431ace20b9e3d"
+      },
+      "articulated_body": 5
+    },
+    {
+      "part": 115,
+      "label": "dummy_j6",
+      "triangles": 6172,
+      "source_sha256": "f9de2b8afd661697fefeb87879d2eb962e3bcddd6f3b4815f00f4f8610642da5",
+      "stl_sha256": {
+        "115_dummy_j6_0.stl": "bb70bdf20a87adb7d878e9dc073a7c4d661cf176d1b0b7a8d2ec33cf79cdcea0"
+      },
+      "articulated_body": 5
+    },
+    {
+      "part": 116,
+      "label": "dummy_base_ctrl",
+      "triangles": 402602,
+      "source_sha256": "49bd784e8fea9e5150ab3c13992237a7250e797c95cac2d0e37ecc6e01f2a6c3",
+      "stl_sha256": {
+        "116_dummy_base_ctrl_0.stl": "bacf4e20d6c123436b0405f2369cdceaa21c513f67211786d685ae7fdf7e9ef7",
+        "116_dummy_base_ctrl_1.stl": "1c7c5197b9cd18c30daba5fb6a7b5b278a64abd0f91ccf0ac87254f28e087638",
+        "116_dummy_base_ctrl_2.stl": "1382e3a3f9ebb81f4a713443033a91f2b9fd8c7031a9176635add7edc6a00c2b"
+      },
+      "articulated_body": 0
+    },
+    {
+      "part": 117,
+      "label": "dummy_j2_j3",
+      "triangles": 14410,
+      "source_sha256": "a1a3e8e7195a0b0dd6db4f299dc01c2b9c2a25b26c6012e6fc0d0816149485bc",
+      "stl_sha256": {
+        "117_dummy_j2_j3_0.stl": "2d44a84e012ba9c816faadd964f2abdd14430a7c4babc30fb686fadeaff7e718"
+      },
+      "articulated_body": 2
+    },
+    {
+      "part": 118,
+      "label": "dummy_j1",
+      "triangles": 16398,
+      "source_sha256": "1bb73ab6b2eacd7d4fc0ea818a11c21115db4e727e54592fc8f2f53846b1068a",
+      "stl_sha256": {
+        "118_dummy_j1_0.stl": "0753360888d612fb4c31cf72a2c5b08b498d5e96f9bc5c6bac530a55b53f5742"
+      },
+      "articulated_body": 1
+    },
+    {
+      "part": 119,
+      "label": "dummy_j5",
+      "triangles": 16248,
+      "source_sha256": "90c64189a033c23304ad5c263403c1a0af3a1e10f3c44a575e6dfe3d83945031",
+      "stl_sha256": {
+        "119_dummy_j5_0.stl": "7d6d42c61619d343ff1bbd9c85cfd3fbdccb6cf224b13ef3d2bc854a1f3c1f08"
+      },
+      "articulated_body": 4
+    },
+    {
+      "part": 120,
+      "label": "dummy_base",
+      "triangles": 12244,
+      "source_sha256": "5f82172884c284e59ed9a62eaac42239d10375fc058824c9b10cb41e0f2c3444",
+      "stl_sha256": {
+        "120_dummy_base_0.stl": "edcc5d74e0f372810babe7c923cac963d8ce4616d88a5a6405e58656148f8bdb"
+      },
+      "articulated_body": 0
+    },
+    {
+      "part": 121,
+      "label": "dummy_j2_j3_cover",
+      "triangles": 30888,
+      "source_sha256": "d704646aa43723514c70842382b24f65f8c6d3200ca1e8c3552eb8565b62eadb",
+      "stl_sha256": {
+        "121_dummy_j2_j3_cover_0.stl": "88c43b9849d1becc4a2be4ab43cee3b4f0ab5bd42cfe9b2fc355a6772422ea4d"
+      },
+      "articulated_body": 2
+    },
+    {
+      "part": 122,
+      "label": "dummy_j6_cover",
+      "triangles": 2022,
+      "source_sha256": "14e7ff2026c83e0e7d76d69a5e3c18071a04080b49b1dc8d85fba9b4d0f1e15e",
+      "stl_sha256": {
+        "122_dummy_j6_cover_0.stl": "be812775f307835e100e18593743db4f49fb19ca1d217729fd5536643a614f99"
+      },
+      "articulated_body": 5
+    },
+    {
+      "part": 123,
+      "label": "dummy_j4",
+      "triangles": 16370,
+      "source_sha256": "af02423ef93252a9ee6e034ebaa12e7206be3e5a4c9f27e1833fc5d45ed17af7",
+      "stl_sha256": {
+        "123_dummy_j4_0.stl": "9f20d69c9f538e4b84e60c0120588bc3db972de6666d2b38af3f69c988e28553"
+      },
+      "articulated_body": 3
+    },
+    {
+      "part": 124,
+      "label": "dummy_j4_motor",
+      "triangles": 5248,
+      "source_sha256": "ea74c6a9aebec7464ac257a4d211829059b7ea5bff0028bc6eda46fab2fa9a10",
+      "stl_sha256": {
+        "124_dummy_j4_motor_0.stl": "e3a70b59a21bec0f629769251f7ee4988ddc1e1746bec2b20521d8f9473013ec"
+      },
+      "articulated_body": 3
+    },
+    {
+      "part": 125,
+      "label": "dummy_j2_j3_gear_motor",
+      "triangles": 304846,
+      "source_sha256": "5f9e45276a39d7d66488ce5c7b91d696f8eea167b990d811e42f2882c157ae60",
+      "stl_sha256": {
+        "125_dummy_j2_j3_gear_motor_0.stl": "b59923021c2cc8f22ccd2db671fd4bfe4e5fb9271e736f55768084a8b9ce16ff",
+        "125_dummy_j2_j3_gear_motor_1.stl": "70be75eb6f1342fe662ee05bcf1e1bce95cd6037b40cf8fc100027470a0ad699",
+        "125_dummy_j2_j3_gear_motor_2.stl": "ceba75598a05b2f20b7722dc70d922ba4a6419c029db85a0dc5394bca25b3744"
+      },
+      "articulated_body": 2
+    },
+    {
+      "part": 126,
+      "label": "dummy_j5_motor",
+      "triangles": 9932,
+      "source_sha256": "3bf0668f45fd174eb715269f9405c5e4f5b6363eb5ece3f016439458512c53aa",
+      "stl_sha256": {
+        "126_dummy_j5_motor_0.stl": "c17bee64b41d8d4d067fd21552f0c828a93934a9a60c29cd3bf3bd7445c0fe8a"
+      },
+      "articulated_body": 4
+    },
+    {
+      "part": 127,
+      "label": "dummy_j5_cover",
+      "triangles": 7914,
+      "source_sha256": "34f4e04f10530cf81b71f5b2a131215f1e5a2d00fdcf03ae4efad814b036b20f",
+      "stl_sha256": {
+        "127_dummy_j5_cover_0.stl": "f3fe056c75652cb71487696e774262d6e64cbe164db153a88a771eef0c5381c4"
+      },
+      "articulated_body": 4
+    },
+    {
+      "part": 128,
+      "label": "dummy_base_ring",
+      "triangles": 176,
+      "source_sha256": "dde4c3103265f5f9ab9ac474e6c3737cc236c069540027bb66f5cc37565d9b8f",
+      "stl_sha256": {
+        "128_dummy_base_ring_0.stl": "7e0fc3a2ed0762e34520550f4858bf318c1f42dd85f7a2143fd5655300e185e3"
+      },
+      "articulated_body": 0
+    },
+    {
+      "part": 129,
+      "label": "dummy_base_board",
+      "triangles": 13046,
+      "source_sha256": "c2c368afbc11b9f033753654cf426d83997b80ad982c93d3e432d49b415b94e7",
+      "stl_sha256": {
+        "129_dummy_base_board_0.stl": "748ba5f91e837af80d963cfc97a9a2dc44268a841b4aee1c48f1da339e6e882f"
+      },
+      "articulated_body": 0
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+0	configs/
+4.0K	requirements/
+72K	tests/
+76K	vendor/
+144K	dummy_loop/
+180K	tools/
+4.4M	具身信息/
+11M	outputs/
+12M	docs/
+12M	experiments/
+93M	.diagnostics
+191M	models/
+229M	dummy robot/
+797M	robot project/
+853M	archive/
+1.2G	releases/
+34G	dummy_v2/

@@ -1,0 +1,14 @@
+{"monotonic_s": 398982.125, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 398982.125, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 398982.437, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 398982.437, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 398982.734, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 398982.734, "direction": "rx", "raw": "ok 0.30 -72.71 178.13 1.56 -1.44 -0.01\r\n"}
+{"monotonic_s": 400007.781, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 400007.796, "direction": "rx", "raw": "ok 0.00 -75.00 180.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400196.125, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 400196.14, "direction": "rx", "raw": "ok 0.00 -75.00 180.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400196.437, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 400196.437, "direction": "rx", "raw": "ok 0.00 -75.00 180.00 0.00 0.00 0.00\r\n"}
+{"monotonic_s": 400196.734, "direction": "tx", "raw": "#GETJPOS\r\n"}
+{"monotonic_s": 400196.734, "direction": "rx", "raw": "ok 0.00 -75.00 180.00 0.00 0.00 0.00\r\n"}

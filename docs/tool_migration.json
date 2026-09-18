@@ -1,0 +1,107 @@
+[
+  {
+    "old": "tools/live_mujoco.py",
+    "implementation": "tools/gui/live_mujoco.py",
+    "category": "gui"
+  },
+  {
+    "old": "tools/render_reference.py",
+    "implementation": "tools/simulation/render_reference.py",
+    "category": "simulation"
+  },
+  {
+    "old": "tools/view_simulation.py",
+    "implementation": "tools/simulation/view_simulation.py",
+    "category": "simulation"
+  },
+  {
+    "old": "tools/build_studio_model.py",
+    "implementation": "tools/modeling/build_studio_model.py",
+    "category": "modeling"
+  },
+  {
+    "old": "tools/import_reference.py",
+    "implementation": "tools/modeling/import_reference.py",
+    "category": "modeling"
+  },
+  {
+    "old": "tools/camera_probe.py",
+    "implementation": "tools/hardware/camera_probe.py",
+    "category": "hardware"
+  },
+  {
+    "old": "tools/check_live_presets_once.py",
+    "implementation": "tools/hardware/check_live_presets_once.py",
+    "category": "hardware"
+  },
+  {
+    "old": "tools/commission_fold_once.py",
+    "implementation": "tools/hardware/commission_fold_once.py",
+    "category": "hardware"
+  },
+  {
+    "old": "tools/commission_j1_once.py",
+    "implementation": "tools/hardware/commission_j1_once.py",
+    "category": "hardware"
+  },
+  {
+    "old": "tools/commission_native_j1.py",
+    "implementation": "tools/hardware/commission_native_j1.py",
+    "category": "hardware"
+  },
+  {
+    "old": "tools/native_robot_diagnostic.py",
+    "implementation": "tools/hardware/native_robot_diagnostic.py",
+    "category": "hardware"
+  },
+  {
+    "old": "tools/probe_serial_raw.py",
+    "implementation": "tools/hardware/probe_serial_raw.py",
+    "category": "hardware"
+  },
+  {
+    "old": "tools/probe_studio_transport.py",
+    "implementation": "tools/hardware/probe_studio_transport.py",
+    "category": "hardware"
+  },
+  {
+    "old": "tools/repair_native_interface.ps1",
+    "implementation": "tools/hardware/repair_native_interface.ps1",
+    "category": "hardware"
+  },
+  {
+    "old": "tools/build_studio_capture.ps1",
+    "implementation": "tools/diagnostics/build_studio_capture.ps1",
+    "category": "diagnostics"
+  },
+  {
+    "old": "tools/inspect_studio_il.ps1",
+    "implementation": "tools/diagnostics/inspect_studio_il.ps1",
+    "category": "diagnostics"
+  },
+  {
+    "old": "tools/inspect_studio_native.ps1",
+    "implementation": "tools/diagnostics/inspect_studio_native.ps1",
+    "category": "diagnostics"
+  },
+  {
+    "old": "tools/inspect_studio_scene.py",
+    "implementation": "tools/diagnostics/inspect_studio_scene.py",
+    "category": "diagnostics"
+  },
+  {
+    "old": "tools/read_studio_capture.py",
+    "implementation": "tools/diagnostics/read_studio_capture.py",
+    "category": "diagnostics"
+  },
+  {
+    "old": "tools/doctor.py",
+    "implementation": "tools/environment/doctor.py",
+    "category": "environment"
+  },
+  {
+    "old": "tools/ubuntu_setup.sh",
+    "implementation": "tools/environment/ubuntu_setup.sh",
+    "category": "environment"
+  }
+]

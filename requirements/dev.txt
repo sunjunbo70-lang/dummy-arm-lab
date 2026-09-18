@@ -1,0 +1,5 @@
+-r gui.txt
+# 声明式 profile 校验。未安装时 core.load_profile 退回手写检查，
+# 功能不降级但不会逐条报出 schema 级错误。
+# 需要 >=4.18 才认识 draft 2020-12 元 schema。
+jsonschema>=4.18
