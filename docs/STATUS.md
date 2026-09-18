@@ -10,6 +10,7 @@
 | USB反馈中断 | 已修复无限等待风险；重启后复测成功，未证明唯一根因 | docs/history/2026-09-16_折叠中断与反馈超时修复.md | L2 |
 | 六轴自动往复和速度UI | 已实现，有软件测试；不代表所有组合姿态实机验收 | dummy_loop/live_control.py，tests/test_live_control.py | L1 |
 | 直立末端外观/坐标 | 曾被用户质疑；独立空间标定尚未完成 | 不以折叠确认替代直立验收 | — |
+| 新开发机环境与L1复现 | 钉死依赖装成；49测试通过；参考仿真终值与冻结基线逐位相同 | ../experiments/2026-09-19_windows_env/ | L1 |
 | Ubuntu实机 / D435 / 夹爪 | 未完成实际闭环验证 | 待办 | — |
 | ACDC / 世界模型 / FSDP | 讨论与研究计划；未安装、未训练、无复现结果 | ROADMAP.md | — |
 
@@ -31,3 +32,24 @@
 Windows 侧 Tk 界面与原生 USB 枚举未在本次重构中复核，需在目标机器上单独验证。
 本次未连接机械臂，未发送任何运动指令。记录见
 `experiments/2026-09-18_m0_baseline/log.md`。
+
+## 2026-09-19 新开发机落地（desktop-m51oshe）
+
+仓库克隆到 `D:\project\VLA\dummy-arm-lab`，在该机器上用 `requirements/dev.txt`
+钉死的版本重建 `.venv-loop`：Python 3.12.7、numpy 2.5.3、mujoco 3.13.0，无版本回退。
+49 个单元测试通过（3 个依赖 DummyStudio 数据的用例按设计跳过），参考仿真闭环
+0.3082207001484489 → 0.0022264043008919554 rad，终值与 2026-09-16 冻结基线**逐位相同**。
+证据等级 L1，记录见 `experiments/2026-09-19_windows_env/`。
+本次未连接机械臂，未打开串口，未发送任何运动指令。
+
+**仍未关闭**：上面 2026-09-18 条目提出的「Windows 侧 Tk 界面与原生 USB 枚举需在目标
+机器上单独验证」。本次只验证了依赖安装、单元测试与仿真复现，既未启动上位机界面，
+也未枚举原生 USB。不要把本次结果当成 GUI 或 USB 通路可用的证据。
+
+**更正**：2026-09-18 条目中「启用 Git LFS 管理网格资产」与仓库实际状态不符。
+`.gitattributes` 明确写明本仓库当前不使用 LFS，克隆核对确认 263 个文件全部是普通
+git 对象，未安装 git-lfs 也能完整检出。原条目按「原始记录不覆盖」保留，以本条为准。
+
+**新增**：`tools/environment/windows_setup.ps1` 与 `windows_setup.cmd`，是
+`ubuntu_setup.sh` 的 Windows 对应物，把上述五步固化成可重复执行的脚本，
+输出直接落到 `experiments/<日期>_windows_env/raw/`。脚本本身不碰硬件。

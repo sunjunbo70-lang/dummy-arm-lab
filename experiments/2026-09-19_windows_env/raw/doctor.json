@@ -1,0 +1,10 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.7",
+  "numpy": "2.5.3",
+  "mujoco": "3.13.0",
+  "pyserial": "3.5",
+  "torch": null,
+  "pyrealsense2": null,
+  "gpu": "NVIDIA GeForce RTX 3090, 24576 MiB, 591.86"
+}

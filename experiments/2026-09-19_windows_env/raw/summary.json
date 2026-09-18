@@ -1,0 +1,47 @@
+{
+    "generated_at_local":  "2026-09-19T00:21:20+09:00",
+    "repo_root":  "D:\\project\\VLA\\dummy-arm-lab",
+    "hardware_motion":  false,
+    "evidence_level":  "L1",
+    "steps":  {
+                  "python":  {
+                                 "ok":  true,
+                                 "version":  "3.12.7",
+                                 "path":  "C:\\Users\\sunbobo\\anaconda3\\python.exe",
+                                 "matches_pinned_target":  true
+                             },
+                  "venv":  {
+                               "ok":  true,
+                               "created":  true,
+                               "path":  "D:\\project\\VLA\\dummy-arm-lab\\.venv-loop",
+                               "requirements":  "requirements/dev.txt",
+                               "log":  "pip_install.log"
+                           },
+                  "doctor":  {
+                                 "ok":  true,
+                                 "artifact":  "doctor.json"
+                             },
+                  "unit_tests":  {
+                                     "ok":  true,
+                                     "artifact":  "tests.log"
+                                 },
+                  "reference_loop":  {
+                                         "ok":  true,
+                                         "seed":  7,
+                                         "episodes":  40,
+                                         "steps":  240,
+                                         "initial_error_rad":  0.3082207001484489,
+                                         "final_error_rad":  0.0022264043008919554,
+                                         "expected_initial_error_rad":  0.30822070014844888,
+                                         "expected_final_error_rad":  0.0022264043008919554,
+                                         "units":  "rad (six-axis joint error norm, not per-axis)",
+                                         "scope":  "software smoke test; not a real-robot or grasp validation",
+                                         "artifacts":  [
+                                                           "collect.summary.json",
+                                                           "train.summary.json",
+                                                           "rollout.summary.json",
+                                                           "rollout.jsonl"
+                                                       ]
+                                     }
+              }
+}

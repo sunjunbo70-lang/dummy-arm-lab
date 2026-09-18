@@ -1,0 +1,6 @@
+{
+  "episodes": 40,
+  "frames": 2400,
+  "source": "synthetic_joint_goal_teacher_in_reference_sim",
+  "seed": 7
+}

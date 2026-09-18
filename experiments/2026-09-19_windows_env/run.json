@@ -1,0 +1,57 @@
+{
+  "experiment_id": "2026-09-19_windows_env",
+  "status": "completed",
+  "purpose": "在新开发机上用钉死版本重建环境，复核既有 L1 结论（单元测试、参考仿真闭环）是否在本机成立",
+  "source_version": "285028445081c370dc53779203177e3bcc0522bc",
+  "command": [
+    "tools/environment/windows_setup.cmd",
+    "python -m unittest discover -s tests",
+    "python -m dummy_loop collect-sim --episodes 40 --seed 7 --output raw/teacher.npz",
+    "python -m dummy_loop train --dataset raw/teacher.npz --output raw/policy.npz",
+    "python -m dummy_loop run-sim --policy raw/policy.npz --steps 240 --log raw/rollout.jsonl"
+  ],
+  "environment_file": "raw/pip_freeze.txt",
+  "config_file": null,
+  "seed": 7,
+  "data_split": "训练 32 episode / 验证 8 episode，由 collect-sim 按 seed 7 划分",
+  "hardware": {
+    "machine": "desktop-m51oshe",
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7",
+    "gpu": "NVIDIA GeForce RTX 3090, 24576 MiB, driver 591.86",
+    "robot_connected": false,
+    "serial_port_opened": false
+  },
+  "units": "rad（六维关节误差范数，不是每轴误差）",
+  "metrics": {
+    "unit_tests_run": 49,
+    "unit_tests_skipped": 3,
+    "unit_tests_failed": 0,
+    "initial_error_rad": 0.3082207001484489,
+    "final_error_rad": 0.0022264043008919554,
+    "baseline_final_error_rad": 0.0022264043008919554,
+    "bitwise_identical_to_baseline_final": true,
+    "validation_mse": 2.866785815457919e-33
+  },
+  "artifacts": [
+    "raw/summary.json",
+    "raw/doctor.json",
+    "raw/pip_freeze.txt",
+    "raw/pip_install.log",
+    "raw/tests.log",
+    "raw/collect.summary.json",
+    "raw/train.summary.json",
+    "raw/rollout.summary.json",
+    "raw/rollout.jsonl",
+    "raw/teacher.npz",
+    "raw/policy.npz"
+  ],
+  "limitations": [
+    "仅 L1：不涉及控制器反馈，不涉及实机",
+    "未复核 Tk 上位机界面，未枚举原生 USB，STATUS 中相应条目仍未关闭",
+    "参考仿真为合成教师的线性 BC 冒烟测试，不代表抓取或 VLA 能力",
+    "Python 来自 Anaconda 发行版而非 python.org 安装包",
+    "归档目录 _archive/ 未随仓库到本机，历史取证脚本在本机不可直接运行"
+  ],
+  "hardware_motion": false
+}

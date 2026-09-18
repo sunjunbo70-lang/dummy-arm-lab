@@ -1,0 +1,10 @@
+{
+  "observation": "q_goal_rad",
+  "action": "delta_q_rad",
+  "dt": 0.05,
+  "scope": "reference_sim_only",
+  "algorithm": "supervised_linear_behavior_cloning",
+  "training_episodes": 32,
+  "validation_episodes": 8,
+  "validation_mse": 2.866785815457919e-33
+}
