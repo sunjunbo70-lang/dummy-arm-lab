@@ -11,35 +11,55 @@ from dummy_loop.episode import EpisodeWriter, load_episode, hardware_fields
 from dummy_loop.wall.controller import ActionSpec, EEController, WallFrame
 from dummy_loop.wall.errors import Perturbation
 from dummy_loop.wall.pipeline import record_episode, replay_episode
-from dummy_loop.wall.scene import ARM_MODEL, SceneConfig, build_scene, tool_tilt_matrix, wall_frame, FLANGE_FACE_Y
+from dummy_loop.wall.scene import ARM_MODEL, SceneConfig, build_scene, tool_frame_matrix, wall_frame, joint_limits, shaft_tip_x
+from dummy_loop.wall.layout import NATURAL_PLANE_U as U0
 from dummy_loop.wall.task import WallTask, OBS_SPEC
 from dummy_loop.wall.teacher import RasterTeacher
 
 
 def controller(cfg=None):
-    cfg = cfg or SceneConfig(); m, _ = build_scene(cfg); lim = np.deg2rad(cfg.joint_range_deg)
-    return EEController(m, WallFrame(*wall_frame(cfg)), [-lim] * 6, [lim] * 6, tool_R=tool_tilt_matrix(cfg))
+    cfg = cfg or SceneConfig(); m, _ = build_scene(cfg); lo, hi = joint_limits(cfg)
+    return EEController(m, WallFrame(*wall_frame(cfg)), lo, hi, tool_R=tool_frame_matrix(cfg))
 
 
 class SceneTests(unittest.TestCase):
     def test_reference_model_file_not_modified(self):
         before = hashlib.sha256(ARM_MODEL.read_bytes()).hexdigest()
-        build_scene(SceneConfig(joint_range_deg=45, spring_k=123))
+        build_scene(SceneConfig(joint_limit_cap_deg=45, spring_k=123))
         self.assertEqual(before, hashlib.sha256(ARM_MODEL.read_bytes()).hexdigest())
 
     def test_assumptions_are_labelled(self):
         m, _ = build_scene()
         self.assertIn('ASSUMPTIONS_NOT_CALIBRATED', m.names.decode())
         prov = SceneConfig().provenance()
-        self.assertIn('ASSUMPTION', prov['joint_range_deg'])
+        self.assertIn('CANDIDATE', prov['joint_limits'])
+        self.assertIn('dummy_v2.xml', prov['arm'])
         self.assertIn('PLACEHOLDER', prov['tool_dimensions'])
 
-    def test_tool_length_is_flange_face_to_blade_face(self):
+    def test_tool_mounts_on_bare_shaft_end_along_j6_axis(self):
         cfg = SceneConfig(); m, _ = build_scene(cfg); d = mujoco.MjData(m); mujoco.mj_forward(m, d)
-        b6 = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, 'link6_1_1')
-        tcp = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_SITE, 'tcp')
-        R = d.xmat[b6].reshape(3, 3); face = d.xpos[b6] + R @ [0, FLANGE_FACE_Y, 0]
-        self.assertAlmostEqual(float(np.linalg.norm(d.site_xpos[tcp] - face)), cfg.tool_length, places=6)
+        b6 = m.body('link6').id; tcp = m.site('tcp').id
+        R = d.xmat[b6].reshape(3, 3); face = d.xpos[b6] + R @ [shaft_tip_x(), 0, 0]
+        off = d.site_xpos[tcp] - face
+        self.assertAlmostEqual(float(np.linalg.norm(off)), cfg.tool_length, places=6)
+        # 刀具沿 J6 轴（link6 +X）外伸；零位时 J6 轴朝前 = +X
+        np.testing.assert_allclose(off / np.linalg.norm(off), R[:, 0], atol=1e-9)
+        np.testing.assert_allclose(R[:, 0], [1, 0, 0], atol=1e-9)
+
+    def test_joint_limits_are_v2_firmware(self):
+        from dummy_loop import v2
+        m, _ = build_scene()
+        lo, hi = v2.model_limits_rad()
+        np.testing.assert_allclose(m.jnt_range[:6, 0], lo); np.testing.assert_allclose(m.jnt_range[:6, 1], hi)
+        lo2, hi2 = joint_limits(SceneConfig(joint_limit_cap_deg=30))
+        self.assertTrue(np.all(hi2 <= np.deg2rad(30) + 1e-12) and np.all(lo2 >= -np.deg2rad(30) - 1e-12))
+
+    def test_exported_scene_opens_standalone(self):
+        from dummy_loop.wall.scene import export_xml
+        with tempfile.TemporaryDirectory() as t:
+            path = export_xml(SceneConfig(), Path(t) / 'sub' / 'scene.xml')
+            m = mujoco.MjModel.from_xml_path(str(path))
+            self.assertGreater(m.nmesh, 0)
 
     def test_only_blade_and_wall_collide(self):
         m, _ = build_scene()
@@ -51,16 +71,16 @@ class SceneTests(unittest.TestCase):
 class ControllerTests(unittest.TestCase):
     def test_ik_reaches_patch_with_blade_flat(self):
         c = controller()
-        for u, v in [(0.018, 0), (-0.03, -0.04), (0.07, 0.04), (0.018, 0.05)]:
+        for u, v in [(U0, 0), (U0 - 0.05, -0.04), (U0 + 0.05, 0.04), (U0, 0.05)]:
             c.reset([u, v, 0.0], 0.0, np.zeros(6))
             p, R = c.ik.fk(c.q_cmd)
             self.assertLess(np.linalg.norm(c.frame.from_world(p) - [u, v, 0]), 2e-3)
             self.assertLess(np.degrees(np.arccos(np.clip(R[:, 1] @ c.frame.R[:, 2], -1, 1))), 1.5)
 
     def test_unreachable_increment_is_rejected_not_half_applied(self):
-        c = controller(); c.reset([0.018, 0, -0.03], 0, np.zeros(6))
+        c = controller(); c.reset([U0, 0, -0.03], 0, np.zeros(6))
         before_t, before_q = c.target.copy(), c.q_cmd.copy()
-        c.target = np.array([0.018, 0, -0.5])     # 远在工作空间之外
+        c.target = np.array([U0, 0, -0.5])     # 远在工作空间之外
         q, status, applied = c.step([0, 0, 0.001, 0])
         self.assertEqual(status, 'unreachable'); self.assertTrue(np.all(applied == 0))
         np.testing.assert_allclose(q, before_q)
@@ -72,8 +92,8 @@ class ControllerTests(unittest.TestCase):
         np.testing.assert_allclose(spec.clip([1, -1, 1, 1]), [0.01, -0.01, 0.004, 0.05])
 
     def test_joint_speed_is_limited(self):
-        c = controller(); c.reset([0.018, 0, -0.03], 0, np.zeros(6))
-        c.target = np.array([0.07, 0.04, -0.03])   # 大跳变
+        c = controller(); c.reset([U0, 0, -0.03], 0, np.zeros(6))
+        c.target = np.array([U0 + 0.05, 0.04, -0.03])   # 大跳变
         q0 = c.q_cmd.copy(); q, status, _ = c.step([0, 0, 0, 0])
         self.assertLessEqual(np.abs(q - q0).max(), c.max_joint_step + 1e-12)
 

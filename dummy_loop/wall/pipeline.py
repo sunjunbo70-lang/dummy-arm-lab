@@ -48,6 +48,10 @@ def replay_episode(path):
     用于检验链路确定性：录下来的东西足以复现这一条 episode。
     """
     meta, fr = load_episode(path)
+    if 'joint_range_deg' in meta['scene_nominal']:
+        raise ValueError('这条 episode 是用参考模型 models/dummy_reference.xml 录的（2026-09-20 V2 切换之前）；'
+                         '当前场景已换成 V2 模型，关节坐标约定不同，不能在当前代码上重放。'
+                         '需要复现时检出 V2 切换之前的提交。')
     sc = SceneConfig(**{**meta['scene_nominal'], 'wall_size': tuple(meta['scene_nominal']['wall_size']),
                         'camera_pos': tuple(meta['scene_nominal']['camera_pos'])})
     tk = TaskConfig(**{**meta['task'], 'region_u': tuple(meta['task']['region_u']),

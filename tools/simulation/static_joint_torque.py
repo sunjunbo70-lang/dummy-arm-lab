@@ -6,8 +6,9 @@
 tau = -J^T f 计算抵抗外力所需的关节力矩，再加上手臂自重力矩。只算静态，
 不含加减速带来的惯性力矩。
 
-所有质量、惯量来自 models/dummy_reference.xml 的参考值，未经实测，
-因此结果只适合做相对比较（同一姿态下 A 工况比 B 工况重多少），不适合当绝对值用。
+默认用 V2 模型 models/dummy_v2.xml（质量 = CAD 体积×估计密度 + 资料质量，未称重），
+并与 V2 各关节的额定 / 启停峰值转矩（dummy_loop/v2.py）对比，给出裕量比。
+--model reference 可复现 2026-09-20 用参考模型得到的旧结果。结果仍是估计值。
 
 J6 部分：抹刀装在 J6 轴上时，J6 要承受的扭矩 = 沿墙拖曳力 × 刀刃接触中心偏离
 J6 轴线的距离。工具固定在 J6 外壳上时这部分为 0（J6 不在受力路径上），
@@ -15,14 +16,17 @@ J5 及以前各轴的负担不变。
 
 用法：
   python tools/simulation/static_joint_torque.py --out experiments/<日期>_static_torque/raw
+  （工具长度从 V2 裸轴端面量起；参考模型从法兰量起）
 """
-import argparse, json
+import argparse, json, sys
 from pathlib import Path
 import numpy as np
 import mujoco
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'models' / 'dummy_reference.xml'
+sys.path.insert(0, str(ROOT))
+MODELS = {'v2': (ROOT / 'models' / 'dummy_v2.xml', 'link6'),
+          'reference': (ROOT / 'models' / 'dummy_reference.xml', 'link6_1_1')}
 G = 9.81
 POSES = {
     'zero_L_pose_forearm_horizontal': [0, 0, 0, 0, 0, 0],
@@ -32,16 +36,19 @@ POSES = {
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--tool-length', type=float, default=0.20, help='法兰到刀刃的距离 (m)')
+    ap.add_argument('--model', choices=sorted(MODELS), default='v2')
+    ap.add_argument('--tool-length', type=float, default=0.20, help='安装面（V2 裸轴端面 / 参考模型法兰）到刀刃的距离 (m)')
     ap.add_argument('--tool-mass', type=float, default=0.15, help='抹刀+转接件质量 (kg)，质心取刀长一半')
     ap.add_argument('--payload-offset', type=float, default=0.05, help='夹持物重心离法兰的距离 (m)')
     ap.add_argument('--out', type=Path, required=True)
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
 
-    m = mujoco.MjModel.from_xml_path(str(MODEL)); d = mujoco.MjData(m)
+    path, link = MODELS[args.model]
+    m = mujoco.MjModel.from_xml_path(str(path)); d = mujoco.MjData(m)
     m.body_gravcomp[:] = 0
-    fl = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, 'link6_1_1')
+    fl = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, link)
+    tip = m.site('shaft_tip').pos.copy() if args.model == 'v2' else np.zeros(3)
     j5 = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_JOINT, 'Joint5')
     j6 = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_JOINT, 'Joint6')
     up = np.array([0, 0, 1.])
@@ -51,13 +58,13 @@ def main():
         return -(jp.T @ force)[:6]
 
     out = {'evidence_level': 'L1', 'hardware_motion': False,
-           'model': 'models/dummy_reference.xml, gravcomp disabled, reference masses (not measured)',
+           'model': f'{path.relative_to(ROOT).as_posix()}, gravcomp disabled, masses are estimates (not weighed)',
            'units': 'N*m, absolute value per joint J1..J6', 'static_only': True,
            'tool_length_m': args.tool_length, 'tool_mass_kg': args.tool_mass,
            'payload_offset_m': args.payload_offset, 'poses': {}}
     for pname, q in POSES.items():
         d.qpos[:6] = q; d.qvel[:] = 0; mujoco.mj_forward(m, d)
-        p = d.xpos[fl].copy(); a = d.xaxis[j6].copy()
+        p = d.xpos[fl] + d.xmat[fl].reshape(3, 3) @ tip; a = d.xaxis[j6].copy()
         if a @ (p - d.xanchor[j5]) < 0:
             a = -a
         arm = d.qfrc_bias[:6].copy()
@@ -72,12 +79,24 @@ def main():
                            + need(p + args.tool_length * a, f))
                     worst = np.maximum(worst, np.abs(tau))
                 rows[f'trowel_press_{Fn}N_drag_{mu:.1f}x'] = worst.round(3).tolist()
-        out['poses'][pname] = {'q_rad': q, 'flange_pos_m': p.round(4).tolist(), 'tool_axis': a.round(3).tolist(),
+        out['poses'][pname] = {'q_rad': q, 'mount_face_pos_m': p.round(4).tolist(), 'tool_axis': a.round(3).tolist(),
                                'torques': rows}
         print(f'\n{pname}   J1..J6 (N*m)')
         for k, v in rows.items():
             print(f'  {k:32s} ' + ' '.join(f'{x:6.2f}' for x in v))
 
+    if args.model == 'v2':
+        from dummy_loop import v2
+        jp = v2.joint_params()
+        cont = np.array([j['continuous_Nm'] for j in jp]); peak = np.array([j['peak_Nm'] for j in jp])
+        out['v2_ratings_Nm'] = {'continuous': cont.tolist(), 'peak': peak.tolist(),
+                                'source': 'dummy_loop/v2.py (reducer datasheet; motor catalog values)'}
+        print('\nV2 ratings  continuous ' + ' '.join(f'{x:6.2f}' for x in cont))
+        print('            peak       ' + ' '.join(f'{x:6.2f}' for x in peak))
+        for pname, pose in out['poses'].items():
+            pose['load_over_continuous'] = {k: (np.array(v) / cont).round(2).tolist() for k, v in pose['torques'].items()}
+            worst = {k: float(np.max(np.array(v)[:5] / cont[:5])) for k, v in pose['torques'].items()}
+            print(f'{pname}: worst J1-J5 load / continuous rating: ' + ', '.join(f'{k}={x:.2f}' for k, x in worst.items()))
     j6 = {}
     for drag in (5, 10):
         j6[f'drag_{drag}N'] = {f'offset_{int(o * 1000)}mm': round(drag * o, 3) for o in (0, 0.005, 0.01, 0.02, 0.05)}

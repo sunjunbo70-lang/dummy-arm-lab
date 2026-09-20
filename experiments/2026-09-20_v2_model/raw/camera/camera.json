@@ -1,0 +1,18 @@
+{
+ "camera": "d435 (placeholder pose)",
+ "resolution": [
+  640,
+  480
+ ],
+ "depth_range_m": [
+  0.33464089035987854,
+  50.56360626220703
+ ],
+ "written": [
+  "rgb.npy",
+  "depth_m.npy",
+  "rgb.png",
+  "depth.png"
+ ],
+ "note": "ideal pinhole render; no D435 noise model, no IR shadowing, no depth holes"
+}

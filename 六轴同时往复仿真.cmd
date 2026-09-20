@@ -6,8 +6,8 @@ if not exist "%~dp0.venv-loop\Scripts\python.exe" (
   pause
   exit /b 1
 )
-echo Starting six-axis SIMULATION ONLY. No hardware connection.
+echo Starting six-axis SIMULATION ONLY (Dummy V2 model). No hardware connection.
 echo All axes: +/-10 degree targets, 8-second cycle.
 echo SPACE: pause/resume. R: restart. C: covers. Close viewer to exit.
-"%~dp0.venv-loop\Scripts\python.exe" "%~dp0tools\view_simulation.py" --studio --simultaneous
+"%~dp0.venv-loop\Scripts\python.exe" "%~dp0tools\view_simulation.py" --simultaneous
 if errorlevel 1 pause

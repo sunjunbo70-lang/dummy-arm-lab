@@ -1,0 +1,766 @@
+{
+ "joint_limits": "V2 firmware",
+ "patch_half_size_m": [
+  0.06,
+  0.05
+ ],
+ "n_candidates": 96,
+ "n_feasible": 27,
+ "ranked": [
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.035,
+   "limit_margin_deg": 19.1,
+   "max_twist_deg": 20.0,
+   "score": 0.035
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.3,
+   "feasible": true,
+   "sigma_min": 0.0336,
+   "limit_margin_deg": 15.9,
+   "max_twist_deg": 19.4,
+   "score": 0.0336
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.2,
+   "feasible": true,
+   "sigma_min": 0.0258,
+   "limit_margin_deg": 20.7,
+   "max_twist_deg": 31.6,
+   "score": 0.0258
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.2,
+   "feasible": true,
+   "sigma_min": 0.0224,
+   "limit_margin_deg": 33.9,
+   "max_twist_deg": 31.1,
+   "score": 0.0224
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.0203,
+   "limit_margin_deg": 45.5,
+   "max_twist_deg": 17.2,
+   "score": 0.0203
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.0194,
+   "limit_margin_deg": 52.3,
+   "max_twist_deg": 53.3,
+   "score": 0.0194
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.2,
+   "feasible": true,
+   "sigma_min": 0.0162,
+   "limit_margin_deg": 46.4,
+   "max_twist_deg": 41.3,
+   "score": 0.0162
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.2,
+   "feasible": true,
+   "sigma_min": 0.0202,
+   "limit_margin_deg": 10.0,
+   "max_twist_deg": 40.4,
+   "score": 0.01347
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.0118,
+   "limit_margin_deg": 32.7,
+   "max_twist_deg": 84.3,
+   "score": 0.0118
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.25,
+   "feasible": true,
+   "sigma_min": 0.011,
+   "limit_margin_deg": 42.7,
+   "max_twist_deg": 68.0,
+   "score": 0.011
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.25,
+   "feasible": true,
+   "sigma_min": 0.0093,
+   "limit_margin_deg": 42.7,
+   "max_twist_deg": 61.3,
+   "score": 0.0093
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.25,
+   "feasible": true,
+   "sigma_min": 0.0068,
+   "limit_margin_deg": 26.3,
+   "max_twist_deg": 67.7,
+   "score": 0.0068
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.3,
+   "feasible": true,
+   "sigma_min": 0.0383,
+   "limit_margin_deg": 2.3,
+   "max_twist_deg": 18.6,
+   "score": 0.00587
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.0058,
+   "limit_margin_deg": 37.1,
+   "max_twist_deg": 71.4,
+   "score": 0.0058
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.0055,
+   "limit_margin_deg": 31.6,
+   "max_twist_deg": 101.4,
+   "score": 0.0055
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.2,
+   "feasible": true,
+   "sigma_min": 0.0055,
+   "limit_margin_deg": 46.1,
+   "max_twist_deg": 101.4,
+   "score": 0.0055
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.25,
+   "feasible": true,
+   "sigma_min": 0.0463,
+   "limit_margin_deg": 1.4,
+   "max_twist_deg": 13.4,
+   "score": 0.00432
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.0043,
+   "limit_margin_deg": 24.0,
+   "max_twist_deg": 18.2,
+   "score": 0.0043
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.3,
+   "feasible": true,
+   "sigma_min": 0.0246,
+   "limit_margin_deg": 1.5,
+   "max_twist_deg": 13.4,
+   "score": 0.00246
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.0357,
+   "limit_margin_deg": 0.8,
+   "max_twist_deg": 22.3,
+   "score": 0.0019
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.3,
+   "feasible": true,
+   "sigma_min": 0.0005,
+   "limit_margin_deg": 32.4,
+   "max_twist_deg": 98.3,
+   "score": 0.0005
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.25,
+   "feasible": true,
+   "sigma_min": 0.0005,
+   "limit_margin_deg": 11.2,
+   "max_twist_deg": 98.3,
+   "score": 0.00037
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.3,
+   "feasible": true,
+   "sigma_min": 0.0002,
+   "limit_margin_deg": 43.9,
+   "max_twist_deg": 102.5,
+   "score": 0.0002
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.25,
+   "feasible": true,
+   "sigma_min": 0.0002,
+   "limit_margin_deg": 52.1,
+   "max_twist_deg": 100.8,
+   "score": 0.0002
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.3,
+   "feasible": true,
+   "sigma_min": 0.0001,
+   "limit_margin_deg": 42.8,
+   "max_twist_deg": 106.0,
+   "score": 0.0001
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.0145,
+   "limit_margin_deg": 0.0,
+   "max_twist_deg": 207.8,
+   "score": 0.0
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.15,
+   "feasible": true,
+   "sigma_min": 0.0075,
+   "limit_margin_deg": 0.0,
+   "max_twist_deg": 200.0,
+   "score": 0.0
+  }
+ ],
+ "infeasible": [
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -45,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": -30,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=-0.030 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": 0,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=0.060 v=0.025"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=0.050"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=0.000 v=0.025"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "unreachable at u=0.000 v=0.050"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=0.025"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "unreachable at u=0.030 v=0.025"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=0.030 v=0.025"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 30,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "unreachable at u=-0.030 v=0.025"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=0.000 v=0.050"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=0.030 v=0.025"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 45,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "unreachable at u=0.030 v=0.050"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.25,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "unreachable at u=0.000 v=0.050"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.3,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "unreachable at u=-0.060 v=-0.050"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.35,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.15,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.2,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.25,
+   "feasible": false,
+   "reason": "centre unreachable"
+  },
+  {
+   "blade_tilt_deg": 60,
+   "wall_distance_m": 0.4,
+   "work_centre_z_m": 0.3,
+   "feasible": false,
+   "reason": "centre unreachable"
+  }
+ ]
+}

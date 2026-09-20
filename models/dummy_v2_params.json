@@ -1,0 +1,373 @@
+{
+ "model": "models/dummy_v2.xml",
+ "evidence_level": "L1 (documents + CAD); nothing identified on the real arm yet",
+ "frame": "world = firmware base frame: +X forward, +Z up, J1 axis at origin",
+ "joint_zero": "model q = deg2rad(firmware_deg - HOME), HOME = [0,0,90,0,0,0]",
+ "dh_v2_m": {
+  "L_BS": 0.1265,
+  "D_BS": 0.035,
+  "L_AM": 0.146,
+  "L_FA": 0.117,
+  "D_EW": 0.052,
+  "L_WT": 0.0755
+ },
+ "firmware_limits_deg": {
+  "lower": [
+   -170.0,
+   -75.0,
+   0.0,
+   -180.0,
+   -100.0,
+   -720.0
+  ],
+  "upper": [
+   170.0,
+   90.0,
+   180.0,
+   180.0,
+   120.0,
+   720.0
+  ]
+ },
+ "firmware_reduction": [
+  50,
+  50,
+  50,
+  50,
+  50,
+  5
+ ],
+ "drivetrain": [
+  {
+   "joint": "J1",
+   "motor": "42-34",
+   "belt": null,
+   "reducer": "MINI11-50",
+   "ratio": 50,
+   "motor_holding_at_output_Nm": 14.0,
+   "peak_Nm": 8.3,
+   "continuous_Nm": 3.5,
+   "reflected_inertia_kgm2": 0.0085
+  },
+  {
+   "joint": "J2",
+   "motor": "42-40",
+   "belt": "GT2 20T:20T",
+   "reducer": "MINI11-50",
+   "ratio": 50,
+   "motor_holding_at_output_Nm": 20.0,
+   "peak_Nm": 8.3,
+   "continuous_Nm": 3.5,
+   "reflected_inertia_kgm2": 0.0135
+  },
+  {
+   "joint": "J3",
+   "motor": "42-34",
+   "belt": "GT2 20T:20T",
+   "reducer": "MINI11-50",
+   "ratio": 50,
+   "motor_holding_at_output_Nm": 14.0,
+   "peak_Nm": 8.3,
+   "continuous_Nm": 3.5,
+   "reflected_inertia_kgm2": 0.0085
+  },
+  {
+   "joint": "J4",
+   "motor": "35-28",
+   "belt": null,
+   "reducer": "MINI11-50",
+   "ratio": 50,
+   "motor_holding_at_output_Nm": 6.0,
+   "peak_Nm": 6.0,
+   "continuous_Nm": 3.5,
+   "reflected_inertia_kgm2": 0.0027500000000000003
+  },
+  {
+   "joint": "J5",
+   "motor": "35-20",
+   "belt": "GT2 20T:20T",
+   "reducer": "MINI8-50",
+   "ratio": 50,
+   "motor_holding_at_output_Nm": 3.5,
+   "peak_Nm": 3.3,
+   "continuous_Nm": 1.8,
+   "reflected_inertia_kgm2": 0.0015
+  },
+  {
+   "joint": "J6",
+   "motor": "35-20",
+   "belt": null,
+   "reducer": null,
+   "ratio": 1,
+   "motor_holding_at_output_Nm": 0.07,
+   "peak_Nm": 0.07,
+   "continuous_Nm": 0.07,
+   "reflected_inertia_kgm2": 6e-07
+  }
+ ],
+ "actuator_model": "position servo kp=35 kv=4 (example gains, not identified); forcerange = min(reducer start/stop peak, motor holding x ratio); armature = rotor inertia x ratio^2 (catalog values); damping 0.3 placeholder",
+ "end_effector": {
+  "kind": "bare J6 motor shaft (direct drive, no flange)",
+  "diameter_mm": 5.0,
+  "tip_from_wrist_mm": 73.41,
+  "motor_face_from_wrist_mm": 56.41,
+  "housing_front_from_wrist_mm": 60.41,
+  "length_beyond_motor_face_mm": 17.0,
+  "visible_length_beyond_housing_mm": 13.0,
+  "cad_solids": [
+   250
+  ],
+  "cad_axis_offset_from_firmware_axis_mm": 0.7,
+  "note": "D-cut shaft; the shaft and front cap are one solid in the CAD, split by radius"
+ },
+ "structure_material": "printed",
+ "structure_density_g_cm3": 0.85,
+ "other_densities_g_cm3": {
+  "steel": 7.85,
+  "aluminium": 2.7,
+  "belt": 1.2,
+  "electronics": 2.0,
+  "other_purchased": 2.7
+ },
+ "components": {
+  "J1 MINI11-50": {
+   "spec": "MINI11-50",
+   "kind": "reducer",
+   "mass_kg": 0.4,
+   "n_solids": 16,
+   "cad_volume_cm3": 34.21
+  },
+  "J2 MINI11-50": {
+   "spec": "MINI11-50",
+   "kind": "reducer",
+   "mass_kg": 0.4,
+   "n_solids": 16,
+   "cad_volume_cm3": 34.21
+  },
+  "J3 MINI11-50": {
+   "spec": "MINI11-50",
+   "kind": "reducer",
+   "mass_kg": 0.4,
+   "n_solids": 16,
+   "cad_volume_cm3": 34.21
+  },
+  "J4 MINI11-50": {
+   "spec": "MINI11-50",
+   "kind": "reducer",
+   "mass_kg": 0.4,
+   "n_solids": 16,
+   "cad_volume_cm3": 34.21
+  },
+  "J5 MINI8-50": {
+   "spec": "MINI8-50",
+   "kind": "reducer",
+   "mass_kg": 0.2,
+   "n_solids": 32,
+   "cad_volume_cm3": 16.46
+  },
+  "J1 motor 42-34": {
+   "spec": "42-34",
+   "kind": "motor",
+   "mass_kg": 0.22,
+   "n_solids": 12,
+   "cad_volume_cm3": 45.29
+  },
+  "J2 motor 42-40": {
+   "spec": "42-40",
+   "kind": "motor",
+   "mass_kg": 0.28,
+   "n_solids": 12,
+   "cad_volume_cm3": 50.91
+  },
+  "J3 motor 42-34": {
+   "spec": "42-34",
+   "kind": "motor",
+   "mass_kg": 0.22,
+   "n_solids": 12,
+   "cad_volume_cm3": 45.29
+  },
+  "J4 motor 35-28": {
+   "spec": "35-28",
+   "kind": "motor",
+   "mass_kg": 0.14,
+   "n_solids": 3,
+   "cad_volume_cm3": 35.16
+  },
+  "J5 motor 35-20": {
+   "spec": "35-20",
+   "kind": "motor",
+   "mass_kg": 0.1,
+   "n_solids": 3,
+   "cad_volume_cm3": 27.53
+  },
+  "J6 motor 35-20": {
+   "spec": "35-20",
+   "kind": "motor",
+   "mass_kg": 0.1,
+   "n_solids": 3,
+   "cad_volume_cm3": 27.53
+  }
+ },
+ "links": {
+  "base_link": {
+   "mass_kg": 0.8723,
+   "com_m": [
+    -0.00083,
+    0.0001,
+    0.04631
+   ],
+   "n_solids": 64,
+   "n_triangles": 20973,
+   "n_visual_solids": 27,
+   "mass_by_material_kg": {
+    "component": 0.4888,
+    "electronics": 0.0014,
+    "other_purchased": 0.0121,
+    "steel": 0.0327,
+    "structure": 0.3372
+   },
+   "components": [
+    "J1 MINI11-50",
+    "J1 motor 42-34"
+   ]
+  },
+  "link1": {
+   "mass_kg": 0.3293,
+   "com_m": [
+    0.01688,
+    -0.0058,
+    0.10539
+   ],
+   "n_solids": 28,
+   "n_triangles": 4896,
+   "n_visual_solids": 6,
+   "mass_by_material_kg": {
+    "component": 0.2721,
+    "steel": 0.0121,
+    "structure": 0.0451
+   },
+   "components": [
+    "J1 MINI11-50",
+    "J2 MINI11-50",
+    "J2 motor 42-40"
+   ]
+  },
+  "link2": {
+   "mass_kg": 1.2324,
+   "com_m": [
+    -2e-05,
+    -0.00088,
+    0.07169
+   ],
+   "n_solids": 87,
+   "n_triangles": 29548,
+   "n_visual_solids": 49,
+   "mass_by_material_kg": {
+    "aluminium": 0.0169,
+    "belt": 0.0012,
+    "component": 1.0186,
+    "steel": 0.066,
+    "structure": 0.1296
+   },
+   "components": [
+    "J2 MINI11-50",
+    "J2 motor 42-40",
+    "J3 MINI11-50",
+    "J3 motor 42-34"
+   ]
+  },
+  "link3": {
+   "mass_kg": 0.6259,
+   "com_m": [
+    -0.01507,
+    0.00253,
+    0.03886
+   ],
+   "n_solids": 46,
+   "n_triangles": 11873,
+   "n_visual_solids": 16,
+   "mass_by_material_kg": {
+    "component": 0.5493,
+    "steel": 0.0279,
+    "structure": 0.0486
+   },
+   "components": [
+    "J3 MINI11-50",
+    "J4 MINI11-50",
+    "J4 motor 35-28"
+   ]
+  },
+  "link4": {
+   "mass_kg": 0.4699,
+   "com_m": [
+    0.06231,
+    0.00067,
+    0.00021
+   ],
+   "n_solids": 73,
+   "n_triangles": 15321,
+   "n_visual_solids": 23,
+   "mass_by_material_kg": {
+    "aluminium": 0.0084,
+    "belt": 0.0007,
+    "component": 0.3648,
+    "steel": 0.0356,
+    "structure": 0.0603
+   },
+   "components": [
+    "J4 MINI11-50",
+    "J5 MINI8-50",
+    "J5 motor 35-20"
+   ]
+  },
+  "link5": {
+   "mass_kg": 0.1979,
+   "com_m": [
+    0.026,
+    -0.00644,
+    0.00023
+   ],
+   "n_solids": 20,
+   "n_triangles": 6071,
+   "n_visual_solids": 11,
+   "mass_by_material_kg": {
+    "component": 0.1663,
+    "steel": 0.0119,
+    "structure": 0.0197
+   },
+   "components": [
+    "J5 MINI8-50",
+    "J6 motor 35-20"
+   ]
+  },
+  "link6": {
+   "mass_kg": 0.00262,
+   "com_m": [
+    0.06491,
+    0,
+    0
+   ],
+   "n_solids": 0,
+   "n_triangles": 54,
+   "note": "bare J6 shaft, steel cylinder approximation"
+  }
+ },
+ "total_mass_kg": 3.73,
+ "moving_mass_kg": 2.858,
+ "conflicts": [
+  "J6 减速比：V2 固件参数截图写 5，但装配体里 J6 是 35-20 电机直驱、没有减速器。若固件按 5 换算而实际直驱，J6 实际转角可能与指令角相差 5 倍。M3 先用 ≤5° 小角度测 J6。",
+  "电机长度：BOM 写 3 个 42-40、2 个 35-28、1 个 35-20（J6）；装配体里是 J1/J3 为 42-34、J2 为 42-40，J4 为 35-28、J5/J6 为 35-20。以实机铭牌为准。",
+  "资料包里的固件源码 dummy_robot.cpp 仍是原版参数（减速比 30、DH 0.109/0.115/0.072），与 V2 截图不同。"
+ ],
+ "cad_alignment": {
+  "cad_pose_firmware_deg": [
+   0.0,
+   -75.0,
+   180.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "cad_to_firmware": "x=-(y_cad-35.0), y=x_cad+565.0, z=z_cad+16.5 (mm), from reducer centres"
+ }
+}

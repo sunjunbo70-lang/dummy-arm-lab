@@ -1,0 +1,65 @@
+<mujoco model="dummy_v2_FIRMWARE_DH_CAD_MASS_ESTIMATES">
+  <!-- 由 tools/modeling/build_dummy_v2.py 生成，请勿手改。运动学 = V2 固件 DH；质量/惯量 = CAD 体积×估计密度 + 资料质量；执行器 = 资料额定值推算。均未经实机辨识。 -->
+  <compiler angle="radian" meshdir="meshes_v2" autolimits="true" boundinertia="1e-7"/>
+  <option timestep="0.002" integrator="implicitfast"/>
+  <visual><global offwidth="960" offheight="720"/></visual>
+  <default><geom contype="0" conaffinity="0"/></default>
+  <asset>
+    <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link1" file="link1.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link2" file="link2.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link3" file="link3.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link4" file="link4.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link5" file="link5.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link6" file="link6.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+  </asset>
+  <worldbody>
+    <light pos="0.3 -0.6 1.2" dir="-0.2 0.5 -1" diffuse="0.8 0.8 0.8"/>
+    <geom name="floor" type="plane" size="1 1 0.01" pos="0 0 -0.0075" rgba="0.18 0.20 0.24 1"/>
+    <body name="base_link" gravcomp="1">
+      <inertial pos="-0.000831234 0.000101811 0.0463087" mass="0.872292" fullinertia="0.000988263 0.00105749 0.000941302 6.51216e-06 -1.83224e-05 1.45738e-06"/>
+      <geom name="base_link_visual" type="mesh" mesh="base_link" rgba="0.30 0.32 0.36 1" density="0" group="1"/>
+      <body name="link1" pos="0 0 0" gravcomp="1">
+        <joint name="Joint1" axis="0 0 1" range="-2.967060 2.967060" armature="0.0085" damping="0.3" actuatorfrcrange="-8.3 8.3"/>
+        <inertial pos="0.0168766 -0.00579915 0.105385" mass="0.329271" fullinertia="0.000193963 0.000288371 0.000165512 3.1428e-05 -0.000116228 3.60092e-05"/>
+        <geom name="link1_visual" type="mesh" mesh="link1" rgba="0.93 0.93 0.95 1" density="0" group="1"/>
+        <body name="link2" pos="0.035 -7.74589e-18 0.1265" gravcomp="1">
+          <joint name="Joint2" axis="0 1 0" range="-1.308997 1.570796" armature="0.0135" damping="0.3" actuatorfrcrange="-8.3 8.3"/>
+          <inertial pos="-1.90944e-05 -0.000875645 0.0716854" mass="1.23235" fullinertia="0.00419905 0.00413882 0.000463347 3.09816e-07 -1.83325e-06 0.000357211"/>
+          <geom name="link2_visual" type="mesh" mesh="link2" rgba="0.93 0.93 0.95 1" density="0" group="1"/>
+          <body name="link3" pos="6.93889e-18 -8.93992e-18 0.146" gravcomp="1">
+            <joint name="Joint3" axis="0 1 0" range="-1.570796 1.570796" armature="0.0085" damping="0.3" actuatorfrcrange="-8.3 8.3"/>
+            <inertial pos="-0.0150739 0.00252776 0.038862" mass="0.625897" fullinertia="0.000486841 0.000592002 0.000283291 -2.89538e-05 0.00012542 7.24856e-05"/>
+            <geom name="link3_visual" type="mesh" mesh="link3" rgba="0.93 0.93 0.95 1" density="0" group="1"/>
+            <body name="link4" pos="0 -3.18408e-18 0.052" gravcomp="1">
+              <joint name="Joint4" axis="1 0 0" range="-3.141593 3.141593" armature="0.00275" damping="0.3" actuatorfrcrange="-6 6"/>
+              <inertial pos="0.0623124 0.000673193 0.000206517" mass="0.469893" fullinertia="9.04331e-05 0.00100944 0.00101398 -1.89841e-05 1.05834e-07 5.15426e-09"/>
+              <geom name="link4_visual" type="mesh" mesh="link4" rgba="0.93 0.93 0.95 1" density="0" group="1"/>
+              <body name="link5" pos="0.117 7.16418e-18 0" gravcomp="1">
+                <joint name="Joint5" axis="0 1 0" range="-1.745329 2.094395" armature="0.0015" damping="0.3" actuatorfrcrange="-3.3 3.3"/>
+                <inertial pos="0.0260004 -0.00643627 0.000227449" mass="0.197877" fullinertia="4.01456e-05 0.000124267 0.000132042 -2.58088e-05 4.20306e-08 -2.60225e-07"/>
+                <geom name="link5_visual" type="mesh" mesh="link5" rgba="0.93 0.93 0.95 1" density="0" group="1"/>
+                <body name="link6" pos="0 0 0" gravcomp="1">
+                  <joint name="Joint6" axis="1 0 0" range="-12.566371 12.566371" armature="6e-07" damping="0.3" actuatorfrcrange="-0.07 0.07"/>
+                  <inertial pos="0.0649063 0 0" mass="0.00262028" fullinertia="8.18839e-09 6.71994e-08 6.71994e-08 0 0 0"/>
+                  <geom name="link6_visual" type="mesh" mesh="link6" rgba="0.75 0.75 0.78 1" density="0" group="1"/>
+                  <!-- J6 裸轴：CAD 量得 Φ5.0 mm，轴端距腕心 73.4 mm（固件 L_WT = 75.5 mm） -->
+                  <site name="shaft_tip" pos="0.07341 0 0" size="0.003" rgba="1 0.5 0 1"/>
+                  <site name="fw_end" pos="0.0755 4.62304e-18 0" quat="0.707107 0 0.707107 4.32978e-17" size="0.004" rgba="0 0.8 0.2 1"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="servo1" joint="Joint1" kp="35" kv="4" ctrlrange="-2.967060 2.967060" forcerange="-8.3 8.3"/>
+    <position name="servo2" joint="Joint2" kp="35" kv="4" ctrlrange="-1.308997 1.570796" forcerange="-8.3 8.3"/>
+    <position name="servo3" joint="Joint3" kp="35" kv="4" ctrlrange="-1.570796 1.570796" forcerange="-8.3 8.3"/>
+    <position name="servo4" joint="Joint4" kp="35" kv="4" ctrlrange="-3.141593 3.141593" forcerange="-6 6"/>
+    <position name="servo5" joint="Joint5" kp="35" kv="4" ctrlrange="-1.745329 2.094395" forcerange="-3.3 3.3"/>
+    <position name="servo6" joint="Joint6" kp="35" kv="4" ctrlrange="-12.566371 12.566371" forcerange="-0.07 0.07"/>
+  </actuator>
+</mujoco>

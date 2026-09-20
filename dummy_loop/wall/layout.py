@@ -6,15 +6,15 @@
   sigma_min        位置+法线 5 维任务雅可比的最小奇异值（越大越远离奇异；单位 m/rad）
   limit_margin_deg 离最近关节限位的角度
   max_twist_deg    J1/J4/J6 的最大绝对值（腕部扭转，实机上意味着线缆缠绕）
-L1 软件分析。关节范围是假设值，M3 实测限位后应重跑。
+L1 软件分析。关节范围用 V2 固件限位（候选值），M3 实测限位后应重跑。
 """
 import itertools
 import numpy as np
 import mujoco
-from .scene import SceneConfig, build_scene, wall_frame, tool_tilt_matrix
+from .scene import SceneConfig, build_scene, wall_frame, tool_frame_matrix, joint_limits
 from .controller import EEController, WallFrame
 
-NATURAL_PLANE_U = 0.018   # 模型零位时 TCP 的横向位置（连杆横向偏置），工作区以此为中心
+NATURAL_PLANE_U = 0.0     # V2 固件 DH 各连杆共面（无横向偏置），工作区以 u=0 为中心
 
 
 def conditioning(ctrl, q):
@@ -27,9 +27,9 @@ def conditioning(ctrl, q):
 
 
 def evaluate(cfg: SceneConfig, half=(0.06, 0.05), grid=5):
-    lim = np.deg2rad(cfg.joint_range_deg)
+    lo, hi = joint_limits(cfg)
     m, _ = build_scene(cfg)
-    c = EEController(m, WallFrame(*wall_frame(cfg)), [-lim] * 6, [lim] * 6, tool_R=tool_tilt_matrix(cfg))
+    c = EEController(m, WallFrame(*wall_frame(cfg)), lo, hi, tool_R=tool_frame_matrix(cfg))
     uc = NATURAL_PLANE_U
     try:
         c.reset([uc, 0, 0], 0, np.zeros(6))
@@ -53,17 +53,17 @@ def evaluate(cfg: SceneConfig, half=(0.06, 0.05), grid=5):
                     break
             q = c.q_cmd
             smin = min(smin, conditioning(c, q))
-            margin = min(margin, float(np.degrees(lim - np.abs(q)).min()))
+            margin = min(margin, float(np.degrees(np.minimum(q - lo, hi - q)).min()))
             twist = max(twist, float(np.degrees(np.abs(q[[0, 3, 5]])).max()))
     return {'feasible': True, 'sigma_min': round(smin, 4), 'limit_margin_deg': round(margin, 1),
             'max_twist_deg': round(twist, 1)}
 
 
 def search(tilts=(-45, -30, 0, 30, 45, 60), distances=(0.25, 0.30, 0.35, 0.40),
-           heights=(0.15, 0.20, 0.25, 0.30), joint_range_deg=90.0, half=(0.06, 0.05)):
+           heights=(0.15, 0.20, 0.25, 0.30), joint_limit_cap_deg=None, half=(0.06, 0.05)):
     rows = []
     for tilt, D, z in itertools.product(tilts, distances, heights):
-        cfg = SceneConfig(joint_range_deg=joint_range_deg, blade_tilt_deg=tilt, wall_distance=D, wall_center_z=z)
+        cfg = SceneConfig(joint_limit_cap_deg=joint_limit_cap_deg, blade_tilt_deg=tilt, wall_distance=D, wall_center_z=z)
         r = evaluate(cfg, half)
         rows.append({'blade_tilt_deg': tilt, 'wall_distance_m': D, 'work_centre_z_m': z, **r})
     feas = [r for r in rows if r['feasible']]
@@ -71,6 +71,6 @@ def search(tilts=(-45, -30, 0, 30, 45, 60), distances=(0.25, 0.30, 0.35, 0.40),
     for r in feas:
         r['score'] = round(r['sigma_min'] * min(1.0, r['limit_margin_deg'] / 15.0), 5)
     feas.sort(key=lambda r: r['score'], reverse=True)
-    return {'joint_range_deg': joint_range_deg, 'patch_half_size_m': list(half),
+    return {'joint_limits': 'V2 firmware' + ('' if joint_limit_cap_deg is None else f' capped at +/-{joint_limit_cap_deg} deg'), 'patch_half_size_m': list(half),
             'n_candidates': len(rows), 'n_feasible': len(feas), 'ranked': feas,
             'infeasible': [r for r in rows if not r['feasible']]}

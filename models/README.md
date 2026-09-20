@@ -46,3 +46,16 @@ This is an auk reference, not a calibrated Dummy V2 digital twin. Joint zero/map
 
 恢复完整外观：从原开发机复制 `models/studio_meshes/` 整个文件夹到本仓库同一位置，然后运行
 `python tools/maintenance/verify_studio_meshes.py`，21 个文件的 SHA-256 与 `studio_provenance.json` 全部一致即可。
+
+## Dummy V2 模型（2026-09-20，当前仿真与上位机画面使用）
+
+`dummy_v2.xml` + `meshes_v2/`（7 个 STL，约 4.3 MB）+ `dummy_v2_params.json` + `v2_provenance.json`，
+由 `tools/modeling/build_dummy_v2.py` 从 V2 装配体 STEP 生成，**不要手改**。
+
+- 运动学严格等于 V2 固件 DH（`tests/test_dummy_v2_model.py` 逐位核对）；模型零位 = 固件 HOME；
+  世界系 = 固件基座系（+X 朝前）。上位机画面 `q = deg2rad(固件角 − HOME)`，不再需要符号表。
+- 末端是 J6 电机裸轴（Φ5，轴端距腕心 73.4 mm），没有法兰；站点 `shaft_tip`、`fw_end`。
+- 限位、执行器上限、反射惯量来自 V2 资料；质量是 CAD 体积 × 估计密度 + 资料质量。全部是候选值。
+
+详见 `docs/hardware/DUMMY_V2.md`。`dummy_reference.xml`（上面的 auk 参考模型）保持不变，
+仅供 BC 冒烟闭环复现历史数字。

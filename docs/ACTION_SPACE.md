@@ -9,11 +9,13 @@
 
 | 名称 | 定义 | 单位 |
 | --- | --- | --- |
-| 规范关节坐标 canonical | `canonical = sign × (firmware − zero)`，见 `dummy_loop/__main__.py` jog 路径与 `configs/`。仿真模型 `models/dummy_reference.xml` 的关节角即规范坐标。**sign 与 zero 在 M3 标定前未知** | rad |
-| 世界系 | 原点在底座，+Z 向上；模型零位时前臂水平指向 −Y | m |
+| 规范关节坐标 canonical | `canonical = sign × (firmware − zero)`，见 `dummy_loop/__main__.py` jog 路径与 `configs/`。**sign 与 zero 在 M3 标定前未知** | rad |
+| V2 模型关节坐标（2026-09-20 起墙面仿真使用） | `q = deg2rad(firmware − HOME)`，HOME = (0,0,90,0,0,0)，正方向与固件相同。这是按 V2 固件资料得到的**候选** canonical（sign 全为 +1、zero = HOME），M3 实测确认后才能写入 `configs/` | rad |
+| 世界系 | = 固件基座系：原点在 J1 轴线上，+X 朝前，+Z 向上；模型零位时小臂水平朝前（+X） | m |
 | 墙面系 W | 原点在墙面上的工作区参考点；列向量 u 沿墙水平、v 沿墙向上、n 指向墙内 | m |
-| 刀面系 | x = 刀宽方向，y = 刀面法线（外伸方向），z = x × y。相对 link6 固定旋转 `blade_tilt_deg`（绕 x） | — |
-| TCP | 刀面中心（弹簧未压缩时）。距法兰端面 `tool_length` | m |
+| 墙面系名义朝向 | n = +X（墙在机械臂正前方），u = +Y，v = +Z | — |
+| 刀面系 | x = 刀宽方向，y = 刀面法线（沿 J6 轴外伸），z = x × y。相对 link6：先经安装旋转 `MOUNT_R`（安装系 +Y = link6 +X），再绕 x 转 `blade_tilt_deg` | — |
+| TCP | 刀面中心（弹簧未压缩时）。距 **J6 裸轴端面** `tool_length`（2026-09-20 前的参考模型是法兰端面） | m |
 
 **psi = 0 的约定**：刀宽方向 = −u（与模型零位时 J6 的自然朝向一致，不需要 J6 转 180°）。刀宽仍沿水平方向。
 

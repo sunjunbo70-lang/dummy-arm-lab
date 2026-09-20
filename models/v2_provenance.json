@@ -1,0 +1,20 @@
+{
+ "source_step": "v2asm.step",
+ "source_step_sha256": "7099178daac19d822df14ca0495921032a858feabcb8ffb8678c8b06c68b5682",
+ "archive": "1.Dummy V2任同学整理.rar (see THIRD_PARTY.md)",
+ "license": "GPL-3.0 (archive LICENSE); archive README: 仅用于学习，禁止一切商用行为",
+ "generator": "tools/modeling/build_dummy_v2.py",
+ "mesh_tolerance_mm": 0.8,
+ "mesh_angle_rad": 0.8,
+ "decimate_mm": 1.2,
+ "files": {
+  "dummy_v2.xml": "9d5d56001e15ec1e242254f9541e943ec7635097e33e8b760cc23cae844aabb1",
+  "meshes_v2/base_link.stl": "3e48cc113787576384a63d80181f9b469ed1855f052a715acee18a4c1c8db1fd",
+  "meshes_v2/link1.stl": "3d8b4d7243c5cc5a2d65ea9477dc00c728e992d094fbd9ffe32a32fe949459a0",
+  "meshes_v2/link2.stl": "9231d180b59d8e772b78bc53115c50e011931111c94061fa06790e544762b4cc",
+  "meshes_v2/link3.stl": "73847a63ed96ccb98294ef50a9d0e2c8ecc7d45065cdd041359af92fdf712c57",
+  "meshes_v2/link4.stl": "5e0a8b18eddf86be0b665646929c4377fd520e70fcaad2c6b451cce54d7ea1af",
+  "meshes_v2/link5.stl": "fee4dddd59bcba90a6a739a9a6709b9a2b5982e63513c0c2aca68df25c547db7",
+  "meshes_v2/link6.stl": "c0d9f40a4f3c2ded5ddc55cb6c12dac3c0ab50a17f73a467ec797be48d7b4ae9"
+ }
+}

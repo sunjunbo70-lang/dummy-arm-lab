@@ -23,7 +23,8 @@ def main(argv=None):
     sub = ap.add_subparsers(dest='cmd', required=True)
     s = sub.add_parser('scene'); s.add_argument('--out', type=Path, default=Path('outputs/wall/scene.xml'))
     s = sub.add_parser('layout'); s.add_argument('--out', type=Path, default=Path('outputs/wall/layout.json'))
-    s.add_argument('--joint-range-deg', type=float, default=90.0)
+    s.add_argument('--joint-limit-cap-deg', type=float, default=None,
+                   help='在 V2 固件限位之外再加的对称保守包络（度）；默认不加')
     for name in ('demo', 'collect'):
         s = sub.add_parser(name)
         s.add_argument('--probe', action='store_true', help='开工前探触墙面并修正墙面坐标系')
@@ -47,7 +48,7 @@ def main(argv=None):
         emit({'written': str(export_xml(SceneConfig(), a.out))})
     elif a.cmd == 'layout':
         from .layout import search
-        r = search(joint_range_deg=a.joint_range_deg)
+        r = search(joint_limit_cap_deg=a.joint_limit_cap_deg)
         a.out.parent.mkdir(parents=True, exist_ok=True)
         a.out.write_text(json.dumps(r, indent=1, ensure_ascii=False), encoding='utf-8')
         emit({'n_feasible': r['n_feasible'], 'best': r['ranked'][:3], 'written': str(a.out)})
@@ -61,8 +62,8 @@ def main(argv=None):
         if a.viewer:
             import mujoco.viewer
             viewer = mujoco.viewer.launch_passive(env.model, env.data)
-            viewer.cam.lookat[:] = [0, -0.25, 0.2]; viewer.cam.distance = 0.9
-            viewer.cam.azimuth = 150; viewer.cam.elevation = -15
+            viewer.cam.lookat[:] = [0.22, 0, 0.2]; viewer.cam.distance = 0.9
+            viewer.cam.azimuth = -130; viewer.cam.elevation = -15
 
             def on_step(obs, action, info):
                 t = time.monotonic(); viewer.sync()

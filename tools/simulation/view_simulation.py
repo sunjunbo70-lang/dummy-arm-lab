@@ -1,4 +1,8 @@
-"""Interactive reference simulation. Never imports or connects a robot transport."""
+"""Interactive simulation of the Dummy V2 model (default). Never imports or connects a robot transport.
+
+Model joint zero = firmware HOME (0,0,90,0,0,0); q = deg2rad(firmware - HOME).
+--studio shows the (non-distributed) DummyStudio visual assembly instead, if present.
+"""
 from pathlib import Path
 import sys
 import time
@@ -10,7 +14,7 @@ import numpy as np
 import mujoco.viewer
 from dummy_loop.core import Guard
 from dummy_loop.policy import LinearPolicy
-from dummy_loop.sim_backend import SimRobot, studio_meshes_available
+from dummy_loop.sim_backend import SimRobot, studio_meshes_available, V2_MODEL
 
 
 def cycle_goals():
@@ -40,12 +44,12 @@ def main():
     args = parser.parse_args()
     if args.studio and not studio_meshes_available():
         print('NOTICE: Studio 外观网格 models/studio_meshes/ 不在本机（不随仓库分发），'
-              '改用参考模型 models/dummy_reference.xml 显示。外观不同，仍是未标定的纯仿真。'
+              '改用 V2 模型 models/dummy_v2.xml 显示（固件 DH 运动学，质量为估计值）。'
               ' 恢复方法见 models/README.md。', flush=True)
         args.studio = False
     diagnostic = args.manual or args.cycle or args.simultaneous
     policy = None if diagnostic else LinearPolicy(root / 'outputs/policy.npz')
-    robot = SimRobot(root/'models/dummy_studio_visual.xml',dt=.05) if args.studio else SimRobot(dt=.05)
+    robot = SimRobot(root/'models/dummy_studio_visual.xml',dt=.05) if args.studio else SimRobot(V2_MODEL,dt=.05)
     robot.connect()
     guard = Guard([-0.7]*6, [0.7]*6, [0.04]*6, [0.8]*6)
     goals = np.array([
@@ -68,7 +72,7 @@ def main():
         with command_lock:
             commands.append(key)
 
-    print('Reference simulation only. No real robot connection.', flush=True)
+    print('Dummy V2 SIMULATION only (firmware-DH kinematics, estimated masses). No real robot connection.', flush=True)
     print('SPACE pause/resume; N next target; R reset; close window to exit.', flush=True)
     paused = args.studio and not diagnostic
     selected = 0
@@ -84,9 +88,9 @@ def main():
     index, ticks = 0, 0
     with mujoco.viewer.launch_passive(robot.model, robot.data, key_callback=key_callback) as viewer:
         with viewer.lock():
-            viewer.cam.lookat[:] = [0, 0, .20]
+            viewer.cam.lookat[:] = [.06, 0, .20]
             viewer.cam.distance = .90
-            viewer.cam.azimuth = 135
+            viewer.cam.azimuth = -135
             viewer.cam.elevation = -20
         print('VIEWER_READY', flush=True)
         while viewer.is_running():

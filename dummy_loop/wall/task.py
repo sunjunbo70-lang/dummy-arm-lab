@@ -14,7 +14,7 @@ import time
 import numpy as np
 import mujoco
 
-from .scene import SceneConfig, build_scene, wall_frame, tool_tilt_matrix
+from .scene import SceneConfig, build_scene, wall_frame, tool_frame_matrix, joint_limits
 from .controller import ActionSpec, EEController, WallFrame
 from .errors import Perturbation
 from .layout import NATURAL_PLANE_U
@@ -57,10 +57,9 @@ class WallTask:
         self.n_sub = int(round(action_spec.dt / self.model.opt.timestep))
         # 控制器只知道名义场景
         nominal_model, _ = build_scene(self.scene)
-        lim = np.deg2rad(self.scene.joint_range_deg)
-        self.lo, self.hi = -lim * np.ones(6), lim * np.ones(6)
+        self.lo, self.hi = joint_limits(self.scene)
         self.ctrl = EEController(nominal_model, WallFrame(*wall_frame(self.scene)), self.lo, self.hi,
-                                 action_spec, tool_R=tool_tilt_matrix(self.scene))
+                                 action_spec, tool_R=tool_frame_matrix(self.scene))
         self.true_frame = WallFrame(*wall_frame(self.true_scene))
         ids = lambda t, n: mujoco.mj_name2id(self.model, t, n)
         self.blade_geom = ids(mujoco.mjtObj.mjOBJ_GEOM, 'blade_geom')
@@ -167,7 +166,12 @@ class WallTask:
                 'rate_limited_steps': s['rate_limited'], 'contact_steps': s['contact_steps'], 'steps': s['steps']}
 
     def describe(self):
-        return {'scene_nominal': self.scene.to_dict(), 'scene_nominal_digest': self.scene.digest(),
+        import hashlib
+        from .scene import ARM_MODEL
+        return {'arm_model': ARM_MODEL.relative_to(ARM_MODEL.parents[1]).as_posix(),
+                'arm_model_sha256': hashlib.sha256(ARM_MODEL.read_bytes()).hexdigest(),
+                'joint_convention': 'model q = deg2rad(firmware_deg - HOME[0,0,90,0,0,0]), firmware direction',
+                'scene_nominal': self.scene.to_dict(), 'scene_nominal_digest': self.scene.digest(),
                 'scene_provenance': self.scene.provenance(), 'task': self.task.to_dict(),
                 'perturbation': self.pert.to_dict(), 'action_spec': self.spec.to_dict(), 'obs_spec': OBS_SPEC,
                 'nominal_force_at_target_N': round(self.scene.spring_preload + self.scene.spring_k * self.task.target_compression, 2)}

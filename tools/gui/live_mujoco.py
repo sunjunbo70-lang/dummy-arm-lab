@@ -13,31 +13,26 @@ from PIL import Image,ImageTk
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT))
 from dummy_loop.live_control import LiveController,LOWER,UPPER,HOME
-from dummy_loop.sim_backend import SimRobot, studio_meshes_available, STUDIO_TO_REFERENCE_SIGN
+from dummy_loop.sim_backend import SimRobot, V2_MODEL
 
 
 class Scene:
     def __init__(self):
-        # Studio 外观网格不随仓库分发。缺失时退回参考模型，并按关节轴比对得到的符号换算，
-        # 保证每个关节在画面里的转动方向与 Studio 模型一致（外形、尺寸仍不同）。
-        self.fallback=not studio_meshes_available()
-        if self.fallback:
-            self.model=SimRobot(ROOT/'models/dummy_reference.xml').model
-            self.sign=STUDIO_TO_REFERENCE_SIGN.copy()
-        else:
-            self.model=SimRobot(ROOT/'models/dummy_studio_visual.xml').model
-            self.sign=np.ones(6)
+        # Dummy V2 模型：运动学与固件 V2 DH 完全一致，模型零位 = 固件 HOME，正方向与固件相同，
+        # 所以固件角度直接换算即可显示，不需要任何符号表（tests/test_dummy_v2_model.py 核对）。
+        self.model=SimRobot(V2_MODEL).model
+        self.sign=np.ones(6); self.fallback=False
         self.data=mujoco.MjData(self.model)
         # Display only: forward kinematics, no dynamics or simulated force output.
         self.model.jnt_limited[:]=0
         self.ids=[self.model.jnt_qposadr[mujoco.mj_name2id(self.model,mujoco.mjtObj.mjOBJ_JOINT,f'Joint{i}')] for i in range(1,7)]
         self.renderer=mujoco.Renderer(self.model,height=430,width=540)
         self.camera=mujoco.MjvCamera(); mujoco.mjv_defaultCamera(self.camera)
-        self.camera.lookat[:]=[0,-.06,.19]; self.camera.distance=.85
-        self.camera.azimuth=135; self.camera.elevation=-18
+        self.camera.lookat[:]=[.06,0,.19]; self.camera.distance=.85
+        self.camera.azimuth=-135; self.camera.elevation=-18
 
     def frame(self,firmware_deg):
-        # Studio-derived home-relative mapping; never used for hardware targets.
+        # V2 模型：q = deg2rad(固件角 - HOME)。仅用于显示，从不用于生成硬件目标。
         self.data.qpos[self.ids]=self.sign*np.deg2rad(np.asarray(firmware_deg)-HOME)
         mujoco.mj_forward(self.model,self.data)
         self.renderer.update_scene(self.data,camera=self.camera)

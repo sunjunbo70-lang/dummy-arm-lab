@@ -1,0 +1,86 @@
+{
+  "experiment_id": "2026-09-20_v2_model",
+  "status": "completed",
+  "purpose": "把仿真换成用户实机对应的 Dummy V2（固件 DH、V2 限位与传动、J6 裸轴末端），并用 V2 模型重跑布局、误差/补偿与静力矩分析",
+  "source_version": "d339220 + V2 conversion (uncommitted at run time)",
+  "command": [
+    "python tools/modeling/build_dummy_v2.py --step <archive>/Dummy-B v2装配体.step",
+    "python -m unittest discover -s tests",
+    "python -m dummy_loop.wall layout",
+    "python -m dummy_loop.wall study --random 30",
+    "python -m dummy_loop.wall collect --episodes 4 --random-scale 1 --probe --servo --seed 100",
+    "python -m dummy_loop.wall replay <each episode>",
+    "python -m dummy_loop.wall scene",
+    "python -m dummy_loop.wall render",
+    "python tools/simulation/static_joint_torque.py",
+    "python tools/simulation/plot_wall_study.py raw/study/sensitivity.json"
+  ],
+  "environment_file": null,
+  "config_file": "raw/scene/wall_scene.config.json",
+  "seed": 0,
+  "data_split": null,
+  "hardware": {
+    "robot_connected": false,
+    "runner": "cloud sandbox, Linux, Python 3.11, numpy 2.4.4, mujoco 3.13.0, gmsh 4.15.2, cadquery-ocp"
+  },
+  "units": "coverage fraction; force N; torque N*m; distance m",
+  "metrics": {
+    "tests_passed": 75,
+    "tests_skipped": 3,
+    "fk_vs_firmware_max_error": "< 1e-9 m / < 1e-9 (rotation), 302 poses",
+    "model_total_mass_kg": 3.73,
+    "moving_mass_kg": 2.858,
+    "bare_shaft": {
+      "diameter_mm": 5.0,
+      "tip_from_wrist_mm": 73.41,
+      "visible_length_beyond_housing_mm": 13.0
+    },
+    "layout_best": {
+      "blade_tilt_deg": 0,
+      "wall_distance_m": 0.4,
+      "work_centre_z_m": 0.15,
+      "feasible": true,
+      "sigma_min": 0.035,
+      "limit_margin_deg": 19.1,
+      "max_twist_deg": 20.0,
+      "score": 0.035
+    },
+    "layout_feasible": "27/96",
+    "randomized_coverage_mean": {
+      "none": 0.934,
+      "servo": 0.944,
+      "probe": 0.98,
+      "probe+servo": 0.98
+    },
+    "randomized_coverage_worst": {
+      "none": 0.35,
+      "servo": 0.76,
+      "probe": 0.917,
+      "probe+servo": 0.925
+    },
+    "replay_identical": "4/4"
+  },
+  "artifacts": [
+    "raw/layout.json",
+    "raw/study/sensitivity.json",
+    "raw/study/sensitivity.png",
+    "raw/torque/static_torque.json",
+    "raw/episodes/",
+    "raw/replay_check.txt",
+    "raw/scene/wall_scene.xml",
+    "raw/camera/rgb.png",
+    "raw/camera/depth.png",
+    "raw/v2_poses.png",
+    "raw/gui_home_fold.png",
+    "../../models/dummy_v2_params.json"
+  ],
+  "limitations": [
+    "All V2 parameters are documents/CAD values (evidence L1), ranked 4th in the hardware source order; candidates until M3",
+    "Masses: CAD volume x assumed density (printed 0.85 g/cm3) + datasheet/catalog masses; not weighed",
+    "Motor mass/rotor inertia/holding torque are typical catalog values for the frame size, not the installed motors",
+    "Conflicts unresolved: J6 reduction 5 (firmware screenshot) vs direct drive (CAD); motor lengths BOM vs CAD",
+    "Servo gains, damping, friction not identified; ideal gravity compensation",
+    "Wall episodes recorded before this switch (reference model) cannot be replayed on the current code"
+  ],
+  "hardware_motion": false
+}

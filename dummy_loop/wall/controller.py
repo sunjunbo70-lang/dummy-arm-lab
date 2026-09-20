@@ -53,7 +53,7 @@ class WallFrame:
     def tool_rotation(self, psi):
         """刀面目标姿态：列 = (刀宽方向, 刀面法线=墙法线, 两者叉积)，对应刀面系 (x, y, z)。
 
-        psi=0 对应模型零位时 J6 的自然朝向（link6 局部 x 指向 -u）。刀宽仍沿 u 方向，
+        psi=0 对应模型零位（固件 HOME）时 J6 的自然朝向：刀宽方向指向 -u。刀宽仍沿 u 方向，
         只是正负号与零位一致，这样 psi=0 不需要 J6 转 180°。
         """
         u, v, n = self.R[:, 0], self.R[:, 1], self.R[:, 2]
@@ -67,8 +67,8 @@ class WallFrame:
 class ToolIK:
     """刀面位姿逆解：位置 3 维 + 刀面法线 2 维为主约束，刀面绕法线的转角（roll）只做弱约束。
 
-    为什么 roll 只做弱约束：参考模型分析（docs/SIMULATION.md「腕部奇异」）表明，
-    同时锁死刀面法线和 roll 对这台臂是 6 约束对 6 关节，在 ±90° 关节范围内沿墙水平移动
+    为什么 roll 只做弱约束：参考模型与 V2 模型的分析（docs/SIMULATION.md「腕部奇异」）都表明，
+    同时锁死刀面法线和 roll 对这台臂是 6 约束对 6 关节，沿墙水平移动
     会逼 J4/J6 拧到 ±90° 附近并频繁不可解。放开 roll 后多出 1 个冗余自由度，
     用来远离腕部奇异和关节限位。抹涂对刀面 roll 不敏感，覆盖计算使用实际 roll。
 
@@ -80,11 +80,13 @@ class ToolIK:
     # 关节运动代价：J1、J4、J6（绕自身轴转的关节）更贵，优先用肩、肘、腕俯仰。
     JOINT_COST = np.array([2.0, 1.0, 1.0, 4.0, 1.0, 4.0])
 
-    def __init__(self, model, lo, hi, tool_R=None):
+    def __init__(self, model, lo, hi, tool_R=None, link='link6'):
         self.m = model; self.d = mujoco.MjData(model)
         self.tool_R = np.eye(3) if tool_R is None else np.asarray(tool_R, float)   # 刀面系相对 link6
         self.site = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_SITE, 'tcp')
-        self.body = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, 'link6_1_1')
+        self.body = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, link)
+        if self.body < 0:
+            raise ValueError(f'model has no body {link!r}')
         self.lo, self.hi = np.asarray(lo, float), np.asarray(hi, float)
         self.jp = np.zeros((3, model.nv)); self.jr = np.zeros((3, model.nv))
 

@@ -6,6 +6,10 @@ from .core import Observation, six
 
 MODEL = Path(__file__).resolve().parents[1] / 'models' / 'dummy_reference.xml'
 STUDIO_MODEL = MODEL.parent / 'dummy_studio_visual.xml'
+# 用户实机对应的 V2 模型：运动学 = V2 固件 DH，零位 = 固件 HOME，末端 = J6 裸轴。
+# 墙面仿真、上位机画面、查看器都用它。MODEL（参考模型）只保留给 BC 冒烟闭环，
+# 以保证已冻结的历史数字仍可复现。见 docs/hardware/DUMMY_V2.md。
+V2_MODEL = MODEL.parent / 'dummy_v2.xml'
 # Studio 外观模型与参考模型的关节正方向关系（由两份模型的关节轴逐一比对得到，见
 # tests/test_studio_fallback.py）：J1、J4、J6 轴向相反。Studio 网格缺失时用参考模型
 # 代替显示，必须乘这个符号，否则这三个关节会朝反方向转。

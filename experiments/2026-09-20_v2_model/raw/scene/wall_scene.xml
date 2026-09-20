@@ -1,0 +1,98 @@
+<mujoco model="dummy_wall_trowel_SIM_ASSUMPTIONS_NOT_CALIBRATED">
+  <!-- 由 tools/modeling/build_dummy_v2.py 生成，请勿手改。运动学 = V2 固件 DH；质量/惯量 = CAD 体积×估计密度 + 资料质量；执行器 = 资料额定值推算。均未经实机辨识。 -->
+  <compiler angle="radian" meshdir="../../../../models/meshes_v2/" boundinertia="1e-07"/>
+
+  <option integrator="implicitfast"/>
+
+  <visual>
+    <global offwidth="960" offheight="720"/>
+  </visual>
+
+  <default>
+    <geom contype="0" conaffinity="0"/>
+  </default>
+
+  <asset>
+    <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link1" file="link1.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link2" file="link2.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link3" file="link3.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link4" file="link4.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link5" file="link5.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+    <mesh name="link6" file="link6.stl" scale="0.001 0.001 0.001" inertia="shell"/>
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="1 1 0.01" pos="0 0 -0.0075" type="plane" rgba="0.18 0.2 0.24 1"/>
+    <camera name="d435" quat="-0.376113 -0.227088 0.464312 0.769015" pos="-0.05 0.35 0.45" fovy="58"/>
+    <light pos="0.3 -0.6 1.2" dir="-0.17609 0.440225 -0.880451" diffuse="0.8 0.8 0.8"/>
+    <body name="base_link" gravcomp="1">
+      <inertial pos="-0.000831234 0.000101811 0.0463087" quat="0.729165 0.122609 0.113131 0.663692" mass="0.872292" diaginertia="0.0010581 0.000994058 0.000934899"/>
+      <geom name="base_link_visual" type="mesh" group="1" rgba="0.3 0.32 0.36 1" density="0" mesh="base_link"/>
+      <body name="link1" gravcomp="1">
+        <inertial pos="0.0168766 -0.00579915 0.105385" quat="0.601902 0.335085 0.143873 0.710446" mass="0.329271" diaginertia="0.000298153 0.000296753 5.29397e-05"/>
+        <joint name="Joint1" range="-2.96706 2.96706" actuatorfrcrange="-8.3 8.3" armature="0.0085" damping="0.3"/>
+        <geom name="link1_visual" type="mesh" group="1" rgba="0.93 0.93 0.95 1" density="0" mesh="link1"/>
+        <body name="link2" pos="0.035 0 0.1265" gravcomp="1">
+          <inertial pos="-1.90944e-05 -0.000875645 0.0716854" quat="0.998845 0.0479774 0.000122474 0.00257655" mass="1.23235" diaginertia="0.00419905 0.00417321 0.000428951"/>
+          <joint name="Joint2" range="-1.309 1.5708" actuatorfrcrange="-8.3 8.3" armature="0.0135" damping="0.3" axis="0 1 0"/>
+          <geom name="link2_visual" type="mesh" group="1" rgba="0.93 0.93 0.95 1" density="0" mesh="link2"/>
+          <body name="link3" pos="0 0 0.146" gravcomp="1">
+            <inertial pos="-0.0150739 0.00252776 0.038862" quat="0.698335 -0.0762693 -0.226163 0.674805" mass="0.625897" diaginertia="0.000608187 0.000546193 0.000207754"/>
+            <joint name="Joint3" range="-1.5708 1.5708" actuatorfrcrange="-8.3 8.3" armature="0.0085" damping="0.3" axis="0 1 0"/>
+            <geom name="link3_visual" type="mesh" group="1" rgba="0.93 0.93 0.95 1" density="0" mesh="link3"/>
+            <body name="link4" pos="0 0 0.052" gravcomp="1">
+              <inertial pos="0.0623124 0.000673193 0.000206517" quat="-0.00704575 0.707107 0.00755256 0.707031" mass="0.469893" diaginertia="0.00101398 0.00100983 9.00411e-05"/>
+              <joint name="Joint4" range="-3.14159 3.14159" actuatorfrcrange="-6 6" armature="0.00275" damping="0.3" axis="1 0 0"/>
+              <geom name="link4_visual" type="mesh" group="1" rgba="0.93 0.93 0.95 1" density="0" mesh="link4"/>
+              <body name="link5" pos="0.117 0 0" gravcomp="1">
+                <inertial pos="0.0260004 -0.00643627 0.000227449" quat="-0.237688 0.705385 -0.0477418 0.666076" mass="0.197877" diaginertia="0.000132156 0.00013144 3.28586e-05"/>
+                <joint name="Joint5" range="-1.74533 2.0944" actuatorfrcrange="-3.3 3.3" armature="0.0015" damping="0.3" axis="0 1 0"/>
+                <geom name="link5_visual" type="mesh" group="1" rgba="0.93 0.93 0.95 1" density="0" mesh="link5"/>
+                <body name="link6" gravcomp="1">
+                  <inertial pos="0.0649063 0 0" quat="0.5 0.5 0.5 0.5" mass="0.00262028" diaginertia="1e-07 1e-07 1e-07"/>
+                  <joint name="Joint6" range="-12.5664 12.5664" actuatorfrcrange="-0.07 0.07" armature="6e-07" damping="0.3" axis="1 0 0"/>
+                  <geom name="link6_visual" type="mesh" group="1" rgba="0.75 0.75 0.78 1" density="0" mesh="link6"/>
+                  <site name="shaft_tip" size="0.003" pos="0.07341 0 0" rgba="1 0.5 0 1"/>
+                  <site name="fw_end" size="0.004" pos="0.0755 0 0" quat="0.707107 0 0.707107 0" rgba="0 0.8 0.2 1"/>
+                  <body name="tool_mount" pos="0.07341 0 0" quat="0.707107 0 0 -0.707107" gravcomp="1">
+                    <body name="tool_adapter" gravcomp="1">
+                      <geom name="adapter_geom" size="0.012 0.015" pos="0 0.015 0" quat="0.707107 0.707107 0 0" type="cylinder" rgba="0.95 0.55 0.25 1" mass="0.06"/>
+                      <body name="trowel" pos="0 0.03 0" gravcomp="1">
+                        <joint name="compliance" type="slide" stiffness="400" range="0 0.03" springref="-0.005" armature="0.001" damping="8" axis="0 -1 0" limited="true"/>
+                        <geom name="handle_geom" size="0.006 0.0335" pos="0 0.0335 0" quat="0.707107 0.707107 0 0" type="capsule" rgba="0.3 0.3 0.3 1" mass="0.03"/>
+                        <body name="blade" pos="0 0.067 0" gravcomp="1">
+                          <geom name="blade_geom" size="0.04 0.0015 0.025" pos="0 0.0015 0" type="box" contype="2" friction="0.6" solref="0.004" solimp="0.95 0.99" rgba="0.75 0.78 0.8 1" mass="0.06"/>
+                          <site name="tcp" size="0.004" pos="0 0.003 0" rgba="1 0 0 1"/>
+                          <site name="blade_site" size="0.003" pos="0 0.0015 0" rgba="0 0 0 0"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="wall" pos="0.41 0 0.15" quat="0.5 0.5 0.5 0.5">
+      <geom name="wall_geom" size="0.4 0.3 0.01" type="box" conaffinity="2" friction="0.6" rgba="0.86 0.84 0.78 1"/>
+      <site name="wall_origin" size="0.003" pos="0 0 -0.01" rgba="0 0 0 0"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general name="servo1" joint="Joint1" ctrlrange="-2.96706 2.96706" forcerange="-8.3 8.3" biastype="affine" gainprm="35" biasprm="0 -35 -4"/>
+    <general name="servo2" joint="Joint2" ctrlrange="-1.309 1.5708" forcerange="-8.3 8.3" biastype="affine" gainprm="35" biasprm="0 -35 -4"/>
+    <general name="servo3" joint="Joint3" ctrlrange="-1.5708 1.5708" forcerange="-8.3 8.3" biastype="affine" gainprm="35" biasprm="0 -35 -4"/>
+    <general name="servo4" joint="Joint4" ctrlrange="-3.14159 3.14159" forcerange="-6 6" biastype="affine" gainprm="35" biasprm="0 -35 -4"/>
+    <general name="servo5" joint="Joint5" ctrlrange="-1.74533 2.0944" forcerange="-3.3 3.3" biastype="affine" gainprm="35" biasprm="0 -35 -4"/>
+    <general name="servo6" joint="Joint6" ctrlrange="-12.5664 12.5664" forcerange="-0.07 0.07" biastype="affine" gainprm="35" biasprm="0 -35 -4"/>
+  </actuator>
+
+  <sensor>
+    <jointpos joint="compliance" name="compression"/>
+    <force site="blade_site" name="blade_force"/>
+  </sensor>
+</mujoco>

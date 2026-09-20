@@ -7,7 +7,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 [![MuJoCo](https://img.shields.io/badge/MuJoCo-3.13-orange.svg)](https://mujoco.org/)
-[![Tests](https://img.shields.io/badge/tests-70%20passing-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-78%20passing-brightgreen.svg)](tests/)
 [![Status](https://img.shields.io/badge/status-pre--calibration-yellow.svg)](docs/STATUS.md)
 
 [English](README.md) · [中文](README.zh-CN.md) · [Status & Evidence](docs/STATUS.md) · [Roadmap](docs/plan/README.md)
@@ -43,7 +43,7 @@ Every result carries a level. Nothing is allowed to be promoted without new evid
 
 | Level | Meaning | Example from this repo |
 | :---: | --- | --- |
-| **L1** | Software test, no hardware attached | 70 unit tests; reference sim closes to 0.0022 rad |
+| **L1** | Software test, no hardware attached | 78 unit tests; reference sim closes to 0.0022 rad |
 | **L2** | Controller feedback reached target | Preset recheck: max feedback delta 0.006° |
 | **L3** | Physically witnessed | Operator confirmed fold pose; emergency stop tested |
 
@@ -100,7 +100,7 @@ cd dummy-arm-lab
 python -m venv .venv && . .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements/core.txt
 
-python -m unittest discover -s tests              # 70 tests
+python -m unittest discover -s tests              # 78 tests
 python -m dummy_loop collect-sim --episodes 40 --seed 7 --output run/teacher.npz
 python -m dummy_loop train      --dataset run/teacher.npz --output run/policy.npz
 python -m dummy_loop run-sim    --policy  run/policy.npz  --steps 240 --log run/rollout.jsonl
@@ -188,7 +188,7 @@ dummy_loop/      core package — control, simulation, safety, reference policy
 configs/         device profiles + JSON Schema (profile = authorisation)
 models/          MJCF, URDF, meshes, provenance manifests
 tools/           gui · simulation · modeling · hardware · diagnostics · maintenance
-tests/           70 tests; hardware-dependent ones skip cleanly
+tests/           78 tests; hardware-dependent ones skip cleanly
 docs/            architecture · status · hardware protocol · plan · data conventions
 experiments/     frozen evidence with SHA-256 manifests, failures kept alongside successes
 vendor/          Fibre native USB client with this project's timeout fix

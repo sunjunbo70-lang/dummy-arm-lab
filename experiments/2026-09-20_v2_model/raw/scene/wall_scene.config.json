@@ -1,0 +1,49 @@
+{
+  "config": {
+    "joint_limit_cap_deg": null,
+    "servo_kp": 35.0,
+    "servo_kv": 4.0,
+    "servo_force_limit": null,
+    "adapter_length": 0.03,
+    "adapter_radius": 0.012,
+    "tool_length": 0.1,
+    "blade_tilt_deg": 0.0,
+    "blade_width": 0.08,
+    "blade_height": 0.05,
+    "blade_thickness": 0.003,
+    "tool_mass": 0.15,
+    "spring_k": 400.0,
+    "spring_preload": 2.0,
+    "spring_travel": 0.03,
+    "spring_damping": 8.0,
+    "blade_friction": 0.6,
+    "wall_distance": 0.4,
+    "wall_yaw_deg": 0.0,
+    "wall_pitch_deg": 0.0,
+    "wall_lateral": 0.0,
+    "wall_center_z": 0.15,
+    "wall_size": [
+      0.8,
+      0.6
+    ],
+    "camera_pos": [
+      -0.05,
+      0.35,
+      0.45
+    ],
+    "camera_fovy_deg": 58.0,
+    "gravcomp": true
+  },
+  "provenance": {
+    "arm": "models/dummy_v2.xml (V2 firmware DH kinematics; CAD-derived mass estimates; not identified)",
+    "joint_limits": "V2 firmware limits converted to model coordinates (dummy_loop/v2.py); CANDIDATE until M3 measures them",
+    "servo_kp_kv": "example values, not identified",
+    "servo_force": "per-joint from V2 drivetrain documents (reducer start/stop peak or motor holding x ratio)",
+    "tool_dimensions": "PLACEHOLDER: no trowel measured yet",
+    "tool_mount": "adapter clamps the bare J6 shaft; origin at the shaft end face measured from the V2 CAD",
+    "spring": "DESIGN CHOICE for passive compliance, not a purchased part",
+    "wall_pose": "nominal. Chosen by dummy_loop.wall.layout search on the V2 model (see experiments/2026-09-20_v2_model). Re-run after M3.",
+    "camera_pose": "PLACEHOLDER: fixed D435 not yet mounted (M6)"
+  },
+  "digest": "99bc43f541d2"
+}
