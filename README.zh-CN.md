@@ -7,7 +7,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 [![MuJoCo](https://img.shields.io/badge/MuJoCo-3.13-orange.svg)](https://mujoco.org/)
-[![Tests](https://img.shields.io/badge/tests-49%20passing-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-66%20passing-brightgreen.svg)](tests/)
 [![Status](https://img.shields.io/badge/status-pre--calibration-yellow.svg)](docs/STATUS.md)
 
 [English](README.md) · [中文](README.zh-CN.md) · [状态与证据](docs/STATUS.md) · [路线图](docs/plan/README.md)
@@ -41,7 +41,7 @@
 
 | 等级 | 含义 | 本仓库中的例子 |
 | :---: | --- | --- |
-| **L1** | 软件测试,不接硬件 | 49 个单元测试;参考仿真收敛到 0.0022 rad |
+| **L1** | 软件测试,不接硬件 | 66 个单元测试;参考仿真收敛到 0.0022 rad |
 | **L2** | 控制器反馈到位 | 预设复测最大反馈差 0.006° |
 | **L3** | 实体验收 | 操作者确认折叠姿态;急停实测 |
 
@@ -95,10 +95,13 @@ cd dummy-arm-lab
 python -m venv .venv && . .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements/core.txt
 
-python -m unittest discover -s tests              # 49 个测试
+python -m unittest discover -s tests              # 66 个测试
 python -m dummy_loop collect-sim --episodes 40 --seed 7 --output run/teacher.npz
 python -m dummy_loop train      --dataset run/teacher.npz --output run/policy.npz
 python -m dummy_loop run-sim    --policy  run/policy.npz  --steps 240 --log run/rollout.jsonl
+
+# 墙面抹涂仿真链路（场景、末端控制、任务、示教、误差模型），见 docs/SIMULATION.md
+python -m dummy_loop.wall demo --random-scale 1 --probe --servo
 ```
 
 预期结果:240 步内关节误差范数从 `0.30822` 降到 `0.0022264 rad`。
@@ -143,7 +146,7 @@ dummy_loop/      核心包 —— 控制、仿真、安全层、参考策略
 configs/         设备档案与 JSON Schema（档案即授权）
 models/          MJCF、URDF、网格、溯源清单
 tools/           gui · simulation · modeling · hardware · diagnostics · maintenance
-tests/           49 个测试；依赖硬件的用例会干净跳过
+tests/           66 个测试；依赖硬件的用例会干净跳过
 docs/            架构 · 状态 · 硬件协议 · 计划 · 数据约定
 experiments/     带 SHA-256 清单的冻结证据，失败与成功记录同等保留
 vendor/          Fibre 原生 USB 客户端，含本项目的超时修复

@@ -1,0 +1,48 @@
+{
+  "config": {
+    "joint_range_deg": 90.0,
+    "servo_kp": 35.0,
+    "servo_kv": 4.0,
+    "servo_force_limit": 5.0,
+    "adapter_length": 0.03,
+    "adapter_radius": 0.012,
+    "tool_length": 0.1,
+    "blade_tilt_deg": 0.0,
+    "blade_width": 0.08,
+    "blade_height": 0.05,
+    "blade_thickness": 0.003,
+    "tool_mass": 0.15,
+    "spring_k": 400.0,
+    "spring_preload": 2.0,
+    "spring_travel": 0.03,
+    "spring_damping": 8.0,
+    "blade_friction": 0.6,
+    "wall_distance": 0.4,
+    "wall_yaw_deg": 0.0,
+    "wall_pitch_deg": 0.0,
+    "wall_x": 0.0,
+    "wall_center_z": 0.2,
+    "wall_size": [
+      0.8,
+      0.6
+    ],
+    "camera_pos": [
+      0.35,
+      0.05,
+      0.45
+    ],
+    "camera_fovy_deg": 58.0,
+    "gravcomp": true
+  },
+  "provenance": {
+    "arm": "models/dummy_reference.xml (reference geometry, not calibrated)",
+    "joint_range_deg": "ASSUMPTION: configs/ profile limits are null until M3",
+    "servo_kp_kv_force": "copied from reference model example values, not identified",
+    "tool_dimensions": "PLACEHOLDER: no trowel measured yet",
+    "spring": "DESIGN CHOICE for passive compliance, not a purchased part",
+    "wall_pose": "nominal. wall_distance=0.40, wall_center_z=0.20, blade_tilt=0 chosen by dummy_loop.wall.layout search (best worst-case conditioning over a 12x10 cm patch, ASSUMING +/-90 deg joint limits). Re-run the search after M3 measures real limits.",
+    "camera_pose": "PLACEHOLDER: fixed D435 not yet mounted (M6)",
+    "flange_face_y": "measured from models/meshes/link6_1_1.stl; real arm has a bare J6 shaft instead"
+  },
+  "digest": "406612d8fb9d"
+}

@@ -11,6 +11,7 @@
 | 六轴自动往复和速度UI | 已实现，有软件测试；不代表所有组合姿态实机验收 | dummy_loop/live_control.py，tests/test_live_control.py | L1 |
 | 直立末端外观/坐标 | 曾被用户质疑；独立空间标定尚未完成 | 不以折叠确认替代直立验收 | — |
 | 新开发机环境与L1复现 | 钉死依赖装成；49测试通过；参考仿真终值与冻结基线逐位相同 | ../experiments/2026-09-19_windows_env/ | L1 |
+| 墙面抹涂仿真链路 | 场景、末端控制、任务、示教录制与回放、误差与补偿均跑通；参数为假设 | ../experiments/2026-09-20_wall_sim_chain/，docs/SIMULATION.md | L1 |
 | Ubuntu实机 / D435 / 夹爪 | 未完成实际闭环验证 | 待办 | — |
 | ACDC / 世界模型 / FSDP | 讨论与研究计划；未安装、未训练、无复现结果 | ROADMAP.md | — |
 
@@ -53,3 +54,19 @@ git 对象，未安装 git-lfs 也能完整检出。原条目按「原始记录�
 **新增**：`tools/environment/windows_setup.ps1` 与 `windows_setup.cmd`，是
 `ubuntu_setup.sh` 的 Windows 对应物，把上述五步固化成可重复执行的脚本，
 输出直接落到 `experiments/<日期>_windows_env/raw/`。脚本本身不碰硬件。
+
+## 2026-09-20 墙面抹涂仿真链路（停电期间，软件会话）
+
+新增 `dummy_loop/wall/`（场景、末端动作空间与逆解、覆盖任务、脚本示教、误差模型、探触与压缩量补偿）
+与通用录制格式 `dummy_loop/episode.py`；约定写在 `docs/ACTION_SPACE.md`，设计发现写在 `docs/SIMULATION.md`。
+测试 49 → 66 个，全部通过（3 个按设计跳过）。证据等级 L1，记录见 `experiments/2026-09-20_wall_sim_chain/`。
+
+对实机工作有直接影响的三条（均为仿真设计结论，待实机验证）：
+1. 墙板距 J1 轴约 40 cm、工作区中心高约 20 cm、刀面垂直于 J6 轴时条件最好；
+   早先按可达面积得出的 20–30 cm 会使手腕贴近奇异。依据的关节范围是假设的 ±90°，M3 后重算。
+2. 覆盖率收益主要来自开工前探触墙面；转接件上加一个微动开关即可支持。
+3. 最敏感的两项是关节伺服刚度与摩擦，二者目前都未测。
+
+同时修改：`dummy_loop/sim_backend.py` 对超出 ctrlrange 的目标显式报错（以前被 MuJoCo 静默截断），
+参考仿真闭环数值不变；`tools/environment/doctor.py` 增加 GPU 算力等级、bf16/TF32/FA2 支持与 torch/CUDA 信息。
+本次未连接机械臂，未发送任何运动指令。

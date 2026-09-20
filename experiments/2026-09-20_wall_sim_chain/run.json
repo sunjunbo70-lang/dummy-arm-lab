@@ -1,0 +1,66 @@
+{
+  "experiment_id": "2026-09-20_wall_sim_chain",
+  "status": "completed",
+  "purpose": "墙面抹涂仿真链路搭建与误差/补偿量化，为实机实验提前做设计决定",
+  "source_version": "285028445081c370dc53779203177e3bcc0522bc + new dummy_loop/wall, dummy_loop/episode.py (uncommitted at run time)",
+  "command": [
+    "python -m dummy_loop.wall layout",
+    "python -m dummy_loop.wall study --random 30",
+    "python -m dummy_loop.wall collect --episodes 4 --random-scale 1 --probe --servo --seed 100",
+    "python -m dummy_loop.wall replay",
+    "python -m dummy_loop.wall scene",
+    "python -m dummy_loop.wall render"
+  ],
+  "environment_file": null,
+  "config_file": "raw/scene/wall_trowel_scene.config.json",
+  "seed": 0,
+  "data_split": null,
+  "hardware": {
+    "robot_connected": false,
+    "runner": "cloud sandbox, Linux, Python 3.11, numpy 2.4.4, mujoco 3.13.0"
+  },
+  "units": "coverage fraction; force N; distance m",
+  "metrics": {
+    "tests_passed": 63,
+    "tests_skipped": 3,
+    "layout_best": {
+      "blade_tilt_deg": 0,
+      "wall_distance_m": 0.4,
+      "work_centre_z_m": 0.2,
+      "sigma_min": 0.0232,
+      "limit_margin_deg": 21.2,
+      "max_twist_deg": 29.9
+    },
+    "baseline_coverage": 0.9583,
+    "randomized_coverage_mean": {
+      "none": 0.9067,
+      "probe": 0.9662,
+      "servo": 0.9159,
+      "probe+servo": 0.9662
+    },
+    "randomized_coverage_worst": {
+      "none": 0.2708,
+      "probe": 0.8521,
+      "servo": 0.7229,
+      "probe+servo": 0.8521
+    },
+    "replay_identical": "4/4"
+  },
+  "artifacts": [
+    "raw/layout.json",
+    "raw/sensitivity.json",
+    "raw/sensitivity.png",
+    "raw/episodes/",
+    "raw/replay_check.txt",
+    "raw/scene/",
+    "raw/camera/"
+  ],
+  "limitations": [
+    "全部参数为假设或占位",
+    "只有刀面-墙面接触",
+    "覆盖率判据不是抹涂质量",
+    "随机误差量级为估计",
+    "numpy 版本与 Windows 钉死环境不同"
+  ],
+  "hardware_motion": false
+}

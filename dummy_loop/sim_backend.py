@@ -31,6 +31,12 @@ class SimRobot:
             raise ValueError('Expected six named reference joints and six actuators')
         self.qids = self.model.jnt_qposadr[self.jids]
         self.vids = self.model.jnt_dofadr[self.jids]
+        # MuJoCo 会把超出 ctrlrange 的目标静默截断。这里显式拒绝，避免「以为发了 1 rad、
+        # 实际只执行 0.7 rad」而没有任何报错（参考模型 ctrlrange 为 ±0.7 rad）。
+        limited = self.model.actuator_ctrllimited.astype(bool)
+        rng = self.model.actuator_ctrlrange
+        self.ctrl_lo = np.where(limited, rng[:, 0], -np.inf)
+        self.ctrl_hi = np.where(limited, rng[:, 1], np.inf)
 
     def connect(self):
         self.reset(np.zeros(6))
@@ -45,7 +51,11 @@ class SimRobot:
         return Observation(self.data.qpos[self.qids].copy(), time.monotonic(), 'mujoco', True)
 
     def send_action(self, q):
-        self.data.ctrl[:] = six(q)
+        q = six(q)
+        if np.any(q < self.ctrl_lo - 1e-9) or np.any(q > self.ctrl_hi + 1e-9):
+            raise ValueError(f'target outside actuator ctrlrange {self.ctrl_lo.tolist()}..{self.ctrl_hi.tolist()}; '
+                             'MuJoCo would silently clamp it')
+        self.data.ctrl[:] = q
         for _ in range(self.steps):
             mujoco.mj_step(self.model, self.data)
         if not np.all(np.isfinite(self.data.qpos)):
