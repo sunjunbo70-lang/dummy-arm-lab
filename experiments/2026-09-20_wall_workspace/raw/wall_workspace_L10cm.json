@@ -1,0 +1,534 @@
+{
+ "evidence_level": "L1",
+ "hardware_motion": false,
+ "model": "models/dummy_reference.xml (reference geometry, not calibrated)",
+ "tool_length_m": 0.1,
+ "grid_m": 0.02,
+ "seed": 0,
+ "orientation_constraint": "J6 axis within 3.0 deg of wall normal (trowel square to wall)",
+ "position_tolerance_m": 0.002,
+ "wall_distance_reference": "distance from J1 axis along model -Y",
+ "grid_x_m": [
+  -0.3,
+  0.3
+ ],
+ "grid_z_m": [
+  0.02,
+  0.5
+ ],
+ "results": {
+  "S2_sim_ctrlrange_pm40": {
+   "lower_deg": [
+    -40,
+    -40,
+    -40,
+    -40,
+    -40,
+    -40
+   ],
+   "upper_deg": [
+    40,
+    40,
+    40,
+    40,
+    40,
+    40
+   ],
+   "best_wall_distance_m": "0.35",
+   "by_wall_distance_m": {
+    "0.20": {
+     "area_cm2": 8.0,
+     "extent": {
+      "x_m": [
+       0.02,
+       0.02
+      ],
+      "z_m": [
+       0.34,
+       0.36
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.25": {
+     "area_cm2": 48.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.3,
+       0.38
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.30": {
+     "area_cm2": 84.0,
+     "extent": {
+      "x_m": [
+       -0.02,
+       0.06
+      ],
+      "z_m": [
+       0.28,
+       0.38
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.35": {
+     "area_cm2": 124.0,
+     "extent": {
+      "x_m": [
+       -0.06,
+       0.08
+      ],
+      "z_m": [
+       0.24,
+       0.34
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.40": {
+     "area_cm2": 112.0,
+     "extent": {
+      "x_m": [
+       -0.06,
+       0.1
+      ],
+      "z_m": [
+       0.24,
+       0.32
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.45": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    }
+   }
+  },
+  "S3_geometry_only_pm90": {
+   "lower_deg": [
+    -90,
+    -90,
+    -90,
+    -90,
+    -90,
+    -90
+   ],
+   "upper_deg": [
+    90,
+    90,
+    90,
+    90,
+    90,
+    90
+   ],
+   "best_wall_distance_m": "0.20",
+   "by_wall_distance_m": {
+    "0.20": {
+     "area_cm2": 1468.0,
+     "extent": {
+      "x_m": [
+       -0.28,
+       0.3
+      ],
+      "z_m": [
+       0.02,
+       0.4
+      ]
+     },
+     "touches_grid_edge": true
+    },
+    "0.25": {
+     "area_cm2": 1452.0,
+     "extent": {
+      "x_m": [
+       -0.28,
+       0.3
+      ],
+      "z_m": [
+       0.02,
+       0.4
+      ]
+     },
+     "touches_grid_edge": true
+    },
+    "0.30": {
+     "area_cm2": 1380.0,
+     "extent": {
+      "x_m": [
+       -0.26,
+       0.3
+      ],
+      "z_m": [
+       0.02,
+       0.38
+      ]
+     },
+     "touches_grid_edge": true
+    },
+    "0.35": {
+     "area_cm2": 1240.0,
+     "extent": {
+      "x_m": [
+       -0.22,
+       0.26
+      ],
+      "z_m": [
+       0.02,
+       0.36
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.40": {
+     "area_cm2": 1080.0,
+     "extent": {
+      "x_m": [
+       -0.18,
+       0.22
+      ],
+      "z_m": [
+       0.02,
+       0.32
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.45": {
+     "area_cm2": 528.0,
+     "extent": {
+      "x_m": [
+       -0.12,
+       0.16
+      ],
+      "z_m": [
+       0.04,
+       0.26
+      ]
+     },
+     "touches_grid_edge": false
+    }
+   }
+  },
+  "S1_gui_envelope_J2+_J3+": {
+   "lower_deg": [
+    -20,
+    -75,
+    0,
+    -15,
+    -15,
+    -15
+   ],
+   "upper_deg": [
+    20,
+    20,
+    90,
+    15,
+    15,
+    15
+   ],
+   "best_wall_distance_m": "0.20",
+   "by_wall_distance_m": {
+    "0.20": {
+     "area_cm2": 24.0,
+     "extent": {
+      "x_m": [
+       0.02,
+       0.02
+      ],
+      "z_m": [
+       0.2,
+       0.3
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.25": {
+     "area_cm2": 20.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.02
+      ],
+      "z_m": [
+       0.28,
+       0.34
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.30": {
+     "area_cm2": 20.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.3,
+       0.34
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.35": {
+     "area_cm2": 12.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.3,
+       0.3
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.40": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    },
+    "0.45": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    }
+   }
+  },
+  "S1_gui_envelope_J2+_J3-": {
+   "lower_deg": [
+    -20,
+    -75,
+    -90,
+    -15,
+    -15,
+    -15
+   ],
+   "upper_deg": [
+    20,
+    20,
+    0,
+    15,
+    15,
+    15
+   ],
+   "best_wall_distance_m": "0.35",
+   "by_wall_distance_m": {
+    "0.20": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    },
+    "0.25": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    },
+    "0.30": {
+     "area_cm2": 8.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.34,
+       0.34
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.35": {
+     "area_cm2": 16.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.32,
+       0.34
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.40": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    },
+    "0.45": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    }
+   }
+  },
+  "S1_gui_envelope_J2-_J3+": {
+   "lower_deg": [
+    -20,
+    -20,
+    0,
+    -15,
+    -15,
+    -15
+   ],
+   "upper_deg": [
+    20,
+    75,
+    90,
+    15,
+    15,
+    15
+   ],
+   "best_wall_distance_m": "0.30",
+   "by_wall_distance_m": {
+    "0.20": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    },
+    "0.25": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    },
+    "0.30": {
+     "area_cm2": 20.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.3,
+       0.34
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.35": {
+     "area_cm2": 12.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.3,
+       0.3
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.40": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    },
+    "0.45": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    }
+   }
+  },
+  "S1_gui_envelope_J2-_J3-": {
+   "lower_deg": [
+    -20,
+    -20,
+    -90,
+    -15,
+    -15,
+    -15
+   ],
+   "upper_deg": [
+    20,
+    75,
+    0,
+    15,
+    15,
+    15
+   ],
+   "best_wall_distance_m": "0.40",
+   "by_wall_distance_m": {
+    "0.20": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    },
+    "0.25": {
+     "area_cm2": 0.0,
+     "extent": null,
+     "touches_grid_edge": false
+    },
+    "0.30": {
+     "area_cm2": 8.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.34,
+       0.34
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.35": {
+     "area_cm2": 16.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.32,
+       0.34
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.40": {
+     "area_cm2": 28.0,
+     "extent": {
+      "x_m": [
+       0.0,
+       0.04
+      ],
+      "z_m": [
+       0.28,
+       0.32
+      ]
+     },
+     "touches_grid_edge": false
+    },
+    "0.45": {
+     "area_cm2": 4.0,
+     "extent": {
+      "x_m": [
+       0.02,
+       0.02
+      ],
+      "z_m": [
+       0.26,
+       0.26
+      ]
+     },
+     "touches_grid_edge": false
+    }
+   }
+  }
+ }
+}

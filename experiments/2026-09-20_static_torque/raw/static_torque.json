@@ -1,0 +1,204 @@
+{
+ "evidence_level": "L1",
+ "hardware_motion": false,
+ "model": "models/dummy_reference.xml, gravcomp disabled, reference masses (not measured)",
+ "units": "N*m, absolute value per joint J1..J6",
+ "static_only": true,
+ "tool_length_m": 0.2,
+ "tool_mass_kg": 0.15,
+ "payload_offset_m": 0.05,
+ "poses": {
+  "zero_L_pose_forearm_horizontal": {
+   "q_rad": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "flange_pos_m": [
+    0.0183,
+    -0.2285,
+    0.3271
+   ],
+   "tool_axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "torques": {
+    "arm_self_weight": [
+     0.0,
+     0.505,
+     0.49,
+     0.002,
+     0.062,
+     0.0
+    ],
+    "hold_1kg": [
+     0.0,
+     2.899,
+     2.884,
+     0.014,
+     1.307,
+     0.0
+    ],
+    "trowel_press_5N_drag_0.5x": [
+     0.004,
+     1.037,
+     1.648,
+     0.004,
+     1.015,
+     0.0
+    ],
+    "trowel_press_5N_drag_1.0x": [
+     0.004,
+     2.022,
+     2.633,
+     0.009,
+     1.708,
+     0.0
+    ],
+    "trowel_press_10N_drag_0.5x": [
+     0.009,
+     3.011,
+     2.374,
+     0.009,
+     1.708,
+     0.0
+    ],
+    "trowel_press_10N_drag_1.0x": [
+     0.009,
+     4.981,
+     4.344,
+     0.017,
+     3.093,
+     0.0
+    ],
+    "trowel_press_20N_drag_0.5x": [
+     0.018,
+     6.96,
+     4.055,
+     0.017,
+     3.094,
+     0.0
+    ],
+    "trowel_press_20N_drag_1.0x": [
+     0.018,
+     10.9,
+     7.995,
+     0.034,
+     5.864,
+     0.0
+    ]
+   }
+  },
+  "elbow_bent": {
+   "q_rad": [
+    0,
+    0.5,
+    -0.9,
+    0,
+    0.4,
+    0
+   ],
+   "flange_pos_m": [
+    0.0183,
+    -0.269,
+    0.3507
+   ],
+   "tool_axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "torques": {
+    "arm_self_weight": [
+     0.0,
+     1.282,
+     0.286,
+     0.002,
+     0.062,
+     0.0
+    ],
+    "hold_1kg": [
+     0.0,
+     4.073,
+     2.391,
+     0.013,
+     1.307,
+     0.0
+    ],
+    "trowel_press_5N_drag_0.5x": [
+     0.004,
+     1.753,
+     1.12,
+     0.007,
+     1.015,
+     0.0
+    ],
+    "trowel_press_5N_drag_1.0x": [
+     0.004,
+     2.839,
+     2.031,
+     0.011,
+     1.708,
+     0.0
+    ],
+    "trowel_press_10N_drag_0.5x": [
+     0.009,
+     2.613,
+     2.081,
+     0.014,
+     1.708,
+     0.0
+    ],
+    "trowel_press_10N_drag_1.0x": [
+     0.009,
+     4.786,
+     3.903,
+     0.022,
+     3.093,
+     0.0
+    ],
+    "trowel_press_20N_drag_0.5x": [
+     0.018,
+     7.0,
+     4.837,
+     0.029,
+     3.094,
+     0.0
+    ],
+    "trowel_press_20N_drag_1.0x": [
+     0.018,
+     11.346,
+     8.482,
+     0.045,
+     5.864,
+     0.0
+    ]
+   }
+  }
+ },
+ "j6_torque_if_mounted_on_shaft": {
+  "formula": "tau_J6 = drag_force * lateral offset of blade contact centre from J6 axis",
+  "values_Nm": {
+   "drag_5N": {
+    "offset_0mm": 0,
+    "offset_5mm": 0.025,
+    "offset_10mm": 0.05,
+    "offset_20mm": 0.1,
+    "offset_50mm": 0.25
+   },
+   "drag_10N": {
+    "offset_0mm": 0,
+    "offset_5mm": 0.05,
+    "offset_10mm": 0.1,
+    "offset_20mm": 0.2,
+    "offset_50mm": 0.5
+   }
+  },
+  "if_mounted_on_J6_housing": "J6 carries 0; J1..J5 loads unchanged"
+ }
+}
