@@ -1,0 +1,66 @@
+{
+  "experiment_id": "2026-09-20_rigid_tool",
+  "status": "completed",
+  "purpose": "末端改为实际方案：J6 减速器（去掉夹爪电机与夹爪）+ 3D 打印抹刀座 + 日式尖头抹刀，全刚性；重跑误差与补偿对比",
+  "source_version": "064564c + GUI fix + trowel tool change (uncommitted at run time)",
+  "command": [
+    "python -m unittest discover -s tests",
+    "python -m dummy_loop.wall layout",
+    "python -m dummy_loop.wall study --random 30",
+    "python -m dummy_loop.wall collect --episodes 4 --random-scale 1 --probe --servo --seed 100",
+    "python -m dummy_loop.wall replay <each>",
+    "python -m dummy_loop.wall scene",
+    "python tools/simulation/plot_wall_study.py raw/study/sensitivity.json"
+  ],
+  "environment_file": null,
+  "config_file": "raw/scene/wall_scene_rigid.config.json",
+  "seed": 0,
+  "data_split": null,
+  "hardware": {
+    "robot_connected": false,
+    "runner": "cloud sandbox, Linux, Python 3.11, mujoco 3.13.0"
+  },
+  "units": "coverage fraction; force N",
+  "metrics": {
+    "tests_passed": 78,
+    "tests_skipped": 3,
+    "randomized_coverage_mean": {
+      "none": 0.378,
+      "servo": 0.867,
+      "probe": 0.658,
+      "probe+servo": 0.893
+    },
+    "randomized_coverage_worst": {
+      "none": 0.0,
+      "servo": 0.408,
+      "probe": 0.179,
+      "probe+servo": 0.654
+    },
+    "randomized_max_force_worst_N": {
+      "none": 141.3,
+      "servo": 132.8,
+      "probe": 93.0,
+      "probe+servo": 46.5
+    },
+    "single_joint_offset_1_2deg_probe_servo_coverage": "0.84-0.97",
+    "replay_identical": "4/4",
+    "layout_default_rank": 3
+  },
+  "artifacts": [
+    "raw/study/sensitivity.json",
+    "raw/study/sensitivity.png",
+    "raw/episodes/",
+    "raw/replay_check.txt",
+    "raw/scene/",
+    "raw/rigid_tool.png",
+    "raw/layout.json"
+  ],
+  "limitations": [
+    "Trowel, handle, holder and reducer dimensions estimated from photos; trowel scaled to half of the first estimate per user",
+    "J6 reducer type and ratio unconfirmed; J6 still modelled as direct drive",
+    "Contact force depends on the unidentified joint servo stiffness (kp=35 example value)",
+    "Load cell modelled as blade-wall normal force + noise",
+    "Coverage counts cells swept by the blade outline under 2-15 N; no material model"
+  ],
+  "hardware_motion": false
+}

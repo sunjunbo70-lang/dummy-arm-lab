@@ -36,15 +36,40 @@ class SceneTests(unittest.TestCase):
         self.assertIn('dummy_v2.xml', prov['arm'])
         self.assertIn('PLACEHOLDER', prov['tool_dimensions'])
 
-    def test_tool_mounts_on_bare_shaft_end_along_j6_axis(self):
-        cfg = SceneConfig(); m, _ = build_scene(cfg); d = mujoco.MjData(m); mujoco.mj_forward(m, d)
+    def test_spring_tool_mounts_on_bare_shaft_end_along_j6_axis(self):
+        cfg = SceneConfig(tool_mount='spring'); m, _ = build_scene(cfg); d = mujoco.MjData(m); mujoco.mj_forward(m, d)
         b6 = m.body('link6').id; tcp = m.site('tcp').id
         R = d.xmat[b6].reshape(3, 3); face = d.xpos[b6] + R @ [shaft_tip_x(), 0, 0]
         off = d.site_xpos[tcp] - face
         self.assertAlmostEqual(float(np.linalg.norm(off)), cfg.tool_length, places=6)
-        # 刀具沿 J6 轴（link6 +X）外伸；零位时 J6 轴朝前 = +X
         np.testing.assert_allclose(off / np.linalg.norm(off), R[:, 0], atol=1e-9)
-        np.testing.assert_allclose(R[:, 0], [1, 0, 0], atol=1e-9)
+
+    def test_rigid_trowel_geometry(self):
+        from dummy_loop.wall.scene import (housing_front_x, rigid_tool_length, blade_outline,
+                                           blade_area_centroid_from_tip)
+        cfg = SceneConfig(); m, _ = build_scene(cfg); d = mujoco.MjData(m); mujoco.mj_forward(m, d)
+        b6 = m.body('link6').id; R = d.xmat[b6].reshape(3, 3)
+        flange = d.xpos[b6] + R @ [housing_front_x() + cfg.j6_reducer_length, 0, 0]
+        off = d.site_xpos[m.site('tcp').id] - flange
+        # TCP 在 J6 轴线上，距输出法兰面 = 抹刀座 + 木柄 + 立柱 + 刀厚
+        self.assertAlmostEqual(float(off @ R[:, 0]), rigid_tool_length(cfg), places=6)
+        self.assertLess(np.linalg.norm(off - (off @ R[:, 0]) * R[:, 0]), 1e-9)
+        # 减速器壳体固定在 J6 电机座上，不随 J6 转
+        self.assertEqual(m.geom_bodyid[m.geom('j6_reducer_body').id], m.body('link5').id)
+        # 默认夹持位置让 J6 轴线穿过刀面面积形心；刀面长 240 mm
+        o = blade_outline(cfg)
+        self.assertAlmostEqual(o['x_tip'], blade_area_centroid_from_tip(cfg), places=9)
+        self.assertAlmostEqual(o['x_tip'] - o['x_back'], cfg.trowel_length, places=9)
+        with self.assertRaises(ValueError):
+            build_scene(SceneConfig(clamp_from_tip=0.03))      # 夹在木柄之外
+
+    def test_default_tool_is_rigid_without_sliding_joint(self):
+        m, _ = build_scene()
+        self.assertEqual(SceneConfig().tool_mount, 'rigid')
+        self.assertEqual(m.njnt, 6)                      # 只有六个关节，没有伸缩滑轨
+        self.assertGreaterEqual(m.site('load_cell').id, 0)
+        m2, _ = build_scene(SceneConfig(tool_mount='spring'))
+        self.assertEqual(m2.njnt, 7)
 
     def test_joint_limits_are_v2_firmware(self):
         from dummy_loop import v2
@@ -65,7 +90,7 @@ class SceneTests(unittest.TestCase):
         m, _ = build_scene()
         colliding = [mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, i) for i in range(m.ngeom)
                      if m.geom_contype[i] or m.geom_conaffinity[i]]
-        self.assertEqual(sorted(colliding), ['blade_geom', 'wall_geom'])
+        self.assertEqual(sorted(colliding), ['blade_geom', 'blade_tip_geom', 'wall_geom'])
 
 
 class ControllerTests(unittest.TestCase):
@@ -99,11 +124,22 @@ class ControllerTests(unittest.TestCase):
 
 
 class TaskTests(unittest.TestCase):
-    def test_nominal_teacher_covers_region_within_force_window(self):
-        m, _ = RasterTeacher(WallTask(seed=0)).run()
+    def test_spring_tool_nominal_teacher_covers_region_within_force_window(self):
+        m, _ = RasterTeacher(WallTask(SceneConfig(tool_mount='spring'), seed=0)).run()
         self.assertGreaterEqual(m['coverage'], 0.9)
         self.assertEqual(m['bottom_out_steps'], 0); self.assertEqual(m['unreachable_steps'], 0)
         self.assertGreaterEqual(m['in_window_frac_of_contact'], 0.95)
+
+    def test_rigid_tool_needs_force_loop(self):
+        # 刚性工具没有弹簧缓冲：墙比名义近 5 mm 时，只按位置压入会顶出很大的力；
+        # 探触 + 抹刀座力传感器闭环后压力回到安全范围。
+        p = Perturbation(wall_dn_m=-0.005)
+        open_loop, _ = RasterTeacher(WallTask(perturbation=p, seed=0)).run()
+        closed, _ = RasterTeacher(WallTask(perturbation=p, seed=0), probe=True, servo=True).run()
+        self.assertGreater(open_loop['max_contact_force_N'], 25.0)
+        self.assertLess(closed['max_contact_force_N'], 25.0)
+        self.assertGreaterEqual(closed['coverage'], 0.9)
+        self.assertEqual(closed['unreachable_steps'], 0)
 
     def test_probe_and_servo_recover_misplaced_wall(self):
         p = Perturbation(wall_dn_m=0.010)        # 墙比名义远 1 cm
@@ -121,6 +157,8 @@ class TaskTests(unittest.TestCase):
         self.assertEqual(OBS_SPEC['contact_force_N']['availability'], 'privileged')
         self.assertEqual(OBS_SPEC['tcp_true_uvn_m']['availability'], 'privileged')
         self.assertEqual(OBS_SPEC['q_meas_rad']['availability'], 'hardware')
+        self.assertEqual(OBS_SPEC['tool_force_N']['availability'], 'hardware_with_sensor')
+        self.assertNotIn('compression_m', OBS_SPEC)
 
 
 class EpisodeTests(unittest.TestCase):

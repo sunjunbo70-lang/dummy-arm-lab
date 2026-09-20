@@ -19,14 +19,28 @@ from .controller import ActionSpec, EEController, WallFrame
 from .errors import Perturbation
 from .layout import NATURAL_PLANE_U
 
-OBS_SPEC = {
+_OBS_COMMON = {
     'q_meas_rad':         {'shape': [6], 'units': 'rad', 'availability': 'hardware', 'note': '编码器读数（含零位误差与噪声）'},
     'tcp_belief_uvn_m':   {'shape': [3], 'units': 'm', 'availability': 'hardware', 'note': '读数正解到名义墙面系'},
     'target_uvn_m':       {'shape': [3], 'units': 'm', 'availability': 'hardware', 'note': '控制器当前目标（名义墙面系）'},
-    'compression_m':      {'shape': [1], 'units': 'm', 'availability': 'hardware_with_sensor', 'note': '弹簧压缩量；实机需加装直线位移/霍尔传感器'},
     'contact_force_N':    {'shape': [1], 'units': 'N', 'availability': 'privileged', 'note': '刀面-墙面法向接触力合计'},
     'tcp_true_uvn_m':     {'shape': [3], 'units': 'm', 'availability': 'privileged', 'note': '真实 TCP，真实墙面系'},
 }
+_TOOL_SENSOR = {
+    'rigid': ('tool_force_N', {'shape': [1], 'units': 'N', 'availability': 'hardware_with_sensor',
+                               'note': '法兰与抹刀座之间的力传感器（沿刀具轴）；实机需加装。仿真 = 刀面法向接触力 + 噪声'}),
+    'spring': ('compression_m', {'shape': [1], 'units': 'm', 'availability': 'hardware_with_sensor',
+                                 'note': '弹簧压缩量；实机需加装直线位移/霍尔传感器'}),
+}
+
+
+def obs_spec(tool_mount='rigid'):
+    key, spec = _TOOL_SENSOR[tool_mount]
+    d = dict(_OBS_COMMON); d[key] = spec
+    return d
+
+
+OBS_SPEC = obs_spec('rigid')     # 默认（实际）工具的观测表
 
 
 @dataclass
@@ -35,7 +49,11 @@ class TaskConfig:
     region_v: tuple = (-0.05, 0.05)
     cell: float = 0.005
     force_window: tuple = (2.0, 15.0)      # N：低于下限视为没压实，高于上限视为过压
-    target_compression: float = 0.012      # m：设计压缩量 → 名义压力 = 预紧 + k × 压缩
+    target_compression: float = 0.012      # m：弹簧方案的设计压缩量 → 名义压力 = 预紧 + k × 压缩
+    target_force: float = 6.0              # N：刚性方案的目标压力（力传感器闭环时）
+    press_depth: float = 0.001             # m：刚性方案不闭环时，指令刀面「压进」名义墙面的深度。
+                                           #    实际压力 = 伺服刚度 × 该深度，完全取决于未辨识的关节刚度
+    touch_force: float = 2.0               # N：刚性方案探触时判定接触的力阈值（连续 2 次超过才算，防噪声误触发）
     standoff: float = 0.03                 # m：待机位离墙距离
     settle_steps: int = 10
 
@@ -63,10 +81,14 @@ class WallTask:
         self.true_frame = WallFrame(*wall_frame(self.true_scene))
         ids = lambda t, n: mujoco.mj_name2id(self.model, t, n)
         self.blade_geom = ids(mujoco.mjtObj.mjOBJ_GEOM, 'blade_geom')
+        self.blade_geoms = {g for g in (self.blade_geom, ids(mujoco.mjtObj.mjOBJ_GEOM, 'blade_tip_geom')) if g >= 0}
         self.wall_geom = ids(mujoco.mjtObj.mjOBJ_GEOM, 'wall_geom')
         self.tcp_site = ids(mujoco.mjtObj.mjOBJ_SITE, 'tcp')
         self.blade_body = ids(mujoco.mjtObj.mjOBJ_BODY, 'blade')
-        self.comp_adr = self.model.jnt_qposadr[ids(mujoco.mjtObj.mjOBJ_JOINT, 'compliance')]
+        self.rigid = self.scene.tool_mount == 'rigid'
+        self.sensor_key = _TOOL_SENSOR[self.scene.tool_mount][0]
+        self.obs_spec = obs_spec(self.scene.tool_mount)
+        self.comp_adr = None if self.rigid else self.model.jnt_qposadr[ids(mujoco.mjtObj.mjOBJ_JOINT, 'compliance')]
         self.delta = np.asarray(self.pert.joint_offset_rad, float)
         t = self.task
         self.nu_cells = int(round((t.region_u[1] - t.region_u[0]) / t.cell))
@@ -74,6 +96,11 @@ class WallTask:
         cu = t.region_u[0] + (np.arange(self.nu_cells) + 0.5) * t.cell
         cv = t.region_v[0] + (np.arange(self.nv_cells) + 0.5) * t.cell
         self.cell_u, self.cell_v = np.meshgrid(cu, cv)
+        # 格子中心在世界系中的位置（真实墙面上）
+        self.cell_world = np.stack([self.true_frame.to_world([u, v, 0.0]) for u, v in
+                                    zip(self.cell_u.ravel(), self.cell_v.ravel())]).reshape(*self.cell_u.shape, 3)
+        from .scene import blade_outline
+        self.outline = blade_outline(self.scene)
 
     # ---------------------------------------------------------------- 接口
     def reset(self, start_uv=None, psi=0.0):
@@ -116,7 +143,7 @@ class WallTask:
         f = np.zeros(6); total = 0.0
         for i in range(self.data.ncon):
             c = self.data.contact[i]
-            if {c.geom1, c.geom2} == {self.blade_geom, self.wall_geom}:
+            if self.wall_geom in (c.geom1, c.geom2) and ({c.geom1, c.geom2} & self.blade_geoms):
                 mujoco.mj_contactForce(self.model, self.data, i, f); total += abs(f[0])
         return total
 
@@ -124,31 +151,39 @@ class WallTask:
         d = self.data
         q_true = d.qpos[:6].copy()
         q_meas = q_true - self.delta + self.rng.normal(0, self.pert.q_noise_rad, 6) if self.pert.q_noise_rad else q_true - self.delta
-        comp = float(d.qpos[self.comp_adr])
-        comp_meas = comp + (self.rng.normal(0, self.pert.compression_noise_m) if self.pert.compression_noise_m else 0.0)
+        F = self.contact_force()
+        if self.rigid:
+            comp = 0.0
+            sensor = F + (self.rng.normal(0, self.pert.force_noise_N) if self.pert.force_noise_N else 0.0)
+        else:
+            comp = float(d.qpos[self.comp_adr])
+            sensor = comp + (self.rng.normal(0, self.pert.compression_noise_m) if self.pert.compression_noise_m else 0.0)
         tcp_belief = self.ctrl.frame.from_world(self.ctrl.ik.fk(q_meas)[0])
         tcp_true = self.true_frame.from_world(d.site_xpos[self.tcp_site])
         return {'seq': self.seq, 't_sample_s': float(d.time), 't_host_s': time.monotonic() - self.t0_host,
                 'q_meas_rad': q_meas, 'tcp_belief_uvn_m': tcp_belief, 'target_uvn_m': self.ctrl.target.copy(),
-                'compression_m': np.array([comp_meas]), 'contact_force_N': np.array([self.contact_force()]),
+                self.sensor_key: np.array([sensor]), 'contact_force_N': np.array([F]),
                 'tcp_true_uvn_m': tcp_true, '_compression_true': comp}
 
     def _account(self, obs, status):
         s = self.stats; t = self.task
         s['steps'] += 1; s['unreachable'] += status == 'unreachable'; s['rate_limited'] += status == 'rate_limited'
         F = float(obs['contact_force_N'][0])
-        if obs['_compression_true'] >= self.true_scene.spring_travel - 1e-4:
+        if not self.rigid and obs['_compression_true'] >= self.true_scene.spring_travel - 1e-4:
             s['bottom_out_steps'] += 1
         if F <= 0.05:
             return
         s['contact_steps'] += 1; s['force_sum'] += F; s['max_force_N'] = max(s['max_force_N'], F)
+        # 刀面实际轮廓（刚性方案为尖头抹刀：矩形 + 三角尖），在刀面系里判断每个格子是否被覆盖
         R6 = self.data.xmat[self.blade_body].reshape(3, 3)
-        wdir = self.true_frame.R.T @ R6[:, 0]              # 刀宽方向在墙面系
-        hdir = self.true_frame.R.T @ R6[:, 2]
-        c = obs['tcp_true_uvn_m']
-        du, dv = self.cell_u - c[0], self.cell_v - c[1]
-        inside = (np.abs(du * wdir[0] + dv * wdir[1]) <= self.scene.blade_width / 2) & \
-                 (np.abs(du * hdir[0] + dv * hdir[1]) <= self.scene.blade_height / 2)
+        o = self.outline
+        rel_u = self.cell_world - self.data.xpos[self.blade_body]
+        x = rel_u @ R6[:, 0]; z = np.abs(rel_u @ R6[:, 2])
+        rect = (x >= o['x_back']) & (x <= o['x_taper']) & (z <= o['half_width'])
+        span = max(o['x_tip'] - o['x_taper'], 1e-9)
+        tipz = o['half_width'] * np.clip((o['x_tip'] - x) / span, 0, 1)
+        tip = (x > o['x_taper']) & (x <= o['x_tip']) & (z <= tipz)
+        inside = rect | tip
         if t.force_window[0] <= F <= t.force_window[1]:
             s['in_window_steps'] += 1; self.covered |= inside
         elif F > t.force_window[1]:
@@ -173,5 +208,7 @@ class WallTask:
                 'joint_convention': 'model q = deg2rad(firmware_deg - HOME[0,0,90,0,0,0]), firmware direction',
                 'scene_nominal': self.scene.to_dict(), 'scene_nominal_digest': self.scene.digest(),
                 'scene_provenance': self.scene.provenance(), 'task': self.task.to_dict(),
-                'perturbation': self.pert.to_dict(), 'action_spec': self.spec.to_dict(), 'obs_spec': OBS_SPEC,
-                'nominal_force_at_target_N': round(self.scene.spring_preload + self.scene.spring_k * self.task.target_compression, 2)}
+                'perturbation': self.pert.to_dict(), 'action_spec': self.spec.to_dict(), 'obs_spec': self.obs_spec,
+                'tool_mount': self.scene.tool_mount,
+                'nominal_force_at_target_N': (self.task.target_force if self.rigid else
+                                              round(self.scene.spring_preload + self.scene.spring_k * self.task.target_compression, 2))}

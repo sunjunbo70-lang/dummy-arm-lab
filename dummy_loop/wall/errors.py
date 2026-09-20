@@ -7,7 +7,8 @@
                      编码器读回 = 真实 - δ（机器自以为在指令位置）。M3 标定要消除的正是它。
   latency_steps      指令延迟若干控制周期（串口排队、固件缓存）。M2 要测的上界。
   q_noise_rad        关节读数噪声。
-  compression_noise_m  压缩量传感器噪声。
+  compression_noise_m  压缩量传感器噪声（弹簧方案）。
+  force_noise_N      抹刀座力传感器噪声（刚性方案）。
   wall_dn_m          真实墙面沿名义法线的偏移（正 = 更远）。墙板摆放误差。
   wall_yaw_deg / wall_pitch_deg  真实墙面相对名义的偏转 / 前后倾。
   spring_k_scale     弹簧刚度相对设计值的比例（弹簧公差、3D 打印导轨摩擦）。
@@ -29,6 +30,7 @@ class Perturbation:
     latency_steps: int = 0
     q_noise_rad: float = 0.0
     compression_noise_m: float = 0.0
+    force_noise_N: float = 0.0
     wall_dn_m: float = 0.0
     wall_yaw_deg: float = 0.0
     wall_pitch_deg: float = 0.0
@@ -57,6 +59,7 @@ class Perturbation:
             latency_steps=int(rng.integers(0, 1 + round(2 * s))),
             q_noise_rad=np.deg2rad(0.05) * s,
             compression_noise_m=0.0005 * s,
+            force_noise_N=0.2 * s,
             wall_dn_m=float(rng.normal(0, 0.005 * s)),
             wall_yaw_deg=float(rng.normal(0, 2.0 * s)),
             wall_pitch_deg=float(rng.normal(0, 2.0 * s)),
@@ -66,9 +69,9 @@ class Perturbation:
 
 
 # 单因素敏感性分析用的扫描表：每个因素几个量级，其余保持名义。
-def single_factor_sweeps():
+def single_factor_sweeps(tool_mount='rigid'):
     one = np.eye(6)
-    return {
+    sweeps = {
         'wall_dn_mm':        [(v, Perturbation(wall_dn_m=v / 1000)) for v in (-10, -5, 5, 10)],
         'wall_yaw_deg':      [(v, Perturbation(wall_yaw_deg=v)) for v in (2, 5)],
         'wall_pitch_deg':    [(v, Perturbation(wall_pitch_deg=v)) for v in (2, 5)],
@@ -80,3 +83,7 @@ def single_factor_sweeps():
         'servo_kp_scale':    [(v, Perturbation(servo_kp_scale=v)) for v in (0.5, 2.0)],
         'friction_scale':    [(v, Perturbation(friction_scale=v)) for v in (0.5, 1.7)],
     }
+    if tool_mount == 'rigid':      # 刚性工具没有弹簧；换成力传感器噪声
+        del sweeps['spring_k_scale']
+        sweeps['force_noise_N'] = [(v, Perturbation(force_noise_N=v)) for v in (0.5, 1.0)]
+    return sweeps

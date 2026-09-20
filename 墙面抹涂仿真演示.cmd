@@ -7,7 +7,7 @@ if not exist "%~dp0.venv-loop\Scripts\python.exe" (
   exit /b 1
 )
 echo Wall-trowel SIMULATION ONLY. No hardware connection, no serial port.
-echo Random pre-calibration errors + wall probing + compression servo.
+echo J6 reducer + printed holder + pointed trowel (rigid). Random errors + wall probing + load-cell force loop.
 echo Close the viewer window to exit.
 "%~dp0.venv-loop\Scripts\python.exe" -m dummy_loop.wall demo --viewer --random-scale 1 --probe --servo
 if errorlevel 1 pause

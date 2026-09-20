@@ -4,10 +4,12 @@
 竖向行程在这台臂的自然运动平面内（肩、肘、腕俯仰），见 docs/SIMULATION.md。
 
 补偿（可选，均只用实机可得的量）：
-  probe   开工前在工作区三个角点沿法线慢速探触，压缩量超过阈值即记为接触点，
+  probe   开工前在工作区三个角点沿法线慢速探触，工具传感器超过阈值即记为接触点
+          （刚性工具：抹刀座力传感器 > touch_force；弹簧工具：压缩量 > 1 mm），
           拟合真实墙面平面并更新控制器的墙面坐标系。探触在机器自己的（可能有零位误差的）
           运动学里完成，所以同时吸收了局部的标定误差。
-  servo   抹涂阶段按压缩量读数闭环修正法向深度：dn += k (c* - c_meas)，限幅。
+  servo   抹涂阶段按工具传感器闭环修正法向深度，限幅：
+          刚性工具 dn += k_f (F* - F_meas)；弹簧工具 dn += k (c* - c_meas)。
 """
 import numpy as np
 from .controller import WallFrame
@@ -20,9 +22,12 @@ def _toward(cur, goal, step):
 
 class RasterTeacher:
     def __init__(self, env, speed=0.004, approach_speed=0.002, column_pitch=0.06, probe=False, servo=False,
-                 servo_gain=0.3, probe_threshold=0.001, max_corr=0.015):
+                 servo_gain=0.3, probe_threshold=0.001, max_corr=0.015, force_gain=0.0001):
         self.env = env; self.speed = speed; self.approach = approach_speed; self.pitch = column_pitch
-        self.probe = probe; self.servo = servo; self.k = servo_gain; self.thr = probe_threshold
+        self.probe = probe; self.servo = servo; self.k = servo_gain; self.kf = force_gain
+        self.rigid = env.rigid; self.key = env.sensor_key
+        self.thr = env.task.touch_force if self.rigid else probe_threshold
+        self.debounce = 2 if self.rigid else 1
         self.max_corr = max_corr; self.dn_corr = 0.0   # 补偿层累计的法向深度偏置（有上限）
         self.log = {'probe_points_uvn': [], 'wall_correction': None, 'frame_update': None}
 
@@ -54,12 +59,14 @@ class RasterTeacher:
         found = []
         for (u, v) in pts:
             self._move_to([u, v, -t.standoff], self.speed, record)
-            hit = None
+            hit = None; above = 0
             for _ in range(int((t.standoff + 0.03) / 0.001)):
                 obs, _ = record(np.array([0, 0, 0.001, 0]))    # 2 cm/s 慢速逼近
-                if obs['compression_m'][0] > self.thr:
-                    hit = obs['tcp_belief_uvn_m'].copy(); hit[2] -= 0.0   # 读数正解的 TCP（弹簧未压缩点）
-                    hit[2] += obs['compression_m'][0]                       # 刀面实际在更前方：加回压缩量
+                above = above + 1 if obs[self.key][0] > self.thr else 0
+                if above >= self.debounce:                        # 连续超过阈值才算接触，防噪声误触发
+                    hit = obs['tcp_belief_uvn_m'].copy()                   # 读数正解的 TCP
+                    if not self.rigid:
+                        hit[2] += obs[self.key][0]                          # 弹簧：刀面实际在更前方，加回压缩量
                     break
             self._move_to([u, v, -t.standoff], self.speed, record)
             if hit is None:
@@ -95,8 +102,9 @@ class RasterTeacher:
         def record(a):
             a = np.asarray(a, float)
             if self.servo and state['pressing']:
-                c = state['obs']['compression_m'][0]
-                corr = float(np.clip(self.k * (t.target_compression - c), -0.001, 0.001))
+                m = state['obs'][self.key][0]
+                err = self.kf * (t.target_force - m) if self.rigid else self.k * (t.target_compression - m)
+                corr = float(np.clip(err, -0.001, 0.001))
                 corr = float(np.clip(self.dn_corr + corr, -self.max_corr, self.max_corr) - self.dn_corr)
                 self.dn_corr += corr
                 a = a.copy(); a[2] += corr
@@ -113,7 +121,9 @@ class RasterTeacher:
         if self.probe:
             self._probe_wall(record)
         u0, u1 = t.region_u; v0, v1 = t.region_v
-        bw, bh = env.scene.blade_width, env.scene.blade_height
+        from .scene import blade_span
+        bw, bh = blade_span(env.scene)     # 沿墙水平（刀长）、竖直（刀宽）
+        depth = t.press_depth if self.rigid else t.target_compression
         cols = np.arange(u0 + bw / 2 - 0.01, u1 - bw / 2 + 0.01 + 1e-9, self.pitch)
         if len(cols) == 0 or cols[-1] < u1 - bw / 2 - 1e-6:
             cols = np.append(cols, u1 - bw / 2 + 0.01)
@@ -122,9 +132,9 @@ class RasterTeacher:
             v_start, v_end = (v_lo, v_hi) if k % 2 == 0 else (v_hi, v_lo)
             self._move_to([u, v_start, -t.standoff], self.speed, record)
             state['pressing'] = False
-            self._move_to([u, v_start, t.target_compression], self.approach, record, contact=True)   # 压入
+            self._move_to([u, v_start, depth], self.approach, record, contact=True)   # 压入
             state['pressing'] = True
-            self._move_to([u, v_end, t.target_compression], self.speed, record, contact=True)         # 抹
+            self._move_to([u, v_end, depth], self.speed, record, contact=True)         # 抹
             state['pressing'] = False
             self._move_to([u, v_end, -t.standoff], self.approach, record)               # 抬起
         self.log['servo_dn_corr_m'] = round(self.dn_corr, 5)

@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 INK, MUTED, GRID = '#1f1f1e', '#6b6a64', '#e6e5e0'
 SERIES = {'none': '#2a78d6', 'probe+servo': '#eb6834'}     # 分类色 1、2，已过色觉校验
-LABEL = {'none': 'no compensation', 'probe': 'probe only', 'servo': 'compression servo only',
+LABEL = {'none': 'no compensation', 'probe': 'probe only', 'servo': 'sensor servo only',
          'probe+servo': 'probe + servo'}
 
 

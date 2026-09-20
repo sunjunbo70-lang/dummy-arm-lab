@@ -8,24 +8,27 @@ from ..episode import EpisodeWriter, load_episode
 from .controller import WallFrame, ActionSpec
 from .errors import Perturbation, single_factor_sweeps
 from .scene import SceneConfig
-from .task import WallTask, TaskConfig, OBS_SPEC
+from .task import WallTask, TaskConfig, obs_spec
 from .teacher import RasterTeacher
 
 STATUS_CODE = {'ok': 0, 'rate_limited': 1, 'unreachable': 2}
-FIELDS = dict(OBS_SPEC)
-FIELDS.update({
+CMD_FIELDS = {
     'action': {'shape': [4], 'units': ['m', 'm', 'm', 'rad'], 'availability': 'command',
                'note': '墙面系增量 (du, dv, dn, dpsi)，交给控制器前（含补偿修正）'},
     'q_cmd_rad': {'shape': [6], 'units': 'rad', 'availability': 'command', 'note': '控制器发出的关节目标（规范坐标）'},
     'ctrl_status': {'shape': [], 'units': 'enum', 'availability': 'command', 'note': '0 ok, 1 rate_limited, 2 unreachable'},
-})
+}
+
+
+def fields_for(tool_mount):
+    f = dict(obs_spec(tool_mount)); f.update(CMD_FIELDS); return f
 
 
 def record_episode(path, perturbation=None, seed=0, probe=False, servo=False, scene=None, task=None):
     env = WallTask(scene, task, perturbation, seed)
     teacher = RasterTeacher(env, probe=probe, servo=servo)
     meta = {'source': f'sim:dummy_wall_trowel:{env.scene.digest()}', 'sample_time_known': True,
-            'fields': FIELDS, 'seed': seed, 'teacher': {'kind': 'raster_vertical', 'probe': probe, 'servo': servo},
+            'fields': fields_for(env.scene.tool_mount), 'seed': seed, 'teacher': {'kind': 'raster_vertical', 'probe': probe, 'servo': servo},
             'evidence_level': 'L1', 'hardware_motion': False, **env.describe()}
     w = EpisodeWriter(path, meta)
     k = [0]
@@ -33,7 +36,7 @@ def record_episode(path, perturbation=None, seed=0, probe=False, servo=False, sc
     def on_step(obs, action, info):
         w.add({'seq': k[0], 't_sample_s': obs['t_sample_s'], 't_host_s': obs['t_host_s'],
                'q_meas_rad': obs['q_meas_rad'], 'tcp_belief_uvn_m': obs['tcp_belief_uvn_m'],
-               'target_uvn_m': obs['target_uvn_m'], 'compression_m': obs['compression_m'],
+               'target_uvn_m': obs['target_uvn_m'], env.sensor_key: obs[env.sensor_key],
                'contact_force_N': obs['contact_force_N'], 'tcp_true_uvn_m': obs['tcp_true_uvn_m'],
                'action': action, 'q_cmd_rad': info['q_cmd'], 'ctrl_status': STATUS_CODE[info['status']]})
         k[0] += 1
@@ -52,6 +55,10 @@ def replay_episode(path):
         raise ValueError('这条 episode 是用参考模型 models/dummy_reference.xml 录的（2026-09-20 V2 切换之前）；'
                          '当前场景已换成 V2 模型，关节坐标约定不同，不能在当前代码上重放。'
                          '需要复现时检出 V2 切换之前的提交。')
+    # 2026-09-20 改为刚性工具之前录的 V2 episode 没有 tool_mount 字段，当时只有弹簧方案
+    meta['scene_nominal'].setdefault('tool_mount', 'spring')
+    if 'handle_from_tip' in meta['scene_nominal']:
+        meta['scene_nominal']['handle_from_tip'] = tuple(meta['scene_nominal']['handle_from_tip'])
     sc = SceneConfig(**{**meta['scene_nominal'], 'wall_size': tuple(meta['scene_nominal']['wall_size']),
                         'camera_pos': tuple(meta['scene_nominal']['camera_pos'])})
     tk = TaskConfig(**{**meta['task'], 'region_u': tuple(meta['task']['region_u']),
@@ -71,26 +78,27 @@ def replay_episode(path):
 MODES = {'none': (False, False), 'probe': (True, False), 'servo': (False, True), 'probe+servo': (True, True)}
 
 
-def run_study(out_dir, n_random=20, random_scale=1.0, seed=0):
+def run_study(out_dir, n_random=20, random_scale=1.0, seed=0, scene=None):
     """单因素扫描 + 随机误差批量，四种补偿模式对比。"""
     out_dir = Path(out_dir); out_dir.mkdir(parents=True, exist_ok=True)
+    scene = scene or SceneConfig()
     t0 = time.time(); single = {}
-    for factor, levels in single_factor_sweeps().items():
+    for factor, levels in single_factor_sweeps(scene.tool_mount).items():
         single[factor] = {}
         for value, pert in levels:
             single[factor][str(value)] = {}
             for mode, (pr, sv) in MODES.items():
-                env = WallTask(perturbation=pert, seed=seed)
+                env = WallTask(scene, perturbation=pert, seed=seed)
                 m, _ = RasterTeacher(env, probe=pr, servo=sv).run()
                 single[factor][str(value)][mode] = m
-    baseline = {mode: RasterTeacher(WallTask(seed=seed), probe=pr, servo=sv).run()[0] for mode, (pr, sv) in MODES.items()}
+    baseline = {mode: RasterTeacher(WallTask(scene, seed=seed), probe=pr, servo=sv).run()[0] for mode, (pr, sv) in MODES.items()}
     rng = np.random.default_rng(seed); perts = [Perturbation.sample(rng, random_scale) for _ in range(n_random)]
     randomized = {}
     for mode, (pr, sv) in MODES.items():
         ms = []
         for i, p in enumerate(perts):
             try:
-                ms.append(RasterTeacher(WallTask(perturbation=p, seed=seed + i), probe=pr, servo=sv).run()[0])
+                ms.append(RasterTeacher(WallTask(scene, perturbation=p, seed=seed + i), probe=pr, servo=sv).run()[0])
             except RuntimeError as e:
                 ms.append({'failed': str(e)})
         ok = [m for m in ms if 'failed' not in m]
@@ -102,7 +110,7 @@ def run_study(out_dir, n_random=20, random_scale=1.0, seed=0):
                             'bottom_out_episodes': int(sum(m['bottom_out_steps'] > 0 for m in ok)),
                             'overforced_episodes': int(sum(m['overforced_area_frac'] > 0 for m in ok))}
     result = {'evidence_level': 'L1', 'hardware_motion': False, 'seed': seed, 'random_scale': random_scale,
-              'nominal_scene': SceneConfig().to_dict(), 'task': TaskConfig().to_dict(),
+              'tool_mount': scene.tool_mount, 'nominal_scene': scene.to_dict(), 'task': TaskConfig().to_dict(),
               'baseline_no_error': baseline, 'single_factor': single, 'randomized': randomized,
               'random_perturbations': [p.to_dict() for p in perts], 'elapsed_s': round(time.time() - t0, 1)}
     (out_dir / 'sensitivity.json').write_text(json.dumps(result, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')

@@ -1,0 +1,54 @@
+[
+ {
+  "file": "ep_0000.npz",
+  "coverage": 0.9083,
+  "overforced_area_frac": 0.8688,
+  "in_window_frac_of_contact": 0.6905,
+  "mean_contact_force_N": 11.043,
+  "max_contact_force_N": 24.477,
+  "bottom_out_steps": 0,
+  "unreachable_steps": 0,
+  "rate_limited_steps": 5,
+  "contact_steps": 42,
+  "steps": 308
+ },
+ {
+  "file": "ep_0001.npz",
+  "coverage": 0.8479,
+  "overforced_area_frac": 0.725,
+  "in_window_frac_of_contact": 0.475,
+  "mean_contact_force_N": 15.473,
+  "max_contact_force_N": 32.544,
+  "bottom_out_steps": 0,
+  "unreachable_steps": 0,
+  "rate_limited_steps": 2,
+  "contact_steps": 40,
+  "steps": 257
+ },
+ {
+  "file": "ep_0002.npz",
+  "coverage": 0.9313,
+  "overforced_area_frac": 0.7917,
+  "in_window_frac_of_contact": 0.8,
+  "mean_contact_force_N": 9.902,
+  "max_contact_force_N": 22.407,
+  "bottom_out_steps": 0,
+  "unreachable_steps": 0,
+  "rate_limited_steps": 1,
+  "contact_steps": 40,
+  "steps": 298
+ },
+ {
+  "file": "ep_0003.npz",
+  "coverage": 0.9062,
+  "overforced_area_frac": 0.5104,
+  "in_window_frac_of_contact": 0.8776,
+  "mean_contact_force_N": 8.444,
+  "max_contact_force_N": 20.268,
+  "bottom_out_steps": 0,
+  "unreachable_steps": 0,
+  "rate_limited_steps": 4,
+  "contact_steps": 49,
+  "steps": 301
+ }
+]
