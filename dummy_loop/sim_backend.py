@@ -5,6 +5,26 @@ import mujoco
 from .core import Observation, six
 
 MODEL = Path(__file__).resolve().parents[1] / 'models' / 'dummy_reference.xml'
+STUDIO_MODEL = MODEL.parent / 'dummy_studio_visual.xml'
+# Studio 外观模型与参考模型的关节正方向关系（由两份模型的关节轴逐一比对得到，见
+# tests/test_studio_fallback.py）：J1、J4、J6 轴向相反。Studio 网格缺失时用参考模型
+# 代替显示，必须乘这个符号，否则这三个关节会朝反方向转。
+STUDIO_TO_REFERENCE_SIGN = np.array([-1.0, 1.0, 1.0, -1.0, 1.0, -1.0])
+
+
+def missing_model_assets(model):
+    """返回模型引用但磁盘上不存在的网格文件列表（空列表 = 齐全）。"""
+    import xml.etree.ElementTree as ET
+    model = Path(model)
+    doc = ET.fromstring(model.read_text(encoding='utf-8'))
+    compiler = doc.find('compiler')
+    meshdir = compiler.get('meshdir', '') if compiler is not None else ''
+    return [str(Path(meshdir) / m.get('file')) for m in doc.findall('asset/mesh')
+            if not (model.parent / meshdir / m.get('file')).is_file()]
+
+
+def studio_meshes_available():
+    return STUDIO_MODEL.is_file() and not missing_model_assets(STUDIO_MODEL)
 
 
 class SimRobot:
@@ -12,6 +32,13 @@ class SimRobot:
         if not np.isfinite(dt) or dt <= 0:
             raise ValueError('dt must be positive')
         model=Path(model)
+        missing = missing_model_assets(model)
+        if missing:
+            raise FileNotFoundError(
+                f'{model.name} 引用的 {len(missing)} 个网格文件不存在（例如 {missing[0]}）。'
+                ' Studio 外观网格因上游无许可声明不随仓库分发，需要从原开发机的'
+                ' models/studio_meshes/ 复制过来，或按 models/README.md 重建；'
+                ' 复制后可用 tools/maintenance/verify_studio_meshes.py 校验。')
         import xml.etree.ElementTree as ET
         doc = ET.fromstring(model.read_text(encoding='utf-8'))
         compiler = doc.find('compiler')

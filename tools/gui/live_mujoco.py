@@ -13,12 +13,20 @@ from PIL import Image,ImageTk
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT))
 from dummy_loop.live_control import LiveController,LOWER,UPPER,HOME
-from dummy_loop.sim_backend import SimRobot
+from dummy_loop.sim_backend import SimRobot, studio_meshes_available, STUDIO_TO_REFERENCE_SIGN
 
 
 class Scene:
     def __init__(self):
-        self.model=SimRobot(ROOT/'models/dummy_studio_visual.xml').model
+        # Studio 外观网格不随仓库分发。缺失时退回参考模型，并按关节轴比对得到的符号换算，
+        # 保证每个关节在画面里的转动方向与 Studio 模型一致（外形、尺寸仍不同）。
+        self.fallback=not studio_meshes_available()
+        if self.fallback:
+            self.model=SimRobot(ROOT/'models/dummy_reference.xml').model
+            self.sign=STUDIO_TO_REFERENCE_SIGN.copy()
+        else:
+            self.model=SimRobot(ROOT/'models/dummy_studio_visual.xml').model
+            self.sign=np.ones(6)
         self.data=mujoco.MjData(self.model)
         # Display only: forward kinematics, no dynamics or simulated force output.
         self.model.jnt_limited[:]=0
@@ -30,7 +38,7 @@ class Scene:
 
     def frame(self,firmware_deg):
         # Studio-derived home-relative mapping; never used for hardware targets.
-        self.data.qpos[self.ids]=np.deg2rad(np.asarray(firmware_deg)-HOME)
+        self.data.qpos[self.ids]=self.sign*np.deg2rad(np.asarray(firmware_deg)-HOME)
         mujoco.mj_forward(self.model,self.data)
         self.renderer.update_scene(self.data,camera=self.camera)
         return self.renderer.render().copy()
@@ -41,7 +49,13 @@ class App:
         self.root=root; root.title('Dummy · MuJoCo 实机同步上位机')
         root.geometry('1150x880'); root.minsize(1120,850)
         self.control=LiveController(ROOT/f'outputs/live_serial_{time.time_ns()}.jsonl')
-        self.scene=Scene(); self.generation=-1; self.setting=False; self.closing=False
+        self.scene=Scene()
+        if self.scene.fallback:
+            root.title('Dummy · MuJoCo 实机同步上位机 —— 参考模型显示（Studio 外观文件缺失）')
+            tk.Label(root,text='显示用的是参考模型：Studio 外观网格不在本机。关节转向已按 Studio 约定换算，'
+                     '外形与尺寸不同，仅作示意。恢复方法见 models/README.md。',
+                     bg='#fff3cd',fg='#6b4b00',anchor='w',padx=8,pady=4).pack(fill='x')
+        self.generation=-1; self.setting=False; self.closing=False
         self.values=[tk.DoubleVar(value=v) for v in HOME]; self.readouts=[]; self.target_readouts=[]
         self.images=[]; self.last_q=HOME.copy(); self.last_draw=0.; self.drag=None
         style=ttk.Style(); style.theme_use('clam'); style.configure('TButton',padding=6)

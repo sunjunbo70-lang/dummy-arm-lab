@@ -10,7 +10,7 @@ import numpy as np
 import mujoco.viewer
 from dummy_loop.core import Guard
 from dummy_loop.policy import LinearPolicy
-from dummy_loop.sim_backend import SimRobot
+from dummy_loop.sim_backend import SimRobot, studio_meshes_available
 
 
 def cycle_goals():
@@ -38,6 +38,11 @@ def main():
     mode.add_argument('--cycle', action='store_true', help='Repeat J1-J6 diagnostic motion: +10, -10, 0 degrees per axis')
     mode.add_argument('--simultaneous', action='store_true', help='All six axes oscillate together: +/-10 degrees, 8-second period')
     args = parser.parse_args()
+    if args.studio and not studio_meshes_available():
+        print('NOTICE: Studio 外观网格 models/studio_meshes/ 不在本机（不随仓库分发），'
+              '改用参考模型 models/dummy_reference.xml 显示。外观不同，仍是未标定的纯仿真。'
+              ' 恢复方法见 models/README.md。', flush=True)
+        args.studio = False
     diagnostic = args.manual or args.cycle or args.simultaneous
     policy = None if diagnostic else LinearPolicy(root / 'outputs/policy.npz')
     robot = SimRobot(root/'models/dummy_studio_visual.xml',dt=.05) if args.studio else SimRobot(dt=.05)

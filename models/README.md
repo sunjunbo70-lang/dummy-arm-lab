@@ -34,3 +34,15 @@ This is an auk reference, not a calibrated Dummy V2 digital twin. Joint zero/map
 `source_sha256`（原 OBJ）与 `stl_sha256`（生成的 STL）。
 需要重建模型时，把归档中的 OBJ 复制回 `studio_source/` 再运行
 `tools/modeling/build_studio_model.py`。
+
+## 换机器后 Studio 外观网格缺失（2026-09-20）
+
+`models/studio_meshes/`（21 个 STL）被 `.gitignore` 排除，克隆到新机器时不存在。此时：
+
+- `六轴同时往复仿真.cmd`（`view_simulation.py --studio`）会提示后改用 `dummy_reference.xml` 显示；
+- `MuJoCo实机同步.cmd`（`tools/gui/live_mujoco.py`）改用参考模型显示，窗口标题与顶部黄条会注明。
+  两份模型的 J1、J4、J6 轴向相反，显示时已按 `dummy_loop.sim_backend.STUDIO_TO_REFERENCE_SIGN`
+  换算，保证转向一致（`tests/test_studio_fallback.py` 用两份模型文件逐轴比对锁定这一点）。外形与尺寸仍不同。
+
+恢复完整外观：从原开发机复制 `models/studio_meshes/` 整个文件夹到本仓库同一位置，然后运行
+`python tools/maintenance/verify_studio_meshes.py`，21 个文件的 SHA-256 与 `studio_provenance.json` 全部一致即可。

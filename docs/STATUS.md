@@ -70,3 +70,12 @@ git 对象，未安装 git-lfs 也能完整检出。原条目按「原始记录�
 同时修改：`dummy_loop/sim_backend.py` 对超出 ctrlrange 的目标显式报错（以前被 MuJoCo 静默截断），
 参考仿真闭环数值不变；`tools/environment/doctor.py` 增加 GPU 算力等级、bf16/TF32/FA2 支持与 torch/CUDA 信息。
 本次未连接机械臂，未发送任何运动指令。
+
+## 2026-09-20 修复：两个 .cmd 启动器在新机器上打不开
+
+原因：二者都加载 `models/dummy_studio_visual.xml`，其 21 个 Studio 网格不随仓库分发，新机器上不存在，
+启动即 FileNotFoundError。不是本次仓库改动引起的，是换机器后的首次暴露。
+处理：缺网格时两者改用参考模型显示（实机同步上位机按逐轴比对得到的符号换算转向，并在窗口中注明），
+`SimRobot` 缺网格时给出可操作的报错；新增 `tools/maintenance/verify_studio_meshes.py` 与
+`tests/test_studio_fallback.py`（测试 66 → 70）。完整外观需从原开发机复制 `models/studio_meshes/`。
+L1；本次未连接机械臂。
