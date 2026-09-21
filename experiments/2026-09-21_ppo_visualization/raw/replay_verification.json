@@ -1,0 +1,58 @@
+{
+  "technique": {
+    "all_qpos_and_height_frames_exactly_equal": true,
+    "metrics_equal": true,
+    "records": 87,
+    "metrics": {
+      "coverage": 0.9796,
+      "mean_thickness_mm": 2.086,
+      "rms_error_mm": 0.371,
+      "flatness_std_mm": 0.361,
+      "wasted_frac": 0.256,
+      "dropped_frac": 0.036,
+      "left_on_tool_frac": 0.0488,
+      "deposited_g": 103.86,
+      "strokes": 3,
+      "steps": 84,
+      "transit_simulated": false,
+      "unreachable_columns": [],
+      "area_u_m": [
+        -0.14,
+        0.14
+      ],
+      "area_v_m": [
+        0.0,
+        0.07
+      ],
+      "area_cm2": 196.0
+    }
+  },
+  "flat": {
+    "all_qpos_and_height_frames_exactly_equal": true,
+    "metrics_equal": true,
+    "records": 100,
+    "metrics": {
+      "coverage": 0.9796,
+      "mean_thickness_mm": 2.503,
+      "rms_error_mm": 0.819,
+      "flatness_std_mm": 0.646,
+      "wasted_frac": 0.144,
+      "dropped_frac": 0.0387,
+      "left_on_tool_frac": 0.0,
+      "deposited_g": 115.55,
+      "strokes": 3,
+      "steps": 97,
+      "transit_simulated": false,
+      "unreachable_columns": [],
+      "area_u_m": [
+        -0.14,
+        0.14
+      ],
+      "area_v_m": [
+        0.0,
+        0.07
+      ],
+      "area_cm2": 196.0
+    }
+  }
+}

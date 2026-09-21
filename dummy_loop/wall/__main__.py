@@ -7,6 +7,9 @@
   python -m dummy_loop.wall replay  outputs/wall/episodes/ep_0000.npz
   python -m dummy_loop.wall study   --out outputs/wall/study
   python -m dummy_loop.wall render  --out outputs/wall/camera        固定相机 RGB 与深度图
+  python -m dummy_loop.wall rl-train --updates 60 --out outputs/wall/rl   抹涂手法强化学习（示教预热 + PPO）
+  python -m dummy_loop.wall rl-eval  --policy outputs/wall/rl/policy.npz  评估学到的策略并与脚本基线对比
+  python -m dummy_loop.wall rl-session [--policy ...] --out outputs/wall/session   一刀一刀把整片区域抹完
 """
 import argparse, json, sys, time
 from pathlib import Path
@@ -40,6 +43,24 @@ def main(argv=None):
     s = sub.add_parser('study'); s.add_argument('--out', type=Path, default=Path('outputs/wall/study'))
     s.add_argument('--random', type=int, default=20); s.add_argument('--random-scale', type=float, default=1.0)
     s = sub.add_parser('render'); s.add_argument('--out', type=Path, default=Path('outputs/wall/camera'))
+    s = sub.add_parser('rl-train'); s.add_argument('--out', type=Path, default=Path('outputs/wall/rl'))
+    s.add_argument('--updates', type=int, default=60); s.add_argument('--steps-per-update', type=int, default=2048)
+    s.add_argument('--seed', type=int, default=0); s.add_argument('--random-scale', type=float, default=0.0)
+    s.add_argument('--lr', type=float, default=5e-5); s.add_argument('--init-log-std', type=float, default=-3.0)
+    s.add_argument('--no-warm-start', action='store_true', help='不做示教预热（从零探索，基本学不动，用于对照）')
+    s.add_argument('--eval-every', type=int, default=10); s.add_argument('--eval-episodes', type=int, default=8)
+    s.add_argument('--script-style', choices=('technique', 'flat'), default='technique',
+                   help='示教预热用的手写手法：technique = 工人手法（斜着贴墙再放平）；flat = 不用手法（对照组）')
+    s = sub.add_parser('rl-eval'); s.add_argument('--policy', type=Path, required=True)
+    s.add_argument('--episodes', type=int, default=20); s.add_argument('--seed', type=int, default=1000)
+    s.add_argument('--random-scale', type=float, default=0.0)
+    s = sub.add_parser('rl-session'); s.add_argument('--out', type=Path, default=Path('outputs/wall/session'))
+    s.add_argument('--policy', type=Path, default=None, help='不给就用手写脚本跑')
+    s.add_argument('--seed', type=int, default=2000)
+    s.add_argument('--columns', type=float, nargs='+', default=[-0.08, 0.0, 0.08], help='每条带的中心 u（m）')
+    s.add_argument('--band-v', type=float, nargs=2, default=[0.0, 0.07], help='每条带的竖直范围（m）')
+    s.add_argument('--simulate-transit', action='store_true',
+                   help='把带与带之间的横移也仿真出来（已知会卡在腕部支解切换上，见 session.py 说明）')
     for name, sp in sub.choices.items():
         if name in ('scene', 'demo', 'collect', 'study'):
             sp.add_argument('--tool', choices=('rigid', 'spring'), default='rigid',
@@ -118,6 +139,42 @@ def main(argv=None):
         from .scene import SceneConfig
         r = run_study(a.out, a.random, a.random_scale, scene=SceneConfig(tool_mount=a.tool))
         emit({'randomized': r['randomized'], 'elapsed_s': r['elapsed_s'], 'written': str(a.out / 'sensitivity.json')})
+    elif a.cmd == 'rl-train':
+        from .rl import train
+        from .ppo import PPOConfig
+        from .stroke_env import StrokeConfig
+        cfg = PPOConfig(steps_per_update=a.steps_per_update, seed=a.seed, lr=a.lr,
+                        init_log_std=a.init_log_std, entropy_coef=0.0, epochs=5)
+        r = train(a.out, updates=a.updates, cfg=cfg, stroke=StrokeConfig(script_style=a.script_style),
+                  random_scale=a.random_scale, seed=a.seed,
+                  eval_every=a.eval_every, eval_episodes=a.eval_episodes, warm_start=not a.no_warm_start,
+                  log=lambda s: print(s, flush=True))
+        emit({'scripted_baseline': r['scripted_baseline'], 'after_behaviour_clone': r['after_behaviour_clone'],
+              'learned_final': r['learned_final'], 'random_policy': r['random_policy'],
+              'elapsed_s': r['elapsed_s'], 'written': str(a.out / 'training.json')})
+    elif a.cmd == 'rl-eval':
+        from .rl import make_env, evaluate, load_policy
+        env = make_env(a.seed, a.random_scale)
+        agent = load_policy(env, a.policy)
+        emit({'learned': evaluate(env, agent, a.episodes), 'scripted': evaluate(env, None, a.episodes),
+              'scope': 'simulation only, L1; material is a reduced-order proxy model'})
+    elif a.cmd == 'rl-session':
+        from .rl import make_env, load_policy, Scaled
+        from .session import SessionConfig, run_session
+        env = make_env(a.seed)
+        policy = None
+        if a.policy is not None:
+            policy = Scaled(env, load_policy(env, a.policy), deterministic=True)
+        cfg = SessionConfig(column_centres=tuple(a.columns), band_v=tuple(a.band_v),
+                            simulate_transit=a.simulate_transit)
+        m, strokes, field = run_session(env, policy, cfg)
+        a.out.mkdir(parents=True, exist_ok=True)
+        np.savez(a.out / 'thickness.npz', h=field.h, u=field.cu, v=field.cv, inside=field.inside)
+        r = {'evidence_level': 'L1', 'hardware_motion': False, 'policy': str(a.policy) if a.policy else 'scripted',
+             'session': cfg.to_dict(), 'area': m, 'strokes': strokes,
+             'note': 'strokes[].return 不能与单刀训练回报比较：终局奖励是在整片共用高度场上算的'}
+        (a.out / 'session.json').write_text(json.dumps(r, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
+        emit({'area': m, 'strokes': strokes, 'written': str(a.out / 'session.json')})
     elif a.cmd == 'render':
         from .render import render_camera
         emit(render_camera(a.out))

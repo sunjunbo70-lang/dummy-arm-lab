@@ -63,7 +63,10 @@ class SceneConfig:
     j6_reducer_plate_thickness: float = 0.008
     j6_reducer_radius: float = 0.016
     j6_reducer_mass: float = 0.15
-    j6_reducer_ratio: float = None
+    # 减速比未确认（照片上只看得出有这么一节）。给一个候选值 30：J6 输出转矩 = 电机保持转矩 × 减速比，
+    # 反射惯量 = 转子惯量 × 减速比²。None = 按 V2 模型的直驱参数（J6 几乎没有力矩，连自身阻尼都拧不动）。
+    j6_reducer_ratio: float = 30.0
+    j6_reducer_max_Nm: float = 2.5    # 这一节减速器的允许输出转矩上限（假设值）
     # 3D 打印抹刀座：从法兰面到木柄外表面的厚度；夹持位置用「离刀尖的距离」表示
     holder_height: float = 0.012
     holder_mass: float = 0.03
@@ -119,6 +122,9 @@ class SceneConfig:
                            'Dimensions estimated from photos; reducer type/ratio UNCONFIRMED'
                            if self.tool_mount == 'rigid' else
                            'SPRING (earlier design, kept for comparison): adapter on bare shaft + spring slide'),
+            'j6_reducer': ('UNCONFIRMED type/ratio; model assumes ratio %s and %.2f N*m output limit'
+                           % (self.j6_reducer_ratio, min(0.07 * self.j6_reducer_ratio, self.j6_reducer_max_Nm))
+                           if self.j6_reducer_ratio else 'modelled as direct drive (no reducer)'),
             'tool_sensor': ('load cell between flange and holder (hardware_with_sensor); in sim = blade-wall normal force + noise'
                             if self.tool_mount == 'rigid' else 'spring compression (linear pot / hall sensor)'),
             'wall_pose': ('nominal. Chosen by dummy_loop.wall.layout search on the V2 model '
@@ -230,6 +236,14 @@ def build_spec(cfg: SceneConfig):
     for b in spec.bodies:
         if b.name != 'world':
             b.gravcomp = 1.0 if cfg.gravcomp else 0.0
+
+    if cfg.tool_mount == 'rigid' and cfg.j6_reducer_ratio:
+        from .. import v2 as _v2
+        motor = _v2.MOTORS[[d for d in _v2.DRIVETRAIN_V2 if d['joint'] == 'J6'][0]['motor']]
+        tau = min(motor['holding_Nm'] * cfg.j6_reducer_ratio, cfg.j6_reducer_max_Nm)
+        a6 = spec.actuator('servo6'); a6.forcerange = [-tau, tau]
+        j6 = spec.joint('Joint6')
+        j6.armature = motor['rotor_inertia_kgm2'] * cfg.j6_reducer_ratio ** 2
 
     link6 = spec.body(LINK6)
     gc = 1.0 if cfg.gravcomp else 0.0

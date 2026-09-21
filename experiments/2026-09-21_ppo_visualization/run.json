@@ -1,0 +1,36 @@
+{
+  "experiment_id": "2026-09-21_ppo_visualization",
+  "status": "completed",
+  "purpose": "Visualize saved PPO checkpoint rollouts with actual robot dynamics and material height field",
+  "source_version": "99eba18b3a4dc7ad1bff0ec974924ef360c6c3b8",
+  "command": [
+    "python -m dummy_loop.wall.visualize --out outputs/wall/ppo_visualization_v2",
+    "python -m unittest discover -s tests"
+  ],
+  "environment": {
+    "python": "3.12.7",
+    "numpy": "2.5.3",
+    "mujoco": "3.13.0"
+  },
+  "seed": 2000,
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "artifacts": [
+    "raw/technique/report.json",
+    "raw/flat/report.json",
+    "raw/replay_verification.json",
+    "raw/tests.txt",
+    "raw/file_inventory.json"
+  ],
+  "limitations": [
+    "Reduced-order mortar, uncalibrated parameters",
+    "Transit between bands is a labelled reset, not simulated",
+    "First preview v1 had cameras behind the wall; kept in outputs, superseded by v2"
+  ],
+  "ui_validation": [
+    "Browser loads both embedded frame sequences",
+    "Pause and single-step 93->94 verified",
+    "Policy selection updates frame count and final metrics",
+    "Seek verified; image visually reviewed"
+  ]
+}

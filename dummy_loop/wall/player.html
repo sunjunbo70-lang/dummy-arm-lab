@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PPO 墙面抹涂 · 仿真回放</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#091320;color:#e4edf6;font:16px 'Microsoft YaHei',sans-serif}main{max-width:1250px;margin:auto;padding:22px}h1{font-size:25px;margin:0 0 8px}p{color:#9fb6cd;line-height:1.6}img{width:100%;display:block;border-radius:10px;background:#101b2b}nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:16px 0}button,select{background:#19334b;color:white;border:1px solid #41617a;border-radius:6px;padding:10px;font:inherit;cursor:pointer}button:hover{background:#26516c}input{flex:1;min-width:150px;accent-color:#40cbb7}#summary{color:#7edbca}small{color:#a9bacd}
+</style><main>
+<h1>看模型实际怎样抹墙</h1><p>已训练 PPO 权重的确定性推理，机械臂与抹刀由 MuJoCo 实际运行；墙上的材料随每一步更新。</p>
+<nav><label>模型 <select id="policy"></select></label><button id="play">暂停</button><button id="restart">重播</button><label>速度 <select id="speed"><option value="0.25">0.25×</option><option value="0.5" selected>0.5× 慢放</option><option value="1">1×</option><option value="2">2×</option></select></label><span id="counter"></span></nav>
+<img id="frame" alt="机械臂全景、抹刀近景和逐帧砂浆厚度" style="object-fit:contain"><nav><input aria-label="播放进度" id="seek" type="range" min="0" value="0"><button id="prev">上一帧</button><button id="next">下一帧</button><button id="fullscreen">全屏画面</button></nav>
+<p id="summary"></p><small>灰色材料按仿真厚度显示；下方展开图用颜色强调厚度差。换条带处暂停并切换到下一待命位，过渡运动尚未仿真。L1 软件证据；砂浆为高度场代理模型。默认循环慢放；页面完全离线可用。</small>
+</main><script>
+const runs=__ROLLOUT_DATA__;
+const $=id=>document.getElementById(id);let run=0,pos=0,playing=true,last=0,elapsed=0;
+runs.forEach((r,i)=>{let o=document.createElement('option');o.value=i;o.textContent=r.name;$('policy').append(o)});
+function draw(){const r=runs[run];$('frame').src='data:image/jpeg;base64,'+r.images[pos];$('seek').max=r.images.length-1;$('seek').value=pos;$('counter').textContent=`${pos+1} / ${r.images.length} 帧`;const m=r.metrics;$('summary').textContent=`整片最终结果：覆盖率 ${(m.coverage*100).toFixed(1)}% · 平均厚度 ${m.mean_thickness_mm.toFixed(2)} mm · RMS ${m.rms_error_mm.toFixed(3)} mm · ${m.strokes} 刀`}
+function pause(){playing=false;$('play').textContent='播放'}
+$('play').onclick=()=>{playing=!playing;$('play').textContent=playing?'暂停':'播放'};
+$('restart').onclick=()=>{pos=0;elapsed=0;draw()};
+$('policy').onchange=()=>{run=+$('policy').value;pos=0;elapsed=0;draw()};
+$('seek').oninput=()=>{pause();pos=+$('seek').value;draw()};
+$('prev').onclick=()=>{pause();pos=Math.max(0,pos-1);draw()};
+$('next').onclick=()=>{pause();pos=Math.min(runs[run].images.length-1,pos+1);draw()};
+$('fullscreen').onclick=()=>{$('frame').requestFullscreen().catch(()=>{})};
+function tick(t){if(playing){elapsed+=Math.min(t-last,200)*+$('speed').value;if(elapsed>=50){pos=(pos+Math.floor(elapsed/50))%runs[run].images.length;elapsed%=50;draw()}}last=t;requestAnimationFrame(tick)}draw();requestAnimationFrame(tick);
+</script></html>

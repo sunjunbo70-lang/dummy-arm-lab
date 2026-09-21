@@ -1,0 +1,71 @@
+{
+  "experiment_id": "2026-09-21_plaster_session_rl",
+  "status": "completed",
+  "purpose": "把用户描述的抹涂手法（回到立起待命位 → 下缘先贴墙 → 边上行边放平）做成强化学习闭环，并扩展到多刀整片作业，检验这套奖励能否让机械臂学到抹涂技巧",
+  "supersedes": "2026-09-21_stroke_rl（动力学不同：本次新增刀上带料容量与掉料规则，数字不可直接比较；原记录保留不动）",
+  "source_version": "064564c + GUI fix + rigid trowel + RL loop + session/carry model (uncommitted at run time)",
+  "command": [
+    "python -m dummy_loop.wall rl-train --updates 100 --script-style technique --out <tech>",
+    "python -m dummy_loop.wall rl-train --updates 100 --script-style flat --out <flat>",
+    "python tools/simulation/rl_compare.py --technique <tech> --flat <flat> --out <compare>",
+    "python -m dummy_loop.wall rl-session --policy <tech>/policy.npz --out <session>",
+    "python -m unittest discover -s tests"
+  ],
+  "environment_file": null,
+  "config_file": "raw/technique_warm_start/training.json (env 字段含全部配置)",
+  "seed": 0,
+  "data_split": null,
+  "hardware": {
+    "robot_connected": false,
+    "runner": "cloud sandbox, Linux, Python 3.11, numpy only (no torch)"
+  },
+  "units": "return (dimensionless); coverage fraction; thickness mm; wasted/dropped fraction of supplied volume; force N",
+  "metrics": {
+    "tests_passed": 98,
+    "tests_skipped": 3,
+    "steps_per_run": 204800,
+    "training_time_s": {"technique_warm_start": 171.7, "flat_warm_start": 175.7},
+    "episode_cost_s": 0.02,
+    "single_stroke": {
+      "random_policy": {"return": -23.06},
+      "scripted_technique": {"return": -6.257, "coverage": 0.6429, "rms_error_mm": 1.349, "wasted_frac": 0.3867, "dropped_frac": 0.2262},
+      "scripted_flat": {"return": -10.522, "coverage": 0.2857, "rms_error_mm": 1.135, "wasted_frac": 0.4959, "dropped_frac": 0.2866},
+      "ppo_technique_warm_start": {"return": 8.204, "coverage": 1.0, "rms_error_mm": 0.356, "flatness_std_mm": 0.356, "wasted_frac": 0.2046, "left_on_tool_frac": 0.0, "max_force_N": 0.387, "aborted_episodes": 0},
+      "ppo_flat_warm_start": {"return": 8.315, "coverage": 1.0, "rms_error_mm": 0.705, "flatness_std_mm": 0.581, "wasted_frac": 0.0, "left_on_tool_frac": 0.0, "max_force_N": 0.328, "aborted_episodes": 0}
+    },
+    "session_3_bands_196cm2": {
+      "scripted_technique": {"coverage": 0.898, "mean_thickness_mm": 1.938, "rms_error_mm": 0.879, "flatness_std_mm": 0.876, "wasted_frac": 0.3863, "left_on_tool_frac": 0.0073, "steps": 87},
+      "ppo_technique_warm_start": {"coverage": 0.9796, "mean_thickness_mm": 2.086, "rms_error_mm": 0.371, "flatness_std_mm": 0.361, "wasted_frac": 0.256, "left_on_tool_frac": 0.0488, "steps": 84},
+      "ppo_flat_warm_start": {"coverage": 0.9796, "mean_thickness_mm": 2.503, "rms_error_mm": 0.819, "flatness_std_mm": 0.646, "wasted_frac": 0.144, "left_on_tool_frac": 0.0, "steps": 97}
+    },
+    "learned_technique_profile": {
+      "both_runs_lock_trailing_edge_gap_mm": 2.0,
+      "technique_warm_start_pitch_deg": "28 -> 12 (缓慢放平，接近工人手法)",
+      "flat_warm_start_pitch_deg": "28 -> 3 (快速放平后保持小俯仰)",
+      "conclusion": "奖励唯一确定的是「后缘间隙 = 目标厚度」，不是俯仰角的大小；两种姿态解回报相当"
+    }
+  },
+  "artifacts": [
+    "raw/technique_warm_start/training.json",
+    "raw/technique_warm_start/training.png",
+    "raw/technique_warm_start/policy.npz",
+    "raw/flat_warm_start/training.json",
+    "raw/flat_warm_start/training.png",
+    "raw/flat_warm_start/policy.npz",
+    "raw/compare/training.png",
+    "raw/compare/technique.png",
+    "raw/compare/session.png",
+    "raw/compare/report.json",
+    "../../docs/RL.md"
+  ],
+  "limitations": [
+    "Material is a reduced-order height-field proxy; carry capacity / spill / yield-stress coefficients are assumptions, NOT calibrated",
+    "The reward does not uniquely determine the tilt profile: a near-flat solution scores as well as the worker-like one",
+    "Band-to-band transit is not simulated (SessionConfig.simulate_transit=False): wrist branch flips need a planned transition trajectory",
+    "Deposit is too thick at the start of each stroke and there is a step between adjacent bands",
+    "No camera in the observation; the policy cannot see where the layer is thin",
+    "Servo stiffness, friction and latency are not identified; absolute force values are not meaningful",
+    "J6 reducer ratio is an assumed 30 (a reducer is visible in the photos, model unconfirmed)"
+  ],
+  "hardware_motion": false
+}
