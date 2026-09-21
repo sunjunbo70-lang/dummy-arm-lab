@@ -91,6 +91,13 @@ flowchart LR
 
 只跑参考仿真,不接触硬件,不需要机械臂。
 
+## 整片连续强化学习（v0.2）
+
+新版实验把装料、接近、接触、任意方向涂抹/刮平、离墙、回位和 D435 重扫纳入同一个长时程闭环。
+双击 `整片连续强化学习可视化.cmd` 可打开训练后 PPO 策略的离线三维回放；鼠标可自由旋转和缩放视角，
+页面同步显示墙面厚度、抹刀积料、动作方向/刀角和质量指标。实现与证据边界见
+[`docs/WALL_CYCLE_RL.md`](docs/WALL_CYCLE_RL.md)。
+
 ```bash
 git clone https://github.com/sunjunbo70-lang/dummy-arm-lab.git
 cd dummy-arm-lab
