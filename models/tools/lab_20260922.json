@@ -5,9 +5,9 @@
   "scene": {
     "geometry_profile": "lab_20260922",
     "tool_mount": "rigid",
-    "j6_reducer_length": 0.028,
+    "j6_reducer_length": 0.0335,
     "j6_reducer_plate": 0.032,
-    "j6_reducer_plate_thickness": 0.005,
+    "j6_reducer_plate_thickness": 0.0055,
     "j6_reducer_radius": 0.0155,
     "j6_reducer_mass": 0.15,
     "j6_reducer_ratio": 30.0,
@@ -55,6 +55,23 @@
         "lateral_offset_m": 0.07,
         "camera_mass_kg": 0.075,
         "bracket_mass_kg": 0.025
+      },
+      "reducer_drawing": {
+        "source": "https://cdn.shopify.com/s/files/1/0673/6848/5000/files/PY_TECHNOLOGY_MINIF8_Product_structure_diagram.pdf?v=1770127157",
+        "revision": "240914A",
+        "axial_upper_m": 0.021,
+        "axial_lower_m": 0.007,
+        "rear_recess_m": 0.0015,
+        "output_boss_m": 0.001,
+        "adapter_seat_recess_m": 0.0,
+        "output_boss_radius_estimated_m": 0.009,
+        "input_bore_diameter_m": 0.005,
+        "output_pilot_diameter_m": 0.009,
+        "output_pilot_depth_m": 0.0035,
+        "output_hole_pcd_m": 0.013,
+        "output_hole_thread": "M3",
+        "output_hole_depth_m": 0.008,
+        "base_hole_pcd_m": 0.0375
       }
     }
   },
@@ -77,7 +94,7 @@
       "text": "8-30 250808015",
       "interpretation": "size 8, ratio 30; serial read from IMG20260922135912.jpg; manufacturer unconfirmed"
     },
-    "drawing_candidate": "MINIF08 archived parameter drawing: 32 mm plate, approximately 31 mm housing; installed total length superseded by user coarse measurement of 28 mm",
+    "drawing_candidate": "MINIF8 structure drawing rev240914A; accepted geometry reference, manufacturer/actual variant still unconfirmed. 21+7-1.5=26.5 mm mounting face to housing top; +1 mm output boss; +6 mm estimated adapter with zero recess =33.5 mm.",
     "estimated_not_measured": [
       "95 mm handle length",
       "24 mm tip taper length",
@@ -85,14 +102,15 @@
       "blade thickness 1 mm",
       "all masses",
       "adapter hole pattern and lugs",
-      "6 mm top adapter thickness within the user-reported 28 mm installed height"
+      "6 mm top adapter thickness and zero seating recess; 9 mm output boss radius; internal mass distribution"
     ],
     "proposed_design": "68x46x6 mm base, two 9 mm wide elliptical split collars, 3.5 mm wall, 0.3 mm radial clearance; holes/fasteners not fabrication-ready",
     "compatibility": "Dedicated simulation variant. Do not load legacy policy/reach table as if validated for this geometry.",
     "camera_mount": "D435 drawing Fig 10-9 p142, RealSense D400 datasheet Rev015 March2023: 45 mm spacing, M3, insertion <=3 mm; D435f rear hole compatibility still to be checked on actual camera. Camera/bracket masses estimated; mount draft only.",
     "user_coarse_measurement_mm": {
       "installed_reducer_height_including_top_adapter": 28,
-      "source": "User report 2026-09-22; approximate, measurement uncertainty unspecified"
+      "source": "User report 2026-09-22; approximate, measurement uncertainty unspecified",
+      "status": "28 mm coarse assembly measurement retained as conflicting evidence; not used to override drawing datums. Adapter seating/thickness require measurement."
     }
   }
 }

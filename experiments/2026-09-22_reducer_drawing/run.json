@@ -1,0 +1,8 @@
+{
+  "evidence": "L1",
+  "tests_passed": 9,
+  "drawing": "MINIF8 240914A",
+  "installed_length_mm": 33.5,
+  "adapter_thickness_estimate_mm": 6,
+  "hardware_motion": false
+}

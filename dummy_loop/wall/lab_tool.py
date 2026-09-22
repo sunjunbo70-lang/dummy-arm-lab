@@ -23,7 +23,8 @@ def provenance(cfg):
         'source_manifest': 'experiments/2026-09-22_lab_tool/source_manifest.json',
         'dimensions': '124 mm blade, 42 mm heel, 35 mm shoulder; handle end sections 24x25.5 and 26.5x28.5 mm',
         'reducer': 'photo engraving 8-30; MINIF08-30 candidate, manufacturer unconfirmed; ratio 30:1 photo interpretation',
-        'reducer_geometry': 'MINIF08 candidate drawing + photo-based top adapter; installed total length from scene configuration (current profile: user coarse measurement 28 mm); holes not measured',
+        'reducer_geometry': cfg.lab_geometry.get('reducer_drawing', 'historical estimated geometry'),
+        'installed_length_m': cfg.j6_reducer_length,
         'force_limit': '0.9 Nm continuous catalog candidate; motor torque-speed/efficiency not identified',
         'mount': 'proposed split elliptical clamp, simulated rigid; not a manufacturing-validated design',
         'unmeasured': 'all masses, blade thickness, handle axial length, neck position, adapter holes, stiffness and backlash',
@@ -84,15 +85,35 @@ def refine_spec(spec, cfg):
     base = spec.body('link5').add_body(name='j6_reducer_fixed', pos=[housing_front_x(),0,0], gravcomp=gc)
     p, L = cfg.j6_reducer_plate_thickness, cfg.j6_reducer_length
     adapter = g['adapter_thickness_m']
+    drawing = g.get('reducer_drawing')
+    boss = 0.0
+    if drawing:
+        body_length = drawing['axial_upper_m'] + drawing['axial_lower_m'] - drawing['rear_recess_m']
+        boss = drawing['output_boss_m']
+        expected = body_length + boss + adapter - drawing['adapter_seat_recess_m']
+        if not np.isclose(L, expected, atol=1e-10):
+            raise ValueError('reducer installed length disagrees with drawing and adapter stack')
+        if not np.isclose(p, drawing['axial_lower_m']-drawing['rear_recess_m']):
+            raise ValueError('base thickness disagrees with drawing datums')
+    else:
+        body_length = L-adapter
     _box(base, 'j6_reducer_base', [p/2,0,0], [p/2,cfg.j6_reducer_plate/2,cfg.j6_reducer_plate/2],
          cfg.j6_reducer_mass*.25, grey)
     base.add_geom(name='j6_reducer_body', type=mujoco.mjtGeom.mjGEOM_CYLINDER,
-                  fromto=[p,0,0,L-adapter,0,0], size=[cfg.j6_reducer_radius,0,0],
+                  fromto=[p,0,0,body_length,0,0], size=[cfg.j6_reducer_radius,0,0],
                   mass=cfg.j6_reducer_mass*.55, rgba=grey, contype=0, conaffinity=0)
     mount = spec.body('tool_mount')
     mount.add_geom(name='j6_output_flange', type=mujoco.mjtGeom.mjGEOM_CYLINDER,
-                   fromto=[0,-adapter-.002,0,0,-adapter,0], size=[.013,0,0],
+                   fromto=[0,body_length-L,0,0,body_length+boss-L,0] if drawing else [0,-adapter-.002,0,0,-adapter,0],
+                   size=[drawing['output_boss_radius_estimated_m'] if drawing else .013,0,0],
                    mass=cfg.j6_reducer_mass*.20, rgba=dark, contype=0, conaffinity=0)
+    if drawing:
+        base.add_site(name='reducer_housing_top',pos=[body_length,0,0],size=[.001,0,0])
+        mount.add_site(name='reducer_output_face',pos=[0,body_length+boss-L,0],size=[.001,0,0])
+        for i in range(3):
+            angle=2*np.pi*i/3
+            radius=drawing['output_hole_pcd_m']/2
+            mount.add_site(name=f'reducer_output_M3_{i}',pos=[radius*np.cos(angle),body_length+boss-L,radius*np.sin(angle)],size=[.001,0,0])
     a = g['adapter_width_m']/2
     _box(mount, 'existing_adapter', [0,-adapter/2,0], [a,adapter/2,a], g['adapter_mass_kg']*.8, grey)
     for i,(x,z) in enumerate(((-a+.004,-a+.004),(-a+.004,a-.004),(a-.004,-a+.004),(a-.004,a-.004))):

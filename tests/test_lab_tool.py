@@ -18,6 +18,17 @@ class LabToolTests(unittest.TestCase):
         flange=d.xpos[m.body('link6').id]+R@np.array([housing_front_x()+c.j6_reducer_length,0,0])
         np.testing.assert_allclose(d.site_xpos[m.site('tcp').id]-flange,R@np.array([.0705,0,0]),atol=1e-10)
 
+    def test_drawing_datums_and_adapter_stack(self):
+        c=scene_config();m,_=build_scene(c);d=mujoco.MjData(m);mujoco.mj_forward(m,d)
+        root=m.body('j6_reducer_fixed').id;R=d.xmat[root].reshape(3,3)
+        for name,axial in (('reducer_housing_top',.0265),('reducer_output_face',.0275),('output_flange_frame',.0335)):
+            local=R.T@(d.site_xpos[m.site(name).id]-d.xpos[root])
+            np.testing.assert_allclose(local,[axial,0,0],atol=1e-12)
+        points=[d.site_xpos[m.site(f'reducer_output_M3_{i}').id] for i in range(3)]
+        centre=np.mean(points,axis=0)
+        for point in points:self.assertAlmostEqual(np.linalg.norm(point-centre),.0065)
+        with self.assertRaises(ValueError):build_scene(scene_config(j6_reducer_length=.028))
+
     def test_j6_stationary_housing_rotating_tool(self):
         m,_=build_scene(scene_config());d=mujoco.MjData(m);mujoco.mj_forward(m,d)
         housing=d.geom_xpos[m.geom('j6_reducer_body').id].copy()
