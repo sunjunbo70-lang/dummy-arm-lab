@@ -23,7 +23,7 @@ def provenance(cfg):
         'source_manifest': 'experiments/2026-09-22_lab_tool/source_manifest.json',
         'dimensions': '124 mm blade, 42 mm heel, 35 mm shoulder; handle end sections 24x25.5 and 26.5x28.5 mm',
         'reducer': 'photo engraving 8-30; MINIF08-30 candidate, manufacturer unconfirmed; ratio 30:1 photo interpretation',
-        'reducer_geometry': 'MINIF08 drawing + photo-based top adapter; installed length and holes not measured',
+        'reducer_geometry': 'MINIF08 candidate drawing + photo-based top adapter; installed total length from scene configuration (current profile: user coarse measurement 28 mm); holes not measured',
         'force_limit': '0.9 Nm continuous catalog candidate; motor torque-speed/efficiency not identified',
         'mount': 'proposed split elliptical clamp, simulated rigid; not a manufacturing-validated design',
         'unmeasured': 'all masses, blade thickness, handle axial length, neck position, adapter holes, stiffness and backlash',

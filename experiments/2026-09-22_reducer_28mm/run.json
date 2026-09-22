@@ -1,0 +1,18 @@
+{
+  "evidence": "L1",
+  "length_m": 0.028,
+  "source": "user coarse measurement; uncertainty unspecified",
+  "home_position_delta_from_50mm_m": {
+    "tcp": [
+      -0.02200000000000002,
+      0.0,
+      0.0
+    ],
+    "d435_optical_proxy": [
+      -0.02200000000000002,
+      0.0,
+      0.0
+    ]
+  },
+  "tests_passed": 8
+}

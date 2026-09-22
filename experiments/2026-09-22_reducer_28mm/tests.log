@@ -1,0 +1,13 @@
+test_dimensions_and_tcp (tests.test_lab_tool.LabToolTests.test_dimensions_and_tcp) ... ok
+test_export_roundtrip (tests.test_lab_tool.LabToolTests.test_export_roundtrip) ... ok
+test_fixed_mass_is_not_lost_to_explicit_link_inertia (tests.test_lab_tool.LabToolTests.test_fixed_mass_is_not_lost_to_explicit_link_inertia) ... ok
+test_j6_stationary_housing_rotating_tool (tests.test_lab_tool.LabToolTests.test_j6_stationary_housing_rotating_tool) ... ok
+test_joint_and_actuator_limits_and_dynamics (tests.test_lab_tool.LabToolTests.test_joint_and_actuator_limits_and_dynamics) ... ok
+test_legacy_and_invalid_variants (tests.test_lab_tool.LabToolTests.test_legacy_and_invalid_variants) ... ok
+test_camera_follows_joint_and_tcp_unchanged (tests.test_wrist_camera.WristCameraTests.test_camera_follows_joint_and_tcp_unchanged) ... ok
+test_holes_open_and_45mm_apart (tests.test_wrist_camera.WristCameraTests.test_holes_open_and_45mm_apart) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.350s
+
+OK

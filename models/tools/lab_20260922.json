@@ -5,7 +5,7 @@
   "scene": {
     "geometry_profile": "lab_20260922",
     "tool_mount": "rigid",
-    "j6_reducer_length": 0.05,
+    "j6_reducer_length": 0.028,
     "j6_reducer_plate": 0.032,
     "j6_reducer_plate_thickness": 0.005,
     "j6_reducer_radius": 0.0155,
@@ -77,18 +77,22 @@
       "text": "8-30 250808015",
       "interpretation": "size 8, ratio 30; serial read from IMG20260922135912.jpg; manufacturer unconfirmed"
     },
-    "drawing_candidate": "MINIF08 archived parameter drawing: 32 mm plate, approximately 31 mm housing; installed length NOT measured",
+    "drawing_candidate": "MINIF08 archived parameter drawing: 32 mm plate, approximately 31 mm housing; installed total length superseded by user coarse measurement of 28 mm",
     "estimated_not_measured": [
-      "50 mm installed assembly height incl. 6 mm top adapter",
       "95 mm handle length",
       "24 mm tip taper length",
       "neck distance 81 mm from tip",
       "blade thickness 1 mm",
       "all masses",
-      "adapter hole pattern and lugs"
+      "adapter hole pattern and lugs",
+      "6 mm top adapter thickness within the user-reported 28 mm installed height"
     ],
     "proposed_design": "68x46x6 mm base, two 9 mm wide elliptical split collars, 3.5 mm wall, 0.3 mm radial clearance; holes/fasteners not fabrication-ready",
     "compatibility": "Dedicated simulation variant. Do not load legacy policy/reach table as if validated for this geometry.",
-    "camera_mount": "D435 drawing Fig 10-9 p142, RealSense D400 datasheet Rev015 March2023: 45 mm spacing, M3, insertion <=3 mm; D435f rear hole compatibility still to be checked on actual camera. Camera/bracket masses estimated; mount draft only."
+    "camera_mount": "D435 drawing Fig 10-9 p142, RealSense D400 datasheet Rev015 March2023: 45 mm spacing, M3, insertion <=3 mm; D435f rear hole compatibility still to be checked on actual camera. Camera/bracket masses estimated; mount draft only.",
+    "user_coarse_measurement_mm": {
+      "installed_reducer_height_including_top_adapter": 28,
+      "source": "User report 2026-09-22; approximate, measurement uncertainty unspecified"
+    }
   }
 }
