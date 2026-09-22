@@ -1,5 +1,6 @@
-@echo off
-cd /d "%~dp0"
+﻿@echo off
+for %%I in ("%~dp0..\..") do set "REPO_ROOT=%%~fI"
+cd /d "%REPO_ROOT%"
 if not exist ".venv-loop\Scripts\python.exe" (
  echo Python environment missing. Run tools\environment\windows_setup.cmd first.
  pause
@@ -7,3 +8,5 @@ if not exist ".venv-loop\Scripts\python.exe" (
 )
 ".venv-loop\Scripts\python.exe" "tools\simulation\inspect_lab_tool.py"
 if errorlevel 1 pause
+
+

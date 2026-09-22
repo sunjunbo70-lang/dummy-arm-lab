@@ -34,6 +34,7 @@ PITCH_BINS_DEG = (0.0, 4.0, 8.0, 12.0, 20.0, 30.0)
 class TablePlan:
     ok: bool
     reason: str = ''
+    carry_face_up_min: float = 1.0
 
 
 def _bins(cfg, step):

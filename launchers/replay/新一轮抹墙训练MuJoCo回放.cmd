@@ -1,7 +1,7 @@
 ﻿@echo off
 setlocal
 rem Wall-cycle v0.5 P1 native MuJoCo replay. Simulation only: no serial port, no robot motion.
-set "ROOT=%~dp0"
+for %%I in ("%~dp0..\..") do set "ROOT=%%~fI\"
 cd /d "%ROOT%"
 if not exist ".venv-loop\Scripts\python.exe" (
   echo Missing .venv-loop. Run tools\environment\windows_setup.cmd first.
@@ -23,3 +23,5 @@ if exist "%REPLAY%" (
   exit /b 1
 )
 if errorlevel 1 pause
+
+

@@ -20,7 +20,7 @@ def make_env(cfg, seed, teacher_style='technique', executor='table', **kw):
     'cosim' (evaluation / replay: full planner + MuJoCo co-simulation), or None."""
     ex = None
     if cfg.physics != 'v0.2' and cfg.use_arm and executor:
-        key = (executor, cfg.tool_profile, cfg.scene_wall_distance_m, cfg.area_centre_u_m,
+        key = (executor, cfg.physics, cfg.tool_profile, cfg.scene_wall_distance_m, cfg.area_centre_u_m,
                cfg.area_centre_z_m, cfg.width_m, cfg.height_m)
         if key not in _EXECUTOR:
             if executor == 'cosim':
@@ -134,6 +134,14 @@ def evaluate(cfg, agent=None, episodes=30, seed=10000, teacher_style='technique'
             vals = [s_[k] for s_ in strokes if s_.get(k) is not None]
             if vals:
                 out[f'cosim_{k}_mean'] = float(np.mean(vals)); out[f'cosim_{k}_max'] = float(np.max(vals))
+        for k in ('carry_face_up_min', 'rotation_face_up_min'):
+            vals = [s_[k] for s_ in strokes if s_.get(k) is not None]
+            if vals:
+                out[f'cosim_{k}'] = float(np.min(vals))
+        for k in ('face_down_frames', 'approach_reversal_count'):
+            vals = [s_[k] for s_ in strokes if s_.get(k) is not None]
+            if vals:
+                out[f'cosim_{k}_total'] = int(np.sum(vals))
     out['executor'] = executor
     return out
 
@@ -144,7 +152,7 @@ TEST_SEED, VAL_SEED = 20000, 30000
 def train(out_dir, updates=60, seed=0, teacher_episodes=120, log=print, cfg=None,
           teacher_style='technique', steps_per_update=1024, lr=3e-5, test_episodes=100,
           val_episodes=40, eval_every=10, explore_log_std=-1.5, cosim_test_episodes=30,
-          hidden=(128, 128), experiment_name=None):
+          hidden=(128, 128), experiment_name=None, dagger_rounds=3, dagger_episodes=25):
     """Teacher -> BC -> 3x DAgger -> PPO, then compare ALL checkpoints on one fixed test set.
 
     v0.2 compared the BC checkpoint (30 episodes, seeds 11000+) with PPO (100 episodes,
@@ -165,8 +173,8 @@ def train(out_dir, updates=60, seed=0, teacher_episodes=120, log=print, cfg=None
     O_demo, A_demo, teacher_rets = collect_teacher(cfg, teacher_episodes, seed, teacher_style)
     bc_mse = behaviour_clone(agent, O_demo, A_demo, log=log)
     dagger_rows = []
-    for round_i in range(3):
-        Od, Ad = collect_dagger(cfg, agent, 25, seed+1000+round_i*100,
+    for round_i in range(dagger_rounds):
+        Od, Ad = collect_dagger(cfg, agent, dagger_episodes, seed+1000+round_i*100,
                                 learner_probability=.45+.2*round_i, teacher_style=teacher_style)
         O_demo = np.concatenate([O_demo, Od]); A_demo = np.concatenate([A_demo, Ad])
         bc_mse = behaviour_clone(agent, O_demo, A_demo, iters=400, lr=3e-4, log=None)
@@ -180,9 +188,10 @@ def train(out_dir, updates=60, seed=0, teacher_episodes=120, log=print, cfg=None
     # flat-teacher policy explores +-0.9 deg of pitch and could never find out whether tilting
     # pays; -1.5 gives ~ +-4 deg per decision.
     explored = ('force', 'pitch_start', 'pitch_end')
-    if cfg.physics == 'v0.5':
+    if cfg.physics in ('v0.5','v0.6'):
         explored += ('start_u', 'start_v', 'end_u', 'end_v',
-                     'blade_cos', 'blade_sin', 'carry_face_up')
+                     'blade_cos', 'blade_sin')
+        if cfg.physics == 'v0.5': explored += ('carry_face_up',)
     explore = [agent_i for agent_i, n in enumerate(probe.action_names) if n in explored]
     agent.log_std[explore] = explore_log_std
     env = make_env(cfg, seed+5000, teacher_style); obs = env.reset(); ep_ret = 0.; recent=[]; curve=[]
@@ -254,8 +263,9 @@ def train(out_dir, updates=60, seed=0, teacher_episodes=120, log=print, cfg=None
             'curve':curve,'elapsed_s':round(time.time()-t0,1),
             'limitations':['reduced-order 2.5-D mortar, not CFD; trowel coefficients assumed',
                            'D435 parameters provisional until physical calibration',
-                           'arm execution is kinematic (IK + wall clearance), no servo dynamics or contact forces',
-                           'non-contact phases are deterministic motion skills; manager acts once per scan']}
+                           'MuJoCo servos/contact are simulated; parameters are not yet identified from hardware',
+                           'feed is gated by the executed face-up pose but remains a reduced feed proxy, not granular contact',
+                           'free-space transport and approach are constrained motion skills; manager acts once per scan']}
     (out/'training.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     return result
 
@@ -276,14 +286,24 @@ def main():
     p.add_argument('--val-episodes',type=int,default=40)
     p.add_argument('--cosim-test-episodes',type=int,default=30)
     p.add_argument('--eval-every',type=int,default=10)
+    p.add_argument('--physics',choices=('v0.5','v0.6'),default='v0.6')
+    p.add_argument('--dagger-rounds',type=int,default=4)
+    p.add_argument('--dagger-episodes',type=int,default=40)
     p.add_argument('--no-arm',action='store_true',help='skip the MuJoCo reachability executor (faster, less faithful)')
     a=p.parse_args()
-    cfg=CycleConfig(use_arm=not a.no_arm, physics='v0.5', tool_profile='lab_20260922',
-                    lift_wall_fraction=.75)
+    v6=a.physics=='v0.6'
+    cfg=CycleConfig(use_arm=not a.no_arm, physics=a.physics, tool_profile='lab_20260922',
+                    lift_wall_fraction=.75,
+                    base_steps=12000 if v6 else 6000,max_steps=24000 if v6 else 12000,
+                    extension_steps=2000 if v6 else 1000,max_cycles=160 if v6 else 80,
+                    max_reload_cycles=60 if v6 else 30,stall_limit=1 if v6 else 5,
+                    stall_window=12 if v6 else 5,min_cycles_before_stall=25 if v6 else 0)
     r=train(a.out,a.updates,a.seed,a.teacher_episodes,cfg=cfg,teacher_style=a.teacher_style,
             steps_per_update=a.steps_per_update, test_episodes=a.test_episodes,
             val_episodes=a.val_episodes, cosim_test_episodes=a.cosim_test_episodes,
-            eval_every=a.eval_every, hidden=(256,256), experiment_name='wall_cycle_v0.5_p1',
+            eval_every=a.eval_every, hidden=(256,256),
+            experiment_name='wall_cycle_v0.6_p2' if v6 else 'wall_cycle_v0.5_p1',
+            dagger_rounds=a.dagger_rounds,dagger_episodes=a.dagger_episodes,
             log=lambda x: print(x, flush=True))
     print(json.dumps({'selected':r['selected_checkpoint'],'test':r['test']},ensure_ascii=False,indent=2))
 

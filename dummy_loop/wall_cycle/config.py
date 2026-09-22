@@ -61,6 +61,8 @@ class CycleConfig:
     max_reload_cycles: int = 30
     stall_limit: int = 5
     progress_epsilon: float = 0.0002
+    min_cycles_before_stall: int = 0
+    stall_window: int = 5
 
     # Contact and task-space motion.
     max_force_N: float = 40.0
@@ -98,6 +100,10 @@ class CycleConfig:
     carry_duration_s: float = 1.5
     transport_dt_s: float = 0.02
     transport_relaxation_s: float = 0.35
+    face_up_target_deg: float = 10.0
+    face_up_hard_deg: float = 15.0
+    feed_pose_q_rad: tuple = (0.0297, -1.31, 1.23, 0.0942, -1.48, -0.126)
+    rotation_clearance_range_m: tuple = (0.12, 0.10, 0.08)
 
     # Provisional finish gates. Must be revised after D435 and material calibration.
     finish_coverage: float = 0.95

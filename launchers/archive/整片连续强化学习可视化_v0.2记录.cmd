@@ -1,4 +1,4 @@
-@echo off
+﻿@echo off
 setlocal
 rem v0.2 record only (stick-figure web replay, see docs/changes/2026-09-22_wall_cycle_v0.3.md C11).
 rem Works when double-clicked inside dummy-arm-lab, or from a folder next to it.
@@ -18,3 +18,5 @@ if not exist "%PLAYER%" (
   exit /b 1
 )
 start "" "%PLAYER%"
+
+

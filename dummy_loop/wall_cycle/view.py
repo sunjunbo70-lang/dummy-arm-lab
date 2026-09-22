@@ -42,6 +42,8 @@ PHASE_TEXT = {
     'PRECONTACT': 'pre-contact waypoint', 'ROTATE_TO_WALL': 'rotate near wall',
     'SEPARATE': 'separate from wall', 'RECOVER_RETURN': 'recover / return',
     'FINISH': 'finish check', 'move': 'move',
+    'FEED_ALIGN_UP': 'align material face upward', 'FEED_SCOOP': 'load at face-up pose',
+    'CARRY_FACE_UP': 'carry with measured face-up pose',
 }
 
 
@@ -89,15 +91,31 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique',
     q_load = load_pose(ex)
     keys = []           # (phase, q, wall, blade_ml, metrics, pitch, cycle, action)
     plan = None; act = {}
+    traces = {e['cycle']: e['trajectory'] for e in env.events if e['phase'] == 'ARM_TRACE'}
+    trace_added = set()
     for ev in env.events:
         ph = ev['phase']
         if ph == 'ARM_PLAN':
             plan = ev; continue
+        if cfg.physics == 'v0.6' and ph == 'ARM_TRACE':
+            continue
         wall = ev['wall']; m = ev['metrics']; act = ev.get('action') or act
         base = dict(wall=wall, blade=ev['blade'], blade_ml=m['blade_load_ml'], metrics=m, cycle=ev['cycle'], action=act)
+        if cfg.physics == 'v0.6' and ph == 'DECIDE' and ev['cycle'] in traces and ev['cycle'] not in trace_added:
+            for tr in traces[ev['cycle']]:
+                if tr['phase'] in ('WORK_STEP','SEPARATE','SCAN_RETURN'):
+                    continue
+                tm=tr['metrics']
+                keys.append(dict(phase=tr['phase'],q=tr['q'],pitch=0.0,wall=tr['wall'],blade=tr['blade'],
+                                 blade_ml=tm['blade_load_ml'],metrics=tm,cycle=ev['cycle'],action=act))
+            trace_added.add(ev['cycle'])
         if ph in ('SCAN', 'SCAN_RETURN', 'DECIDE', 'FINISH', 'UNREACHABLE'):
             keys.append(dict(phase=ph, q=keys[-1]['q'] if (keys and ph in ('DECIDE', 'UNREACHABLE', 'FINISH'))
                              else ex.q_scan, pitch=0.0, **base))
+        elif cfg.physics == 'v0.6' and ph in ('LOAD', 'SCOOP', 'LIFT_FROM_FEED', 'TOOL_INSPECT', 'CARRY',
+                                               'PRECONTACT', 'ROTATE_TO_WALL', 'WALL_APPROACH',
+                                               'CONTACT_ACQUIRE', 'SEPARATE', 'RECOVER_RETURN'):
+            continue
         elif ph in ('LOAD_APPROACH', 'DISPENSE', 'TOOL_INSPECT', 'LOAD', 'SCOOP', 'LIFT_FROM_FEED'):
             keys.append(dict(phase=ph, q=q_load, pitch=0.0, **base))
         elif ph == 'CARRY' and plan is not None:
@@ -118,13 +136,20 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique',
                              pitch=np.deg2rad(act.get('pitch_start_deg', 0.0)), **base))
         elif ph == 'WORK_STEP' and 'q' in ev:
             keys.append(dict(phase=ph, q=ev['q'], pitch=np.deg2rad(ev.get('pitch_deg', 0.0)), **base))
+        elif cfg.physics == 'v0.6' and ph == 'WORK' and ev['cycle'] in traces:
+            for tr in traces[ev['cycle']]:
+                if tr['phase'] not in ('SEPARATE','SCAN_RETURN'):
+                    continue
+                tm=tr['metrics']
+                keys.append(dict(phase=tr['phase'],q=tr['q'],pitch=0.0,wall=tr['wall'],blade=tr['blade'],
+                                 blade_ml=tm['blade_load_ml'],metrics=tm,cycle=ev['cycle'],action=act))
         elif ph in ('LIFT', 'RETREAT', 'SEPARATE', 'RECOVER_RETURN') and plan is not None:
             lift_i = 0 if ph in ('LIFT', 'SEPARATE') else 1
             keys.append(dict(phase=ph, q=plan['q_lift'][lift_i], pitch=0.0, **base))
     # joint-space interpolation between key poses so nothing jumps on screen
     frames = []
     for k, f in enumerate(keys):
-        if frames:
+        if frames and cfg.physics != 'v0.6':
             q0 = frames[-1]['q']; jump = np.rad2deg(np.max(np.abs(np.asarray(f['q']) - q0)))
             n = int(np.ceil(jump / max_deg_per_frame))
             for j in range(1, n):
@@ -350,6 +375,7 @@ def main(argv=None):
     ap.add_argument('--teacher', choices=('technique', 'flat', 'legacy_transport'),
                     help='run the hand-written teacher instead')
     ap.add_argument('--v05', action='store_true', help='use v0.5 lab tool, loading and transport physics')
+    ap.add_argument('--v06', action='store_true', help='use v0.6 pose-derived loading and continuous trajectory')
     ap.add_argument('--seed', type=int, default=3)
     ap.add_argument('--out', type=Path, default=Path('outputs/wall_cycle/replay'))
     ap.add_argument('--no-window', action='store_true', help='only record (and write report.json)')
@@ -359,9 +385,16 @@ def main(argv=None):
     path = a.record
     if path is None:
         from .area import load_work_area
-        cfg = load_work_area(CycleConfig(physics='v0.5', tool_profile='lab_20260922',
-                                         lift_wall_fraction=.75)
-                             if a.v05 else CycleConfig())
+        if a.v06:
+            cfg=CycleConfig(physics='v0.6',tool_profile='lab_20260922',lift_wall_fraction=.75,
+                            base_steps=12000,max_steps=24000,extension_steps=2000,
+                            max_cycles=160,max_reload_cycles=60,stall_limit=1,
+                            stall_window=12,min_cycles_before_stall=25)
+        elif a.v05:
+            cfg=CycleConfig(physics='v0.5',tool_profile='lab_20260922',lift_wall_fraction=.75)
+        else:
+            cfg=CycleConfig()
+        cfg = load_work_area(cfg)
         frames, report = record(cfg, a.seed, a.policy, a.teacher or 'technique',
                                 initial_mix=a.mixed_initial)
         path = save(frames, report, a.out)

@@ -1,12 +1,13 @@
-@echo off
+﻿@echo off
 setlocal
-cd /d "%~dp0"
-if not exist "%~dp0.venv-loop\Scripts\python.exe" (
+for %%I in ("%~dp0..\..") do set "REPO_ROOT=%%~fI"
+cd /d "%REPO_ROOT%"
+if not exist "%REPO_ROOT%\.venv-loop\Scripts\python.exe" (
   echo Simulation Python environment was not found. Run tools\environment\windows_setup.cmd first.
   pause
   exit /b 1
 )
-set PY="%~dp0.venv-loop\Scripts\python.exe"
+set PY="%REPO_ROOT%\.venv-loop\Scripts\python.exe"
 echo Trowel-stroke reinforcement learning, SIMULATION ONLY. No hardware connection.
 echo Scripted demo -^> behaviour cloning -^> PPO. Two runs, about 6 minutes on CPU.
 echo   run 1: warm start from the worker technique (tilt first, then flatten)
@@ -21,3 +22,5 @@ if errorlevel 1 pause
 echo.
 echo Plots written to outputs\wall\rl_compare (training.png, technique.png, session.png)
 pause
+
+

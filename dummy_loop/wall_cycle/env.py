@@ -48,8 +48,10 @@ class WallCycleEnv:
     def __init__(self, cfg=None, seed=0, initial_mix=True, record=False, executor=None):
         self.cfg = cfg or CycleConfig()
         self.v3 = self.cfg.physics != 'v0.2'
-        self.v5 = self.cfg.physics == 'v0.5'
-        self.action_names = ACTION_NAMES_V5 if self.v5 else (ACTION_NAMES if self.v3 else ACTION_NAMES_V2)
+        self.v6 = self.cfg.physics == 'v0.6'
+        self.v5 = self.cfg.physics in ('v0.5', 'v0.6')
+        self.action_names = (ACTION_NAMES if self.v6 else
+                             (ACTION_NAMES_V5 if self.v5 else (ACTION_NAMES if self.v3 else ACTION_NAMES_V2)))
         self.act_dim = len(self.action_names)
         # Optional arm executor (dummy_loop/wall_cycle/arm.py): checks every stroke on the
         # real Dummy V2 MuJoCo model (IK along the path, joint limits, arm-wall clearance).
@@ -102,9 +104,12 @@ class WallCycleEnv:
             self.executor.q_last = np.asarray(self.executor.q_scan, float).copy()
             if hasattr(self.executor, 'rng'):
                 self.executor.rng = np.random.default_rng(self.seed)
+            if self.v6 and hasattr(self.executor, 'reset'):
+                self.executor.reset()
         initial = 'partial' if self.initial_mix and self.rng.random() < .35 else 'bare'
         self.material.reset(initial)
         self.cycles = self.reloads = self.control_steps = self.stall_count = 0
+        self.progress_history = []
         self.budget = self.cfg.base_steps; self.last_mode = 0; self.last_improvement = 0.0
         self.last_carry_face_up = 0.0
         if self.v5:
@@ -149,8 +154,10 @@ class WallCycleEnv:
         if self.v3:
             pmax = np.deg2rad(c.max_pitch_deg)
             p0, p1 = float((a[11]+1)*.5*pmax), float((a[12]+1)*.5*pmax)
-        if self.v5:
+        if self.v5 and not self.v6:
             carry = float(a[13])
+        elif self.v6:
+            carry = 1.0
         return DecodedAction(MODES[mode_i], start, end, phi, float(a[7]*c.curve_offset_m),
                              float(force), float(speed), float(c.load_choices_ml[li]), p0, p1, carry)
 
@@ -172,7 +179,7 @@ class WallCycleEnv:
             pmax = np.deg2rad(c.max_pitch_deg)
             a[11] = np.clip(d.pitch_start/pmax*2-1, -1, 1)
             a[12] = np.clip(d.pitch_end/pmax*2-1, -1, 1)
-        if self.v5:
+        if self.v5 and not self.v6:
             a[13] = np.clip(d.carry_face_up, -1, 1)
         return a
 
@@ -333,9 +340,11 @@ class WallCycleEnv:
                 if self.v5:
                     self.control_steps += 20; self._event('LOAD')
                     self._event('SCOOP')
-                    load = self.material.feed(d.requested_load_ml, c.feed_normal_force_N,
-                                              c.feed_scoop_depth_m, c.feed_scoop_distance_m,
-                                              c.feed_scoop_speed_m_s)
+                    dynamic_v6 = self.v6 and plan is not None and getattr(self.executor, 'dynamic', False)
+                    load = ({'deferred_to_executor': True} if dynamic_v6 else
+                            self.material.feed(d.requested_load_ml, c.feed_normal_force_N,
+                                               c.feed_scoop_depth_m, c.feed_scoop_distance_m,
+                                               c.feed_scoop_speed_m_s))
                     self._event('LIFT_FROM_FEED', {'load': load})
                 else:
                     self.control_steps += 50; self._event('LOAD_APPROACH')
@@ -344,9 +353,12 @@ class WallCycleEnv:
                 self.reloads += 1; reward -= .2; self._event('TOOL_INSPECT')
             carry_before = self.material.dropped_m3
             if self.v5:
-                self.last_carry_face_up = d.carry_face_up
-                self._event('CARRY', {'face_up_score': d.carry_face_up})
-                self.material.transport(d.carry_face_up, c.carry_duration_s)
+                carry_score = (float(getattr(plan, 'carry_face_up_min', 1.0))
+                               if self.v6 and plan is not None else d.carry_face_up)
+                self.last_carry_face_up = carry_score
+                self._event('CARRY', {'face_up_score': carry_score})
+                if not (self.v6 and plan is not None and getattr(self.executor, 'dynamic', False)):
+                    self.material.transport(carry_score, c.carry_duration_s)
                 self.control_steps += round(c.carry_duration_s*c.control_hz)
                 self._event('PRECONTACT'); self._event('ROTATE_TO_WALL')
             self.control_steps += 35; self._event('WALL_APPROACH', {'action': d.to_dict()})
@@ -372,6 +384,8 @@ class WallCycleEnv:
             elif plan is not None and getattr(self.executor, 'dynamic', False):
                 # MuJoCo co-simulation: the arm's actual pose drives the mortar model
                 stats = self.executor.execute(plan, d, self.material, StrokeStats(), callback=work_frame)
+                if self.v6 and self.record and stats.get('trajectory'):
+                    self._event('ARM_TRACE', {'trajectory': stats['trajectory']})
             else:
                 # nominal path (training with the reach table, or no arm at all)
                 stats = self.material.stroke(d.mode, d.start, d.end, d.blade_angle, d.bend_m,
@@ -398,14 +412,22 @@ class WallCycleEnv:
             if (stats.peak_force_N or 0.0) > c.max_force_N:
                 reward -= 50; self.done = True
         self.last_improvement = improvement
-        if improvement < c.progress_epsilon:
+        if self.v6:
+            self.progress_history.append(float(improvement))
+            self.progress_history = self.progress_history[-max(1, c.stall_window):]
+            stalled = (len(self.progress_history) >= c.stall_window and
+                       sum(max(x, 0.0) for x in self.progress_history) < c.progress_epsilon)
+        else:
+            stalled = improvement < c.progress_epsilon
+        if stalled:
             self.stall_count += 1; reward -= min(.5*2**(self.stall_count-1), 8)
         else:
             self.stall_count = 0
         reward -= .0002*(self.control_steps-steps_before)
         if self.control_steps >= self.budget and self.budget < c.max_steps and improvement >= c.progress_epsilon:
             self.budget = min(self.budget+c.extension_steps, c.max_steps)
-        if (self.stall_count >= c.stall_limit or self.cycles >= c.max_cycles or
+        stall_done = self.cycles >= c.min_cycles_before_stall and self.stall_count >= c.stall_limit
+        if (stall_done or self.cycles >= c.max_cycles or
                 self.control_steps >= self.budget or self.control_steps >= c.max_steps):
             self.done = True
         self.previous_cost = self.material.quality_cost()

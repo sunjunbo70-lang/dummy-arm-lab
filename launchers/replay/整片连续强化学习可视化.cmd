@@ -1,17 +1,9 @@
-@echo off
+﻿@echo off
 setlocal
 rem v0.3: real Dummy V2 model in MuJoCo's own window (drag to rotate, wheel to zoom).
 rem Keys: space pause, left/right step, [ ] speed, R restart. Simulation only, no hardware.
 rem Works when double-clicked inside dummy-arm-lab, or from a folder next to it.
-set "ROOT="
-if exist "%~dp0dummy_loop\" set "ROOT=%~dp0"
-if not defined ROOT if exist "%~dp0..\dummy-arm-lab\dummy_loop\" set "ROOT=%~dp0..\dummy-arm-lab\"
-if not defined ROOT if exist "D:\project\VLA\dummy-arm-lab\dummy_loop\" set "ROOT=D:\project\VLA\dummy-arm-lab\"
-if not defined ROOT (
-  echo Cannot find the dummy-arm-lab repository. Put this file in the repository folder.
-  pause
-  exit /b 1
-)
+for %%I in ("%~dp0..\..") do set "ROOT=%%~fI\"
 cd /d "%ROOT%"
 echo Repository: %CD%
 if not exist ".venv-loop\Scripts\python.exe" (
@@ -40,3 +32,5 @@ if exist "%CACHE%" (
   ".venv-loop\Scripts\python.exe" -m dummy_loop.wall_cycle.view --teacher technique --seed 20000 --out outputs\wall_cycle\replay_teacher
 )
 if errorlevel 1 pause
+
+
