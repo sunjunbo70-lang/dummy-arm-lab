@@ -56,6 +56,8 @@ class SceneConfig:
     #            全刚性，无伸缩。压力由机械臂自身的位置伺服刚度决定；接触检测与压力闭环靠法兰与抹刀座之间的力传感器。
     #   'spring' 早期设计：裸轴转接件 + 弹簧滑轨 + 矩形刀面，保留用于对比。
     tool_mount: str = 'rigid'
+    geometry_profile: str = 'legacy'  # lab_20260922 selects measured tool geometry
+    lab_geometry: dict = field(default_factory=dict)  # serialized with every scene
     # J6 减速器（照片估计：两块 42 mm 方板夹一段 Φ32 圆柱，总长约 40 mm）。固定在 J6 电机座（link5）上，
     # 只有输出法兰随 J6 转。型号与减速比未确认：j6_reducer_ratio=None 时 J6 仍按 V2 模型的直驱参数。
     j6_reducer_length: float = 0.040  # 电机座前端面 → 输出法兰面
@@ -108,6 +110,9 @@ class SceneConfig:
     gravcomp: bool = True             # 理想重力补偿（实机闭环步进位置模式下的近似）
 
     def provenance(self):
+        if self.geometry_profile == 'lab_20260922':
+            from .lab_tool import provenance
+            return provenance(self)
         return {
             'arm': 'models/dummy_v2.xml (V2 firmware DH kinematics; CAD-derived mass estimates; not identified)',
             'joint_limits': ('V2 firmware limits converted to model coordinates (dummy_loop/v2.py); '
@@ -169,6 +174,9 @@ def joint_limits(cfg: SceneConfig):
 
 def blade_area_centroid_from_tip(cfg: SceneConfig):
     """尖头刀面（矩形 + 三角尖）的面积形心离刀尖的距离。"""
+    if cfg.geometry_profile == 'lab_20260922':
+        from .lab_tool import blade_centroid
+        return blade_centroid(cfg)
     L, w, t = cfg.trowel_length, cfg.trowel_width, cfg.trowel_tip_length
     a_rect, c_rect = w * (L - t), (L + t) / 2
     a_tri, c_tri = w * t / 2, 2 * t / 3
@@ -356,6 +364,11 @@ def build_spec(cfg: SceneConfig):
     else:                            # 法兰与抹刀座之间的力传感器
         spec.add_sensor(name='load_cell', type=mujoco.mjtSensor.mjSENS_FORCE, objtype=mujoco.mjtObj.mjOBJ_SITE, objname='load_cell')
     spec.add_sensor(name='blade_force', type=mujoco.mjtSensor.mjSENS_FORCE, objtype=mujoco.mjtObj.mjOBJ_SITE, objname='blade_site')
+    if cfg.geometry_profile == 'lab_20260922':
+        from .lab_tool import refine_spec
+        refine_spec(spec, cfg)
+    elif cfg.geometry_profile != 'legacy':
+        raise ValueError(f'Unknown geometry_profile: {cfg.geometry_profile}')
     spec.option.noslip_iterations = 0
     return spec
 

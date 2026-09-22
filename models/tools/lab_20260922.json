@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "name": "lab_20260922",
+  "evidence_level": "L1",
+  "scene": {
+    "geometry_profile": "lab_20260922",
+    "tool_mount": "rigid",
+    "j6_reducer_length": 0.05,
+    "j6_reducer_plate": 0.032,
+    "j6_reducer_plate_thickness": 0.005,
+    "j6_reducer_radius": 0.0155,
+    "j6_reducer_mass": 0.15,
+    "j6_reducer_ratio": 30.0,
+    "j6_reducer_max_Nm": 0.9,
+    "holder_height": 0.014,
+    "holder_mass": 0.035,
+    "clamp_from_tip": null,
+    "trowel_length": 0.124,
+    "trowel_width": 0.042,
+    "trowel_tip_length": 0.024,
+    "trowel_thickness": 0.001,
+    "neck_from_tip": 0.081,
+    "neck_height": 0.027,
+    "handle_from_tip": [
+      0.027,
+      0.122
+    ],
+    "handle_radius": 0.01425,
+    "tool_mass": 0.08,
+    "lab_geometry": {
+      "shoulder_width_m": 0.035,
+      "handle_small_section_m": [
+        0.024,
+        0.0255
+      ],
+      "handle_large_section_m": [
+        0.0265,
+        0.0285
+      ],
+      "clamp_clearance_m": 0.0003,
+      "clamp_wall_m": 0.0035,
+      "adapter_thickness_m": 0.006,
+      "adapter_width_m": 0.036,
+      "adapter_mass_kg": 0.02
+    }
+  },
+  "evidence": {
+    "user_annotation_mm": {
+      "blade_length": 124,
+      "blade_heel_width": 42,
+      "blade_shoulder_width": 35,
+      "handle_small_section": [
+        24,
+        25.5
+      ],
+      "handle_large_section": [
+        26.5,
+        28.5
+      ],
+      "handle_blade_gap": 27
+    },
+    "photo_marking": {
+      "text": "8-30 250808015",
+      "interpretation": "size 8, ratio 30; serial read from IMG20260922135912.jpg; manufacturer unconfirmed"
+    },
+    "drawing_candidate": "MINIF08 archived parameter drawing: 32 mm plate, approximately 31 mm housing; installed length NOT measured",
+    "estimated_not_measured": [
+      "50 mm installed assembly height incl. 6 mm top adapter",
+      "95 mm handle length",
+      "24 mm tip taper length",
+      "neck distance 81 mm from tip",
+      "blade thickness 1 mm",
+      "all masses",
+      "adapter hole pattern and lugs"
+    ],
+    "proposed_design": "68x46x6 mm base, two 9 mm wide elliptical split collars, 3.5 mm wall, 0.3 mm radial clearance; holes/fasteners not fabrication-ready",
+    "compatibility": "Dedicated simulation variant. Do not load legacy policy/reach table as if validated for this geometry."
+  }
+}

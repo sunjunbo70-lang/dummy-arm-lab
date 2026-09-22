@@ -65,12 +65,21 @@ def main(argv=None):
         if name in ('scene', 'demo', 'collect', 'study'):
             sp.add_argument('--tool', choices=('rigid', 'spring'), default='rigid',
                             help='末端工具：rigid = 实际刚性抹刀（默认）；spring = 早期弹簧滑轨方案，仅对比用')
+    for name in ('scene', 'demo', 'collect'):
+        sub.choices[name].add_argument('--tool-profile', choices=('legacy', 'lab_20260922'), default='legacy')
     a = ap.parse_args(argv)
+
+    def selected_scene():
+        from .scene import SceneConfig
+        if getattr(a, 'tool_profile', 'legacy') == 'lab_20260922':
+            from .lab_tool import scene_config
+            return scene_config(tool_mount=a.tool)
+        return SceneConfig(tool_mount=a.tool)
 
     from .errors import Perturbation
     if a.cmd == 'scene':
         from .scene import SceneConfig, export_xml
-        emit({'written': str(export_xml(SceneConfig(tool_mount=a.tool), a.out))})
+        emit({'written': str(export_xml(selected_scene(), a.out))})
     elif a.cmd == 'layout':
         from .layout import search
         r = search(joint_limit_cap_deg=a.joint_limit_cap_deg)
@@ -82,7 +91,7 @@ def main(argv=None):
         from .teacher import RasterTeacher
         from .scene import SceneConfig
         pert = Perturbation.sample(np.random.default_rng(a.seed), a.random_scale) if a.random_scale > 0 else Perturbation()
-        env = WallTask(SceneConfig(tool_mount=a.tool), perturbation=pert, seed=a.seed)
+        env = WallTask(selected_scene(), perturbation=pert, seed=a.seed)
         teacher = RasterTeacher(env, probe=a.probe, servo=a.servo)
         viewer = None
         if a.viewer:
@@ -120,7 +129,7 @@ def main(argv=None):
             path = a.out / f'ep_{i:04d}.npz'
             try:
                 m = record_episode(path, pert, seed=a.seed + i, probe=a.probe, servo=a.servo,
-                                   scene=SceneConfig(tool_mount=a.tool))
+                                   scene=selected_scene())
                 index.append({'file': path.name, **m})
             except RuntimeError as e:
                 index.append({'file': None, 'failed': str(e)})
@@ -137,7 +146,7 @@ def main(argv=None):
     elif a.cmd == 'study':
         from .pipeline import run_study
         from .scene import SceneConfig
-        r = run_study(a.out, a.random, a.random_scale, scene=SceneConfig(tool_mount=a.tool))
+        r = run_study(a.out, a.random, a.random_scale, scene=selected_scene())
         emit({'randomized': r['randomized'], 'elapsed_s': r['elapsed_s'], 'written': str(a.out / 'sensitivity.json')})
     elif a.cmd == 'rl-train':
         from .rl import train
