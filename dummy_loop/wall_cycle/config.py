@@ -4,9 +4,25 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class CycleConfig:
+    # 'v0.3' (default): physics-based yield-stress mortar (mortar.py), blade pitch as a free
+    #   action (13-dim action), work area from the real reach rule, every stroke executed on
+    #   the Dummy V2 MuJoCo model. See docs/changes/2026-09-22_wall_cycle_v0.3.md.
+    # 'v0.2': the 2026-09-22 experiment exactly as recorded (11-dim action, no pitch).
+    #   Kept only so that experiments/2026-09-22_wall_cycle_rl stays reproducible.
+    physics: str = 'v0.3'
+
     # Wall and coating. Five-millimetre cells match the previous experiment.
+    # v0.2 used 0.28 x 0.07 m, inherited from the 3-band single-stroke session and NOT
+    # derived from reach. v0.3 uses the work square from tools/simulation/v2_trowel_reach.py:
+    # largest circle inside the real V2+trowel reachable set -> inscribed square -> side x 0.8.
     width_m: float = 0.28
     height_m: float = 0.07
+    # Where that square sits in the scene (world frame: +X forward, +Y left, +Z up).
+    scene_wall_distance_m: float = 0.35
+    area_centre_u_m: float = -0.03
+    area_centre_z_m: float = 0.22
+    # Check every stroke on the real Dummy V2 model (dummy_loop/wall_cycle/arm.py).
+    use_arm: bool = True
     cell_m: float = 0.005
     target_m: float = 0.002
     acceptable_low_m: float = 0.0015
@@ -47,7 +63,9 @@ class CycleConfig:
 
     # Contact and task-space motion.
     max_force_N: float = 40.0
-    force_window: tuple = (2.0, 15.0)
+    force_window: tuple = (2.0, 15.0)   # v0.2 action range (unchanged: v0.2 policies decode with it)
+    force_window_v3: tuple = (0.5, 15.0)  # v0.3: the mortar carries only a few N on a tilted
+                                          # blade (mortar.py), so the low end must be reachable
     wall_clearance_m: float = 0.08
     approach_clearance_m: float = 0.025
     min_stroke_m: float = 0.025
@@ -55,6 +73,15 @@ class CycleConfig:
     speed_range_m_s: tuple = (0.02, 0.12)
     curve_offset_m: float = 0.03
     stroke_samples: int = 28
+
+    # v0.3 mortar physics (dummy_loop/wall_cycle/mortar.py). Physical quantities only --
+    # there is deliberately no parameter that says what pitch is good.
+    mortar_rho: float = 1900.0          # kg/m^3
+    mortar_tau_y_Pa: float = 250.0      # yield stress; Banfill 2003: mortar ~400 Pa, plasters softer
+    mortar_mu_p_Pa_s: float = 2.0       # plastic viscosity; Banfill 2003: 1-3 Pa s
+    lift_wall_fraction: float = 0.5     # share of a squeezed layer that stays on the wall when the
+                                        # blade is pulled straight off (ASSUMED; measure it)
+    max_pitch_deg: float = 35.0         # action range for the blade pitch (0 = blade parallel to wall)
 
     # Provisional finish gates. Must be revised after D435 and material calibration.
     finish_coverage: float = 0.95

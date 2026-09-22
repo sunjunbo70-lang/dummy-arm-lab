@@ -1,0 +1,41 @@
+{
+ "rule": "用户规则（2026-09-22）：机械臂操作范围内的最大圆 → 内接正方形 → 边长 × 0.8",
+ "variant": "loose: every point must be reachable face-on (pitch 0) at the wall and 2.5 cm off it; tilted strokes are checked stroke by stroke by the executor instead",
+ "why_loose": "v0.3 lets RL choose the pitch; requiring 30 deg everywhere would pre-empt that choice and costs ~8 cm of height (see experiments/2026-09-22_wall_cycle_v03/raw/reach)",
+ "square": {
+  "wall_distance_m": 0.33,
+  "side_m": 0.185,
+  "centre_u_m": -0.01,
+  "centre_z_m": 0.19
+ },
+ "square_u_m": [
+  -0.1025,
+  0.0825
+ ],
+ "square_z_m": [
+  0.0975,
+  0.2825
+ ],
+ "area_cm2": 342.2,
+ "from_analysis": {
+  "wall_distance_m": 0.33,
+  "circle_centre_uv_m": [
+   -0.01,
+   0.19
+  ],
+  "circle_radius_m": 0.165,
+  "inscribed_square_side_m": 0.2333,
+  "work_square_side_m": 0.1867
+ },
+ "scanned_distances_m": [
+  0.28,
+  0.3,
+  0.33,
+  0.35,
+  0.38
+ ],
+ "analysis": "tools/simulation/v2_trowel_reach.py --pitches 0 --distances 0.28 0.30 0.33 0.35 0.38 --step 0.01",
+ "evidence_level": "L1",
+ "joint_limits": "V2 firmware candidates, J6 clipped to +/-180 deg; NOT calibrated (M3)",
+ "note": "z is height above the base underside (world z). Re-run after M3 measures the joint limits."
+}

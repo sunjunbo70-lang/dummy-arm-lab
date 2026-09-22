@@ -1,0 +1,63 @@
+{
+ "evidence_level": "L1",
+ "hardware_motion": false,
+ "rule": "largest circle inside the reachable set -> inscribed square -> side x 0.8",
+ "poses": {
+  "pitch_deg": [
+   0.0,
+   30.0
+  ],
+  "psi_deg": 0,
+  "roll": "weak (w_roll=0.1)"
+ },
+ "joint_limits": "V2 firmware candidates, J6 clipped to +/-180 deg; NOT calibrated (M3)",
+ "collision": "arm geoms other than the blade >= 5 mm from the wall; every geom incl. blade >= 5 mm above the table",
+ "standoff_pose": "face-on, 2.5 cm off the wall, must also be solvable",
+ "v_origin": "v is height above the floor plane of the base (world z)",
+ "rows": [
+  {
+   "wall_distance_m": 0.33,
+   "circle_centre_uv_m": [
+    -0.02,
+    0.26
+   ],
+   "circle_radius_m": 0.095,
+   "inscribed_square_side_m": 0.1344,
+   "safety_factor": 0.8,
+   "work_square_side_m": 0.1075,
+   "work_square_u_m": [
+    -0.0737,
+    0.0337
+   ],
+   "work_square_v_m": [
+    0.2063,
+    0.3137
+   ],
+   "work_area_cm2": 115.5,
+   "reachable_area_cm2": 891.0,
+   "elapsed_s": 266.8
+  }
+ ],
+ "best": {
+  "wall_distance_m": 0.33,
+  "circle_centre_uv_m": [
+   -0.02,
+   0.26
+  ],
+  "circle_radius_m": 0.095,
+  "inscribed_square_side_m": 0.1344,
+  "safety_factor": 0.8,
+  "work_square_side_m": 0.1075,
+  "work_square_u_m": [
+   -0.0737,
+   0.0337
+  ],
+  "work_square_v_m": [
+   0.2063,
+   0.3137
+  ],
+  "work_area_cm2": 115.5,
+  "reachable_area_cm2": 891.0,
+  "elapsed_s": 266.8
+ }
+}

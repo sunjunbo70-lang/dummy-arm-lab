@@ -1,5 +1,10 @@
 """Conservative 2.5-D wall and trowel material fields.
 
+This is the v0.2 material model, kept byte-for-byte in behaviour so that
+experiments/2026-09-22_wall_cycle_rl stays reproducible (CycleConfig(physics='v0.2')).
+v0.3 replaces the stroke physics with dummy_loop/wall_cycle/mortar.py (see
+docs/changes/2026-09-22_wall_cycle_v0.3.md for why each rule here was replaced).
+
 This is deliberately a reduced-order proxy, not CFD. Unlike the first experiment,
 material on the trowel has a spatial distribution and can only appear on the wall
 after it is removed from a corresponding trowel cell.
@@ -110,8 +115,10 @@ class MaterialSystem:
         return iv, iu, good
 
     def stroke(self, mode, start, end, phi, bend, force_N, speed_m_s, callback=None):
-        """Execute an arbitrary straight/curved stroke and transfer real volume."""
-        c = self.cfg; stats = TransferStats()
+        """v0.2 stroke (hand-written transfer fractions). Kept unchanged for reproducing
+        experiments/2026-09-22_wall_cycle_rl. v0.3 uses mortar.MortarSystem.stroke."""
+        c = self.cfg
+        stats = TransferStats()
         p0, p2 = np.asarray(start, float), np.asarray(end, float)
         d = p2 - p0; norm = np.linalg.norm(d)
         if norm < 1e-9:

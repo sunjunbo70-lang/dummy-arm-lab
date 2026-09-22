@@ -1,4 +1,10 @@
-"""Export a trained whole-cycle policy to a draggable, offline 3-D replay."""
+"""Export a trained v0.2 whole-cycle policy to the offline HTML stick-figure replay.
+
+KEPT FOR THE v0.2 RECORD ONLY (experiments/2026-09-22_wall_cycle_rl). It is pinned to
+CycleConfig(physics='v0.2') so the recorded 11-dim policies still load. v0.3 replays use
+dummy_loop/wall_cycle/view.py: the real Dummy V2 MuJoCo model in MuJoCo's own window,
+driven by the co-simulated joint angles (see docs/changes/2026-09-22_wall_cycle_v0.3.md).
+"""
 import argparse, hashlib, json
 from pathlib import Path
 
@@ -62,7 +68,7 @@ class ArmKinematics:
 
 def export(policy_path: Path, out: Path, seed=2209, max_cycles=80):
     out.mkdir(parents=True, exist_ok=False)
-    cfg = CycleConfig(); env = WallCycleEnv(cfg, seed=seed, initial_mix=False, record=True)
+    cfg = CycleConfig(physics='v0.2'); env = WallCycleEnv(cfg, seed=seed, initial_mix=False, record=True)
     agent = load_agent(policy_path, env); obs = env.reset(); done = False; total = 0.
     while not done and env.cycles < max_cycles:
         action = agent.act(obs, deterministic=True)[0]

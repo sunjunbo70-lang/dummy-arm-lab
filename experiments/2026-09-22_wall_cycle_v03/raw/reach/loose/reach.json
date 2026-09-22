@@ -1,0 +1,150 @@
+{
+ "evidence_level": "L1",
+ "hardware_motion": false,
+ "rule": "largest circle inside the reachable set -> inscribed square -> side x 0.8",
+ "poses": {
+  "pitch_deg": [
+   0.0
+  ],
+  "psi_deg": 0,
+  "roll": "weak (w_roll=0.1)"
+ },
+ "joint_limits": "V2 firmware candidates, J6 clipped to +/-180 deg; NOT calibrated (M3)",
+ "collision": "arm geoms other than the blade >= 5 mm from the wall; every geom incl. blade >= 5 mm above the table",
+ "standoff_pose": "face-on, 2.5 cm off the wall, must also be solvable",
+ "v_origin": "v is height above the floor plane of the base (world z)",
+ "rows": [
+  {
+   "wall_distance_m": 0.28,
+   "circle_centre_uv_m": [
+    -0.01,
+    0.25
+   ],
+   "circle_radius_m": 0.135,
+   "inscribed_square_side_m": 0.1909,
+   "safety_factor": 0.8,
+   "work_square_side_m": 0.1527,
+   "work_square_u_m": [
+    -0.0864,
+    0.0664
+   ],
+   "work_square_v_m": [
+    0.1736,
+    0.3264
+   ],
+   "work_area_cm2": 233.3,
+   "reachable_area_cm2": 1578.0,
+   "elapsed_s": 213.3
+  },
+  {
+   "wall_distance_m": 0.3,
+   "circle_centre_uv_m": [
+    -0.01,
+    0.23
+   ],
+   "circle_radius_m": 0.145,
+   "inscribed_square_side_m": 0.2051,
+   "safety_factor": 0.8,
+   "work_square_side_m": 0.164,
+   "work_square_u_m": [
+    -0.092,
+    0.072
+   ],
+   "work_square_v_m": [
+    0.148,
+    0.312
+   ],
+   "work_area_cm2": 269.1,
+   "reachable_area_cm2": 1503.0,
+   "elapsed_s": 206.9
+  },
+  {
+   "wall_distance_m": 0.33,
+   "circle_centre_uv_m": [
+    -0.01,
+    0.19
+   ],
+   "circle_radius_m": 0.165,
+   "inscribed_square_side_m": 0.2333,
+   "safety_factor": 0.8,
+   "work_square_side_m": 0.1867,
+   "work_square_u_m": [
+    -0.1033,
+    0.0833
+   ],
+   "work_square_v_m": [
+    0.0967,
+    0.2833
+   ],
+   "work_area_cm2": 348.5,
+   "reachable_area_cm2": 1372.0,
+   "elapsed_s": 206.4
+  },
+  {
+   "wall_distance_m": 0.35,
+   "circle_centre_uv_m": [
+    0.0,
+    0.18
+   ],
+   "circle_radius_m": 0.1626,
+   "inscribed_square_side_m": 0.23,
+   "safety_factor": 0.8,
+   "work_square_side_m": 0.184,
+   "work_square_u_m": [
+    -0.092,
+    0.092
+   ],
+   "work_square_v_m": [
+    0.088,
+    0.272
+   ],
+   "work_area_cm2": 338.5,
+   "reachable_area_cm2": 1235.0,
+   "elapsed_s": 218.4
+  },
+  {
+   "wall_distance_m": 0.38,
+   "circle_centre_uv_m": [
+    -0.02,
+    0.16
+   ],
+   "circle_radius_m": 0.145,
+   "inscribed_square_side_m": 0.2051,
+   "safety_factor": 0.8,
+   "work_square_side_m": 0.164,
+   "work_square_u_m": [
+    -0.102,
+    0.062
+   ],
+   "work_square_v_m": [
+    0.078,
+    0.242
+   ],
+   "work_area_cm2": 269.1,
+   "reachable_area_cm2": 962.0,
+   "elapsed_s": 208.3
+  }
+ ],
+ "best": {
+  "wall_distance_m": 0.33,
+  "circle_centre_uv_m": [
+   -0.01,
+   0.19
+  ],
+  "circle_radius_m": 0.165,
+  "inscribed_square_side_m": 0.2333,
+  "safety_factor": 0.8,
+  "work_square_side_m": 0.1867,
+  "work_square_u_m": [
+   -0.1033,
+   0.0833
+  ],
+  "work_square_v_m": [
+   0.0967,
+   0.2833
+  ],
+  "work_area_cm2": 348.5,
+  "reachable_area_cm2": 1372.0,
+  "elapsed_s": 206.4
+ }
+}

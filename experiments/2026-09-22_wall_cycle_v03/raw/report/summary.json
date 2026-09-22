@@ -1,0 +1,506 @@
+{
+ "evidence_level": "L1",
+ "hardware_motion": false,
+ "runs": {
+  "flat": {
+   "stroke_distributions": {
+    "教师": {
+     "pitch_deg_mean": 3.0000000000000004,
+     "pitch_deg_quartiles": [
+      3.000000000000001,
+      3.000000000000001,
+      3.000000000000001
+     ],
+     "force_N_mean": 1.0000000000000002,
+     "strokes": 186
+    },
+    "DAgger-BC": {
+     "pitch_deg_mean": 3.77556309414934,
+     "pitch_deg_quartiles": [
+      2.820945916110408,
+      3.2116140323770996,
+      4.142553318030817
+     ],
+     "force_N_mean": 1.3709648998707418,
+     "strokes": 207
+    },
+    "选中模型": {
+     "pitch_deg_mean": 4.964022300603135,
+     "pitch_deg_quartiles": [
+      4.066274057151318,
+      4.591842499103118,
+      5.731754965728118
+     ],
+     "force_N_mean": 1.070132113369751,
+     "strokes": 195
+    }
+   },
+   "test": {
+    "teacher": {
+     "return_mean": -29.96749387947926,
+     "coverage_mean": 0.21870708546384218,
+     "rmse_mm_mean": 2.30620346814808,
+     "p95_error_mm_mean": 4.068313795250378,
+     "waste_frac_mean": 0.32502607261580385,
+     "cycles_mean": 39.81,
+     "steps_mean": 6822.75,
+     "unreachable_mean": 0.0,
+     "projected_mean": 0.0,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 5.759824041329242e-20,
+     "episodes": 100,
+     "seeds": [
+      20000,
+      20099
+     ],
+     "deposit_pitch_start_deg_mean": 3.0000000000000004,
+     "deposit_pitch_end_deg_mean": 3.0000000000000004,
+     "deposit_pitch_start_deg_quartiles": [
+      3.000000000000001,
+      3.000000000000001,
+      3.000000000000001
+     ],
+     "contact_force_N_mean": 1.0000000000000002,
+     "executor": "table"
+    },
+    "dagger_bc": {
+     "return_mean": -41.2019922147048,
+     "coverage_mean": 0.23008765522279032,
+     "rmse_mm_mean": 2.2348423472163246,
+     "p95_error_mm_mean": 4.165005324008505,
+     "waste_frac_mean": 0.3651027274940369,
+     "cycles_mean": 33.52,
+     "steps_mean": 5654.04,
+     "unreachable_mean": 0.0,
+     "projected_mean": 9.01,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 1.1604351377383915e-19,
+     "episodes": 100,
+     "seeds": [
+      20000,
+      20099
+     ],
+     "deposit_pitch_start_deg_mean": 3.9982176836367804,
+     "deposit_pitch_end_deg_mean": 3.998387100760185,
+     "deposit_pitch_start_deg_quartiles": [
+      2.8833773922483643,
+      3.336278497753037,
+      4.824691708062692
+     ],
+     "contact_force_N_mean": 1.2547239588367851,
+     "executor": "table"
+    },
+    "ppo_last": {
+     "return_mean": -37.32990561828636,
+     "coverage_mean": 0.22227903579254932,
+     "rmse_mm_mean": 2.116246818639464,
+     "p95_error_mm_mean": 3.838895657071092,
+     "waste_frac_mean": 0.27410064946920504,
+     "cycles_mean": 37.44,
+     "steps_mean": 6081.25,
+     "unreachable_mean": 0.0,
+     "projected_mean": 10.16,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 6.776263578034403e-20,
+     "episodes": 100,
+     "seeds": [
+      20000,
+      20099
+     ],
+     "deposit_pitch_start_deg_mean": 5.6941258277466185,
+     "deposit_pitch_end_deg_mean": 3.183383038897878,
+     "deposit_pitch_start_deg_quartiles": [
+      4.763167048193196,
+      5.414147988958032,
+      6.45181273721849
+     ],
+     "contact_force_N_mean": 0.8165458712531273,
+     "executor": "table"
+    },
+    "ppo_best_val_update_50": {
+     "return_mean": -37.23739187517045,
+     "coverage_mean": 0.22278305332359388,
+     "rmse_mm_mean": 2.141244888425822,
+     "p95_error_mm_mean": 3.8652193164956934,
+     "waste_frac_mean": 0.30629102026835553,
+     "cycles_mean": 36.24,
+     "steps_mean": 5917.95,
+     "unreachable_mean": 0.0,
+     "projected_mean": 8.93,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 8.131516293641283e-20,
+     "episodes": 100,
+     "seeds": [
+      20000,
+      20099
+     ],
+     "deposit_pitch_start_deg_mean": 5.174029853753973,
+     "deposit_pitch_end_deg_mean": 3.289662034952814,
+     "deposit_pitch_start_deg_quartiles": [
+      4.028681441802979,
+      4.60950946162655,
+      5.965671365342879
+     ],
+     "contact_force_N_mean": 0.9096888407287254,
+     "executor": "table"
+    }
+   },
+   "test_cosim": {
+    "teacher": {
+     "return_mean": -36.314229749117644,
+     "coverage_mean": 0.2884830776722669,
+     "rmse_mm_mean": 2.3322522008519098,
+     "p95_error_mm_mean": 3.5496965993108196,
+     "waste_frac_mean": 0.4337183502323675,
+     "cycles_mean": 27.866666666666667,
+     "steps_mean": 5000.233333333334,
+     "unreachable_mean": 0.0,
+     "projected_mean": 0.0,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 1.8973538018496328e-19,
+     "episodes": 30,
+     "seeds": [
+      20000,
+      20029
+     ],
+     "deposit_pitch_start_deg_mean": 3.000000000000001,
+     "deposit_pitch_end_deg_mean": 3.000000000000001,
+     "deposit_pitch_start_deg_quartiles": [
+      3.000000000000001,
+      3.000000000000001,
+      3.000000000000001
+     ],
+     "contact_force_N_mean": 1.0000000000000002,
+     "cosim_force_rmse_N_mean": 1.1441597219626938,
+     "cosim_force_rmse_N_max": 1.6791415985028924,
+     "cosim_tracking_max_mm_mean": 7.9822656138097905,
+     "cosim_tracking_max_mm_max": 10.074593773932657,
+     "cosim_peak_force_N_mean": 4.1934341705117415,
+     "cosim_peak_force_N_max": 5.775784651650091,
+     "executor": "cosim"
+    },
+    "selected": {
+     "return_mean": -48.01183263346818,
+     "coverage_mean": 0.22454346238130019,
+     "rmse_mm_mean": 2.3384772359717862,
+     "p95_error_mm_mean": 4.052095836781671,
+     "waste_frac_mean": 0.42431125504961714,
+     "cycles_mean": 32.1,
+     "steps_mean": 5515.566666666667,
+     "unreachable_mean": 0.0,
+     "projected_mean": 16.2,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 1.0842021724855044e-19,
+     "episodes": 30,
+     "seeds": [
+      20000,
+      20029
+     ],
+     "deposit_pitch_start_deg_mean": 5.009338929111465,
+     "deposit_pitch_end_deg_mean": 3.05805762376586,
+     "deposit_pitch_start_deg_quartiles": [
+      3.743888405446206,
+      4.597577227437091,
+      5.857327355873616
+     ],
+     "contact_force_N_mean": 0.8727563319924632,
+     "cosim_force_rmse_N_mean": 1.1329638575420953,
+     "cosim_force_rmse_N_max": 5.087515460498539,
+     "cosim_tracking_max_mm_mean": 8.302630698516486,
+     "cosim_tracking_max_mm_max": 24.493548601493032,
+     "cosim_peak_force_N_mean": 4.57012809730513,
+     "cosim_peak_force_N_max": 20.993990384361133,
+     "executor": "cosim"
+    }
+   },
+   "selected_checkpoint": "ppo_update_50",
+   "ppo_steps": 61440,
+   "elapsed_s": 4283.4,
+   "exploration": {
+    "log_std_default": -3.0,
+    "explored_dims": [
+     "force",
+     "pitch_start",
+     "pitch_end"
+    ],
+    "explored_log_std": -1.5
+   },
+   "cosim_wall_seed": {
+    "教师": {
+     "seed": 20000,
+     "coverage": 0.3403944485025566,
+     "mean_thickness_mm": 2.372968434971019,
+     "rmse_mm": 2.6093229116493757,
+     "p95_error_mm": 5.17450513899368,
+     "under_frac": 0.3623082542001461,
+     "over_frac": 0.2972972972972973,
+     "roughness_mm": 0.6577238313857643,
+     "blade_load_ml": 4.171110023638096,
+     "waste_frac": 0.5853288607097082
+    },
+    "选中模型": {
+     "seed": 20000,
+     "coverage": 0.19576333089846604,
+     "mean_thickness_mm": 2.1119608039895374,
+     "rmse_mm": 1.9601553864347885,
+     "p95_error_mm": 2.9132540180962927,
+     "under_frac": 0.4601899196493791,
+     "over_frac": 0.34404674945215485,
+     "roughness_mm": 0.9163003527463199,
+     "blade_load_ml": 3.0738762622213174,
+     "waste_frac": 0.5556084279563896
+    }
+   }
+  },
+  "technique": {
+   "stroke_distributions": {
+    "教师": {
+     "pitch_deg_mean": 10.0,
+     "pitch_deg_quartiles": [
+      10.0,
+      10.0,
+      10.0
+     ],
+     "force_N_mean": 1.0000000000000002,
+     "strokes": 146
+    },
+    "DAgger-BC": {
+     "pitch_deg_mean": 9.318258334547048,
+     "pitch_deg_quartiles": [
+      8.273769421799857,
+      9.476069079178632,
+      9.890640452064208
+     ],
+     "force_N_mean": 1.1666425515180063,
+     "strokes": 74
+    },
+    "选中模型": {
+     "pitch_deg_mean": 9.770088834514814,
+     "pitch_deg_quartiles": [
+      9.314978094169522,
+      9.66959640320124,
+      9.860430098119538
+     ],
+     "force_N_mean": 1.3195661421146385,
+     "strokes": 92
+    }
+   },
+   "test": {
+    "teacher": {
+     "return_mean": -26.741831584311253,
+     "coverage_mean": 0.21837837837837834,
+     "rmse_mm_mean": 1.949164415445255,
+     "p95_error_mm_mean": 3.0745351162028522,
+     "waste_frac_mean": 0.16492960981656968,
+     "cycles_mean": 35.29,
+     "steps_mean": 5932.05,
+     "unreachable_mean": 0.0,
+     "projected_mean": 0.0,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 5.421010862427522e-20,
+     "episodes": 100,
+     "seeds": [
+      20000,
+      20099
+     ],
+     "deposit_pitch_start_deg_mean": 10.0,
+     "deposit_pitch_end_deg_mean": 4.000000000000001,
+     "deposit_pitch_start_deg_quartiles": [
+      10.0,
+      10.0,
+      10.0
+     ],
+     "contact_force_N_mean": 1.0000000000000002,
+     "executor": "table"
+    },
+    "dagger_bc": {
+     "return_mean": -36.905677467069864,
+     "coverage_mean": 0.2684952520087655,
+     "rmse_mm_mean": 2.101058565051245,
+     "p95_error_mm_mean": 3.774771696600685,
+     "waste_frac_mean": 0.22424716470100742,
+     "cycles_mean": 27.83,
+     "steps_mean": 4668.79,
+     "unreachable_mean": 0.0,
+     "projected_mean": 13.77,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 8.131516293641283e-20,
+     "episodes": 100,
+     "seeds": [
+      20000,
+      20099
+     ],
+     "deposit_pitch_start_deg_mean": 10.112903723562017,
+     "deposit_pitch_end_deg_mean": 4.891521828525981,
+     "deposit_pitch_start_deg_quartiles": [
+      9.530887514723103,
+      10.125720600883858,
+      10.937853466900341
+     ],
+     "contact_force_N_mean": 1.2905445895598695,
+     "executor": "table"
+    },
+    "ppo_last": {
+     "return_mean": -35.71924185954323,
+     "coverage_mean": 0.25975894813732653,
+     "rmse_mm_mean": 2.044857391663197,
+     "p95_error_mm_mean": 3.595406561831764,
+     "waste_frac_mean": 0.20322257173061903,
+     "cycles_mean": 28.26,
+     "steps_mean": 4692.23,
+     "unreachable_mean": 0.0,
+     "projected_mean": 12.77,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 8.131516293641283e-20,
+     "episodes": 100,
+     "seeds": [
+      20000,
+      20099
+     ],
+     "deposit_pitch_start_deg_mean": 10.496906997505185,
+     "deposit_pitch_end_deg_mean": 4.969982895416686,
+     "deposit_pitch_start_deg_quartiles": [
+      9.780686417239473,
+      10.34255107968026,
+      11.16141587846726
+     ],
+     "contact_force_N_mean": 1.2299231654633405,
+     "executor": "table"
+    },
+    "ppo_best_val_update_30": {
+     "return_mean": -35.717715189002064,
+     "coverage_mean": 0.26008035062089113,
+     "rmse_mm_mean": 2.108213987644399,
+     "p95_error_mm_mean": 3.9157516291238257,
+     "waste_frac_mean": 0.19202585995383184,
+     "cycles_mean": 26.24,
+     "steps_mean": 4395.08,
+     "unreachable_mean": 0.0,
+     "projected_mean": 10.92,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 7.792703114739563e-20,
+     "episodes": 100,
+     "seeds": [
+      20000,
+      20099
+     ],
+     "deposit_pitch_start_deg_mean": 10.142163528994367,
+     "deposit_pitch_end_deg_mean": 5.196921415247875,
+     "deposit_pitch_start_deg_quartiles": [
+      9.447713452926159,
+      9.89034837049039,
+      10.847212561425119
+     ],
+     "contact_force_N_mean": 1.2457199284062288,
+     "executor": "table"
+    }
+   },
+   "test_cosim": {
+    "teacher": {
+     "return_mean": -24.673065041261886,
+     "coverage_mean": 0.27501826150474795,
+     "rmse_mm_mean": 1.8400216249035979,
+     "p95_error_mm_mean": 2.80295377534271,
+     "waste_frac_mean": 0.10705368402279518,
+     "cycles_mean": 22.666666666666668,
+     "steps_mean": 3844.5,
+     "unreachable_mean": 1.1333333333333333,
+     "projected_mean": 0.16666666666666666,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 3.4728350837426314e-20,
+     "episodes": 30,
+     "seeds": [
+      20000,
+      20029
+     ],
+     "deposit_pitch_start_deg_mean": 10.0,
+     "deposit_pitch_end_deg_mean": 4.000000000000001,
+     "deposit_pitch_start_deg_quartiles": [
+      10.0,
+      10.0,
+      10.0
+     ],
+     "contact_force_N_mean": 1.0000000000000002,
+     "cosim_force_rmse_N_mean": 1.174029172827117,
+     "cosim_force_rmse_N_max": 3.0182853840959987,
+     "cosim_tracking_max_mm_mean": 8.449429705825873,
+     "cosim_tracking_max_mm_max": 18.9738255989894,
+     "cosim_peak_force_N_mean": 4.278646838885398,
+     "cosim_peak_force_N_max": 16.92811196342209,
+     "executor": "cosim"
+    },
+    "selected": {
+     "return_mean": -38.092752838174526,
+     "coverage_mean": 0.2978086194302411,
+     "rmse_mm_mean": 1.973150817024822,
+     "p95_error_mm_mean": 3.1539835971668464,
+     "waste_frac_mean": 0.239382872969329,
+     "cycles_mean": 21.966666666666665,
+     "steps_mean": 3416.8,
+     "unreachable_mean": 2.7333333333333334,
+     "projected_mean": 6.566666666666666,
+     "success_rate": 0.0,
+     "max_volume_error_m3": 4.0657581468206416e-20,
+     "episodes": 30,
+     "seeds": [
+      20000,
+      20029
+     ],
+     "deposit_pitch_start_deg_mean": 9.593390630566619,
+     "deposit_pitch_end_deg_mean": 4.694924860725709,
+     "deposit_pitch_start_deg_quartiles": [
+      8.844554632506217,
+      9.764617169945545,
+      10.496391316184557
+     ],
+     "contact_force_N_mean": 1.1691134521044502,
+     "cosim_force_rmse_N_mean": 1.0952511655710526,
+     "cosim_force_rmse_N_max": 3.947145143831213,
+     "cosim_tracking_max_mm_mean": 9.021152617608855,
+     "cosim_tracking_max_mm_max": 25.84577977585127,
+     "cosim_peak_force_N_mean": 4.725675660540032,
+     "cosim_peak_force_N_max": 22.185817929849925,
+     "executor": "cosim"
+    }
+   },
+   "selected_checkpoint": "ppo_update_30",
+   "ppo_steps": 61440,
+   "elapsed_s": 4166.3,
+   "exploration": {
+    "log_std_default": -3.0,
+    "explored_dims": [
+     "force",
+     "pitch_start",
+     "pitch_end"
+    ],
+    "explored_log_std": -1.5
+   },
+   "cosim_wall_seed": {
+    "教师": {
+     "seed": 20000,
+     "coverage": 0.2322863403944485,
+     "mean_thickness_mm": 2.5071988162425742,
+     "rmse_mm": 2.1520535280116535,
+     "p95_error_mm": 3.5157376173860175,
+     "under_frac": 0.2892622352081812,
+     "over_frac": 0.4784514243973703,
+     "roughness_mm": 0.5925535826485742,
+     "blade_load_ml": 5.712792387074465,
+     "waste_frac": 0.2413395283894074
+    },
+    "选中模型": {
+     "seed": 20000,
+     "coverage": 0.47260774287801316,
+     "mean_thickness_mm": 2.2106198192004007,
+     "rmse_mm": 1.878470678125515,
+     "p95_error_mm": 2.43187229654686,
+     "under_frac": 0.2702702702702703,
+     "over_frac": 0.25712198685171656,
+     "roughness_mm": 0.6579300661779147,
+     "blade_load_ml": 6.328961680631024,
+     "waste_frac": 0.3760488816134603
+    }
+   }
+  }
+ }
+}

@@ -91,13 +91,6 @@ flowchart LR
 
 只跑参考仿真,不接触硬件,不需要机械臂。
 
-## 整片连续强化学习（v0.2）
-
-新版实验把装料、接近、接触、任意方向涂抹/刮平、离墙、回位和 D435 重扫纳入同一个长时程闭环。
-双击 `整片连续强化学习可视化.cmd` 可打开训练后 PPO 策略的离线三维回放；鼠标可自由旋转和缩放视角，
-页面同步显示墙面厚度、抹刀积料、动作方向/刀角和质量指标。实现与证据边界见
-[`docs/WALL_CYCLE_RL.md`](docs/WALL_CYCLE_RL.md)。
-
 ```bash
 git clone https://github.com/sunjunbo70-lang/dummy-arm-lab.git
 cd dummy-arm-lab
@@ -105,7 +98,7 @@ cd dummy-arm-lab
 python -m venv .venv && . .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements/core.txt
 
-python -m unittest discover -s tests              # 94 个测试
+python -m unittest discover -s tests              # 125 个测试
 python -m dummy_loop collect-sim --episodes 40 --seed 7 --output run/teacher.npz
 python -m dummy_loop train      --dataset run/teacher.npz --output run/policy.npz
 python -m dummy_loop run-sim    --policy  run/policy.npz  --steps 240 --log run/rollout.jsonl
@@ -123,6 +116,18 @@ python -m dummy_loop.wall demo --random-scale 1 --probe --servo
 
 > 不需要 Git LFS,仓库里所有资产都是普通 git 对象。
 > 以后引入大体积或频繁改动的二进制文件时再启用,迁移命令写在 `.gitattributes` 里。
+
+
+## 整片连续强化学习（v0.3）
+
+把装料、接近、接触、任意方向涂抹/刮平、离墙、回位和 D435 重扫纳入同一个长时程闭环。
+v0.3 起：作业区按机械臂真实可达范围算出（墙距 33 cm，18.5 × 18.5 cm）；砂浆用基于物理的屈服应力模型，
+刀面俯仰角由强化学习自己选；每一刀在 Dummy V2 MuJoCo 模型上规划，评估与回放走动力学联合仿真。
+
+- 双击 `整片连续强化学习可视化.cmd`：MuJoCo 窗口里的真实机械臂、抹刀、墙面与料层（空格暂停，←→ 逐帧，[ ] 调速）。
+- 双击 `整片连续强化学习可视化_v0.2记录.cmd`：上一版（v0.2）的网页回放，仅作记录。
+- 每项改动的原因与「不要改回去」的理由：[`docs/changes/2026-09-22_wall_cycle_v0.3.md`](docs/changes/2026-09-22_wall_cycle_v0.3.md)；
+  实验说明：[`docs/WALL_CYCLE_RL.md`](docs/WALL_CYCLE_RL.md)。
 
 ---
 
@@ -164,7 +169,8 @@ vendor/          Fibre 原生 USB 客户端，含本项目的超时修复
 
 参与开发前值得先读:[`AGENTS.md`](AGENTS.md)(安全边界与会话协议)、
 [`docs/DATA_FILES.md`](docs/DATA_FILES.md)(为什么有这么多 JSON 文件,
-以及为什么它们不能合并)、[`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md)。
+以及为什么它们不能合并)、[`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md)(全部实验记录索引)。
+**换一台机器接手开发**,克隆后先看 [`docs/CONTINUE.md`](docs/CONTINUE.md)。
 
 ---
 

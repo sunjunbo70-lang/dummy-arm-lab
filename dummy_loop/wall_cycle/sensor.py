@@ -38,8 +38,17 @@ class D435Proxy:
         return self.last
 
 
+def coarse_shape(shape):
+    return (-(-shape[0] // 2), -(-shape[1] // 4))
+
+
 def coarse_map(a):
-    """56x14 -> 14x7 through 2x4 pooling; raw resolution remains in logs."""
-    if a.shape[0] % 2 or a.shape[1] % 4:
-        return a
+    """2x4 mean pooling (14x56 -> 7x14 for the v0.2 wall); raw resolution remains in logs.
+
+    Grids that are not a multiple of 2x4 are padded with their edge values first. (The
+    v0.2 version returned the unpooled map in that case, which silently changed the
+    observation size for any other wall shape.)"""
+    pr, pc = (-a.shape[0]) % 2, (-a.shape[1]) % 4
+    if pr or pc:
+        a = np.pad(a, ((0, pr), (0, pc)), mode='edge')
     return a.reshape(a.shape[0]//2, 2, a.shape[1]//4, 4).mean(axis=(1, 3))

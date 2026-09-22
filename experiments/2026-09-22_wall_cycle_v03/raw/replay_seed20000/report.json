@@ -1,0 +1,112 @@
+{
+ "evidence_level": "L1",
+ "hardware_motion": false,
+ "seed": 20000,
+ "driver": "../v03_runs/technique/policy.npz",
+ "return": -20.822439586903812,
+ "success": false,
+ "metrics": {
+  "coverage": 0.24178232286340395,
+  "mean_thickness_mm": 2.103650644452723,
+  "rmse_mm": 2.0744999234145904,
+  "p95_error_mm": 3.6471990073635356,
+  "under_frac": 0.4390065741417093,
+  "over_frac": 0.31921110299488675,
+  "roughness_mm": 0.7009161592169402,
+  "blade_load_ml": 4.985676899976019,
+  "waste_frac": 0.06379772942171642
+ },
+ "cycles": 9,
+ "reloads": 7,
+ "unreachable_strokes": 0,
+ "mode_counts": {
+  "DEPOSIT": 7,
+  "REUSE": 1,
+  "LEVEL": 1,
+  "RESCAN": 0,
+  "FINISH": 0
+ },
+ "pitch_start_deg_mean": 10.140800488827514,
+ "frames": 1925,
+ "move_frames": 1579,
+ "move_frames_near_wall": 0,
+ "config": {
+  "physics": "v0.3",
+  "width_m": 0.185,
+  "height_m": 0.185,
+  "scene_wall_distance_m": 0.33,
+  "area_centre_u_m": -0.01,
+  "area_centre_z_m": 0.19,
+  "use_arm": true,
+  "cell_m": 0.005,
+  "target_m": 0.002,
+  "acceptable_low_m": 0.0015,
+  "acceptable_high_m": 0.0025,
+  "blade_length_m": 0.12,
+  "blade_width_m": 0.03,
+  "blade_cell_m": 0.005,
+  "blade_capacity_ml": 30.0,
+  "load_choices_ml": [
+   0.0,
+   12.0,
+   18.0,
+   24.0
+  ],
+  "load_scale_range": [
+   0.8,
+   1.2
+  ],
+  "camera_resolution": [
+   848,
+   480
+  ],
+  "camera_fps": 30,
+  "camera_distance_m": 0.45,
+  "scan_frames": 45,
+  "scan_warmup_frames": 15,
+  "scan_fused_frames": 30,
+  "depth_noise_mm": 0.6,
+  "plane_bias_mm": 0.2,
+  "invalid_base": 0.02,
+  "invalid_edge": 0.15,
+  "extrinsic_translation_mm": 1.0,
+  "extrinsic_rotation_deg": 0.05,
+  "control_hz": 20,
+  "base_steps": 6000,
+  "max_steps": 12000,
+  "extension_steps": 1000,
+  "max_cycles": 80,
+  "max_reload_cycles": 30,
+  "stall_limit": 5,
+  "progress_epsilon": 0.0002,
+  "max_force_N": 40.0,
+  "force_window": [
+   2.0,
+   15.0
+  ],
+  "force_window_v3": [
+   0.5,
+   15.0
+  ],
+  "wall_clearance_m": 0.08,
+  "approach_clearance_m": 0.025,
+  "min_stroke_m": 0.025,
+  "max_stroke_m": 0.16,
+  "speed_range_m_s": [
+   0.02,
+   0.12
+  ],
+  "curve_offset_m": 0.03,
+  "stroke_samples": 28,
+  "mortar_rho": 1900.0,
+  "mortar_tau_y_Pa": 250.0,
+  "mortar_mu_p_Pa_s": 2.0,
+  "lift_wall_fraction": 0.5,
+  "max_pitch_deg": 35.0,
+  "finish_coverage": 0.95,
+  "finish_rmse_mm": 0.5,
+  "finish_p95_mm": 1.0,
+  "finish_confidence": 0.95
+ },
+ "note": "stroke frames: joint angles from the MuJoCo co-simulation (arm.py execute); approach/lift: planned poses; move: joint interpolation"
+}
