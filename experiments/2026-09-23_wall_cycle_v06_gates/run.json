@@ -1,0 +1,8 @@
+{
+  "branch": "codex/wall-cycle-v06",
+  "command": "python tools/simulation/wall_cycle_v06_gates.py --episodes 5 --max-cycles 25",
+  "evidence_level": "L1",
+  "status": "running",
+  "started_at": "2026-09-23T02:58:54.3423790+09:00",
+  "hardware_motion": false
+}

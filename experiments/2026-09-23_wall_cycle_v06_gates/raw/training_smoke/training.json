@@ -1,0 +1,573 @@
+{
+  "experiment": "wall_cycle_v0.6_p2",
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "seed": 0,
+  "teacher_style": "technique",
+  "updates": 2,
+  "ppo_steps": 256,
+  "teacher_samples": 355,
+  "teacher_return_mean": -7.9933790469810075,
+  "behaviour_clone_mse": 1.439614942373337e-05,
+  "dagger": [
+    {
+      "round": 1,
+      "new_samples": 155,
+      "total_samples": 355,
+      "mse": 1.439614942373337e-05
+    }
+  ],
+  "value_warmup_mse": 72.56083642801357,
+  "config": {
+    "physics": "v0.6",
+    "tool_profile": "lab_20260922",
+    "width_m": 0.185,
+    "height_m": 0.185,
+    "scene_wall_distance_m": 0.33,
+    "area_centre_u_m": -0.01,
+    "area_centre_z_m": 0.19,
+    "use_arm": true,
+    "cell_m": 0.005,
+    "target_m": 0.002,
+    "acceptable_low_m": 0.0015,
+    "acceptable_high_m": 0.0025,
+    "blade_length_m": 0.12,
+    "blade_width_m": 0.03,
+    "blade_cell_m": 0.005,
+    "blade_capacity_ml": 30.0,
+    "load_choices_ml": [
+      0.0,
+      12.0,
+      18.0,
+      24.0
+    ],
+    "load_scale_range": [
+      0.8,
+      1.2
+    ],
+    "camera_resolution": [
+      848,
+      480
+    ],
+    "camera_fps": 30,
+    "camera_distance_m": 0.45,
+    "scan_frames": 45,
+    "scan_warmup_frames": 15,
+    "scan_fused_frames": 30,
+    "depth_noise_mm": 0.6,
+    "plane_bias_mm": 0.2,
+    "invalid_base": 0.02,
+    "invalid_edge": 0.15,
+    "extrinsic_translation_mm": 1.0,
+    "extrinsic_rotation_deg": 0.05,
+    "control_hz": 20,
+    "base_steps": 12000,
+    "max_steps": 24000,
+    "extension_steps": 2000,
+    "max_cycles": 160,
+    "max_reload_cycles": 60,
+    "stall_limit": 1,
+    "progress_epsilon": 0.0002,
+    "min_cycles_before_stall": 25,
+    "stall_window": 12,
+    "max_force_N": 40.0,
+    "force_window": [
+      2.0,
+      15.0
+    ],
+    "force_window_v3": [
+      0.5,
+      15.0
+    ],
+    "wall_clearance_m": 0.08,
+    "approach_clearance_m": 0.025,
+    "min_stroke_m": 0.025,
+    "max_stroke_m": 0.16,
+    "speed_range_m_s": [
+      0.02,
+      0.12
+    ],
+    "curve_offset_m": 0.03,
+    "stroke_samples": 28,
+    "mortar_rho": 1900.0,
+    "mortar_tau_y_Pa": 250.0,
+    "mortar_mu_p_Pa_s": 2.0,
+    "lift_wall_fraction": 0.75,
+    "max_pitch_deg": 35.0,
+    "interface_wall_share_range": [
+      0.6,
+      0.9
+    ],
+    "randomize_interface": true,
+    "tool_interface_yield_Pa": 80.0,
+    "feed_board_volume_ml": 600.0,
+    "feed_normal_force_N": 8.0,
+    "feed_scoop_depth_m": 0.006,
+    "feed_scoop_distance_m": 0.09,
+    "feed_scoop_speed_m_s": 0.04,
+    "carry_duration_s": 1.5,
+    "transport_dt_s": 0.02,
+    "transport_relaxation_s": 0.35,
+    "face_up_target_deg": 10.0,
+    "face_up_hard_deg": 15.0,
+    "feed_pose_q_rad": [
+      0.0297,
+      -1.31,
+      1.23,
+      0.0942,
+      -1.48,
+      -0.126
+    ],
+    "rotation_clearance_range_m": [
+      0.12,
+      0.1,
+      0.08
+    ],
+    "finish_coverage": 0.95,
+    "finish_rmse_mm": 0.5,
+    "finish_p95_mm": 1.0,
+    "finish_confidence": 0.95
+  },
+  "ppo": {
+    "hidden": [
+      256,
+      256
+    ],
+    "lr": 3e-05,
+    "gamma": 0.99,
+    "lam": 0.95,
+    "clip": 0.1,
+    "epochs": 4,
+    "minibatch": 128,
+    "steps_per_update": 128,
+    "entropy_coef": 0.0,
+    "value_coef": 0.5,
+    "max_grad_norm": 1.0,
+    "init_log_std": -3.0,
+    "seed": 0
+  },
+  "test_set": {
+    "seeds": [
+      20000,
+      20001
+    ],
+    "episodes": 2
+  },
+  "validation_set": {
+    "seeds": [
+      30000,
+      30001
+    ],
+    "episodes": 2
+  },
+  "test": {
+    "teacher": {
+      "return_mean": -6.374111967442737,
+      "coverage_mean": 0.3177501826150475,
+      "rmse_mm_mean": 1.5949015333255976,
+      "p95_error_mm_mean": 2.5648961165489723,
+      "waste_frac_mean": 0.1670082908768608,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 74.5,
+      "steps_mean": 14122.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 0.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 2,
+      "seeds": [
+        20000,
+        20001
+      ],
+      "deposit_pitch_start_deg_mean": 19.642857142857142,
+      "deposit_pitch_end_deg_mean": 6.285714285714286,
+      "deposit_pitch_start_deg_quartiles": [
+        25.0,
+        25.0,
+        25.0
+      ],
+      "contact_force_N_mean": 1.0000000000000002,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        44.21598460579538,
+        53.68984038446241,
+        72.43838216191689
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.020134228187919462,
+        "diagonal": 0.6644295302013423,
+        "vertical": 0.31543624161073824
+      },
+      "executor": "table"
+    },
+    "dagger_bc": {
+      "return_mean": -22.015095499567543,
+      "coverage_mean": 0.06902848794740686,
+      "rmse_mm_mean": 2.4680241902119286,
+      "p95_error_mm_mean": 3.0052756363407207,
+      "waste_frac_mean": 0.6338156270329021,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 71.0,
+      "steps_mean": 12043.5,
+      "unreachable_mean": 0.0,
+      "projected_mean": 13.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.8973538018496328e-19,
+      "episodes": 2,
+      "seeds": [
+        20000,
+        20001
+      ],
+      "deposit_pitch_start_deg_mean": 22.64148476786382,
+      "deposit_pitch_end_deg_mean": 14.524385927629593,
+      "deposit_pitch_start_deg_quartiles": [
+        20.149862846767547,
+        23.94488734264127,
+        25.516370600244766
+      ],
+      "contact_force_N_mean": 5.4970729081304945,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        31.060040138724695,
+        120.26340018638066,
+        164.30869066727874
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.5070422535211268,
+        "diagonal": 0.3591549295774648,
+        "vertical": 0.13380281690140844
+      },
+      "executor": "table"
+    },
+    "ppo_last": {
+      "return_mean": -28.35347326793273,
+      "coverage_mean": 0.16910153396639882,
+      "rmse_mm_mean": 2.237607479612153,
+      "p95_error_mm_mean": 3.3576768779970205,
+      "waste_frac_mean": 0.49908259905407576,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 82.5,
+      "steps_mean": 14140.5,
+      "unreachable_mean": 0.0,
+      "projected_mean": 28.5,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 8.131516293641283e-20,
+      "episodes": 2,
+      "seeds": [
+        20000,
+        20001
+      ],
+      "deposit_pitch_start_deg_mean": 17.89492281986424,
+      "deposit_pitch_end_deg_mean": 11.925326717832492,
+      "deposit_pitch_start_deg_quartiles": [
+        13.205790586833933,
+        20.052991871638902,
+        23.808077109197423
+      ],
+      "contact_force_N_mean": 5.433884808129298,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        35.4151299223019,
+        77.84102738179962,
+        157.0304681608592
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.42073170731707316,
+        "diagonal": 0.32926829268292684,
+        "vertical": 0.25
+      },
+      "executor": "table"
+    },
+    "ppo_best_val_update_2": {
+      "return_mean": -28.35347326793273,
+      "coverage_mean": 0.16910153396639882,
+      "rmse_mm_mean": 2.237607479612153,
+      "p95_error_mm_mean": 3.3576768779970205,
+      "waste_frac_mean": 0.49908259905407576,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 82.5,
+      "steps_mean": 14140.5,
+      "unreachable_mean": 0.0,
+      "projected_mean": 28.5,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 8.131516293641283e-20,
+      "episodes": 2,
+      "seeds": [
+        20000,
+        20001
+      ],
+      "deposit_pitch_start_deg_mean": 17.89492281986424,
+      "deposit_pitch_end_deg_mean": 11.925326717832492,
+      "deposit_pitch_start_deg_quartiles": [
+        13.205790586833933,
+        20.052991871638902,
+        23.808077109197423
+      ],
+      "contact_force_N_mean": 5.433884808129298,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        35.4151299223019,
+        77.84102738179962,
+        157.0304681608592
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.42073170731707316,
+        "diagonal": 0.32926829268292684,
+        "vertical": 0.25
+      },
+      "executor": "table"
+    }
+  },
+  "validation_bc": {
+    "return_mean": -42.94497528478731,
+    "coverage_mean": 0.12527392257121986,
+    "rmse_mm_mean": 2.5755597346421086,
+    "p95_error_mm_mean": 3.7465617371604205,
+    "waste_frac_mean": 0.7941460561223738,
+    "carry_loss_frac_mean": 0.0,
+    "cycles_mean": 73.5,
+    "steps_mean": 13073.5,
+    "unreachable_mean": 0.0,
+    "projected_mean": 31.5,
+    "success_rate": 0.0,
+    "max_volume_error_m3": 2.439454888092385e-19,
+    "episodes": 2,
+    "seeds": [
+      30000,
+      30001
+    ],
+    "deposit_pitch_start_deg_mean": 16.07356618130851,
+    "deposit_pitch_end_deg_mean": 10.515194054614698,
+    "deposit_pitch_start_deg_quartiles": [
+      10.83009325118266,
+      16.58666660525335,
+      20.886539937596535
+    ],
+    "contact_force_N_mean": 3.787386872290251,
+    "carry_face_up_mean": 1.0,
+    "path_heading_deg_quartiles": [
+      45.688670501614695,
+      70.60296635531351,
+      110.9171438330007
+    ],
+    "path_family_fraction": {
+      "horizontal": 0.09722222222222222,
+      "diagonal": 0.625,
+      "vertical": 0.2777777777777778
+    },
+    "executor": "table"
+  },
+  "selected_checkpoint": "ppo_update_2",
+  "test_cosim": {
+    "teacher": {
+      "return_mean": -20.87004115532397,
+      "coverage_mean": 0.36888239590942296,
+      "rmse_mm_mean": 2.5632735703846232,
+      "p95_error_mm_mean": 4.508377723909171,
+      "waste_frac_mean": 0.6235013035119742,
+      "carry_loss_frac_mean": 0.15497241258290498,
+      "cycles_mean": 74.0,
+      "steps_mean": 14060.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 4.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 3.5236570605778894e-19,
+      "episodes": 1,
+      "seeds": [
+        20000,
+        20000
+      ],
+      "deposit_pitch_start_deg_mean": 11.31578947368421,
+      "deposit_pitch_end_deg_mean": 4.0,
+      "deposit_pitch_start_deg_quartiles": [
+        5.0,
+        10.0,
+        17.5
+      ],
+      "contact_force_N_mean": 1.0000000000000002,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        56.735122730339924,
+        68.78683572325494,
+        88.22879816143693
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.06756756756756757,
+        "diagonal": 0.5,
+        "vertical": 0.43243243243243246
+      },
+      "cosim_force_rmse_N_mean": 1.4937037651366796,
+      "cosim_force_rmse_N_max": 2.782080787569762,
+      "cosim_tracking_max_mm_mean": 8.698582788035518,
+      "cosim_tracking_max_mm_max": 10.331556670354095,
+      "cosim_peak_force_N_mean": 5.601480747852496,
+      "cosim_peak_force_N_max": 14.915129016508612,
+      "executor": "cosim"
+    },
+    "selected": {
+      "return_mean": -25.699325227568664,
+      "coverage_mean": 0.04382761139517896,
+      "rmse_mm_mean": 2.843385313186186,
+      "p95_error_mm_mean": 4.029818313974075,
+      "waste_frac_mean": 0.8194268222745306,
+      "carry_loss_frac_mean": 0.16512124145738777,
+      "cycles_mean": 69.0,
+      "steps_mean": 12000.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 11.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 1,
+      "seeds": [
+        20000,
+        20000
+      ],
+      "deposit_pitch_start_deg_mean": 16.23647367952298,
+      "deposit_pitch_end_deg_mean": 12.60741617495016,
+      "deposit_pitch_start_deg_quartiles": [
+        14.193937428071445,
+        16.581208657334564,
+        19.879060244478307
+      ],
+      "contact_force_N_mean": 5.270993867009594,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        75.65503985920691,
+        153.29569016948966,
+        163.14407821838347
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.5942028985507246,
+        "diagonal": 0.2898550724637681,
+        "vertical": 0.11594202898550725
+      },
+      "cosim_force_rmse_N_mean": 3.4642611924239293,
+      "cosim_force_rmse_N_max": 5.474832555912154,
+      "cosim_tracking_max_mm_mean": 16.11839649561051,
+      "cosim_tracking_max_mm_max": 20.488311792633535,
+      "cosim_peak_force_N_mean": 12.001913269886918,
+      "cosim_peak_force_N_max": 18.856782520772686,
+      "executor": "cosim"
+    }
+  },
+  "exploration": {
+    "log_std_default": -3.0,
+    "explored_dims": [
+      "start_u",
+      "start_v",
+      "end_u",
+      "end_v",
+      "blade_cos",
+      "blade_sin",
+      "force",
+      "pitch_start",
+      "pitch_end"
+    ],
+    "explored_log_std": -1.5
+  },
+  "curve": [
+    {
+      "update": 1,
+      "episodes": 3,
+      "train_return_mean": -55.736581161362494,
+      "policy_loss": -0.04984,
+      "value_loss": 49.48427,
+      "kl": 0.03551,
+      "elapsed_s": 25.9,
+      "val": {
+        "return_mean": -36.46107273073305,
+        "coverage_mean": 0.08948137326515705,
+        "rmse_mm_mean": 2.8368564095125564,
+        "p95_error_mm_mean": 4.720923970210927,
+        "waste_frac_mean": 0.7422009678649415,
+        "carry_loss_frac_mean": 0.0,
+        "cycles_mean": 85.0,
+        "steps_mean": 14106.0,
+        "unreachable_mean": 0.0,
+        "projected_mean": 26.5,
+        "success_rate": 0.0,
+        "max_volume_error_m3": 2.439454888092385e-19,
+        "episodes": 2,
+        "seeds": [
+          30000,
+          30001
+        ],
+        "deposit_pitch_start_deg_mean": 18.278105985119254,
+        "deposit_pitch_end_deg_mean": 14.968822935152778,
+        "deposit_pitch_start_deg_quartiles": [
+          13.46507739188622,
+          18.467022888704815,
+          22.685190510185333
+        ],
+        "contact_force_N_mean": 6.61879989472082,
+        "carry_face_up_mean": 1.0,
+        "path_heading_deg_quartiles": [
+          47.0919776184916,
+          114.70745936236492,
+          148.23981032773725
+        ],
+        "path_family_fraction": {
+          "horizontal": 0.3254437869822485,
+          "diagonal": 0.514792899408284,
+          "vertical": 0.15976331360946747
+        },
+        "executor": "table"
+      }
+    },
+    {
+      "update": 2,
+      "episodes": 4,
+      "train_return_mean": -54.7670395447178,
+      "policy_loss": -0.03718,
+      "value_loss": 75.47312,
+      "kl": 0.00286,
+      "elapsed_s": 30.2,
+      "val": {
+        "return_mean": -28.924304562800096,
+        "coverage_mean": 0.07085463842220599,
+        "rmse_mm_mean": 2.4379205928630805,
+        "p95_error_mm_mean": 2.7521076612464084,
+        "waste_frac_mean": 0.6368622172384543,
+        "carry_loss_frac_mean": 0.0,
+        "cycles_mean": 76.0,
+        "steps_mean": 13064.5,
+        "unreachable_mean": 0.0,
+        "projected_mean": 24.0,
+        "success_rate": 0.0,
+        "max_volume_error_m3": 8.131516293641283e-20,
+        "episodes": 2,
+        "seeds": [
+          30000,
+          30001
+        ],
+        "deposit_pitch_start_deg_mean": 17.384139260532905,
+        "deposit_pitch_end_deg_mean": 12.888375096646646,
+        "deposit_pitch_start_deg_quartiles": [
+          14.980010138580305,
+          17.82318494292646,
+          20.337767466137596
+        ],
+        "contact_force_N_mean": 5.572350010417788,
+        "carry_face_up_mean": 1.0,
+        "path_heading_deg_quartiles": [
+          50.55836567335469,
+          104.95256562023043,
+          165.16194692590736
+        ],
+        "path_family_fraction": {
+          "horizontal": 0.5099337748344371,
+          "diagonal": 0.2980132450331126,
+          "vertical": 0.19205298013245034
+        },
+        "executor": "table"
+      }
+    }
+  ],
+  "elapsed_s": 200.0,
+  "limitations": [
+    "reduced-order 2.5-D mortar, not CFD; trowel coefficients assumed",
+    "D435 parameters provisional until physical calibration",
+    "arm execution is kinematic (IK + wall clearance), no servo dynamics or contact forces",
+    "non-contact phases are deterministic motion skills; manager acts once per scan"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+ "evidence_level": "L1",
+ "hardware_motion": false,
+ "seed": 20000,
+ "initial_distribution": "bare",
+ "driver": "experiments\\2026-09-23_wall_cycle_v06_p2a\\raw\\training\\policy.npz",
+ "return": -38.922518002125784,
+ "success": false,
+ "metrics": {
+  "coverage": 0.2220598977355734,
+  "mean_thickness_mm": 2.3399534708383887,
+  "rmse_mm": 2.0803045363283195,
+  "p95_error_mm": 3.13153467134698,
+  "under_frac": 0.32578524470416365,
+  "over_frac": 0.45215485756026297,
+  "roughness_mm": 1.1186875979392654,
+  "blade_load_ml": 1.997788223189857,
+  "waste_frac": 0.37816139573762303
+ },
+ "cycles": 41,
+ "reloads": 11,
+ "unreachable_strokes": 9,
+ "projected_strokes": 22,
+ "mode_counts": {
+  "DEPOSIT": 11,
+  "REUSE": 2,
+  "LEVEL": 28,
+  "RESCAN": 0,
+  "FINISH": 0
+ },
+ "pitch_start_deg_mean": 11.167282712878583,
+ "frames": 2729,
+ "move_frames": 0,
+ "move_frames_near_wall": 0,
+ "carry_face_up_min": 0.9948653429029537,
+ "rotation_face_up_min": 0.008029211610381726,
+ "face_down_frames": 0,
+ "note": "v0.6 frames are actual executor records for feed alignment, carry, near-wall rotation, approach, work, separation and scan return; the feed material interaction remains a pose-gated reduced proxy rather than granular contact"
+}

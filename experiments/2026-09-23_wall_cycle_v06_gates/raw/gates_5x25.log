@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "D:\VLA\dummy_arm\tools\simulation\wall_cycle_v06_gates.py", line 6, in <module>
+    from dummy_loop.wall_cycle.area import load_work_area
+ModuleNotFoundError: No module named 'dummy_loop'

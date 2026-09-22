@@ -1,0 +1,173 @@
+BC 100: mse=0.000097
+BC 200: mse=0.000012
+BC 300: mse=0.000005
+BC 400: mse=0.000014
+BC 500: mse=0.000010
+BC 600: mse=0.000012
+BC 700: mse=0.000004
+BC 800: mse=0.000000
+{"stage": "bc_done", "elapsed_s": 21.2}
+{"update": 1, "episodes": 3, "train_return_mean": -55.736581161362494, "policy_loss": -0.04984, "value_loss": 49.48427, "kl": 0.03551, "elapsed_s": 25.9, "val": {"return_mean": -36.46107273073305, "coverage_mean": 0.08948137326515705, "rmse_mm_mean": 2.8368564095125564, "p95_error_mm_mean": 4.720923970210927, "waste_frac_mean": 0.7422009678649415, "carry_loss_frac_mean": 0.0, "cycles_mean": 85.0, "steps_mean": 14106.0, "unreachable_mean": 0.0, "projected_mean": 26.5, "success_rate": 0.0, "max_volume_error_m3": 2.439454888092385e-19, "episodes": 2, "seeds": [30000, 30001], "deposit_pitch_start_deg_mean": 18.278105985119254, "deposit_pitch_end_deg_mean": 14.968822935152778, "deposit_pitch_start_deg_quartiles": [13.46507739188622, 18.467022888704815, 22.685190510185333], "contact_force_N_mean": 6.61879989472082, "carry_face_up_mean": 1.0, "path_heading_deg_quartiles": [47.0919776184916, 114.70745936236492, 148.23981032773725], "path_family_fraction": {"horizontal": 0.3254437869822485, "diagonal": 0.514792899408284, "vertical": 0.15976331360946747}, "executor": "table"}}
+{"update": 2, "episodes": 4, "train_return_mean": -54.7670395447178, "policy_loss": -0.03718, "value_loss": 75.47312, "kl": 0.00286, "elapsed_s": 30.2, "val": {"return_mean": -28.924304562800096, "coverage_mean": 0.07085463842220599, "rmse_mm_mean": 2.4379205928630805, "p95_error_mm_mean": 2.7521076612464084, "waste_frac_mean": 0.6368622172384543, "carry_loss_frac_mean": 0.0, "cycles_mean": 76.0, "steps_mean": 13064.5, "unreachable_mean": 0.0, "projected_mean": 24.0, "success_rate": 0.0, "max_volume_error_m3": 8.131516293641283e-20, "episodes": 2, "seeds": [30000, 30001], "deposit_pitch_start_deg_mean": 17.384139260532905, "deposit_pitch_end_deg_mean": 12.888375096646646, "deposit_pitch_start_deg_quartiles": [14.980010138580305, 17.82318494292646, 20.337767466137596], "contact_force_N_mean": 5.572350010417788, "carry_face_up_mean": 1.0, "path_heading_deg_quartiles": [50.55836567335469, 104.95256562023043, 165.16194692590736], "path_family_fraction": {"horizontal": 0.5099337748344371, "diagonal": 0.2980132450331126, "vertical": 0.19205298013245034}, "executor": "table"}}
+{"stage": "cosim_test_done", "elapsed_s": 200.0}
+{
+  "selected": "ppo_update_2",
+  "test": {
+    "teacher": {
+      "return_mean": -6.374111967442737,
+      "coverage_mean": 0.3177501826150475,
+      "rmse_mm_mean": 1.5949015333255976,
+      "p95_error_mm_mean": 2.5648961165489723,
+      "waste_frac_mean": 0.1670082908768608,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 74.5,
+      "steps_mean": 14122.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 0.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 2,
+      "seeds": [
+        20000,
+        20001
+      ],
+      "deposit_pitch_start_deg_mean": 19.642857142857142,
+      "deposit_pitch_end_deg_mean": 6.285714285714286,
+      "deposit_pitch_start_deg_quartiles": [
+        25.0,
+        25.0,
+        25.0
+      ],
+      "contact_force_N_mean": 1.0000000000000002,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        44.21598460579538,
+        53.68984038446241,
+        72.43838216191689
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.020134228187919462,
+        "diagonal": 0.6644295302013423,
+        "vertical": 0.31543624161073824
+      },
+      "executor": "table"
+    },
+    "dagger_bc": {
+      "return_mean": -22.015095499567543,
+      "coverage_mean": 0.06902848794740686,
+      "rmse_mm_mean": 2.4680241902119286,
+      "p95_error_mm_mean": 3.0052756363407207,
+      "waste_frac_mean": 0.6338156270329021,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 71.0,
+      "steps_mean": 12043.5,
+      "unreachable_mean": 0.0,
+      "projected_mean": 13.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.8973538018496328e-19,
+      "episodes": 2,
+      "seeds": [
+        20000,
+        20001
+      ],
+      "deposit_pitch_start_deg_mean": 22.64148476786382,
+      "deposit_pitch_end_deg_mean": 14.524385927629593,
+      "deposit_pitch_start_deg_quartiles": [
+        20.149862846767547,
+        23.94488734264127,
+        25.516370600244766
+      ],
+      "contact_force_N_mean": 5.4970729081304945,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        31.060040138724695,
+        120.26340018638066,
+        164.30869066727874
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.5070422535211268,
+        "diagonal": 0.3591549295774648,
+        "vertical": 0.13380281690140844
+      },
+      "executor": "table"
+    },
+    "ppo_last": {
+      "return_mean": -28.35347326793273,
+      "coverage_mean": 0.16910153396639882,
+      "rmse_mm_mean": 2.237607479612153,
+      "p95_error_mm_mean": 3.3576768779970205,
+      "waste_frac_mean": 0.49908259905407576,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 82.5,
+      "steps_mean": 14140.5,
+      "unreachable_mean": 0.0,
+      "projected_mean": 28.5,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 8.131516293641283e-20,
+      "episodes": 2,
+      "seeds": [
+        20000,
+        20001
+      ],
+      "deposit_pitch_start_deg_mean": 17.89492281986424,
+      "deposit_pitch_end_deg_mean": 11.925326717832492,
+      "deposit_pitch_start_deg_quartiles": [
+        13.205790586833933,
+        20.052991871638902,
+        23.808077109197423
+      ],
+      "contact_force_N_mean": 5.433884808129298,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        35.4151299223019,
+        77.84102738179962,
+        157.0304681608592
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.42073170731707316,
+        "diagonal": 0.32926829268292684,
+        "vertical": 0.25
+      },
+      "executor": "table"
+    },
+    "ppo_best_val_update_2": {
+      "return_mean": -28.35347326793273,
+      "coverage_mean": 0.16910153396639882,
+      "rmse_mm_mean": 2.237607479612153,
+      "p95_error_mm_mean": 3.3576768779970205,
+      "waste_frac_mean": 0.49908259905407576,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 82.5,
+      "steps_mean": 14140.5,
+      "unreachable_mean": 0.0,
+      "projected_mean": 28.5,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 8.131516293641283e-20,
+      "episodes": 2,
+      "seeds": [
+        20000,
+        20001
+      ],
+      "deposit_pitch_start_deg_mean": 17.89492281986424,
+      "deposit_pitch_end_deg_mean": 11.925326717832492,
+      "deposit_pitch_start_deg_quartiles": [
+        13.205790586833933,
+        20.052991871638902,
+        23.808077109197423
+      ],
+      "contact_force_N_mean": 5.433884808129298,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        35.4151299223019,
+        77.84102738179962,
+        157.0304681608592
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.42073170731707316,
+        "diagonal": 0.32926829268292684,
+        "vertical": 0.25
+      },
+      "executor": "table"
+    }
+  }
+}

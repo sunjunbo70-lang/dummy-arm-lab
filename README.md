@@ -7,7 +7,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 [![MuJoCo](https://img.shields.io/badge/MuJoCo-3.13-orange.svg)](https://mujoco.org/)
-[![Tests](https://img.shields.io/badge/tests-125%20passing-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-150%20passing-brightgreen.svg)](tests/)
 [![Status](https://img.shields.io/badge/status-pre--calibration-yellow.svg)](docs/STATUS.md)
 
 [English](README.md) · [中文](README.zh-CN.md) · [Status & Evidence](docs/STATUS.md) · [Roadmap](docs/plan/README.md)

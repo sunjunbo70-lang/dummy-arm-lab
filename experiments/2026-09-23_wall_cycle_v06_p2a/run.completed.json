@@ -1,0 +1,12 @@
+{
+  "status": "complete_failed_promotion_gate",
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "selected_checkpoint": "ppo_update_50",
+  "ppo_steps": 102400,
+  "p2b_started": false,
+  "reason": "PPO improved only waste versus DAgger; coverage and RMSE were worse; success rate remained zero.",
+  "training_record": "raw/training/training.json",
+  "final_replay": "raw/native_replay_v3/rollout.npz",
+  "source_commit": "dc124927a52c6c94c5ae8a6b038f820ae59b4334"
+}

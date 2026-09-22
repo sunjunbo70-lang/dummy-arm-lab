@@ -1,0 +1,11 @@
+{
+  "status": "complete_with_limitations",
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "episodes": 30,
+  "cycles_per_episode": 25,
+  "structural_gates_passed": true,
+  "task_quality_passed": false,
+  "aggregate": "gates_30x25.json",
+  "source_commit": "dc124927a52c6c94c5ae8a6b038f820ae59b4334"
+}

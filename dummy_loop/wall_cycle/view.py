@@ -107,7 +107,8 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique',
                     continue
                 tm=tr['metrics']
                 keys.append(dict(phase=tr['phase'],q=tr['q'],pitch=0.0,wall=tr['wall'],blade=tr['blade'],
-                                 blade_ml=tm['blade_load_ml'],metrics=tm,cycle=ev['cycle'],action=act))
+                                 blade_ml=tm['blade_load_ml'],metrics=tm,cycle=ev['cycle'],action=act,
+                                 face_up_score=tr.get('face_up_score')))
             trace_added.add(ev['cycle'])
         if ph in ('SCAN', 'SCAN_RETURN', 'DECIDE', 'FINISH', 'UNREACHABLE'):
             keys.append(dict(phase=ph, q=keys[-1]['q'] if (keys and ph in ('DECIDE', 'UNREACHABLE', 'FINISH'))
@@ -142,7 +143,8 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique',
                     continue
                 tm=tr['metrics']
                 keys.append(dict(phase=tr['phase'],q=tr['q'],pitch=0.0,wall=tr['wall'],blade=tr['blade'],
-                                 blade_ml=tm['blade_load_ml'],metrics=tm,cycle=ev['cycle'],action=act))
+                                 blade_ml=tm['blade_load_ml'],metrics=tm,cycle=ev['cycle'],action=act,
+                                 face_up_score=tr.get('face_up_score')))
         elif ph in ('LIFT', 'RETREAT', 'SEPARATE', 'RECOVER_RETURN') and plan is not None:
             lift_i = 0 if ph in ('LIFT', 'SEPARATE') else 1
             keys.append(dict(phase=ph, q=plan['q_lift'][lift_i], pitch=0.0, **base))
@@ -158,21 +160,34 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique',
     # free-space moves are not planned by the executor: report how many come close to the wall
     close = sum(1 for f in frames if f['phase'] == 'move' and not ex.clear_of_wall(f['q']))
     decisions = [e['action'] for e in env.events if e['phase'] == 'DECIDE']
+    carry_scores = [f.get('face_up_score') for f in frames
+                    if f['phase'] in ('FEED_ALIGN_UP', 'FEED_SCOOP', 'CARRY_FACE_UP')
+                    and f.get('face_up_score') is not None]
+    rotate_scores = [f.get('face_up_score') for f in frames
+                     if f['phase'] == 'ROTATE_TO_WALL' and f.get('face_up_score') is not None]
+    note = ('v0.6 frames are actual executor records for feed alignment, carry, near-wall rotation, '
+            'approach, work, separation and scan return; the feed material interaction remains a '
+            'pose-gated reduced proxy rather than granular contact') if cfg.physics == 'v0.6' else (
+            'stroke frames: joint angles from MuJoCo co-simulation; approach/lift: planned poses; '
+            'load/carry/free-space moves: illustrative joint interpolation because the feed station path '
+            'is not yet solved by the arm planner')
     report = {'evidence_level': 'L1', 'hardware_motion': False, 'seed': seed,
               'initial_distribution': 'mixed_test' if initial_mix else 'bare',
               'driver': str(policy) if policy is not None else f'teacher:{teacher_style}',
               'return': total, 'success': bool(info['success']), 'metrics': info['metrics'],
               'cycles': info['cycles'], 'reloads': info['reloads'],
               'unreachable_strokes': info['unreachable_strokes'],
+              'projected_strokes': info.get('projected_strokes', 0),
               'mode_counts': {m: sum(d['mode'] == m for d in decisions)
                               for m in ('DEPOSIT', 'REUSE', 'LEVEL', 'RESCAN', 'FINISH')},
               'pitch_start_deg_mean': float(np.mean([d['pitch_start_deg'] for d in decisions
                                                      if d['mode'] in ('DEPOSIT', 'REUSE')] or [0])),
               'frames': len(frames), 'move_frames': sum(f['phase'] == 'move' for f in frames),
-              'move_frames_near_wall': close, 'config': cfg.to_dict(),
-              'note': 'stroke frames: joint angles from MuJoCo co-simulation; approach/lift: planned poses; '
-                      'load/carry/free-space moves: illustrative joint interpolation because the feed station path '
-                      'is not yet solved by the arm planner'}
+              'move_frames_near_wall': close,
+              'carry_face_up_min': float(min(carry_scores)) if carry_scores else None,
+              'rotation_face_up_min': float(min(rotate_scores)) if rotate_scores else None,
+              'face_down_frames': int(sum(x < -1e-3 for x in carry_scores + rotate_scores)),
+              'config': cfg.to_dict(), 'note': note}
     return frames, report
 
 
@@ -192,6 +207,7 @@ def save(frames, report, out: Path):
         waste=np.array([f['metrics']['waste_frac'] for f in frames], np.float32),
         cycle=np.array([f['cycle'] for f in frames], np.int32),
         phase=np.array([phases.index(f['phase']) for f in frames], np.int16),
+        face_up_score=np.array([f.get('face_up_score', np.nan) for f in frames], np.float32),
         phase_names=np.array(phases), config=json.dumps(report['config']))
     (out / 'report.json').write_text(json.dumps(report, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
     return out / 'rollout.npz'
