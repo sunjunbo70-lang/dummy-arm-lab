@@ -1,0 +1,1459 @@
+{
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "reason": "recheck after resetting cached q_last at every episode",
+  "teacher": {
+    "return_mean": -29.32004069409164,
+    "coverage_mean": 0.21660579498417337,
+    "rmse_mm_mean": 2.018664697776627,
+    "p95_error_mm_mean": 2.8961669263429997,
+    "waste_frac_mean": 0.1721246513421706,
+    "carry_loss_frac_mean": 0.0,
+    "cycles_mean": 19.266666666666666,
+    "steps_mean": 3401.233333333333,
+    "unreachable_mean": 2.1666666666666665,
+    "projected_mean": 0.0,
+    "success_rate": 0.0,
+    "max_volume_error_m3": 5.421010862427522e-20,
+    "episodes": 30,
+    "seeds": [
+      20000,
+      20029
+    ],
+    "deposit_pitch_start_deg_mean": 15.430327868852459,
+    "deposit_pitch_end_deg_mean": 5.434426229508197,
+    "deposit_pitch_start_deg_quartiles": [
+      10.0,
+      10.0,
+      25.0
+    ],
+    "contact_force_N_mean": 1.0000000000000002,
+    "carry_face_up_mean": 1.0,
+    "path_heading_deg_quartiles": [
+      28.75259625209466,
+      47.63249740368137,
+      90.0
+    ],
+    "path_family_fraction": {
+      "horizontal": 0.23183391003460208,
+      "diagonal": 0.6038062283737025,
+      "vertical": 0.1643598615916955
+    },
+    "cosim_force_rmse_N_mean": 1.1321641324498983,
+    "cosim_force_rmse_N_max": 2.5580708979098348,
+    "cosim_tracking_max_mm_mean": 8.50122618125312,
+    "cosim_tracking_max_mm_max": 10.315459023749208,
+    "cosim_peak_force_N_mean": 3.698624281664156,
+    "cosim_peak_force_N_max": 13.357049877971917,
+    "executor": "cosim"
+  },
+  "selected": {
+    "return_mean": -35.49347752141264,
+    "coverage_mean": 0.21833455076698316,
+    "rmse_mm_mean": 2.18003740313327,
+    "p95_error_mm_mean": 3.6065233308414917,
+    "waste_frac_mean": 0.27040949847270496,
+    "carry_loss_frac_mean": 0.006144464030890374,
+    "cycles_mean": 20.633333333333333,
+    "steps_mean": 3486.1666666666665,
+    "unreachable_mean": 2.2,
+    "projected_mean": 8.2,
+    "success_rate": 0.0,
+    "cosim_force_rmse_N_mean": 0.983120868945641,
+    "cosim_tracking_max_mm_mean": 8.723530342133603,
+    "cosim_peak_force_N_mean": 4.1555091448535535,
+    "max_volume_error_m3": 1.3552527156068805e-19,
+    "cosim_force_rmse_N_max": 5.439193388493225,
+    "cosim_tracking_max_mm_max": 21.90685515564501,
+    "cosim_peak_force_N_max": 28.88712958629186,
+    "episodes": 30,
+    "seeds": [
+      20000,
+      20029
+    ],
+    "executor": "cosim"
+  },
+  "selected_by_seed": [
+    {
+      "seed": 20000,
+      "return_mean": -23.55253496553069,
+      "coverage_mean": 0.05186267348429511,
+      "rmse_mm_mean": 2.293800189135061,
+      "p95_error_mm_mean": 2.6942697292037443,
+      "waste_frac_mean": 0.42929931967435464,
+      "carry_loss_frac_mean": 0.01329975667033089,
+      "cycles_mean": 6.0,
+      "steps_mean": 1191.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 3.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 1,
+      "seeds": [
+        20000,
+        20000
+      ],
+      "deposit_pitch_start_deg_mean": 25.18587280398187,
+      "deposit_pitch_end_deg_mean": 12.094955975848855,
+      "deposit_pitch_start_deg_quartiles": [
+        22.58369105251331,
+        26.276619805456896,
+        29.276119240040718
+      ],
+      "contact_force_N_mean": 1.6926054803462705,
+      "carry_face_up_mean": 0.8083556108571482,
+      "path_heading_deg_quartiles": [
+        40.143556876794676,
+        99.42882671273352,
+        133.67633519233385
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.3333333333333333,
+        "diagonal": 0.5,
+        "vertical": 0.16666666666666666
+      },
+      "cosim_force_rmse_N_mean": 0.5845795054313482,
+      "cosim_force_rmse_N_max": 0.79186828752563,
+      "cosim_tracking_max_mm_mean": 9.389746179800394,
+      "cosim_tracking_max_mm_max": 12.212405900992337,
+      "cosim_peak_force_N_mean": 2.651575527610795,
+      "cosim_peak_force_N_max": 4.193608807005713,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20001,
+      "return_mean": -26.777597866345488,
+      "coverage_mean": 0.3170197224251278,
+      "rmse_mm_mean": 1.8178849477314531,
+      "p95_error_mm_mean": 2.042336234112876,
+      "waste_frac_mean": 0.034459285213193844,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 8.0,
+      "steps_mean": 891.0,
+      "unreachable_mean": 4.0,
+      "projected_mean": 4.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.0328790734103208e-20,
+      "episodes": 1,
+      "seeds": [
+        20001,
+        20001
+      ],
+      "deposit_pitch_start_deg_mean": 11.197911849962496,
+      "deposit_pitch_end_deg_mean": 4.9911819665142065,
+      "deposit_pitch_start_deg_quartiles": [
+        7.308044334461821,
+        9.17588519099331,
+        11.803373599465045
+      ],
+      "contact_force_N_mean": 1.3259215465418754,
+      "carry_face_up_mean": 0.8178367047870994,
+      "path_heading_deg_quartiles": [
+        44.70646104052339,
+        44.97972614640546,
+        50.75211455574886
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.0,
+        "diagonal": 0.875,
+        "vertical": 0.125
+      },
+      "cosim_force_rmse_N_mean": 0.7449287411315256,
+      "cosim_force_rmse_N_max": 1.8710657632871683,
+      "cosim_tracking_max_mm_mean": 8.284508289097484,
+      "cosim_tracking_max_mm_max": 8.908777756614356,
+      "cosim_peak_force_N_mean": 2.5842156532590703,
+      "cosim_peak_force_N_max": 4.756702574991215,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20002,
+      "return_mean": -40.66281446967925,
+      "coverage_mean": 0.2753834915997078,
+      "rmse_mm_mean": 2.7508781478604467,
+      "p95_error_mm_mean": 6.913456504718702,
+      "waste_frac_mean": 0.2902940288623624,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 25.0,
+      "steps_mean": 4651.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 11.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 1,
+      "seeds": [
+        20002,
+        20002
+      ],
+      "deposit_pitch_start_deg_mean": 16.531199425404505,
+      "deposit_pitch_end_deg_mean": 5.800558233657466,
+      "deposit_pitch_start_deg_quartiles": [
+        14.204841035638253,
+        15.878646627236368,
+        18.45382020907813
+      ],
+      "contact_force_N_mean": 0.7460045698183047,
+      "carry_face_up_mean": 0.9792177183214433,
+      "path_heading_deg_quartiles": [
+        66.31650629944812,
+        94.94020284841537,
+        136.01890660673465
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.12,
+        "diagonal": 0.48,
+        "vertical": 0.4
+      },
+      "cosim_force_rmse_N_mean": 1.0794225085565146,
+      "cosim_force_rmse_N_max": 1.9623880725869804,
+      "cosim_tracking_max_mm_mean": 9.039274663099366,
+      "cosim_tracking_max_mm_max": 13.93204673530528,
+      "cosim_peak_force_N_mean": 4.453812960647548,
+      "cosim_peak_force_N_max": 11.879183845783396,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20003,
+      "return_mean": -50.06563553010223,
+      "coverage_mean": 0.2505478451424397,
+      "rmse_mm_mean": 2.3710625962364493,
+      "p95_error_mm_mean": 4.160088341341422,
+      "waste_frac_mean": 0.3031983762035103,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 21.0,
+      "steps_mean": 3080.0,
+      "unreachable_mean": 5.0,
+      "projected_mean": 13.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 1,
+      "seeds": [
+        20003,
+        20003
+      ],
+      "deposit_pitch_start_deg_mean": 9.426042398154937,
+      "deposit_pitch_end_deg_mean": 3.6091156414569125,
+      "deposit_pitch_start_deg_quartiles": [
+        4.089936808231552,
+        8.329689670888618,
+        14.968132100866722
+      ],
+      "contact_force_N_mean": 1.0089344681021217,
+      "carry_face_up_mean": 0.9341711905612587,
+      "path_heading_deg_quartiles": [
+        64.5282392852066,
+        68.22921905113037,
+        88.6971966986179
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.047619047619047616,
+        "diagonal": 0.47619047619047616,
+        "vertical": 0.47619047619047616
+      },
+      "cosim_force_rmse_N_mean": 1.4330484240224033,
+      "cosim_force_rmse_N_max": 2.4392182825890694,
+      "cosim_tracking_max_mm_mean": 9.260442426572904,
+      "cosim_tracking_max_mm_max": 10.317402307970337,
+      "cosim_peak_force_N_mean": 6.330202363361702,
+      "cosim_peak_force_N_max": 13.370834260217139,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20004,
+      "return_mean": -36.66735884702794,
+      "coverage_mean": 0.268809349890431,
+      "rmse_mm_mean": 1.923647667650622,
+      "p95_error_mm_mean": 2.880397113371079,
+      "waste_frac_mean": 0.15058240832322137,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 22.0,
+      "steps_mean": 3339.0,
+      "unreachable_mean": 5.0,
+      "projected_mean": 8.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 0.0,
+      "episodes": 1,
+      "seeds": [
+        20004,
+        20004
+      ],
+      "deposit_pitch_start_deg_mean": 11.571699962823882,
+      "deposit_pitch_end_deg_mean": 4.434712372680396,
+      "deposit_pitch_start_deg_quartiles": [
+        5.301041578558671,
+        10.461632451516751,
+        19.05303333569185
+      ],
+      "contact_force_N_mean": 0.7481758182545254,
+      "carry_face_up_mean": 0.9734555933133909,
+      "path_heading_deg_quartiles": [
+        21.159083971042367,
+        67.43583145574351,
+        122.01561269256509
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.4090909090909091,
+        "diagonal": 0.36363636363636365,
+        "vertical": 0.22727272727272727
+      },
+      "cosim_force_rmse_N_mean": 1.072041043600632,
+      "cosim_force_rmse_N_max": 2.109293886945472,
+      "cosim_tracking_max_mm_mean": 8.316357796182203,
+      "cosim_tracking_max_mm_max": 10.05396180874883,
+      "cosim_peak_force_N_mean": 3.985682579506258,
+      "cosim_peak_force_N_max": 11.217412311628486,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20005,
+      "return_mean": -36.868603552666634,
+      "coverage_mean": 0.2220598977355734,
+      "rmse_mm_mean": 2.2669576831898572,
+      "p95_error_mm_mean": 4.288633779708136,
+      "waste_frac_mean": 0.44034697167300946,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 39.0,
+      "steps_mean": 7083.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 13.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 8.131516293641283e-20,
+      "episodes": 1,
+      "seeds": [
+        20005,
+        20005
+      ],
+      "deposit_pitch_start_deg_mean": 19.556830627575994,
+      "deposit_pitch_end_deg_mean": 7.415352088230995,
+      "deposit_pitch_start_deg_quartiles": [
+        16.311971118756112,
+        19.10461853556101,
+        24.38487135944886
+      ],
+      "contact_force_N_mean": 1.0488297679342993,
+      "carry_face_up_mean": 0.9258801012610345,
+      "path_heading_deg_quartiles": [
+        28.20798675585278,
+        51.50424489153695,
+        93.32488401069293
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.28205128205128205,
+        "diagonal": 0.5128205128205128,
+        "vertical": 0.20512820512820512
+      },
+      "cosim_force_rmse_N_mean": 1.183125680934219,
+      "cosim_force_rmse_N_max": 5.439193388493225,
+      "cosim_tracking_max_mm_mean": 9.164885041656142,
+      "cosim_tracking_max_mm_max": 14.339083199612302,
+      "cosim_peak_force_N_mean": 5.059395417535962,
+      "cosim_peak_force_N_max": 25.138605346136178,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20006,
+      "return_mean": -35.44454005121355,
+      "coverage_mean": 0.1183345507669832,
+      "rmse_mm_mean": 2.757963247907445,
+      "p95_error_mm_mean": 4.344521099015144,
+      "waste_frac_mean": 0.5307428088046214,
+      "carry_loss_frac_mean": 0.08010222281510314,
+      "cycles_mean": 11.0,
+      "steps_mean": 1919.0,
+      "unreachable_mean": 1.0,
+      "projected_mean": 5.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.0164395367051604e-20,
+      "episodes": 1,
+      "seeds": [
+        20006,
+        20006
+      ],
+      "deposit_pitch_start_deg_mean": 26.594748723015062,
+      "deposit_pitch_end_deg_mean": 12.99755674273752,
+      "deposit_pitch_start_deg_quartiles": [
+        26.359921519072156,
+        28.472660395352893,
+        29.8602277234585
+      ],
+      "contact_force_N_mean": 2.9903189340523437,
+      "carry_face_up_mean": 0.6023764524005163,
+      "path_heading_deg_quartiles": [
+        44.41494932860826,
+        70.91654290926378,
+        109.46866797292387
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.18181818181818182,
+        "diagonal": 0.45454545454545453,
+        "vertical": 0.36363636363636365
+      },
+      "cosim_force_rmse_N_mean": 1.3271417771087624,
+      "cosim_force_rmse_N_max": 3.06896917518446,
+      "cosim_tracking_max_mm_mean": 11.712199196049928,
+      "cosim_tracking_max_mm_max": 19.78886316995607,
+      "cosim_peak_force_N_mean": 8.114543903895793,
+      "cosim_peak_force_N_max": 13.097543077953048,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20007,
+      "return_mean": -22.642326328922287,
+      "coverage_mean": 0.23593864134404674,
+      "rmse_mm_mean": 2.292088784025827,
+      "p95_error_mm_mean": 3.7720988529149286,
+      "waste_frac_mean": 0.056782842354688494,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 8.0,
+      "steps_mean": 1609.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 5.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 0.0,
+      "episodes": 1,
+      "seeds": [
+        20007,
+        20007
+      ],
+      "deposit_pitch_start_deg_mean": 9.40730707083411,
+      "deposit_pitch_end_deg_mean": 4.0776758082761395,
+      "deposit_pitch_start_deg_quartiles": [
+        2.1928115328329696,
+        11.056445273523407,
+        15.808090409418469
+      ],
+      "contact_force_N_mean": 0.7571762146556686,
+      "carry_face_up_mean": 0.9583197076296783,
+      "path_heading_deg_quartiles": [
+        70.16526768612812,
+        117.57142287615724,
+        123.98726348655866
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.0,
+        "diagonal": 0.875,
+        "vertical": 0.125
+      },
+      "cosim_force_rmse_N_mean": 0.8128248592263485,
+      "cosim_force_rmse_N_max": 1.6157062372309863,
+      "cosim_tracking_max_mm_mean": 7.740239130377338,
+      "cosim_tracking_max_mm_max": 10.051734312613457,
+      "cosim_peak_force_N_mean": 2.79622085203388,
+      "cosim_peak_force_N_max": 5.684528383633872,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20008,
+      "return_mean": -36.140598727090314,
+      "coverage_mean": 0.10518626734842951,
+      "rmse_mm_mean": 2.787601062643381,
+      "p95_error_mm_mean": 5.554841754226464,
+      "waste_frac_mean": 0.2213465730951325,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 13.0,
+      "steps_mean": 2547.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 5.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 1,
+      "seeds": [
+        20008,
+        20008
+      ],
+      "deposit_pitch_start_deg_mean": 12.042999185308924,
+      "deposit_pitch_end_deg_mean": 4.548482145597429,
+      "deposit_pitch_start_deg_quartiles": [
+        8.308921325325805,
+        9.606143217083329,
+        16.040910147864526
+      ],
+      "contact_force_N_mean": 0.8164397204550363,
+      "carry_face_up_mean": 0.9644238940826048,
+      "path_heading_deg_quartiles": [
+        32.0920206534392,
+        53.02907427487595,
+        81.70907988079769
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.3076923076923077,
+        "diagonal": 0.38461538461538464,
+        "vertical": 0.3076923076923077
+      },
+      "cosim_force_rmse_N_mean": 0.8681102581302678,
+      "cosim_force_rmse_N_max": 1.7106472393403847,
+      "cosim_tracking_max_mm_mean": 8.496023207981876,
+      "cosim_tracking_max_mm_max": 10.62549772510328,
+      "cosim_peak_force_N_mean": 3.182287403393161,
+      "cosim_peak_force_N_max": 11.285857383267054,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20009,
+      "return_mean": -32.47740372975693,
+      "coverage_mean": 0.20233747260774287,
+      "rmse_mm_mean": 2.035145492475664,
+      "p95_error_mm_mean": 3.5315036993174624,
+      "waste_frac_mean": 0.43046503171799144,
+      "carry_loss_frac_mean": 0.007299809534464626,
+      "cycles_mean": 34.0,
+      "steps_mean": 6173.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 19.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 3.4728350837426314e-20,
+      "episodes": 1,
+      "seeds": [
+        20009,
+        20009
+      ],
+      "deposit_pitch_start_deg_mean": 16.22399366326495,
+      "deposit_pitch_end_deg_mean": 7.541563997165783,
+      "deposit_pitch_start_deg_quartiles": [
+        10.806935859335182,
+        18.151781341970292,
+        19.64729595364976
+      ],
+      "contact_force_N_mean": 1.0435959636921095,
+      "carry_face_up_mean": 0.9471447374147474,
+      "path_heading_deg_quartiles": [
+        77.28181887876694,
+        106.86534721635655,
+        127.7276356460593
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.08823529411764706,
+        "diagonal": 0.5882352941176471,
+        "vertical": 0.3235294117647059
+      },
+      "cosim_force_rmse_N_mean": 1.1042139669065032,
+      "cosim_force_rmse_N_max": 2.0226070787041723,
+      "cosim_tracking_max_mm_mean": 9.010280166335177,
+      "cosim_tracking_max_mm_max": 11.085839388762517,
+      "cosim_peak_force_N_mean": 3.6202301156776526,
+      "cosim_peak_force_N_max": 9.115987463744663,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20010,
+      "return_mean": -35.29328550367132,
+      "coverage_mean": 0.127100073046019,
+      "rmse_mm_mean": 2.0635239273815293,
+      "p95_error_mm_mean": 3.281760562572564,
+      "waste_frac_mean": 0.11949145899668454,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 14.0,
+      "steps_mean": 1842.0,
+      "unreachable_mean": 5.0,
+      "projected_mean": 2.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 1,
+      "seeds": [
+        20010,
+        20010
+      ],
+      "deposit_pitch_start_deg_mean": 10.203269973061055,
+      "deposit_pitch_end_deg_mean": 4.300028837650738,
+      "deposit_pitch_start_deg_quartiles": [
+        8.659901558411295,
+        9.921711197133591,
+        12.6918364911843
+      ],
+      "contact_force_N_mean": 0.590176367587267,
+      "carry_face_up_mean": 0.9693587958457027,
+      "path_heading_deg_quartiles": [
+        21.04022327834349,
+        33.4016697949531,
+        44.755699160073846
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.42857142857142855,
+        "diagonal": 0.42857142857142855,
+        "vertical": 0.14285714285714285
+      },
+      "cosim_force_rmse_N_mean": 0.6879741727283106,
+      "cosim_force_rmse_N_max": 1.295222207633687,
+      "cosim_tracking_max_mm_mean": 8.241984550488176,
+      "cosim_tracking_max_mm_max": 9.811650783648666,
+      "cosim_peak_force_N_mean": 2.273496738289951,
+      "cosim_peak_force_N_max": 3.904390701802682,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20011,
+      "return_mean": -23.972208108953538,
+      "coverage_mean": 0.2089116143170197,
+      "rmse_mm_mean": 1.640457098844897,
+      "p95_error_mm_mean": 2.937676886955259,
+      "waste_frac_mean": 0.003261665422729733,
+      "carry_loss_frac_mean": 0.0006475020108259774,
+      "cycles_mean": 7.0,
+      "steps_mean": 903.0,
+      "unreachable_mean": 3.0,
+      "projected_mean": 3.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 3.3881317890172014e-21,
+      "episodes": 1,
+      "seeds": [
+        20011,
+        20011
+      ],
+      "deposit_pitch_start_deg_mean": 11.511222519892105,
+      "deposit_pitch_end_deg_mean": 4.846411714467699,
+      "deposit_pitch_start_deg_quartiles": [
+        0.0,
+        10.337189384956572,
+        18.946475866570353
+      ],
+      "contact_force_N_mean": 1.1129618566469697,
+      "carry_face_up_mean": 0.9213541517392552,
+      "path_heading_deg_quartiles": [
+        49.57010573832686,
+        57.488738538181416,
+        84.9050810106669
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.0,
+        "diagonal": 0.7142857142857143,
+        "vertical": 0.2857142857142857
+      },
+      "cosim_force_rmse_N_mean": 0.5652983798211858,
+      "cosim_force_rmse_N_max": 0.9321606127817084,
+      "cosim_tracking_max_mm_mean": 8.400590129084158,
+      "cosim_tracking_max_mm_max": 10.936458512565743,
+      "cosim_peak_force_N_mean": 2.218304031516199,
+      "cosim_peak_force_N_max": 3.4765213632734056,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20012,
+      "return_mean": -43.752323862421825,
+      "coverage_mean": 0.3316289262235208,
+      "rmse_mm_mean": 2.353958008078631,
+      "p95_error_mm_mean": 3.956366468084551,
+      "waste_frac_mean": 0.3198390478092141,
+      "carry_loss_frac_mean": 0.00017334034187520785,
+      "cycles_mean": 24.0,
+      "steps_mean": 4381.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 9.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 1,
+      "seeds": [
+        20012,
+        20012
+      ],
+      "deposit_pitch_start_deg_mean": 14.857119837374142,
+      "deposit_pitch_end_deg_mean": 6.601844256138307,
+      "deposit_pitch_start_deg_quartiles": [
+        12.833951167286603,
+        14.288944597701313,
+        18.60160520880928
+      ],
+      "contact_force_N_mean": 0.9855330320914497,
+      "carry_face_up_mean": 0.9444600666004243,
+      "path_heading_deg_quartiles": [
+        46.585191599106835,
+        84.22157343466449,
+        128.1912007969208
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.125,
+        "diagonal": 0.5833333333333334,
+        "vertical": 0.2916666666666667
+      },
+      "cosim_force_rmse_N_mean": 1.3025247299632225,
+      "cosim_force_rmse_N_max": 2.2804951152590967,
+      "cosim_tracking_max_mm_mean": 9.276739248036508,
+      "cosim_tracking_max_mm_max": 11.063507279350357,
+      "cosim_peak_force_N_mean": 4.73722543542078,
+      "cosim_peak_force_N_max": 11.323744147698388,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20013,
+      "return_mean": -23.402465024204453,
+      "coverage_mean": 0.11614317019722425,
+      "rmse_mm_mean": 2.4987781137373215,
+      "p95_error_mm_mean": 4.095389776450428,
+      "waste_frac_mean": 0.06709462162010144,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 6.0,
+      "steps_mean": 1235.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 3.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 0.0,
+      "episodes": 1,
+      "seeds": [
+        20013,
+        20013
+      ],
+      "deposit_pitch_start_deg_mean": 10.339884501971774,
+      "deposit_pitch_end_deg_mean": 5.105822742835041,
+      "deposit_pitch_start_deg_quartiles": [
+        6.013889010243227,
+        9.857741500345394,
+        13.722870577160597
+      ],
+      "contact_force_N_mean": 0.6982456110067804,
+      "carry_face_up_mean": 0.9251299015245181,
+      "path_heading_deg_quartiles": [
+        48.3217111398048,
+        59.76110490554841,
+        78.68779240229242
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.16666666666666666,
+        "diagonal": 0.6666666666666666,
+        "vertical": 0.16666666666666666
+      },
+      "cosim_force_rmse_N_mean": 0.4710707319364922,
+      "cosim_force_rmse_N_max": 0.6507392271116882,
+      "cosim_tracking_max_mm_mean": 8.066136731348047,
+      "cosim_tracking_max_mm_max": 9.014581420508344,
+      "cosim_peak_force_N_mean": 2.067599980229111,
+      "cosim_peak_force_N_max": 3.310997205251671,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20014,
+      "return_mean": -25.485151844261345,
+      "coverage_mean": 0.30094959824689554,
+      "rmse_mm_mean": 1.7259795829462123,
+      "p95_error_mm_mean": 2.7577568857755876,
+      "waste_frac_mean": 0.3145125192266345,
+      "carry_loss_frac_mean": 0.013179912571938285,
+      "cycles_mean": 33.0,
+      "steps_mean": 6063.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 21.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 1,
+      "seeds": [
+        20014,
+        20014
+      ],
+      "deposit_pitch_start_deg_mean": 15.522568772182535,
+      "deposit_pitch_end_deg_mean": 5.4243256369585415,
+      "deposit_pitch_start_deg_quartiles": [
+        9.998783447649624,
+        17.58953528281151,
+        21.824370322376886
+      ],
+      "contact_force_N_mean": 0.6152418362719753,
+      "carry_face_up_mean": 0.9800223927834322,
+      "path_heading_deg_quartiles": [
+        47.482803766105604,
+        107.26917657142116,
+        126.77736005255571
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.06060606060606061,
+        "diagonal": 0.7878787878787878,
+        "vertical": 0.15151515151515152
+      },
+      "cosim_force_rmse_N_mean": 1.119973135592295,
+      "cosim_force_rmse_N_max": 1.815664333810808,
+      "cosim_tracking_max_mm_mean": 8.663573016172123,
+      "cosim_tracking_max_mm_max": 10.495187575177118,
+      "cosim_peak_force_N_mean": 3.6671348440990625,
+      "cosim_peak_force_N_max": 10.151005601983975,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20015,
+      "return_mean": -32.71717368868378,
+      "coverage_mean": 0.1139517896274653,
+      "rmse_mm_mean": 2.1345642756556824,
+      "p95_error_mm_mean": 3.0990501367780947,
+      "waste_frac_mean": 0.02297180554213005,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 11.0,
+      "steps_mean": 1299.0,
+      "unreachable_mean": 5.0,
+      "projected_mean": 5.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 6.776263578034403e-21,
+      "episodes": 1,
+      "seeds": [
+        20015,
+        20015
+      ],
+      "deposit_pitch_start_deg_mean": 15.039882063099338,
+      "deposit_pitch_end_deg_mean": 7.356597764103216,
+      "deposit_pitch_start_deg_quartiles": [
+        14.76295404843043,
+        17.213195239633617,
+        18.413809733595492
+      ],
+      "contact_force_N_mean": 0.8972455941572002,
+      "carry_face_up_mean": 0.9136078112904461,
+      "path_heading_deg_quartiles": [
+        16.3445514964463,
+        22.93523570929331,
+        71.01345204096512
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.45454545454545453,
+        "diagonal": 0.36363636363636365,
+        "vertical": 0.18181818181818182
+      },
+      "cosim_force_rmse_N_mean": 0.6856166663652469,
+      "cosim_force_rmse_N_max": 1.5273592429420535,
+      "cosim_tracking_max_mm_mean": 8.059854387064037,
+      "cosim_tracking_max_mm_max": 10.195306929077777,
+      "cosim_peak_force_N_mean": 3.044567906612894,
+      "cosim_peak_force_N_max": 7.857756871647986,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20016,
+      "return_mean": -41.19630031740925,
+      "coverage_mean": 0.15193571950328708,
+      "rmse_mm_mean": 2.7018661218228104,
+      "p95_error_mm_mean": 4.67392899605335,
+      "waste_frac_mean": 0.6795040292493842,
+      "carry_loss_frac_mean": 0.04523047240965422,
+      "cycles_mean": 32.0,
+      "steps_mean": 6064.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 11.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 8.131516293641283e-20,
+      "episodes": 1,
+      "seeds": [
+        20016,
+        20016
+      ],
+      "deposit_pitch_start_deg_mean": 21.475091527085254,
+      "deposit_pitch_end_deg_mean": 9.433288236387313,
+      "deposit_pitch_start_deg_quartiles": [
+        14.977207610768755,
+        22.311050170929015,
+        32.29405233818812
+      ],
+      "contact_force_N_mean": 1.552064275436091,
+      "carry_face_up_mean": 0.8530635588700214,
+      "path_heading_deg_quartiles": [
+        20.87264271345164,
+        58.429864964716494,
+        142.72951038142634
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.5,
+        "diagonal": 0.46875,
+        "vertical": 0.03125
+      },
+      "cosim_force_rmse_N_mean": 1.3075882631876345,
+      "cosim_force_rmse_N_max": 4.514840790973219,
+      "cosim_tracking_max_mm_mean": 9.724520998226467,
+      "cosim_tracking_max_mm_max": 21.90685515564501,
+      "cosim_peak_force_N_mean": 7.275035488374093,
+      "cosim_peak_force_N_max": 28.88712958629186,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20017,
+      "return_mean": -48.61191444250173,
+      "coverage_mean": 0.3557341124908692,
+      "rmse_mm_mean": 2.3831910715730014,
+      "p95_error_mm_mean": 3.7828109759964805,
+      "waste_frac_mean": 0.4031228803616883,
+      "carry_loss_frac_mean": 0.006730582577107749,
+      "cycles_mean": 30.0,
+      "steps_mean": 5048.0,
+      "unreachable_mean": 3.0,
+      "projected_mean": 7.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 1,
+      "seeds": [
+        20017,
+        20017
+      ],
+      "deposit_pitch_start_deg_mean": 12.051676856053058,
+      "deposit_pitch_end_deg_mean": 5.579223371170753,
+      "deposit_pitch_start_deg_quartiles": [
+        3.81257019046251,
+        7.967769368330909,
+        21.74382465616937
+      ],
+      "contact_force_N_mean": 0.9659442575523556,
+      "carry_face_up_mean": 0.9221544738776586,
+      "path_heading_deg_quartiles": [
+        48.46166825330447,
+        58.77916154396894,
+        90.9132755544553
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.1,
+        "diagonal": 0.6333333333333333,
+        "vertical": 0.26666666666666666
+      },
+      "cosim_force_rmse_N_mean": 1.313946207809831,
+      "cosim_force_rmse_N_max": 2.0453944914581355,
+      "cosim_tracking_max_mm_mean": 9.2254377417778,
+      "cosim_tracking_max_mm_max": 14.730743124715335,
+      "cosim_peak_force_N_mean": 5.8204048056704725,
+      "cosim_peak_force_N_max": 10.520199316934379,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20018,
+      "return_mean": -53.50477087036219,
+      "coverage_mean": 0.29948867786705624,
+      "rmse_mm_mean": 2.2033801856622994,
+      "p95_error_mm_mean": 3.5435355414539513,
+      "waste_frac_mean": 0.3953678717673907,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 30.0,
+      "steps_mean": 4725.0,
+      "unreachable_mean": 5.0,
+      "projected_mean": 16.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 0.0,
+      "episodes": 1,
+      "seeds": [
+        20018,
+        20018
+      ],
+      "deposit_pitch_start_deg_mean": 8.794493615940446,
+      "deposit_pitch_end_deg_mean": 3.8765061045677567,
+      "deposit_pitch_start_deg_quartiles": [
+        0.4787285136592188,
+        6.8562551857426755,
+        15.627084818977739
+      ],
+      "contact_force_N_mean": 0.9219103128544656,
+      "carry_face_up_mean": 0.9633298437705232,
+      "path_heading_deg_quartiles": [
+        64.82570991896964,
+        78.07700856145345,
+        109.48751717363558
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.03333333333333333,
+        "diagonal": 0.4666666666666667,
+        "vertical": 0.5
+      },
+      "cosim_force_rmse_N_mean": 1.2120072672052873,
+      "cosim_force_rmse_N_max": 2.2253737136003067,
+      "cosim_tracking_max_mm_mean": 8.990901776551645,
+      "cosim_tracking_max_mm_max": 13.529994860193671,
+      "cosim_peak_force_N_mean": 5.476514903717969,
+      "cosim_peak_force_N_max": 11.538038979682081,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20019,
+      "return_mean": -34.085165712500235,
+      "coverage_mean": 0.22717311906501095,
+      "rmse_mm_mean": 2.330662959874191,
+      "p95_error_mm_mean": 3.6654692021957906,
+      "waste_frac_mean": 0.350883763817655,
+      "carry_loss_frac_mean": 0.0006626655620161242,
+      "cycles_mean": 12.0,
+      "steps_mean": 1846.0,
+      "unreachable_mean": 3.0,
+      "projected_mean": 6.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 1,
+      "seeds": [
+        20019,
+        20019
+      ],
+      "deposit_pitch_start_deg_mean": 21.358180895751083,
+      "deposit_pitch_end_deg_mean": 7.8325484384081205,
+      "deposit_pitch_start_deg_quartiles": [
+        17.756848480860867,
+        24.447474709758247,
+        27.631947545840497
+      ],
+      "contact_force_N_mean": 1.7072042233829665,
+      "carry_face_up_mean": 0.8501444497362347,
+      "path_heading_deg_quartiles": [
+        38.42487629056414,
+        43.57561838277466,
+        89.05442977849982
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.0,
+        "diagonal": 0.8333333333333334,
+        "vertical": 0.16666666666666666
+      },
+      "cosim_force_rmse_N_mean": 0.7490532742397958,
+      "cosim_force_rmse_N_max": 1.636866752183479,
+      "cosim_tracking_max_mm_mean": 8.804872306881006,
+      "cosim_tracking_max_mm_max": 10.248368514737093,
+      "cosim_peak_force_N_mean": 3.5420972470258274,
+      "cosim_peak_force_N_max": 9.813819137819515,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20020,
+      "return_mean": -48.28033511255595,
+      "coverage_mean": 0.2498173849525201,
+      "rmse_mm_mean": 2.1278443512234375,
+      "p95_error_mm_mean": 3.0404985606586115,
+      "waste_frac_mean": 0.3884090717078148,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 35.0,
+      "steps_mean": 5983.0,
+      "unreachable_mean": 3.0,
+      "projected_mean": 10.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 1,
+      "seeds": [
+        20020,
+        20020
+      ],
+      "deposit_pitch_start_deg_mean": 11.188590292325483,
+      "deposit_pitch_end_deg_mean": 5.227861203695299,
+      "deposit_pitch_start_deg_quartiles": [
+        4.208513475889614,
+        8.615894193681736,
+        13.912518832493625
+      ],
+      "contact_force_N_mean": 0.7734531123460742,
+      "carry_face_up_mean": 0.9713218053327379,
+      "path_heading_deg_quartiles": [
+        61.19196939475284,
+        125.86089684894387,
+        137.64191969315496
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.14285714285714285,
+        "diagonal": 0.7142857142857143,
+        "vertical": 0.14285714285714285
+      },
+      "cosim_force_rmse_N_mean": 1.2003910739205659,
+      "cosim_force_rmse_N_max": 2.0645361223675165,
+      "cosim_tracking_max_mm_mean": 8.565528130099617,
+      "cosim_tracking_max_mm_max": 10.793024436101591,
+      "cosim_peak_force_N_mean": 4.560961736633171,
+      "cosim_peak_force_N_max": 9.852524606413642,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20021,
+      "return_mean": -24.01421853133489,
+      "coverage_mean": 0.2205989773557341,
+      "rmse_mm_mean": 1.3834766771857006,
+      "p95_error_mm_mean": 1.9850714934859455,
+      "waste_frac_mean": 0.0,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 6.0,
+      "steps_mean": 326.0,
+      "unreachable_mean": 5.0,
+      "projected_mean": 0.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 3.3881317890172014e-21,
+      "episodes": 1,
+      "seeds": [
+        20021,
+        20021
+      ],
+      "deposit_pitch_start_deg_mean": 10.124159254385068,
+      "deposit_pitch_end_deg_mean": 5.030814803026005,
+      "deposit_pitch_start_deg_quartiles": [
+        9.36124123475676,
+        9.729848303320324,
+        10.513132169969872
+      ],
+      "contact_force_N_mean": 0.987314962532105,
+      "carry_face_up_mean": 0.9100998856613861,
+      "path_heading_deg_quartiles": [
+        113.49661472550245,
+        113.79714816835894,
+        114.02903129284961
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.0,
+        "diagonal": 0.8333333333333334,
+        "vertical": 0.16666666666666666
+      },
+      "cosim_force_rmse_N_mean": 0.24601807502222384,
+      "cosim_force_rmse_N_max": 0.24601807502222384,
+      "cosim_tracking_max_mm_mean": 7.10479388977299,
+      "cosim_tracking_max_mm_max": 7.10479388977299,
+      "cosim_peak_force_N_mean": 0.8326341933188202,
+      "cosim_peak_force_N_max": 0.8326341933188202,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20022,
+      "return_mean": -24.817265508193877,
+      "coverage_mean": 0.08181154127100074,
+      "rmse_mm_mean": 1.735338528852083,
+      "p95_error_mm_mean": 2.0,
+      "waste_frac_mean": 0.0,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 7.0,
+      "steps_mean": 530.0,
+      "unreachable_mean": 5.0,
+      "projected_mean": 1.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 3.3881317890172014e-21,
+      "episodes": 1,
+      "seeds": [
+        20022,
+        20022
+      ],
+      "deposit_pitch_start_deg_mean": 15.569778065995125,
+      "deposit_pitch_end_deg_mean": 6.927545397149136,
+      "deposit_pitch_start_deg_quartiles": [
+        13.971346729577755,
+        15.032887953857385,
+        16.247119636791105
+      ],
+      "contact_force_N_mean": 0.8247885513071233,
+      "carry_face_up_mean": 0.9077225423988067,
+      "path_heading_deg_quartiles": [
+        99.51303350003386,
+        110.47832895105142,
+        114.05110651526789
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.14285714285714285,
+        "diagonal": 0.42857142857142855,
+        "vertical": 0.42857142857142855
+      },
+      "cosim_force_rmse_N_mean": 1.0605676997829263,
+      "cosim_force_rmse_N_max": 1.688926024017409,
+      "cosim_tracking_max_mm_mean": 6.301610641995934,
+      "cosim_tracking_max_mm_max": 6.482409250005299,
+      "cosim_peak_force_N_mean": 7.843430517825592,
+      "cosim_peak_force_N_max": 14.796218789757951,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20023,
+      "return_mean": -27.58757270901892,
+      "coverage_mean": 0.07815924032140248,
+      "rmse_mm_mean": 2.0872790054124395,
+      "p95_error_mm_mean": 3.1319737498775435,
+      "waste_frac_mean": 0.007304612222785157,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 9.0,
+      "steps_mean": 1129.0,
+      "unreachable_mean": 4.0,
+      "projected_mean": 1.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 6.776263578034403e-21,
+      "episodes": 1,
+      "seeds": [
+        20023,
+        20023
+      ],
+      "deposit_pitch_start_deg_mean": 8.058012773964736,
+      "deposit_pitch_end_deg_mean": 3.6923427036527223,
+      "deposit_pitch_start_deg_quartiles": [
+        0.9932729728219056,
+        3.6765161935587356,
+        15.080542171673734
+      ],
+      "contact_force_N_mean": 0.5,
+      "carry_face_up_mean": 0.9801887096400451,
+      "path_heading_deg_quartiles": [
+        27.90029891518256,
+        122.48831338928227,
+        123.78180537210378
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.2222222222222222,
+        "diagonal": 0.6666666666666666,
+        "vertical": 0.1111111111111111
+      },
+      "cosim_force_rmse_N_mean": 0.41135991091270263,
+      "cosim_force_rmse_N_max": 0.5236467981963191,
+      "cosim_tracking_max_mm_mean": 7.305105784384646,
+      "cosim_tracking_max_mm_max": 8.528271759658343,
+      "cosim_peak_force_N_mean": 1.2877040081544677,
+      "cosim_peak_force_N_max": 2.102489951696957,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20024,
+      "return_mean": -48.81079167120308,
+      "coverage_mean": 0.2710007304601899,
+      "rmse_mm_mean": 2.094201181086369,
+      "p95_error_mm_mean": 3.733826862592644,
+      "waste_frac_mean": 0.6198277679653702,
+      "carry_loss_frac_mean": 0.0056354822547735285,
+      "cycles_mean": 57.0,
+      "steps_mean": 10109.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 13.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-19,
+      "episodes": 1,
+      "seeds": [
+        20024,
+        20024
+      ],
+      "deposit_pitch_start_deg_mean": 13.931894066187306,
+      "deposit_pitch_end_deg_mean": 7.791884062632557,
+      "deposit_pitch_start_deg_quartiles": [
+        9.129590448179796,
+        12.84140560170962,
+        16.853596649475215
+      ],
+      "contact_force_N_mean": 1.089196084078307,
+      "carry_face_up_mean": 0.9201473528545941,
+      "path_heading_deg_quartiles": [
+        102.63506643472617,
+        128.4432203573197,
+        150.27985638560398
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.22807017543859648,
+        "diagonal": 0.5614035087719298,
+        "vertical": 0.21052631578947367
+      },
+      "cosim_force_rmse_N_mean": 1.1441237773413233,
+      "cosim_force_rmse_N_max": 2.637530126187209,
+      "cosim_tracking_max_mm_mean": 9.17461009507127,
+      "cosim_tracking_max_mm_max": 15.268528092113542,
+      "cosim_peak_force_N_mean": 4.171403065747818,
+      "cosim_peak_force_N_max": 24.818980313670117,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20025,
+      "return_mean": -23.88340408344853,
+      "coverage_mean": 0.18407596785975164,
+      "rmse_mm_mean": 2.0814971758354512,
+      "p95_error_mm_mean": 2.9236248630207045,
+      "waste_frac_mean": 0.13143689159492922,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 17.0,
+      "steps_mean": 3169.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 3.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 1,
+      "seeds": [
+        20025,
+        20025
+      ],
+      "deposit_pitch_start_deg_mean": 16.976889387976346,
+      "deposit_pitch_end_deg_mean": 7.446036247405324,
+      "deposit_pitch_start_deg_quartiles": [
+        7.398409151697965,
+        17.386079419205473,
+        27.434937672649287
+      ],
+      "contact_force_N_mean": 0.60882116702832,
+      "carry_face_up_mean": 0.9750589174015701,
+      "path_heading_deg_quartiles": [
+        36.80683602209812,
+        59.06158243025353,
+        147.2068839999347
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.29411764705882354,
+        "diagonal": 0.6470588235294118,
+        "vertical": 0.058823529411764705
+      },
+      "cosim_force_rmse_N_mean": 0.9764603275233978,
+      "cosim_force_rmse_N_max": 1.6149327069482997,
+      "cosim_tracking_max_mm_mean": 8.486928325069975,
+      "cosim_tracking_max_mm_max": 10.4117618619989,
+      "cosim_peak_force_N_mean": 2.8683050723394823,
+      "cosim_peak_force_N_max": 5.045196858138988,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20026,
+      "return_mean": -47.17278282456421,
+      "coverage_mean": 0.2483564645726808,
+      "rmse_mm_mean": 2.38204487162407,
+      "p95_error_mm_mean": 4.78646006485979,
+      "waste_frac_mean": 0.2713896493464076,
+      "carry_loss_frac_mean": 0.0019462092368833974,
+      "cycles_mean": 20.0,
+      "steps_mean": 2945.0,
+      "unreachable_mean": 4.0,
+      "projected_mean": 9.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.0328790734103208e-20,
+      "episodes": 1,
+      "seeds": [
+        20026,
+        20026
+      ],
+      "deposit_pitch_start_deg_mean": 20.011289174863418,
+      "deposit_pitch_end_deg_mean": 8.411282496798224,
+      "deposit_pitch_start_deg_quartiles": [
+        16.6306013750468,
+        20.77593466688355,
+        25.33207068390625
+      ],
+      "contact_force_N_mean": 1.216652217601656,
+      "carry_face_up_mean": 0.9211198462639183,
+      "path_heading_deg_quartiles": [
+        94.47240479217429,
+        116.89158116129249,
+        134.8624286697021
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.05,
+        "diagonal": 0.65,
+        "vertical": 0.3
+      },
+      "cosim_force_rmse_N_mean": 1.116225283845181,
+      "cosim_force_rmse_N_max": 1.9457227647414557,
+      "cosim_tracking_max_mm_mean": 9.743499962714798,
+      "cosim_tracking_max_mm_max": 11.860689228005247,
+      "cosim_peak_force_N_mean": 4.040677762127338,
+      "cosim_peak_force_N_max": 7.01142575511348,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20027,
+      "return_mean": -31.18677875311065,
+      "coverage_mean": 0.21329437545653762,
+      "rmse_mm_mean": 2.326257246135243,
+      "p95_error_mm_mean": 4.594469877288052,
+      "waste_frac_mean": 0.3684715042228418,
+      "carry_loss_frac_mean": 0.002132540469509481,
+      "cycles_mean": 32.0,
+      "steps_mean": 6125.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 11.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 1,
+      "seeds": [
+        20027,
+        20027
+      ],
+      "deposit_pitch_start_deg_mean": 16.558796905572233,
+      "deposit_pitch_end_deg_mean": 6.801165553810794,
+      "deposit_pitch_start_deg_quartiles": [
+        12.816970676456897,
+        17.335937279963836,
+        21.942066561583722
+      ],
+      "contact_force_N_mean": 0.9874329176099734,
+      "carry_face_up_mean": 0.9319104729914971,
+      "path_heading_deg_quartiles": [
+        27.2533994172195,
+        42.04919391556582,
+        91.59136829398416
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.21875,
+        "diagonal": 0.625,
+        "vertical": 0.15625
+      },
+      "cosim_force_rmse_N_mean": 1.2517902034443058,
+      "cosim_force_rmse_N_max": 2.165164911922386,
+      "cosim_tracking_max_mm_mean": 8.749354945281437,
+      "cosim_tracking_max_mm_max": 12.940388359398899,
+      "cosim_peak_force_N_mean": 5.199810025522613,
+      "cosim_peak_force_N_max": 17.180497654573628,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20028,
+      "return_mean": -38.97615641691623,
+      "coverage_mean": 0.3732651570489408,
+      "rmse_mm_mean": 1.51290079825184,
+      "p95_error_mm_mean": 1.9999954424712476,
+      "waste_frac_mean": 0.22771136406151007,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 17.0,
+      "steps_mean": 2212.0,
+      "unreachable_mean": 6.0,
+      "projected_mean": 6.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 1,
+      "seeds": [
+        20028,
+        20028
+      ],
+      "deposit_pitch_start_deg_mean": 16.32701681497144,
+      "deposit_pitch_end_deg_mean": 4.465708892579434,
+      "deposit_pitch_start_deg_quartiles": [
+        13.543303812414395,
+        17.331222901360057,
+        19.4056763420676
+      ],
+      "contact_force_N_mean": 0.8755103191719755,
+      "carry_face_up_mean": 0.9421284968431302,
+      "path_heading_deg_quartiles": [
+        38.64233233851354,
+        82.9537885165222,
+        93.88938030130127
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.0,
+        "diagonal": 0.35294117647058826,
+        "vertical": 0.6470588235294118
+      },
+      "cosim_force_rmse_N_mean": 1.3392417669207923,
+      "cosim_force_rmse_N_max": 2.4465277102323597,
+      "cosim_tracking_max_mm_mean": 9.434795774220959,
+      "cosim_tracking_max_mm_max": 10.510752222791378,
+      "cosim_peak_force_N_mean": 5.828278776232551,
+      "cosim_peak_force_N_max": 11.826642067540515,
+      "executor": "cosim"
+    },
+    {
+      "seed": 20029,
+      "return_mean": -46.754846588728114,
+      "coverage_mean": 0.3491599707815924,
+      "rmse_mm_mean": 2.3368910939586804,
+      "p95_error_mm_mean": 4.0238864707441815,
+      "waste_frac_mean": 0.5341667833237919,
+      "carry_loss_frac_mean": 0.007293424472228591,
+      "cycles_mean": 33.0,
+      "steps_mean": 6168.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 23.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.0164395367051604e-20,
+      "episodes": 1,
+      "seeds": [
+        20029,
+        20029
+      ],
+      "deposit_pitch_start_deg_mean": 20.724399359516482,
+      "deposit_pitch_end_deg_mean": 7.627470588785869,
+      "deposit_pitch_start_deg_quartiles": [
+        18.68185689374298,
+        22.123893296894202,
+        24.24350508740075
+      ],
+      "contact_force_N_mean": 1.1872690713772136,
+      "carry_face_up_mean": 0.921819465269721,
+      "path_heading_deg_quartiles": [
+        35.68285928394127,
+        46.056010351247764,
+        80.6138352969221
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.030303030303030304,
+        "diagonal": 0.7878787878787878,
+        "vertical": 0.18181818181818182
+      },
+      "cosim_force_rmse_N_mean": 1.1229583557579852,
+      "cosim_force_rmse_N_max": 1.9295934828633092,
+      "cosim_tracking_max_mm_mean": 8.971115732613649,
+      "cosim_tracking_max_mm_max": 11.113127218409772,
+      "cosim_peak_force_N_mean": 5.131521029826553,
+      "cosim_peak_force_N_max": 10.853710071763246,
+      "executor": "cosim"
+    }
+  ],
+  "replay_seed": 20028
+}

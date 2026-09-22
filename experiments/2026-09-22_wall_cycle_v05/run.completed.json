@@ -1,0 +1,86 @@
+{
+  "experiment_id": "2026-09-22_wall_cycle_v05",
+  "status": "completed_failed_task_threshold",
+  "purpose": "v0.5 loading/carry hierarchy and P1 256x256 PPO manager",
+  "base_commit": "1c68a3a34f35c32a3e30d21c3888ccec90e1152d",
+  "branch": "codex/wall-cycle-v05",
+  "uncommitted_change_summary": "v0.5 source, tests, reach table, evidence and native MuJoCo launcher",
+  "commands": [
+    "wall_cycle_v05_checks.py --episodes 100",
+    "wall_cycle.train --updates 60 --teacher-episodes 120 --steps-per-update 1024",
+    "deterministic MuJoCo cosim recheck 30+30 episodes"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "mujoco": "3.13.0",
+    "trainer": "CPU NumPy PPO"
+  },
+  "seed": 0,
+  "splits": {
+    "test": [
+      20000,
+      20099
+    ],
+    "validation": [
+      30000,
+      30039
+    ],
+    "cosim": [
+      20000,
+      20029
+    ]
+  },
+  "tool_profile": "lab_20260922",
+  "training_budget": {
+    "teacher_episodes": 120,
+    "dagger_rounds": 3,
+    "ppo_updates": 60,
+    "steps_per_update": 1024,
+    "ppo_steps": 61440,
+    "hidden": [
+      256,
+      256
+    ]
+  },
+  "metrics": {
+    "table_test_best_ppo": {
+      "coverage": 0.22124908692476258,
+      "rmse_mm": 2.032919165102709,
+      "waste_frac": 0.2506915732086853,
+      "success_rate": 0.0
+    },
+    "deterministic_cosim_selected": {
+      "coverage": 0.2019235451667884,
+      "rmse_mm": 2.209040634045469,
+      "waste_frac": 0.28938882917234543,
+      "success_rate": 0.0
+    },
+    "deterministic_cosim_teacher": {
+      "coverage": 0.20796201607012416,
+      "rmse_mm": 1.9906802327622093,
+      "waste_frac": 0.15330701573483335,
+      "success_rate": 0.0
+    }
+  },
+  "artifacts": [
+    "raw/pretraining_gates_100.json",
+    "raw/p1_training/policy.npz",
+    "raw/p1_training/training.json",
+    "raw/cosim_recheck_deterministic.json",
+    "raw/native_replay_seed_20005_bare/rollout.npz",
+    "reports/native_replay_frames"
+  ],
+  "superseded_evidence": [
+    "raw/p1_training/training.json:test_cosim",
+    "raw/cosim_recheck_after_executor_reset.json"
+  ],
+  "limitations": [
+    "2.5-D mortar model",
+    "unmeasured interface/D435/dynamics parameters",
+    "feed-station and free-space playback moves are illustrative",
+    "P1 continuous Gaussian action head, not P2/VLA"
+  ],
+  "evidence_level": "L1",
+  "hardware_motion": false
+}

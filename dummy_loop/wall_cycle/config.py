@@ -10,6 +10,7 @@ class CycleConfig:
     # 'v0.2': the 2026-09-22 experiment exactly as recorded (11-dim action, no pitch).
     #   Kept only so that experiments/2026-09-22_wall_cycle_rl stays reproducible.
     physics: str = 'v0.3'
+    tool_profile: str = 'legacy'
 
     # Wall and coating. Five-millimetre cells match the previous experiment.
     # v0.2 used 0.28 x 0.07 m, inherited from the 3-band single-stroke session and NOT
@@ -82,6 +83,21 @@ class CycleConfig:
     lift_wall_fraction: float = 0.5     # share of a squeezed layer that stays on the wall when the
                                         # blade is pulled straight off (ASSUMED; measure it)
     max_pitch_deg: float = 35.0         # action range for the blade pitch (0 = blade parallel to wall)
+
+    # v0.5 loading and transport. face_up_score = dot(blade material-face normal,
+    # world up): +1 face up, 0 vertical, -1 face down. The named 0.75 wall share is
+    # an engineering prior; randomisation tests its unknown magnitude.
+    interface_wall_share_range: tuple = (0.60, 0.90)
+    randomize_interface: bool = True
+    tool_interface_yield_Pa: float = 80.0  # provisional smooth-metal slip/peel proxy
+    feed_board_volume_ml: float = 600.0
+    feed_normal_force_N: float = 8.0
+    feed_scoop_depth_m: float = 0.006
+    feed_scoop_distance_m: float = 0.09
+    feed_scoop_speed_m_s: float = 0.04
+    carry_duration_s: float = 1.5
+    transport_dt_s: float = 0.02
+    transport_relaxation_s: float = 0.35
 
     # Provisional finish gates. Must be revised after D435 and material calibration.
     finish_coverage: float = 0.95

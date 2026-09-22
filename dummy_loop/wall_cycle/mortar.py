@@ -240,6 +240,8 @@ class MortarSystem(MaterialSystem):
         self._covered = {}
         self._flip = False
         self._bead = np.zeros(cfg.blade_shape[1])     # volume-per-cell-area pushed ahead of the blade
+        self.feed_board_remaining_m3 = cfg.feed_board_volume_ml * 1e-6
+        self.carry_loss_m3 = 0.0
 
     @property
     def blade_volume_m3(self):
@@ -248,7 +250,82 @@ class MortarSystem(MaterialSystem):
 
     def reset(self, initial='bare'):
         self._bead = np.zeros(self.cfg.blade_shape[1])
+        self.feed_board_remaining_m3 = self.cfg.feed_board_volume_ml * 1e-6
+        self.carry_loss_m3 = 0.0
         return super().reset(initial)
+
+    def feed(self, requested_ml, normal_force_N, scoop_depth_m, scoop_distance_m,
+             scoop_speed_m_s, dwell_s=0.2):
+        """Conservative reduced feed-board interaction for v0.5.
+
+        Loading is driven by commanded contact and swept volume. Carry orientation is
+        deliberately absent: gravity affects retention after lifting, not active scooping.
+        """
+        c = self.cfg
+        area = max(c.blade_width_m * min(scoop_distance_m, c.blade_length_m), 0.0)
+        swept_ml = area * max(scoop_depth_m, 0.0) * 1e6
+        force_eff = 1.0 - np.exp(-max(normal_force_N, 0.0) / 4.0)
+        speed_eff = np.exp(-max(scoop_speed_m_s - 0.04, 0.0) / 0.12)
+        dwell_eff = 0.85 + 0.15 * (1.0 - np.exp(-max(dwell_s, 0.0) / 0.2))
+        wanted_ml = min(max(requested_ml, 0.0), swept_ml * force_eff * speed_eff * dwell_eff)
+        wanted = min(wanted_ml * 1e-6, self.feed_board_remaining_m3)
+        z, x = np.indices(self.blade.shape)
+        x0 = 0.55 * (self.blade.shape[1] - 1); z0 = 0.5 * (self.blade.shape[0] - 1)
+        shape = np.exp(-.5 * ((x - x0) / max(self.blade.shape[1] * .24, 1.0)) ** 2
+                       -.5 * ((z - z0) / max(self.blade.shape[0] * .30, .8)) ** 2)
+        shape *= wanted / max(shape.sum() * self.blade_cell_area, 1e-15)
+        self.blade += shape
+        cap = c.blade_capacity_ml * 1e-6
+        total = self.blade_volume_m3
+        overflow = max(total - cap, 0.0)
+        if overflow:
+            self.blade *= cap / total
+            self.dropped_m3 += overflow
+        self.feed_board_remaining_m3 -= wanted
+        self.supplied_m3 += wanted
+        return {'requested_ml': float(requested_ml), 'available_swept_ml': float(swept_ml),
+                'transferred_ml': float(wanted * 1e6),
+                'retained_ml': float((wanted - overflow) * 1e6),
+                'overflow_ml': float(overflow * 1e6),
+                'feed_remaining_ml': float(self.feed_board_remaining_m3 * 1e6)}
+
+    def transport(self, face_up_score, duration_s, dt_s=None, stats=None):
+        """Integrate off-wall retention in physical time for v0.5.
+
+        +1 is face up and stable, 0 is vertical, -1 is face down. Excess above
+        the yield-stress stable thickness relaxes toward a free edge with a finite
+        time constant. The update is conservative and converges as dt shrinks.
+        """
+        c = self.cfg; dt = float(dt_s or c.transport_dt_s)
+        if dt <= 0 or duration_s <= 0:
+            return 0.0
+        score = float(np.clip(face_up_score, -1.0, 1.0))
+        tangent = float(np.sqrt(max(0.0, 1.0 - score * score)))
+        away = max(-score, 0.0)
+        interface_p = MortarParams(rho=self.p.rho, tau_y=c.tool_interface_yield_Pa,
+                                   mu_p=self.p.mu_p)
+        h_st = stable_thickness(interface_p, tangent)
+        before = self.dropped_m3
+        n = max(1, int(np.ceil(duration_s / dt))); hdt = duration_s / n
+        rate = 1.0 - np.exp(-hdt / max(c.transport_relaxation_s, 1e-6))
+        for _ in range(n):
+            B = self.blade.copy()
+            if away > 0:
+                peel_limit = c.tool_interface_yield_Pa / (self.p.rho * G * away)
+                peel = rate * np.maximum(B - peel_limit, 0.0)
+                B -= peel; self.dropped_m3 += float(peel.sum() * self.blade_cell_area)
+            if np.isfinite(h_st) and tangent > 1e-9:
+                excess = np.maximum(B - h_st, 0.0) * rate * tangent
+                B -= excess
+                moved = np.zeros_like(B); moved[:-1] = excess[1:]
+                B += moved
+                self.dropped_m3 += float(excess[0].sum() * self.blade_cell_area)
+            self.blade[:] = B
+        loss = self.dropped_m3 - before
+        self.carry_loss_m3 += loss
+        if stats is not None:
+            stats['carry_loss_m3'] = stats.get('carry_loss_m3', 0.0) + loss
+        return loss
 
     # ------------------------------------------------------------------ orientation
     def _axes(self, phi):

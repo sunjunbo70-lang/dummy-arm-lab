@@ -1,0 +1,81 @@
+{
+  "written": "experiments\\2026-09-22_wall_cycle_v05\\raw\\pretraining_gates_100.json",
+  "face_up": {
+    "return_mean": -19.93353754452185,
+    "coverage_mean": 0.2528122717311907,
+    "rmse_mm_mean": 1.7532598609230852,
+    "p95_error_mm_mean": 2.6191038472821857,
+    "waste_frac_mean": 0.13815673833156733,
+    "carry_loss_frac_mean": 0.0,
+    "cycles_mean": 33.34,
+    "steps_mean": 6386.33,
+    "unreachable_mean": 0.0,
+    "projected_mean": 0.24,
+    "success_rate": 0.0,
+    "max_volume_error_m3": 3.7269449679189215e-20,
+    "episodes": 100,
+    "seeds": [
+      20000,
+      20099
+    ],
+    "deposit_pitch_start_deg_mean": 14.17817679558011,
+    "deposit_pitch_end_deg_mean": 4.6187845303867405,
+    "deposit_pitch_start_deg_quartiles": [
+      0.0,
+      25.0,
+      25.0
+    ],
+    "contact_force_N_mean": 1.0000000000000002,
+    "carry_face_up_mean": 1.0,
+    "path_heading_deg_quartiles": [
+      45.0,
+      90.0,
+      132.56524349780986
+    ],
+    "path_family_fraction": {
+      "horizontal": 0.14337132573485303,
+      "diagonal": 0.6862627474505099,
+      "vertical": 0.17036592681463708
+    },
+    "executor": "table"
+  },
+  "legacy": {
+    "return_mean": -21.005016211085437,
+    "coverage_mean": 0.27178962746530316,
+    "rmse_mm_mean": 1.6470111063939163,
+    "p95_error_mm_mean": 2.5384041176387293,
+    "waste_frac_mean": 0.29365874331123276,
+    "carry_loss_frac_mean": 0.2365121039390635,
+    "cycles_mean": 27.4,
+    "steps_mean": 5316.81,
+    "unreachable_mean": 0.0,
+    "projected_mean": 0.38,
+    "success_rate": 0.0,
+    "max_volume_error_m3": 1.2197274440461925e-19,
+    "episodes": 100,
+    "seeds": [
+      20000,
+      20099
+    ],
+    "deposit_pitch_start_deg_mean": 14.328703703703704,
+    "deposit_pitch_end_deg_mean": 4.69212962962963,
+    "deposit_pitch_start_deg_quartiles": [
+      0.0,
+      25.0,
+      25.0
+    ],
+    "contact_force_N_mean": 1.0000000000000002,
+    "carry_face_up_mean": -1.0,
+    "path_heading_deg_quartiles": [
+      44.792409224038,
+      90.0,
+      135.0
+    ],
+    "path_family_fraction": {
+      "horizontal": 0.20693430656934306,
+      "diagonal": 0.6014598540145986,
+      "vertical": 0.19160583941605838
+    },
+    "executor": "table"
+  }
+}

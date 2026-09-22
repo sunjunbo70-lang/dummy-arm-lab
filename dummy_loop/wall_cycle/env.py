@@ -17,6 +17,7 @@ ACTION_NAMES_V2 = ('mode', 'start_u', 'start_v', 'end_u', 'end_v',
                    'blade_cos', 'blade_sin', 'bend', 'force', 'speed', 'load')
 # v0.3: the pitch profile of the stroke -- tilted at contact (lower edge first), then flattened.
 ACTION_NAMES = ACTION_NAMES_V2 + ('pitch_start', 'pitch_end')
+ACTION_NAMES_V5 = ACTION_NAMES + ('carry_face_up',)
 
 
 @dataclass
@@ -31,6 +32,7 @@ class DecodedAction:
     requested_load_ml: float
     pitch_start: float = 0.0      # rad, v0.3 only
     pitch_end: float = 0.0
+    carry_face_up: float = 0.0    # dot(material-face normal, world up), v0.5
 
     def to_dict(self):
         return {'mode': self.mode, 'start_uv_m': list(self.start), 'end_uv_m': list(self.end),
@@ -38,14 +40,16 @@ class DecodedAction:
                 'force_N': self.force_N, 'speed_m_s': self.speed_m_s,
                 'requested_load_ml': self.requested_load_ml,
                 'pitch_start_deg': float(np.rad2deg(self.pitch_start)),
-                'pitch_end_deg': float(np.rad2deg(self.pitch_end))}
+                'pitch_end_deg': float(np.rad2deg(self.pitch_end)),
+                'carry_face_up': float(self.carry_face_up)}
 
 
 class WallCycleEnv:
     def __init__(self, cfg=None, seed=0, initial_mix=True, record=False, executor=None):
         self.cfg = cfg or CycleConfig()
         self.v3 = self.cfg.physics != 'v0.2'
-        self.action_names = ACTION_NAMES if self.v3 else ACTION_NAMES_V2
+        self.v5 = self.cfg.physics == 'v0.5'
+        self.action_names = ACTION_NAMES_V5 if self.v5 else (ACTION_NAMES if self.v3 else ACTION_NAMES_V2)
         self.act_dim = len(self.action_names)
         # Optional arm executor (dummy_loop/wall_cycle/arm.py): checks every stroke on the
         # real Dummy V2 MuJoCo model (IK along the path, joint limits, arm-wall clearance).
@@ -61,7 +65,7 @@ class WallCycleEnv:
         self.sensor = D435Proxy(self.cfg, seed+1)
         self.initial_mix = initial_mix; self.record = record
         nv, nu2 = coarse_shape(self.cfg.wall_shape)
-        self.obs_dim = nv*nu2*3 + 8
+        self.obs_dim = nv*nu2*3 + (10 if self.v5 else 8)
         self.events = []
 
     def _scan(self):
@@ -84,13 +88,30 @@ class WallCycleEnv:
             float(conf.mean()),
             np.clip(self.last_improvement/.1, -1, 1),
         ])
+        if self.v5:
+            material_scale = max(self.material.supplied_m3 + self.material.initial_m3, 18e-6)
+            scalar = np.r_[scalar, self.last_carry_face_up,
+                           np.clip(self.material.carry_loss_m3/material_scale, 0, 1)]
         return np.r_[thickness.ravel(), error.ravel(), conf.ravel(), scalar]
 
     def reset(self):
+        # Cached MuJoCo executors retain q_last as an IK continuation seed within an
+        # episode. Reset it at the episode boundary so a fixed seed is independent of
+        # which episode was evaluated immediately before it.
+        if self.executor is not None and hasattr(self.executor, 'q_scan') and hasattr(self.executor, 'q_last'):
+            self.executor.q_last = np.asarray(self.executor.q_scan, float).copy()
+            if hasattr(self.executor, 'rng'):
+                self.executor.rng = np.random.default_rng(self.seed)
         initial = 'partial' if self.initial_mix and self.rng.random() < .35 else 'bare'
         self.material.reset(initial)
         self.cycles = self.reloads = self.control_steps = self.stall_count = 0
         self.budget = self.cfg.base_steps; self.last_mode = 0; self.last_improvement = 0.0
+        self.last_carry_face_up = 0.0
+        if self.v5:
+            lo, hi = self.cfg.interface_wall_share_range
+            self.material.p.lift_wall_fraction = (float(self.rng.uniform(lo, hi))
+                                                   if self.cfg.randomize_interface
+                                                   else self.cfg.lift_wall_fraction)
         self.done = False; self.events = []; self.unreachable = 0; self.projected = 0
         self._scan(); self.previous_cost = self.material.quality_cost()
         self._event('SCAN', {'initial': initial})
@@ -124,12 +145,14 @@ class WallCycleEnv:
         force = fw[0] + (a[8]+1)*.5*(fw[1]-fw[0])
         speed = c.speed_range_m_s[0] + (a[9]+1)*.5*(c.speed_range_m_s[1]-c.speed_range_m_s[0])
         li = min(int((a[10]+1)*.5*len(c.load_choices_ml)), len(c.load_choices_ml)-1)
-        p0 = p1 = 0.0
+        p0 = p1 = 0.0; carry = 0.0
         if self.v3:
             pmax = np.deg2rad(c.max_pitch_deg)
             p0, p1 = float((a[11]+1)*.5*pmax), float((a[12]+1)*.5*pmax)
+        if self.v5:
+            carry = float(a[13])
         return DecodedAction(MODES[mode_i], start, end, phi, float(a[7]*c.curve_offset_m),
-                             float(force), float(speed), float(c.load_choices_ml[li]), p0, p1)
+                             float(force), float(speed), float(c.load_choices_ml[li]), p0, p1, carry)
 
     def encode(self, d: DecodedAction):
         c = self.cfg; a = np.zeros(self.act_dim)
@@ -149,6 +172,8 @@ class WallCycleEnv:
             pmax = np.deg2rad(c.max_pitch_deg)
             a[11] = np.clip(d.pitch_start/pmax*2-1, -1, 1)
             a[12] = np.clip(d.pitch_end/pmax*2-1, -1, 1)
+        if self.v5:
+            a[13] = np.clip(d.carry_face_up, -1, 1)
         return a
 
     def teacher_action(self):
@@ -178,15 +203,28 @@ class WallCycleEnv:
             center = np.array([0., c.height_m/2]); direction = np.array([0., 1.])
             cov = np.diag([.001, .002])
         elif mode in ('DEPOSIT', 'REUSE'):
-            # A wide missing area is multimodal: its global centroid can sit on an
-            # already-finished strip. Select the best blade-width window, then make
-            # a vertical stroke. Later repair actions remain free to use any angle.
-            column_need = weight.sum(axis=0)
-            window = max(1, round(c.blade_length_m/c.cell_m))
-            score = np.convolve(column_need, np.ones(window), mode='same')
-            center = np.array([self.material.u[int(np.argmax(score))], c.height_m/2])
-            direction = np.array([0., 1.])
-            cov = np.diag([1e-5, (c.height_m/2)**2])
+            if self.v5:
+                # Balanced skill teacher. An anisotropic defect follows its principal
+                # direction; broad/ambiguous regions cycle through four useful families.
+                U, V = np.meshgrid(self.material.u, self.material.v)
+                center = np.array([(U*weight).sum()/total, (V*weight).sum()/total])
+                X = np.c_[U.ravel()-center[0], V.ravel()-center[1]]
+                w = weight.ravel()/total
+                cov = (X*w[:, None]).T @ X + 1e-7*np.eye(2)
+                eig, vec = np.linalg.eigh(cov); principal = vec[:, -1]
+                curriculum = np.array(((0., 1.), (1., 0.), (1., 1.), (-1., 1.)), float)
+                direction = curriculum[(self.cycles + self.seed) % len(curriculum)]
+                direction /= np.linalg.norm(direction)
+                if eig[-1]/max(eig[0], 1e-8) > 2.0:
+                    direction = principal / np.linalg.norm(principal)
+                if direction[1] < 0: direction = -direction
+            else:
+                column_need = weight.sum(axis=0)
+                window = max(1, round(c.blade_length_m/c.cell_m))
+                score = np.convolve(column_need, np.ones(window), mode='same')
+                center = np.array([self.material.u[int(np.argmax(score))], c.height_m/2])
+                direction = np.array([0., 1.])
+                cov = np.diag([1e-5, (c.height_m/2)**2])
         else:
             U, V = np.meshgrid(self.material.u, self.material.v)
             center = np.array([(U*weight).sum()/total, (V*weight).sum()/total])
@@ -223,7 +261,8 @@ class WallCycleEnv:
             p0 = p1 = np.deg2rad(3)
         else:
             p0, p1 = np.deg2rad(25), np.deg2rad(8)
-        d = DecodedAction(mode, tuple(start), tuple(end), phi, 0, force, .06, load, p0, p1)
+        carry = 1.0 if self.v5 and self.teacher_style != 'legacy_transport' else -1.0
+        d = DecodedAction(mode, tuple(start), tuple(end), phi, 0, force, .06, load, p0, p1, carry)
         # stay within what the arm can do: if the executor rejects the stroke, move it inwards
         # (towards the square centre) and finally drop the tilt
         # (first keep the style's pitch and shorten the stroke, only then drop the tilt, so the
@@ -240,7 +279,7 @@ class WallCycleEnv:
                 for shrink in (0.0, 0.15, 0.3):
                     s_ = tuple(np.asarray(start) + (centre - start) * shrink)
                     e_ = tuple(np.asarray(end) + (centre - end) * shrink)
-                    cand = DecodedAction(mode, s_, e_, phi, 0, force, .06, load, *pp)
+                    cand = DecodedAction(mode, s_, e_, phi, 0, force, .06, load, *pp, carry)
                     ok = self.executor.plan(cand).ok
                     self.executor.stats['planned'] -= 1
                     if ok:
@@ -291,9 +330,25 @@ class WallCycleEnv:
             if plan is not None and self.record:
                 self._event('ARM_PLAN', {'q_approach': plan.q_approach, 'q_lift': plan.q_lift})
             if d.mode == 'DEPOSIT' and d.requested_load_ml > 0 and self.reloads < c.max_reload_cycles:
-                self.control_steps += 50; self._event('LOAD_APPROACH')
-                load = self.material.load_random(d.requested_load_ml); self.reloads += 1
-                reward -= .2; self._event('DISPENSE', {'load': load}); self._event('TOOL_INSPECT')
+                if self.v5:
+                    self.control_steps += 20; self._event('LOAD')
+                    self._event('SCOOP')
+                    load = self.material.feed(d.requested_load_ml, c.feed_normal_force_N,
+                                              c.feed_scoop_depth_m, c.feed_scoop_distance_m,
+                                              c.feed_scoop_speed_m_s)
+                    self._event('LIFT_FROM_FEED', {'load': load})
+                else:
+                    self.control_steps += 50; self._event('LOAD_APPROACH')
+                    load = self.material.load_random(d.requested_load_ml)
+                    self._event('DISPENSE', {'load': load})
+                self.reloads += 1; reward -= .2; self._event('TOOL_INSPECT')
+            carry_before = self.material.dropped_m3
+            if self.v5:
+                self.last_carry_face_up = d.carry_face_up
+                self._event('CARRY', {'face_up_score': d.carry_face_up})
+                self.material.transport(d.carry_face_up, c.carry_duration_s)
+                self.control_steps += round(c.carry_duration_s*c.control_hz)
+                self._event('PRECONTACT'); self._event('ROTATE_TO_WALL')
             self.control_steps += 35; self._event('WALL_APPROACH', {'action': d.to_dict()})
             distance = float(np.linalg.norm(np.asarray(d.end)-d.start))
             work_steps = max(1, round(distance/max(d.speed_m_s, 1e-4)*c.control_hz))
@@ -326,11 +381,20 @@ class WallCycleEnv:
                                 if not isinstance(v, list)}
             self.control_steps += work_steps
             self._event('WORK', {'action': d.to_dict(), 'transfer': self.last_stroke})
-            self.control_steps += 55; self._event('LIFT'); self._event('RETREAT'); self._event('SCAN_RETURN')
+            self.control_steps += 55
+            if self.v5:
+                self._event('SEPARATE'); self._event('RECOVER_RETURN')
+            else:
+                self._event('LIFT'); self._event('RETREAT')
+            self._event('SCAN_RETURN')
             self._scan(); self._event('SCAN')
             after = self.material.quality_cost(); improvement = before-after
-            waste = (self.material.dropped_m3+self.material.outside_m3)-before_waste
+            carry_loss = self.material.dropped_m3-carry_before if self.v5 else 0.0
+            waste = (self.material.dropped_m3+self.material.outside_m3)-before_waste-carry_loss
             reward += 30*improvement - 4*waste/max(18e-6, 1e-12)
+            if self.v5:
+                material_scale = max(self.material.supplied_m3 + self.material.initial_m3, 18e-6)
+                reward -= 4*carry_loss/material_scale
             if (stats.peak_force_N or 0.0) > c.max_force_N:
                 reward -= 50; self.done = True
         self.last_improvement = improvement
@@ -357,7 +421,8 @@ class WallCycleEnv:
                 s_ = tuple(np.asarray(d.start) + (centre - np.asarray(d.start)) * shrink)
                 e_ = tuple(np.asarray(d.end) + (centre - np.asarray(d.end)) * shrink)
                 cand = DecodedAction(d.mode, s_, e_, d.blade_angle, d.bend_m, d.force_N, d.speed_m_s,
-                                     d.requested_load_ml, d.pitch_start * f_tilt, d.pitch_end * f_tilt)
+                                     d.requested_load_ml, d.pitch_start * f_tilt, d.pitch_end * f_tilt,
+                                     d.carry_face_up)
                 plan = self.executor.plan(cand)
                 if plan.ok:
                     return cand, plan
@@ -369,4 +434,7 @@ class WallCycleEnv:
                 'budget': self.budget, 'stall_count': self.stall_count,
                 'unreachable_strokes': getattr(self, 'unreachable', 0),
                 'projected_strokes': getattr(self, 'projected', 0),
-                'volume_balance_m3': self.material.volume_balance()}
+                'volume_balance_m3': self.material.volume_balance(),
+                'carry_loss_m3': float(getattr(self.material, 'carry_loss_m3', 0.0)),
+                'wall_share': float(getattr(getattr(self.material, 'p', None),
+                                            'lift_wall_fraction', self.cfg.lift_wall_fraction))}

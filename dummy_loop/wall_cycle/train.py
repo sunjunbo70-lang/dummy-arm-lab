@@ -20,7 +20,8 @@ def make_env(cfg, seed, teacher_style='technique', executor='table', **kw):
     'cosim' (evaluation / replay: full planner + MuJoCo co-simulation), or None."""
     ex = None
     if cfg.physics != 'v0.2' and cfg.use_arm and executor:
-        key = (executor, cfg.scene_wall_distance_m, cfg.area_centre_u_m, cfg.area_centre_z_m, cfg.width_m, cfg.height_m)
+        key = (executor, cfg.tool_profile, cfg.scene_wall_distance_m, cfg.area_centre_u_m,
+               cfg.area_centre_z_m, cfg.width_m, cfg.height_m)
         if key not in _EXECUTOR:
             if executor == 'cosim':
                 from .arm import ArmExecutor
@@ -64,7 +65,9 @@ def behaviour_clone(agent, observations, actions, iters=800, lr=5e-4, log=print)
     opt = Adam(agent.pi.params, lr)
     # Position/mode mistakes cause distribution shift much sooner than small
     # force/speed errors, so fit them more strongly than scalar refinements.
-    weights = np.array([5, 6, 3, 6, 3, 2, 2, 1, 1, 1, 4, 2, 2][:actions.shape[1]], float)
+    weights = np.array([5, 6, 3, 6, 3, 2, 2, 1, 1, 1, 4, 2, 2, 4][:actions.shape[1]], float)
+    if len(weights) != actions.shape[1]:
+        raise ValueError(f'no behaviour-cloning weights for {actions.shape[1]} action dimensions')
     for i in range(iters):
         mu = agent.pi.forward(x)
         d = 2*(mu-actions)*weights/len(x)
@@ -75,7 +78,7 @@ def behaviour_clone(agent, observations, actions, iters=800, lr=5e-4, log=print)
 
 
 def evaluate(cfg, agent=None, episodes=30, seed=10000, teacher_style='technique', executor='table'):
-    rows = []; pitches = []; forces = []; strokes = []
+    rows = []; pitches = []; forces = []; strokes = []; carries = []; headings = []
     for i in range(episodes):
         env = make_env(cfg, seed+i, teacher_style, executor)
         o = env.reset(); done = False; ret = 0
@@ -90,6 +93,10 @@ def evaluate(cfg, agent=None, episodes=30, seed=10000, teacher_style='technique'
                     pitches.append((np.rad2deg(d.pitch_start), np.rad2deg(d.pitch_end)))
                 if d.mode in ('DEPOSIT', 'REUSE', 'LEVEL'):
                     forces.append(d.force_N)
+                    if env.v5:
+                        carries.append(d.carry_face_up)
+                        dv = np.asarray(d.end)-np.asarray(d.start)
+                        headings.append(float(np.rad2deg(np.arctan2(dv[1], dv[0])) % 180))
             o, r, done, info = env.step(a); ret += r
             if getattr(env, 'last_stroke', None) and executor == 'cosim':
                 strokes.append(env.last_stroke); env.last_stroke = None
@@ -97,8 +104,11 @@ def evaluate(cfg, agent=None, episodes=30, seed=10000, teacher_style='technique'
                      'steps': info['control_steps'], 'success': info['success'],
                      'unreachable': info.get('unreachable_strokes', 0),
                      'projected': info.get('projected_strokes', 0),
+                     'carry_loss_frac': info.get('carry_loss_m3', 0.0) /
+                     max(env.material.supplied_m3 + env.material.initial_m3, 18e-6),
                      'volume_error': abs(info['volume_balance_m3'])})
-    keys = ('return','coverage','rmse_mm','p95_error_mm','waste_frac','cycles','steps','unreachable','projected')
+    keys = ('return','coverage','rmse_mm','p95_error_mm','waste_frac','carry_loss_frac',
+            'cycles','steps','unreachable','projected')
     out = {f'{k}_mean': float(np.mean([r[k] for r in rows])) for k in keys} | {
         'success_rate': float(np.mean([r['success'] for r in rows])),
         'max_volume_error_m3': float(max(r['volume_error'] for r in rows)),
@@ -110,6 +120,15 @@ def evaluate(cfg, agent=None, episodes=30, seed=10000, teacher_style='technique'
         out['deposit_pitch_start_deg_quartiles'] = [float(x) for x in np.percentile(p[:, 0], [25, 50, 75])]
     if forces:
         out['contact_force_N_mean'] = float(np.mean(forces))
+    if carries:
+        out['carry_face_up_mean'] = float(np.mean(carries))
+    if headings:
+        h = np.asarray(headings)
+        out['path_heading_deg_quartiles'] = [float(x) for x in np.percentile(h, [25, 50, 75])]
+        out['path_family_fraction'] = {
+            'horizontal': float(np.mean((h < 22.5) | (h >= 157.5))),
+            'diagonal': float(np.mean(((h >= 22.5) & (h < 67.5)) | ((h >= 112.5) & (h < 157.5)))),
+            'vertical': float(np.mean((h >= 67.5) & (h < 112.5)))}
     if strokes:        # co-simulation diagnostics
         for k in ('force_rmse_N', 'tracking_max_mm', 'peak_force_N'):
             vals = [s_[k] for s_ in strokes if s_.get(k) is not None]
@@ -124,7 +143,8 @@ TEST_SEED, VAL_SEED = 20000, 30000
 
 def train(out_dir, updates=60, seed=0, teacher_episodes=120, log=print, cfg=None,
           teacher_style='technique', steps_per_update=1024, lr=3e-5, test_episodes=100,
-          val_episodes=40, eval_every=10, explore_log_std=-1.5, cosim_test_episodes=30):
+          val_episodes=40, eval_every=10, explore_log_std=-1.5, cosim_test_episodes=30,
+          hidden=(128, 128), experiment_name=None):
     """Teacher -> BC -> 3x DAgger -> PPO, then compare ALL checkpoints on one fixed test set.
 
     v0.2 compared the BC checkpoint (30 episodes, seeds 11000+) with PPO (100 episodes,
@@ -136,7 +156,7 @@ def train(out_dir, updates=60, seed=0, teacher_episodes=120, log=print, cfg=None
     out = Path(out_dir); out.mkdir(parents=True, exist_ok=False)
     from .area import load_work_area
     cfg = load_work_area(cfg or CycleConfig())
-    pcfg = PPOConfig(hidden=(128,128), lr=lr, gamma=.99, lam=.95, clip=.10,
+    pcfg = PPOConfig(hidden=hidden, lr=lr, gamma=.99, lam=.95, clip=.10,
                      epochs=4, minibatch=128, steps_per_update=steps_per_update,
                      entropy_coef=0.0, init_log_std=-3.0, seed=seed)
     probe = make_env(cfg, seed, teacher_style)
@@ -159,7 +179,11 @@ def train(out_dir, updates=60, seed=0, teacher_episodes=120, log=print, cfg=None
     # dims this experiment is about: contact force and the pitch profile. With log_std -3 a
     # flat-teacher policy explores +-0.9 deg of pitch and could never find out whether tilting
     # pays; -1.5 gives ~ +-4 deg per decision.
-    explore = [agent_i for agent_i, n in enumerate(probe.action_names) if n in ('force', 'pitch_start', 'pitch_end')]
+    explored = ('force', 'pitch_start', 'pitch_end')
+    if cfg.physics == 'v0.5':
+        explored += ('start_u', 'start_v', 'end_u', 'end_v',
+                     'blade_cos', 'blade_sin', 'carry_face_up')
+    explore = [agent_i for agent_i, n in enumerate(probe.action_names) if n in explored]
     agent.log_std[explore] = explore_log_std
     env = make_env(cfg, seed+5000, teacher_style); obs = env.reset(); ep_ret = 0.; recent=[]; curve=[]
 
@@ -213,7 +237,8 @@ def train(out_dir, updates=60, seed=0, teacher_episodes=120, log=print, cfg=None
         cosim = {'teacher': evaluate(cfg, None, cosim_test_episodes, TEST_SEED, teacher_style, 'cosim'),
                  'selected': evaluate(cfg, sel, cosim_test_episodes, TEST_SEED, teacher_style, 'cosim')}
         log(json.dumps({'stage': 'cosim_test_done', 'elapsed_s': round(time.time()-t0, 1)}))
-    result={'experiment':'wall_cycle_v0.3','evidence_level':'L1','hardware_motion':False,
+    result={'experiment':experiment_name or f'wall_cycle_{cfg.physics}',
+            'evidence_level':'L1','hardware_motion':False,
             'seed':seed,'teacher_style':teacher_style,'updates':updates,
             'ppo_steps':updates*pcfg.steps_per_update,
             'teacher_samples':len(O_demo),'teacher_return_mean':float(np.mean(teacher_rets)),
@@ -244,14 +269,22 @@ def main():
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--updates',type=int,default=60);p.add_argument('--seed',type=int,default=0)
     p.add_argument('--teacher-episodes',type=int,default=120)
-    p.add_argument('--teacher-style',choices=('technique','flat'),default='technique',
+    p.add_argument('--teacher-style',choices=('technique','flat','legacy_transport'),default='technique',
                    help="technique = meet the wall tilted, flatten; flat = control group (no tilt)")
     p.add_argument('--steps-per-update',type=int,default=1024)
+    p.add_argument('--test-episodes',type=int,default=100)
+    p.add_argument('--val-episodes',type=int,default=40)
+    p.add_argument('--cosim-test-episodes',type=int,default=30)
+    p.add_argument('--eval-every',type=int,default=10)
     p.add_argument('--no-arm',action='store_true',help='skip the MuJoCo reachability executor (faster, less faithful)')
     a=p.parse_args()
-    cfg=CycleConfig(use_arm=not a.no_arm)
+    cfg=CycleConfig(use_arm=not a.no_arm, physics='v0.5', tool_profile='lab_20260922',
+                    lift_wall_fraction=.75)
     r=train(a.out,a.updates,a.seed,a.teacher_episodes,cfg=cfg,teacher_style=a.teacher_style,
-            steps_per_update=a.steps_per_update, log=lambda x: print(x, flush=True))
+            steps_per_update=a.steps_per_update, test_episodes=a.test_episodes,
+            val_episodes=a.val_episodes, cosim_test_episodes=a.cosim_test_episodes,
+            eval_every=a.eval_every, hidden=(256,256), experiment_name='wall_cycle_v0.5_p1',
+            log=lambda x: print(x, flush=True))
     print(json.dumps({'selected':r['selected_checkpoint'],'test':r['test']},ensure_ascii=False,indent=2))
 
 

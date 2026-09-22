@@ -1,0 +1,35 @@
+{
+ "evidence_level": "L1",
+ "hardware_motion": false,
+ "seed": 20005,
+ "initial_distribution": "mixed_test",
+ "driver": "experiments\\2026-09-22_wall_cycle_v05\\raw\\p1_training\\policy.npz",
+ "return": -49.50396025579331,
+ "success": false,
+ "metrics": {
+  "coverage": 0.35135135135135137,
+  "mean_thickness_mm": 1.853728825740059,
+  "rmse_mm": 2.2421957939793353,
+  "p95_error_mm": 3.18399100216993,
+  "under_frac": 0.42804967129291455,
+  "over_frac": 0.2205989773557341,
+  "roughness_mm": 0.9849765354455134,
+  "blade_load_ml": 4.030866280107616,
+  "waste_frac": 0.37523393202721184
+ },
+ "cycles": 20,
+ "reloads": 9,
+ "unreachable_strokes": 5,
+ "mode_counts": {
+  "DEPOSIT": 9,
+  "REUSE": 0,
+  "LEVEL": 11,
+  "RESCAN": 0,
+  "FINISH": 0
+ },
+ "pitch_start_deg_mean": 13.668229888786179,
+ "frames": 3144,
+ "move_frames": 2512,
+ "move_frames_near_wall": 0,
+ "note": "stroke frames: joint angles from MuJoCo co-simulation; approach/lift: planned poses; load/carry/free-space moves: illustrative joint interpolation because the feed station path is not yet solved by the arm planner"
+}

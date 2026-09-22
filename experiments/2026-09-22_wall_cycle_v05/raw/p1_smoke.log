@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\VLA\dummy_arm\dummy_loop\wall_cycle\train.py", line 289, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "D:\VLA\dummy_arm\dummy_loop\wall_cycle\train.py", line 281, in main
+    r=train(a.out,a.updates,a.seed,a.teacher_episodes,cfg=cfg,teacher_style=a.teacher_style,
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\VLA\dummy_arm\dummy_loop\wall_cycle\train.py", line 164, in train
+    bc_mse = behaviour_clone(agent, O_demo, A_demo, log=log)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\VLA\dummy_arm\dummy_loop\wall_cycle\train.py", line 71, in behaviour_clone
+    d = 2*(mu-actions)*weights/len(x)
+        ~~~~~~~~~~~~~~^~~~~~~~
+ValueError: operands could not be broadcast together with shapes (304,14) (13,) 

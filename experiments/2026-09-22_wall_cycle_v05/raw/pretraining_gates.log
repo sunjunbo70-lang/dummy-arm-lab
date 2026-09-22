@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "D:\VLA\dummy_arm\tools\simulation\wall_cycle_v05_checks.py", line 8, in <module>
+    from dummy_loop.wall_cycle.area import load_work_area
+ModuleNotFoundError: No module named 'dummy_loop'

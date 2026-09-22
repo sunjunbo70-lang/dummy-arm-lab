@@ -1,0 +1,157 @@
+test_end_is_bare_shaft (test_dummy_v2_model.DummyV2ModelTest.test_end_is_bare_shaft) ... ok
+test_fk_equals_firmware_solvefk (test_dummy_v2_model.DummyV2ModelTest.test_fk_equals_firmware_solvefk) ... ok
+test_home_matches_firmware_numbers (test_dummy_v2_model.DummyV2ModelTest.test_home_matches_firmware_numbers) ... ok
+test_limits_and_actuators_follow_v2 (test_dummy_v2_model.DummyV2ModelTest.test_limits_and_actuators_follow_v2) ... ok
+test_masses_are_plausible_and_positive (test_dummy_v2_model.DummyV2ModelTest.test_masses_are_plausible_and_positive) ... ok
+test_mesh_hashes_match_provenance (test_dummy_v2_model.DummyV2ModelTest.test_mesh_hashes_match_provenance) ... ok
+test_dimensions_and_tcp (test_lab_tool.LabToolTests.test_dimensions_and_tcp) ... ok
+test_drawing_datums_and_adapter_stack (test_lab_tool.LabToolTests.test_drawing_datums_and_adapter_stack) ... ok
+test_export_roundtrip (test_lab_tool.LabToolTests.test_export_roundtrip) ... ok
+test_fixed_mass_is_not_lost_to_explicit_link_inertia (test_lab_tool.LabToolTests.test_fixed_mass_is_not_lost_to_explicit_link_inertia) ... ok
+test_j6_stationary_housing_rotating_tool (test_lab_tool.LabToolTests.test_j6_stationary_housing_rotating_tool) ... ok
+test_joint_and_actuator_limits_and_dynamics (test_lab_tool.LabToolTests.test_joint_and_actuator_limits_and_dynamics) ... ok
+test_legacy_and_invalid_variants (test_lab_tool.LabToolTests.test_legacy_and_invalid_variants) ... ok
+test_arm_discards_preview_then_streams_and_stops (test_live_control.LiveTests.test_arm_discards_preview_then_streams_and_stops) ... ok
+test_auto_manual_override_rejected_and_stop_cancels (test_live_control.LiveTests.test_auto_manual_override_rejected_and_stop_cancels) ... ok
+test_bad_values_and_unexpected_motion_rejected (test_live_control.LiveTests.test_bad_values_and_unexpected_motion_rejected) ... ok
+test_connect_and_preview_never_write (test_live_control.LiveTests.test_connect_and_preview_never_write) ... ok
+test_home_replaces_auto_and_stops_when_complete (test_live_control.LiveTests.test_home_replaces_auto_and_stops_when_complete) ... ok
+test_linear_interiors_and_speed_change_have_no_jump (test_live_control.LiveTests.test_linear_interiors_and_speed_change_have_no_jump) ... ok
+test_native_frame_deadline_rejects_partial_stale_read (test_live_control.LiveTests.test_native_frame_deadline_rejects_partial_stale_read) ... ok
+test_pose_sequences_have_expected_order_and_final_angles (test_live_control.LiveTests.test_pose_sequences_have_expected_order_and_final_angles) ... ok
+test_rate_and_lead_bounded_under_stalled_feedback (test_live_control.LiveTests.test_rate_and_lead_bounded_under_stalled_feedback) ... ok
+test_speed_changes_slew_not_lead_envelope (test_live_control.LiveTests.test_speed_changes_slew_not_lead_envelope) ... ok
+test_stale_ui_cancels_native_and_pending_pose (test_live_control.LiveTests.test_stale_ui_cancels_native_and_pending_pose) ... ok
+test_stop_cancels_pending_pose (test_live_control.LiveTests.test_stop_cancels_pending_pose) ... ok
+test_sweep_covers_full_envelope_and_keeps_running (test_live_control.LiveTests.test_sweep_covers_full_envelope_and_keeps_running) ... ok
+test_telemetry_loss_stops_and_disconnects (test_live_control.LiveTests.test_telemetry_loss_stops_and_disconnects) ... ok
+test_ui_heartbeat_loss_stops (test_live_control.LiveTests.test_ui_heartbeat_loss_stops) ... ok
+test_autonomous_motion_blocked (test_loop.ProtocolTests.test_autonomous_motion_blocked) ... ok
+test_exact_shape (test_loop.ProtocolTests.test_exact_shape) ... ok
+test_interleaved_queue_reply (test_loop.ProtocolTests.test_interleaved_queue_reply) ... ok
+test_readonly_and_split_frames (test_loop.ProtocolTests.test_readonly_and_split_frames) ... ok
+test_studio_slider_wire_format (test_loop.ProtocolTests.test_studio_slider_wire_format) ... ok
+test_timeout (test_loop.ProtocolTests.test_timeout) ... ok
+test_usb_and_uart_mode_handshake (test_loop.ProtocolTests.test_usb_and_uart_mode_handshake) ... ok
+test_limit (test_loop.SafetyTests.test_limit) ... ok
+test_nan (test_loop.SafetyTests.test_nan) ... ok
+test_speed (test_loop.SafetyTests.test_speed) ... ok
+test_stale (test_loop.SafetyTests.test_stale) ... ok
+test_unknown_profile (test_loop.SafetyTests.test_unknown_profile) ... ok
+test_valid (test_loop.SafetyTests.test_valid) ... ok
+test_wrong_shape (test_loop.SafetyTests.test_wrong_shape) ... ok
+test_action_is_integrated_not_teleported (test_loop.SimulationTests.test_action_is_integrated_not_teleported) ... ok
+test_insufficient_goal_diversity_rejected (test_loop.SimulationTests.test_insufficient_goal_diversity_rejected) ... ok
+test_train_reload_closed_loop_unseen_goal (test_loop.SimulationTests.test_train_reload_closed_loop_unseen_goal) ... ok
+test_each_verification_flag_blocks (test_profile_v2.GateTests.test_each_verification_flag_blocks) ... ok
+test_fixture_loads (test_profile_v2.GateTests.test_fixture_loads) ... ok
+test_sign_must_be_plus_minus_one (test_profile_v2.GateTests.test_sign_must_be_plus_minus_one) ... ok
+test_wrong_schema_version_rejected (test_profile_v2.GateTests.test_wrong_schema_version_rejected) ... ok
+test_missing_provenance_for_calibrated_field_rejected (test_profile_v2.ProvenanceTests.test_missing_provenance_for_calibrated_field_rejected) ... ok
+test_provenance_entry_needs_method_date_and_evidence (test_profile_v2.ProvenanceTests.test_provenance_entry_needs_method_date_and_evidence) ... ok
+test_legacy_unverified_profile_still_refuses (test_profile_v2.SchemaFileTests.test_legacy_unverified_profile_still_refuses)
+v1 ��������ȱ schema_version��������Ǩ����ʾʧ�ܡ� ... ok
+test_schema_file_exists_and_is_valid_json (test_profile_v2.SchemaFileTests.test_schema_file_exists_and_is_valid_json) ... ok
+test_template_is_valid_json_and_declares_v2 (test_profile_v2.SchemaFileTests.test_template_is_valid_json_and_declares_v2) ... ok
+test_template_refuses_to_load (test_profile_v2.SchemaFileTests.test_template_refuses_to_load)
+ģ��ȫ�� null���������ʧ�ܡ���������Ϊ���ھͱ����ɿ������á� ... ok
+test_incomplete_timing_values_rejected (test_profile_v2.TimingContractTests.test_incomplete_timing_values_rejected) ... ok
+test_missing_timing_block_rejected (test_profile_v2.TimingContractTests.test_missing_timing_block_rejected) ... ok
+test_per_axis_freshness_available_needs_no_bound (test_profile_v2.TimingContractTests.test_per_axis_freshness_available_needs_no_bound) ... ok
+test_unknown_per_axis_freshness_requires_latency_bound (test_profile_v2.TimingContractTests.test_unknown_per_axis_freshness_requires_latency_bound)
+�ò����������ʱ��ʱ������д��ʵ���ӳ��Ͻ硣 ... ok
+test_all_joint_frames_match_studio_on_multiple_poses (test_studio_articulation.ArticulationTests.test_all_joint_frames_match_studio_on_multiple_poses) ... skipped '��Ҫ DummyStudio ��ȡ���ݣ����ֿⲻ�ַ����� models/README.md ���ؽ�˵��'
+test_covers_and_motors_stay_on_same_rigid_link (test_studio_articulation.ArticulationTests.test_covers_and_motors_stay_on_same_rigid_link) ... skipped '��Ҫ DummyStudio ��ȡ���ݣ����ֿⲻ�ַ����� models/README.md ���ؽ�˵��'
+test_j5_only_moves_wrist_not_forearm_or_stator (test_studio_articulation.ArticulationTests.test_j5_only_moves_wrist_not_forearm_or_stator) ... skipped '��Ҫ DummyStudio ��ȡ���ݣ����ֿⲻ�ַ����� models/README.md ���ؽ�˵��'
+test_fallback_moves_wrist_in_the_same_direction (test_studio_fallback.StudioFallbackTests.test_fallback_moves_wrist_in_the_same_direction) ... ok
+test_missing_meshes_are_reported_clearly (test_studio_fallback.StudioFallbackTests.test_missing_meshes_are_reported_clearly) ... ok
+test_reference_model_assets_complete (test_studio_fallback.StudioFallbackTests.test_reference_model_assets_complete) ... ok
+test_sign_map_matches_both_model_files (test_studio_fallback.StudioFallbackTests.test_sign_map_matches_both_model_files) ... ok
+test_continuous_action_supports_diagonal_curve_and_rotation (test_wall_cycle.CycleEnvironmentTests.test_continuous_action_supports_diagonal_curve_and_rotation) ... ok
+test_policy_observation_does_not_read_true_wall_between_scans (test_wall_cycle.CycleEnvironmentTests.test_policy_observation_does_not_read_true_wall_between_scans) ... ok
+test_record_contains_full_cycle_and_work_frames (test_wall_cycle.CycleEnvironmentTests.test_record_contains_full_cycle_and_work_frames) ... ok
+test_load_shape_and_amount_vary (test_wall_cycle.MaterialTests.test_load_shape_and_amount_vary) ... ok
+test_random_load_is_spatial_and_volume_is_conserved (test_wall_cycle.MaterialTests.test_random_load_is_spatial_and_volume_is_conserved) ... ok
+test_coarse_map_pools_any_wall_shape (test_wall_cycle_v03.ActionAndObservation.test_coarse_map_pools_any_wall_shape)
+v0.2 returned the UNPOOLED map when the grid was not a multiple of 2x4. ... ok
+test_v03_action_has_a_free_pitch_profile (test_wall_cycle_v03.ActionAndObservation.test_v03_action_has_a_free_pitch_profile) ... ok
+test_v03_force_range_reaches_below_one_newton_but_v02_range_is_unchanged (test_wall_cycle_v03.ActionAndObservation.test_v03_force_range_reaches_below_one_newton_but_v02_range_is_unchanged) ... ok
+test_projection_reduces_tilt_and_never_executes_an_infeasible_stroke (test_wall_cycle_v03.ActionProjection.test_projection_reduces_tilt_and_never_executes_an_infeasible_stroke) ... ok
+test_a_central_stroke_executes_with_bounded_tracking_and_exact_volume (test_wall_cycle_v03.ArmCoSimulation.test_a_central_stroke_executes_with_bounded_tracking_and_exact_volume) ... ok
+test_planner_rejects_a_stroke_far_outside_the_reach (test_wall_cycle_v03.ArmCoSimulation.test_planner_rejects_a_stroke_far_outside_the_reach) ... ok
+test_tilted_contact_pose_keeps_the_trailing_edge_out_of_the_wall (test_wall_cycle_v03.ArmCoSimulation.test_tilted_contact_pose_keeps_the_trailing_edge_out_of_the_wall) ... ok
+test_blade_flow_does_not_wrap_around (test_wall_cycle_v03.MortarPhysics.test_blade_flow_does_not_wrap_around)
+v0.2 smoothed the blade with np.roll: material at one end reappeared at the other. ... ok
+test_drainage_drops_at_a_free_edge_and_keeps_at_a_sealed_one (test_wall_cycle_v03.MortarPhysics.test_drainage_drops_at_a_free_edge_and_keeps_at_a_sealed_one) ... ok
+test_more_force_leaves_a_thinner_layer (test_wall_cycle_v03.MortarPhysics.test_more_force_leaves_a_thinner_layer)
+v0.2 had the sign reversed (2 N -> 2.03 mm, 15 N -> 2.38 mm). ... ok
+test_no_parameter_prescribes_a_pitch (test_wall_cycle_v03.MortarPhysics.test_no_parameter_prescribes_a_pitch)
+The whole point of plan B: the model must not contain the answer. ... ok
+test_squeezed_excess_escapes_towards_the_wider_edge (test_wall_cycle_v03.MortarPhysics.test_squeezed_excess_escapes_towards_the_wider_edge) ... ok
+test_stable_thickness_on_a_vertical_face (test_wall_cycle_v03.MortarPhysics.test_stable_thickness_on_a_vertical_face) ... ok
+test_strokes_conserve_volume_exactly (test_wall_cycle_v03.MortarPhysics.test_strokes_conserve_volume_exactly) ... ok
+test_tilt_matters_through_physics_for_a_stiff_mortar (test_wall_cycle_v03.MortarPhysics.test_tilt_matters_through_physics_for_a_stiff_mortar)
+Emergent, not prescribed: with tau_y >= 250 Pa a tilted blade wastes less than a flat one. ... ok
+test_recorded_ppo_policy_gives_identical_episodes (test_wall_cycle_v03.V02StaysReproducible.test_recorded_ppo_policy_gives_identical_episodes) ... ok
+test_v02_teacher_and_observation_unchanged (test_wall_cycle_v03.V02StaysReproducible.test_v02_teacher_and_observation_unchanged) ... ok
+test_square_is_derived_by_the_users_rule (test_wall_cycle_v03.WorkArea.test_square_is_derived_by_the_users_rule) ... ok
+test_face_up_transport_retains_more_than_vertical (test_wall_cycle_v05.FeedAndTransport.test_face_up_transport_retains_more_than_vertical) ... ok
+test_feed_uses_finite_reservoir_and_conserves_volume (test_wall_cycle_v05.FeedAndTransport.test_feed_uses_finite_reservoir_and_conserves_volume) ... ok
+test_transport_converges_with_time_step (test_wall_cycle_v05.FeedAndTransport.test_transport_converges_with_time_step) ... ok
+test_executor_scene_uses_lab_tool (test_wall_cycle_v05.LabProfile.test_executor_scene_uses_lab_tool) ... ok
+test_action_carries_explicit_face_up_score (test_wall_cycle_v05.V05ActionAndInterface.test_action_carries_explicit_face_up_score) ... ok
+test_wall_preference_is_nominal_or_randomised_inside_constraint (test_wall_cycle_v05.V05ActionAndInterface.test_wall_preference_is_nominal_or_randomised_inside_constraint) ... ok
+test_viewer_infers_256_wide_checkpoint (test_wall_cycle_v05.ViewerPolicyLoading.test_viewer_infers_256_wide_checkpoint) ... ok
+test_far_blade_changes_nothing (test_wall_rl.MaterialTests.test_far_blade_changes_nothing) ... ok
+test_flat_blade_drops_the_load_it_cannot_hold (test_wall_rl.MaterialTests.test_flat_blade_drops_the_load_it_cannot_hold) ... ok
+test_flat_blade_scrapes_material_back_onto_the_tool (test_wall_rl.MaterialTests.test_flat_blade_scrapes_material_back_onto_the_tool) ... ok
+test_reload_tops_up_to_one_load_and_counts_supply (test_wall_rl.MaterialTests.test_reload_tops_up_to_one_load_and_counts_supply) ... ok
+test_thickness_follows_trailing_edge_gap (test_wall_rl.MaterialTests.test_thickness_follows_trailing_edge_gap) ... ok
+test_tilting_the_blade_lets_it_hold_more (test_wall_rl.MaterialTests.test_tilting_the_blade_lets_it_hold_more)
+���ǡ�ΪʲôҪ�������ٷ�ƽ����ģ�������㣺Ш�������温������ ... ok
+test_volume_is_conserved (test_wall_rl.MaterialTests.test_volume_is_conserved) ... ok
+test_ppo_learns_a_toy_reaching_task (test_wall_rl.PPOTests.test_ppo_learns_a_toy_reaching_task) ... ok
+test_save_and_load_round_trip (test_wall_rl.PPOTests.test_save_and_load_round_trip) ... ok
+test_area_is_the_union_of_the_bands (test_wall_rl.SessionTests.test_area_is_the_union_of_the_bands) ... ok
+test_three_strokes_cover_more_area_than_one_and_keep_the_books (test_wall_rl.SessionTests.test_three_strokes_cover_more_area_than_one_and_keep_the_books) ... ok
+test_unreachable_bands_are_dropped_not_attempted (test_wall_rl.SessionTests.test_unreachable_bands_are_dropped_not_attempted) ... ok
+test_action_validation (test_wall_rl.StrokeEnvTests.test_action_validation) ... ok
+test_flat_script_is_worse_than_the_worker_technique (test_wall_rl.StrokeEnvTests.test_flat_script_is_worse_than_the_worker_technique)
+�����飺��ǽǰ�ͷ�ƽ �� ����ס�ϣ����öࡢ���ǲ���ǡ��ַ����á��ڷ��������㡣 ... ok
+test_material_only_moves_while_the_blade_is_close (test_wall_rl.StrokeEnvTests.test_material_only_moves_while_the_blade_is_close) ... ok
+test_pitch_puts_the_lower_edge_closer_to_the_wall (test_wall_rl.StrokeEnvTests.test_pitch_puts_the_lower_edge_closer_to_the_wall) ... ok
+test_reset_returns_to_ready_pose_with_a_fresh_load (test_wall_rl.StrokeEnvTests.test_reset_returns_to_ready_pose_with_a_fresh_load) ... ok
+test_scripted_stroke_lays_a_layer_and_beats_a_random_policy (test_wall_rl.StrokeEnvTests.test_scripted_stroke_lays_a_layer_and_beats_a_random_policy)
+��д�ű���**Ԥ���õ�ʾ��**�����Ǻò��ԣ�������Ϲ������ֻ��Ĩ�����ɶ࣬ ... ok
+test_behaviour_clone_reaches_the_scripted_baseline (test_wall_rl.TrainingLoopTests.test_behaviour_clone_reaches_the_scripted_baseline) ... ok
+test_short_training_run_writes_a_record_and_does_not_collapse (test_wall_rl.TrainingLoopTests.test_short_training_run_writes_a_record_and_does_not_collapse) ... ok
+test_action_validation (test_wall_sim.ControllerTests.test_action_validation) ... ok
+test_ik_reaches_patch_with_blade_flat (test_wall_sim.ControllerTests.test_ik_reaches_patch_with_blade_flat) ... ok
+test_joint_speed_is_limited (test_wall_sim.ControllerTests.test_joint_speed_is_limited) ... ok
+test_unreachable_increment_is_rejected_not_half_applied (test_wall_sim.ControllerTests.test_unreachable_increment_is_rejected_not_half_applied) ... ok
+test_record_and_replay_are_identical (test_wall_sim.EpisodeTests.test_record_and_replay_are_identical) ... ok
+test_sequence_gap_is_rejected (test_wall_sim.EpisodeTests.test_sequence_gap_is_rejected) ... ok
+test_undeclared_field_is_rejected (test_wall_sim.EpisodeTests.test_undeclared_field_is_rejected) ... ok
+test_unknown_sample_time_requires_measured_latency_bound (test_wall_sim.EpisodeTests.test_unknown_sample_time_requires_measured_latency_bound) ... ok
+test_assumptions_are_labelled (test_wall_sim.SceneTests.test_assumptions_are_labelled) ... ok
+test_default_tool_is_rigid_without_sliding_joint (test_wall_sim.SceneTests.test_default_tool_is_rigid_without_sliding_joint) ... ok
+test_exported_scene_opens_standalone (test_wall_sim.SceneTests.test_exported_scene_opens_standalone) ... ok
+test_joint_limits_are_v2_firmware (test_wall_sim.SceneTests.test_joint_limits_are_v2_firmware) ... ok
+test_only_blade_and_wall_collide (test_wall_sim.SceneTests.test_only_blade_and_wall_collide) ... ok
+test_reference_model_file_not_modified (test_wall_sim.SceneTests.test_reference_model_file_not_modified) ... ok
+test_rigid_trowel_geometry (test_wall_sim.SceneTests.test_rigid_trowel_geometry) ... ok
+test_spring_tool_mounts_on_bare_shaft_end_along_j6_axis (test_wall_sim.SceneTests.test_spring_tool_mounts_on_bare_shaft_end_along_j6_axis) ... ok
+test_out_of_ctrlrange_target_is_rejected_not_clamped (test_wall_sim.SimBackendGuardTests.test_out_of_ctrlrange_target_is_rejected_not_clamped) ... ok
+test_latency_does_not_trap_teacher (test_wall_sim.TaskTests.test_latency_does_not_trap_teacher) ... ok
+test_privileged_observations_declared (test_wall_sim.TaskTests.test_privileged_observations_declared) ... ok
+test_probe_and_servo_recover_misplaced_wall (test_wall_sim.TaskTests.test_probe_and_servo_recover_misplaced_wall) ... ok
+test_rigid_tool_needs_force_loop (test_wall_sim.TaskTests.test_rigid_tool_needs_force_loop) ... ok
+test_spring_tool_nominal_teacher_covers_region_within_force_window (test_wall_sim.TaskTests.test_spring_tool_nominal_teacher_covers_region_within_force_window) ... ok
+test_callbacks_do_not_change_physics_or_material (test_wall_visualize.VisualizeTests.test_callbacks_do_not_change_physics_or_material) ... ok
+test_camera_follows_joint_and_tcp_unchanged (test_wrist_camera.WristCameraTests.test_camera_follows_joint_and_tcp_unchanged) ... ok
+test_holes_open_and_45mm_apart (test_wrist_camera.WristCameraTests.test_holes_open_and_45mm_apart) ... ok
+
+----------------------------------------------------------------------
+Ran 141 tests in 17.329s
+
+OK (skipped=3)

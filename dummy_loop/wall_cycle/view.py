@@ -37,6 +37,10 @@ PHASE_TEXT = {
     'TOOL_INSPECT': 'check load', 'WALL_APPROACH': 'approach: level -> stand blade up',
     'CONTACT_ACQUIRE': 'touch: trailing edge first', 'WORK_STEP': 'stroke', 'WORK': 'stroke done',
     'LIFT': 'lift', 'RETREAT': 'retreat', 'UNREACHABLE': 'REJECTED: arm cannot do this stroke',
+    'LOAD': 'move to feed board', 'SCOOP': 'scoop mortar',
+    'LIFT_FROM_FEED': 'lift from feed board', 'CARRY': 'carry face-up',
+    'PRECONTACT': 'pre-contact waypoint', 'ROTATE_TO_WALL': 'rotate near wall',
+    'SEPARATE': 'separate from wall', 'RECOVER_RETURN': 'recover / return',
     'FINISH': 'finish check', 'move': 'move',
 }
 
@@ -47,15 +51,36 @@ def load_pose(ex: ArmExecutor):
     return q
 
 
-def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique', max_deg_per_frame=2.0):
+def load_policy(env, path):
+    """Load a PPO checkpoint without assuming the training MLP width.
+
+    Checkpoints predate embedded model metadata, so infer the hidden widths from the
+    policy weight matrices. This keeps v0.2/v0.3 policies compatible with v0.5 P1.
+    """
+    from ..wall.ppo import PPO, PPOConfig
+    with np.load(path, allow_pickle=False) as z:
+        indices = sorted(int(k.split('_')[1]) for k in z.files if k.startswith('pi_'))
+        if not indices or indices != list(range(len(indices))) or len(indices) % 2:
+            raise ValueError(f'invalid PPO checkpoint layout: {path}')
+        layers = len(indices) // 2
+        weights = [z[f'pi_{i}'] for i in range(layers)]
+        if weights[0].shape[0] != env.obs_dim or weights[-1].shape[1] != env.act_dim:
+            raise ValueError(f'policy dimensions do not match {env.cfg.physics}: '
+                             f'{weights[0].shape[0]}->{weights[-1].shape[1]} vs '
+                             f'{env.obs_dim}->{env.act_dim}')
+        hidden = tuple(int(w.shape[1]) for w in weights[:-1])
+    return PPO(env.obs_dim, env.act_dim, PPOConfig(hidden=hidden)).load(path)
+
+
+def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique',
+           max_deg_per_frame=2.0, initial_mix=False):
     """Run one episode with the arm executor and return display frames (numpy arrays)."""
     from .train import make_env
-    env = make_env(cfg, seed, teacher_style, 'cosim', initial_mix=False, record=True)
+    env = make_env(cfg, seed, teacher_style, 'cosim', initial_mix=initial_mix, record=True)
     ex = env.executor
     agent = None
     if policy is not None:
-        from ..wall.ppo import PPO, PPOConfig
-        agent = PPO(env.obs_dim, env.act_dim, PPOConfig(hidden=(128, 128))).load(policy)
+        agent = load_policy(env, policy)
     obs = env.reset(); done = False; total = 0.0
     while not done:
         a = env.teacher_action() if agent is None else agent.act(obs, deterministic=True)[0]
@@ -73,8 +98,17 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique', max
         if ph in ('SCAN', 'SCAN_RETURN', 'DECIDE', 'FINISH', 'UNREACHABLE'):
             keys.append(dict(phase=ph, q=keys[-1]['q'] if (keys and ph in ('DECIDE', 'UNREACHABLE', 'FINISH'))
                              else ex.q_scan, pitch=0.0, **base))
-        elif ph in ('LOAD_APPROACH', 'DISPENSE', 'TOOL_INSPECT'):
+        elif ph in ('LOAD_APPROACH', 'DISPENSE', 'TOOL_INSPECT', 'LOAD', 'SCOOP', 'LIFT_FROM_FEED'):
             keys.append(dict(phase=ph, q=q_load, pitch=0.0, **base))
+        elif ph == 'CARRY' and plan is not None:
+            # Feed-board routing is not yet solved; display its transition to the first
+            # collision-checked wall waypoint and label the approximation in the report.
+            keys.append(dict(phase=ph, q=plan['q_approach'][0], pitch=0.0, **base))
+        elif ph == 'PRECONTACT' and plan is not None:
+            keys.append(dict(phase=ph, q=plan['q_approach'][1], pitch=0.0, **base))
+        elif ph == 'ROTATE_TO_WALL' and plan is not None:
+            keys.append(dict(phase=ph, q=plan['q_approach'][1],
+                             pitch=np.deg2rad(act.get('pitch_start_deg', 0.0)), **base))
         elif ph == 'WALL_APPROACH' and plan is not None:
             p0 = np.deg2rad(act.get('pitch_start_deg', 0.0))
             keys.append(dict(phase=ph, q=plan['q_approach'][0], pitch=0.0, **base))
@@ -84,8 +118,9 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique', max
                              pitch=np.deg2rad(act.get('pitch_start_deg', 0.0)), **base))
         elif ph == 'WORK_STEP' and 'q' in ev:
             keys.append(dict(phase=ph, q=ev['q'], pitch=np.deg2rad(ev.get('pitch_deg', 0.0)), **base))
-        elif ph in ('LIFT', 'RETREAT') and plan is not None:
-            keys.append(dict(phase=ph, q=plan['q_lift'][0 if ph == 'LIFT' else 1], pitch=0.0, **base))
+        elif ph in ('LIFT', 'RETREAT', 'SEPARATE', 'RECOVER_RETURN') and plan is not None:
+            lift_i = 0 if ph in ('LIFT', 'SEPARATE') else 1
+            keys.append(dict(phase=ph, q=plan['q_lift'][lift_i], pitch=0.0, **base))
     # joint-space interpolation between key poses so nothing jumps on screen
     frames = []
     for k, f in enumerate(keys):
@@ -99,6 +134,7 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique', max
     close = sum(1 for f in frames if f['phase'] == 'move' and not ex.clear_of_wall(f['q']))
     decisions = [e['action'] for e in env.events if e['phase'] == 'DECIDE']
     report = {'evidence_level': 'L1', 'hardware_motion': False, 'seed': seed,
+              'initial_distribution': 'mixed_test' if initial_mix else 'bare',
               'driver': str(policy) if policy is not None else f'teacher:{teacher_style}',
               'return': total, 'success': bool(info['success']), 'metrics': info['metrics'],
               'cycles': info['cycles'], 'reloads': info['reloads'],
@@ -109,7 +145,9 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique', max
                                                      if d['mode'] in ('DEPOSIT', 'REUSE')] or [0])),
               'frames': len(frames), 'move_frames': sum(f['phase'] == 'move' for f in frames),
               'move_frames_near_wall': close, 'config': cfg.to_dict(),
-              'note': 'stroke frames: joint angles from the MuJoCo co-simulation (arm.py execute); approach/lift: planned poses; move: joint interpolation'}
+              'note': 'stroke frames: joint angles from MuJoCo co-simulation; approach/lift: planned poses; '
+                      'load/carry/free-space moves: illustrative joint interpolation because the feed station path '
+                      'is not yet solved by the arm planner'}
     return frames, report
 
 
@@ -308,17 +346,24 @@ def render_png(path: Path, out: Path, indices, size=(960, 640)):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--record', type=Path, help='play an existing rollout.npz')
-    ap.add_argument('--policy', type=Path, help='run this policy (13-dim v0.3 action) and play it')
-    ap.add_argument('--teacher', choices=('technique', 'flat'), help='run the hand-written teacher instead')
+    ap.add_argument('--policy', type=Path, help='run this policy and play it')
+    ap.add_argument('--teacher', choices=('technique', 'flat', 'legacy_transport'),
+                    help='run the hand-written teacher instead')
+    ap.add_argument('--v05', action='store_true', help='use v0.5 lab tool, loading and transport physics')
     ap.add_argument('--seed', type=int, default=3)
     ap.add_argument('--out', type=Path, default=Path('outputs/wall_cycle/replay'))
     ap.add_argument('--no-window', action='store_true', help='only record (and write report.json)')
+    ap.add_argument('--mixed-initial', action='store_true',
+                    help='use the same bare/partial initial-state distribution as evaluation')
     a = ap.parse_args(argv)
     path = a.record
     if path is None:
         from .area import load_work_area
-        cfg = load_work_area(CycleConfig())
-        frames, report = record(cfg, a.seed, a.policy, a.teacher or 'technique')
+        cfg = load_work_area(CycleConfig(physics='v0.5', tool_profile='lab_20260922',
+                                         lift_wall_fraction=.75)
+                             if a.v05 else CycleConfig())
+        frames, report = record(cfg, a.seed, a.policy, a.teacher or 'technique',
+                                initial_mix=a.mixed_initial)
         path = save(frames, report, a.out)
         print(json.dumps({k: v for k, v in report.items() if k != 'config'}, ensure_ascii=False, indent=1))
     if not a.no_window:

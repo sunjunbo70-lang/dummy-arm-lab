@@ -1,0 +1,289 @@
+{
+  "experiment": "wall_cycle_v0.5_pretraining_gates",
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "config": {
+    "physics": "v0.5",
+    "tool_profile": "lab_20260922",
+    "width_m": 0.185,
+    "height_m": 0.185,
+    "scene_wall_distance_m": 0.33,
+    "area_centre_u_m": -0.01,
+    "area_centre_z_m": 0.19,
+    "use_arm": true,
+    "cell_m": 0.005,
+    "target_m": 0.002,
+    "acceptable_low_m": 0.0015,
+    "acceptable_high_m": 0.0025,
+    "blade_length_m": 0.12,
+    "blade_width_m": 0.03,
+    "blade_cell_m": 0.005,
+    "blade_capacity_ml": 30.0,
+    "load_choices_ml": [
+      0.0,
+      12.0,
+      18.0,
+      24.0
+    ],
+    "load_scale_range": [
+      0.8,
+      1.2
+    ],
+    "camera_resolution": [
+      848,
+      480
+    ],
+    "camera_fps": 30,
+    "camera_distance_m": 0.45,
+    "scan_frames": 45,
+    "scan_warmup_frames": 15,
+    "scan_fused_frames": 30,
+    "depth_noise_mm": 0.6,
+    "plane_bias_mm": 0.2,
+    "invalid_base": 0.02,
+    "invalid_edge": 0.15,
+    "extrinsic_translation_mm": 1.0,
+    "extrinsic_rotation_deg": 0.05,
+    "control_hz": 20,
+    "base_steps": 6000,
+    "max_steps": 12000,
+    "extension_steps": 1000,
+    "max_cycles": 80,
+    "max_reload_cycles": 30,
+    "stall_limit": 5,
+    "progress_epsilon": 0.0002,
+    "max_force_N": 40.0,
+    "force_window": [
+      2.0,
+      15.0
+    ],
+    "force_window_v3": [
+      0.5,
+      15.0
+    ],
+    "wall_clearance_m": 0.08,
+    "approach_clearance_m": 0.025,
+    "min_stroke_m": 0.025,
+    "max_stroke_m": 0.16,
+    "speed_range_m_s": [
+      0.02,
+      0.12
+    ],
+    "curve_offset_m": 0.03,
+    "stroke_samples": 28,
+    "mortar_rho": 1900.0,
+    "mortar_tau_y_Pa": 250.0,
+    "mortar_mu_p_Pa_s": 2.0,
+    "lift_wall_fraction": 0.75,
+    "max_pitch_deg": 35.0,
+    "interface_wall_share_range": [
+      0.6,
+      0.9
+    ],
+    "randomize_interface": true,
+    "tool_interface_yield_Pa": 80.0,
+    "feed_board_volume_ml": 600.0,
+    "feed_normal_force_N": 8.0,
+    "feed_scoop_depth_m": 0.006,
+    "feed_scoop_distance_m": 0.09,
+    "feed_scoop_speed_m_s": 0.04,
+    "carry_duration_s": 1.5,
+    "transport_dt_s": 0.02,
+    "transport_relaxation_s": 0.35,
+    "finish_coverage": 0.95,
+    "finish_rmse_mm": 0.5,
+    "finish_p95_mm": 1.0,
+    "finish_confidence": 0.95
+  },
+  "reach": {
+    "shape": [
+      7,
+      7,
+      8,
+      6,
+      2
+    ],
+    "feasible_fraction": 0.7740221088435374,
+    "pitch_deg": [
+      0.0,
+      4.0,
+      8.0,
+      12.0,
+      20.0,
+      30.0
+    ],
+    "feasible_by_pitch": [
+      0.9285714285714286,
+      0.9183673469387755,
+      0.8686224489795918,
+      0.8303571428571429,
+      0.764030612244898,
+      0.33418367346938777
+    ],
+    "work_points_any_feasible": 1.0,
+    "work_points_all_directions_at_zero_pitch": 0.6530612244897959,
+    "meta": {
+      "width_m": 0.185,
+      "height_m": 0.185,
+      "scene_wall_distance_m": 0.33,
+      "area_centre_u_m": -0.01,
+      "area_centre_z_m": 0.19,
+      "tool_profile": "lab_20260922",
+      "step_m": 0.03,
+      "stroke_len_m": 0.02,
+      "built_s": 234.7
+    }
+  },
+  "material_sweep": [
+    {
+      "tool_interface_yield_Pa": 50.0,
+      "face_up_score": -1.0,
+      "carry_loss_fraction_mean": 0.4001056892798015,
+      "carry_loss_fraction_std": 0.0
+    },
+    {
+      "tool_interface_yield_Pa": 50.0,
+      "face_up_score": 0.0,
+      "carry_loss_fraction_mean": 0.2665265330656724,
+      "carry_loss_fraction_std": 0.0
+    },
+    {
+      "tool_interface_yield_Pa": 50.0,
+      "face_up_score": 0.5,
+      "carry_loss_fraction_mean": 0.19083279620259166,
+      "carry_loss_fraction_std": 2.7755575615628914e-17
+    },
+    {
+      "tool_interface_yield_Pa": 50.0,
+      "face_up_score": 1.0,
+      "carry_loss_fraction_mean": 0.0,
+      "carry_loss_fraction_std": 0.0
+    },
+    {
+      "tool_interface_yield_Pa": 80.0,
+      "face_up_score": -1.0,
+      "carry_loss_fraction_mean": 0.2087317755584622,
+      "carry_loss_fraction_std": 0.0
+    },
+    {
+      "tool_interface_yield_Pa": 80.0,
+      "face_up_score": 0.0,
+      "carry_loss_fraction_mean": 0.11581754621881712,
+      "carry_loss_fraction_std": 0.0
+    },
+    {
+      "tool_interface_yield_Pa": 80.0,
+      "face_up_score": 0.5,
+      "carry_loss_fraction_mean": 0.05719412916134166,
+      "carry_loss_fraction_std": 6.938893903907228e-18
+    },
+    {
+      "tool_interface_yield_Pa": 80.0,
+      "face_up_score": 1.0,
+      "carry_loss_fraction_mean": 0.0,
+      "carry_loss_fraction_std": 0.0
+    },
+    {
+      "tool_interface_yield_Pa": 120.0,
+      "face_up_score": -1.0,
+      "carry_loss_fraction_mean": 0.05784770241813385,
+      "carry_loss_fraction_std": 6.938893903907228e-18
+    },
+    {
+      "tool_interface_yield_Pa": 120.0,
+      "face_up_score": 0.0,
+      "carry_loss_fraction_mean": 0.0048725456729842905,
+      "carry_loss_fraction_std": 8.673617379884035e-19
+    },
+    {
+      "tool_interface_yield_Pa": 120.0,
+      "face_up_score": 0.5,
+      "carry_loss_fraction_mean": 0.0,
+      "carry_loss_fraction_std": 0.0
+    },
+    {
+      "tool_interface_yield_Pa": 120.0,
+      "face_up_score": 1.0,
+      "carry_loss_fraction_mean": 0.0,
+      "carry_loss_fraction_std": 0.0
+    }
+  ],
+  "teacher_face_up": {
+    "return_mean": -19.93353754452185,
+    "coverage_mean": 0.2528122717311907,
+    "rmse_mm_mean": 1.7532598609230852,
+    "p95_error_mm_mean": 2.6191038472821857,
+    "waste_frac_mean": 0.13815673833156733,
+    "carry_loss_frac_mean": 0.0,
+    "cycles_mean": 33.34,
+    "steps_mean": 6386.33,
+    "unreachable_mean": 0.0,
+    "projected_mean": 0.24,
+    "success_rate": 0.0,
+    "max_volume_error_m3": 3.7269449679189215e-20,
+    "episodes": 100,
+    "seeds": [
+      20000,
+      20099
+    ],
+    "deposit_pitch_start_deg_mean": 14.17817679558011,
+    "deposit_pitch_end_deg_mean": 4.6187845303867405,
+    "deposit_pitch_start_deg_quartiles": [
+      0.0,
+      25.0,
+      25.0
+    ],
+    "contact_force_N_mean": 1.0000000000000002,
+    "carry_face_up_mean": 1.0,
+    "path_heading_deg_quartiles": [
+      45.0,
+      90.0,
+      132.56524349780986
+    ],
+    "path_family_fraction": {
+      "horizontal": 0.14337132573485303,
+      "diagonal": 0.6862627474505099,
+      "vertical": 0.17036592681463708
+    },
+    "executor": "table"
+  },
+  "teacher_legacy_transport": {
+    "return_mean": -21.005016211085437,
+    "coverage_mean": 0.27178962746530316,
+    "rmse_mm_mean": 1.6470111063939163,
+    "p95_error_mm_mean": 2.5384041176387293,
+    "waste_frac_mean": 0.29365874331123276,
+    "carry_loss_frac_mean": 0.2365121039390635,
+    "cycles_mean": 27.4,
+    "steps_mean": 5316.81,
+    "unreachable_mean": 0.0,
+    "projected_mean": 0.38,
+    "success_rate": 0.0,
+    "max_volume_error_m3": 1.2197274440461925e-19,
+    "episodes": 100,
+    "seeds": [
+      20000,
+      20099
+    ],
+    "deposit_pitch_start_deg_mean": 14.328703703703704,
+    "deposit_pitch_end_deg_mean": 4.69212962962963,
+    "deposit_pitch_start_deg_quartiles": [
+      0.0,
+      25.0,
+      25.0
+    ],
+    "contact_force_N_mean": 1.0000000000000002,
+    "carry_face_up_mean": -1.0,
+    "path_heading_deg_quartiles": [
+      44.792409224038,
+      90.0,
+      135.0
+    ],
+    "path_family_fraction": {
+      "horizontal": 0.20693430656934306,
+      "diagonal": 0.6014598540145986,
+      "vertical": 0.19160583941605838
+    },
+    "executor": "table"
+  }
+}

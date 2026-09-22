@@ -50,8 +50,12 @@ class StrokePlan:
 
 def scene_config(cfg: CycleConfig) -> SceneConfig:
     """Wall frame origin = centre of the work square (wall_center_z = square centre height)."""
-    return SceneConfig(wall_distance=cfg.scene_wall_distance_m, wall_lateral=cfg.area_centre_u_m,
-                       wall_center_z=cfg.area_centre_z_m, wall_size=(1.2, 1.0))
+    overrides = dict(wall_distance=cfg.scene_wall_distance_m, wall_lateral=cfg.area_centre_u_m,
+                     wall_center_z=cfg.area_centre_z_m, wall_size=(1.2, 1.0))
+    if cfg.tool_profile == 'lab_20260922':
+        from ..wall.lab_tool import scene_config as lab_scene_config
+        return lab_scene_config(**overrides)
+    return SceneConfig(**overrides)
 
 
 class ArmExecutor:

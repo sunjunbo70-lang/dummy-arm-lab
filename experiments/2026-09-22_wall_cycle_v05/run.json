@@ -1,0 +1,17 @@
+{
+  "experiment_id": "2026-09-22_wall_cycle_v05",
+  "status": "running",
+  "purpose": "v0.5 loading/carry/rotation hierarchy and P1 PPO manager",
+  "source_version": "codex/wall-cycle-v05",
+  "command": [],
+  "environment_file": "requirements/dev.txt",
+  "config_file": "dummy_loop/wall_cycle/config.py",
+  "seed": 0,
+  "data_split": "test 20000+, validation 30000+",
+  "hardware": {"motion": false, "simulator": "MuJoCo 3.13.0"},
+  "units": "SI internally; reporting mm, mL, N, degrees",
+  "metrics": {},
+  "artifacts": [],
+  "limitations": ["2.5-D mortar model", "unmeasured material and D435 parameters", "feed-station route is illustrative in replay"],
+  "hardware_motion": false
+}

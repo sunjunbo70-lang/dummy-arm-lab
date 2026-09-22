@@ -1,0 +1,569 @@
+{
+  "experiment": "wall_cycle_v0.5_p1",
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "seed": 0,
+  "teacher_style": "technique",
+  "updates": 2,
+  "ppo_steps": 256,
+  "teacher_samples": 2576,
+  "teacher_return_mean": -20.022648921455946,
+  "behaviour_clone_mse": 0.0012454103626543924,
+  "dagger": [
+    {
+      "round": 1,
+      "new_samples": 807,
+      "total_samples": 1111,
+      "mse": 0.000398308114125683
+    },
+    {
+      "round": 2,
+      "new_samples": 701,
+      "total_samples": 1812,
+      "mse": 0.0008547191888087353
+    },
+    {
+      "round": 3,
+      "new_samples": 764,
+      "total_samples": 2576,
+      "mse": 0.0012454103626543924
+    }
+  ],
+  "value_warmup_mse": 234.3741463285258,
+  "config": {
+    "physics": "v0.5",
+    "tool_profile": "lab_20260922",
+    "width_m": 0.185,
+    "height_m": 0.185,
+    "scene_wall_distance_m": 0.33,
+    "area_centre_u_m": -0.01,
+    "area_centre_z_m": 0.19,
+    "use_arm": true,
+    "cell_m": 0.005,
+    "target_m": 0.002,
+    "acceptable_low_m": 0.0015,
+    "acceptable_high_m": 0.0025,
+    "blade_length_m": 0.12,
+    "blade_width_m": 0.03,
+    "blade_cell_m": 0.005,
+    "blade_capacity_ml": 30.0,
+    "load_choices_ml": [
+      0.0,
+      12.0,
+      18.0,
+      24.0
+    ],
+    "load_scale_range": [
+      0.8,
+      1.2
+    ],
+    "camera_resolution": [
+      848,
+      480
+    ],
+    "camera_fps": 30,
+    "camera_distance_m": 0.45,
+    "scan_frames": 45,
+    "scan_warmup_frames": 15,
+    "scan_fused_frames": 30,
+    "depth_noise_mm": 0.6,
+    "plane_bias_mm": 0.2,
+    "invalid_base": 0.02,
+    "invalid_edge": 0.15,
+    "extrinsic_translation_mm": 1.0,
+    "extrinsic_rotation_deg": 0.05,
+    "control_hz": 20,
+    "base_steps": 6000,
+    "max_steps": 12000,
+    "extension_steps": 1000,
+    "max_cycles": 80,
+    "max_reload_cycles": 30,
+    "stall_limit": 5,
+    "progress_epsilon": 0.0002,
+    "max_force_N": 40.0,
+    "force_window": [
+      2.0,
+      15.0
+    ],
+    "force_window_v3": [
+      0.5,
+      15.0
+    ],
+    "wall_clearance_m": 0.08,
+    "approach_clearance_m": 0.025,
+    "min_stroke_m": 0.025,
+    "max_stroke_m": 0.16,
+    "speed_range_m_s": [
+      0.02,
+      0.12
+    ],
+    "curve_offset_m": 0.03,
+    "stroke_samples": 28,
+    "mortar_rho": 1900.0,
+    "mortar_tau_y_Pa": 250.0,
+    "mortar_mu_p_Pa_s": 2.0,
+    "lift_wall_fraction": 0.75,
+    "max_pitch_deg": 35.0,
+    "interface_wall_share_range": [
+      0.6,
+      0.9
+    ],
+    "randomize_interface": true,
+    "tool_interface_yield_Pa": 80.0,
+    "feed_board_volume_ml": 600.0,
+    "feed_normal_force_N": 8.0,
+    "feed_scoop_depth_m": 0.006,
+    "feed_scoop_distance_m": 0.09,
+    "feed_scoop_speed_m_s": 0.04,
+    "carry_duration_s": 1.5,
+    "transport_dt_s": 0.02,
+    "transport_relaxation_s": 0.35,
+    "finish_coverage": 0.95,
+    "finish_rmse_mm": 0.5,
+    "finish_p95_mm": 1.0,
+    "finish_confidence": 0.95
+  },
+  "ppo": {
+    "hidden": [
+      256,
+      256
+    ],
+    "lr": 3e-05,
+    "gamma": 0.99,
+    "lam": 0.95,
+    "clip": 0.1,
+    "epochs": 4,
+    "minibatch": 128,
+    "steps_per_update": 128,
+    "entropy_coef": 0.0,
+    "value_coef": 0.5,
+    "max_grad_norm": 1.0,
+    "init_log_std": -3.0,
+    "seed": 0
+  },
+  "test_set": {
+    "seeds": [
+      20000,
+      20004
+    ],
+    "episodes": 5
+  },
+  "validation_set": {
+    "seeds": [
+      30000,
+      30002
+    ],
+    "episodes": 3
+  },
+  "test": {
+    "teacher": {
+      "return_mean": -20.244673364689156,
+      "coverage_mean": 0.24864864864864863,
+      "rmse_mm_mean": 1.6262546882620512,
+      "p95_error_mm_mean": 2.453017744477557,
+      "waste_frac_mean": 0.132296418848878,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 33.6,
+      "steps_mean": 6437.2,
+      "unreachable_mean": 0.0,
+      "projected_mean": 0.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 5,
+      "seeds": [
+        20000,
+        20004
+      ],
+      "deposit_pitch_start_deg_mean": 15.142857142857142,
+      "deposit_pitch_end_deg_mean": 4.914285714285715,
+      "deposit_pitch_start_deg_quartiles": [
+        0.0,
+        25.0,
+        25.0
+      ],
+      "contact_force_N_mean": 1.0000000000000002,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        44.417211710743615,
+        73.38042415842096,
+        119.8614477681483
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.18452380952380953,
+        "diagonal": 0.5833333333333334,
+        "vertical": 0.23214285714285715
+      },
+      "executor": "table"
+    },
+    "dagger_bc": {
+      "return_mean": -40.17032145764224,
+      "coverage_mean": 0.16406135865595325,
+      "rmse_mm_mean": 2.5451042285625305,
+      "p95_error_mm_mean": 4.6928860105541945,
+      "waste_frac_mean": 0.39890797146010626,
+      "carry_loss_frac_mean": 0.003149408467869652,
+      "cycles_mean": 29.8,
+      "steps_mean": 5478.8,
+      "unreachable_mean": 0.0,
+      "projected_mean": 14.6,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.0842021724855044e-19,
+      "episodes": 5,
+      "seeds": [
+        20000,
+        20004
+      ],
+      "deposit_pitch_start_deg_mean": 14.258089701860357,
+      "deposit_pitch_end_deg_mean": 7.151642989040281,
+      "deposit_pitch_start_deg_quartiles": [
+        9.167787722988525,
+        15.345285878332742,
+        19.14197799084268
+      ],
+      "contact_force_N_mean": 2.330877012628843,
+      "carry_face_up_mean": 0.7946393811788629,
+      "path_heading_deg_quartiles": [
+        45.668745378109996,
+        81.69778540644086,
+        107.13145724422318
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.13513513513513514,
+        "diagonal": 0.49324324324324326,
+        "vertical": 0.3716216216216216
+      },
+      "executor": "table"
+    },
+    "ppo_last": {
+      "return_mean": -31.468935664011575,
+      "coverage_mean": 0.2245434623813002,
+      "rmse_mm_mean": 2.1318970089770626,
+      "p95_error_mm_mean": 2.9799858812997515,
+      "waste_frac_mean": 0.36451971661427895,
+      "carry_loss_frac_mean": 0.006942853812234385,
+      "cycles_mean": 22.6,
+      "steps_mean": 4285.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 10.4,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 2.710505431213761e-20,
+      "episodes": 5,
+      "seeds": [
+        20000,
+        20004
+      ],
+      "deposit_pitch_start_deg_mean": 13.448932900468908,
+      "deposit_pitch_end_deg_mean": 5.603966807424597,
+      "deposit_pitch_start_deg_quartiles": [
+        7.023784856314066,
+        14.521656941580646,
+        18.314098023547416
+      ],
+      "contact_force_N_mean": 1.6691728272644915,
+      "carry_face_up_mean": 0.8791726921792223,
+      "path_heading_deg_quartiles": [
+        55.07215853136646,
+        80.79664331373175,
+        111.95039115090981
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.044642857142857144,
+        "diagonal": 0.5178571428571429,
+        "vertical": 0.4375
+      },
+      "executor": "table"
+    },
+    "ppo_best_val_update_1": {
+      "return_mean": -40.014097561106276,
+      "coverage_mean": 0.18962746530314098,
+      "rmse_mm_mean": 2.400177768149624,
+      "p95_error_mm_mean": 3.1010641681615225,
+      "waste_frac_mean": 0.5004432812843845,
+      "carry_loss_frac_mean": 0.025200997459910023,
+      "cycles_mean": 29.8,
+      "steps_mean": 5392.4,
+      "unreachable_mean": 0.0,
+      "projected_mean": 13.4,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 4.0657581468206416e-20,
+      "episodes": 5,
+      "seeds": [
+        20000,
+        20004
+      ],
+      "deposit_pitch_start_deg_mean": 17.522629536812317,
+      "deposit_pitch_end_deg_mean": 9.780879624658713,
+      "deposit_pitch_start_deg_quartiles": [
+        11.267943358107702,
+        15.213353658088906,
+        26.375902258652474
+      ],
+      "contact_force_N_mean": 3.347967006597953,
+      "carry_face_up_mean": 0.6413574036844784,
+      "path_heading_deg_quartiles": [
+        57.23462713115282,
+        100.37760723332457,
+        128.6134668155008
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.14965986394557823,
+        "diagonal": 0.5102040816326531,
+        "vertical": 0.3401360544217687
+      },
+      "executor": "table"
+    }
+  },
+  "validation_bc": {
+    "return_mean": -12061257.448785437,
+    "coverage_mean": 0.19332846359873387,
+    "rmse_mm_mean": 2.3625950137433915,
+    "p95_error_mm_mean": 4.406094657426746,
+    "waste_frac_mean": 0.25661418054376595,
+    "carry_loss_frac_mean": 0.016467047303315593,
+    "cycles_mean": 17.333333333333332,
+    "steps_mean": 3150.0,
+    "unreachable_mean": 0.0,
+    "projected_mean": 5.333333333333333,
+    "success_rate": 0.0,
+    "max_volume_error_m3": 8.131516293641283e-20,
+    "episodes": 3,
+    "seeds": [
+      30000,
+      30002
+    ],
+    "deposit_pitch_start_deg_mean": 16.111271651376253,
+    "deposit_pitch_end_deg_mean": 7.497122299415922,
+    "deposit_pitch_start_deg_quartiles": [
+      11.401276716331477,
+      15.911362505651846,
+      22.110765517526175
+    ],
+    "contact_force_N_mean": 2.256291936366453,
+    "carry_face_up_mean": 0.7991671368393486,
+    "path_heading_deg_quartiles": [
+      38.56683443578957,
+      77.06212927663879,
+      122.52072705057405
+    ],
+    "path_family_fraction": {
+      "horizontal": 0.22,
+      "diagonal": 0.58,
+      "vertical": 0.2
+    },
+    "executor": "table"
+  },
+  "selected_checkpoint": "dagger_bc",
+  "test_cosim": {
+    "teacher": {
+      "return_mean": -21.416130401088353,
+      "coverage_mean": 0.2841490138787436,
+      "rmse_mm_mean": 2.218348971256931,
+      "p95_error_mm_mean": 3.0350789249375323,
+      "waste_frac_mean": 0.20870681763459123,
+      "carry_loss_frac_mean": 0.0,
+      "cycles_mean": 12.0,
+      "steps_mean": 2364.0,
+      "unreachable_mean": 0.0,
+      "projected_mean": 0.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 1,
+      "seeds": [
+        20000,
+        20000
+      ],
+      "deposit_pitch_start_deg_mean": 14.285714285714286,
+      "deposit_pitch_end_deg_mean": 5.142857142857143,
+      "deposit_pitch_start_deg_quartiles": [
+        10.0,
+        10.0,
+        17.5
+      ],
+      "contact_force_N_mean": 1.0000000000000002,
+      "carry_face_up_mean": 1.0,
+      "path_heading_deg_quartiles": [
+        60.39514973808298,
+        69.2194609626439,
+        90.0
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.16666666666666666,
+        "diagonal": 0.25,
+        "vertical": 0.5833333333333334
+      },
+      "cosim_force_rmse_N_mean": 1.2486950663241678,
+      "cosim_force_rmse_N_max": 2.5580708979098348,
+      "cosim_tracking_max_mm_mean": 8.818770861657887,
+      "cosim_tracking_max_mm_max": 10.09207319971251,
+      "cosim_peak_force_N_mean": 5.081193378018908,
+      "cosim_peak_force_N_max": 13.357049877971917,
+      "executor": "cosim"
+    },
+    "selected": {
+      "return_mean": -46.993779618005505,
+      "coverage_mean": 0.32213294375456536,
+      "rmse_mm_mean": 2.012820056428293,
+      "p95_error_mm_mean": 2.9616754183685496,
+      "waste_frac_mean": 0.38568633744723574,
+      "carry_loss_frac_mean": 0.0020894470413981834,
+      "cycles_mean": 24.0,
+      "steps_mean": 3807.0,
+      "unreachable_mean": 4.0,
+      "projected_mean": 9.0,
+      "success_rate": 0.0,
+      "max_volume_error_m3": 1.3552527156068805e-20,
+      "episodes": 1,
+      "seeds": [
+        20000,
+        20000
+      ],
+      "deposit_pitch_start_deg_mean": 9.958267581078257,
+      "deposit_pitch_end_deg_mean": 3.6075677187767226,
+      "deposit_pitch_start_deg_quartiles": [
+        7.0620161590929085,
+        10.636551977295365,
+        13.176622598398069
+      ],
+      "contact_force_N_mean": 1.6379710394031235,
+      "carry_face_up_mean": 0.8982719658619992,
+      "path_heading_deg_quartiles": [
+        61.0804809491868,
+        70.91712509613244,
+        87.02845610024296
+      ],
+      "path_family_fraction": {
+        "horizontal": 0.041666666666666664,
+        "diagonal": 0.5416666666666666,
+        "vertical": 0.4166666666666667
+      },
+      "cosim_force_rmse_N_mean": 1.3906300903381408,
+      "cosim_force_rmse_N_max": 2.851155072202522,
+      "cosim_tracking_max_mm_mean": 10.035497926675355,
+      "cosim_tracking_max_mm_max": 17.89424461543996,
+      "cosim_peak_force_N_mean": 5.934194697066468,
+      "cosim_peak_force_N_max": 14.11782707778882,
+      "executor": "cosim"
+    }
+  },
+  "exploration": {
+    "log_std_default": -3.0,
+    "explored_dims": [
+      "start_u",
+      "start_v",
+      "end_u",
+      "end_v",
+      "blade_cos",
+      "blade_sin",
+      "force",
+      "pitch_start",
+      "pitch_end",
+      "carry_face_up"
+    ],
+    "explored_log_std": -1.5
+  },
+  "curve": [
+    {
+      "update": 1,
+      "episodes": 8,
+      "train_return_mean": -44.02918362263365,
+      "policy_loss": -0.04967,
+      "value_loss": 186.23286,
+      "kl": 0.06121,
+      "elapsed_s": 112.7,
+      "val": {
+        "return_mean": -2073509.453011907,
+        "coverage_mean": 0.12369125882639397,
+        "rmse_mm_mean": 2.7051004707996285,
+        "p95_error_mm_mean": 4.447400301689173,
+        "waste_frac_mean": 0.38678829022571054,
+        "carry_loss_frac_mean": 0.010669788012031708,
+        "cycles_mean": 20.666666666666668,
+        "steps_mean": 3812.6666666666665,
+        "unreachable_mean": 0.0,
+        "projected_mean": 7.0,
+        "success_rate": 0.0,
+        "max_volume_error_m3": 8.131516293641283e-20,
+        "episodes": 3,
+        "seeds": [
+          30000,
+          30002
+        ],
+        "deposit_pitch_start_deg_mean": 14.671203050552286,
+        "deposit_pitch_end_deg_mean": 6.206671353622348,
+        "deposit_pitch_start_deg_quartiles": [
+          6.0406276392973215,
+          14.200943986488694,
+          23.032992234317632
+        ],
+        "contact_force_N_mean": 2.0350310589858394,
+        "carry_face_up_mean": 0.823230324446615,
+        "path_heading_deg_quartiles": [
+          57.85213118834469,
+          88.40963667368442,
+          129.52387281568664
+        ],
+        "path_family_fraction": {
+          "horizontal": 0.14754098360655737,
+          "diagonal": 0.47540983606557374,
+          "vertical": 0.3770491803278688
+        },
+        "executor": "table"
+      }
+    },
+    {
+      "update": 2,
+      "episodes": 13,
+      "train_return_mean": -47.4271076388577,
+      "policy_loss": -0.04052,
+      "value_loss": 274.81684,
+      "kl": 0.02644,
+      "elapsed_s": 117.1,
+      "val": {
+        "return_mean": -11064650.639185907,
+        "coverage_mean": 0.2235208181154127,
+        "rmse_mm_mean": 2.2262213613548147,
+        "p95_error_mm_mean": 3.9112008970335945,
+        "waste_frac_mean": 0.5210348575147549,
+        "carry_loss_frac_mean": 0.012163172826912724,
+        "cycles_mean": 28.0,
+        "steps_mean": 5294.666666666667,
+        "unreachable_mean": 0.0,
+        "projected_mean": 12.666666666666666,
+        "success_rate": 0.0,
+        "max_volume_error_m3": 5.421010862427522e-20,
+        "episodes": 3,
+        "seeds": [
+          30000,
+          30002
+        ],
+        "deposit_pitch_start_deg_mean": 16.179340197739503,
+        "deposit_pitch_end_deg_mean": 7.3270714194365745,
+        "deposit_pitch_start_deg_quartiles": [
+          12.031069407547415,
+          16.967119428487162,
+          20.935342447299877
+        ],
+        "contact_force_N_mean": 1.9734738158605105,
+        "carry_face_up_mean": 0.8392450847637973,
+        "path_heading_deg_quartiles": [
+          61.62083078095315,
+          96.62031333882419,
+          130.4245035965203
+        ],
+        "path_family_fraction": {
+          "horizontal": 0.12048192771084337,
+          "diagonal": 0.5903614457831325,
+          "vertical": 0.2891566265060241
+        },
+        "executor": "table"
+      }
+    }
+  ],
+  "elapsed_s": 153.4,
+  "limitations": [
+    "reduced-order 2.5-D mortar, not CFD; trowel coefficients assumed",
+    "D435 parameters provisional until physical calibration",
+    "arm execution is kinematic (IK + wall clearance), no servo dynamics or contact forces",
+    "non-contact phases are deterministic motion skills; manager acts once per scan"
+  ]
+}

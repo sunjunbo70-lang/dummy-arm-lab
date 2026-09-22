@@ -1,0 +1,81 @@
+{
+  "written": "experiments\\2026-09-22_wall_cycle_v05\\raw\\pretraining_gates.json",
+  "face_up": {
+    "return_mean": -20.32510877842329,
+    "coverage_mean": 0.23028974920866813,
+    "rmse_mm_mean": 1.7484449557019395,
+    "p95_error_mm_mean": 2.602434197149715,
+    "waste_frac_mean": 0.1293155066863038,
+    "carry_loss_frac_mean": 0.0,
+    "cycles_mean": 32.93333333333333,
+    "steps_mean": 6309.266666666666,
+    "unreachable_mean": 0.0,
+    "projected_mean": 0.2,
+    "success_rate": 0.0,
+    "max_volume_error_m3": 2.710505431213761e-20,
+    "episodes": 30,
+    "seeds": [
+      20000,
+      20029
+    ],
+    "deposit_pitch_start_deg_mean": 15.260663507109005,
+    "deposit_pitch_end_deg_mean": 4.947867298578199,
+    "deposit_pitch_start_deg_quartiles": [
+      0.0,
+      25.0,
+      25.0
+    ],
+    "contact_force_N_mean": 1.0000000000000002,
+    "carry_face_up_mean": 1.0,
+    "path_heading_deg_quartiles": [
+      45.0,
+      90.0,
+      127.08011957600876
+    ],
+    "path_family_fraction": {
+      "horizontal": 0.14777327935222673,
+      "diagonal": 0.6234817813765182,
+      "vertical": 0.22874493927125505
+    },
+    "executor": "table"
+  },
+  "legacy": {
+    "return_mean": -20.42907270379079,
+    "coverage_mean": 0.26423179936693447,
+    "rmse_mm_mean": 1.6312419282572088,
+    "p95_error_mm_mean": 2.4499832038673857,
+    "waste_frac_mean": 0.2981211195924917,
+    "carry_loss_frac_mean": 0.26600717155051407,
+    "cycles_mean": 30.566666666666666,
+    "steps_mean": 5916.0,
+    "unreachable_mean": 0.0,
+    "projected_mean": 0.26666666666666666,
+    "success_rate": 0.0,
+    "max_volume_error_m3": 1.0842021724855044e-19,
+    "episodes": 30,
+    "seeds": [
+      20000,
+      20029
+    ],
+    "deposit_pitch_start_deg_mean": 14.904214559386974,
+    "deposit_pitch_end_deg_mean": 4.85823754789272,
+    "deposit_pitch_start_deg_quartiles": [
+      0.0,
+      25.0,
+      25.0
+    ],
+    "contact_force_N_mean": 1.0000000000000002,
+    "carry_face_up_mean": -1.0,
+    "path_heading_deg_quartiles": [
+      45.0,
+      110.79107591451235,
+      138.0225336914344
+    ],
+    "path_family_fraction": {
+      "horizontal": 0.21701199563794984,
+      "diagonal": 0.6401308615049073,
+      "vertical": 0.14285714285714285
+    },
+    "executor": "table"
+  }
+}

@@ -25,8 +25,9 @@ import numpy as np
 from .config import CycleConfig
 
 TABLE_FILE = Path(__file__).with_name('reach_table.npz')
+TABLE_FILE_V05 = Path(__file__).with_name('reach_table_lab_v05.npz')
 PSI_BINS = 8                       # blade-angle bins over 360 deg
-PITCH_BINS_DEG = (0.0, 10.0, 20.0, 30.0)
+PITCH_BINS_DEG = (0.0, 4.0, 8.0, 12.0, 20.0, 30.0)
 
 
 @dataclass
@@ -70,6 +71,7 @@ def build(cfg: CycleConfig, step=0.02, stroke_len=0.02, log=print):
             'meta': json.dumps({'width_m': cfg.width_m, 'height_m': cfg.height_m,
                                 'scene_wall_distance_m': cfg.scene_wall_distance_m,
                                 'area_centre_u_m': cfg.area_centre_u_m, 'area_centre_z_m': cfg.area_centre_z_m,
+                                'tool_profile': cfg.tool_profile,
                                 'step_m': step, 'stroke_len_m': stroke_len,
                                 'built_s': round(time.time() - t0, 1)})}
 
@@ -78,13 +80,17 @@ class ReachTableExecutor:
     """Executor interface used by WallCycleEnv during training (no dynamics)."""
     dynamic = False
 
-    def __init__(self, cfg: CycleConfig, path: Path = TABLE_FILE):
+    def __init__(self, cfg: CycleConfig, path: Path = None):
+        if path is None:
+            path = TABLE_FILE_V05 if cfg.tool_profile == 'lab_20260922' else TABLE_FILE
         z = np.load(path, allow_pickle=False)
         meta = json.loads(str(z['meta']))
         for k in ('width_m', 'height_m', 'scene_wall_distance_m', 'area_centre_u_m', 'area_centre_z_m'):
             if abs(meta[k] - getattr(cfg, k)) > 1e-6:
                 raise ValueError(f'reach table was built for {k}={meta[k]}, config has {getattr(cfg, k)}; '
                                  f'rebuild with python -m dummy_loop.wall_cycle.reach_table')
+        if meta.get('tool_profile', 'legacy') != cfg.tool_profile:
+            raise ValueError(f"reach table tool profile {meta.get('tool_profile', 'legacy')} != {cfg.tool_profile}")
         self.ok, self.u, self.v, self.meta = z['ok'], z['u'], z['v'], meta
         self.pitch = z['pitch_deg']
         self.stats = {'planned': 0, 'rejected': 0}
@@ -112,11 +118,12 @@ class ReachTableExecutor:
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--out', type=Path, default=TABLE_FILE)
+    ap.add_argument('--out', type=Path, default=TABLE_FILE_V05)
     ap.add_argument('--step', type=float, default=0.02)
     a = ap.parse_args(argv)
     from .area import load_work_area
-    cfg = load_work_area(CycleConfig())
+    cfg = load_work_area(CycleConfig(physics='v0.5', tool_profile='lab_20260922',
+                                     lift_wall_fraction=.75))
     t = build(cfg, a.step)
     np.savez_compressed(a.out, **t)
     print(json.dumps({'written': str(a.out), 'feasible_fraction': float(t['ok'].mean()), **json.loads(t['meta'])}))
