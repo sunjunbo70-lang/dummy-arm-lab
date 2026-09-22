@@ -28,7 +28,8 @@ def provenance(cfg):
         'mount': 'proposed split elliptical clamp, simulated rigid; not a manufacturing-validated design',
         'unmeasured': 'all masses, blade thickness, handle axial length, neck position, adapter holes, stiffness and backlash',
         'gap': '27 mm interpreted as blade back to closest handle surface; accepted provisionally by user; precise gap not independently measured',
-        'sensors': 'virtual force sensor only; no physical force sensor confirmed',
+        'sensors': 'virtual force and optional wrist pinhole camera; no calibrated physical sensor model',
+        'camera_mount': cfg.lab_geometry.get('camera_mount', {'enabled': False}),
         'joint_limits': 'CANDIDATE firmware ranges; arm models/dummy_v2.xml unchanged',
         'legacy_compatibility': 'old reach tables, policies and reported scores apply only to their original scenes',
     }
@@ -160,3 +161,6 @@ def refine_spec(spec, cfg):
     # to direct-drive torque, even when the actuator's forcerange is raised.
     tau=min(.07*cfg.j6_reducer_ratio,cfg.j6_reducer_max_Nm)
     spec.joint('Joint6').actfrcrange=[-tau,tau]
+
+    from .wrist_camera import add_wrist_camera
+    add_wrist_camera(spec, cfg)

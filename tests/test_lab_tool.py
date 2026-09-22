@@ -36,7 +36,7 @@ class LabToolTests(unittest.TestCase):
             a=b
             while a and a!=root:a=m.body_parentid[a]
             if a==root:ids.append(b)
-        self.assertAlmostEqual(m.body_mass[ids].sum(),c.j6_reducer_mass*.2+c.lab_geometry['adapter_mass_kg']+c.holder_mass+c.tool_mass,places=7)
+        self.assertAlmostEqual(m.body_mass[ids].sum(),c.j6_reducer_mass*.2+c.lab_geometry['adapter_mass_kg']+c.holder_mass+c.tool_mass+sum(c.lab_geometry['camera_mount'][k] for k in ('camera_mass_kg','bracket_mass_kg')),places=7)
 
     def test_joint_and_actuator_limits_and_dynamics(self):
         m,_=build_scene(scene_config());d=mujoco.MjData(m)

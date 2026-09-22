@@ -41,7 +41,21 @@
       "clamp_wall_m": 0.0035,
       "adapter_thickness_m": 0.006,
       "adapter_width_m": 0.036,
-      "adapter_mass_kg": 0.02
+      "adapter_mass_kg": 0.02,
+      "camera_mount": {
+        "enabled": true,
+        "body_size_m": [
+          0.09,
+          0.02505,
+          0.025
+        ],
+        "hole_spacing_m": 0.045,
+        "clearance_diameter_m": 0.0032,
+        "plate_thickness_m": 0.006,
+        "lateral_offset_m": 0.07,
+        "camera_mass_kg": 0.075,
+        "bracket_mass_kg": 0.025
+      }
     }
   },
   "evidence": {
@@ -74,6 +88,7 @@
       "adapter hole pattern and lugs"
     ],
     "proposed_design": "68x46x6 mm base, two 9 mm wide elliptical split collars, 3.5 mm wall, 0.3 mm radial clearance; holes/fasteners not fabrication-ready",
-    "compatibility": "Dedicated simulation variant. Do not load legacy policy/reach table as if validated for this geometry."
+    "compatibility": "Dedicated simulation variant. Do not load legacy policy/reach table as if validated for this geometry.",
+    "camera_mount": "D435 drawing Fig 10-9 p142, RealSense D400 datasheet Rev015 March2023: 45 mm spacing, M3, insertion <=3 mm; D435f rear hole compatibility still to be checked on actual camera. Camera/bracket masses estimated; mount draft only."
   }
 }
