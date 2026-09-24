@@ -1,0 +1,33 @@
+{
+  "flange_pitch": 26.0,
+  "base_length": 68.0,
+  "base_width": 46.0,
+  "base_thickness": 8.0,
+  "insert_pilot": 4.2,
+  "insert_depth": 5.5,
+  "insert_nominal_od": 4.6,
+  "insert_nominal_length": 5.0,
+  "clamp_centres": [
+    -23.0,
+    23.0
+  ],
+  "clamp_width": 9.0,
+  "clamp_wall": 4.0,
+  "clamp_radial_clearance": 0.3,
+  "split_gap": 0.8,
+  "handle_length_estimated": 95.0,
+  "handle_small": [
+    24.0,
+    25.5
+  ],
+  "handle_large": [
+    26.5,
+    28.5
+  ],
+  "handle_axis_z": 26.0,
+  "clamp_bolt_y": 32.0,
+  "camera_offset_y": 70.0,
+  "camera_hole_pitch": 45.0,
+  "camera_through_diameter": 3.2,
+  "camera_plate_thickness": 6.0
+}

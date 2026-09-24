@@ -1,0 +1,30 @@
+{
+  "01_main_body.stl": {
+    "triangles": 8484,
+    "nonmanifold_edges": 0,
+    "degenerate_triangles": 0,
+    "zmin_mm": 0.0,
+    "signed_volume_mm3": 51307.829359149524
+  },
+  "02_tail_cap.stl": {
+    "triangles": 1532,
+    "nonmanifold_edges": 0,
+    "degenerate_triangles": 0,
+    "zmin_mm": 0.0,
+    "signed_volume_mm3": 3932.671461178657
+  },
+  "03_tip_cap.stl": {
+    "triangles": 1536,
+    "nonmanifold_edges": 0,
+    "degenerate_triangles": 0,
+    "zmin_mm": 0.0,
+    "signed_volume_mm3": 3937.308563709605
+  },
+  "04_fit_coupon.stl": {
+    "triangles": 3556,
+    "nonmanifold_edges": 0,
+    "degenerate_triangles": 0,
+    "zmin_mm": 0.0,
+    "signed_volume_mm3": 11065.89874544065
+  }
+}

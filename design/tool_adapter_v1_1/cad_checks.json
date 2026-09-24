@@ -1,0 +1,177 @@
+{
+  "evidence": "L1 CAD only; no physical fit or load validation",
+  "parts": {
+    "01_main_body": {
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 51306.33241323907,
+      "bounds_mm": [
+        68.0,
+        117.5000001,
+        26.000000200000002
+      ],
+      "stl_on_bed": true
+    },
+    "02_tail_cap": {
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3933.037787792358,
+      "bounds_mm": [
+        9.000000200000002,
+        77.0000002,
+        17.434210726315904
+      ],
+      "stl_on_bed": true
+    },
+    "03_tip_cap": {
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3937.6814228683065,
+      "bounds_mm": [
+        9.000000200000006,
+        77.0000002,
+        16.707894936842198
+      ],
+      "stl_on_bed": true
+    },
+    "04_fit_coupon": {
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11065.697165187572,
+      "bounds_mm": [
+        38.0,
+        38.0,
+        8.0
+      ],
+      "stl_on_bed": true
+    }
+  },
+  "cap_main_interference_mm3": [
+    0.0,
+    0.0
+  ],
+  "flange_void_checks": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "flange_floor_checks": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "camera_void_checks": [
+    true,
+    true
+  ],
+  "handle_interference_mm3": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "camera_main_interference_mm3": 0.0,
+  "screwdriver_access": [
+    {
+      "screw_xy_mm": [
+        -23.0,
+        -32.0
+      ],
+      "shaft_diameter_mm": 10,
+      "shaft_z_mm": [
+        31.81,
+        120
+      ],
+      "handle_diameter_mm": 30,
+      "handle_z_mm": [
+        120,
+        200
+      ],
+      "intersection_mm3": {
+        "main": 0.0,
+        "tail_cap": 0.0,
+        "tip_cap": 0.0,
+        "handle": 0.0,
+        "blade": 0.0,
+        "neck": 0.0,
+        "camera": 0.0
+      }
+    },
+    {
+      "screw_xy_mm": [
+        -23.0,
+        32.0
+      ],
+      "shaft_diameter_mm": 10,
+      "shaft_z_mm": [
+        31.81,
+        120
+      ],
+      "handle_diameter_mm": 30,
+      "handle_z_mm": [
+        120,
+        200
+      ],
+      "intersection_mm3": {
+        "main": 0.0,
+        "tail_cap": 0.0,
+        "tip_cap": 0.0,
+        "handle": 0.0,
+        "blade": 0.0,
+        "neck": 0.0,
+        "camera": 0.0
+      }
+    },
+    {
+      "screw_xy_mm": [
+        23.0,
+        -32.0
+      ],
+      "shaft_diameter_mm": 10,
+      "shaft_z_mm": [
+        31.81,
+        120
+      ],
+      "handle_diameter_mm": 30,
+      "handle_z_mm": [
+        120,
+        200
+      ],
+      "intersection_mm3": {
+        "main": 0.0,
+        "tail_cap": 0.0,
+        "tip_cap": 0.0,
+        "handle": 0.0,
+        "blade": 0.0,
+        "neck": 0.0,
+        "camera": 0.0
+      }
+    },
+    {
+      "screw_xy_mm": [
+        23.0,
+        32.0
+      ],
+      "shaft_diameter_mm": 10,
+      "shaft_z_mm": [
+        31.81,
+        120
+      ],
+      "handle_diameter_mm": 30,
+      "handle_z_mm": [
+        120,
+        200
+      ],
+      "intersection_mm3": {
+        "main": 0.0,
+        "tail_cap": 0.0,
+        "tip_cap": 0.0,
+        "handle": 0.0,
+        "blade": 0.0,
+        "neck": 0.0,
+        "camera": 0.0
+      }
+    }
+  ]
+}
