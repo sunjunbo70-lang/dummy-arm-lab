@@ -1,0 +1,5 @@
+# A0 terminal LOAD logging correction (L1)
+
+Campaign004 A0 completed update328 and failed during rollout329 with JSON Circular reference detected. DEPOSIT LOAD ended the episode; the same info dict was both returned and inserted into its own macro_substeps. Fix: store info.copy() in the substep list. This changes log ownership only, not observation/reward/action/termination/physics. Regression test forces this terminal LOAD branch and checks serialization and unchanged reward/done.
+
+All training and campaign processes were confirmed stopped before editing. Resume checkpoint0328 in campaign005_a0_log_recovery, preserving worker/RNG/optimizer state, 23 workers, original LR and update400 target. Only unfinished rollout329 onward is redone. Failed partial rollout remains in campaign004; exclude it from unique update totals. Seven other400 runs and two100 ablations adopted without retraining; straight remains missing. Budget expansion already decided, not reconsidered on new data. Then continue selection, independent tests and native records.

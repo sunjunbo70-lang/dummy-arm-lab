@@ -24,7 +24,7 @@ class A0Env(Env):
   d=DecodedAction('REUSE',tuple(start),tuple(end),phi,p[6]*.03,force,speed,0,*pitch,1);a=encode_legacy(d,c,self.buffer);reward=0.;traces=[];sub=[]
   if op==0:
    choices=np.asarray(c.load_choices_ml);amount=float(choices[min(int((p[9]+1)*.5*len(choices)),len(choices)-1)]);load=np.zeros(19);load[0]=(amount-6)/9-1
-   o,r,done,info=self._substep((0,load));reward+=r;traces.extend(self.last_trace);sub.append(info)
+   o,r,done,info=self._substep((0,load));reward+=r;traces.extend(self.last_trace);sub.append(info.copy())
    if done:info['macro_substeps']=sub.copy();return o,r,done,info
   o,r,done,info=self._substep((1,a));traces.extend(self.last_trace);self.last_trace=traces;info['macro_substeps']=sub;return o,reward+r,done,info
  def teacher(self,strong=False,no_plateau=False):
