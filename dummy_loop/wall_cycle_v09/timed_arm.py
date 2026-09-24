@@ -12,10 +12,11 @@ class TimedArmExecutor(ArmExecutor):
         self.q_scan=self.q_feed.copy();self.q_last=self.q_scan.copy()
         self.dense_trace=[];self._phase='IDLE';self._mortar=None;self._stats=None
         self._last_trace_s=-1.;self.actual_elapsed_s=0.
-        self.transport_samples=0;self.loaded_tilt_samples=0
+        self.transport_samples=0;self.loaded_tilt_samples=0;self.velocity_feedforward=True
 
     def reset(self):
         super().reset()
+        self.data.ctrl[:]=self.data.qpos[:6]
         self.dense_trace=[];self._phase="IDLE";self._mortar=None;self._stats=None
         self._last_trace_s=-1.;self.actual_elapsed_s=0.
         self.transport_samples=0;self.loaded_tilt_samples=0
@@ -32,7 +33,7 @@ class TimedArmExecutor(ArmExecutor):
 
     def _run(self,q_target,seconds,force_world=None):
         n=max(self.n_sub_min,int(round(seconds/self.model.opt.timestep)))
-        start_ctrl=self.data.qpos[:6].copy();target_ctrl=np.clip(q_target,self.ik.lo,self.ik.hi)
+        start_ctrl=self.data.ctrl[:6].copy();target_ctrl=np.clip(q_target,self.ik.lo,self.ik.hi)
         self.data.xfrc_applied[:]=0
         if force_world is not None:self.data.xfrc_applied[self.blade_body,:3]=force_world
         transport=self._phase in ('FEED_TRANSIT','FEED_ALIGN_UP','CARRY_FACE_UP','ROTATE_TO_WALL','SCAN_RETURN')
@@ -41,6 +42,9 @@ class TimedArmExecutor(ArmExecutor):
         for j in range(n):
             u=(j+1)/n;blend=u*u*(3-2*u)
             self.data.ctrl[:]=start_ctrl+(target_ctrl-start_ctrl)*blend
+            if self.velocity_feedforward:
+                desired_velocity=(target_ctrl-start_ctrl)*(6*u*(1-u))/(n*self.model.opt.timestep)
+                self.model.actuator_biasprm[:,0]=-self.model.actuator_biasprm[:,2]*desired_velocity
             mujoco.mj_step(self.model,self.data);elapsed+=self.model.opt.timestep
             peak=max(peak,self.rigid_contact_N())
             if (j+1)%stride==0 or j==n-1:
@@ -51,6 +55,7 @@ class TimedArmExecutor(ArmExecutor):
                     self._mortar.transport(score,elapsed,dt_s=self.transport_dt_s,stats=self._stats)
                 elapsed=0.
                 if self.data.time-self._last_trace_s>=self.trace_dt_s-1e-9:self.sample()
+        if self.velocity_feedforward:self.model.actuator_biasprm[:,0]=0
         self.actual_elapsed_s+=float(self.data.time)-t0
         self.sample()
         return peak
