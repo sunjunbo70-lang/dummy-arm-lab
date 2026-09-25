@@ -10,7 +10,7 @@ class PPOTests(unittest.TestCase):
         old=torch.zeros(2,requires_grad=True)
         adv=torch.tensor([1.,-1.],requires_grad=True)
         z=torch.zeros(2)
-        loss,m=objective(lp,old,z,z,adv,z,z,PPOConfig(operation_entropy=0,parameter_entropy=0))
+        loss,m=objective(lp,old,z,z,adv,z,z,PPOConfig(clip=.2,operation_entropy=0,parameter_entropy=0))
         self.assertAlmostEqual(m['policy_loss'].item(),-.2,places=6)
         loss.backward()
         torch.testing.assert_close(lp.grad,torch.zeros(2))

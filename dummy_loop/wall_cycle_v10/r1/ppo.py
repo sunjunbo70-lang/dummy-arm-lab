@@ -6,9 +6,9 @@ import torch
 
 @dataclass(frozen=True)
 class PPOConfig:
-    clip: float=.2
+    clip: float=.1
     value_weight: float=.5
-    operation_entropy: float=.01
+    operation_entropy: float=.005
     parameter_entropy: float=.001
     max_grad_norm: float=.5
 
