@@ -79,3 +79,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：v5工具库存自适应积分候选
 新增独立v5局部误差控制，含预计抬刀沉积，41组件测试通过。case13两档预算有界诊断已启动，实际PID6180，runs/adaptive_inventory_001；旧v4扩大审计33596继续。详见ADAPTIVE_INVENTORY_STARTED.md。均不是PPO；G0尚未通过。
+
+## 续做：v5失败与v6中点几何交换对照
+v5两档预算均耗尽，未完成case13，见ADAPTIVE_INVENTORY_FAILED.md。独立v6局部解析二阶/守恒测试通过，但同例抬刀厚度差0.061914mm，未改善v4的0.061789mm。44组件测试通过不代表G0通过。详见MIDPOINT_GEOMETRY_RESULT.md和runs/midpoint_geometry_001。旧扩大审计继续，无PPO。

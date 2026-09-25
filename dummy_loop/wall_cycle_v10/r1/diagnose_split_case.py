@@ -6,14 +6,16 @@ from .split_inventory import SplitPressure
 from ..p0 import make_scene,snapshot
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--source',required=True);p.add_argument('--out',required=True);p.add_argument('--index',type=int,default=13);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--source',required=True);p.add_argument('--out',required=True);p.add_argument('--index',type=int,default=13);p.add_argument('--candidate',choices=['split','midpoint'],default='split');a=p.parse_args()
+    from .midpoint_inventory import MidpointGeometryPressure
+    model_class=SplitPressure if a.candidate=='split' else MidpointGeometryPressure
     out=Path(a.out);out.mkdir(exist_ok=False,parents=True);head=snapshot(out)
     recipe=json.loads((Path(a.source)/f'single_{a.index:03d}_recipes.json').read_text())['recipes'][0]
-    (out/'manifest.json').write_text(json.dumps(dict(source=a.source,index=a.index,recipe=recipe,source_head=head,physics=SplitPressure.physics_version,scope='stage diagnosis only, no training'),indent=2))
+    (out/'manifest.json').write_text(json.dumps(dict(source=a.source,index=a.index,recipe=recipe,source_head=head,physics=model_class.physics_version,scope='stage diagnosis only, no training'),indent=2))
     saved=[];times=[]
     for spacing in (.00005,.000025):
         base,_=make_scene(a.index%60)
-        m=SplitPressure(base.wall*base.wall_cell_area,base.blade*base.blade_cell_area,params=copy.deepcopy(base.p))
+        m=model_class(base.wall*base.wall_cell_area,base.blade*base.blade_cell_area,params=copy.deepcopy(base.p))
         initial=m.total();states={};start=time.perf_counter()
         def capture(name):
             states[name]=dict(wall=m.wall.copy(),blade=m.blade.copy(),bead=m.bead.copy(),dropped=float(m.dropped),outside=float(m.outside),total=float(m.total()),ledger_error_ml=float(abs(m.total()-initial)*1e6),gap_m=float(m.g0))
