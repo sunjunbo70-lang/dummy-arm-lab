@@ -1,0 +1,42 @@
+{
+  "BC1": {
+    "old_wall_read_ms": 2211.099199994351,
+    "startup_load_s": 2.2990371999912895,
+    "memory_MB": 1677.37152,
+    "scene_update_median_ms": 18.08464999339776,
+    "scene_update_p95_ms": 18.943744997523023,
+    "record_median_interval_ms": 59.99999999858119
+  },
+  "largest_improvement": {
+    "old_wall_read_ms": 2942.548599996371,
+    "startup_load_s": 3.0000391000066884,
+    "memory_MB": 2130.684424,
+    "scene_update_median_ms": 13.67335000395542,
+    "scene_update_p95_ms": 14.776604999497065,
+    "record_median_interval_ms": 59.99999999858119
+  },
+  "RL1_seed33": {
+    "old_wall_read_ms": 309.0738000028068,
+    "startup_load_s": 0.23944520000077318,
+    "memory_MB": 190.410924,
+    "scene_update_median_ms": 17.46524999907706,
+    "scene_update_p95_ms": 18.218320005689748,
+    "record_median_interval_ms": 59.999999999860165
+  },
+  "T": {
+    "old_wall_read_ms": 1880.874300011783,
+    "startup_load_s": 1.8947208000026876,
+    "memory_MB": 1405.611328,
+    "scene_update_median_ms": 19.109149994619656,
+    "scene_update_p95_ms": 20.078719997400185,
+    "record_median_interval_ms": 59.99999999858119
+  },
+  "worst_final": {
+    "old_wall_read_ms": 2661.034300006577,
+    "startup_load_s": 2.6973410000064177,
+    "memory_MB": 1888.830856,
+    "scene_update_median_ms": 18.85865000076592,
+    "scene_update_p95_ms": 19.95005500211846,
+    "record_median_interval_ms": 59.99999999858119
+  }
+}
