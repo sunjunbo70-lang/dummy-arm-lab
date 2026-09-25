@@ -52,3 +52,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：压力与库存耦合
 候选area_pressure_candidate.v1已接压力/挤出/余料/抬刀，24项测试通过；6条路径细化均改善，最大差仍0.228280mm，非完整G0。详见PRESSURE_INVENTORY_PROGRESS.md及runs/pressure_inventory_001/implementation_state.json。无后台训练。
+
+## 续做：分阶段误差与PPO更新原语
+同6路径分阶段对照定位到刀上/料堆误差经抬刀沉积传到墙面；新增PPO单minibatch优化，27测试通过。完整G0/G1及完整训练器仍未完成，无后台训练。详见STAGE_ERROR_AND_PPO_PROGRESS.md及runs/stage_error_001/implementation_state.json。
