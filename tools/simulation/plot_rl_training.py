@@ -1,6 +1,6 @@
 """把 python -m dummy_loop.wall rl-train 的结果画成一张图（需要 matplotlib）。
 
-  python tools/simulation/plot_rl_training.py outputs/wall/rl/training.json
+  python tools/simulation/plot_rl_training.py experiments/v0.1/r0/runs/rl/training.json
 
 左：学习曲线（训练回报、评估回报，与脚本基线 / 示教预热 / 随机策略对比）。
 右：一刀抹完之后墙上的料层厚度沿高度的分布——脚本基线 vs 学到的策略 vs 目标厚度。

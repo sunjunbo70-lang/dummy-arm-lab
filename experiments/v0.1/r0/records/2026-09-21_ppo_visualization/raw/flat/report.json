@@ -1,0 +1,1069 @@
+{
+  "name": "PPO · 平刀预热",
+  "policy": "experiments\\v0.1\\r0\\records\\2026-09-21_plaster_session_rl\\raw\\flat_warm_start\\policy.npz",
+  "policy_sha256": "37beec1891dd336e898d9cad7ad485a0e3e05226b761e692fb261e7e4ed83d6a",
+  "seed": 2000,
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "deterministic": true,
+  "dt_s": 0.05,
+  "area": {
+    "coverage": 0.9796,
+    "mean_thickness_mm": 2.503,
+    "rms_error_mm": 0.819,
+    "flatness_std_mm": 0.646,
+    "wasted_frac": 0.144,
+    "dropped_frac": 0.0387,
+    "left_on_tool_frac": 0.0,
+    "deposited_g": 115.55,
+    "strokes": 3,
+    "steps": 97,
+    "transit_simulated": false,
+    "unreachable_columns": [],
+    "area_u_m": [
+      -0.14,
+      0.14
+    ],
+    "area_v_m": [
+      0.0,
+      0.07
+    ],
+    "area_cm2": 196.0
+  },
+  "strokes": [
+    {
+      "column_u": -0.08,
+      "steps": 30,
+      "return": -5.427,
+      "max_force_N": 0.33,
+      "aborted": false
+    },
+    {
+      "column_u": 0.0,
+      "steps": 29,
+      "return": -1.365,
+      "max_force_N": 0.32,
+      "aborted": false
+    },
+    {
+      "column_u": 0.08,
+      "steps": 38,
+      "return": 4.531,
+      "max_force_N": 0.31,
+      "aborted": false
+    }
+  ],
+  "env": {
+    "obs_names": [
+      "edge_v_m",
+      "target_n_m",
+      "pitch_rad",
+      "force_N",
+      "dv_m",
+      "progress",
+      "load_time_frac"
+    ],
+    "action_names": [
+      "dv",
+      "dn",
+      "dpitch"
+    ],
+    "action_limits": [
+      0.008,
+      0.002,
+      0.04
+    ],
+    "dt_s": 0.05,
+    "stroke": {
+      "horizon": 60,
+      "start_pitch_deg": 30.0,
+      "script_style": "technique",
+      "standoff": 0.025,
+      "park_standoff": 0.08,
+      "v_start_margin": 0.005,
+      "v_stop_margin": 0.012,
+      "force_window": [
+        2.0,
+        15.0
+      ],
+      "abort_force": 40.0,
+      "max_dv": 0.008,
+      "max_dn": 0.002,
+      "max_dpitch": 0.04,
+      "w_coverage": 10.0,
+      "w_rms": 15.0,
+      "w_waste": 5.0,
+      "w_left": 2.0,
+      "w_deposit": 4.0,
+      "w_waste_step": 4.0,
+      "w_force": 0.4,
+      "w_action": 0.02,
+      "fail_penalty": 5.0
+    },
+    "material": {
+      "cell": 0.005,
+      "target_thickness": 0.002,
+      "contact_gap": 0.008,
+      "deposit_rate": 0.004,
+      "initial_load_scale": 1.2,
+      "stick_free": 0.008,
+      "stick_contact": 0.001,
+      "spill_rate": 0.5,
+      "slide_angle_deg": 30.0,
+      "slide_rate": 0.05,
+      "yield_stress": 2500.0,
+      "drag_ratio": 0.6,
+      "density": 1900.0
+    },
+    "scene_digest": "3a27495d37c8",
+    "task": {
+      "region_u": [
+        -0.06,
+        0.06
+      ],
+      "region_v": [
+        0.0,
+        0.07
+      ],
+      "cell": 0.005,
+      "force_window": [
+        2.0,
+        15.0
+      ],
+      "target_compression": 0.012,
+      "target_force": 6.0,
+      "press_depth": 0.001,
+      "touch_force": 2.0,
+      "standoff": 0.03,
+      "settle_steps": 10
+    },
+    "perturbation": {
+      "joint_offset_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "latency_steps": 0,
+      "q_noise_rad": 0.0,
+      "compression_noise_m": 0.0,
+      "force_noise_N": 0.0,
+      "wall_dn_m": 0.0,
+      "wall_yaw_deg": 0.0,
+      "wall_pitch_deg": 0.0,
+      "spring_k_scale": 1.0,
+      "friction_scale": 1.0,
+      "servo_kp_scale": 1.0
+    },
+    "evidence_level": "L1",
+    "hardware_motion": false,
+    "material_model": "reduced-order height field, NOT a fluid simulation; coefficients are assumptions"
+  },
+  "frames": 175,
+  "rows": [
+    {
+      "band": 0,
+      "step": 0,
+      "pitch_deg": 30.007347343408647,
+      "gap_mm": 18.131580471723694,
+      "force_N": 0.0,
+      "phase": "reset",
+      "status": "reset"
+    },
+    {
+      "band": 0,
+      "step": 1,
+      "pitch_deg": 29.10430655944081,
+      "gap_mm": 17.554543904055087,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 2,
+      "pitch_deg": 27.822186684462,
+      "gap_mm": 16.644369418429005,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 3,
+      "pitch_deg": 26.344650888417778,
+      "gap_mm": 15.546687081212763,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 4,
+      "pitch_deg": 24.751621998070917,
+      "gap_mm": 14.356783156486031,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 5,
+      "pitch_deg": 23.08983800623035,
+      "gap_mm": 13.13164873211714,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 6,
+      "pitch_deg": 21.390497780417356,
+      "gap_mm": 11.901643562948927,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 7,
+      "pitch_deg": 19.675407697042004,
+      "gap_mm": 10.678290426903214,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 8,
+      "pitch_deg": 17.954130609672458,
+      "gap_mm": 9.472704231302808,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 9,
+      "pitch_deg": 16.22598724013289,
+      "gap_mm": 8.305323592054103,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 10,
+      "pitch_deg": 14.484905487840635,
+      "gap_mm": 7.210491206619373,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 11,
+      "pitch_deg": 12.740341895322917,
+      "gap_mm": 6.225546991651343,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 12,
+      "pitch_deg": 11.038776818644704,
+      "gap_mm": 5.357303222491172,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 13,
+      "pitch_deg": 9.376052792091437,
+      "gap_mm": 4.619638433381368,
+      "force_N": 0.32559141343506404,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 14,
+      "pitch_deg": 7.858059279575321,
+      "gap_mm": 3.9663380847914653,
+      "force_N": 0.09758861944763102,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 15,
+      "pitch_deg": 6.484752447875288,
+      "gap_mm": 3.418178767474467,
+      "force_N": 0.17903567646854562,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 16,
+      "pitch_deg": 5.24352548271924,
+      "gap_mm": 2.9868683149801845,
+      "force_N": 0.24498763072121343,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 17,
+      "pitch_deg": 4.180752770633002,
+      "gap_mm": 2.6601161600753875,
+      "force_N": 0.07960972995535692,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 18,
+      "pitch_deg": 3.2847202016552273,
+      "gap_mm": 2.4555825517820207,
+      "force_N": 0.08213168972999896,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 19,
+      "pitch_deg": 2.5574840857977605,
+      "gap_mm": 2.3625868514230985,
+      "force_N": 0.004337877493864554,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 20,
+      "pitch_deg": 1.980167468415729,
+      "gap_mm": 2.3327879571750643,
+      "force_N": 0.0014514776548723307,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 21,
+      "pitch_deg": 1.5131594549974363,
+      "gap_mm": 2.308848102915817,
+      "force_N": 0.001857452497477767,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 22,
+      "pitch_deg": 1.124849549595917,
+      "gap_mm": 2.267582834868054,
+      "force_N": 0.002758043904463347,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 23,
+      "pitch_deg": 0.832043972057922,
+      "gap_mm": 2.239333052889647,
+      "force_N": 0.003898883800330943,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 24,
+      "pitch_deg": 0.6186768217791807,
+      "gap_mm": 2.238627425036721,
+      "force_N": 0.00046517699554794126,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 25,
+      "pitch_deg": 0.46212050061210197,
+      "gap_mm": 2.2548152849172776,
+      "force_N": 0.0032875618503932884,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 26,
+      "pitch_deg": 0.348756668248281,
+      "gap_mm": 2.2711439551011403,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 27,
+      "pitch_deg": 0.2743338784475462,
+      "gap_mm": 2.2750031192222964,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 28,
+      "pitch_deg": 0.23587906343467432,
+      "gap_mm": 2.2517567335889055,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 29,
+      "pitch_deg": 0.23395138685321687,
+      "gap_mm": 2.1867445015189557,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 0,
+      "step": 30,
+      "pitch_deg": 0.2741692514833815,
+      "gap_mm": 2.0712051354264682,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 0,
+      "pitch_deg": 29.998662193051718,
+      "gap_mm": 18.139658954382078,
+      "force_N": 0.0,
+      "phase": "reset",
+      "status": "reset"
+    },
+    {
+      "band": 1,
+      "step": 1,
+      "pitch_deg": 29.121776043019388,
+      "gap_mm": 17.5890735525534,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 2,
+      "pitch_deg": 27.886412358509485,
+      "gap_mm": 16.706744207200195,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 3,
+      "pitch_deg": 26.46467698553143,
+      "gap_mm": 15.638916931947966,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 4,
+      "pitch_deg": 24.930743569810492,
+      "gap_mm": 14.479719003093528,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 5,
+      "pitch_deg": 23.32914101673695,
+      "gap_mm": 13.284649850652585,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 6,
+      "pitch_deg": 21.69007123127572,
+      "gap_mm": 12.08302998378985,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 7,
+      "pitch_deg": 20.034698312644753,
+      "gap_mm": 10.88595922822222,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 8,
+      "pitch_deg": 18.37278000810791,
+      "gap_mm": 9.703978173444593,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 9,
+      "pitch_deg": 16.704626680287955,
+      "gap_mm": 8.555778026177963,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 10,
+      "pitch_deg": 15.025750107522256,
+      "gap_mm": 7.472179028546688,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 11,
+      "pitch_deg": 13.345785361798258,
+      "gap_mm": 6.486429586799014,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 12,
+      "pitch_deg": 11.681206688802513,
+      "gap_mm": 5.620532794833544,
+      "force_N": 0.156413994274534,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 13,
+      "pitch_deg": 10.074360527133392,
+      "gap_mm": 4.873295116262055,
+      "force_N": 0.32471129698705137,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 14,
+      "pitch_deg": 8.610873318827299,
+      "gap_mm": 4.218123371665994,
+      "force_N": 0.23542652165352113,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 15,
+      "pitch_deg": 7.341331694007846,
+      "gap_mm": 3.642739358371505,
+      "force_N": 0.04478760781078707,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 16,
+      "pitch_deg": 6.198349085370499,
+      "gap_mm": 3.1725154470433337,
+      "force_N": 0.24568940422352303,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 17,
+      "pitch_deg": 5.214503459878284,
+      "gap_mm": 2.788770032270682,
+      "force_N": 0.10291230496160035,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 18,
+      "pitch_deg": 4.389326181397716,
+      "gap_mm": 2.5054909169724415,
+      "force_N": 0.07342166178646396,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 19,
+      "pitch_deg": 3.710747768834961,
+      "gap_mm": 2.311867697940395,
+      "force_N": 0.0063809991490040964,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 20,
+      "pitch_deg": 3.1479635509840302,
+      "gap_mm": 2.179633990058605,
+      "force_N": 0.019083694750670552,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 21,
+      "pitch_deg": 2.6704396657867178,
+      "gap_mm": 2.083112270551357,
+      "force_N": 0.02642270646155149,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 22,
+      "pitch_deg": 2.261067171962425,
+      "gap_mm": 2.0135083829047606,
+      "force_N": 0.029937259695988733,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 23,
+      "pitch_deg": 1.9139106504561532,
+      "gap_mm": 1.9740475461446638,
+      "force_N": 0.037016339455018955,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 24,
+      "pitch_deg": 1.63066008611523,
+      "gap_mm": 1.9766247021826833,
+      "force_N": 0.07475071060026446,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 25,
+      "pitch_deg": 1.4845931638794114,
+      "gap_mm": 2.080975449097966,
+      "force_N": 0.0328002972799282,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 26,
+      "pitch_deg": 1.4684540645346364,
+      "gap_mm": 2.236498988508695,
+      "force_N": 0.02220053265541202,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 27,
+      "pitch_deg": 1.500946783058354,
+      "gap_mm": 2.374254714412105,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 28,
+      "pitch_deg": 1.510496056122538,
+      "gap_mm": 2.4572104996455346,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 1,
+      "step": 29,
+      "pitch_deg": 1.484447001323507,
+      "gap_mm": 2.482512274845805,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 0,
+      "pitch_deg": 30.011133413363236,
+      "gap_mm": 18.108112257782526,
+      "force_N": 0.0,
+      "phase": "reset",
+      "status": "reset"
+    },
+    {
+      "band": 2,
+      "step": 1,
+      "pitch_deg": 29.096988564929735,
+      "gap_mm": 17.528498454828124,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "ok"
+    },
+    {
+      "band": 2,
+      "step": 2,
+      "pitch_deg": 27.782450584411656,
+      "gap_mm": 16.640444019216883,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "ok"
+    },
+    {
+      "band": 2,
+      "step": 3,
+      "pitch_deg": 26.28787293018224,
+      "gap_mm": 15.535100945236413,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 4,
+      "pitch_deg": 24.674246144410425,
+      "gap_mm": 14.331188110706828,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 5,
+      "pitch_deg": 22.9892384252391,
+      "gap_mm": 13.092653789389729,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 6,
+      "pitch_deg": 21.265671036435638,
+      "gap_mm": 11.851223286164448,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 7,
+      "pitch_deg": 19.526130631323024,
+      "gap_mm": 10.61864667579382,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 8,
+      "pitch_deg": 17.780208955943266,
+      "gap_mm": 9.406350011941012,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 9,
+      "pitch_deg": 16.0267718168624,
+      "gap_mm": 8.235544650839422,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 10,
+      "pitch_deg": 14.25896202041798,
+      "gap_mm": 7.142120320110024,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 11,
+      "pitch_deg": 12.486222560264629,
+      "gap_mm": 6.165678521274809,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 12,
+      "pitch_deg": 10.734434336938293,
+      "gap_mm": 5.3284691923741185,
+      "force_N": 0.1484173445649847,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 13,
+      "pitch_deg": 9.052446435486138,
+      "gap_mm": 4.632794155977282,
+      "force_N": 0.3139534983377587,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 14,
+      "pitch_deg": 7.545116794920588,
+      "gap_mm": 4.033029587116599,
+      "force_N": 0.12908533478476308,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 15,
+      "pitch_deg": 6.218394461893435,
+      "gap_mm": 3.5398716501359173,
+      "force_N": 0.13179280386405068,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 16,
+      "pitch_deg": 5.04590365959468,
+      "gap_mm": 3.169743481586107,
+      "force_N": 0.22491171332275628,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 17,
+      "pitch_deg": 4.077712986163177,
+      "gap_mm": 2.9057343752068587,
+      "force_N": 0.03134270054288755,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 18,
+      "pitch_deg": 3.2966498947574836,
+      "gap_mm": 2.7348836176477875,
+      "force_N": 0.05503894073642814,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 19,
+      "pitch_deg": 2.671061648495534,
+      "gap_mm": 2.6245005303693336,
+      "force_N": 0.04396447415578995,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 20,
+      "pitch_deg": 2.171947857246698,
+      "gap_mm": 2.5374061099180945,
+      "force_N": 0.027439735507001205,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 21,
+      "pitch_deg": 1.7858564957610275,
+      "gap_mm": 2.4634111323050267,
+      "force_N": 0.008300820385006657,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 22,
+      "pitch_deg": 1.490719209005259,
+      "gap_mm": 2.4164418237760943,
+      "force_N": 0.0004992701122192092,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 23,
+      "pitch_deg": 1.264430955469521,
+      "gap_mm": 2.4024102992234453,
+      "force_N": 0.006555147436254551,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 24,
+      "pitch_deg": 1.0907564660163107,
+      "gap_mm": 2.4150159143936922,
+      "force_N": 0.0017153681067061475,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 25,
+      "pitch_deg": 0.9645136606685089,
+      "gap_mm": 2.446005256052819,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 26,
+      "pitch_deg": 0.8808103946916648,
+      "gap_mm": 2.4831411111829182,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 27,
+      "pitch_deg": 0.8315954882274318,
+      "gap_mm": 2.509384234781087,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 28,
+      "pitch_deg": 0.8150463488770917,
+      "gap_mm": 2.508501611076963,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 29,
+      "pitch_deg": 0.8356420231893581,
+      "gap_mm": 2.4634058000790326,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 30,
+      "pitch_deg": 0.9007028279152789,
+      "gap_mm": 2.365008454116746,
+      "force_N": 3.5056727919191826e-05,
+      "phase": "stroke",
+      "status": "rate_limited"
+    },
+    {
+      "band": 2,
+      "step": 31,
+      "pitch_deg": 0.9407622066535962,
+      "gap_mm": 2.3192878462954813,
+      "force_N": 0.03009013730135196,
+      "phase": "stroke",
+      "status": "unreachable"
+    },
+    {
+      "band": 2,
+      "step": 32,
+      "pitch_deg": 0.94616567897713,
+      "gap_mm": 2.29722174771696,
+      "force_N": 0.006808867434505539,
+      "phase": "stroke",
+      "status": "unreachable"
+    },
+    {
+      "band": 2,
+      "step": 33,
+      "pitch_deg": 0.9332591701953205,
+      "gap_mm": 2.282876969566916,
+      "force_N": 0.01714522793297424,
+      "phase": "stroke",
+      "status": "unreachable"
+    },
+    {
+      "band": 2,
+      "step": 34,
+      "pitch_deg": 0.9148103336376068,
+      "gap_mm": 2.2718275125587772,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "unreachable"
+    },
+    {
+      "band": 2,
+      "step": 35,
+      "pitch_deg": 0.8953603831916409,
+      "gap_mm": 2.263962677037379,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "unreachable"
+    },
+    {
+      "band": 2,
+      "step": 36,
+      "pitch_deg": 0.8763464897996759,
+      "gap_mm": 2.258612713526509,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "unreachable"
+    },
+    {
+      "band": 2,
+      "step": 37,
+      "pitch_deg": 0.8585377047217232,
+      "gap_mm": 2.255421621259357,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "unreachable"
+    },
+    {
+      "band": 2,
+      "step": 38,
+      "pitch_deg": 0.8421041686716658,
+      "gap_mm": 2.2540450183689553,
+      "force_N": 0.0,
+      "phase": "stroke",
+      "status": "unreachable"
+    }
+  ],
+  "volume_balance_error_m3": -1.3552527156068805e-20,
+  "note": "Rendered actual physics states. Labelled holds at band cuts; transit not simulated. Material is a proxy."
+}

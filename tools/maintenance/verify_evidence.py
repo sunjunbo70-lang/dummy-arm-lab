@@ -6,7 +6,7 @@ import json
 ROOT = Path(__file__).resolve().parents[2]
 
 def main():
-    rows = json.loads((ROOT / 'experiments/2026-09-16_baseline/manifest.json').read_text(encoding='utf-8'))
+    rows = json.loads((ROOT / 'experiments/00_initial_debug/records/2026-09-16_baseline/manifest.json').read_text(encoding='utf-8'))
     errors = []
     for row in rows:
         p = ROOT / row['path']

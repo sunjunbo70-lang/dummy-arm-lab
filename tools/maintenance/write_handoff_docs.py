@@ -110,7 +110,7 @@ USB串口名称、udev/用户组权限、libusb访问、原生接口发现需要
 
 ## 验证范围
 
-本次交接执行的软件测试和迁移路径测试记录在 experiments/2026-09-18_handoff/。未发送实机指令；未连接Ubuntu或服务器；安装命令是目标环境操作说明，不冒充已实测。
+本次交接执行的软件测试和迁移路径测试记录在 experiments/00_initial_debug/records/2026-09-18_handoff/。未发送实机指令；未连接Ubuntu或服务器；安装命令是目标环境操作说明，不冒充已实测。
 ''')
 put('docs/ARCHITECTURE.md','''# 源码结构和数据契约
 
@@ -163,12 +163,12 @@ put('docs/STATUS.md','''# 当前状态及证据（2026-09-18）
 | Ubuntu实机 / D435 / 夹爪 | 未完成实际闭环验证 | 待办 |
 | ACDC / 世界模型 / FSDP | 讨论与研究计划；未安装、未训练、无复现结果 | ROADMAP.md |
 
-上表baseline路径相对于experiments/2026-09-16_baseline/（省略baseline前缀时同义）。原始反馈是控制器读数，不是外部相机或末端测量系统给出的精度。
+上表baseline路径相对于experiments/00_initial_debug/records/2026-09-16_baseline/（省略baseline前缀时同义）。原始反馈是控制器读数，不是外部相机或末端测量系统给出的精度。
 
 参考仿真240步：初始误差0.30822 rad→0.002226 rad；另一目标0.35496 rad→0.002546 rad。均为六维关节误差范数，不是每轴误差。
 
 保留失败和中止日志，不能把有日志的测试都算成成功。详见实验目录索引。
-'''.replace('baseline/raw/','../experiments/2026-09-16_baseline/raw/'))
+'''.replace('baseline/raw/','../experiments/00_initial_debug/records/2026-09-16_baseline/raw/'))
 put('docs/HARDWARE.md','''# 实机使用和移植边界
 
 已验证设备：VID 1209 / PID 0D32，序列号325F368F3135；原机端口COM6，目标电脑必须重新枚举。原生客户端运行依赖已放在vendor/native_client，不需要安装外部同名fibre包。
@@ -188,7 +188,7 @@ put('docs/EXPERIMENTS.md','''# 实验管理规范
 
 ## 已有基线
 
-experiments/2026-09-16_baseline/raw/ 保存整理时 outputs/ 全部117个普通文件的原样副本，包括成功、失败、截图、模型与数据。manifest.json包含原路径、大小、SHA-256；原outputs保留以兼容旧命令。重复副本用于冻结证据，不代表新增实验。
+experiments/00_initial_debug/records/2026-09-16_baseline/raw/ 保存整理时 outputs/ 全部117个普通文件的原样副本，包括成功、失败、截图、模型与数据。manifest.json包含原路径、大小、SHA-256；原outputs保留以兼容旧命令。重复副本用于冻结证据，不代表新增实验。
 
 - reference_learning：合成教师数据、线性policy和rollout。
 - verified_poses：有用户确认或完整反馈报告的姿态相关记录；同类失败报告仍保留，需读result字段。
@@ -290,9 +290,9 @@ put('tools/README.md','''# 工具入口
 ''')
 put('outputs/README.md','''# 临时/运行输出
 
-应用继续输出到此目录以保持兼容。2026-09-18整理时已有文件冻结在experiments/2026-09-16_baseline/raw，含完整清单。新的正式实验应使用唯一实验目录；不要据文件名推断成功。
+应用继续输出到此目录以保持兼容。2026-09-18整理时已有文件冻结在experiments/00_initial_debug/records/2026-09-16_baseline/raw，含完整清单。新的正式实验应使用唯一实验目录；不要据文件名推断成功。
 ''')
-put('experiments/2026-09-16_baseline/README.md','''# 既有实验基线
+put('experiments/00_initial_debug/records/2026-09-16_baseline/README.md','''# 既有实验基线
 
 采集与调试主要发生于2026-09-16；2026-09-18冻结。原始文件未修改，manifest.json记录SHA-256及原outputs路径。目录按用途分类而不是按成功与否分类，失败/中断也保留。
 证据解释见../../docs/STATUS.md及../../docs/EXPERIMENTS.md。policy.npz是参考线性BC模型，不是Dummy实机可直接部署策略。

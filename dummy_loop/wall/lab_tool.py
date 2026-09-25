@@ -20,7 +20,7 @@ def provenance(cfg):
     return {
         'profile': cfg.geometry_profile,
         'evidence': 'L1 model using user-provided dimension annotations; not hardware calibration',
-        'source_manifest': 'experiments/2026-09-22_lab_tool/source_manifest.json',
+        'source_manifest': 'experiments/00_initial_debug/records/2026-09-22_lab_tool/source_manifest.json',
         'dimensions': '124 mm blade, 42 mm heel, 35 mm shoulder; handle end sections 24x25.5 and 26.5x28.5 mm',
         'reducer': 'photo engraving 8-30; MINIF08-30 candidate, manufacturer unconfirmed; ratio 30:1 photo interpretation',
         'reducer_geometry': cfg.lab_geometry.get('reducer_drawing', 'historical estimated geometry'),

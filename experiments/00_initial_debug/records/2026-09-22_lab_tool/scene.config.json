@@ -1,0 +1,92 @@
+{
+  "config": {
+    "joint_limit_cap_deg": null,
+    "servo_kp": 35.0,
+    "servo_kv": 4.0,
+    "servo_force_limit": null,
+    "tool_mount": "rigid",
+    "geometry_profile": "lab_20260922",
+    "lab_geometry": {
+      "shoulder_width_m": 0.035,
+      "handle_small_section_m": [
+        0.024,
+        0.0255
+      ],
+      "handle_large_section_m": [
+        0.0265,
+        0.0285
+      ],
+      "clamp_clearance_m": 0.0003,
+      "clamp_wall_m": 0.0035,
+      "adapter_thickness_m": 0.006,
+      "adapter_width_m": 0.036,
+      "adapter_mass_kg": 0.02
+    },
+    "j6_reducer_length": 0.05,
+    "j6_reducer_plate": 0.032,
+    "j6_reducer_plate_thickness": 0.005,
+    "j6_reducer_radius": 0.0155,
+    "j6_reducer_mass": 0.15,
+    "j6_reducer_ratio": 30.0,
+    "j6_reducer_max_Nm": 0.9,
+    "holder_height": 0.014,
+    "holder_mass": 0.035,
+    "clamp_from_tip": null,
+    "trowel_length": 0.124,
+    "trowel_width": 0.042,
+    "trowel_tip_length": 0.024,
+    "trowel_thickness": 0.001,
+    "neck_from_tip": 0.081,
+    "neck_height": 0.027,
+    "handle_from_tip": [
+      0.027,
+      0.122
+    ],
+    "handle_radius": 0.01425,
+    "tool_mass": 0.08,
+    "adapter_length": 0.03,
+    "adapter_radius": 0.012,
+    "tool_length": 0.1,
+    "blade_tilt_deg": 0.0,
+    "blade_width": 0.08,
+    "blade_height": 0.05,
+    "blade_thickness": 0.003,
+    "spring_k": 400.0,
+    "spring_preload": 2.0,
+    "spring_travel": 0.03,
+    "spring_damping": 8.0,
+    "blade_friction": 0.6,
+    "wall_distance": 0.4,
+    "wall_yaw_deg": 0.0,
+    "wall_pitch_deg": 0.0,
+    "wall_lateral": 0.0,
+    "wall_center_z": 0.15,
+    "wall_size": [
+      0.8,
+      0.6
+    ],
+    "camera_pos": [
+      -0.05,
+      0.35,
+      0.45
+    ],
+    "camera_fovy_deg": 58.0,
+    "gravcomp": true
+  },
+  "provenance": {
+    "profile": "lab_20260922",
+    "evidence": "L1 model using user-provided dimension annotations; not hardware calibration",
+    "source_manifest": "experiments/00_initial_debug/records/2026-09-22_lab_tool/source_manifest.json",
+    "dimensions": "124 mm blade, 42 mm heel, 35 mm shoulder; handle end sections 24x25.5 and 26.5x28.5 mm",
+    "reducer": "photo engraving 8-30; MINIF08-30 candidate, manufacturer unconfirmed; ratio 30:1 photo interpretation",
+    "reducer_geometry": "MINIF08 drawing + photo-based top adapter; installed length and holes not measured",
+    "force_limit": "0.9 Nm continuous catalog candidate; motor torque-speed/efficiency not identified",
+    "mount": "proposed split elliptical clamp, simulated rigid; not a manufacturing-validated design",
+    "unmeasured": "all masses, blade thickness, handle axial length, neck position, adapter holes, stiffness and backlash",
+    "gap": "27 mm interpreted as blade back to closest handle surface; accepted provisionally by user; precise gap not independently measured",
+    "sensors": "virtual force sensor only; no physical force sensor confirmed",
+    "joint_limits": "CANDIDATE firmware ranges; arm models/dummy_v2.xml unchanged",
+    "legacy_compatibility": "old reach tables, policies and reported scores apply only to their original scenes"
+  },
+  "digest": "10272442179a"
+}

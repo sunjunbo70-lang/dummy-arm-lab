@@ -231,3 +231,7 @@ full source table: [`THIRD_PARTY.md`](THIRD_PARTY.md).
 Issues and PRs welcome. Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) first — in
 particular the rule that no change may upgrade a claim's evidence level without
 attaching the experiment that earned it.
+
+## Experiment archive / 实验入口
+
+[按版本浏览所有实验](experiments/README.md) · [当前v0.9 r1.2](experiments/v0.9/r1.2/README.md)。方案、过程、指标、回放入口集中于同一修订目录，不再使用根launchers。

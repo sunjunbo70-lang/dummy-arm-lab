@@ -49,4 +49,4 @@ python -m dummy_loop run-sim --policy experiments/my-first-run/policy.npz --step
 
 ## 验证范围
 
-本次交接执行的软件测试和迁移路径测试记录在 experiments/2026-09-18_handoff/。未发送实机指令；未连接Ubuntu或服务器；安装命令是目标环境操作说明，不冒充已实测。
+本次交接执行的软件测试和迁移路径测试记录在 experiments/00_initial_debug/records/2026-09-18_handoff/。未发送实机指令；未连接Ubuntu或服务器；安装命令是目标环境操作说明，不冒充已实测。

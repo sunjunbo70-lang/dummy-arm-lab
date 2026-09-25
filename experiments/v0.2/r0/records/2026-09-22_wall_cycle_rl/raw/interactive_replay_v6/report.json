@@ -1,0 +1,110 @@
+{
+  "title": "整片墙面连续强化学习闭环",
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "policy": "D:\\project\\VLA\\dummy-arm-lab\\experiments\\v0.2\\r0\\records\\2026-09-22_wall_cycle_rl\\raw\\model\\policy_ppo.npz",
+  "policy_sha256": "02b9cdb6e7e790dcf591ec0f9d1082b8dc7599ccc56872e320603b9f8c0b2c13",
+  "seed": 2219,
+  "return": 108.81842164494898,
+  "result": {
+    "success": true,
+    "metrics": {
+      "coverage": 0.9948979591836735,
+      "mean_thickness_mm": 2.0516365235062355,
+      "rmse_mm": 0.15456351901580553,
+      "p95_error_mm": 0.43513721848048803,
+      "under_frac": 0.00510204081632653,
+      "over_frac": 0.0,
+      "roughness_mm": 0.03166639184299607,
+      "blade_load_ml": 3.054253206756352,
+      "waste_frac": 0.20828063627290508
+    },
+    "cycles": 30,
+    "reloads": 3,
+    "control_steps": 4618,
+    "budget": 6000,
+    "stall_count": 0,
+    "volume_balance_m3": 1.6940658945086007e-19
+  },
+  "action_summary": {
+    "mode_counts": {
+      "DEPOSIT": 3,
+      "REUSE": 9,
+      "LEVEL": 17,
+      "RESCAN": 0,
+      "FINISH": 1
+    },
+    "path_angle_deg_min": -152.48381988701408,
+    "path_angle_deg_max": 179.5527419124169,
+    "non_vertical_fraction": 0.9666666666666667
+  },
+  "config": {
+    "width_m": 0.28,
+    "height_m": 0.07,
+    "cell_m": 0.005,
+    "target_m": 0.002,
+    "acceptable_low_m": 0.0015,
+    "acceptable_high_m": 0.0025,
+    "blade_length_m": 0.12,
+    "blade_width_m": 0.03,
+    "blade_cell_m": 0.005,
+    "blade_capacity_ml": 30.0,
+    "load_choices_ml": [
+      0.0,
+      12.0,
+      18.0,
+      24.0
+    ],
+    "load_scale_range": [
+      0.8,
+      1.2
+    ],
+    "camera_resolution": [
+      848,
+      480
+    ],
+    "camera_fps": 30,
+    "camera_distance_m": 0.45,
+    "scan_frames": 45,
+    "scan_warmup_frames": 15,
+    "scan_fused_frames": 30,
+    "depth_noise_mm": 0.6,
+    "plane_bias_mm": 0.2,
+    "invalid_base": 0.02,
+    "invalid_edge": 0.15,
+    "extrinsic_translation_mm": 1.0,
+    "extrinsic_rotation_deg": 0.05,
+    "control_hz": 20,
+    "base_steps": 6000,
+    "max_steps": 12000,
+    "extension_steps": 1000,
+    "max_cycles": 80,
+    "max_reload_cycles": 30,
+    "stall_limit": 5,
+    "progress_epsilon": 0.0002,
+    "max_force_N": 40.0,
+    "force_window": [
+      2.0,
+      15.0
+    ],
+    "wall_clearance_m": 0.08,
+    "approach_clearance_m": 0.025,
+    "min_stroke_m": 0.025,
+    "max_stroke_m": 0.16,
+    "speed_range_m_s": [
+      0.02,
+      0.12
+    ],
+    "curve_offset_m": 0.03,
+    "stroke_samples": 28,
+    "finish_coverage": 0.95,
+    "finish_rmse_mm": 0.5,
+    "finish_p95_mm": 1.0,
+    "finish_confidence": 0.95
+  },
+  "frames": 2453,
+  "transit_frames": 2006,
+  "max_display_joint_delta_deg": 9.080000000000013,
+  "kinematic_fail_frames": 0,
+  "note": "Policy and material states are actual rollout data. Arm poses are MuJoCo inverse-kinematic solutions; mortar is a reduced-order 2.5-D proxy."
+}

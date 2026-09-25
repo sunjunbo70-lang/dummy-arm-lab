@@ -1,15 +1,15 @@
 """墙面抹涂仿真命令行。全部是仿真，不连接硬件。
 
-  python -m dummy_loop.wall scene   --out outputs/wall/scene.xml     导出场景 MJCF（可用 MuJoCo 查看器打开）
-  python -m dummy_loop.wall layout  --out outputs/wall/layout.json   工位布局搜索
+  python -m dummy_loop.wall scene   --out experiments/v0.1/r0/runs/scene.xml     导出场景 MJCF（可用 MuJoCo 查看器打开）
+  python -m dummy_loop.wall layout  --out experiments/v0.1/r0/runs/layout.json   工位布局搜索
   python -m dummy_loop.wall demo    [--viewer] [--probe] [--servo] [--random-scale 1]
-  python -m dummy_loop.wall collect --episodes 50 --out outputs/wall/episodes [--random-scale 1] [--probe] [--servo]
-  python -m dummy_loop.wall replay  outputs/wall/episodes/ep_0000.npz
-  python -m dummy_loop.wall study   --out outputs/wall/study
-  python -m dummy_loop.wall render  --out outputs/wall/camera        固定相机 RGB 与深度图
-  python -m dummy_loop.wall rl-train --updates 60 --out outputs/wall/rl   抹涂手法强化学习（示教预热 + PPO）
-  python -m dummy_loop.wall rl-eval  --policy outputs/wall/rl/policy.npz  评估学到的策略并与脚本基线对比
-  python -m dummy_loop.wall rl-session [--policy ...] --out outputs/wall/session   一刀一刀把整片区域抹完
+  python -m dummy_loop.wall collect --episodes 50 --out experiments/v0.1/r0/runs/episodes [--random-scale 1] [--probe] [--servo]
+  python -m dummy_loop.wall replay  experiments/v0.1/r0/runs/episodes/ep_0000.npz
+  python -m dummy_loop.wall study   --out experiments/v0.1/r0/runs/study
+  python -m dummy_loop.wall render  --out experiments/v0.1/r0/runs/camera        固定相机 RGB 与深度图
+  python -m dummy_loop.wall rl-train --updates 60 --out experiments/v0.1/r0/runs/rl   抹涂手法强化学习（示教预热 + PPO）
+  python -m dummy_loop.wall rl-eval  --policy experiments/v0.1/r0/runs/rl/policy.npz  评估学到的策略并与脚本基线对比
+  python -m dummy_loop.wall rl-session [--policy ...] --out experiments/v0.1/r0/runs/session   一刀一刀把整片区域抹完
 """
 import argparse, json, sys, time
 from pathlib import Path
@@ -24,8 +24,8 @@ def main(argv=None):
     ap = argparse.ArgumentParser(prog='python -m dummy_loop.wall', description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest='cmd', required=True)
-    s = sub.add_parser('scene'); s.add_argument('--out', type=Path, default=Path('outputs/wall/scene.xml'))
-    s = sub.add_parser('layout'); s.add_argument('--out', type=Path, default=Path('outputs/wall/layout.json'))
+    s = sub.add_parser('scene'); s.add_argument('--out', type=Path, default=Path('experiments/v0.1/r0/runs/scene.xml'))
+    s = sub.add_parser('layout'); s.add_argument('--out', type=Path, default=Path('experiments/v0.1/r0/runs/layout.json'))
     s.add_argument('--joint-limit-cap-deg', type=float, default=None,
                    help='在 V2 固件限位之外再加的对称保守包络（度）；默认不加')
     for name in ('demo', 'collect'):
@@ -38,12 +38,12 @@ def main(argv=None):
             s.add_argument('--viewer', action='store_true')
         else:
             s.add_argument('--episodes', type=int, default=20)
-            s.add_argument('--out', type=Path, default=Path('outputs/wall/episodes'))
+            s.add_argument('--out', type=Path, default=Path('experiments/v0.1/r0/runs/episodes'))
     s = sub.add_parser('replay'); s.add_argument('episode', type=Path)
-    s = sub.add_parser('study'); s.add_argument('--out', type=Path, default=Path('outputs/wall/study'))
+    s = sub.add_parser('study'); s.add_argument('--out', type=Path, default=Path('experiments/v0.1/r0/runs/study'))
     s.add_argument('--random', type=int, default=20); s.add_argument('--random-scale', type=float, default=1.0)
-    s = sub.add_parser('render'); s.add_argument('--out', type=Path, default=Path('outputs/wall/camera'))
-    s = sub.add_parser('rl-train'); s.add_argument('--out', type=Path, default=Path('outputs/wall/rl'))
+    s = sub.add_parser('render'); s.add_argument('--out', type=Path, default=Path('experiments/v0.1/r0/runs/camera'))
+    s = sub.add_parser('rl-train'); s.add_argument('--out', type=Path, default=Path('experiments/v0.1/r0/runs/rl'))
     s.add_argument('--updates', type=int, default=60); s.add_argument('--steps-per-update', type=int, default=2048)
     s.add_argument('--seed', type=int, default=0); s.add_argument('--random-scale', type=float, default=0.0)
     s.add_argument('--lr', type=float, default=5e-5); s.add_argument('--init-log-std', type=float, default=-3.0)
@@ -54,7 +54,7 @@ def main(argv=None):
     s = sub.add_parser('rl-eval'); s.add_argument('--policy', type=Path, required=True)
     s.add_argument('--episodes', type=int, default=20); s.add_argument('--seed', type=int, default=1000)
     s.add_argument('--random-scale', type=float, default=0.0)
-    s = sub.add_parser('rl-session'); s.add_argument('--out', type=Path, default=Path('outputs/wall/session'))
+    s = sub.add_parser('rl-session'); s.add_argument('--out', type=Path, default=Path('experiments/v0.1/r0/runs/session'))
     s.add_argument('--policy', type=Path, default=None, help='不给就用手写脚本跑')
     s.add_argument('--seed', type=int, default=2000)
     s.add_argument('--columns', type=float, nargs='+', default=[-0.08, 0.0, 0.08], help='每条带的中心 u（m）')

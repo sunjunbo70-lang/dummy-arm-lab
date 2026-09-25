@@ -4,8 +4,8 @@
 为实机实验提前做出设计决定。全部是 L1 证据：**仿真结论只能指导设计和下一步测量，不能预测实机表现。**
 
 代码在 `dummy_loop/wall/`，数据格式在 `dummy_loop/episode.py`，约定在 `docs/ACTION_SPACE.md`，
-测试在 `tests/test_wall_sim.py`，证据在 `experiments/2026-09-20_wall_sim_chain/`（参考模型）与
-`experiments/2026-09-20_v2_model/`（**V2 模型，当前版本**）。
+测试在 `tests/test_wall_sim.py`，证据在 `experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/`（参考模型）与
+`experiments/00_initial_debug/records/2026-09-20_v2_model/`（**V2 模型，当前版本**）。
 
 > **2026-09-20 切换到 V2 模型。** 场景现在建在 `models/dummy_v2.xml` 上（固件 DH 运动学、V2 限位与传动参数、
 > J6 裸轴末端，见 `docs/hardware/DUMMY_V2.md`）。世界系改为固件基座系（+X 朝前），墙在 +X 方向。
@@ -16,12 +16,12 @@
 ```bash
 python -m dummy_loop.wall demo --viewer                        # Windows 上打开 MuJoCo 窗口看一遍抹涂
 python -m dummy_loop.wall demo --random-scale 1 --probe --servo # 随机误差 + 两种补偿，打印指标
-python -m dummy_loop.wall collect --episodes 50 --random-scale 1 --probe --servo --out outputs/wall/episodes
-python -m dummy_loop.wall replay outputs/wall/episodes/ep_0000.npz   # 回放，检验录下的数据能复现这条 episode
-python -m dummy_loop.wall study --out outputs/wall/study        # 敏感性分析（约 30 秒）
-python -m dummy_loop.wall layout --out outputs/wall/layout.json # 工位布局搜索（约 45 秒）
-python -m dummy_loop.wall scene --out outputs/wall/scene.xml    # 导出场景 MJCF，可直接用 MuJoCo 打开
-python -m dummy_loop.wall render --out outputs/wall/camera      # 固定相机 RGB + 深度
+python -m dummy_loop.wall collect --episodes 50 --random-scale 1 --probe --servo --out experiments/v0.1/r0/runs/episodes
+python -m dummy_loop.wall replay experiments/v0.1/r0/runs/episodes/ep_0000.npz   # 回放，检验录下的数据能复现这条 episode
+python -m dummy_loop.wall study --out experiments/v0.1/r0/runs/study        # 敏感性分析（约 30 秒）
+python -m dummy_loop.wall layout --out experiments/v0.1/r0/runs/layout.json # 工位布局搜索（约 45 秒）
+python -m dummy_loop.wall scene --out experiments/v0.1/r0/runs/scene.xml    # 导出场景 MJCF，可直接用 MuJoCo 打开
+python -m dummy_loop.wall render --out experiments/v0.1/r0/runs/camera      # 固定相机 RGB + 深度
 ```
 
 只依赖 `requirements/core.txt`（numpy、mujoco）。画图脚本 `tools/simulation/plot_wall_study.py` 另需 matplotlib。
@@ -31,7 +31,7 @@ python -m dummy_loop.wall render --out outputs/wall/camera      # 固定相机 R
 在 `models/dummy_reference.xml` 之上用 MjSpec 程序化组装，**不修改原文件**：
 
 - 转接件（刚性）→ 弹簧滑轨（被动柔顺，行程 30 mm，k = 400 N/m，预紧 2 N）→ 抹刀（80 × 50 mm 占位刀面）
-- 刀面中心在 J6 轴线上：沿墙拖曳力对 J6 不产生扭矩（见 `experiments/2026-09-20_static_torque`）
+- 刀面中心在 J6 轴线上：沿墙拖曳力对 J6 不产生扭矩（见 `experiments/00_initial_debug/records/2026-09-20_static_torque`）
 - 只有刀面与墙面之间计算接触，机械臂连杆仍然不参与碰撞
 - 固定相机 `d435`（位置占位），传感器：压缩量、刀面受力
 - 所有尺寸都是参数（`SceneConfig`），每一项是假设、占位还是测量值写在 `provenance()` 里，随 episode 保存
@@ -52,7 +52,7 @@ python -m dummy_loop.wall render --out outputs/wall/camera      # 固定相机 R
 
 ### 2. 「够得到」不等于「好干活」
 
-`experiments/2026-09-20_wall_workspace` 按可达面积算，墙放在距 J1 轴 20–30 cm 面积最大。
+`experiments/00_initial_debug/records/2026-09-20_wall_workspace` 按可达面积算，墙放在距 J1 轴 20–30 cm 面积最大。
 但那些点大多是蜷缩、贴近奇异的姿态。`layout.py` 改用「整片工作区上的最差条件数」评分，
 在 96 个候选（刀面倾角 × 墙距 × 工作高度）里只有 20 个能覆盖 12 × 10 cm 的工作区，最优的是：
 
@@ -132,7 +132,7 @@ D435 深度噪声与空洞、机械臂连杆与墙的碰撞（只算刀面-墙�
 
 场景换成 `models/dummy_v2.xml` 后，布局、敏感性分析、静力矩全部重跑。关节范围改用 **V2 固件限位**
 （J1 ±170°、J2 −75…90°、J3 0…180°、J4 ±180°、J5 −100…120°、J6 ±720°，固件角），不再用假设的 ±90°。
-记录与原始数据在 `experiments/2026-09-20_v2_model/`。
+记录与原始数据在 `experiments/00_initial_debug/records/2026-09-20_v2_model/`。
 
 **布局**：96 个候选里 27 个能覆盖 12 × 10 cm 工作区（参考模型是 20 个）。前四名：
 
@@ -173,7 +173,7 @@ J2 零位误差 2° 使覆盖率降到 0.91，探触后 0.95。四条录制样�
 实际末端：去掉原「J6 减速器 + 夹爪电机 + 夹爪」里的夹爪电机和夹爪，减速器输出法兰上装 3D 打印抹刀座，
 卡住日式尖头抹刀的木柄（刀面 120 × 27.5 mm，木柄与刀面平行、垂直于 J6 轴）。整个末端刚性，没有伸缩。
 前面各节里的「弹簧滑轨 + 压缩量」是早期设计选择，现在保留为 `--tool spring` 仅作对比；默认场景、演示、录制、
-敏感性分析都改用刚性抹刀。尺寸按照片估计，记录在 `experiments/2026-09-20_rigid_tool/`。
+敏感性分析都改用刚性抹刀。尺寸按照片估计，记录在 `experiments/00_initial_debug/records/2026-09-20_rigid_tool/`。
 
 30 组随机误差：
 
@@ -206,4 +206,4 @@ J2 零位误差 2° 使覆盖率降到 0.91，探触后 0.95。四条录制样�
 手写脚本此时只有 0.64 覆盖，PPO 从 −6.26 学到 +8.20；用「不用手法」的平刀示教预热也能从 −10.52 学到 +8.32。
 单刀策略未经整片训练直接迁移，196 cm² 三条带覆盖 0.98、厚度 RMS 0.371 mm。
 限定：奖励唯一逼出来的是「后缘间隙 = 目标厚度」，俯仰角大小并不唯一。
-详见 **docs/RL.md** 与 `experiments/2026-09-21_plaster_session_rl/`。
+详见 **docs/RL.md** 与 `experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/`。

@@ -1,9 +1,9 @@
 """Export a trained v0.2 whole-cycle policy to the offline HTML stick-figure replay.
 
-KEPT FOR THE v0.2 RECORD ONLY (experiments/2026-09-22_wall_cycle_rl). It is pinned to
+KEPT FOR THE v0.2 RECORD ONLY (experiments/v0.2/r0/records/2026-09-22_wall_cycle_rl). It is pinned to
 CycleConfig(physics='v0.2') so the recorded 11-dim policies still load. v0.3 replays use
 dummy_loop/wall_cycle/view.py: the real Dummy V2 MuJoCo model in MuJoCo's own window,
-driven by the co-simulated joint angles (see docs/changes/2026-09-22_wall_cycle_v0.3.md).
+driven by the co-simulated joint angles (see experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md).
 """
 import argparse, hashlib, json
 from pathlib import Path

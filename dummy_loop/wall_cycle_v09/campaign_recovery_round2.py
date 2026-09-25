@@ -5,7 +5,7 @@ import argparse,json,time,sys,os,subprocess,hashlib
 from pathlib import Path
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
-BASE=ROOT/'outputs/wall_cycle/v09_r12'
+BASE=ROOT/'experiments/v0.9/r1.2/runs/v09_r12'
 PY=sys.executable
 REACH=BASE/'reach_a1_001/reach.npz'
 DEMO=BASE/'teacher_400_003_inventory'

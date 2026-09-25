@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class VisualizeTests(unittest.TestCase):
     def test_callbacks_do_not_change_physics_or_material(self):
-        path = ROOT / 'experiments/2026-09-21_plaster_session_rl/raw/technique_warm_start/policy.npz'
+        path = ROOT / 'experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/technique_warm_start/policy.npz'
         env = make_env(2000)
         policy = Scaled(env, load_policy(env, path), deterministic=True)
         expected, strokes, field = run_session(env, policy)

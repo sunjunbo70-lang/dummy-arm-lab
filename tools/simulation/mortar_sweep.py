@@ -1,14 +1,14 @@
 """Single-stroke sweep of the v0.3 mortar model: pitch x force x yield stress.
 
 Answers one question before any learning: does blade pitch matter in the physics model,
-and if so which way, WITHOUT any rule that mentions pitch? (docs/changes/2026-09-22_wall_cycle_v0.3.md, C3)
+and if so which way, WITHOUT any rule that mentions pitch? (experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md, C3)
 
 One upward stroke through the middle of a 12 x 12 cm patch with a random 24 ml load (4 seeds),
 constant pitch, nominal path (no arm). Reported per (tau_y, pitch, force): mean layer in the
 stroke band, share of the supplied material wasted (fell off / pushed out), share still on
 the blade. L1, assumed material parameters.
 
-    python tools/simulation/mortar_sweep.py --out outputs/wall_cycle/mortar_sweep.json
+    python tools/simulation/mortar_sweep.py --out experiments/00_initial_debug/runs/wall_cycle_unclassified/mortar_sweep.json
 """
 import argparse
 import json
@@ -29,7 +29,7 @@ FORCES = (0.5, 1, 2, 3, 5, 8, 12)
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--out', type=Path, default=Path('outputs/wall_cycle/mortar_sweep.json'))
+    ap.add_argument('--out', type=Path, default=Path('experiments/00_initial_debug/runs/wall_cycle_unclassified/mortar_sweep.json'))
     a = ap.parse_args(argv)
     base = CycleConfig(width_m=0.12, height_m=0.12)
     rows = []

@@ -1,7 +1,7 @@
 """对比两次抹涂训练（工人手法预热 vs 平刀预热），并跑整片作业。需要 matplotlib。
 
-  python tools/simulation/rl_compare.py --technique outputs/wall/rl_tech --flat outputs/wall/rl_flat \
-      --out outputs/wall/rl_compare
+  python tools/simulation/rl_compare.py --technique experiments/v0.1/r0/runs/rl_tech --flat experiments/v0.1/r0/runs/rl_flat \
+      --out experiments/v0.1/r0/runs/rl_compare
 
 产出（全部是 L1 仿真，不连硬件）：
   training.png   学习曲线 + 抹出来的料层 RMS 误差
@@ -56,7 +56,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--technique', type=Path, required=True, help='工人手法预热那次训练的输出目录')
     ap.add_argument('--flat', type=Path, required=True, help='平刀（不用手法）预热那次训练的输出目录')
-    ap.add_argument('--out', type=Path, default=Path('outputs/wall/rl_compare'))
+    ap.add_argument('--out', type=Path, default=Path('experiments/v0.1/r0/runs/rl_compare'))
     a = ap.parse_args(argv)
     a.out.mkdir(parents=True, exist_ok=True)
     runs = {'technique': a.technique, 'flat': a.flat}

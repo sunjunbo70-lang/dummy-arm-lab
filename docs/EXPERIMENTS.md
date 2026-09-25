@@ -1,8 +1,12 @@
+# 当前布局（2026-09-25起）
+
+见 [实验总目录](../experiments/README.md)。新实验采用 experiments/<大版本>/<修订>/{design,records,runs,scripts}，调试在00_initial_debug。下方为历史说明，旧outputs实体已迁移，不能按旧路径启动。
+
 # 实验管理规范
 
 ## 已有基线
 
-experiments/2026-09-16_baseline/raw/ 保存整理时 outputs/ 全部117个普通文件的原样副本，包括成功、失败、截图、模型与数据。manifest.json包含原路径、大小、SHA-256；原outputs保留以兼容旧命令。重复副本用于冻结证据，不代表新增实验。
+experiments/00_initial_debug/records/2026-09-16_baseline/raw/ 保存整理时 outputs/ 全部117个普通文件的原样副本，包括成功、失败、截图、模型与数据。manifest.json包含原路径、大小、SHA-256；原outputs保留以兼容旧命令。重复副本用于冻结证据，不代表新增实验。
 
 - reference_learning：合成教师数据、线性policy和rollout。
 - verified_poses：有用户确认或完整反馈报告的姿态相关记录；同类失败报告仍保留，需读result字段。
@@ -46,4 +50,4 @@ experiments/2026-09-16_baseline/raw/ 保存整理时 outputs/ 全部117个普通
 | `2026-09-22_windows_env` | 空目录，无 README、无 run.json、`raw/` 也是空的 | — | 疑似未完成会话的残留，不是有效记录；未经用户同意不会删除，仅作提示 |
 
 与 `2026-09-22_wall_cycle_v03` 平行的更详细的版本间差异记录见
-`docs/changes/2026-09-22_wall_cycle_v0.3.md`（每一项改动的原因、内容、"为什么不能改回去"）。
+`experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md`（每一项改动的原因、内容、"为什么不能改回去"）。

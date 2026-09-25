@@ -1,0 +1,147 @@
+[
+  {
+    "version": "00_initial_debug",
+    "path": "experiments/00_initial_debug/scripts/hardware/MuJoCo实机同步.cmd",
+    "kind": "hardware"
+  },
+  {
+    "version": "00_initial_debug",
+    "path": "experiments/00_initial_debug/scripts/simulation/六轴同时往复仿真.cmd",
+    "kind": "simulation"
+  },
+  {
+    "version": "00_initial_debug",
+    "path": "experiments/00_initial_debug/scripts/simulation/墙面抹涂仿真演示.cmd",
+    "kind": "simulation"
+  },
+  {
+    "version": "00_initial_debug",
+    "path": "experiments/00_initial_debug/scripts/simulation/实测末端工具仿真.cmd",
+    "kind": "simulation"
+  },
+  {
+    "version": "v0.1",
+    "path": "experiments/v0.1/r0/scripts/simulation/抹涂整片作业仿真.cmd",
+    "kind": "simulation"
+  },
+  {
+    "version": "v0.1",
+    "path": "experiments/v0.1/r0/scripts/training/抹涂手法强化学习.cmd",
+    "kind": "training"
+  },
+  {
+    "version": "v0.1",
+    "path": "experiments/v0.1/r0/scripts/visualization/强化学习动作可视化.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.2",
+    "path": "experiments/v0.2/r0/scripts/visualization/整片连续强化学习可视化_v0.2记录.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.3",
+    "path": "experiments/v0.3/r0/scripts/visualization/整片连续强化学习可视化.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.5",
+    "path": "experiments/v0.5/p1/scripts/visualization/新一轮抹墙训练MuJoCo回放.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.6",
+    "path": "experiments/v0.6/p2a/scripts/training/整片抹墙v0.6训练.cmd",
+    "kind": "training"
+  },
+  {
+    "version": "v0.6",
+    "path": "experiments/v0.6/p2a/scripts/visualization/整片抹墙v0.6_MuJoCo回放.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.7",
+    "path": "experiments/v0.7/r0/scripts/training/整片抹墙v0.7一键训练(自动重建可达表+训练+回放).cmd",
+    "kind": "training"
+  },
+  {
+    "version": "v0.7",
+    "path": "experiments/v0.7/r0/scripts/training/整片抹墙v0.7训练.cmd",
+    "kind": "training"
+  },
+  {
+    "version": "v0.7",
+    "path": "experiments/v0.7/r0/scripts/visualization/整片抹墙v0.7_MuJoCo回放.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.7",
+    "path": "experiments/v0.7/r0/scripts/visualization/整片抹墙v0.7教师回放(免训练).cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.8",
+    "path": "experiments/v0.8/r0/scripts/training/整片抹墙v0.8一键训练(并行+回放).cmd",
+    "kind": "training"
+  },
+  {
+    "version": "v0.8",
+    "path": "experiments/v0.8/r0/scripts/visualization/v08_teacher_review_1x.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.8",
+    "path": "experiments/v0.8/r0/scripts/visualization/整片抹墙v0.8_MuJoCo回放.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.8",
+    "path": "experiments/v0.8/r0/scripts/visualization/整片抹墙v0.8教师回放(免训练).cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.9",
+    "path": "experiments/v0.9/r1.2/scripts/training/v09完整实验状态报告.cmd",
+    "kind": "training"
+  },
+  {
+    "version": "v0.9",
+    "path": "experiments/v0.9/r1.2/scripts/visualization/v09_BC开发轨迹原生回放.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.9",
+    "path": "experiments/v0.9/r1.2/scripts/visualization/v09_final_BC.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.9",
+    "path": "experiments/v0.9/r1.2/scripts/visualization/v09_final_BestImprovement.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.9",
+    "path": "experiments/v0.9/r1.2/scripts/visualization/v09_final_RL.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.9",
+    "path": "experiments/v0.9/r1.2/scripts/visualization/v09_final_Teacher.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.9",
+    "path": "experiments/v0.9/r1.2/scripts/visualization/v09_final_Worst.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.9",
+    "path": "experiments/v0.9/r1.2/scripts/visualization/v09_timestamped_replay.cmd",
+    "kind": "visualization"
+  },
+  {
+    "version": "v0.9",
+    "path": "experiments/v0.9/r1.2/scripts/visualization/v09检查点重新闭环并回放.cmd",
+    "kind": "visualization"
+  }
+]

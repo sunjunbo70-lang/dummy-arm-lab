@@ -8,18 +8,18 @@
 
 代码：`dummy_loop/wall/material.py`（材料）、`stroke_env.py`（单刀环境）、`session.py`（多刀整片）、
 `ppo.py`（纯 numpy PPO）、`rl.py`（训练闭环）。测试 `tests/test_wall_rl.py`。
-记录 `experiments/2026-09-21_plaster_session_rl/`（前一版动力学的记录在 `2026-09-21_stroke_rl/`）。
+记录 `experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/`（前一版动力学的记录在 `2026-09-21_stroke_rl/`）。
 
 ## 怎么跑
 
 ```bash
-python -m dummy_loop.wall rl-train --updates 100 --script-style technique --out outputs/wall/rl_tech
-python -m dummy_loop.wall rl-train --updates 100 --script-style flat      --out outputs/wall/rl_flat
-python -m dummy_loop.wall rl-eval  --policy outputs/wall/rl_tech/policy.npz          # 与脚本基线对比
-python -m dummy_loop.wall rl-session --policy outputs/wall/rl_tech/policy.npz \
-       --out outputs/wall/session                                                    # 一刀一刀抹完整片
-python tools/simulation/rl_compare.py --technique outputs/wall/rl_tech \
-       --flat outputs/wall/rl_flat --out outputs/wall/rl_compare                     # 三张对比图
+python -m dummy_loop.wall rl-train --updates 100 --script-style technique --out experiments/v0.1/r0/runs/rl_tech
+python -m dummy_loop.wall rl-train --updates 100 --script-style flat      --out experiments/v0.1/r0/runs/rl_flat
+python -m dummy_loop.wall rl-eval  --policy experiments/v0.1/r0/runs/rl_tech/policy.npz          # 与脚本基线对比
+python -m dummy_loop.wall rl-session --policy experiments/v0.1/r0/runs/rl_tech/policy.npz \
+       --out experiments/v0.1/r0/runs/session                                                    # 一刀一刀抹完整片
+python tools/simulation/rl_compare.py --technique experiments/v0.1/r0/runs/rl_tech \
+       --flat experiments/v0.1/r0/runs/rl_flat --out experiments/v0.1/r0/runs/rl_compare                     # 三张对比图
 ```
 
 每次训练单核 CPU 约 3 分钟（20.5 万步）。只依赖 numpy 与 mujoco（画图另需 matplotlib）。

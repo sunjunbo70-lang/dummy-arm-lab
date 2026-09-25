@@ -133,7 +133,7 @@ class SceneConfig:
             'tool_sensor': ('load cell between flange and holder (hardware_with_sensor); in sim = blade-wall normal force + noise'
                             if self.tool_mount == 'rigid' else 'spring compression (linear pot / hall sensor)'),
             'wall_pose': ('nominal. Chosen by dummy_loop.wall.layout search on the V2 model '
-                          '(see experiments/2026-09-20_v2_model). Re-run after M3.'),
+                          '(see experiments/00_initial_debug/records/2026-09-20_v2_model). Re-run after M3.'),
             'camera_pose': 'PLACEHOLDER: fixed D435 not yet mounted (M6)',
         }
 

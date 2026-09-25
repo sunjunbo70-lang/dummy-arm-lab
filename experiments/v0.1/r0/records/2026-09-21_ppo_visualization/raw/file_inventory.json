@@ -1,0 +1,4330 @@
+{
+ "excluded": [
+  ".git",
+  ".venv-loop",
+  "__pycache__",
+  "outputs"
+ ],
+ "counts": {
+  ".rar": 1,
+  ".zip": 1,
+  ".cmd": 22,
+  ".log": 13,
+  ".txt": 29,
+  "": 4,
+  ".md": 88,
+  ".yml": 1,
+  ".json": 103,
+  ".docx": 1,
+  ".py": 146,
+  ".html": 1,
+  ".jsonl": 46,
+  ".npz": 30,
+  ".png": 36,
+  ".gif": 1,
+  ".xml": 9,
+  ".npy": 2,
+  ".stl": 21,
+  ".urdf": 1,
+  ".ps1": 9,
+  ".sh": 2
+ },
+ "files": [
+  {
+   "path": "1.Dummy V2任同学整理.rar",
+   "bytes": 225700065,
+   "sha256": "c2cf759d5b5dd1fc09f319ec38a75b0fb925ff7ce6e315c5531ce3b89e718488"
+  },
+  {
+   "path": "3D元器件盒子.zip",
+   "bytes": 5982381,
+   "sha256": "69f1b5f01d67a5adf55ffa6063a9126d6612f118c3a3a2be67ee86fef4d0b47e"
+  },
+  {
+   "path": "commit_2026-09-20.cmd",
+   "bytes": 870,
+   "sha256": "ff5e85bc976b8c1cba923ba2c53f88d8edbf10de89e4ee7824f906cc3dc7b89a",
+   "lines": 18
+  },
+  {
+   "path": "commit_2026-09-20.log",
+   "bytes": 8879,
+   "sha256": "18214639a18b58367c891c207eba5dff9a7df4eb0bf047faa2ce3b577129e800"
+  },
+  {
+   "path": "commit_msg1.txt",
+   "bytes": 546,
+   "sha256": "531ae4498499293f635679f4e1658c7aed293ddadba96d617f7158d976f41ad1",
+   "lines": 10
+  },
+  {
+   "path": "commit_msg2.txt",
+   "bytes": 1187,
+   "sha256": "2f37631fb423bc288711b5388d4025260810c464236dc7a95706c42b96bc884f",
+   "lines": 19
+  },
+  {
+   "path": "commit_msg3.txt",
+   "bytes": 1118,
+   "sha256": "35341f7a46501b6d784d413e6e825734a0f90d58da6fa8068252615800c1a2c3",
+   "lines": 19
+  },
+  {
+   "path": "commit_msg4.txt",
+   "bytes": 1442,
+   "sha256": "70c147d83d86de6684b4542ff987d51b5109d5034278406ef64512175b8592f4",
+   "lines": 19
+  },
+  {
+   "path": "commit_msg5.txt",
+   "bytes": 692,
+   "sha256": "6f12708e1d295d7b09dad1b5baf8931136f9e4a2ccd9890dd800ba5c306ca9ce",
+   "lines": 11
+  },
+  {
+   "path": "commit_msg6.txt",
+   "bytes": 1160,
+   "sha256": "007456821eb5ae105046cf5c33aa231706b922721d5ebf272157a288c3334709",
+   "lines": 16
+  },
+  {
+   "path": "commit_msg_plaster.txt",
+   "bytes": 2682,
+   "sha256": "c4abb2b74c0b392ef1e0ef18c9ba373c5ac13886cd60ed17703eb373815ea98e",
+   "lines": 38
+  },
+  {
+   "path": "dummy-arm-lab/.gitattributes",
+   "bytes": 961,
+   "sha256": "43b5c7a659766bab3b7bb2914dfcf7e56ed949df8db8e86be1066cd2ea6093a5"
+  },
+  {
+   "path": "dummy-arm-lab/.github/ISSUE_TEMPLATE/bug_report.md",
+   "bytes": 512,
+   "sha256": "5e09fc16bc443fcbeaf8bcdf340e1562646344cb6304f4ce34ed0fdf36e4a8cf",
+   "lines": 20
+  },
+  {
+   "path": "dummy-arm-lab/.github/ISSUE_TEMPLATE/config.yml",
+   "bytes": 375,
+   "sha256": "518f4c9d5cf94e8bb17e25b5b30c874ddffd47cda2b3b9b57604cfd79b60b13c"
+  },
+  {
+   "path": "dummy-arm-lab/.gitignore",
+   "bytes": 1047,
+   "sha256": "3d930d4784a8a8274a77f1dfef2291b1c1b040768683b59de40aad96291b886a"
+  },
+  {
+   "path": "dummy-arm-lab/AGENTS.md",
+   "bytes": 4721,
+   "sha256": "5c015d12b8ff2f79bb7d459c9871fb538e5d401300cbb6e0818293f925ac290b",
+   "lines": 96
+  },
+  {
+   "path": "dummy-arm-lab/configs/device_identity.json",
+   "bytes": 503,
+   "sha256": "7016862c784bf831ffb038f8f2cb9cc8541dbd1efea6c0bb0859f99f64671510",
+   "lines": 7,
+   "structure": [
+    "_comment",
+    "vendor_id",
+    "product_id",
+    "serial_number",
+    "note"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/configs/hardware.dummy_v2.template.json",
+   "bytes": 1199,
+   "sha256": "21ecbd2da438dd110498f7fcd6e9996edc48fb8a2efed0c77860ce688e8a31a9",
+   "lines": 37,
+   "structure": [
+    "_comment",
+    "schema_version",
+    "profile_id",
+    "calibration_verified",
+    "stop_verified",
+    "physical_stop_verified",
+    "command_mode_verified",
+    "firmware_identity",
+    "calibration_record",
+    "firmware_to_canonical_sign",
+    "firmware_zero_deg",
+    "lower_rad",
+    "upper_rad",
+    "max_step_rad",
+    "max_speed_rad_s",
+    "firmware_speed_parameter",
+    "command_mode",
+    "timing",
+    "gripper",
+    "camera",
+    "provenance"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/configs/hardware.unverified.json",
+   "bytes": 643,
+   "sha256": "7d35b201d410c93fce5d69cae065e5124e2415bd0a509547ad3e59cf4a4d0ecb",
+   "lines": 17,
+   "structure": [
+    "profile_id",
+    "calibration_verified",
+    "stop_verified",
+    "physical_stop_verified",
+    "command_mode_verified",
+    "firmware_identity",
+    "calibration_record",
+    "firmware_to_canonical_sign",
+    "firmware_zero_deg",
+    "lower_rad",
+    "upper_rad",
+    "max_step_rad",
+    "max_speed_rad_s",
+    "firmware_speed_parameter",
+    "command_mode"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/configs/README.md",
+   "bytes": 2240,
+   "sha256": "ed9e343cb7d8917d1a4d4f0d6ec60d73199b764d3e5c0bd3d148647c23479a49",
+   "lines": 43
+  },
+  {
+   "path": "dummy-arm-lab/configs/schema/hardware_profile.v2.json",
+   "bytes": 10887,
+   "sha256": "f462ff61d372243b01aa8761cefd589ae2f1af5cdf7a761e347463cf2eac2fbf",
+   "lines": 396,
+   "structure": [
+    "$schema",
+    "$id",
+    "title",
+    "description",
+    "type",
+    "required",
+    "additionalProperties",
+    "properties"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/CONTRIBUTING.md",
+   "bytes": 2798,
+   "sha256": "c0b847281354ef3e9c2bbf9ad42400a28cb1ce60f5b742b18dc267fe993886b9",
+   "lines": 62
+  },
+  {
+   "path": "dummy-arm-lab/docs/ACTION_SPACE.md",
+   "bytes": 5125,
+   "sha256": "f012e9a92bb472ffc036799ccf307b9b1638dd2d86d1258c94d204cfeeb49ebf",
+   "lines": 68
+  },
+  {
+   "path": "dummy-arm-lab/docs/ARCHITECTURE.md",
+   "bytes": 2372,
+   "sha256": "714f3d04697764ffe75ffcdd6af543338ff4608d88f90eb58609cefdcf69532d",
+   "lines": 35
+  },
+  {
+   "path": "dummy-arm-lab/docs/DATA_FILES.md",
+   "bytes": 2697,
+   "sha256": "b96c312f2480ab5472d30073130cdd1527621128ec17a120dd7d306b1cc833c0",
+   "lines": 54
+  },
+  {
+   "path": "dummy-arm-lab/docs/EXPERIMENTS.md",
+   "bytes": 1639,
+   "sha256": "54e664fddf8c772f87054bd204d275de5fecc197f3652ca2f2c77a5f0d055025",
+   "lines": 23
+  },
+  {
+   "path": "dummy-arm-lab/docs/HANDOFF.md",
+   "bytes": 2747,
+   "sha256": "3c49089af054ed5e5f5cce6f33cb958a8771a14e4ab52f2c9e5a5eddfcc51094",
+   "lines": 33
+  },
+  {
+   "path": "dummy-arm-lab/docs/hardware/ADR-0001-硬件权威顺序.md",
+   "bytes": 976,
+   "sha256": "ff5959844006c395f74118ef8b1546d6fa9f7551469fb9a86df4f5ad16683167",
+   "lines": 25
+  },
+  {
+   "path": "dummy-arm-lab/docs/hardware/DUMMY_V2.md",
+   "bytes": 7669,
+   "sha256": "e25a70701a06d3e37c615034098d93b9295f86a0ce1facbf140e127f918d70a5",
+   "lines": 113
+  },
+  {
+   "path": "dummy-arm-lab/docs/hardware/DUMMY_V2_ACTUAL_BASELINE.md",
+   "bytes": 2968,
+   "sha256": "f3baafe1066a5570c1c542d8d14fccc6f30cff81e563ae9311185160c551c7be",
+   "lines": 60
+  },
+  {
+   "path": "dummy-arm-lab/docs/hardware/README.md",
+   "bytes": 1536,
+   "sha256": "7a22b6ee6d6dff2b8aacd299f6161f6236ecab3800561830d8ad1740f2dd12f3",
+   "lines": 20
+  },
+  {
+   "path": "dummy-arm-lab/docs/hardware/USB_COMMAND_PROTOCOL.md",
+   "bytes": 2088,
+   "sha256": "78bb17c6d74cf15ba16b825e6dccb5b671702ce40cd23831f496dafeaaa85219",
+   "lines": 69
+  },
+  {
+   "path": "dummy-arm-lab/docs/HARDWARE.md",
+   "bytes": 1419,
+   "sha256": "b3d6d56de707479836f062756719822efd713982d98d4f5219775d110c16ca7c",
+   "lines": 14
+  },
+  {
+   "path": "dummy-arm-lab/docs/history/2026-09-16_J5可视化层级修复.md",
+   "bytes": 1975,
+   "sha256": "d4bf343b8c29b57c2297be25dbf4b464eb14d76e71ab2b8b3c62628958fbe6ed",
+   "lines": 18
+  },
+  {
+   "path": "dummy-arm-lab/docs/history/2026-09-16_当前控制链路诊断.md",
+   "bytes": 9993,
+   "sha256": "2840f9b0888d9eda4b7c811c078691ecdcdabe7e590bcb86150e008ef16fbf0c",
+   "lines": 81
+  },
+  {
+   "path": "dummy-arm-lab/docs/history/2026-09-16_折叠中断与反馈超时修复.md",
+   "bytes": 3303,
+   "sha256": "7e75a0dc8e76357a87c4d69b3fba61a049e666777d6d07beada894b3717c138b",
+   "lines": 33
+  },
+  {
+   "path": "dummy-arm-lab/docs/history/MuJoCo实机同步使用说明.md",
+   "bytes": 6568,
+   "sha256": "e362f5bd2eba963ab7e40a985b41ce2789cdd23f5792b7e956b3af724c440004",
+   "lines": 49
+  },
+  {
+   "path": "dummy-arm-lab/docs/history/README_实验闭环.md",
+   "bytes": 15499,
+   "sha256": "c2b42d3fb8b05cb62d527e5a3cba3c5b33e6fb15861db9dd6ffc271a6e0258e2",
+   "lines": 244
+  },
+  {
+   "path": "dummy-arm-lab/docs/history/下一阶段开发任务清单.md",
+   "bytes": 2464,
+   "sha256": "d9a1685bd7cb2af1f009f947d50769117cd0f3d5e5428298f1e8b39e066b8a7f",
+   "lines": 24
+  },
+  {
+   "path": "dummy-arm-lab/docs/history/实机控制源码复核.md",
+   "bytes": 4885,
+   "sha256": "db1ef9b4084963b1a032656d4150d096f9c7e99ce1d299374b3b6aa373b3a664",
+   "lines": 46
+  },
+  {
+   "path": "dummy-arm-lab/docs/history/工程拆解与开发路线.md",
+   "bytes": 35693,
+   "sha256": "09b809bd18393900d4d2ba2203e308365b4b8e6c51b9840c693e2dc5d417c441",
+   "lines": 385
+  },
+  {
+   "path": "dummy-arm-lab/docs/plan/M2_只读链路与时效契约.md",
+   "bytes": 1936,
+   "sha256": "be373d8054bdb73be23dc9234ae7a518be35215c96e26d9c87876e91ace986ce",
+   "lines": 50
+  },
+  {
+   "path": "dummy-arm-lab/docs/plan/M3_逐轴标定.md",
+   "bytes": 1851,
+   "sha256": "037e13b4acf30f0f97eac8c0f399861a08b2a6ddec0eda9eb1787f273b977866",
+   "lines": 54
+  },
+  {
+   "path": "dummy-arm-lab/docs/plan/M4_统一RobotAPI.md",
+   "bytes": 1247,
+   "sha256": "8d2d988473ff97dd05e48fbe841186e4e10a43e5e069e5b87b761544d239efce",
+   "lines": 36
+  },
+  {
+   "path": "dummy-arm-lab/docs/plan/README.md",
+   "bytes": 1749,
+   "sha256": "f326e73e06e2d7a298111595999e64d38a3ea0d06097fd80d651c7a887ea876f",
+   "lines": 32
+  },
+  {
+   "path": "dummy-arm-lab/docs/plan/S1_墙面抹涂仿真链路.md",
+   "bytes": 2264,
+   "sha256": "ac17e6ca3d27bdef41bf6d55b2d4f2cf7a345490b98ceeb1df659f1f76dd3d37",
+   "lines": 43
+  },
+  {
+   "path": "dummy-arm-lab/docs/research/Dummy_V2_VLA研究メモ.docx",
+   "bytes": 16369,
+   "sha256": "cc2802ce206617706508b730e54e1f0f34a034895283fb4c2ce0a2b819b9d33f"
+  },
+  {
+   "path": "dummy-arm-lab/docs/research/VLA学习计划_一周.md",
+   "bytes": 13830,
+   "sha256": "169f110776c6372c6b658beecab0fce5fb2a7c9c3bfbca274ab603b9adc927f2",
+   "lines": 335
+  },
+  {
+   "path": "dummy-arm-lab/docs/RL.md",
+   "bytes": 11854,
+   "sha256": "986105d8f655ed9509de4b57c17b19a225dbd3ed566e7035ba1b257b695dfbef",
+   "lines": 175
+  },
+  {
+   "path": "dummy-arm-lab/docs/ROADMAP.md",
+   "bytes": 1562,
+   "sha256": "2d4f91afff75531dd029bfd048717e05e84bc96ab1854443a029d5ad86ef9bdc",
+   "lines": 17
+  },
+  {
+   "path": "dummy-arm-lab/docs/SETUP.md",
+   "bytes": 2792,
+   "sha256": "80bb464c6acbf1859b387d4c27841bf83bad1b3f9b77dc1e191c46ccd4024bd1",
+   "lines": 52
+  },
+  {
+   "path": "dummy-arm-lab/docs/SIMULATION.md",
+   "bytes": 14564,
+   "sha256": "86784eadf3ee1c08927b06ded7a86d1b18d85aaf599a28d1af9812d0a0adefc3",
+   "lines": 209
+  },
+  {
+   "path": "dummy-arm-lab/docs/STATUS.md",
+   "bytes": 14113,
+   "sha256": "9d2e9a20466fc900f5ea1ff23a04c20cc6b95d63cf85dbc77a888a581750659f",
+   "lines": 154
+  },
+  {
+   "path": "dummy-arm-lab/docs/tool_migration.json",
+   "bytes": 3076,
+   "sha256": "8470272d6f7f670b9584dcf5f62aa1f847960fcc41c9c6922da8e899203d5aa8",
+   "lines": 107,
+   "structure": "list"
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/__init__.py",
+   "bytes": 54,
+   "sha256": "98b6ae25c60f6b95f4e0cbec1c6dd5498d42a8f430b34d07951ceaa25c835e43",
+   "lines": 1
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/__main__.py",
+   "bytes": 9975,
+   "sha256": "178f4bde8dc768b297118b29149b407c025103eb527ef5855690d7ad6afaca01",
+   "lines": 200
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/core.py",
+   "bytes": 6718,
+   "sha256": "cb686b33234c975372a47d1da90a86ae3507f6f93a25dee32f6dca38f20f9f98",
+   "lines": 140
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/episode.py",
+   "bytes": 4691,
+   "sha256": "c19c12556b46f23d88489a45af9562e961f47c173d6c72d4d9bbdd6a3aa3df6d",
+   "lines": 97
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/live_control.py",
+   "bytes": 19052,
+   "sha256": "8fab84c419bd24c1aca98c13cd8e4f260a7e0889579228b0205ffcb8237001c7",
+   "lines": 344
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/policy.py",
+   "bytes": 2878,
+   "sha256": "bc03f190d889d562efca2b239744e94a2cc47dc9f0d6151cd5e65a7119cacef0",
+   "lines": 62
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/serial_backend.py",
+   "bytes": 5190,
+   "sha256": "9ac612bbcaf9ca2afaa87393e3a4976214dae8d76d85727748a291f46141d410",
+   "lines": 132
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/sim_backend.py",
+   "bytes": 4829,
+   "sha256": "93ed1ef5c11bae09c8e314f0614aa4dda9e801dc2b84b205a47b7ab1e685df7b",
+   "lines": 96
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/v2.py",
+   "bytes": 7306,
+   "sha256": "241d96a9eb088d0ce6fc3346b686dd1bdb3fde7e78550358c0ed7f851643a9cc",
+   "lines": 129
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/__init__.py",
+   "bytes": 189,
+   "sha256": "41757436cadbc5a869562a11f3c680c5860e64aff7d191749cae51f604587407",
+   "lines": 4
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/__main__.py",
+   "bytes": 11670,
+   "sha256": "c8c5860618d60274cc7dbbafbb793bfa5723c6edfefaaa24cf057ccda8cd7f0e",
+   "lines": 187
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/controller.py",
+   "bytes": 11713,
+   "sha256": "d5abe002951da721d4ab7b5f0547e921c98b69c89122e0e67a6de16284919179",
+   "lines": 220
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/errors.py",
+   "bytes": 4782,
+   "sha256": "a6dff374064dc2df405fae6aabd05def6728222fec039e934206610344164344",
+   "lines": 89
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/layout.py",
+   "bytes": 3994,
+   "sha256": "f87e5ddea17154a5ae5892cf80b1627f9b5ed66c1996064ee2d2a2077dfd1982",
+   "lines": 76
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/material.py",
+   "bytes": 10709,
+   "sha256": "68d4a9e84d2ef01f7cb96f4f131b6cf651c862b1aff3489c5911e5657812314b",
+   "lines": 185
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/pipeline.py",
+   "bytes": 6885,
+   "sha256": "11a7f95d9c6caaf8c5bda3c700f2d4ca6b1517f381f79416a15f7e1d24da52cf",
+   "lines": 117
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/player.html",
+   "bytes": 3270,
+   "sha256": "9011c27237b50ad8f01a0d959a99e5ae2544560b814c097c7220ad158ec3f15c"
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/ppo.py",
+   "bytes": 9452,
+   "sha256": "4dd6a97ae989de2a0e86fd8eb6556f7f0e2284d37feb98814eb119e153e7f56c",
+   "lines": 221
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/render.py",
+   "bytes": 1503,
+   "sha256": "3540326206123a6d72cef44579057fd78e143df0b6d4b499e58d2d36163129b9",
+   "lines": 33
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/rl.py",
+   "bytes": 7531,
+   "sha256": "a3a4ca265fd219560a3a9ed0935aa064f64c2316292782d4098c5caffdfc7c70",
+   "lines": 156
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/scene.py",
+   "bytes": 24168,
+   "sha256": "6284747ebf6824c6bfef0671a91498ef5b555dd93b7b42c9b0566d906e7134ed",
+   "lines": 395
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/session.py",
+   "bytes": 5357,
+   "sha256": "60f97b5cebd84d4dc4140a004da03230bd9cedebc178536c592dabb5831c1df5",
+   "lines": 97
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/stroke_env.py",
+   "bytes": 22107,
+   "sha256": "692a08daacfd4f522d7953f0f1d1e66f4cf050db274037bbff89bac983382402",
+   "lines": 396
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/task.py",
+   "bytes": 12447,
+   "sha256": "31e4e88d50ae548811439e2f7d193f4c7cd6e624b9f697f8f549714717ed6329",
+   "lines": 214
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/teacher.py",
+   "bytes": 8050,
+   "sha256": "5524d13b5f7c28b1f64f595212643b50f0a33ecc11186fa9e425cfa303126d10",
+   "lines": 141
+  },
+  {
+   "path": "dummy-arm-lab/dummy_loop/wall/visualize.py",
+   "bytes": 9416,
+   "sha256": "b92794650cff5e5815e8114483ef46047d016957ac4b7fd323f5ab8a17385e4f",
+   "lines": 177
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/manifest.json",
+   "bytes": 33484,
+   "sha256": "b085189c8a23fddc5101c592756c2bb57db77001df9faa2fec931851426a892f",
+   "lines": 704,
+   "structure": "list"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com5_probe.jsonl",
+   "bytes": 70,
+   "sha256": "cf5fca7f762b59c35ccd8119c58591fcd11d3bcc05e8c28d0db2410984b25eb1"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com5_raw_probe.json",
+   "bytes": 251,
+   "sha256": "4780c1c420b69256a5a05ce7dd9c8dacaa2aef81546df3bc9ce6d5b15e4e4c8c",
+   "lines": 16,
+   "structure": "list"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_after_first_target.jsonl",
+   "bytes": 501,
+   "sha256": "eaf397f588782e0494c6290c9700466bdcb3fb824743795d7518d261506f76d6"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_after_studio_exit.jsonl",
+   "bytes": 501,
+   "sha256": "c606e1641a1d668fe10977b46e952486e32412eabcb1c646b87b54c6cdc9b3d8"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_before_larger_test.jsonl",
+   "bytes": 516,
+   "sha256": "61bce0e4e17a0c7e64ca10436dfc0aaef8cb1cfbcc5b6aff620ec3a716ad9087"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_before_studio_format.jsonl",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_control_review.jsonl",
+   "bytes": 510,
+   "sha256": "270bbe1bd68283cf91ad460dbf9a554fa1937a2f09537d995178be7a3550000e"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_diagnostic_baseline.jsonl",
+   "bytes": 504,
+   "sha256": "260fc695756db3d3ca4844b64b7e889ddc9edf23438a2e74ceddc7287338c862"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_handoff_ready_check.jsonl",
+   "bytes": 505,
+   "sha256": "6a2c748e78c86c09e552b657187a0e59289cbf27e5ae6566189f57ce03193b79"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_minimal_handoff_check.jsonl",
+   "bytes": 340,
+   "sha256": "d33aabd2dae56c39f9003ec304a65501ca4049ddae51a7dd8d69da89b812f82d"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_probe.jsonl",
+   "bytes": 516,
+   "sha256": "74796011846bb4605f9f4673ab70c647a1e1cb5b7676f81240baae55ad731747"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/com6_reset_pose_check.jsonl",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/fold_precheck.jsonl",
+   "bytes": 169,
+   "sha256": "751a120b821381ad517806d5e66326673a951e8c42bedd2751e7f5db46676d44"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789538723387721500_result.json",
+   "bytes": 333,
+   "sha256": "494fa295abeb8b2a9a7567582779064585a574aebf116eb8bf6e625a8e82f029",
+   "lines": 22,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789538730458565000_result.json",
+   "bytes": 422,
+   "sha256": "eb25874538c9571cccf534c801592ea84152cf2819d4bd4fb07ceb8d260ac8aa",
+   "lines": 24,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789540084180678100_result.json",
+   "bytes": 452,
+   "sha256": "1f3c7bfe07e66be55a6ce5bba7067a2f8666e84a94a3b75016d9d8e4e3bd931a",
+   "lines": 25,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "start_sent",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789540149967822100_result.json",
+   "bytes": 8533,
+   "sha256": "8904aef3a049b9b460133a15c914254cba06b21ba23d8233c88057a6cb09beae",
+   "lines": 587,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "start_sent",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789541221763109200_result.json",
+   "bytes": 780,
+   "sha256": "992d8587611b5296d947beb705af5f6c3cbaf35ed586894271e2d6388720c917",
+   "lines": 49,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "studio_format",
+    "start_sent",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789542291044621600_result.json",
+   "bytes": 186,
+   "sha256": "121de35db4cbbee6f192e3b577e8d788a6375ab17840f1ce806e497763831cd0",
+   "lines": 6,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "error"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789542376270966400_result.json",
+   "bytes": 6072,
+   "sha256": "bbce18ed21dcca2c5ecee60900a402f6415aebc6c1f9562e6b382abcbf5bb903",
+   "lines": 368,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "studio_format",
+    "start_sent",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789542419083001100_result.json",
+   "bytes": 7344,
+   "sha256": "d6485c73a6592da06d4f797c4e990aee6f2a61c19fcad7fa2c0a41ce13e0c42f",
+   "lines": 445,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "studio_format",
+    "start_sent",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789542678409343000_result.json",
+   "bytes": 6570,
+   "sha256": "b081faf04c01d05d2dd4f8ffe0eed7e754a035717a945870deefb61295cb97d1",
+   "lines": 369,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "studio_format",
+    "start_sent",
+    "same_target_resent_after_start",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789543855612991000_result.json",
+   "bytes": 351,
+   "sha256": "b781d58bbcb252290de10dfc0c2f74b412e9747bb4b3ffc778f497b4ee431dc0",
+   "lines": 23,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "studio_format"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789543893454829200_result.json",
+   "bytes": 5688,
+   "sha256": "c20f9793032fe454d290bf8b3316af6c88c4fe8490fd3e20562c005e399117ec",
+   "lines": 391,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "studio_format",
+    "command_mode",
+    "start_sent",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_10deg_1789543962529864000_result.json",
+   "bytes": 849,
+   "sha256": "39a0ac7566db6a071b101bc12fd30b954fbd4f63641d766527c99520eac9c22f",
+   "lines": 51,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "studio_format",
+    "command_mode",
+    "start_sent",
+    "target_refresh_count",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_once_result.json",
+   "bytes": 420,
+   "sha256": "4897b08f2cd7dfc1a548985e6b8d89139353140b1abbb6311d13a0c631ecfaf6",
+   "lines": 24,
+   "structure": [
+    "scope",
+    "motion_sent",
+    "samples",
+    "before_deg",
+    "target_deg",
+    "firmware_speed_parameter",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/j1_once_serial.jsonl",
+   "bytes": 47872,
+   "sha256": "93780b9ba46803ddbb14f9bed028cc4b88cb6291c39f4eedb3746dde71a52f2b"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_gui_stderr.log",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_gui_stdout.log",
+   "bytes": 35,
+   "sha256": "40d98c360361e8d3ee9e9a63ad66870dce6759a352472f574209c4f98fb7092f"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789547109064531400.jsonl",
+   "bytes": 225894,
+   "sha256": "d42ec01adc100a613ad967c841e0dcf2317cc02f13c50c2bb009ed9986e070c6"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789547357990973100.feedback.jsonl",
+   "bytes": 26458,
+   "sha256": "2e1a704b9bb756f7651de8ca0f6d5faa36172d711289f4f27f21d7f4886c066b"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789547357990973100.jsonl",
+   "bytes": 812,
+   "sha256": "22cfe614cb96861dcec5d804031b552e9a4b75f77dfc0f9332841506a83a2931"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789547434042419200.feedback.jsonl",
+   "bytes": 967040,
+   "sha256": "38a8b4d924462e0625829833240bc57243da584ff69a1d91eb4e8c169bd992d8"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789547434042419200.jsonl",
+   "bytes": 121736,
+   "sha256": "f984f0fe1c720bb7bf7ef2fbaf6842f197e70078de1ec469d6eb61a6a40a135e"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789548119494502800.feedback.jsonl",
+   "bytes": 410973,
+   "sha256": "b74466fbf6be7dd88afd4d8b2bb303c0c7645cf722608ea246bd94ed63fc063b"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789548119494502800.jsonl",
+   "bytes": 59812,
+   "sha256": "bd8ec348b6fe962ea996b06f1e8013967d3553ee19ead01228f8c48a289cf21d"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789548655083543800.auto_1789548744611317800.json",
+   "bytes": 2587,
+   "sha256": "1fe5dc93378e69dd530efc0d88246415fdec765c6ee6aa5b9fc93d7721eb9d78",
+   "lines": 113,
+   "structure": [
+    "result",
+    "center_deg",
+    "targets_deg",
+    "observed_min_deg",
+    "observed_max_deg",
+    "reached",
+    "note"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789548655083543800.auto_1789548789008527300.json",
+   "bytes": 14204,
+   "sha256": "a6da9842ae820587eda333117b195a4c5166d56ad41c81b7dbe104f5bb66235a",
+   "lines": 652,
+   "structure": [
+    "result",
+    "center_deg",
+    "targets_deg",
+    "observed_min_deg",
+    "observed_max_deg",
+    "reached",
+    "note"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789548655083543800.feedback.jsonl",
+   "bytes": 445458,
+   "sha256": "f8ea0b67bfd1c70d4279e7a3e34b98122599b76a2631ec304ff6527c82e12abc"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789548655083543800.jsonl",
+   "bytes": 80637,
+   "sha256": "6ef9ac68f9b084607d41833caba35c5c6b73274dc9b38580c8bd90ac212bd145"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789549014687414600.auto_1789549162839128900.json",
+   "bytes": 1011,
+   "sha256": "8aa7f7193a2e0be6b1a4b045bd9200c55b1b8f64dc12525cf26d6eced6afb9cd",
+   "lines": 54,
+   "structure": [
+    "result",
+    "mode",
+    "start_deg",
+    "lower_deg",
+    "upper_deg",
+    "reversals",
+    "observed_min_deg",
+    "observed_max_deg",
+    "feedback_pause_ticks",
+    "note"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789549014687414600.feedback.jsonl",
+   "bytes": 538851,
+   "sha256": "2e95a6ec4e3de101ac5ae5d3777144df756cba0e57a65445d115be5381154631"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789549014687414600.jsonl",
+   "bytes": 198935,
+   "sha256": "e5d793eace20ae61b27dfa22306ac3c5352c7506e3e01617f998732c2b86e245"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789549335503437200.feedback.jsonl",
+   "bytes": 370581,
+   "sha256": "88748f8082fa69f9f7172933c6183a390d6d0a7735a88f340104cce793010325"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789549335503437200.jsonl",
+   "bytes": 97241,
+   "sha256": "913f2df40d5aef9737b23394f4044edc964bbd92efda8a798e9e22b1d1b1ebf4"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789550065074982200.jsonl",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789550187866910100.feedback.jsonl",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789550187866910100.jsonl",
+   "bytes": 171,
+   "sha256": "39b67e43e2cbc8a09236b59cd38b648b263b83c542c6dee7068a8b65052394df"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789550786288918200.feedback.jsonl",
+   "bytes": 143248,
+   "sha256": "940877d8cf431f8ec4b0b2d95e3dde9cb4ff82168ab04e5fbb8a6102744cb988"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/live_serial_1789550786288918200.jsonl",
+   "bytes": 77540,
+   "sha256": "353cbb6625162d3235f23a587dd4cd193333c08f310cb9d992c2b020e67dd078"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/manual_viewer.stderr.log",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/manual_viewer.stdout.log",
+   "bytes": 280,
+   "sha256": "ff7060e0d58190b31a7d71c2019084aa6f1c5cee6908327bda429bd2b898e22d"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_commission_serial.jsonl",
+   "bytes": 2244,
+   "sha256": "14fbb52b27be1e3faa89dcab386da327ef58966efc875b40fa360b780c478002"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_diagnostic_1789544546840467300.json",
+   "bytes": 287,
+   "sha256": "69f78e5e67796ec1e5ff711a08863e4810b4fe81f9db7ccad7c0e67231d62364",
+   "lines": 13,
+   "structure": [
+    "serial",
+    "operation",
+    "joint_angle_properties_deg",
+    "motion_command_sent"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_diagnostic_1789544996400962900.json",
+   "bytes": 823,
+   "sha256": "130e2103a9c54319b4e29258497c41e269b2345b0df8427ac9d78ec8bb11173b",
+   "lines": 39,
+   "structure": [
+    "serial",
+    "operation",
+    "joint_angle_properties_deg",
+    "motion_command_sent",
+    "angle_refresh_samples"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_diagnostic_1789545140127821100.json",
+   "bytes": 1197,
+   "sha256": "0334e7782006f07bc923e8100c8a7473b025767498bdd1cfef00e2585b32b8f4",
+   "lines": 57,
+   "structure": [
+    "serial",
+    "operation",
+    "joint_angle_properties_deg",
+    "motion_command_sent",
+    "angle_refresh_samples",
+    "individual_refresh_samples"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_diagnostic_1789545694243091600.json",
+   "bytes": 446,
+   "sha256": "d5d7a50ed172c10e23257ac54d10e708d1bb5a817d21cdf9a911f7dadae892d7",
+   "lines": 14,
+   "structure": [
+    "serial",
+    "operation",
+    "joint_angle_properties_deg",
+    "motion_command_sent",
+    "passive_watch_file"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_diagnostic_1789546123831112700.json",
+   "bytes": 903,
+   "sha256": "f641c56cbc86fa8dda793f244fc28fa14390763f2ab68877b89c3e9d23a8a551",
+   "lines": 57,
+   "structure": [
+    "serial",
+    "operation",
+    "joint_angle_properties_deg",
+    "motion_command_sent",
+    "angle_refresh_samples",
+    "individual_refresh_samples"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_discovery_console.txt",
+   "bytes": 23951,
+   "sha256": "654ed686a63e713fff5867875c34de2fea508d50da6657da79390f5fdd4dd205",
+   "lines": 365
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_j1_1789544681066850600.json",
+   "bytes": 520,
+   "sha256": "fbea07024cbba7b2922a1bae11be4d6e1a3c743827087f080581c6e0b854c883",
+   "lines": 30,
+   "structure": [
+    "samples",
+    "motion_sent",
+    "speed_changed",
+    "polling",
+    "before_deg",
+    "target_deg",
+    "native_offsets"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_j1_1789544720285375300.json",
+   "bytes": 6088,
+   "sha256": "e648b2cad2ccdef73c5bd2f03bb348646f007e6f3005bcc87087bf26d5d86e52",
+   "lines": 288,
+   "structure": [
+    "samples",
+    "motion_sent",
+    "speed_changed",
+    "polling",
+    "before_deg",
+    "target_deg",
+    "native_offsets",
+    "native_target_accepted",
+    "native_target_accepted_after_start",
+    "error",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_j1_1789544873161369000.json",
+   "bytes": 554,
+   "sha256": "1460d04c46bdf7f10196aa8f978fdb7ffbc4ba7e512409eec73becdc4ac3b47b",
+   "lines": 31,
+   "structure": [
+    "samples",
+    "motion_sent",
+    "master_speed_changed",
+    "polling",
+    "direct_motor",
+    "before_deg",
+    "target_deg",
+    "native_offsets"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_j1_1789544915759177400.json",
+   "bytes": 5547,
+   "sha256": "f73ba08948cc98248784b9650ae2b0d7ee98ebf59ec4b80fd6e8b3d256fe295c",
+   "lines": 258,
+   "structure": [
+    "samples",
+    "motion_sent",
+    "master_speed_changed",
+    "polling",
+    "direct_motor",
+    "before_deg",
+    "target_deg",
+    "native_offsets",
+    "motor_position_rev",
+    "motor_velocity_limit_rev_s",
+    "conversion_basis",
+    "error",
+    "motor_hold_rpc_returned",
+    "hold_angle_deg"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_j1_1789546152444180900.json",
+   "bytes": 2935,
+   "sha256": "2604a3cda6d1bb55f3d5846abe45bf0268d6e1e693150d1283d5dc3558911520",
+   "lines": 146,
+   "structure": [
+    "samples",
+    "motion_sent",
+    "master_speed_changed",
+    "polling",
+    "direct_motor",
+    "before_deg",
+    "target_deg",
+    "native_offsets",
+    "native_target_accepted",
+    "native_target_accepted_after_start",
+    "result",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_j1_1789546202448982900.json",
+   "bytes": 560,
+   "sha256": "4b7fdfbfd5ebf6ed1c5e0205faee7e3692ee35284cc0c80630f40c9f57737abc",
+   "lines": 32,
+   "structure": [
+    "samples",
+    "motion_sent",
+    "master_speed_changed",
+    "polling",
+    "direct_motor",
+    "before_deg",
+    "target_deg",
+    "native_offsets",
+    "target_transport"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_j1_1789546220803937900.json",
+   "bytes": 3010,
+   "sha256": "e4a3c787e49e52cf612f9c662d4466db41da7c291b28f3d72701fd523e1f1b69",
+   "lines": 146,
+   "structure": [
+    "samples",
+    "motion_sent",
+    "master_speed_changed",
+    "polling",
+    "direct_motor",
+    "before_deg",
+    "target_deg",
+    "native_offsets",
+    "target_transport",
+    "ascii_queue_ack_received",
+    "result",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_passive_watch_1789545514050365900.jsonl",
+   "bytes": 147000,
+   "sha256": "9e2bf7b247b160c8809fc96460edb02b0674bf41123188f351eff6fd977885b0"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_passive_watch_console.txt",
+   "bytes": 24238,
+   "sha256": "9d014970ceaccc336152cc42b5541b11ca54b6de4a76d1fda6a82f15ba1be036",
+   "lines": 366
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_refresh_console.txt",
+   "bytes": 24317,
+   "sha256": "a272e24e2b807d92d41fb4555d609b4bde9947f57baf61506be56f3e3d17c565",
+   "lines": 365
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_refresh_individual_console.txt",
+   "bytes": 24575,
+   "sha256": "4b51ddc26dc430def5d4981a9aceb6735ff533d9cf6cdacf1900d6253fcb4db8",
+   "lines": 365
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/native_robot_interface.json",
+   "bytes": 62836,
+   "sha256": "e633092d7d9769703181438f9973790d610a2b42a31fef48154ce83de1f8805d",
+   "lines": 2541,
+   "structure": "list"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/pose_check_serial.jsonl",
+   "bytes": 1195,
+   "sha256": "d6ede7af71f95deb98142c37daf0de675922db1d172cf0cb527bbda2561d9f74"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/recover_fold_stall.jsonl",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/rehome_native_console.txt",
+   "bytes": 24281,
+   "sha256": "d29cdcb477e7867f4588b8fab3dd2666d7af306a83d25cedd61cd812bdf832df",
+   "lines": 365
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/rehome_readonly.jsonl",
+   "bytes": 167,
+   "sha256": "e13875755cb3f69b6f757b36cc51fe117ec5fc4db27a9bb7bb7debf255fa1302"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/viewer.stderr.log",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/commissioning_and_failures/viewer.stdout.log",
+   "bytes": 135,
+   "sha256": "f89f569e113f9e796171ccc8eff24804b5e4566944861cf099e9a288eaeeb77e"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/reference_learning/policy.npz",
+   "bytes": 913,
+   "sha256": "052beece5a41a2be524e2fdee2067569db4f3c668a2aaa2913e0a11aaacc1b61"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/reference_learning/rollout.jsonl",
+   "bytes": 177498,
+   "sha256": "7c622046e704138d382cdbc70a56556cb26611bf28c3d95426abfbb7b6fb0e76"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/reference_learning/rollout.summary.json",
+   "bytes": 291,
+   "sha256": "b6ea35c149948fb71a18e095dd8864d1e381e5bfd2831d50e295dac5bbed3506",
+   "lines": 9,
+   "structure": [
+    "backend",
+    "initial_error_rad",
+    "final_error_rad",
+    "steps",
+    "software_loop_pass",
+    "scope",
+    "log"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/reference_learning/teacher.npz",
+   "bytes": 225844,
+   "sha256": "43a40d8423d5ec54b5d117497f26fcf4917468a03b938350b2b73684a602f260"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/reference_learning/unseen_rollout.jsonl",
+   "bytes": 179062,
+   "sha256": "08f6ef7cda9264cb74fa9e39ece8b5f12657da23c06ebdb9c0a35035d5ffd177"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/reference_learning/unseen_rollout.summary.json",
+   "bytes": 299,
+   "sha256": "6b01c819da880be6ed5aeb1a68f7192c3b8f0b70e57f6f5327cde86ec4aa4b21",
+   "lines": 9,
+   "structure": [
+    "backend",
+    "initial_error_rad",
+    "final_error_rad",
+    "steps",
+    "software_loop_pass",
+    "scope",
+    "log"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/verified_poses/capture_correct_fold_serial.jsonl",
+   "bytes": 170,
+   "sha256": "1785edea93d5bbfe2e2aa3d1e53fdf23863d510c38156729237e568b329a8cfc"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/verified_poses/correct_fold_capture.json",
+   "bytes": 716,
+   "sha256": "4042928511a588eb87ee24c419138da7ed7172b79f6235378b39d7aaae10023c",
+   "lines": 54,
+   "structure": [
+    "motion_sent",
+    "ascii_deg",
+    "native_samples_deg",
+    "time_ns"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/verified_poses/fold_once_1789546338565995200.json",
+   "bytes": 414,
+   "sha256": "40301d2bfd6f7156698ec89df8f3b1f4930326e5c56e2fff303c3742b66ce5e9",
+   "lines": 31,
+   "structure": [
+    "motion_sent",
+    "stages",
+    "settings_changed",
+    "before_deg",
+    "planned_targets_deg"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/verified_poses/fold_once_1789546366924378600.json",
+   "bytes": 17088,
+   "sha256": "c470a31b2bdfd2044b9500d2359065ede55ff6fde791aa3955496d288180c92a",
+   "lines": 777,
+   "structure": [
+    "motion_sent",
+    "stages",
+    "settings_changed",
+    "before_deg",
+    "planned_targets_deg",
+    "result",
+    "stop_reply_received"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/verified_poses/fold_serial.jsonl",
+   "bytes": 1060,
+   "sha256": "57232707e9221c3a6494ed20bca1f1de3a01bcf9bf93a899224ee09e2902bf9a"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/verified_poses/preset_recheck_1789550272034353800.feedback.jsonl",
+   "bytes": 185491,
+   "sha256": "9702877a8e5cb5ff42a6fa90963188013a31981702be0da11c36acefd70795e8"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/verified_poses/preset_recheck_1789550272034353800.jsonl",
+   "bytes": 154844,
+   "sha256": "4088656550f7c9572ab01fdd0e1809e0ab84f6ec8677aabdb6b2cafc7d474db6"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/verified_poses/preset_recheck_1789550272034353800.report.json",
+   "bytes": 788,
+   "sha256": "9a527b722e79ac5fd62689e8f80463315dde9c752fa61c7ed7b814dca1e1f6e9",
+   "lines": 39,
+   "structure": [
+    "stages",
+    "initial_deg",
+    "result",
+    "worker_exited",
+    "final_status"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/verified_poses/restart_check.jsonl",
+   "bytes": 312,
+   "sha256": "ed2519dc5e3a16b532708f44f2e11ce4b67b189fc63dc25ef4980b8996a75ce0"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/visual_validation/fold_side_reference.png",
+   "bytes": 58781,
+   "sha256": "59cd60f1e145cded6287cfd998b6ba44274c2c40ba30caf9d5fa7f34e8050fc5"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/visual_validation/home_side_reference.png",
+   "bytes": 55329,
+   "sha256": "a476ae67db1fae586ddcccb4c20fd499d24c37c92ecc94c6bf95da095684a096"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/visual_validation/j5_corrected_30.png",
+   "bytes": 58521,
+   "sha256": "a202c8656a6b5e27241b813c782b210c938988d66c41b9238529a99ee707df77"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/visual_validation/j5_corrected_motion.gif",
+   "bytes": 1458142,
+   "sha256": "b1b209783b323aa5c244be1d0da134c1383b19b05bf58092d0a2801673771466"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/visual_validation/live_fold_preview.png",
+   "bytes": 55339,
+   "sha256": "5666d2ec5fcc22fcb8ea358ef00c3cdd5dde5cf1a55c9cfdd766aa94566a2bae"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/visual_validation/live_home_preview.png",
+   "bytes": 57787,
+   "sha256": "09dae01bceeedb01038a1e249ae8b3a22fe69da938c1ec801d05bbf3d1be9f61"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/raw/visual_validation/reference_preview.png",
+   "bytes": 60298,
+   "sha256": "addc2ebcd6f425628564854d87c8d8b5d6a0940ced805257b2309ad44281602f"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-16_baseline/README.md",
+   "bytes": 384,
+   "sha256": "8f86906d3691a6f26fd4087060098e1d398bc1d14fde0441212eea07a1e6d21f",
+   "lines": 4
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_handoff/live_fold_preview.png",
+   "bytes": 55349,
+   "sha256": "a9c9395b920b0d7f917304be6b875bc722c629a6dfa46839a8494ad841408080"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_handoff/live_home_preview.png",
+   "bytes": 57787,
+   "sha256": "cdd9ab797ae44491d4ea7153f634950463674264f97e2ed4a17dbde591d17ec9"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_handoff/README.md",
+   "bytes": 723,
+   "sha256": "e5370ce70bdc06642df20978ba312ffec530b2699961cec083c6c64a153ddad2",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_handoff/reference_rerun/policy.npz",
+   "bytes": 913,
+   "sha256": "052beece5a41a2be524e2fdee2067569db4f3c668a2aaa2913e0a11aaacc1b61"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_handoff/reference_rerun/rollout.jsonl",
+   "bytes": 177492,
+   "sha256": "cdb338b266ad834ceafe9c49709e960af9aba0a54fb46bcd9e8bd65173b89ff5"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_handoff/reference_rerun/rollout.summary.json",
+   "bytes": 332,
+   "sha256": "4316c492eaec22e4ed2cf13d57a369e8d7d169ec85eaec2678dab1b72ecdec2a",
+   "lines": 9,
+   "structure": [
+    "backend",
+    "initial_error_rad",
+    "final_error_rad",
+    "steps",
+    "software_loop_pass",
+    "scope",
+    "log"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_handoff/reference_rerun/run.json",
+   "bytes": 852,
+   "sha256": "a6af53837382b18cad27ee6b1935bd487315022bf2cb99e7185394b55011f4b5",
+   "lines": 17,
+   "structure": [
+    "date",
+    "purpose",
+    "seed",
+    "episodes",
+    "steps",
+    "dt_s",
+    "hardware_motion",
+    "model",
+    "commands",
+    "result",
+    "environment"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_handoff/reference_rerun/teacher.npz",
+   "bytes": 225844,
+   "sha256": "43a40d8423d5ec54b5d117497f26fcf4917468a03b938350b2b73684a602f260"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_handoff/verification.json",
+   "bytes": 5179,
+   "sha256": "710baa2e3e72fb364fbf2d41801fa3ebb22c3908ac9ebe832d47512fe1f37eae",
+   "lines": 51,
+   "structure": [
+    "python",
+    "platform",
+    "checks",
+    "hardware_commands_sent",
+    "linux_tested"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_m0_baseline/baseline_files.txt",
+   "bytes": 9682,
+   "sha256": "2028872af3618a3e45b4bcc3938c8b019d15c70e5db3055888188d2be367f66b",
+   "lines": 223
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_m0_baseline/baseline_sha256.txt",
+   "bytes": 24400,
+   "sha256": "c0a581a2f9cb369579645520536918d33b821d93dbe9a2b01c38c8538daad37a",
+   "lines": 223
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_m0_baseline/log.md",
+   "bytes": 7699,
+   "sha256": "e3c0cd274d0024903ec483430229e6748e95582b01f871f6a3b8a9d5adf271dd",
+   "lines": 152
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_m0_baseline/pre_release_git_log.txt",
+   "bytes": 267,
+   "sha256": "a4f3ffb050a03c18cdc3fd92eaf31afa59cc5e86e81118ff3d714a09d774bba2",
+   "lines": 5
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_m0_baseline/root_listing.txt",
+   "bytes": 3089,
+   "sha256": "666d810f9c3e114506e989ff67d18165279353a8ae495b5b511aeb507e734665",
+   "lines": 31
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_m0_baseline/root_sizes.txt",
+   "bytes": 252,
+   "sha256": "632615e5fbce189552bdbbd98aa4f99887d44bd03c079750da5080df19dd8337",
+   "lines": 17
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_workspace_migration/copy_manifest.json",
+   "bytes": 148299,
+   "sha256": "ef65e8422e33ac616a7177b3ef5d6b97d14ed5fcc788e4d2f87594434c0c58c9",
+   "lines": 3741,
+   "structure": [
+    "source",
+    "destination",
+    "files"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_workspace_migration/README.md",
+   "bytes": 850,
+   "sha256": "8a75e8348ccacbd7af5dbcd1f2c3dc040ef674570942af0864bd479c591d7ca1",
+   "lines": 9
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_workspace_migration/rollout.jsonl",
+   "bytes": 177596,
+   "sha256": "9be9c7b34005a700a4849648014333401e9095bd6c64e2329a3aa4ba27d762d5"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_workspace_migration/rollout.summary.json",
+   "bytes": 327,
+   "sha256": "ec9cf895867e49bf5b5b42246d50e6346bb4fe0d24f28ff8ae01f8bfb8b3470a",
+   "lines": 9,
+   "structure": [
+    "backend",
+    "initial_error_rad",
+    "final_error_rad",
+    "steps",
+    "software_loop_pass",
+    "scope",
+    "log"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-18_workspace_migration/verification.json",
+   "bytes": 5621,
+   "sha256": "29fd4343637f9390bdc211bcfc99543d1a828c33d6ca7bc292b62e9de57827c4",
+   "lines": 69,
+   "structure": [
+    "workspace",
+    "python_executable",
+    "platform",
+    "checks",
+    "hardware_commands_sent"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/collect.summary.json",
+   "bytes": 113,
+   "sha256": "47498da36fab057f498668d8567cf4ac1fd482bd7b5d64fd7f4c7ce70172901a",
+   "lines": 6,
+   "structure": [
+    "episodes",
+    "frames",
+    "source",
+    "seed"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/doctor.json",
+   "bytes": 221,
+   "sha256": "c3e29d9d434c68dc055a88c67f83f4dd8e9bb37047a3ebf35e82210db53ca0a2",
+   "lines": 10,
+   "structure": [
+    "os",
+    "python",
+    "numpy",
+    "mujoco",
+    "pyserial",
+    "torch",
+    "pyrealsense2",
+    "gpu"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/pip_freeze.txt",
+   "bytes": 343,
+   "sha256": "f540eccd5b9e062ecbbcdf97a7fd579b61d6a7f0d6e09bee19cc2cdda346c501",
+   "lines": 19
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/pip_install.log",
+   "bytes": 5463,
+   "sha256": "82ba25a7e9fc36b525a24acae4d3741fb7d84da9a207067eee0a6a739689048f"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/policy.npz",
+   "bytes": 913,
+   "sha256": "052beece5a41a2be524e2fdee2067569db4f3c668a2aaa2913e0a11aaacc1b61"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/rollout.jsonl",
+   "bytes": 177351,
+   "sha256": "ee58d795fe6add570710b6cce034512bbbc0896685f7830ac7b68492a2c66a38"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/rollout.summary.json",
+   "bytes": 350,
+   "sha256": "ab411440cb5c1eeeef5c82143868b71ffea23dc6dd063e7ee4eca693280406fb",
+   "lines": 9,
+   "structure": [
+    "backend",
+    "initial_error_rad",
+    "final_error_rad",
+    "steps",
+    "software_loop_pass",
+    "scope",
+    "log"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/summary.json",
+   "bytes": 2540,
+   "sha256": "a1f7d2a324bcbed2120cb73076aa31db6a2b44e8fc43606f5c059b24f4bf4f2c",
+   "lines": 47,
+   "structure": [
+    "generated_at_local",
+    "repo_root",
+    "hardware_motion",
+    "evidence_level",
+    "steps"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/teacher.npz",
+   "bytes": 225844,
+   "sha256": "43a40d8423d5ec54b5d117497f26fcf4917468a03b938350b2b73684a602f260"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/tests.log",
+   "bytes": 6454,
+   "sha256": "a59270a6d8d7752082798a12b5b80c2f356d6b4ae8780ea2349fdedac3c489ad"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/raw/train.summary.json",
+   "bytes": 259,
+   "sha256": "76f2ba27fd873959e8c63c0ab77f6d80eac83b716681a0f5de3b13340a064f2a",
+   "lines": 10,
+   "structure": [
+    "observation",
+    "action",
+    "dt",
+    "scope",
+    "algorithm",
+    "training_episodes",
+    "validation_episodes",
+    "validation_mse"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/README.md",
+   "bytes": 3600,
+   "sha256": "67a23d6fe00f458391c3cfa74fd33e22d766893a10082411fb37fa2577eef0f3",
+   "lines": 65
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-19_windows_env/run.json",
+   "bytes": 2255,
+   "sha256": "7649424235a0e41d71e85ebd13b0e02fd5a6cdd9049498cb9494f40fccbc6a0e",
+   "lines": 57,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/ep_0000.npz",
+   "bytes": 58908,
+   "sha256": "5876829e7ae21ff67ba7089c8850d6de7c301595b283f61dc0c0d1ff98a94ff6"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/ep_0001.npz",
+   "bytes": 50784,
+   "sha256": "74934142e582db4b4a01edf203ed7b375531ebe1610c01695243a8da68a192a8"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/ep_0002.npz",
+   "bytes": 57107,
+   "sha256": "1494301cf5d91fd0cae65c5c86e71a9ebaec8b83156cb0c0339528051644632f"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/ep_0003.npz",
+   "bytes": 57477,
+   "sha256": "f0b83ee3a4f60b5fa3625630fe2f2a8f93b7458295f5ff54d6aae8bb09dd4c4d"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/index.json",
+   "bytes": 1235,
+   "sha256": "4e63c4a3432053f9872b17c48d73fd2d9407502037b77761d43c95bb83a418f7",
+   "lines": 54,
+   "structure": "list"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/layout.json",
+   "bytes": 16874,
+   "sha256": "3c0c915ee2e05efb22f33ef52c1723c222fa0718c4c972ba02119853dcfd56b1",
+   "lines": 796,
+   "structure": [
+    "joint_limits",
+    "patch_half_size_m",
+    "n_candidates",
+    "n_feasible",
+    "ranked",
+    "infeasible"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/replay_check.txt",
+   "bytes": 140,
+   "sha256": "267d924037695409cd2988515a014cedb77936999fdc515de8d9eb668225eadb",
+   "lines": 8
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/rigid_tool.png",
+   "bytes": 185125,
+   "sha256": "166ee87436c765b5d79f01c0a4e1253af9fc17f503fa25f65dfcf4e8c7fa5c1e"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/scene/wall_scene_rigid.config.json",
+   "bytes": 2431,
+   "sha256": "54b23a629f2e9579469c8ed2be553bfcb6c8745d4a96687d090d3888929233a2",
+   "lines": 70,
+   "structure": [
+    "config",
+    "provenance",
+    "digest"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/scene/wall_scene_rigid.xml",
+   "bytes": 8428,
+   "sha256": "67afbf859d359dbd800a2e5b88e2e3738d6eda6f778662c9f85e3a179df68945",
+   "lines": 104
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/study/sensitivity.json",
+   "bytes": 89167,
+   "sha256": "e86dc2d04e22f97453e1ccc2e15f4834a5fa342cc2913e0244a346abaa732197",
+   "lines": 3393,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "seed",
+    "random_scale",
+    "tool_mount",
+    "nominal_scene",
+    "task",
+    "baseline_no_error",
+    "single_factor",
+    "randomized",
+    "random_perturbations",
+    "elapsed_s"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/study/sensitivity.png",
+   "bytes": 152408,
+   "sha256": "22290587b3130a2b31fb66dd9b017e8990c74bad3bd975df7cd93feadbe92bb7"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/README.md",
+   "bytes": 5023,
+   "sha256": "96f6af8ca93f6c9756ff6b1fcf6048609fa0162b58d5265a13b69f7ba8fbc92f",
+   "lines": 67
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_rigid_tool/run.json",
+   "bytes": 2328,
+   "sha256": "da45b15f3f3c53777de7c1889d9adce635d0b2ceea10fe33d8a043e7a31fc442",
+   "lines": 66,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_static_torque/raw/static_torque.json",
+   "bytes": 2986,
+   "sha256": "b45883589cf66e905cc306968af9f00b0b0210343c9bf12866ee4438187b5045",
+   "lines": 204,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "model",
+    "units",
+    "static_only",
+    "tool_length_m",
+    "tool_mass_kg",
+    "payload_offset_m",
+    "poses",
+    "j6_torque_if_mounted_on_shaft"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_static_torque/raw/stdout.txt",
+   "bytes": 1541,
+   "sha256": "13e153a0555dbe42a36afa850d268832405dab784788effa7323a0eff4c8bdef",
+   "lines": 24
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_static_torque/README.md",
+   "bytes": 3044,
+   "sha256": "297e7b7dc9624c7a359fded3e0c16ad5e5297d5333d16930588a68c9c5cb5970",
+   "lines": 54
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_static_torque/run.json",
+   "bytes": 1146,
+   "sha256": "470b2c8dfea2b671cb15a33c8c776af96982042be580aceb7ed8b2ad59646a8b",
+   "lines": 37,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/camera/camera.json",
+   "bytes": 303,
+   "sha256": "2897ba30f6b19aa3be54c1fb3f7a86baee74918ec56db30904f95afa97af109c",
+   "lines": 18,
+   "structure": [
+    "camera",
+    "resolution",
+    "depth_range_m",
+    "written",
+    "note"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/camera/depth.png",
+   "bytes": 35955,
+   "sha256": "f82124e29b330ee72c2645c9c8353c3b95e11e335c0693c5e45e8f25112a29d1"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/camera/rgb.png",
+   "bytes": 89896,
+   "sha256": "4db371f2201cdd5f18851f60c029d1063a16e5ff4746f0e6333ec80573a1dc53"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/ep_0000.npz",
+   "bytes": 61348,
+   "sha256": "750f96ba4c61d49b7fc96f6960109ef9f84a828457b7be9b24a4e879b53d4460"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/ep_0001.npz",
+   "bytes": 54748,
+   "sha256": "34dea7db6d8527edebebd920ac9d1fcdcdf961ea3f6819cf1e8577db842e9f60"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/ep_0002.npz",
+   "bytes": 59666,
+   "sha256": "5fc7075445699ca1bf1efa83cf938558252971c9b95905d57602053bc5dde912"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/ep_0003.npz",
+   "bytes": 59936,
+   "sha256": "f209b971740a53a943d116508b9749c066e6823e4b8bf06ed2d26209587312e6"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/index.json",
+   "bytes": 1219,
+   "sha256": "fb726113bb36dacdafe5d12d7c9d220ca7a127cfeed14a700b1486de1c5f5a52",
+   "lines": 54,
+   "structure": "list"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/gui_home_fold.png",
+   "bytes": 68480,
+   "sha256": "7957262e70b338e8a9bee4c2ba020bd235c709d7be90258b2b22f3bafd94f91f"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/layout.json",
+   "bytes": 16227,
+   "sha256": "1e362bebaaee9df23fc220b1c69835fa1b093b442039dbf8d5fbbb60099d9589",
+   "lines": 766,
+   "structure": [
+    "joint_limits",
+    "patch_half_size_m",
+    "n_candidates",
+    "n_feasible",
+    "ranked",
+    "infeasible"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/replay_check.txt",
+   "bytes": 140,
+   "sha256": "267d924037695409cd2988515a014cedb77936999fdc515de8d9eb668225eadb",
+   "lines": 8
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/scene/wall_scene.config.json",
+   "bytes": 1663,
+   "sha256": "8974bbfea2b32a07227a1ba85ad84ae78927718130f66800f4e4c26ad3fd33b1",
+   "lines": 49,
+   "structure": [
+    "config",
+    "provenance",
+    "digest"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/scene/wall_scene.xml",
+   "bytes": 7531,
+   "sha256": "92362cfc771c62efcbd10b7a53f44fead31f238b87dfdf33d10a28bc4e74e245",
+   "lines": 98
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/study/sensitivity.json",
+   "bytes": 86637,
+   "sha256": "4017554ea729c87d1079ef43f58ab144ecf0deb6532aaab247c501c6fa43d714",
+   "lines": 3338,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "seed",
+    "random_scale",
+    "nominal_scene",
+    "task",
+    "baseline_no_error",
+    "single_factor",
+    "randomized",
+    "random_perturbations",
+    "elapsed_s"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/study/sensitivity.png",
+   "bytes": 152600,
+   "sha256": "b8315ba44c57d14d55b0f1a6144d4a0c10bd469735fc35e592e029e7cba38805"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/torque/static_torque.json",
+   "bytes": 4877,
+   "sha256": "d846bdfabaeecc628adcee2818911b58e7490188d0ad3fab8923d29b5af69193",
+   "lines": 355,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "model",
+    "units",
+    "static_only",
+    "tool_length_m",
+    "tool_mass_kg",
+    "payload_offset_m",
+    "poses",
+    "v2_ratings_Nm",
+    "j6_torque_if_mounted_on_shaft"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/v2_poses.png",
+   "bytes": 331507,
+   "sha256": "e9f65dad6887362d0516ba1261e938ce593d4c2c1328fe24f0db6bcd15ab3520"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/README.md",
+   "bytes": 3105,
+   "sha256": "d146c55dd9534a346e20a46c60be3a250c00c0b024114f07923973209005ade5",
+   "lines": 48
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_v2_model/run.json",
+   "bytes": 3258,
+   "sha256": "c6b9bf020702251c11ec28b1ba87e4946e2a7036de5a3bda35f310d5128d28b6",
+   "lines": 86,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/camera/camera.json",
+   "bytes": 303,
+   "sha256": "3ec90592bc8655aa3824ea3ef49b6d2644cb7ba2d655ef91ddca7fde4bd2b1b2",
+   "lines": 18,
+   "structure": [
+    "camera",
+    "resolution",
+    "depth_range_m",
+    "written",
+    "note"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/camera/depth.png",
+   "bytes": 37688,
+   "sha256": "79719350b848429c63acd65fd43c054a0b5989711409884461117683cbca3f5b"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/camera/depth_m.npy",
+   "bytes": 1228928,
+   "sha256": "2ead147cd8d3c19454e1dc5708d1a1850689915dc7975917e750a0b2c3d93706"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/camera/rgb.npy",
+   "bytes": 921728,
+   "sha256": "22f5c2522ee583e4b9ec91dcd74e09127e4caa30fa60644324a4dbebde11067e"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/camera/rgb.png",
+   "bytes": 52364,
+   "sha256": "fbeb9609f160ad12bf2172dc686ceecdb79c51822556026b25143526b58930c8"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/episodes/ep_0000.npz",
+   "bytes": 61443,
+   "sha256": "f519055d65a44b612b797e4ba72f3477d9f3f36298a7c253032a59f865d8961c"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/episodes/ep_0001.npz",
+   "bytes": 55676,
+   "sha256": "13201c8dcd54e9c03d089032a79ff67f1d9ce559b4ae8dd955d663700fd43d97"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/episodes/ep_0002.npz",
+   "bytes": 58630,
+   "sha256": "dc3df5e6aae0c548d6383a4353a7ae5787b7583307ef6dade61672979cdcd16a"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/episodes/ep_0003.npz",
+   "bytes": 60195,
+   "sha256": "694bdc578514d08384ec5c843ef3c0655a897be89f7beeab37059da4b91bddc5"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/episodes/index.json",
+   "bytes": 1213,
+   "sha256": "b1ea2bffd4ef23c4e32572fbd3e2ef9dac2b6db464503a82cba93bc61ce45fc7",
+   "lines": 54,
+   "structure": "list"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/layout.json",
+   "bytes": 15618,
+   "sha256": "75315bfb7061f450a36016bc42a8b40e6030e5c49e57ecc0f839711bae077987",
+   "lines": 745,
+   "structure": [
+    "joint_range_deg",
+    "patch_half_size_m",
+    "n_candidates",
+    "n_feasible",
+    "ranked",
+    "infeasible"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/replay_check.txt",
+   "bytes": 167,
+   "sha256": "30882f40d1ff58c93ef8e18dd77c86a8d5c8078fa2aff8a85bb5529f4b7764ea",
+   "lines": 4
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/scene/wall_trowel_scene.config.json",
+   "bytes": 1610,
+   "sha256": "3655d551d8127b3f2191cfcba0aa130c0742cb80fbec67462daa453f56a0e673",
+   "lines": 48,
+   "structure": [
+    "config",
+    "provenance",
+    "digest"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/scene/wall_trowel_scene.xml",
+   "bytes": 8426,
+   "sha256": "4dcc8bf59793ac5508244438ef8c92441fb9a1d26815c805ed4cb2b7a59edea1",
+   "lines": 96
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/sensitivity.json",
+   "bytes": 86591,
+   "sha256": "2ef552abb7d9da2fd4122f74bf4e2159fa02aeb5a0f2941c70c2de4d0b6f7715",
+   "lines": 3338,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "seed",
+    "random_scale",
+    "nominal_scene",
+    "task",
+    "baseline_no_error",
+    "single_factor",
+    "randomized",
+    "random_perturbations",
+    "elapsed_s"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/raw/sensitivity.png",
+   "bytes": 155473,
+   "sha256": "e061ad70f955f712a6f47dd4a9dcb476b6b2063ca0f5b16f3d86986fdd1a1c92"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/README.md",
+   "bytes": 5412,
+   "sha256": "08d51985c389908ed6bdd9495709fbd8e8b52555f88c65eb12cee0175befc43e",
+   "lines": 65
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_sim_chain/run.json",
+   "bytes": 1992,
+   "sha256": "c455f8aacc6fb498e6468ce434171f7be3dffee8355657b7d94bad8e37024942",
+   "lines": 66,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_workspace/raw/wall_workspace_L10cm.json",
+   "bytes": 7740,
+   "sha256": "9f8766f2f98bc28305360d606cbe4cc579721bd241229ba98ba16a9c8fb66326",
+   "lines": 534,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "model",
+    "tool_length_m",
+    "grid_m",
+    "seed",
+    "orientation_constraint",
+    "position_tolerance_m",
+    "wall_distance_reference",
+    "grid_x_m",
+    "grid_z_m",
+    "results"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_workspace/raw/workspace.png",
+   "bytes": 60218,
+   "sha256": "e2a4768f029447e6f1f3c58391fa170bde3f238d815e80e41b0f8b51db1475a5"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_workspace/README.md",
+   "bytes": 3774,
+   "sha256": "2a963ba9724b33c3accd3aa30df4c744ff3990fe04a3d35b08d931fd2697b95e",
+   "lines": 59
+  },
+  {
+   "path": "dummy-arm-lab/experiments/00_initial_debug/records/2026-09-20_wall_workspace/run.json",
+   "bytes": 1231,
+   "sha256": "75314617089ad775c8281dc93470f660f9116c447f6456ea72331c45fc9ec896",
+   "lines": 37,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/compare/report.json",
+   "bytes": 29777,
+   "sha256": "6a494d8e26b98c8e43b04bb0e435b0f6738d9e25c621b110ec564d52cd31dcda",
+   "lines": 1256,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "runs",
+    "traces",
+    "sessions"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/compare/session.png",
+   "bytes": 51797,
+   "sha256": "3f9903cf684a4b1e0ce85c52bc6d63d8b46e7c416cc8761a5d4b6b60de1753bf"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/compare/technique.png",
+   "bytes": 152598,
+   "sha256": "450291fce1e97984f1f203fc10483f7d8d4f50522a3b1cceb0e24ee5d2b4b2bd"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/compare/training.png",
+   "bytes": 105895,
+   "sha256": "f8fd2a0c8da874523c18146e82ccdc237e5f6a6d60a2bf0d6cb16185bf9415d9"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/flat_warm_start/policy.npz",
+   "bytes": 80874,
+   "sha256": "37beec1891dd336e898d9cad7ad485a0e3e05226b761e692fb261e7e4ed83d6a"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/flat_warm_start/training.json",
+   "bytes": 23201,
+   "sha256": "fa5d8b5f5aaf60bf3d046888c9cbb2e12aeb40582e688c0a0f61c345fbcc38a0",
+   "lines": 1198,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "updates",
+    "warm_start_behaviour_clone_mse",
+    "steps",
+    "ppo",
+    "env",
+    "random_scale",
+    "seed",
+    "scripted_baseline",
+    "after_behaviour_clone",
+    "learned_final",
+    "random_policy",
+    "curve",
+    "elapsed_s"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/flat_warm_start/training.png",
+   "bytes": 127890,
+   "sha256": "afd8bdc14aae12c984cf31ca8b4dcbdfa76abe6a60259ab2302f9c055ba7b73c"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/technique_warm_start/policy.npz",
+   "bytes": 80874,
+   "sha256": "51e5a67a6983af6f1caf9b063ab17afbd5c65aa27b7105d261a57f3a1b1e0b03"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/technique_warm_start/training.json",
+   "bytes": 23189,
+   "sha256": "f3a17b242ac2c810f25a72b404a97fa654ad1efe8703bc8947c9d90dc8ba7bb5",
+   "lines": 1198,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "updates",
+    "warm_start_behaviour_clone_mse",
+    "steps",
+    "ppo",
+    "env",
+    "random_scale",
+    "seed",
+    "scripted_baseline",
+    "after_behaviour_clone",
+    "learned_final",
+    "random_policy",
+    "curve",
+    "elapsed_s"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/technique_warm_start/training.png",
+   "bytes": 129845,
+   "sha256": "cfb6bbd9b33f4db7ac8a04c08b5eddd8e770b76f9394e19fc542c765e639c28d"
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/README.md",
+   "bytes": 7802,
+   "sha256": "1374ee2dc015eec68f5f4726a7908c16497794339b509beb9e85418ee26e314e",
+   "lines": 114
+  },
+  {
+   "path": "dummy-arm-lab/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/run.json",
+   "bytes": 4651,
+   "sha256": "a9d797d67a71cb306f67cc05615088fbe728ff2d2f5ce714aaa3ca0c3533aad2",
+   "lines": 71,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "supersedes",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/experiments/_template/README.md",
+   "bytes": 135,
+   "sha256": "d7a7ce7c58dd084955ffa1d6944c0a1b6ce9d0255e98a98d62ec0ec576668b27",
+   "lines": 8
+  },
+  {
+   "path": "dummy-arm-lab/experiments/_template/run.json",
+   "bytes": 314,
+   "sha256": "a05f6e6b6b8091e1806808d6631c8e0bc7fd7d36d70cc3d6f4b90f2c26226a92",
+   "lines": 7,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/LICENSE",
+   "bytes": 35821,
+   "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+  },
+  {
+   "path": "dummy-arm-lab/models/dummy_reference.xml",
+   "bytes": 6560,
+   "sha256": "291fc21d3ba4ad196a6ffd2219e1de5f7860707728ade3882ec793f18793f95f",
+   "lines": 70
+  },
+  {
+   "path": "dummy-arm-lab/models/dummy_studio_visual.xml",
+   "bytes": 7400,
+   "sha256": "08d0d8738f32b9487482472220c7200360d8e0166231550b26d85f1466d377d0",
+   "lines": 92
+  },
+  {
+   "path": "dummy-arm-lab/models/dummy_v2.xml",
+   "bytes": 5692,
+   "sha256": "9d5d56001e15ec1e242254f9541e943ec7635097e33e8b760cc23cae844aabb1",
+   "lines": 65
+  },
+  {
+   "path": "dummy-arm-lab/models/dummy_v2_params.json",
+   "bytes": 7732,
+   "sha256": "2fd92d84b03c624c702ef97ca38a7729c70c4e9a100ea7b47c8647cb44fd789f",
+   "lines": 373,
+   "structure": [
+    "model",
+    "evidence_level",
+    "frame",
+    "joint_zero",
+    "dh_v2_m",
+    "firmware_limits_deg",
+    "firmware_reduction",
+    "drivetrain",
+    "actuator_model",
+    "end_effector",
+    "structure_material",
+    "structure_density_g_cm3",
+    "other_densities_g_cm3",
+    "components",
+    "links",
+    "total_mass_kg",
+    "moving_mass_kg",
+    "conflicts",
+    "cad_alignment"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes/base_link.stl",
+   "bytes": 912984,
+   "sha256": "55ece6abb6ecc37f56868df5327991d2676e20f178862f7a9ed3fb6a9669b275"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes/link1_1_1.stl",
+   "bytes": 355384,
+   "sha256": "30cd28b038c726f873aa75903fbca368d95e24bfe1779bf303b3fb36f0a6983f"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes/link2_1_1.stl",
+   "bytes": 391684,
+   "sha256": "a47ea8c78d80b79874e0cea2a69ad0bd285af239a0d5b7a1d16b9b60f81e419d"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes/link3_1_1.stl",
+   "bytes": 383384,
+   "sha256": "ecec6ece159b9c41409f20792937773266b1c9d240576bf4a31c3cee32b5b3d6"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes/link4_1_1.stl",
+   "bytes": 329384,
+   "sha256": "35c318fffd8f09e5585024dc2df2ffcdb0b06e7181254eabb14173596681e012"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes/link5_1_1.stl",
+   "bytes": 237684,
+   "sha256": "a5a7257d58e3850a0e115f972496e1c8068550725da01f79bea56e6c8cc44bf1"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes/link6_1_1.stl",
+   "bytes": 45484,
+   "sha256": "5554538d053939e45d1ad6f8b321ce72d0d181fe55b269ba99d93368acdbaa6f"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes_v2/base_link.stl",
+   "bytes": 1048734,
+   "sha256": "3e48cc113787576384a63d80181f9b469ed1855f052a715acee18a4c1c8db1fd"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes_v2/link1.stl",
+   "bytes": 244884,
+   "sha256": "3d8b4d7243c5cc5a2d65ea9477dc00c728e992d094fbd9ffe32a32fe949459a0"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes_v2/link2.stl",
+   "bytes": 1477484,
+   "sha256": "9231d180b59d8e772b78bc53115c50e011931111c94061fa06790e544762b4cc"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes_v2/link3.stl",
+   "bytes": 593734,
+   "sha256": "73847a63ed96ccb98294ef50a9d0e2c8ecc7d45065cdd041359af92fdf712c57"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes_v2/link4.stl",
+   "bytes": 766134,
+   "sha256": "5e0a8b18eddf86be0b665646929c4377fd520e70fcaad2c6b451cce54d7ea1af"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes_v2/link5.stl",
+   "bytes": 303634,
+   "sha256": "fee4dddd59bcba90a6a739a9a6709b9a2b5982e63513c0c2aca68df25c547db7"
+  },
+  {
+   "path": "dummy-arm-lab/models/meshes_v2/link6.stl",
+   "bytes": 2784,
+   "sha256": "c0d9f40a4f3c2ded5ddc55cb6c12dac3c0ab50a17f73a467ec797be48d7b4ae9"
+  },
+  {
+   "path": "dummy-arm-lab/models/provenance.json",
+   "bytes": 1013,
+   "sha256": "aa09c102f64d65e2845438a482a547c0083a50394917a47c8b7a5eb10e4d276d",
+   "lines": 15,
+   "structure": [
+    "source",
+    "manifest_commit",
+    "urdf_sha256",
+    "mesh_sha256",
+    "warning"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/models/README.md",
+   "bytes": 4845,
+   "sha256": "a38cd0658fdde24c6e2e041d6135b3ec56dd4367da36a9e6f716c6c641761ec2",
+   "lines": 61
+  },
+  {
+   "path": "dummy-arm-lab/models/reference_import.urdf",
+   "bytes": 7520,
+   "sha256": "8374cec86139cd76313bcc0d8e96d4f5d33c012f22a80e8f17e1bde59e4fe314",
+   "lines": 194
+  },
+  {
+   "path": "dummy-arm-lab/models/studio_provenance.json",
+   "bytes": 7056,
+   "sha256": "7f74d949b8fbcfbc035945851045a8143b787af69a9c4371e0470bd151f44f6a",
+   "lines": 181,
+   "structure": [
+    "source",
+    "articulation_source",
+    "warning",
+    "parts"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/models/UPSTREAM_LICENSE",
+   "bytes": 35821,
+   "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+  },
+  {
+   "path": "dummy-arm-lab/models/v2_provenance.json",
+   "bytes": 1169,
+   "sha256": "891aca7763e424405e2d7fa590c0d2e43d6ef76f6860f1ed640fa5b2595eb837",
+   "lines": 20,
+   "structure": [
+    "source_step",
+    "source_step_sha256",
+    "archive",
+    "license",
+    "generator",
+    "mesh_tolerance_mm",
+    "mesh_angle_rad",
+    "decimate_mm",
+    "files"
+   ]
+  },
+  {
+   "path": "dummy-arm-lab/models/电机与仿真参数说明.md",
+   "bytes": 6229,
+   "sha256": "96e47b95d318bb3f2da125e102d8350c66fd74fc8e7e4d73884fbf515ce47315",
+   "lines": 68
+  },
+  {
+   "path": "dummy-arm-lab/MuJoCo实机同步.cmd",
+   "bytes": 513,
+   "sha256": "f5c75c3f9b8a233a362f1c5c4d4a6be5c14f6f28babbf244ed38e4af0db7ffc7",
+   "lines": 12
+  },
+  {
+   "path": "dummy-arm-lab/README.md",
+   "bytes": 10115,
+   "sha256": "8ed402d772f06f6af043f41b890bb60f7cfb3f2a252c2c617ee9e4df1b9180e4",
+   "lines": 233
+  },
+  {
+   "path": "dummy-arm-lab/README.zh-CN.md",
+   "bytes": 7893,
+   "sha256": "9655f0f6a0d109e03703ff18b62ff1f0a5f52a92dd8afb4f62999e925c22aa8b",
+   "lines": 188
+  },
+  {
+   "path": "dummy-arm-lab/requirements/core.txt",
+   "bytes": 45,
+   "sha256": "9fa95fcb5cca538ddd338d81f48cc4225a12cd71b78a95117c5ce211151292d9",
+   "lines": 3
+  },
+  {
+   "path": "dummy-arm-lab/requirements/dev.txt",
+   "bytes": 223,
+   "sha256": "f60538b2333a15a0a2a774c0c370bc7260f17a8d1e66518c777cfccd38c5e8ee",
+   "lines": 5
+  },
+  {
+   "path": "dummy-arm-lab/requirements/gui.txt",
+   "bytes": 69,
+   "sha256": "1b5ff909fe07ee2083233ac2e88e2f574e77a19369f685c0c500e3a1ad6261bf",
+   "lines": 4
+  },
+  {
+   "path": "dummy-arm-lab/requirements/modeling.txt",
+   "bytes": 29,
+   "sha256": "ad2f8da89f5793dee91f3abf014fafc935c23b4b99a54688446ba6233d22ce51",
+   "lines": 2
+  },
+  {
+   "path": "dummy-arm-lab/requirements/README.md",
+   "bytes": 752,
+   "sha256": "a3dda1a2a0707c8cbe4794be20daf357b8531adc0694e19d57528ccd1ab1c59f",
+   "lines": 6
+  },
+  {
+   "path": "dummy-arm-lab/requirements/windows-observed-freeze.txt",
+   "bytes": 445,
+   "sha256": "5afd5aba4d2f4ba87098f587d5e208907f4fd0a7ced1f7b57010ec4490ab39e7",
+   "lines": 25
+  },
+  {
+   "path": "dummy-arm-lab/tests/README.md",
+   "bytes": 420,
+   "sha256": "e0141af628d7dbfb31a655db83bc6a4f6785919f87b8eec38e6af24fb9277014",
+   "lines": 5
+  },
+  {
+   "path": "dummy-arm-lab/tests/test_dummy_v2_model.py",
+   "bytes": 3674,
+   "sha256": "03331dc0e50c5e9f7cd889e5aff4e7cfc11a3588cdec50de689c16a7fe2af0f5",
+   "lines": 81
+  },
+  {
+   "path": "dummy-arm-lab/tests/test_live_control.py",
+   "bytes": 7184,
+   "sha256": "96acce6da5ca21d6deccd93848e035423b3324f5012fc6a3824424f68624c577",
+   "lines": 145
+  },
+  {
+   "path": "dummy-arm-lab/tests/test_loop.py",
+   "bytes": 6736,
+   "sha256": "a9073ab599b01476f181ed031b54f9e1f5afa87297f76120f5efe5a490f18634",
+   "lines": 142
+  },
+  {
+   "path": "dummy-arm-lab/tests/test_profile_v2.py",
+   "bytes": 6698,
+   "sha256": "4bce7ccbc61512137a96c6164c121d430a6476fbdd7bf8c29bcd1344ba874b4b",
+   "lines": 151
+  },
+  {
+   "path": "dummy-arm-lab/tests/test_studio_articulation.py",
+   "bytes": 3839,
+   "sha256": "25347b98c444b4561eba9ae50ace9c500b378a935741af2b6e2f670d12f77746",
+   "lines": 80
+  },
+  {
+   "path": "dummy-arm-lab/tests/test_studio_fallback.py",
+   "bytes": 2539,
+   "sha256": "353472b86b4c332f8cf30c46676a27d356f292e1b7e06e961e42fdc2f27780d8",
+   "lines": 60
+  },
+  {
+   "path": "dummy-arm-lab/tests/test_wall_rl.py",
+   "bytes": 11238,
+   "sha256": "f6db9e5e0a009207a52ab873a41bc713f775458d2d7d5e21d62ec80590e69578",
+   "lines": 238
+  },
+  {
+   "path": "dummy-arm-lab/tests/test_wall_sim.py",
+   "bytes": 10896,
+   "sha256": "d2bb9e44742b31166451c95f137d68bd1a66c3dbe88ff4e0de92c59409e0c059",
+   "lines": 204
+  },
+  {
+   "path": "dummy-arm-lab/THIRD_PARTY.md",
+   "bytes": 3519,
+   "sha256": "70eee4819e8835f1dab2db05d069b80240c20e39afdc78cdfedf8059a799a2ab",
+   "lines": 48
+  },
+  {
+   "path": "dummy-arm-lab/tools/build_studio_capture.ps1",
+   "bytes": 151,
+   "sha256": "26a20899f4b70798ec58a848459da65e9764c589d20f947e4ce3c415cf2f5948",
+   "lines": 2
+  },
+  {
+   "path": "dummy-arm-lab/tools/build_studio_model.py",
+   "bytes": 316,
+   "sha256": "18a4043ea497d98068723ed5487d80361485c79d9ece47d8d55f35445d6889b7",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/camera_probe.py",
+   "bytes": 304,
+   "sha256": "a83bbbb1e75ae8b276bdf410116d36d83e8bb1a8f947be27aae27792a7c23417",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/check_live_presets_once.py",
+   "bytes": 326,
+   "sha256": "cdd76e7efd377ea3c7c11af6a3ef43f11ff2e52fd81dcec54b51a1cbcaa432f0",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/commission_fold_once.py",
+   "bytes": 320,
+   "sha256": "7efd92c7c87601afe1b3f8a896474e029f7b41124937f1998abf1438a5485ee8",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/commission_j1_once.py",
+   "bytes": 316,
+   "sha256": "d94767fc3a0e1775129948b1fc0db40a4ebc09cb425ffbcfaf9da7b7d2664d12",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/commission_native_j1.py",
+   "bytes": 320,
+   "sha256": "6885a905fbe0c7a64350b16f71023d52f104a58b94b179e3a60303729300d04c",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/diagnostics/build_studio_capture.ps1",
+   "bytes": 5243,
+   "sha256": "60e05ed38acd791be1854f692af59e6af2031065e372e9917f73b59a9b311833",
+   "lines": 81
+  },
+  {
+   "path": "dummy-arm-lab/tools/diagnostics/inspect_sources.py",
+   "bytes": 5083,
+   "sha256": "389b5e504920504c73b5cab9ef1aa5658a233b2485a071bf7dd4ddb710ce2fbe",
+   "lines": 125
+  },
+  {
+   "path": "dummy-arm-lab/tools/diagnostics/inspect_studio_il.ps1",
+   "bytes": 5168,
+   "sha256": "9d499b583098ce5ef9ec09455f9aa63237fa26d397015c24878412d77779e132",
+   "lines": 133
+  },
+  {
+   "path": "dummy-arm-lab/tools/diagnostics/inspect_studio_native.ps1",
+   "bytes": 1124,
+   "sha256": "33fb1e78381e59deb39caa1991b9b419b9399d735558d27cd2991d0abbd6d03c",
+   "lines": 18
+  },
+  {
+   "path": "dummy-arm-lab/tools/diagnostics/inspect_studio_scene.py",
+   "bytes": 1669,
+   "sha256": "d60532f8f132d2bcbd152bc46b2c06f3027a8072fb559f6a92975d4d157f7858",
+   "lines": 30
+  },
+  {
+   "path": "dummy-arm-lab/tools/diagnostics/read_studio_capture.py",
+   "bytes": 1083,
+   "sha256": "bbb82a478541ce12efea3771c3b6ec062ea669d5562fa237502c96ce71d64335",
+   "lines": 31
+  },
+  {
+   "path": "dummy-arm-lab/tools/doctor.py",
+   "bytes": 298,
+   "sha256": "45d5ebeef0f46bd38aeb6bae842dc6fd4f3415c4a786ce8c75d75a007feaa0c6",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/environment/doctor.py",
+   "bytes": 2132,
+   "sha256": "5c9bb833fb1cec9798f91a51f674f8b644b10102b2c80fb4ef869f7b0b3a37a0",
+   "lines": 39
+  },
+  {
+   "path": "dummy-arm-lab/tools/environment/ubuntu_setup.sh",
+   "bytes": 339,
+   "sha256": "805dcfd88a029f75d1b03a8c3890b2df564d0e532f8f6d47cd40b72e20dd64b5",
+   "lines": 8
+  },
+  {
+   "path": "dummy-arm-lab/tools/environment/windows_setup.cmd",
+   "bytes": 260,
+   "sha256": "27acca385d1b33902e37703f3fead93f7143bdeddc50081c1bbbb51435a68c39",
+   "lines": 8
+  },
+  {
+   "path": "dummy-arm-lab/tools/environment/windows_setup.ps1",
+   "bytes": 8304,
+   "sha256": "522b24cdfdcfbe366baef6efbf16775a2ff578868108e4df370a37e81e7a13fc",
+   "lines": 202
+  },
+  {
+   "path": "dummy-arm-lab/tools/gui/live_mujoco.py",
+   "bytes": 16998,
+   "sha256": "c87023918be036f9d3ad6a36ea95534f31350aec428cbf1aae836152407ccd37",
+   "lines": 289
+  },
+  {
+   "path": "dummy-arm-lab/tools/hardware/camera_probe.py",
+   "bytes": 1978,
+   "sha256": "4ebac5b8c6f6a269681c9e55fe43e33d83ba9eb24669f6f2e4972ee090f55c1e",
+   "lines": 34
+  },
+  {
+   "path": "dummy-arm-lab/tools/hardware/check_live_presets_once.py",
+   "bytes": 2974,
+   "sha256": "0299de205ec10b2f7507fc4f726f2221bc42f638260c78833ac1cc66ce00f8ae",
+   "lines": 68
+  },
+  {
+   "path": "dummy-arm-lab/tools/hardware/commission_fold_once.py",
+   "bytes": 5137,
+   "sha256": "f576dffec388858f89a2ccbbebfa5262d7f6f795b815e87a43d9ee2442949211",
+   "lines": 104
+  },
+  {
+   "path": "dummy-arm-lab/tools/hardware/commission_j1_once.py",
+   "bytes": 9256,
+   "sha256": "9d3d89b3402c8f828a997408e3d3a691d1b31e72a49d5eb8cd5718685f60295f",
+   "lines": 160
+  },
+  {
+   "path": "dummy-arm-lab/tools/hardware/commission_native_j1.py",
+   "bytes": 8686,
+   "sha256": "ab8cc770f714dd83f3e21621b3dda1c4478b890c5db379d2f63c4ea76d8a8370",
+   "lines": 144
+  },
+  {
+   "path": "dummy-arm-lab/tools/hardware/native_robot_diagnostic.py",
+   "bytes": 4722,
+   "sha256": "4cd011ca2b82b8391a6f203ccbc1e9f012c84dcd858d2819f4ddaa1615be06d5",
+   "lines": 88
+  },
+  {
+   "path": "dummy-arm-lab/tools/hardware/probe_serial_raw.py",
+   "bytes": 1239,
+   "sha256": "5853e8b12b3830d3eb1036696be615ba5f2ac78da5a45670f4b0a52616d593cc",
+   "lines": 30
+  },
+  {
+   "path": "dummy-arm-lab/tools/hardware/probe_studio_transport.py",
+   "bytes": 3339,
+   "sha256": "cf48b1aae16c15e7e493b7d3068b96913d665a9a71ab4c453a8324b5d9e2e19b",
+   "lines": 73
+  },
+  {
+   "path": "dummy-arm-lab/tools/hardware/repair_native_interface.ps1",
+   "bytes": 3305,
+   "sha256": "7e77e14798495b629a81244f5f7b7076a842ab0b2179755203f9271705692e77",
+   "lines": 51
+  },
+  {
+   "path": "dummy-arm-lab/tools/import_reference.py",
+   "bytes": 312,
+   "sha256": "85bf51ac5350eadb7752cbc1556b7a6bd64a6bc08f2d6e888ef5be9d15aaff00",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/inspect_studio_il.ps1",
+   "bytes": 145,
+   "sha256": "c67abf7b31b56fd2f4f10173e23ef8b7add0777aaf97d40598fb74a5c89f4a1b",
+   "lines": 2
+  },
+  {
+   "path": "dummy-arm-lab/tools/inspect_studio_native.ps1",
+   "bytes": 153,
+   "sha256": "d3c96cd4c34234e9ee9e25d53dcba8e3de2699c384b4299bf85215199995ce49",
+   "lines": 2
+  },
+  {
+   "path": "dummy-arm-lab/tools/inspect_studio_scene.py",
+   "bytes": 326,
+   "sha256": "97a38311fa7e7aec86e56ef64e3eb3bc1be2b04c2015ba677bff21498c83545e",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/live_mujoco.py",
+   "bytes": 292,
+   "sha256": "06ec8c6f3e9b4db1788087ca92ac483ae342978e55aaadfca9fb3b89ac35cbbb",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/maintenance/archive_upstream.py",
+   "bytes": 2135,
+   "sha256": "c3e80ef421bcff6049e89deb734399e0e7e20aaa3ca046680bc5dca2cff03dd6",
+   "lines": 32
+  },
+  {
+   "path": "dummy-arm-lab/tools/maintenance/organize_20260918.py",
+   "bytes": 4732,
+   "sha256": "b91d158e40093b0cefe9559b68f37983b0d47dcb8e836e63bd5b1876fe1cc955",
+   "lines": 65
+  },
+  {
+   "path": "dummy-arm-lab/tools/maintenance/package_release.py",
+   "bytes": 3288,
+   "sha256": "243f3f68ee68a21fdeb32271d30a36c79289eeb0addf27928ddf90703dc7711f",
+   "lines": 58
+  },
+  {
+   "path": "dummy-arm-lab/tools/maintenance/verify_evidence.py",
+   "bytes": 790,
+   "sha256": "9a1281deda5c90499c4f2a86afb46462737f9a760f0a502ef24d5aee8ee47918",
+   "lines": 24
+  },
+  {
+   "path": "dummy-arm-lab/tools/maintenance/verify_release.py",
+   "bytes": 2845,
+   "sha256": "91d063e68d7db794af05f7078cadcd7a6a90f51573f3e485280139136b0be441",
+   "lines": 57
+  },
+  {
+   "path": "dummy-arm-lab/tools/maintenance/verify_studio_meshes.py",
+   "bytes": 1394,
+   "sha256": "38cd5009c7b3724a9b0ea9a15e6a26011e916831ce4199deb4707dda9add4677",
+   "lines": 34
+  },
+  {
+   "path": "dummy-arm-lab/tools/maintenance/write_handoff_docs.py",
+   "bytes": 20930,
+   "sha256": "394c28256c3e27ef4887a31c8110db41eceba1d7b29495824df84ee3d1658fae",
+   "lines": 300
+  },
+  {
+   "path": "dummy-arm-lab/tools/modeling/build_dummy_v2.py",
+   "bytes": 24368,
+   "sha256": "0747f5e4ce64b994b2d67c2e4ad3defec430de5630f0ee9868e8aa7e901c52f9",
+   "lines": 450
+  },
+  {
+   "path": "dummy-arm-lab/tools/modeling/build_studio_model.py",
+   "bytes": 6424,
+   "sha256": "5a6aca9076a89d26913e96d8b1efc8e25706f0e7a3d2eb744e1064235f2567fa",
+   "lines": 95
+  },
+  {
+   "path": "dummy-arm-lab/tools/modeling/import_reference.py",
+   "bytes": 4230,
+   "sha256": "50b23cd7e8cffe182e708bb081bb637f6a377ecbc871198cb9fdb4b174b35d1e",
+   "lines": 81
+  },
+  {
+   "path": "dummy-arm-lab/tools/native_robot_diagnostic.py",
+   "bytes": 326,
+   "sha256": "f0d4d27cf6a851bc334ebc7fc119ae6ba54b25262124b1915ef0e48b3711b3ab",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/package_ubuntu.py",
+   "bytes": 341,
+   "sha256": "724cdae1025ce338cb369ad0880b7220fae4b04a6642bfc256527674d1862b9e",
+   "lines": 6
+  },
+  {
+   "path": "dummy-arm-lab/tools/probe_serial_raw.py",
+   "bytes": 312,
+   "sha256": "2a9739d581f139461903d5498bb1593cfe52d1c292add3cea4a8a127cbc9dd2e",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/probe_studio_transport.py",
+   "bytes": 324,
+   "sha256": "b3bcaf693b584ca5c3808b2868f57ad573496a69010cb279c1e5b86415c61339",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/read_studio_capture.py",
+   "bytes": 324,
+   "sha256": "2af31e3a9e7edd221312c9553b3cdef2ca503bcea9e957784c652eda1846950b",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/README.md",
+   "bytes": 570,
+   "sha256": "1c7e97a8cbb9ff43855476942a17cd4cd0e4b1d0c5c96279825fed92355c6d59",
+   "lines": 6
+  },
+  {
+   "path": "dummy-arm-lab/tools/render_reference.py",
+   "bytes": 316,
+   "sha256": "606528d9a86cee7e5d450f7b9fe2b73cafbb549ae318f4c03c81531c0492b07b",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/tools/repair_native_interface.ps1",
+   "bytes": 151,
+   "sha256": "69bfefde97b6a986fccbeafd80520b506fe1af86aa528bc6662cc11dacec1eeb",
+   "lines": 2
+  },
+  {
+   "path": "dummy-arm-lab/tools/simulation/open_rl_visualization.py",
+   "bytes": 904,
+   "sha256": "750d419568ea3249fef202057193c09fb07810794115c45a73f4710a9d4d2015",
+   "lines": 29
+  },
+  {
+   "path": "dummy-arm-lab/tools/simulation/plot_rl_training.py",
+   "bytes": 4177,
+   "sha256": "5dc86db4e9adba90f56fe958cbcaab1cc6ae645fd93120e056bb6886eb3988c3",
+   "lines": 87
+  },
+  {
+   "path": "dummy-arm-lab/tools/simulation/plot_wall_study.py",
+   "bytes": 3765,
+   "sha256": "bb08fbeb89f621e8dbd32a16ecd5a13367c235d0f06c056dd7232236ade44b04",
+   "lines": 67
+  },
+  {
+   "path": "dummy-arm-lab/tools/simulation/render_reference.py",
+   "bytes": 1542,
+   "sha256": "fa1f251c9766b9a496f4b2406eb3269ef6b9e7c90996969cd9b6a655963e800b",
+   "lines": 31
+  },
+  {
+   "path": "dummy-arm-lab/tools/simulation/rl_compare.py",
+   "bytes": 6221,
+   "sha256": "dcbfebfa063c76a867596c5812728765f1a874406e10499e5b545c691db9ada5",
+   "lines": 115
+  },
+  {
+   "path": "dummy-arm-lab/tools/simulation/static_joint_torque.py",
+   "bytes": 6242,
+   "sha256": "ea87074da569b0193a9450272760708b3de1e8a7eedf45769eafba65ddbc3609",
+   "lines": 114
+  },
+  {
+   "path": "dummy-arm-lab/tools/simulation/view_simulation.py",
+   "bytes": 6755,
+   "sha256": "e1d07ab5721adeb256b2adfcb3084657d92e594efb330b81cc535b4db83e1412",
+   "lines": 141
+  },
+  {
+   "path": "dummy-arm-lab/tools/simulation/wall_workspace_ik.py",
+   "bytes": 8431,
+   "sha256": "3a021f35d5625868061ba4a75b20e46215aef58a95cf758f6dd05fd3d859326c",
+   "lines": 168
+  },
+  {
+   "path": "dummy-arm-lab/tools/ubuntu_setup.sh",
+   "bytes": 105,
+   "sha256": "43d890dbbe09447960ff197bf2d6982fbba396142f5f2aba6d81cbdd9e47f2f8",
+   "lines": 3
+  },
+  {
+   "path": "dummy-arm-lab/tools/view_simulation.py",
+   "bytes": 314,
+   "sha256": "55749a5f15221f5178e9cbf68fa85deb448c161e5dfffca2068b265c02ff712d",
+   "lines": 7
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/__init__.py",
+   "bytes": 197,
+   "sha256": "4bcca866fc8bb7caf95fe52c138d848037f523e793db23cd4db7a38f6382446e",
+   "lines": 5
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/discovery.py",
+   "bytes": 4884,
+   "sha256": "d9813b63ff87323dd51ffc0b752d54aa1c0ff6ea17849cd0b1a66715eca01d1f",
+   "lines": 129
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/protocol.py",
+   "bytes": 13687,
+   "sha256": "304df87218ad83f1b179765c314b733455438207a7f632d0d5ce3b119a219d2f",
+   "lines": 365
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/remote_object.py",
+   "bytes": 10217,
+   "sha256": "43716a1b3b300444d54d64bdec413fa1b0d212142f2eaa7ecc6448ea85a3a2ab",
+   "lines": 264
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/serial_transport.py",
+   "bytes": 3880,
+   "sha256": "e671ff2ab621b139129ad7779bdfb75ba7ef24715ddd80c94cc671bcb5bf080f",
+   "lines": 101
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/shell.py",
+   "bytes": 4817,
+   "sha256": "41d4ad18fe7ab019ddaf7dd6713ca6e54afe8b561d91c15fe7a9c568328df8e4",
+   "lines": 116
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/tcp_transport.py",
+   "bytes": 3377,
+   "sha256": "d00e54be9d675427a318a7ca7999a884d80d13f116eca540439d8beeceba0051",
+   "lines": 85
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/udp_transport.py",
+   "bytes": 2513,
+   "sha256": "03f4cd1de2ba605e7feafd2500388fe2ed7198be9df14f51cd93b1c9f521d2c4",
+   "lines": 67
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/usbbulk_transport.py",
+   "bytes": 8723,
+   "sha256": "dd8df665a575037a147e0b9840b4fb2a8ba19aa8748349aec7e43b2ce1cb2129",
+   "lines": 219
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/fibre/utils.py",
+   "bytes": 8121,
+   "sha256": "fb033b6f49e8b67f1f7204bdd3630faa86b47e8539c838d5b30ac072722c163a",
+   "lines": 237
+  },
+  {
+   "path": "dummy-arm-lab/vendor/native_client/NOTICE.md",
+   "bytes": 971,
+   "sha256": "7dee2e5f77290cfafc637c3c0747d7436b18050c3de0b6b1cce1e87d7e294090",
+   "lines": 22
+  },
+  {
+   "path": "dummy-arm-lab/vendor/README.md",
+   "bytes": 453,
+   "sha256": "1b2f2d084cd3c8a78266225163d32d919caeaa3c6c1a7af2fb4b5b75f11a78ac",
+   "lines": 4
+  },
+  {
+   "path": "dummy-arm-lab/六轴同时往复仿真.cmd",
+   "bytes": 483,
+   "sha256": "c0635a79e15e9f51903eed8ec6a8156b3e7e4ddc122948ee880bb0aa69e3f9a6",
+   "lines": 13
+  },
+  {
+   "path": "dummy-arm-lab/墙面抹涂仿真演示.cmd",
+   "bytes": 568,
+   "sha256": "391496d6d762846e0d9c741dc79333a23283a87acdeb97b810949d77553fb2ba",
+   "lines": 13
+  },
+  {
+   "path": "dummy-arm-lab/强化学习动作可视化.cmd",
+   "bytes": 283,
+   "sha256": "8b13101b538802c0a6888fa9d0a14e0a88a13c7b5dbbd62b1d34c357dd8e9055",
+   "lines": 10
+  },
+  {
+   "path": "dummy-arm-lab/抹涂手法强化学习.cmd",
+   "bytes": 1058,
+   "sha256": "37d0a56fc137b44545a3f4539dd5b4f04921ff9486ab0d0e15b4d3fec33b0d99",
+   "lines": 23
+  },
+  {
+   "path": "dummy-arm-lab/抹涂整片作业仿真.cmd",
+   "bytes": 902,
+   "sha256": "59d680b7b53aca2af447eb1538d7f44ff4c7947ed56cacf149cd90b2638117fd",
+   "lines": 24
+  },
+  {
+   "path": "gui_fix_2026-09-20.cmd",
+   "bytes": 714,
+   "sha256": "aa6d85f68031d5363ad181895a12ad04aa499ca5fe725a368aa6911e552b2893",
+   "lines": 18
+  },
+  {
+   "path": "gui_fix_2026-09-20.log",
+   "bytes": 902,
+   "sha256": "76d275a2a1de9fa5a731981c8be5f5ad12fddd23cbbf7dcfd8165b02cb70089a"
+  },
+  {
+   "path": "launcher_fix_2026-09-20.cmd",
+   "bytes": 905,
+   "sha256": "57aa415948776fe2de45e03a2e288e1b867ec97eb5c8332b7c8e0ad6701db95a",
+   "lines": 19
+  },
+  {
+   "path": "plaster_update/AGENTS.md",
+   "bytes": 4721,
+   "sha256": "5c015d12b8ff2f79bb7d459c9871fb538e5d401300cbb6e0818293f925ac290b",
+   "lines": 96
+  },
+  {
+   "path": "plaster_update/docs/ACTION_SPACE.md",
+   "bytes": 5125,
+   "sha256": "f012e9a92bb472ffc036799ccf307b9b1638dd2d86d1258c94d204cfeeb49ebf",
+   "lines": 68
+  },
+  {
+   "path": "plaster_update/docs/hardware/DUMMY_V2.md",
+   "bytes": 7669,
+   "sha256": "e25a70701a06d3e37c615034098d93b9295f86a0ce1facbf140e127f918d70a5",
+   "lines": 113
+  },
+  {
+   "path": "plaster_update/docs/hardware/README.md",
+   "bytes": 1536,
+   "sha256": "7a22b6ee6d6dff2b8aacd299f6161f6236ecab3800561830d8ad1740f2dd12f3",
+   "lines": 20
+  },
+  {
+   "path": "plaster_update/docs/plan/README.md",
+   "bytes": 1749,
+   "sha256": "f326e73e06e2d7a298111595999e64d38a3ea0d06097fd80d651c7a887ea876f",
+   "lines": 32
+  },
+  {
+   "path": "plaster_update/docs/plan/S1_墙面抹涂仿真链路.md",
+   "bytes": 2264,
+   "sha256": "ac17e6ca3d27bdef41bf6d55b2d4f2cf7a345490b98ceeb1df659f1f76dd3d37",
+   "lines": 43
+  },
+  {
+   "path": "plaster_update/docs/RL.md",
+   "bytes": 11854,
+   "sha256": "986105d8f655ed9509de4b57c17b19a225dbd3ed566e7035ba1b257b695dfbef",
+   "lines": 175
+  },
+  {
+   "path": "plaster_update/docs/SIMULATION.md",
+   "bytes": 14564,
+   "sha256": "86784eadf3ee1c08927b06ded7a86d1b18d85aaf599a28d1af9812d0a0adefc3",
+   "lines": 209
+  },
+  {
+   "path": "plaster_update/docs/STATUS.md",
+   "bytes": 14113,
+   "sha256": "9d2e9a20466fc900f5ea1ff23a04c20cc6b95d63cf85dbc77a888a581750659f",
+   "lines": 154
+  },
+  {
+   "path": "plaster_update/dummy_loop/episode.py",
+   "bytes": 4691,
+   "sha256": "c19c12556b46f23d88489a45af9562e961f47c173d6c72d4d9bbdd6a3aa3df6d",
+   "lines": 97
+  },
+  {
+   "path": "plaster_update/dummy_loop/sim_backend.py",
+   "bytes": 4829,
+   "sha256": "93ed1ef5c11bae09c8e314f0614aa4dda9e801dc2b84b205a47b7ab1e685df7b",
+   "lines": 96
+  },
+  {
+   "path": "plaster_update/dummy_loop/v2.py",
+   "bytes": 7306,
+   "sha256": "241d96a9eb088d0ce6fc3346b686dd1bdb3fde7e78550358c0ed7f851643a9cc",
+   "lines": 129
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/__init__.py",
+   "bytes": 189,
+   "sha256": "41757436cadbc5a869562a11f3c680c5860e64aff7d191749cae51f604587407",
+   "lines": 4
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/__main__.py",
+   "bytes": 11670,
+   "sha256": "c8c5860618d60274cc7dbbafbb793bfa5723c6edfefaaa24cf057ccda8cd7f0e",
+   "lines": 187
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/controller.py",
+   "bytes": 11713,
+   "sha256": "d5abe002951da721d4ab7b5f0547e921c98b69c89122e0e67a6de16284919179",
+   "lines": 220
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/errors.py",
+   "bytes": 4782,
+   "sha256": "a6dff374064dc2df405fae6aabd05def6728222fec039e934206610344164344",
+   "lines": 89
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/layout.py",
+   "bytes": 3994,
+   "sha256": "f87e5ddea17154a5ae5892cf80b1627f9b5ed66c1996064ee2d2a2077dfd1982",
+   "lines": 76
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/material.py",
+   "bytes": 10709,
+   "sha256": "68d4a9e84d2ef01f7cb96f4f131b6cf651c862b1aff3489c5911e5657812314b",
+   "lines": 185
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/pipeline.py",
+   "bytes": 6885,
+   "sha256": "11a7f95d9c6caaf8c5bda3c700f2d4ca6b1517f381f79416a15f7e1d24da52cf",
+   "lines": 117
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/ppo.py",
+   "bytes": 9452,
+   "sha256": "4dd6a97ae989de2a0e86fd8eb6556f7f0e2284d37feb98814eb119e153e7f56c",
+   "lines": 221
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/render.py",
+   "bytes": 1503,
+   "sha256": "3540326206123a6d72cef44579057fd78e143df0b6d4b499e58d2d36163129b9",
+   "lines": 33
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/rl.py",
+   "bytes": 7531,
+   "sha256": "a3a4ca265fd219560a3a9ed0935aa064f64c2316292782d4098c5caffdfc7c70",
+   "lines": 156
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/scene.py",
+   "bytes": 24168,
+   "sha256": "6284747ebf6824c6bfef0671a91498ef5b555dd93b7b42c9b0566d906e7134ed",
+   "lines": 395
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/session.py",
+   "bytes": 5280,
+   "sha256": "b4d62b424224bcf87a52403e7e9c16b00c67f373f04f978a2242dffe0dc10596",
+   "lines": 95
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/stroke_env.py",
+   "bytes": 22107,
+   "sha256": "692a08daacfd4f522d7953f0f1d1e66f4cf050db274037bbff89bac983382402",
+   "lines": 396
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/task.py",
+   "bytes": 12447,
+   "sha256": "31e4e88d50ae548811439e2f7d193f4c7cd6e624b9f697f8f549714717ed6329",
+   "lines": 214
+  },
+  {
+   "path": "plaster_update/dummy_loop/wall/teacher.py",
+   "bytes": 8050,
+   "sha256": "5524d13b5f7c28b1f64f595212643b50f0a33ecc11186fa9e425cfa303126d10",
+   "lines": 141
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/compare/report.json",
+   "bytes": 29777,
+   "sha256": "6a494d8e26b98c8e43b04bb0e435b0f6738d9e25c621b110ec564d52cd31dcda",
+   "lines": 1256,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "runs",
+    "traces",
+    "sessions"
+   ]
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/compare/session.png",
+   "bytes": 51797,
+   "sha256": "3f9903cf684a4b1e0ce85c52bc6d63d8b46e7c416cc8761a5d4b6b60de1753bf"
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/compare/technique.png",
+   "bytes": 152598,
+   "sha256": "450291fce1e97984f1f203fc10483f7d8d4f50522a3b1cceb0e24ee5d2b4b2bd"
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/compare/training.png",
+   "bytes": 105895,
+   "sha256": "f8fd2a0c8da874523c18146e82ccdc237e5f6a6d60a2bf0d6cb16185bf9415d9"
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/flat_warm_start/policy.npz",
+   "bytes": 80874,
+   "sha256": "37beec1891dd336e898d9cad7ad485a0e3e05226b761e692fb261e7e4ed83d6a"
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/flat_warm_start/training.json",
+   "bytes": 23201,
+   "sha256": "fa5d8b5f5aaf60bf3d046888c9cbb2e12aeb40582e688c0a0f61c345fbcc38a0",
+   "lines": 1198,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "updates",
+    "warm_start_behaviour_clone_mse",
+    "steps",
+    "ppo",
+    "env",
+    "random_scale",
+    "seed",
+    "scripted_baseline",
+    "after_behaviour_clone",
+    "learned_final",
+    "random_policy",
+    "curve",
+    "elapsed_s"
+   ]
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/flat_warm_start/training.png",
+   "bytes": 127890,
+   "sha256": "afd8bdc14aae12c984cf31ca8b4dcbdfa76abe6a60259ab2302f9c055ba7b73c"
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/technique_warm_start/policy.npz",
+   "bytes": 80874,
+   "sha256": "51e5a67a6983af6f1caf9b063ab17afbd5c65aa27b7105d261a57f3a1b1e0b03"
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/technique_warm_start/training.json",
+   "bytes": 23189,
+   "sha256": "f3a17b242ac2c810f25a72b404a97fa654ad1efe8703bc8947c9d90dc8ba7bb5",
+   "lines": 1198,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "updates",
+    "warm_start_behaviour_clone_mse",
+    "steps",
+    "ppo",
+    "env",
+    "random_scale",
+    "seed",
+    "scripted_baseline",
+    "after_behaviour_clone",
+    "learned_final",
+    "random_policy",
+    "curve",
+    "elapsed_s"
+   ]
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw/technique_warm_start/training.png",
+   "bytes": 129845,
+   "sha256": "cfb6bbd9b33f4db7ac8a04c08b5eddd8e770b76f9394e19fc542c765e639c28d"
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/README.md",
+   "bytes": 7802,
+   "sha256": "1374ee2dc015eec68f5f4726a7908c16497794339b509beb9e85418ee26e314e",
+   "lines": 114
+  },
+  {
+   "path": "plaster_update/experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/run.json",
+   "bytes": 4651,
+   "sha256": "a9d797d67a71cb306f67cc05615088fbe728ff2d2f5ce714aaa3ca0c3533aad2",
+   "lines": 71,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "supersedes",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "plaster_update/MuJoCo实机同步.cmd",
+   "bytes": 513,
+   "sha256": "f5c75c3f9b8a233a362f1c5c4d4a6be5c14f6f28babbf244ed38e4af0db7ffc7",
+   "lines": 12
+  },
+  {
+   "path": "plaster_update/README.md",
+   "bytes": 10115,
+   "sha256": "8ed402d772f06f6af043f41b890bb60f7cfb3f2a252c2c617ee9e4df1b9180e4",
+   "lines": 233
+  },
+  {
+   "path": "plaster_update/README.zh-CN.md",
+   "bytes": 7893,
+   "sha256": "9655f0f6a0d109e03703ff18b62ff1f0a5f52a92dd8afb4f62999e925c22aa8b",
+   "lines": 188
+  },
+  {
+   "path": "plaster_update/tests/test_dummy_v2_model.py",
+   "bytes": 3674,
+   "sha256": "03331dc0e50c5e9f7cd889e5aff4e7cfc11a3588cdec50de689c16a7fe2af0f5",
+   "lines": 81
+  },
+  {
+   "path": "plaster_update/tests/test_studio_fallback.py",
+   "bytes": 2539,
+   "sha256": "353472b86b4c332f8cf30c46676a27d356f292e1b7e06e961e42fdc2f27780d8",
+   "lines": 60
+  },
+  {
+   "path": "plaster_update/tests/test_wall_rl.py",
+   "bytes": 11238,
+   "sha256": "f6db9e5e0a009207a52ab873a41bc713f775458d2d7d5e21d62ec80590e69578",
+   "lines": 238
+  },
+  {
+   "path": "plaster_update/tests/test_wall_sim.py",
+   "bytes": 10896,
+   "sha256": "d2bb9e44742b31166451c95f137d68bd1a66c3dbe88ff4e0de92c59409e0c059",
+   "lines": 204
+  },
+  {
+   "path": "plaster_update/THIRD_PARTY.md",
+   "bytes": 3519,
+   "sha256": "70eee4819e8835f1dab2db05d069b80240c20e39afdc78cdfedf8059a799a2ab",
+   "lines": 48
+  },
+  {
+   "path": "plaster_update/tools/environment/doctor.py",
+   "bytes": 2132,
+   "sha256": "5c9bb833fb1cec9798f91a51f674f8b644b10102b2c80fb4ef869f7b0b3a37a0",
+   "lines": 39
+  },
+  {
+   "path": "plaster_update/tools/gui/live_mujoco.py",
+   "bytes": 16998,
+   "sha256": "c87023918be036f9d3ad6a36ea95534f31350aec428cbf1aae836152407ccd37",
+   "lines": 289
+  },
+  {
+   "path": "plaster_update/tools/maintenance/verify_studio_meshes.py",
+   "bytes": 1394,
+   "sha256": "38cd5009c7b3724a9b0ea9a15e6a26011e916831ce4199deb4707dda9add4677",
+   "lines": 34
+  },
+  {
+   "path": "plaster_update/tools/modeling/build_dummy_v2.py",
+   "bytes": 24368,
+   "sha256": "0747f5e4ce64b994b2d67c2e4ad3defec430de5630f0ee9868e8aa7e901c52f9",
+   "lines": 450
+  },
+  {
+   "path": "plaster_update/tools/simulation/plot_rl_training.py",
+   "bytes": 4177,
+   "sha256": "5dc86db4e9adba90f56fe958cbcaab1cc6ae645fd93120e056bb6886eb3988c3",
+   "lines": 87
+  },
+  {
+   "path": "plaster_update/tools/simulation/plot_wall_study.py",
+   "bytes": 3765,
+   "sha256": "bb08fbeb89f621e8dbd32a16ecd5a13367c235d0f06c056dd7232236ade44b04",
+   "lines": 67
+  },
+  {
+   "path": "plaster_update/tools/simulation/rl_compare.py",
+   "bytes": 6221,
+   "sha256": "dcbfebfa063c76a867596c5812728765f1a874406e10499e5b545c691db9ada5",
+   "lines": 115
+  },
+  {
+   "path": "plaster_update/tools/simulation/static_joint_torque.py",
+   "bytes": 6242,
+   "sha256": "ea87074da569b0193a9450272760708b3de1e8a7eedf45769eafba65ddbc3609",
+   "lines": 114
+  },
+  {
+   "path": "plaster_update/tools/simulation/view_simulation.py",
+   "bytes": 6755,
+   "sha256": "e1d07ab5721adeb256b2adfcb3084657d92e594efb330b81cc535b4db83e1412",
+   "lines": 141
+  },
+  {
+   "path": "plaster_update/tools/simulation/wall_workspace_ik.py",
+   "bytes": 8431,
+   "sha256": "3a021f35d5625868061ba4a75b20e46215aef58a95cf758f6dd05fd3d859326c",
+   "lines": 168
+  },
+  {
+   "path": "plaster_update/六轴同时往复仿真.cmd",
+   "bytes": 483,
+   "sha256": "c0635a79e15e9f51903eed8ec6a8156b3e7e4ddc122948ee880bb0aa69e3f9a6",
+   "lines": 13
+  },
+  {
+   "path": "plaster_update/墙面抹涂仿真演示.cmd",
+   "bytes": 568,
+   "sha256": "391496d6d762846e0d9c741dc79333a23283a87acdeb97b810949d77553fb2ba",
+   "lines": 13
+  },
+  {
+   "path": "plaster_update/抹涂手法强化学习.cmd",
+   "bytes": 1058,
+   "sha256": "37d0a56fc137b44545a3f4539dd5b4f04921ff9486ab0d0e15b4d3fec33b0d99",
+   "lines": 23
+  },
+  {
+   "path": "plaster_update/抹涂整片作业仿真.cmd",
+   "bytes": 902,
+   "sha256": "59d680b7b53aca2af447eb1538d7f44ff4c7947ed56cacf149cd90b2638117fd",
+   "lines": 24
+  },
+  {
+   "path": "plaster_update_2026-09-21.cmd",
+   "bytes": 994,
+   "sha256": "be66e7f79f0a2a1301a0963e2a8fd1497651accbf1dfbfa5c71978ff12372921",
+   "lines": 28
+  },
+  {
+   "path": "rigid_update/docs/ACTION_SPACE.md",
+   "bytes": 4910,
+   "sha256": "3205bd9f3d7da288a832eb879c1dfeffbe70709d8fa914b0960b28f449314f3b",
+   "lines": 67
+  },
+  {
+   "path": "rigid_update/docs/plan/S1_墙面抹涂仿真链路.md",
+   "bytes": 2264,
+   "sha256": "ac17e6ca3d27bdef41bf6d55b2d4f2cf7a345490b98ceeb1df659f1f76dd3d37",
+   "lines": 43
+  },
+  {
+   "path": "rigid_update/docs/SIMULATION.md",
+   "bytes": 12989,
+   "sha256": "5591d9098c832c48c958d292d084cdf7e8394811b16f30cdf3fcfc5b0e296e78",
+   "lines": 190
+  },
+  {
+   "path": "rigid_update/docs/STATUS.md",
+   "bytes": 10500,
+   "sha256": "bdd862efae1caf11cab0d167c1da2a10df63b805bd5ef49588c66bf683706588",
+   "lines": 118
+  },
+  {
+   "path": "rigid_update/dummy_loop/wall/__main__.py",
+   "bytes": 6984,
+   "sha256": "9c8e2c24510c1ecb1847bb4e1f88ec885292fd12865bb3a3f86603885fdf0d05",
+   "lines": 130
+  },
+  {
+   "path": "rigid_update/dummy_loop/wall/errors.py",
+   "bytes": 4782,
+   "sha256": "a6dff374064dc2df405fae6aabd05def6728222fec039e934206610344164344",
+   "lines": 89
+  },
+  {
+   "path": "rigid_update/dummy_loop/wall/pipeline.py",
+   "bytes": 6885,
+   "sha256": "11a7f95d9c6caaf8c5bda3c700f2d4ca6b1517f381f79416a15f7e1d24da52cf",
+   "lines": 117
+  },
+  {
+   "path": "rigid_update/dummy_loop/wall/scene.py",
+   "bytes": 23012,
+   "sha256": "f2e1699fc7365e990e9fff1d87c1eb28f374f6a4c417a970eafa75bc3b51d3f3",
+   "lines": 381
+  },
+  {
+   "path": "rigid_update/dummy_loop/wall/task.py",
+   "bytes": 12447,
+   "sha256": "31e4e88d50ae548811439e2f7d193f4c7cd6e624b9f697f8f549714717ed6329",
+   "lines": 214
+  },
+  {
+   "path": "rigid_update/dummy_loop/wall/teacher.py",
+   "bytes": 8050,
+   "sha256": "5524d13b5f7c28b1f64f595212643b50f0a33ecc11186fa9e425cfa303126d10",
+   "lines": 141
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/ep_0000.npz",
+   "bytes": 58908,
+   "sha256": "5876829e7ae21ff67ba7089c8850d6de7c301595b283f61dc0c0d1ff98a94ff6"
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/ep_0001.npz",
+   "bytes": 50784,
+   "sha256": "74934142e582db4b4a01edf203ed7b375531ebe1610c01695243a8da68a192a8"
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/ep_0002.npz",
+   "bytes": 57107,
+   "sha256": "1494301cf5d91fd0cae65c5c86e71a9ebaec8b83156cb0c0339528051644632f"
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/ep_0003.npz",
+   "bytes": 57477,
+   "sha256": "f0b83ee3a4f60b5fa3625630fe2f2a8f93b7458295f5ff54d6aae8bb09dd4c4d"
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/episodes/index.json",
+   "bytes": 1235,
+   "sha256": "4e63c4a3432053f9872b17c48d73fd2d9407502037b77761d43c95bb83a418f7",
+   "lines": 54,
+   "structure": "list"
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/layout.json",
+   "bytes": 16874,
+   "sha256": "3c0c915ee2e05efb22f33ef52c1723c222fa0718c4c972ba02119853dcfd56b1",
+   "lines": 796,
+   "structure": [
+    "joint_limits",
+    "patch_half_size_m",
+    "n_candidates",
+    "n_feasible",
+    "ranked",
+    "infeasible"
+   ]
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/replay_check.txt",
+   "bytes": 140,
+   "sha256": "267d924037695409cd2988515a014cedb77936999fdc515de8d9eb668225eadb",
+   "lines": 8
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/rigid_tool.png",
+   "bytes": 185125,
+   "sha256": "166ee87436c765b5d79f01c0a4e1253af9fc17f503fa25f65dfcf4e8c7fa5c1e"
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/scene/wall_scene_rigid.config.json",
+   "bytes": 2431,
+   "sha256": "54b23a629f2e9579469c8ed2be553bfcb6c8745d4a96687d090d3888929233a2",
+   "lines": 70,
+   "structure": [
+    "config",
+    "provenance",
+    "digest"
+   ]
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/scene/wall_scene_rigid.xml",
+   "bytes": 8428,
+   "sha256": "67afbf859d359dbd800a2e5b88e2e3738d6eda6f778662c9f85e3a179df68945",
+   "lines": 104
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/study/sensitivity.json",
+   "bytes": 89167,
+   "sha256": "e86dc2d04e22f97453e1ccc2e15f4834a5fa342cc2913e0244a346abaa732197",
+   "lines": 3393,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "seed",
+    "random_scale",
+    "tool_mount",
+    "nominal_scene",
+    "task",
+    "baseline_no_error",
+    "single_factor",
+    "randomized",
+    "random_perturbations",
+    "elapsed_s"
+   ]
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/raw/study/sensitivity.png",
+   "bytes": 152408,
+   "sha256": "22290587b3130a2b31fb66dd9b017e8990c74bad3bd975df7cd93feadbe92bb7"
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/README.md",
+   "bytes": 5023,
+   "sha256": "96f6af8ca93f6c9756ff6b1fcf6048609fa0162b58d5265a13b69f7ba8fbc92f",
+   "lines": 67
+  },
+  {
+   "path": "rigid_update/experiments/00_initial_debug/records/2026-09-20_rigid_tool/run.json",
+   "bytes": 2328,
+   "sha256": "da45b15f3f3c53777de7c1889d9adce635d0b2ceea10fe33d8a043e7a31fc442",
+   "lines": 66,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "rigid_update/MuJoCo实机同步.cmd",
+   "bytes": 513,
+   "sha256": "f5c75c3f9b8a233a362f1c5c4d4a6be5c14f6f28babbf244ed38e4af0db7ffc7",
+   "lines": 12
+  },
+  {
+   "path": "rigid_update/README.md",
+   "bytes": 10111,
+   "sha256": "66107b564233dab272e5ee4104b5b99293382898445616dd087a3b7c1134a9c7",
+   "lines": 233
+  },
+  {
+   "path": "rigid_update/README.zh-CN.md",
+   "bytes": 7893,
+   "sha256": "b196e22aad7fbee3da0d651d17a19c34facc3d775fb52c24dbfa6159fb6f61da",
+   "lines": 188
+  },
+  {
+   "path": "rigid_update/tests/test_wall_sim.py",
+   "bytes": 10896,
+   "sha256": "d2bb9e44742b31166451c95f137d68bd1a66c3dbe88ff4e0de92c59409e0c059",
+   "lines": 204
+  },
+  {
+   "path": "rigid_update/tools/gui/live_mujoco.py",
+   "bytes": 16998,
+   "sha256": "c87023918be036f9d3ad6a36ea95534f31350aec428cbf1aae836152407ccd37",
+   "lines": 289
+  },
+  {
+   "path": "rigid_update/tools/simulation/plot_wall_study.py",
+   "bytes": 3765,
+   "sha256": "bb08fbeb89f621e8dbd32a16ecd5a13367c235d0f06c056dd7232236ade44b04",
+   "lines": 67
+  },
+  {
+   "path": "rigid_update/墙面抹涂仿真演示.cmd",
+   "bytes": 568,
+   "sha256": "391496d6d762846e0d9c741dc79333a23283a87acdeb97b810949d77553fb2ba",
+   "lines": 13
+  },
+  {
+   "path": "rigid_update_2026-09-20.cmd",
+   "bytes": 1160,
+   "sha256": "81784356c0d5b953351aecc26c3551deb97dce1021837ab94cf9c374f01a6125",
+   "lines": 27
+  },
+  {
+   "path": "rigid_update_2026-09-20.log",
+   "bytes": 7597,
+   "sha256": "024df99ba72a49edbff7b3c07990fff6381051aac0b50abc6de7dafba668e0e4"
+  },
+  {
+   "path": "v2_update/docs/ACTION_SPACE.md",
+   "bytes": 4673,
+   "sha256": "db28b1b8a4589308966ec1f77fac84e118601523f6895eca2ffbfb4d15869141",
+   "lines": 67
+  },
+  {
+   "path": "v2_update/docs/hardware/DUMMY_V2.md",
+   "bytes": 7669,
+   "sha256": "e25a70701a06d3e37c615034098d93b9295f86a0ce1facbf140e127f918d70a5",
+   "lines": 113
+  },
+  {
+   "path": "v2_update/docs/hardware/README.md",
+   "bytes": 1536,
+   "sha256": "7a22b6ee6d6dff2b8aacd299f6161f6236ecab3800561830d8ad1740f2dd12f3",
+   "lines": 20
+  },
+  {
+   "path": "v2_update/docs/plan/S1_墙面抹涂仿真链路.md",
+   "bytes": 1939,
+   "sha256": "0043a7aa26edbbf946cdec774067ee1dbc08eff7bfbbe78109f8f306a13acf2a",
+   "lines": 38
+  },
+  {
+   "path": "v2_update/docs/SIMULATION.md",
+   "bytes": 11419,
+   "sha256": "2d3f73dda4f350a0d48726cef4b45ac9be5e02b07f4096e4f2d34995cb8ffe9b",
+   "lines": 169
+  },
+  {
+   "path": "v2_update/docs/STATUS.md",
+   "bytes": 8483,
+   "sha256": "68f72d7a23283a45db00f47dbb5e689a2169f9db41435a08e1d51b79572d64dc",
+   "lines": 100
+  },
+  {
+   "path": "v2_update/dummy_loop/sim_backend.py",
+   "bytes": 4829,
+   "sha256": "93ed1ef5c11bae09c8e314f0614aa4dda9e801dc2b84b205a47b7ab1e685df7b",
+   "lines": 96
+  },
+  {
+   "path": "v2_update/dummy_loop/v2.py",
+   "bytes": 7306,
+   "sha256": "241d96a9eb088d0ce6fc3346b686dd1bdb3fde7e78550358c0ed7f851643a9cc",
+   "lines": 129
+  },
+  {
+   "path": "v2_update/dummy_loop/wall/__main__.py",
+   "bytes": 6383,
+   "sha256": "ca5fc49b3ec2a20aa0cffdde71f09714c11246ca6b0decaa1d7921e770d760ad",
+   "lines": 122
+  },
+  {
+   "path": "v2_update/dummy_loop/wall/controller.py",
+   "bytes": 9626,
+   "sha256": "45915867e33f6209f0ddc94bc3e8fe823bcc3bf2dc7c8e26b0350c2907d275ea",
+   "lines": 185
+  },
+  {
+   "path": "v2_update/dummy_loop/wall/layout.py",
+   "bytes": 3994,
+   "sha256": "f87e5ddea17154a5ae5892cf80b1627f9b5ed66c1996064ee2d2a2077dfd1982",
+   "lines": 76
+  },
+  {
+   "path": "v2_update/dummy_loop/wall/pipeline.py",
+   "bytes": 6360,
+   "sha256": "0dcc3b34611d829dc943f8598d7a251395f6f7f60c7f24e101d45a6e92bc76d0",
+   "lines": 109
+  },
+  {
+   "path": "v2_update/dummy_loop/wall/scene.py",
+   "bytes": 13276,
+   "sha256": "d0bc7e24033cdf93a54799794f6d8ebe792cd9883b97b4e5b01e9aa7de7bc044",
+   "lines": 239
+  },
+  {
+   "path": "v2_update/dummy_loop/wall/task.py",
+   "bytes": 10161,
+   "sha256": "4b4c2f8c9daa8c375ebee8ef598b6811bdd82291d0cddae679e33ffb8498b0e1",
+   "lines": 177
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/camera/camera.json",
+   "bytes": 303,
+   "sha256": "2897ba30f6b19aa3be54c1fb3f7a86baee74918ec56db30904f95afa97af109c",
+   "lines": 18,
+   "structure": [
+    "camera",
+    "resolution",
+    "depth_range_m",
+    "written",
+    "note"
+   ]
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/camera/depth.png",
+   "bytes": 35955,
+   "sha256": "f82124e29b330ee72c2645c9c8353c3b95e11e335c0693c5e45e8f25112a29d1"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/camera/rgb.png",
+   "bytes": 89896,
+   "sha256": "4db371f2201cdd5f18851f60c029d1063a16e5ff4746f0e6333ec80573a1dc53"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/ep_0000.npz",
+   "bytes": 61348,
+   "sha256": "750f96ba4c61d49b7fc96f6960109ef9f84a828457b7be9b24a4e879b53d4460"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/ep_0001.npz",
+   "bytes": 54748,
+   "sha256": "34dea7db6d8527edebebd920ac9d1fcdcdf961ea3f6819cf1e8577db842e9f60"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/ep_0002.npz",
+   "bytes": 59666,
+   "sha256": "5fc7075445699ca1bf1efa83cf938558252971c9b95905d57602053bc5dde912"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/ep_0003.npz",
+   "bytes": 59936,
+   "sha256": "f209b971740a53a943d116508b9749c066e6823e4b8bf06ed2d26209587312e6"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/episodes/index.json",
+   "bytes": 1219,
+   "sha256": "fb726113bb36dacdafe5d12d7c9d220ca7a127cfeed14a700b1486de1c5f5a52",
+   "lines": 54,
+   "structure": "list"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/gui_home_fold.png",
+   "bytes": 68480,
+   "sha256": "7957262e70b338e8a9bee4c2ba020bd235c709d7be90258b2b22f3bafd94f91f"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/layout.json",
+   "bytes": 16227,
+   "sha256": "1e362bebaaee9df23fc220b1c69835fa1b093b442039dbf8d5fbbb60099d9589",
+   "lines": 766,
+   "structure": [
+    "joint_limits",
+    "patch_half_size_m",
+    "n_candidates",
+    "n_feasible",
+    "ranked",
+    "infeasible"
+   ]
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/replay_check.txt",
+   "bytes": 140,
+   "sha256": "267d924037695409cd2988515a014cedb77936999fdc515de8d9eb668225eadb",
+   "lines": 8
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/scene/wall_scene.config.json",
+   "bytes": 1663,
+   "sha256": "8974bbfea2b32a07227a1ba85ad84ae78927718130f66800f4e4c26ad3fd33b1",
+   "lines": 49,
+   "structure": [
+    "config",
+    "provenance",
+    "digest"
+   ]
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/scene/wall_scene.xml",
+   "bytes": 7531,
+   "sha256": "92362cfc771c62efcbd10b7a53f44fead31f238b87dfdf33d10a28bc4e74e245",
+   "lines": 98
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/study/sensitivity.json",
+   "bytes": 86637,
+   "sha256": "4017554ea729c87d1079ef43f58ab144ecf0deb6532aaab247c501c6fa43d714",
+   "lines": 3338,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "seed",
+    "random_scale",
+    "nominal_scene",
+    "task",
+    "baseline_no_error",
+    "single_factor",
+    "randomized",
+    "random_perturbations",
+    "elapsed_s"
+   ]
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/study/sensitivity.png",
+   "bytes": 152600,
+   "sha256": "b8315ba44c57d14d55b0f1a6144d4a0c10bd469735fc35e592e029e7cba38805"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/torque/static_torque.json",
+   "bytes": 4877,
+   "sha256": "d846bdfabaeecc628adcee2818911b58e7490188d0ad3fab8923d29b5af69193",
+   "lines": 355,
+   "structure": [
+    "evidence_level",
+    "hardware_motion",
+    "model",
+    "units",
+    "static_only",
+    "tool_length_m",
+    "tool_mass_kg",
+    "payload_offset_m",
+    "poses",
+    "v2_ratings_Nm",
+    "j6_torque_if_mounted_on_shaft"
+   ]
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/raw/v2_poses.png",
+   "bytes": 331507,
+   "sha256": "e9f65dad6887362d0516ba1261e938ce593d4c2c1328fe24f0db6bcd15ab3520"
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/README.md",
+   "bytes": 3105,
+   "sha256": "d146c55dd9534a346e20a46c60be3a250c00c0b024114f07923973209005ade5",
+   "lines": 48
+  },
+  {
+   "path": "v2_update/experiments/00_initial_debug/records/2026-09-20_v2_model/run.json",
+   "bytes": 3258,
+   "sha256": "c6b9bf020702251c11ec28b1ba87e4946e2a7036de5a3bda35f310d5128d28b6",
+   "lines": 86,
+   "structure": [
+    "experiment_id",
+    "status",
+    "purpose",
+    "source_version",
+    "command",
+    "environment_file",
+    "config_file",
+    "seed",
+    "data_split",
+    "hardware",
+    "units",
+    "metrics",
+    "artifacts",
+    "limitations",
+    "hardware_motion"
+   ]
+  },
+  {
+   "path": "v2_update/models/dummy_v2.xml",
+   "bytes": 5692,
+   "sha256": "9d5d56001e15ec1e242254f9541e943ec7635097e33e8b760cc23cae844aabb1",
+   "lines": 65
+  },
+  {
+   "path": "v2_update/models/dummy_v2_params.json",
+   "bytes": 7732,
+   "sha256": "2fd92d84b03c624c702ef97ca38a7729c70c4e9a100ea7b47c8647cb44fd789f",
+   "lines": 373,
+   "structure": [
+    "model",
+    "evidence_level",
+    "frame",
+    "joint_zero",
+    "dh_v2_m",
+    "firmware_limits_deg",
+    "firmware_reduction",
+    "drivetrain",
+    "actuator_model",
+    "end_effector",
+    "structure_material",
+    "structure_density_g_cm3",
+    "other_densities_g_cm3",
+    "components",
+    "links",
+    "total_mass_kg",
+    "moving_mass_kg",
+    "conflicts",
+    "cad_alignment"
+   ]
+  },
+  {
+   "path": "v2_update/models/meshes_v2/base_link.stl",
+   "bytes": 1048734,
+   "sha256": "3e48cc113787576384a63d80181f9b469ed1855f052a715acee18a4c1c8db1fd"
+  },
+  {
+   "path": "v2_update/models/meshes_v2/link1.stl",
+   "bytes": 244884,
+   "sha256": "3d8b4d7243c5cc5a2d65ea9477dc00c728e992d094fbd9ffe32a32fe949459a0"
+  },
+  {
+   "path": "v2_update/models/meshes_v2/link2.stl",
+   "bytes": 1477484,
+   "sha256": "9231d180b59d8e772b78bc53115c50e011931111c94061fa06790e544762b4cc"
+  },
+  {
+   "path": "v2_update/models/meshes_v2/link3.stl",
+   "bytes": 593734,
+   "sha256": "73847a63ed96ccb98294ef50a9d0e2c8ecc7d45065cdd041359af92fdf712c57"
+  },
+  {
+   "path": "v2_update/models/meshes_v2/link4.stl",
+   "bytes": 766134,
+   "sha256": "5e0a8b18eddf86be0b665646929c4377fd520e70fcaad2c6b451cce54d7ea1af"
+  },
+  {
+   "path": "v2_update/models/meshes_v2/link5.stl",
+   "bytes": 303634,
+   "sha256": "fee4dddd59bcba90a6a739a9a6709b9a2b5982e63513c0c2aca68df25c547db7"
+  },
+  {
+   "path": "v2_update/models/meshes_v2/link6.stl",
+   "bytes": 2784,
+   "sha256": "c0d9f40a4f3c2ded5ddc55cb6c12dac3c0ab50a17f73a467ec797be48d7b4ae9"
+  },
+  {
+   "path": "v2_update/models/README.md",
+   "bytes": 4845,
+   "sha256": "a38cd0658fdde24c6e2e041d6135b3ec56dd4367da36a9e6f716c6c641761ec2",
+   "lines": 61
+  },
+  {
+   "path": "v2_update/models/v2_provenance.json",
+   "bytes": 1169,
+   "sha256": "891aca7763e424405e2d7fa590c0d2e43d6ef76f6860f1ed640fa5b2595eb837",
+   "lines": 20,
+   "structure": [
+    "source_step",
+    "source_step_sha256",
+    "archive",
+    "license",
+    "generator",
+    "mesh_tolerance_mm",
+    "mesh_angle_rad",
+    "decimate_mm",
+    "files"
+   ]
+  },
+  {
+   "path": "v2_update/models/电机与仿真参数说明.md",
+   "bytes": 6229,
+   "sha256": "96e47b95d318bb3f2da125e102d8350c66fd74fc8e7e4d73884fbf515ce47315",
+   "lines": 68
+  },
+  {
+   "path": "v2_update/README.md",
+   "bytes": 10111,
+   "sha256": "628f7875c11bf2802729b75a147dea23a25ce9a650ff5b92ef64dbcd19f5e171",
+   "lines": 233
+  },
+  {
+   "path": "v2_update/README.zh-CN.md",
+   "bytes": 7893,
+   "sha256": "717fabd2baf3a394a686dd074e4acc74ee40fa90ae2be4efc9b03e922e8157f7",
+   "lines": 188
+  },
+  {
+   "path": "v2_update/tests/test_dummy_v2_model.py",
+   "bytes": 3674,
+   "sha256": "03331dc0e50c5e9f7cd889e5aff4e7cfc11a3588cdec50de689c16a7fe2af0f5",
+   "lines": 81
+  },
+  {
+   "path": "v2_update/tests/test_wall_sim.py",
+   "bytes": 8355,
+   "sha256": "a7ee9aaa3ab1cc66a827b326f2f82fbe994ed1e6f380f84a075ed486debd3dac",
+   "lines": 166
+  },
+  {
+   "path": "v2_update/THIRD_PARTY.md",
+   "bytes": 3519,
+   "sha256": "70eee4819e8835f1dab2db05d069b80240c20e39afdc78cdfedf8059a799a2ab",
+   "lines": 48
+  },
+  {
+   "path": "v2_update/tools/gui/live_mujoco.py",
+   "bytes": 11528,
+   "sha256": "4f672572b49a663a339cbca84983ccbba8fe544b1f1dc934579a98aa94715867",
+   "lines": 195
+  },
+  {
+   "path": "v2_update/tools/modeling/build_dummy_v2.py",
+   "bytes": 24368,
+   "sha256": "0747f5e4ce64b994b2d67c2e4ad3defec430de5630f0ee9868e8aa7e901c52f9",
+   "lines": 450
+  },
+  {
+   "path": "v2_update/tools/simulation/static_joint_torque.py",
+   "bytes": 6242,
+   "sha256": "ea87074da569b0193a9450272760708b3de1e8a7eedf45769eafba65ddbc3609",
+   "lines": 114
+  },
+  {
+   "path": "v2_update/tools/simulation/view_simulation.py",
+   "bytes": 6755,
+   "sha256": "e1d07ab5721adeb256b2adfcb3084657d92e594efb330b81cc535b4db83e1412",
+   "lines": 141
+  },
+  {
+   "path": "v2_update/六轴同时往复仿真.cmd",
+   "bytes": 483,
+   "sha256": "c0635a79e15e9f51903eed8ec6a8156b3e7e4ddc122948ee880bb0aa69e3f9a6",
+   "lines": 13
+  },
+  {
+   "path": "v2_update_2026-09-20.cmd",
+   "bytes": 1429,
+   "sha256": "71b68b03f4da83d54ef7aabf88644205c8aa082bad29d28dbfa7bf6422fbb78c",
+   "lines": 32
+  },
+  {
+   "path": "v2_update_2026-09-20.log",
+   "bytes": 10285,
+   "sha256": "3f123128d89698e89c415183873e122812295980dfc2e06eb9eac0c28c7b8b31"
+  },
+  {
+   "path": "wincheck_2026-09-20.cmd",
+   "bytes": 823,
+   "sha256": "23ba1eb838cc78a165fbf90d53b6447400fc32da6f16bb0c6ed524a66689b487",
+   "lines": 14
+  },
+  {
+   "path": "wincheck_2026-09-20.log",
+   "bytes": 2893,
+   "sha256": "05235b210026b26747694aa19bc2a6bfe7257a9e96b0f0332598547dbff24682"
+  }
+ ]
+}

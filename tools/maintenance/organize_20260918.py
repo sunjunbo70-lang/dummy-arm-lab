@@ -56,10 +56,10 @@ for p in (R/'outputs').iterdir():
  elif n.startswith(('native_interface_',)): category='machine_specific_usb'
  elif n.startswith(('preset_recheck','correct_fold','capture_correct_fold','fold_once','fold_serial','restart_check')): category='verified_poses'
  else: category='commissioning_and_failures'
- dest=R/'experiments/2026-09-16_baseline/raw'/category/n
+ dest=R/'experiments/00_initial_debug/records/2026-09-16_baseline/raw'/category/n
  dest.parent.mkdir(parents=True,exist_ok=True); shutil.copy2(p,dest)
 manifest=[]
-for p in sorted((R/'experiments/2026-09-16_baseline/raw').rglob('*')):
+for p in sorted((R/'experiments/00_initial_debug/records/2026-09-16_baseline/raw').rglob('*')):
  if p.is_file(): manifest.append({'path':p.relative_to(R).as_posix(),'original_path':'outputs/'+p.name,'bytes':p.stat().st_size,'sha256':digest(p)})
-put('experiments/2026-09-16_baseline/manifest.json',json.dumps(manifest,ensure_ascii=False,indent=2))
+put('experiments/00_initial_debug/records/2026-09-16_baseline/manifest.json',json.dumps(manifest,ensure_ascii=False,indent=2))
 print('Organized tools:',len(rows),'Evidence files:',len(manifest))

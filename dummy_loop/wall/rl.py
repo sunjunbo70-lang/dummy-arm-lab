@@ -1,8 +1,8 @@
 """抹涂手法的强化学习闭环：StrokeEnv + 纯 numpy PPO。
 
 跑法：
-    python -m dummy_loop.wall rl-train --updates 60 --out outputs/wall/rl
-    python -m dummy_loop.wall rl-eval  --policy outputs/wall/rl/policy.npz --episodes 20
+    python -m dummy_loop.wall rl-train --updates 60 --out experiments/v0.1/r0/runs/rl
+    python -m dummy_loop.wall rl-eval  --policy experiments/v0.1/r0/runs/rl/policy.npz --episodes 20
 
 训练目标就是用户说的那一刀：从待命位出发，刀面下缘先贴墙，一边上行一边放平，
 把刀上的料均匀抹到工作区里，尽量别掉料、别撞墙。奖励定义见 StrokeConfig 与 docs/RL.md。

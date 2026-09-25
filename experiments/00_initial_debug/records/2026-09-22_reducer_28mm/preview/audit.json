@@ -1,0 +1,60 @@
+{
+  "evidence_level": "L1",
+  "hardware_motion": false,
+  "scene_digest": "a47b32a2f4b5",
+  "tcp_home_m": [
+    0.31091,
+    2.9484346472147074e-18,
+    0.32449999999999996
+  ],
+  "legacy_tcp_home_m": [
+    0.29241,
+    -3.823925802998749e-18,
+    0.32449999999999996
+  ],
+  "tcp_change_mm": [
+    18.500000000000018,
+    6.7723604502134565e-15,
+    0.0
+  ],
+  "flange_to_contact_mm": 70.5,
+  "j6_joint_limit_Nm": [
+    -0.9,
+    0.9
+  ],
+  "j6_actuator_limit_Nm": [
+    -0.9,
+    0.9
+  ],
+  "robot_and_tool_mass_kg": 4.11520028,
+  "fixed_reducer_mass_kg": 0.12,
+  "provenance": {
+    "profile": "lab_20260922",
+    "evidence": "L1 model using user-provided dimension annotations; not hardware calibration",
+    "source_manifest": "experiments/00_initial_debug/records/2026-09-22_lab_tool/source_manifest.json",
+    "dimensions": "124 mm blade, 42 mm heel, 35 mm shoulder; handle end sections 24x25.5 and 26.5x28.5 mm",
+    "reducer": "photo engraving 8-30; MINIF08-30 candidate, manufacturer unconfirmed; ratio 30:1 photo interpretation",
+    "reducer_geometry": "MINIF08 candidate drawing + photo-based top adapter; installed total length from scene configuration (current profile: user coarse measurement 28 mm); holes not measured",
+    "force_limit": "0.9 Nm continuous catalog candidate; motor torque-speed/efficiency not identified",
+    "mount": "proposed split elliptical clamp, simulated rigid; not a manufacturing-validated design",
+    "unmeasured": "all masses, blade thickness, handle axial length, neck position, adapter holes, stiffness and backlash",
+    "gap": "27 mm interpreted as blade back to closest handle surface; accepted provisionally by user; precise gap not independently measured",
+    "sensors": "virtual force and optional wrist pinhole camera; no calibrated physical sensor model",
+    "camera_mount": {
+      "enabled": true,
+      "body_size_m": [
+        0.09,
+        0.02505,
+        0.025
+      ],
+      "hole_spacing_m": 0.045,
+      "clearance_diameter_m": 0.0032,
+      "plate_thickness_m": 0.006,
+      "lateral_offset_m": 0.07,
+      "camera_mass_kg": 0.075,
+      "bracket_mass_kg": 0.025
+    },
+    "joint_limits": "CANDIDATE firmware ranges; arm models/dummy_v2.xml unchanged",
+    "legacy_compatibility": "old reach tables, policies and reported scores apply only to their original scenes"
+  }
+}

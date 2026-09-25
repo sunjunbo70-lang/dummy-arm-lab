@@ -1,0 +1,236 @@
+{
+ "experiment_id": "2026-09-22_wall_cycle_v03",
+ "status": "completed",
+ "evidence_level": "L1",
+ "hardware_motion": false,
+ "purpose": "v0.3 of the whole-wall plastering RL: physics-based yield-stress mortar with no pitch rule, work area from the real reach by the user rule, strokes executed on the Dummy V2 MuJoCo model; does tilting pay off, and can RL learn it from a flat warm start",
+ "previous": "2026-09-22_wall_cycle_rl (v0.2, commit 9b5716f) -- unchanged, reproducible with CycleConfig(physics=\"v0.2\")",
+ "changes": "experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md",
+ "source_version": "9b5716f + v0.3 working tree (uncommitted at run time)",
+ "command": [
+  "python tools/simulation/v2_trowel_reach.py --pitches 0 --distances 0.28 0.30 0.33 0.35 0.38 --step 0.01",
+  "python -m dummy_loop.wall_cycle.reach_table",
+  "python tools/simulation/mortar_sweep.py",
+  "python -m dummy_loop.wall_cycle.train --teacher-style flat --updates 60",
+  "python -m dummy_loop.wall_cycle.train --teacher-style technique --updates 60",
+  "python tools/simulation/wall_cycle_report.py",
+  "python -m unittest discover -s tests"
+ ],
+ "hardware": {
+  "robot_connected": false,
+  "runner": "cloud sandbox, Linux, Python 3.11, mujoco 3.13, numpy only"
+ },
+ "work_area": {
+  "wall_distance_m": 0.33,
+  "side_m": 0.185,
+  "centre_u_m": -0.01,
+  "centre_z_m": 0.19
+ },
+ "metrics": {
+  "tests": {
+   "ran": 125,
+   "skipped": 3,
+   "failed": 0
+  },
+  "single_stroke_best_pitch_deg_by_tau_y": {
+   "100": 5,
+   "250": 15,
+   "500": 20,
+   "1000": 30
+  },
+  "test_table_env": {
+   "flat": {
+    "teacher": {
+     "return_mean": -29.9675,
+     "coverage_mean": 0.2187,
+     "rmse_mm_mean": 2.3062,
+     "waste_frac_mean": 0.325,
+     "success_rate": 0.0,
+     "projected_mean": 0.0,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 3.0,
+     "contact_force_N_mean": 1.0
+    },
+    "dagger_bc": {
+     "return_mean": -41.202,
+     "coverage_mean": 0.2301,
+     "rmse_mm_mean": 2.2348,
+     "waste_frac_mean": 0.3651,
+     "success_rate": 0.0,
+     "projected_mean": 9.01,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 3.9982,
+     "contact_force_N_mean": 1.2547
+    },
+    "ppo_last": {
+     "return_mean": -37.3299,
+     "coverage_mean": 0.2223,
+     "rmse_mm_mean": 2.1162,
+     "waste_frac_mean": 0.2741,
+     "success_rate": 0.0,
+     "projected_mean": 10.16,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 5.6941,
+     "contact_force_N_mean": 0.8165
+    },
+    "ppo_best_val_update_50": {
+     "return_mean": -37.2374,
+     "coverage_mean": 0.2228,
+     "rmse_mm_mean": 2.1412,
+     "waste_frac_mean": 0.3063,
+     "success_rate": 0.0,
+     "projected_mean": 8.93,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 5.174,
+     "contact_force_N_mean": 0.9097
+    }
+   },
+   "technique": {
+    "teacher": {
+     "return_mean": -26.7418,
+     "coverage_mean": 0.2184,
+     "rmse_mm_mean": 1.9492,
+     "waste_frac_mean": 0.1649,
+     "success_rate": 0.0,
+     "projected_mean": 0.0,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 10.0,
+     "contact_force_N_mean": 1.0
+    },
+    "dagger_bc": {
+     "return_mean": -36.9057,
+     "coverage_mean": 0.2685,
+     "rmse_mm_mean": 2.1011,
+     "waste_frac_mean": 0.2242,
+     "success_rate": 0.0,
+     "projected_mean": 13.77,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 10.1129,
+     "contact_force_N_mean": 1.2905
+    },
+    "ppo_last": {
+     "return_mean": -35.7192,
+     "coverage_mean": 0.2598,
+     "rmse_mm_mean": 2.0449,
+     "waste_frac_mean": 0.2032,
+     "success_rate": 0.0,
+     "projected_mean": 12.77,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 10.4969,
+     "contact_force_N_mean": 1.2299
+    },
+    "ppo_best_val_update_30": {
+     "return_mean": -35.7177,
+     "coverage_mean": 0.2601,
+     "rmse_mm_mean": 2.1082,
+     "waste_frac_mean": 0.192,
+     "success_rate": 0.0,
+     "projected_mean": 10.92,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 10.1422,
+     "contact_force_N_mean": 1.2457
+    }
+   }
+  },
+  "test_cosim": {
+   "flat": {
+    "teacher": {
+     "return_mean": -36.3142,
+     "coverage_mean": 0.2885,
+     "rmse_mm_mean": 2.3323,
+     "waste_frac_mean": 0.4337,
+     "success_rate": 0.0,
+     "projected_mean": 0.0,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 3.0,
+     "contact_force_N_mean": 1.0
+    },
+    "selected": {
+     "return_mean": -48.0118,
+     "coverage_mean": 0.2245,
+     "rmse_mm_mean": 2.3385,
+     "waste_frac_mean": 0.4243,
+     "success_rate": 0.0,
+     "projected_mean": 16.2,
+     "unreachable_mean": 0.0,
+     "deposit_pitch_start_deg_mean": 5.0093,
+     "contact_force_N_mean": 0.8728
+    }
+   },
+   "technique": {
+    "teacher": {
+     "return_mean": -24.6731,
+     "coverage_mean": 0.275,
+     "rmse_mm_mean": 1.84,
+     "waste_frac_mean": 0.1071,
+     "success_rate": 0.0,
+     "projected_mean": 0.1667,
+     "unreachable_mean": 1.1333,
+     "deposit_pitch_start_deg_mean": 10.0,
+     "contact_force_N_mean": 1.0
+    },
+    "selected": {
+     "return_mean": -38.0928,
+     "coverage_mean": 0.2978,
+     "rmse_mm_mean": 1.9732,
+     "waste_frac_mean": 0.2394,
+     "success_rate": 0.0,
+     "projected_mean": 6.5667,
+     "unreachable_mean": 2.7333,
+     "deposit_pitch_start_deg_mean": 9.5934,
+     "contact_force_N_mean": 1.1691
+    }
+   }
+  },
+  "selected": {
+   "flat": "ppo_update_50",
+   "technique": "ppo_update_30"
+  },
+  "ppo_steps_per_run": 61440,
+  "training_time_s": {
+   "flat": 4283.4,
+   "technique": 4166.3
+  },
+  "executed_deposit_pitch_deg_mean": {
+   "教师": {
+    "pitch_deg_mean": 3.0000000000000004,
+    "pitch_deg_quartiles": [
+     3.000000000000001,
+     3.000000000000001,
+     3.000000000000001
+    ],
+    "force_N_mean": 1.0000000000000002,
+    "strokes": 186
+   },
+   "DAgger-BC": {
+    "pitch_deg_mean": 3.77556309414934,
+    "pitch_deg_quartiles": [
+     2.820945916110408,
+     3.2116140323770996,
+     4.142553318030817
+    ],
+    "force_N_mean": 1.3709648998707418,
+    "strokes": 207
+   },
+   "选中模型": {
+    "pitch_deg_mean": 4.964022300603135,
+    "pitch_deg_quartiles": [
+     4.066274057151318,
+     4.591842499103118,
+     5.731754965728118
+    ],
+    "force_N_mean": 1.070132113369751,
+    "strokes": 195
+   }
+  }
+ },
+ "limitations": [
+  "rotated strokes alias on the 5 mm wall grid (checkerboard speckle) -- fix first",
+  "over-thick band at the bottom (full-load first squeeze)",
+  "mortar parameters from literature/assumed; best pitch depends on yield stress",
+  "servo gains unidentified; transits between strokes not simulated dynamically",
+  "reach table approximates the planner; policies are worse under co-simulation",
+  "J5 limit (-100 deg, firmware candidate) caps lower-edge-first tilts near the bottom",
+  "small training budget (61k PPO steps per run); RL did not beat its teacher"
+ ]
+}

@@ -26,3 +26,7 @@ experiments/**/studio_motion_preview.png
 # 本地跑 Studio 可视化时把它们放回下列路径即可，git 会忽略。
 models/studio_meshes/
 models/studio_source/
+
+# Versioned experiment runtime outputs (local datasets/checkpoints/logs)
+experiments/**/runs/
+experiments/_organization/**/original_texts.zip

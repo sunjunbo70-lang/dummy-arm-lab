@@ -1,0 +1,37 @@
+{
+  "experiment_id": "2026-09-20_static_torque",
+  "status": "completed",
+  "purpose": "比较夹持 1 kg 与抹刀压墙两类工况下各关节静力矩，判断轻压涂抹测试的可行性（相对比较）",
+  "source_version": "285028445081c370dc53779203177e3bcc0522bc + uncommitted tools/simulation/static_joint_torque.py",
+  "command": [
+    "python tools/simulation/static_joint_torque.py --out experiments/00_initial_debug/records/2026-09-20_static_torque/raw"
+  ],
+  "environment_file": null,
+  "config_file": "models/dummy_reference.xml",
+  "seed": null,
+  "data_split": null,
+  "hardware": {
+    "robot_connected": false,
+    "runner": "cloud sandbox, Linux, Python 3.11, mujoco 3.13.0"
+  },
+  "units": "N*m",
+  "metrics": {
+    "pose": "zero_L_pose_forearm_horizontal",
+    "J5_hold_1kg": 1.31,
+    "J5_press10N_drag1.0": 3.09,
+    "J2_hold_1kg": 2.9,
+    "J2_press10N_drag0.5": 3.01
+  },
+  "artifacts": [
+    "raw/static_torque.json",
+    "raw/stdout.txt"
+  ],
+  "limitations": [
+    "仅静态",
+    "质量惯量为参考值",
+    "只可做相对比较",
+    "拖曳系数为假设",
+    "夹 1 kg 实机姿态未知"
+  ],
+  "hardware_motion": false
+}

@@ -1,0 +1,378 @@
+[
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-16_baseline",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-16_baseline"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-18_handoff",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-18_handoff"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-18_m0_baseline",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-18_m0_baseline"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-18_workspace_migration",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-18_workspace_migration"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-19_windows_env",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-19_windows_env"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-20_rigid_tool",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-20_rigid_tool"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-20_static_torque",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-20_static_torque"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-20_v2_model",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-20_v2_model"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-20_wall_sim_chain",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-20_wall_sim_chain"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-20_wall_workspace",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-20_wall_workspace"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-21_plaster_session_rl",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.1\\r0\\records\\2026-09-21_plaster_session_rl"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-21_ppo_visualization",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.1\\r0\\records\\2026-09-21_ppo_visualization"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-22_d435_mount",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-22_d435_mount"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-22_lab_tool",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-22_lab_tool"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-22_reducer_28mm",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-22_reducer_28mm"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-22_reducer_drawing",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-22_reducer_drawing"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-22_wall_cycle_rl",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.2\\r0\\records\\2026-09-22_wall_cycle_rl"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-22_wall_cycle_v03",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.3\\r0\\records\\2026-09-22_wall_cycle_v03"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-22_wall_cycle_v05",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.5\\p1\\records\\2026-09-22_wall_cycle_v05"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-23_wall_cycle_v06_gates",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.6\\p0_gates\\records\\2026-09-23_wall_cycle_v06_gates"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-23_wall_cycle_v06_p2a",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.6\\p2a\\records\\2026-09-23_wall_cycle_v06_p2a"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_end_flange_source_search",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-24_end_flange_source_search"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_end_flange_version_audit",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-24_end_flange_version_audit"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_observation_source_audit",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\records\\2026-09-24_observation_source_audit"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_teacher_replay_discontinuity",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\records\\2026-09-24_teacher_replay_discontinuity"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_teacher_visual_review",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\records\\2026-09-24_teacher_visual_review"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_tool_adapter_v1",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-24_tool_adapter_v1"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_tool_adapter_v1_1",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\records\\2026-09-24_tool_adapter_v1_1"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_v08_compute_audit",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\records\\2026-09-24_v08_compute_audit"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_v08_edge_refinement_review",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\records\\2026-09-24_v08_edge_refinement_review"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_v08_plan_review",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\records\\2026-09-24_v08_plan_review"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_v09_experiment_plan",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r0\\records\\2026-09-24_v09_experiment_plan"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_v09_r11_plan",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.1\\records\\2026-09-24_v09_r11_plan"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-24_v09_r12_plan",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\records\\2026-09-24_v09_r12_plan"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-25_v09_full_campaign",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\records\\2026-09-25_v09_full_campaign"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-25_v09_implementation",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\records\\2026-09-25_v09_implementation"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\experiments\\2026-09-25_v09_replay_performance",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\records\\2026-09-25_v09_replay_performance"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\outputs\\wall_cycle\\v07_p2_manual",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.7\\r0\\runs\\v07_p2_manual"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\outputs\\wall_cycle\\v07_p2_manual_run_log.txt",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.7\\r0\\runs\\v07_p2_manual_run_log.txt"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\outputs\\wall_cycle\\v08_manual",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\runs\\v08_manual"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\outputs\\wall_cycle\\v08_manual_run_log.txt",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\runs\\v08_manual_run_log.txt"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\outputs\\wall_cycle\\v08_teacher_preview",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\runs\\v08_teacher_preview"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\outputs\\wall_cycle\\v09_r12",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\outputs\\lab_tool",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\runs\\lab_tool"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\design\\tool_adapter_v1",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\design\\tool_adapter_v1"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\design\\tool_adapter_v1_1",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\design\\tool_adapter_v1_1"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\design\\wall_cycle_v0.7_完整实验设计技术文档.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.7\\r0\\design\\wall_cycle_v0.7_完整实验设计技术文档.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\design\\wall_cycle_v0.9_r1.1_教师初始化与自主强化学习.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.1\\design\\wall_cycle_v0.9_r1.1_教师初始化与自主强化学习.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\design\\wall_cycle_v0.9_r1.2_完整实验规划与通俗说明.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\design\\wall_cycle_v0.9_r1.2_完整实验规划与通俗说明.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\design\\wall_cycle_v0.9_边缘精修完整实验方案.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r0\\design\\wall_cycle_v0.9_边缘精修完整实验方案.md"
+  },
+  {
+    "src": "D:\\VLA\\experment design\\v0.7边缘问题诊断与v0.8修复方案.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\design\\original_submissions\\v0.7边缘问题诊断与v0.8修复方案.md"
+  },
+  {
+    "src": "D:\\VLA\\experment design\\v0.9完整实验规划_修订1.2_训练分工与通俗说明.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\design\\original_submissions\\v0.9完整实验规划_修订1.2_训练分工与通俗说明.md"
+  },
+  {
+    "src": "D:\\VLA\\experment design\\v0.9训练优化方案_教师初始化与自主强化学习_修订1.1.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.1\\design\\original_submissions\\v0.9训练优化方案_教师初始化与自主强化学习_修订1.1.md"
+  },
+  {
+    "src": "D:\\VLA\\experment design\\v0.9边缘精修与长时程学习完整实验方案.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r0\\design\\original_submissions\\v0.9边缘精修与长时程学习完整实验方案.md"
+  },
+  {
+    "src": "D:\\VLA\\experment design\\装料与搬运及分层策略_v0.5完整实验方案.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.5\\p1\\design\\original_submissions\\装料与搬运及分层策略_v0.5完整实验方案.md"
+  },
+  {
+    "src": "D:\\VLA\\experment design\\装料与搬运姿态修正_v0.4可执行实验方案.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.4\\r0\\design\\original_submissions\\装料与搬运姿态修正_v0.4可执行实验方案.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\docs\\changes\\2026-09-22_wall_cycle_v0.3.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.3\\r0\\design\\2026-09-22_wall_cycle_v0.3.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\docs\\changes\\2026-09-22_wall_cycle_v0.5_p1.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.5\\p1\\design\\2026-09-22_wall_cycle_v0.5_p1.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\docs\\changes\\2026-09-23_wall_cycle_v0.6_p2a.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.6\\p2a\\design\\2026-09-23_wall_cycle_v0.6_p2a.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\docs\\changes\\2026-09-23_wall_cycle_v0.7.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.7\\r0\\design\\2026-09-23_wall_cycle_v0.7.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\docs\\changes\\2026-09-24_wall_cycle_v0.8.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\design\\2026-09-24_wall_cycle_v0.8.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\docs\\plan\\S2_整片抹墙v0.6物理一致轨迹与重训练.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.6\\p0_gates\\design\\S2_整片抹墙v0.6物理一致轨迹与重训练.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\catalog.json",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\_organization\\2026-09-25\\old_launcher_metadata\\catalog.json"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\README.md",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\_organization\\2026-09-25\\old_launcher_metadata\\README.md"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\archive\\整片连续强化学习可视化_v0.2记录.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.2\\r0\\scripts\\visualization\\整片连续强化学习可视化_v0.2记录.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\hardware\\MuJoCo实机同步.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\scripts\\hardware\\MuJoCo实机同步.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\v08_teacher_review_1x.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\scripts\\visualization\\v08_teacher_review_1x.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\v09_BC开发轨迹原生回放.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\scripts\\visualization\\v09_BC开发轨迹原生回放.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\v09_final_BC.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\scripts\\visualization\\v09_final_BC.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\v09_final_BestImprovement.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\scripts\\visualization\\v09_final_BestImprovement.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\v09_final_RL.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\scripts\\visualization\\v09_final_RL.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\v09_final_Teacher.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\scripts\\visualization\\v09_final_Teacher.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\v09_final_Worst.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\scripts\\visualization\\v09_final_Worst.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\v09_timestamped_replay.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\scripts\\visualization\\v09_timestamped_replay.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\v09检查点重新闭环并回放.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\scripts\\visualization\\v09检查点重新闭环并回放.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\强化学习动作可视化.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.1\\r0\\scripts\\visualization\\强化学习动作可视化.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\整片抹墙v0.6_MuJoCo回放.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.6\\p2a\\scripts\\visualization\\整片抹墙v0.6_MuJoCo回放.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\整片抹墙v0.7_MuJoCo回放.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.7\\r0\\scripts\\visualization\\整片抹墙v0.7_MuJoCo回放.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\整片抹墙v0.7教师回放(免训练).cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.7\\r0\\scripts\\visualization\\整片抹墙v0.7教师回放(免训练).cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\整片抹墙v0.8_MuJoCo回放.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\scripts\\visualization\\整片抹墙v0.8_MuJoCo回放.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\整片抹墙v0.8教师回放(免训练).cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\scripts\\visualization\\整片抹墙v0.8教师回放(免训练).cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\整片连续强化学习可视化.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.3\\r0\\scripts\\visualization\\整片连续强化学习可视化.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\replay\\新一轮抹墙训练MuJoCo回放.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.5\\p1\\scripts\\visualization\\新一轮抹墙训练MuJoCo回放.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\simulation\\六轴同时往复仿真.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\scripts\\simulation\\六轴同时往复仿真.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\simulation\\墙面抹涂仿真演示.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\scripts\\simulation\\墙面抹涂仿真演示.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\simulation\\实测末端工具仿真.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\00_initial_debug\\scripts\\simulation\\实测末端工具仿真.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\simulation\\抹涂整片作业仿真.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.1\\r0\\scripts\\simulation\\抹涂整片作业仿真.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\training\\v09完整实验状态报告.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\scripts\\training\\v09完整实验状态报告.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\training\\抹涂手法强化学习.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.1\\r0\\scripts\\training\\抹涂手法强化学习.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\training\\整片抹墙v0.6训练.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.6\\p2a\\scripts\\training\\整片抹墙v0.6训练.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\training\\整片抹墙v0.7一键训练(自动重建可达表+训练+回放).cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.7\\r0\\scripts\\training\\整片抹墙v0.7一键训练(自动重建可达表+训练+回放).cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\training\\整片抹墙v0.7训练.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.7\\r0\\scripts\\training\\整片抹墙v0.7训练.cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\training\\整片抹墙v0.8一键训练(并行+回放).cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\scripts\\training\\整片抹墙v0.8一键训练(并行+回放).cmd"
+  },
+  {
+    "src": "D:\\VLA\\dummy_arm\\launchers\\_shared\\resolve_repo_root.cmd",
+    "dst": "D:\\VLA\\dummy_arm\\experiments\\_shared\\resolve_repo_root.cmd"
+  }
+]

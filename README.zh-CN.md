@@ -2,7 +2,7 @@
 
 # Dummy Arm Lab
 
-**实验室实测末端模型（2026-09-22）：** 双击 `实测末端工具仿真.cmd`，查看新抹刀、减速器和双抱箍。参数依据与暂定项见 [建模记录](experiments/2026-09-22_lab_tool/README.md)。旧强化学习回放仍保留原几何。
+**实验室实测末端模型（2026-09-22）：** 双击 `实测末端工具仿真.cmd`，查看新抹刀、减速器和双抱箍。参数依据与暂定项见 [建模记录](experiments/00_initial_debug/records/2026-09-22_lab_tool/README.md)。旧强化学习回放仍保留原几何。
 
 **观看已训练 PPO 的墙面抹涂动作：** 双击根目录 `强化学习动作可视化.cmd`。
 提供机械臂全景、抹刀近景、动态砂浆层、暂停/慢放/逐帧和模型切换。详见 [使用说明](docs/RL_VISUALIZATION.md)。
@@ -128,7 +128,7 @@ v0.3 起：作业区按机械臂真实可达范围算出（墙距 33 cm，18.5 �
 
 - 双击 `整片连续强化学习可视化.cmd`：MuJoCo 窗口里的真实机械臂、抹刀、墙面与料层（空格暂停，←→ 逐帧，[ ] 调速）。
 - 双击 `整片连续强化学习可视化_v0.2记录.cmd`：上一版（v0.2）的网页回放，仅作记录。
-- 每项改动的原因与「不要改回去」的理由：[`docs/changes/2026-09-22_wall_cycle_v0.3.md`](docs/changes/2026-09-22_wall_cycle_v0.3.md)；
+- 每项改动的原因与「不要改回去」的理由：[`experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md`](experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md)；
   实验说明：[`docs/WALL_CYCLE_RL.md`](docs/WALL_CYCLE_RL.md)。
 
 ---

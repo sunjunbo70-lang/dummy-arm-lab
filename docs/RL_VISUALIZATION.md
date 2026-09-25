@@ -17,7 +17,7 @@
 自选权重，输出目录必须不存在（避免覆盖证据）：
 
 ```powershell
-.venv-loop/Scripts/python.exe -m dummy_loop.wall.visualize --policy outputs/wall/rl/policy.npz --out outputs/wall/my_new_replay
+.venv-loop/Scripts/python.exe -m dummy_loop.wall.visualize --policy experiments/v0.1/r0/runs/rl/policy.npz --out experiments/v0.1/r0/runs/my_new_replay
 ```
 
 每个模型子目录包含：`preview.gif` 动画、`final.png` 最终画面、`rollout.npz` 逐控制步真实状态、

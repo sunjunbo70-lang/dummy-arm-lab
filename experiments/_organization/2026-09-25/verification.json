@@ -1,0 +1,35 @@
+{
+  "verified_original_files": 13299,
+  "missing": [],
+  "unmodified_size_mismatches": [],
+  "python_syntax_errors": [],
+  "selected_checkpoint_sha256_unchanged": {
+    "RL1_seed11": true,
+    "RL2_seed11": true,
+    "RL1_seed22": true,
+    "RL1_seed33": true,
+    "RL2_seed22": true,
+    "RL2_seed33": true,
+    "RL0_seed11": true,
+    "Scratch_seed11": true,
+    "no_edge_seed11": true,
+    "old_stop_seed11": true,
+    "RL1_100_reference": true,
+    "BC1": true,
+    "BC0": true
+  },
+  "history_chain_validation_points": {
+    "RL1_seed11": 40,
+    "RL2_seed11": 40,
+    "RL1_seed22": 40,
+    "RL1_seed33": 40,
+    "RL2_seed22": 40,
+    "RL2_seed33": 40,
+    "RL0_seed11": 20,
+    "Scratch_seed11": 10,
+    "no_edge_seed11": 10,
+    "old_stop_seed11": 10,
+    "RL1_100_reference": 10
+  },
+  "root_launchers_removed": true
+}

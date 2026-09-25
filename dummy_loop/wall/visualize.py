@@ -17,7 +17,7 @@ from .rl import make_env, load_policy, Scaled
 from .session import SessionConfig, run_session
 
 ROOT = Path(__file__).resolve().parents[2]
-EVIDENCE = ROOT / 'experiments/2026-09-21_plaster_session_rl/raw'
+EVIDENCE = ROOT / 'experiments/v0.1/r0/records/2026-09-21_plaster_session_rl/raw'
 
 
 def font(size):
@@ -152,7 +152,7 @@ def render_run(policy_path, name, out, seed=2000):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--out', type=Path, default=ROOT / 'outputs/wall/ppo_visualization')
+    ap.add_argument('--out', type=Path, default=ROOT / 'experiments/v0.1/r0/runs/ppo_visualization')
     ap.add_argument('--policy', type=Path, help='Render one custom checkpoint instead of both saved policies')
     args = ap.parse_args()
     out = args.out.resolve()
