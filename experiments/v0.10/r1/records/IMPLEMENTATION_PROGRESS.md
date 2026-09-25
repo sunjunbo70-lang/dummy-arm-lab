@@ -58,3 +58,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：出入区顺序修正
 候选v2修正同一步退出沉积重吸问题，29测试通过；对照显示料堆沉积误差仍主导，最终最大差0.253357mm（未改善），完整G0/G1仍未过。详见ORDERED_INVENTORY_PROGRESS.md及runs/ordered_inventory_001/implementation_state.json。无后台训练。
+
+## 续做：细分辨率收敛与成本
+候选v2六路径801/1601/3201点全部完成，经验阶数0.994–1.000，最细比较0.01359–0.03157mm，六例仍未达0.01mm。单路径3201点13.57–15.77秒，需改积分而非仅缩步。详见FINE_RESOLUTION_PROGRESS.md及runs/fine_resolution_001/implementation_state.json；无后台训练。
