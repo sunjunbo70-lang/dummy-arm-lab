@@ -67,3 +67,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：通量分步候选局部通过
 候选v4分步SSPRK2，33测试通过；六路径801/1601点厚度差最大0.00713mm，局部6/6通过，整体仍近一阶，非完整G0/G1。新旧极限估计接近但非证明。详见SPLIT_INVENTORY_PROGRESS.md及runs/split_fine_001/implementation_state.json。无后台训练。
+
+## 当前正在执行：扩大材料审计
+已启动expanded_split_audit，100单段+50条100操作，12workers，实际manager PID33596（manifest核对），runs/expanded_split_001。已有5秒资源监控，不重复启动或修改运行物理。详见EXPANDED_SPLIT_AUDIT_STARTED.md及该run的implementation_state.json；PPO仍未启动。
