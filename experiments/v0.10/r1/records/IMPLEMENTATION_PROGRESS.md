@@ -82,3 +82,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：v5失败与v6中点几何交换对照
 v5两档预算均耗尽，未完成case13，见ADAPTIVE_INVENTORY_FAILED.md。独立v6局部解析二阶/守恒测试通过，但同例抬刀厚度差0.061914mm，未改善v4的0.061789mm。44组件测试通过不代表G0通过。详见MIDPOINT_GEOMETRY_RESULT.md和runs/midpoint_geometry_001。旧扩大审计继续，无PPO。
+
+## 续做：组件隔离与v7联合中点交换
+内部通量规定输入下约二阶；纯几何交换case13抬刀差0.04868mm，证明几何侧也有误差。v7联合中点交换完整同例差0.04716mm，比v4降约24%但未过0.01mm门槛。46组件测试通过；原审计已完成12条长序列（10通过2失败）仍运行。记录COMPONENT_ISOLATION_RESULT.md、COUPLED_MIDPOINT_RESULT.md，runs/component_isolation_001、coupled_midpoint_001。无PPO。

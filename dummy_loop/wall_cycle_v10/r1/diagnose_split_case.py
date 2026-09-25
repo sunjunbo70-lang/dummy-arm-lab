@@ -6,9 +6,10 @@ from .split_inventory import SplitPressure
 from ..p0 import make_scene,snapshot
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--source',required=True);p.add_argument('--out',required=True);p.add_argument('--index',type=int,default=13);p.add_argument('--candidate',choices=['split','midpoint'],default='split');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--source',required=True);p.add_argument('--out',required=True);p.add_argument('--index',type=int,default=13);p.add_argument('--candidate',choices=['split','midpoint','coupled'],default='split');a=p.parse_args()
     from .midpoint_inventory import MidpointGeometryPressure
-    model_class=SplitPressure if a.candidate=='split' else MidpointGeometryPressure
+    from .coupled_midpoint_inventory import CoupledMidpointPressure
+    model_class={'split':SplitPressure,'midpoint':MidpointGeometryPressure,'coupled':CoupledMidpointPressure}[a.candidate]
     out=Path(a.out);out.mkdir(exist_ok=False,parents=True);head=snapshot(out)
     recipe=json.loads((Path(a.source)/f'single_{a.index:03d}_recipes.json').read_text())['recipes'][0]
     (out/'manifest.json').write_text(json.dumps(dict(source=a.source,index=a.index,recipe=recipe,source_head=head,physics=model_class.physics_version,scope='stage diagnosis only, no training'),indent=2))
