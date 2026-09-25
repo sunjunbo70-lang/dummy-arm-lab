@@ -55,3 +55,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：分阶段误差与PPO更新原语
 同6路径分阶段对照定位到刀上/料堆误差经抬刀沉积传到墙面；新增PPO单minibatch优化，27测试通过。完整G0/G1及完整训练器仍未完成，无后台训练。详见STAGE_ERROR_AND_PPO_PROGRESS.md及runs/stage_error_001/implementation_state.json。
+
+## 续做：出入区顺序修正
+候选v2修正同一步退出沉积重吸问题，29测试通过；对照显示料堆沉积误差仍主导，最终最大差0.253357mm（未改善），完整G0/G1仍未过。详见ORDERED_INVENTORY_PROGRESS.md及runs/ordered_inventory_001/implementation_state.json。无后台训练。
