@@ -73,3 +73,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：扩大审计单段失败与 PPO 调度
 100单段69通过31失败，长序列审计继续，当前候选不能通过完整G0。独立rollout/时间GAE/整批归一化/四epoch与KL停止接口补齐；38组件测试通过，不代表训练完成。详见ROLLOUT_INTERFACE_PROGRESS.md及runs/rollout_interface_001。无PPO训练。
+
+## 续做：最大失败案例抬刀归因
+独立重放single13与原结果逐元素一致：抬刀前最大差0.00820mm，抬刀后0.06179mm；最大误差格中余料堆沉积贡献0.04837mm、刀面贡献0.01171mm。详见SPLIT_FAILURE_STAGE_DIAGNOSIS.md及runs/split_failure_stage_001。扩大审计继续，G0未过、PPO未开始。
