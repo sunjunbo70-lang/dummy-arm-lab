@@ -61,3 +61,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：细分辨率收敛与成本
 候选v2六路径801/1601/3201点全部完成，经验阶数0.994–1.000，最细比较0.01359–0.03157mm，六例仍未达0.01mm。单路径3201点13.57–15.77秒，需改积分而非仅缩步。详见FINE_RESOLUTION_PROGRESS.md及runs/fine_resolution_001/implementation_state.json；无后台训练。
+
+## 续做：守恒外推候选失败
+候选v3完成六路径对照，4200步仅22次接受外推，仍近一阶且未过门槛；31测试通过不代表G0通过。局部墙格负库存导致回退，未放宽非负约束。详见EXTRAPOLATION_PROGRESS.md、runs/extrapolation_001/implementation_state.json。无后台训练。
