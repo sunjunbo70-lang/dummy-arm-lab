@@ -76,3 +76,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：最大失败案例抬刀归因
 独立重放single13与原结果逐元素一致：抬刀前最大差0.00820mm，抬刀后0.06179mm；最大误差格中余料堆沉积贡献0.04837mm、刀面贡献0.01171mm。详见SPLIT_FAILURE_STAGE_DIAGNOSIS.md及runs/split_failure_stage_001。扩大审计继续，G0未过、PPO未开始。
+
+## 续做：v5工具库存自适应积分候选
+新增独立v5局部误差控制，含预计抬刀沉积，41组件测试通过。case13两档预算有界诊断已启动，实际PID6180，runs/adaptive_inventory_001；旧v4扩大审计33596继续。详见ADAPTIVE_INVENTORY_STARTED.md。均不是PPO；G0尚未通过。
