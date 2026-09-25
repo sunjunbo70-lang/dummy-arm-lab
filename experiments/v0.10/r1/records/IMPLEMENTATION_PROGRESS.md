@@ -49,3 +49,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：持续接触库存
 新增出入足迹面积及守恒库存候选，20项测试通过；12条路径细化误差均下降，但最大仍0.225317mm，完整G0未通过。参见CONTACT_INVENTORY_PROGRESS.md与runs/inventory_001/implementation_state.json。无后台训练。
+
+## 续做：压力与库存耦合
+候选area_pressure_candidate.v1已接压力/挤出/余料/抬刀，24项测试通过；6条路径细化均改善，最大差仍0.228280mm，非完整G0。详见PRESSURE_INVENTORY_PROGRESS.md及runs/pressure_inventory_001/implementation_state.json。无后台训练。
