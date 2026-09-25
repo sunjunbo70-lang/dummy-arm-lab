@@ -64,3 +64,6 @@ footprint_001示例：案例0旋转路径最大格厚差0.445mm、固定角0.046
 
 ## 续做：守恒外推候选失败
 候选v3完成六路径对照，4200步仅22次接受外推，仍近一阶且未过门槛；31测试通过不代表G0通过。局部墙格负库存导致回退，未放宽非负约束。详见EXTRAPOLATION_PROGRESS.md、runs/extrapolation_001/implementation_state.json。无后台训练。
+
+## 续做：通量分步候选局部通过
+候选v4分步SSPRK2，33测试通过；六路径801/1601点厚度差最大0.00713mm，局部6/6通过，整体仍近一阶，非完整G0/G1。新旧极限估计接近但非证明。详见SPLIT_INVENTORY_PROGRESS.md及runs/split_fine_001/implementation_state.json。无后台训练。
