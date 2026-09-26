@@ -1,0 +1,134 @@
+[
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL1_seed11_0400\\checkpoints\\0360.pt",
+    "label": "RL1_seed11",
+    "bytes": 94079515,
+    "sha256": "892f7915025f11e4adf2dd32289e6b3126637232c5d6b18d4826f9823d408f36"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL2_seed11_0400\\checkpoints\\0330.pt",
+    "label": "RL2_seed11",
+    "bytes": 94076123,
+    "sha256": "d3a8d726e1eabd63d5d23f6aa650ac2087c8ae64bbbb3a067d7f1484798a8edc"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL1_seed22_0400\\checkpoints\\0220.pt",
+    "label": "RL1_seed22",
+    "bytes": 94062555,
+    "sha256": "58fec99edb0de2843fb11ae5ec149ed0b9cbe3e06a6921dc2bd45bf00a67e1b9"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL1_seed33_0400\\checkpoints\\0320.pt",
+    "label": "RL1_seed33",
+    "bytes": 94067355,
+    "sha256": "2e57e8ace8db480e4c282329ab8c5a3ab5da4fd404e725baf2505302e45d5f1c"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL2_seed22_0400\\checkpoints\\0360.pt",
+    "label": "RL2_seed22",
+    "bytes": 94064411,
+    "sha256": "dd268fdd094d18b47065226f66998354994d716a2f79bb2bda44ed92a9a3fc91"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL2_seed33_0400\\checkpoints\\0320.pt",
+    "label": "RL2_seed33",
+    "bytes": 94059931,
+    "sha256": "889c20e97e67224cb1c097ecc07d33d595c39313688a50770055d38bb7245b40"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL0_seed11_0200\\checkpoints\\0200.pt",
+    "label": "RL0_seed11",
+    "bytes": 94542747,
+    "sha256": "79416e512613da5d5e26105801a7c8c99655fe7f801d81b880d44b3b58e730f0"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001\\training\\Scratch_seed11_0100\\checkpoints\\0010.pt",
+    "label": "Scratch_seed11",
+    "bytes": 93937115,
+    "sha256": "e664386e529076da5041e86d357dd4f30b69a540e143c90c7ee53551ef4d5f6e"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001\\training\\no_edge_seed11_0100\\checkpoints\\0040.pt",
+    "label": "no_edge_seed11",
+    "bytes": 94083803,
+    "sha256": "d988e669b1c5344eb06d325b2e8affd698e32dbe45b3b682d87d508e6ad53fd6"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001\\training\\old_stop_seed11_0100\\checkpoints\\0030.pt",
+    "label": "old_stop_seed11",
+    "bytes": 94048987,
+    "sha256": "1b2865588211de738cf53c67f9c634dd7635caf446365a0ecb9424e60fcaede0"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\RL1_seed11_stage100_008\\checkpoints\\0090.pt",
+    "label": "RL1_100_reference",
+    "bytes": 94086235,
+    "sha256": "0ef0cf9669778915bc6ccffbe04caf904587b3dcb74c851a6b94b6bc2ca843eb"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\BC1_seed11_dagger2_005\\checkpoints\\bc.pt",
+    "label": "BC1",
+    "bytes": 41647509,
+    "sha256": "501b7ff56b659a92f8698df017eee18a2a13af5dabb6e026c794063ce0710512"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001\\training\\RL0_seed11_0100\\checkpoints\\bc.pt",
+    "label": "BC0",
+    "bytes": 41813845,
+    "sha256": "3d92dde59a6a44bfb28b8ae47e0c36930de0308840073b9cf5dc05a6950bc99c"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.1\\r0\\records\\2026-09-21_plaster_session_rl\\raw\\flat_warm_start\\policy.npz",
+    "label": "v0.1/r0/records/2026-09-21_plaster_session_rl/raw/flat_warm_start/policy.npz",
+    "bytes": 80874,
+    "sha256": "37beec1891dd336e898d9cad7ad485a0e3e05226b761e692fb261e7e4ed83d6a"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.1\\r0\\records\\2026-09-21_plaster_session_rl\\raw\\technique_warm_start\\policy.npz",
+    "label": "v0.1/r0/records/2026-09-21_plaster_session_rl/raw/technique_warm_start/policy.npz",
+    "bytes": 80874,
+    "sha256": "51e5a67a6983af6f1caf9b063ab17afbd5c65aa27b7105d261a57f3a1b1e0b03"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.2\\r0\\records\\2026-09-22_wall_cycle_rl\\raw\\model\\policy.npz",
+    "label": "v0.2/r0/records/2026-09-22_wall_cycle_rl/raw/model/policy.npz",
+    "bytes": 905946,
+    "sha256": "cda2bcf3dfecdbfab5d229ccde0a29ad7a9affec986dae63ef4c04fc0b76baf5"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.3\\r0\\records\\2026-09-22_wall_cycle_v03\\raw\\flat_teacher\\policy.npz",
+    "label": "v0.3/r0/records/2026-09-22_wall_cycle_v03/raw/flat_teacher/policy.npz",
+    "bytes": 1477690,
+    "sha256": "89499430b658c5603c5b005bdb7a7479b4b9cb6f7ba211c250df9bfb5d8b22f6"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.3\\r0\\records\\2026-09-22_wall_cycle_v03\\raw\\technique_teacher\\policy.npz",
+    "label": "v0.3/r0/records/2026-09-22_wall_cycle_v03/raw/technique_teacher/policy.npz",
+    "bytes": 1477690,
+    "sha256": "a7e098739eb538e4f2534f3f24ff6d6f2f29d556dbf0cd25d325655efa718d7c"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.5\\p1\\records\\2026-09-22_wall_cycle_v05\\raw\\p1_training\\policy.npz",
+    "label": "v0.5/p1/records/2026-09-22_wall_cycle_v05/raw/p1_training/policy.npz",
+    "bytes": 3476586,
+    "sha256": "ad1ff3b7b4517b8d886caae010d6a4b90960cda20a59229b63320443a2153303"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.6\\p2a\\records\\2026-09-23_wall_cycle_v06_p2a\\raw\\training\\policy.npz",
+    "label": "v0.6/p2a/records/2026-09-23_wall_cycle_v06_p2a/raw/training/policy.npz",
+    "bytes": 3474522,
+    "sha256": "c6a8d8ddec15ba840021fdda112b8d2b40e08f74054c76702ddc82a98b77b8d7"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.7\\r0\\runs\\v07_p2_manual\\policy.npz",
+    "label": "v0.7/r0/runs/v07_p2_manual/policy.npz",
+    "bytes": 4535418,
+    "sha256": "b58261808529bf0fdec5fbb0d8fa788a36996d0ea11a3342c362e595747df4d7"
+  },
+  {
+    "path": "D:\\VLA\\dummy_arm\\experiments\\v0.8\\r0\\runs\\v08_manual\\policy.npz",
+    "label": "v0.8/r0/runs/v08_manual/policy.npz",
+    "bytes": 5678554,
+    "sha256": "6ab6ed4649809d56cdd394c67fd51eb1d9307be7bdd7fcaf6a915e619ab723c7"
+  }
+]

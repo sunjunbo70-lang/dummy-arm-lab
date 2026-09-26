@@ -1,0 +1,7 @@
+{
+  "before_bytes": 501835720397,
+  "delete_files": 10215,
+  "delete_bytes": 499032426221,
+  "models": 22,
+  "policy": "User explicitly authorized deleting intermediate experiment products; retain final selected models, final replay, design and key metrics. Supersedes prior no-delete rule for this cleanup."
+}
