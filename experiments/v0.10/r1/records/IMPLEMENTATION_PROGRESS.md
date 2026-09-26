@@ -108,3 +108,6 @@ v7纯几何50/25/12.5μm抬刀相邻差0.048677/0.024336mm，仍一阶且未过�
 70组件测试通过，旋转128/256步联合库存完整走完，无端点补全，墙面差0.00002595mm。长case13组合128/256步诊断PID40724仍运行，runs/adaptive_coupled_boundary_002，勿重复启动；完成结果查summary.json。记录ADAPTIVE_BOUNDARY_PROGRESS.md。内部压力/抬刀未接，G0未过，无PPO。旧审计33596继续，29长序列含6失败。
 
 组合轨迹更新：case13 128步因自适应depth18耗尽失败（difference3.44e-17m²、closure5.12e-18m²）；256步仍在40724运行，查最终summary，不加预算凑通过。
+
+## 续做：全局速度修正未解决组合失败，v8压力接口初测
+全局速度v2保持预算，case13 128/256仍depth失败，均已结束（adaptive_global_rates_001）。新增v8压力/余料堆/抬刀接口，空墙短轨迹通过；有料墙初始拾料残值-4.50e-22m³触发非负拒绝（boundary_pressure_001）。73组件测试通过不等于集成通过。记录GLOBAL_RATES_AND_PRESSURE_INTEGRATION.md。下一步稀疏误差项定位及初始拾料账本修复。旧审计33596继续，35长序列6失败；新诊断无运行进程，无PPO。
