@@ -1,0 +1,13 @@
+
+
+# Wall gravity-cap ordering: local causal diagnostic and candidate v8.10
+
+L1 software. v8.9 completed with both resolutions rejected: coarse step2314, fine step5517, depth6 unchanged. Rejection trace identifies blade[0,3] max1.68846224e-8mm, versus wall1.14815316e-10 and bead5.68359e-12mm. Coarse/fine pressure gaps identical. Local replay from saved pre-rejection state with target fractions1,1/2,1/4,1/8,1/16 yields blade errors1.68846e-8,4.22062e-9,1.05509e-9,2.63764e-10,6.59373e-11mm. Approximately quadratic local error; no precision floor at tested scale. Evidence runs/contact_local_scaling_001/results.json. No gate relaxation.
+
+Hypothesis: end-of-contact-only wall slump projection allows deposition above wall carrying capacity to be picked up during the same geometry step, whereas smaller steps shed it earlier. This introduces operator-order dependence. Candidate v8.10 applies the SAME height bound tau_y/(rho*g) before wall pickup and to wall-directed deposition inside the coupled exchange. Blade depletion still uses original exit density; excess wall-directed deposition is explicitly added to dropped inventory rather than retained or deleted. Outside deposition remains outside. Receiving wall density and initial wall inventory bounded by capacity make the free-area transfer preserve the cap under its assumed constant fluxes. Internal bead extrusion, support law and final lift remain unchanged. This changes within-step physical ordering and is NOT frozen/validated physics; full gates and assessment of lift/contact initialization remain required.
+
+Saved rejected local state replay now blade error1.15658114e-10mm (~146x smaller), wall1.14815316e-10, bead5.61159e-12; ledger1.35525e-14mL and nonnegative. This is a local controlled intervention, not proof all case76/global errors arise here. Evidence runs/saturated_wall_local_001/result.json. Two unit tests passed: uncapped transfer exactly matches original; capped transfer sheds positive excess, bounds wall density, retains nonnegative blade and closes total ledger.
+
+Full original case76 pair3344/6688 running runs/case76_saturated_wall_001 PID7244 (launcher35268), unchanged adaptive tolerance/depth and external gate resolutions. Source snapshot retained. Check cases/summary before expansion, do not duplicate. Long sequence manager40668 and monitor13564 continue original v8.4 unmodified (4/50 completed pass at snapshot). No new resource monitor.
+
+Full numerical G0 and robot G1 incomplete; full GPU environment/PPO/formal RL/evaluation/full-job MuJoCo replay still outstanding. No formal training begun. Only D:/VLA software, user dirty files and all historical failures retained.
