@@ -1,0 +1,266 @@
+{
+  "cases": 432,
+  "intervention_summary": [
+    {
+      "mode": "reference",
+      "edge_mean_delta_J": -0.03391959526035418,
+      "edge_mean_damage": 0.11220949869846929
+    },
+    {
+      "mode": "lift_share_1_diagnostic",
+      "edge_mean_delta_J": -0.014065156148819194,
+      "edge_mean_damage": 0.11197771659168719
+    },
+    {
+      "mode": "oracle_gap_2mm",
+      "edge_mean_delta_J": -0.06744885291721518,
+      "edge_mean_damage": 0.04414944702628526
+    }
+  ],
+  "convergence": [
+    {
+      "scene": 0,
+      "J_relative_diff": 0.14103820652948723,
+      "rmse_diff_mm": 0.11392689364619779
+    },
+    {
+      "scene": 1,
+      "J_relative_diff": 0.0613545117552238,
+      "rmse_diff_mm": 0.025384464300097997
+    },
+    {
+      "scene": 2,
+      "J_relative_diff": 0.0038277682015337346,
+      "rmse_diff_mm": 0.018701444398361966
+    },
+    {
+      "scene": 3,
+      "J_relative_diff": 0.10921655850447883,
+      "rmse_diff_mm": 0.06017038572811084
+    },
+    {
+      "scene": 4,
+      "J_relative_diff": 0.02071149859014848,
+      "rmse_diff_mm": 0.006362989236952388
+    },
+    {
+      "scene": 5,
+      "J_relative_diff": 0.08954516855036924,
+      "rmse_diff_mm": 0.05536106857876766
+    },
+    {
+      "scene": 6,
+      "J_relative_diff": 0.017493338341844515,
+      "rmse_diff_mm": 0.0067320439794529285
+    },
+    {
+      "scene": 7,
+      "J_relative_diff": 0.17411519645394713,
+      "rmse_diff_mm": 0.10848732239167358
+    },
+    {
+      "scene": 8,
+      "J_relative_diff": 0.02193582868326201,
+      "rmse_diff_mm": 0.0002844173824805285
+    },
+    {
+      "scene": 9,
+      "J_relative_diff": 0.09860737108940525,
+      "rmse_diff_mm": 0.07325857574076289
+    },
+    {
+      "scene": 10,
+      "J_relative_diff": 0.005850951895293205,
+      "rmse_diff_mm": 0.017948748333995068
+    },
+    {
+      "scene": 11,
+      "J_relative_diff": 0.10368277655247841,
+      "rmse_diff_mm": 0.06064402136404934
+    },
+    {
+      "scene": 12,
+      "J_relative_diff": 0.006429238610469856,
+      "rmse_diff_mm": 0.000902467644702476
+    },
+    {
+      "scene": 13,
+      "J_relative_diff": 0.15460580090400422,
+      "rmse_diff_mm": 0.12207561431394509
+    },
+    {
+      "scene": 14,
+      "J_relative_diff": 0.13088982582329053,
+      "rmse_diff_mm": 0.08074596908061937
+    },
+    {
+      "scene": 15,
+      "J_relative_diff": 0.01781087198857314,
+      "rmse_diff_mm": 0.001072415793750059
+    },
+    {
+      "scene": 16,
+      "J_relative_diff": 0.1296264679777318,
+      "rmse_diff_mm": 0.09666531368153775
+    },
+    {
+      "scene": 17,
+      "J_relative_diff": 0.03268408330814379,
+      "rmse_diff_mm": 0.005506066575322044
+    },
+    {
+      "scene": 18,
+      "J_relative_diff": 0.00012197934684542336,
+      "rmse_diff_mm": 0.0010172992445296458
+    },
+    {
+      "scene": 19,
+      "J_relative_diff": 0.019797782082580234,
+      "rmse_diff_mm": 0.021614499073161153
+    },
+    {
+      "scene": 20,
+      "J_relative_diff": 0.04356011731505853,
+      "rmse_diff_mm": 0.03020501839352774
+    },
+    {
+      "scene": 21,
+      "J_relative_diff": 0.018673177289988574,
+      "rmse_diff_mm": 0.00932666355106826
+    },
+    {
+      "scene": 22,
+      "J_relative_diff": 0.07204336332581988,
+      "rmse_diff_mm": 0.04376308925154293
+    },
+    {
+      "scene": 23,
+      "J_relative_diff": 0.123383494683877,
+      "rmse_diff_mm": 0.07610763608451443
+    },
+    {
+      "scene": 24,
+      "J_relative_diff": 0.03288379200784988,
+      "rmse_diff_mm": 0.0007964737262306509
+    },
+    {
+      "scene": 25,
+      "J_relative_diff": 0.22880142514043136,
+      "rmse_diff_mm": 0.024193700921123856
+    },
+    {
+      "scene": 26,
+      "J_relative_diff": 0.008710795697170214,
+      "rmse_diff_mm": 0.0023737891265800948
+    },
+    {
+      "scene": 27,
+      "J_relative_diff": 0.016905542437121116,
+      "rmse_diff_mm": 0.001210912276578907
+    },
+    {
+      "scene": 28,
+      "J_relative_diff": 0.010127411671490475,
+      "rmse_diff_mm": 0.00021500167110508062
+    },
+    {
+      "scene": 29,
+      "J_relative_diff": 0.012742320280659403,
+      "rmse_diff_mm": 0.001392505361369284
+    },
+    {
+      "scene": 30,
+      "J_relative_diff": 0.050977754368062414,
+      "rmse_diff_mm": 0.005277030586498921
+    },
+    {
+      "scene": 31,
+      "J_relative_diff": 0.00821706044230244,
+      "rmse_diff_mm": 0.001337655278808858
+    },
+    {
+      "scene": 32,
+      "J_relative_diff": 0.023276890105451697,
+      "rmse_diff_mm": 0.0016674110821303656
+    },
+    {
+      "scene": 33,
+      "J_relative_diff": 0.011269728408770748,
+      "rmse_diff_mm": 0.003774214028599898
+    },
+    {
+      "scene": 34,
+      "J_relative_diff": 0.13973758174512763,
+      "rmse_diff_mm": 0.01274033434920857
+    },
+    {
+      "scene": 35,
+      "J_relative_diff": 0.0020593867565037714,
+      "rmse_diff_mm": 0.0007468617175380443
+    },
+    {
+      "scene": 36,
+      "J_relative_diff": 0.0036684452291189575,
+      "rmse_diff_mm": 0.003932729232294374
+    },
+    {
+      "scene": 37,
+      "J_relative_diff": 0.04888690088532674,
+      "rmse_diff_mm": 0.011098350141257485
+    },
+    {
+      "scene": 38,
+      "J_relative_diff": 0.013813625021058436,
+      "rmse_diff_mm": 0.0021908288629382544
+    },
+    {
+      "scene": 39,
+      "J_relative_diff": 0.003407074156363843,
+      "rmse_diff_mm": 0.0009196628212231606
+    },
+    {
+      "scene": 40,
+      "J_relative_diff": 0.06028594603916534,
+      "rmse_diff_mm": 0.002966542863681032
+    },
+    {
+      "scene": 41,
+      "J_relative_diff": 0.09901934129475613,
+      "rmse_diff_mm": 0.010528516631618412
+    },
+    {
+      "scene": 42,
+      "J_relative_diff": 0.004626922112914904,
+      "rmse_diff_mm": 0.0006035584026696239
+    },
+    {
+      "scene": 43,
+      "J_relative_diff": 0.17968759548764823,
+      "rmse_diff_mm": 0.02120773623139874
+    },
+    {
+      "scene": 44,
+      "J_relative_diff": 0.010449080001422681,
+      "rmse_diff_mm": 0.0005086958496198224
+    },
+    {
+      "scene": 45,
+      "J_relative_diff": 0.009107661929056968,
+      "rmse_diff_mm": 0.0014507195864912337
+    },
+    {
+      "scene": 46,
+      "J_relative_diff": 0.025250488143550173,
+      "rmse_diff_mm": 0.0010927401685690286
+    },
+    {
+      "scene": 47,
+      "J_relative_diff": 0.007028305826560108,
+      "rmse_diff_mm": 0.0004382874893358868
+    }
+  ],
+  "converged_cases": 12,
+  "total": 48,
+  "training_physics_changed": false,
+  "recovery": "Original computation completed; int64 summary serialization failed. Reconstructed from original cases without rerun."
+}

@@ -1,0 +1,148 @@
+{
+  "source_head": "2531fe7d7dcc0b108a3d43c1f8a5cd6b9a2545e1",
+  "version": "v10r1.moving_wall_exchange.analytic.v1",
+  "scope": "zero-gap pickup only with explicit area closure projection, not G0",
+  "rows": [
+    {
+      "steps": 128,
+      "picked_ml": 4.799999999999996,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 3.706827935421632e-19,
+      "cumulative_area_correction_m2": 8.394795309471601e-17,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 1.0263367000152357,
+      "case": "axial"
+    },
+    {
+      "steps": 256,
+      "picked_ml": 4.799999999999998,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 3.7846490874506207e-19,
+      "cumulative_area_correction_m2": 1.228830930646808e-16,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 1.6872074000129942,
+      "case": "axial",
+      "max_wall_change_mm": 2.6360639830046952e-15
+    },
+    {
+      "steps": 512,
+      "picked_ml": 4.8,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 3.840500322410201e-19,
+      "cumulative_area_correction_m2": 1.75766801033115e-16,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 3.4303943999984767,
+      "case": "axial",
+      "max_wall_change_mm": 3.6564916929574925e-15
+    },
+    {
+      "steps": 128,
+      "picked_ml": 5.981456606433927,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 4.248929021664384e-19,
+      "cumulative_area_correction_m2": 1.2291889013286965e-16,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 0.9829499000043143,
+      "case": "diagonal"
+    },
+    {
+      "steps": 256,
+      "picked_ml": 5.981476246181733,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 4.292339460211167e-19,
+      "cumulative_area_correction_m2": 2.1930125049733184e-16,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 2.2176147999998648,
+      "case": "diagonal",
+      "max_wall_change_mm": 9.819873904819315e-05
+    },
+    {
+      "steps": 512,
+      "picked_ml": 5.981481156741799,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 4.348720090762781e-19,
+      "cumulative_area_correction_m2": 3.4916703750653517e-16,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 4.367497400002321,
+      "case": "diagonal",
+      "max_wall_change_mm": 2.4552800339215133e-05
+    },
+    {
+      "steps": 128,
+      "picked_ml": 2.2649697819766668,
+      "ledger_error_ml": 1.0842021724855044e-13,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 2.8004297946749487e-10,
+      "cumulative_area_correction_m2": 2.324305613489932e-08,
+      "negative_raw_capacity_cells": 26,
+      "seconds": 1.2835360000026412,
+      "case": "rotation"
+    },
+    {
+      "steps": 256,
+      "picked_ml": 2.2649799159168698,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 6.939462692348705e-11,
+      "cumulative_area_correction_m2": 6.709837176646214e-09,
+      "negative_raw_capacity_cells": 16,
+      "seconds": 2.5208962000033353,
+      "case": "rotation",
+      "max_wall_change_mm": 5.913841026911826e-05
+    },
+    {
+      "steps": 512,
+      "picked_ml": 2.264983710948686,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 1.4466585017452105e-11,
+      "cumulative_area_correction_m2": 1.5442881659451277e-09,
+      "negative_raw_capacity_cells": 18,
+      "seconds": 5.133081400010269,
+      "case": "rotation",
+      "max_wall_change_mm": 1.4900107857405236e-05
+    },
+    {
+      "steps": 128,
+      "picked_ml": 38.89998515270816,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 8.767491562613948e-07,
+      "cumulative_area_correction_m2": 0.00020827387191691676,
+      "negative_raw_capacity_cells": 328,
+      "seconds": 1.2486070000159089,
+      "case": "case13"
+    },
+    {
+      "steps": 256,
+      "picked_ml": 38.92975441426823,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 3.970145715909268e-07,
+      "cumulative_area_correction_m2": 6.55220049598792e-05,
+      "negative_raw_capacity_cells": 295,
+      "seconds": 2.4016190000111237,
+      "case": "case13",
+      "max_wall_change_mm": 0.049847899103009366
+    },
+    {
+      "steps": 512,
+      "picked_ml": 38.93597903503156,
+      "ledger_error_ml": 1.0842021724855044e-13,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 1.532824487741222e-07,
+      "cumulative_area_correction_m2": 1.937499772238403e-05,
+      "negative_raw_capacity_cells": 284,
+      "seconds": 4.917696899996372,
+      "case": "case13",
+      "max_wall_change_mm": 0.012622587833014749
+    }
+  ],
+  "training_started": false
+}

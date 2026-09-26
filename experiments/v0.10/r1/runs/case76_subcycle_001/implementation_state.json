@@ -1,0 +1,7 @@
+{
+  "status": "pressure_subcycle_diagnostic_running",
+  "pid": 5688,
+  "long_sequence_pid": 40668,
+  "training_started": false,
+  "record": "records/PRESSURE_SUBCYCLE_DIAGNOSTIC.md"
+}

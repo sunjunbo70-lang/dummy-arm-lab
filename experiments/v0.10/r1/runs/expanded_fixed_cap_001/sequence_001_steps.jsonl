@@ -1,0 +1,5 @@
+{"step": 0, "op": "load", "max_wall_diff_mm": 0.0, "rmse_diff_mm": 0.0, "coverage_diff": 0.0, "ledger_error_ml": 6.776263578034403e-15, "min_volume_m3": 0.0}
+{"step": 1, "op": "contact", "max_wall_diff_mm": 9.179473319641317e-05, "rmse_diff_mm": 2.309908708086894e-06, "coverage_diff": 0.0, "ledger_error_ml": 3.3881317890172014e-14, "min_volume_m3": 0.0}
+{"step": 2, "op": "continue", "max_wall_diff_mm": 0.000544082108679053, "rmse_diff_mm": 1.8299042303215884e-05, "coverage_diff": 0.0, "ledger_error_ml": 3.3881317890172014e-14, "min_volume_m3": 0.0}
+{"step": 3, "op": "continue", "max_wall_diff_mm": 0.000544082108679053, "rmse_diff_mm": 1.29947410467679e-05, "coverage_diff": 0.0, "ledger_error_ml": 1.0164395367051604e-13, "min_volume_m3": 0.0}
+{"step": 4, "op": "contact", "max_wall_diff_mm": 0.0006099296113608104, "rmse_diff_mm": 6.347611427370836e-06, "coverage_diff": 0.0, "ledger_error_ml": 1.2874900798265365e-13, "min_volume_m3": 0.0}

@@ -1,0 +1,26 @@
+[
+  {
+    "workers": 8,
+    "decisions": 256,
+    "elapsed_s": 1.4593378999998095,
+    "decisions_per_s": 175.4220184372882
+  },
+  {
+    "workers": 12,
+    "decisions": 384,
+    "elapsed_s": 1.367599599994719,
+    "decisions_per_s": 280.78393705400526
+  },
+  {
+    "workers": 16,
+    "decisions": 512,
+    "elapsed_s": 1.168786000009277,
+    "decisions_per_s": 438.0613730793628
+  },
+  {
+    "workers": 23,
+    "decisions": 736,
+    "elapsed_s": 1.2472445000021253,
+    "decisions_per_s": 590.100818242731
+  }
+]

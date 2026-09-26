@@ -1,0 +1,9 @@
+{
+  "target": 400,
+  "median_relative_improvement": {
+    "RL1": 0.06483230162861153,
+    "RL2": 0.010187063004972735
+  },
+  "physical_blocked": [],
+  "expand": true
+}

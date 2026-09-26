@@ -1,0 +1,12 @@
+{
+  "source_head": "3a43fa7f8741ff90b2e55d0df28e3af72090b2cd",
+  "case": 13,
+  "geometry": "coupled",
+  "spacings": [
+    5e-05,
+    2.5e-05,
+    1.25e-05
+  ],
+  "scope": "diagnostic isolation, no production physics change",
+  "training_started": false
+}

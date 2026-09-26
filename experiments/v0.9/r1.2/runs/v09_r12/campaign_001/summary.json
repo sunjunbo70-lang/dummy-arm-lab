@@ -1,0 +1,61 @@
+{
+  "status": "training",
+  "evaluations": {},
+  "timings": {
+    "RL1_11_100": {
+      "policy_s": 0.655541853757677,
+      "environment_ipc_s": 5.815374216255259,
+      "gpu_update_s": 0.8084767012500379,
+      "checkpoint_s": 0.12721773500034034,
+      "total_s": 9.972787686250195,
+      "other_including_io_s": 2.56617717998688,
+      "updates": 80
+    },
+    "RL2_11_100": {
+      "policy_s": 0.6293778049986577,
+      "environment_ipc_s": 5.70323077498877,
+      "gpu_update_s": 0.8443831270003284,
+      "checkpoint_s": 0.1315963359999296,
+      "total_s": 9.86314859300037,
+      "other_including_io_s": 2.5545605500126847,
+      "updates": 100
+    },
+    "RL1_22_100": {
+      "policy_s": 0.6655926959871431,
+      "environment_ipc_s": 5.595032934000773,
+      "gpu_update_s": 0.7799681610010157,
+      "checkpoint_s": 0.13262212499932502,
+      "total_s": 9.745441201000068,
+      "other_including_io_s": 2.57222528501181,
+      "updates": 100
+    },
+    "RL1_33_100": {
+      "policy_s": 0.6331676600062929,
+      "environment_ipc_s": 5.538547494992381,
+      "gpu_update_s": 0.7609622829998262,
+      "checkpoint_s": 0.12737514200038277,
+      "total_s": 9.642804085000826,
+      "other_including_io_s": 2.5827515050019434,
+      "updates": 100
+    },
+    "RL2_22_100": {
+      "policy_s": 0.5923336722255853,
+      "environment_ipc_s": 5.357879877775202,
+      "gpu_update_s": 0.7883500344435258,
+      "checkpoint_s": 0.1327842555566652,
+      "total_s": 9.439991025555193,
+      "other_including_io_s": 2.5686431855542136,
+      "updates": 90
+    },
+    "RL2_33_100": {
+      "policy_s": 0.6139960083364713,
+      "environment_ipc_s": 5.495283691664048,
+      "gpu_update_s": 0.8344484888885846,
+      "checkpoint_s": 0.13665486388789658,
+      "total_s": 9.653326798612195,
+      "other_including_io_s": 2.572943745835194,
+      "updates": 72
+    }
+  },
+  "paired_comparisons": {}
+}

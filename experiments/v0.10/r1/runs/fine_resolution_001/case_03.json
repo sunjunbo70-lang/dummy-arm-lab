@@ -1,0 +1,27 @@
+{
+  "seed": 3,
+  "levels": [
+    {
+      "samples": 801,
+      "seconds": 3.5373287000111304,
+      "ledger_error_mL": 0.0,
+      "min_volume_m3": 9.230472107398596e-10
+    },
+    {
+      "samples": 1601,
+      "seconds": 6.719297100004042,
+      "ledger_error_mL": 0.0,
+      "min_volume_m3": 9.157947942503357e-10
+    },
+    {
+      "samples": 3201,
+      "seconds": 13.572336500015808,
+      "ledger_error_mL": 2.1684043449710089e-13,
+      "min_volume_m3": 9.121827915885641e-10
+    }
+  ],
+  "max_diff_801_1601_mm": 0.029429230291236688,
+  "max_diff_1601_3201_mm": 0.014710549435952708,
+  "empirical_order": 1.0003986777503573,
+  "local_single_thickness_tolerance_pass": false
+}

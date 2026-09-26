@@ -1,0 +1,4 @@
+{"step": 0, "op": "load", "max_wall_diff_mm": 0.0, "rmse_diff_mm": 0.0, "coverage_diff": 0.0, "ledger_error_ml": 6.776263578034403e-15, "min_volume_m3": 0.0}
+{"step": 1, "op": "contact", "max_wall_diff_mm": 0.0005436429432929013, "rmse_diff_mm": 1.0793864927305385e-05, "coverage_diff": 0.0, "ledger_error_ml": 3.3881317890172014e-14, "min_volume_m3": 0.0}
+{"step": 2, "op": "continue", "max_wall_diff_mm": 0.00027833937282274593, "rmse_diff_mm": 9.999990238096501e-06, "coverage_diff": 0.0, "ledger_error_ml": 6.776263578034403e-15, "min_volume_m3": 0.0}
+{"step": 3, "op": "continue", "max_wall_diff_mm": 0.0018581357076183145, "rmse_diff_mm": 6.601003522899163e-06, "coverage_diff": 0.0, "ledger_error_ml": 3.3881317890172014e-14, "min_volume_m3": 0.0}

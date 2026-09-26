@@ -1,0 +1,2 @@
+{"steps": 256, "status": "completed", "ledger_error_ml": 1.3552527156068805e-14, "minimum_volume": 0.0, "boundary_stats": {"nodes": 37399, "area_correction_m2": 1.154658396819123e-13, "moves": 512}, "seconds": 66.84974710000097}
+{"steps": 512, "status": "completed", "ledger_error_ml": 1.3552527156068805e-14, "minimum_volume": 0.0, "boundary_stats": {"nodes": 36343, "area_correction_m2": 2.3744670335464337e-13, "moves": 1024}, "max_wall_difference_mm": 0.06330179360723108, "seconds": 66.14705159998266}

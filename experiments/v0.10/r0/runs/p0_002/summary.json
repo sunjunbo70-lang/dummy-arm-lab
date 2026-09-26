@@ -1,0 +1,69 @@
+{
+  "status": "nominal_complete",
+  "cases": 720,
+  "wall_seconds": 7.585629800014431,
+  "by_task": {
+    "edge_ridge": {
+      "scenes": 24,
+      "empty_tool_gate_scenes": 0,
+      "fraction": 0.0,
+      "by_length": [
+        {
+          "length_m": 0.06,
+          "mean_delta_J": 0.11739169109647246
+        },
+        {
+          "length_m": 0.12,
+          "mean_delta_J": 0.27038195906410994
+        },
+        {
+          "length_m": 0.2,
+          "mean_delta_J": 0.06594542793477716
+        }
+      ]
+    },
+    "high_spot": {
+      "scenes": 24,
+      "empty_tool_gate_scenes": 0,
+      "fraction": 0.0,
+      "by_length": [
+        {
+          "length_m": 0.06,
+          "mean_delta_J": 0.047441420029170255
+        },
+        {
+          "length_m": 0.12,
+          "mean_delta_J": 0.06877009794466357
+        },
+        {
+          "length_m": 0.2,
+          "mean_delta_J": 0.07951950656841844
+        }
+      ]
+    },
+    "bare": {
+      "scenes": 12,
+      "empty_tool_gate_scenes": 0,
+      "fraction": 0.0,
+      "by_length": [
+        {
+          "length_m": 0.06,
+          "mean_delta_J": 0.0
+        },
+        {
+          "length_m": 0.12,
+          "mean_delta_J": 0.0
+        },
+        {
+          "length_m": 0.2,
+          "mean_delta_J": 0.0
+        }
+      ]
+    }
+  },
+  "max_abs_ledger_error_ml": 3.779884527122315e-14,
+  "empty_tool_material_gate_pass": false,
+  "physical_gate": "pending",
+  "training_started": false,
+  "note": "Passing material gate does not establish robot executability."
+}

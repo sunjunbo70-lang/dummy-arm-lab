@@ -1,0 +1,45 @@
+{
+  "source_head": "783c80b61118d5036f73020b823d45adc957c5b0",
+  "version": "v10r1.coupled_boundary_exchange.midpoint.v1",
+  "rows": [
+    {
+      "steps": 128,
+      "status": "failed",
+      "reason": "step 0: corrected flow has no blade-cell support",
+      "case": "axial"
+    },
+    {
+      "steps": 256,
+      "status": "failed",
+      "reason": "step 0: corrected flow has no blade-cell support",
+      "case": "axial"
+    },
+    {
+      "steps": 128,
+      "status": "failed",
+      "reason": "step 0: corrected flow has no blade-cell support",
+      "case": "diagonal"
+    },
+    {
+      "steps": 256,
+      "status": "failed",
+      "reason": "step 0: corrected flow has no blade-cell support",
+      "case": "diagonal"
+    },
+    {
+      "steps": 128,
+      "status": "failed",
+      "reason": "step 42: corrected flow has no blade-cell support",
+      "case": "rotation"
+    },
+    {
+      "steps": 256,
+      "status": "failed",
+      "reason": "step 84: corrected flow has no blade-cell support",
+      "case": "rotation"
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false,
+  "scope": "finite blade boundary exchange, no pressure/bead/lift"
+}

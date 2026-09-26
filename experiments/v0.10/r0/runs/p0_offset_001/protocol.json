@@ -1,0 +1,14 @@
+{
+  "diagnostic_only": true,
+  "selected_by": "three lowest nominal J profiles per edge/length",
+  "offsets_m": [
+    0,
+    0.02,
+    0.035
+  ],
+  "directions": [
+    1,
+    -1
+  ],
+  "cases": 1296
+}

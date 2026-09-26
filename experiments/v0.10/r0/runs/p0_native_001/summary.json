@@ -1,0 +1,9 @@
+{
+  "cases": 30,
+  "plan_ok": 10,
+  "material_gate": 0,
+  "errors": 0,
+  "elapsed_s": 6.85089970001718,
+  "note": "diagnostic subset, not independent policy evaluation",
+  "training_started": false
+}

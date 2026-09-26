@@ -1,0 +1,30 @@
+{
+  "status": "implementation_in_progress_numerical_gate_failed",
+  "training_started": false,
+  "active_training_process": false,
+  "scope": "L1 simulation only",
+  "automation": "v0-10-r1",
+  "completed": {
+    "contract_tests": 12,
+    "compiled_reference_straight": 12,
+    "compiled_reference_rotation": 30,
+    "material_gate_singles_passed": 34,
+    "material_gate_singles_total": 100,
+    "material_gate_sequences_passed": 0,
+    "material_gate_sequences_total": 50,
+    "compiled_warm_median_speedup": 44.55569860960921
+  },
+  "missing": [
+    "rotation/oblique footprint numerical convergence",
+    "full environment numerical gates",
+    "actual continuous-contact robot executor and G1",
+    "complete CPU environment integration",
+    "complete GPU environment and end-to-end benchmark",
+    "BC/development PPO",
+    "formal matrix",
+    "independent evaluation and full native replays"
+  ],
+  "candidate_physics": "v10r1.displacement_flux_candidate.v1; not adopted",
+  "latest_evidence": "material_gate_001/summary.json",
+  "next_action": "repair conservative rotating-footprint mapping with preserved old records; continue independent implementation, not merely monitor"
+}

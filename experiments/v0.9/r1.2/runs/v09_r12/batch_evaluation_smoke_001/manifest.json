@@ -1,0 +1,14 @@
+{
+  "args": {
+    "checkpoint": null,
+    "teacher": "FINISH",
+    "reach": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\reach_a1_001\\reach.npz",
+    "out": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\batch_evaluation_smoke_001",
+    "seed": 60980,
+    "episodes": 6,
+    "backend": "nominal",
+    "workers": 2
+  },
+  "checkpoint_sha256": null,
+  "status": "completed"
+}

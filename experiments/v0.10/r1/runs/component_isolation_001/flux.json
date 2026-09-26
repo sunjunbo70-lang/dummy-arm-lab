@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "steps": 1000,
+      "seconds": 0.06567479998921044,
+      "ledger_error_ml": 6.245004513516506e-15,
+      "min_thickness_m": 0.0
+    },
+    {
+      "steps": 2000,
+      "seconds": 0.16440290000173263,
+      "ledger_error_ml": 6.938893903907228e-16,
+      "min_thickness_m": 0.0
+    },
+    {
+      "steps": 4000,
+      "seconds": 0.3122453000105452,
+      "ledger_error_ml": 3.469446951953614e-15,
+      "min_thickness_m": 0.0
+    }
+  ],
+  "max_component_difference_mm": [
+    1.5953633949929852e-05,
+    3.929353031319194e-06
+  ],
+  "scope": "prescribed flux clock only; not actual full trajectory"
+}

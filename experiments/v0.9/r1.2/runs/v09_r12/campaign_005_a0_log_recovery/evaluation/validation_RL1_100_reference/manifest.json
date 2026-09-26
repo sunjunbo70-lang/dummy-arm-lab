@@ -1,0 +1,14 @@
+{
+  "args": {
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\RL1_seed11_stage100_008\\checkpoints\\0090.pt",
+    "teacher": null,
+    "reach": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\reach_a1_001\\reach.npz",
+    "out": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_005_a0_log_recovery\\evaluation\\validation_RL1_100_reference",
+    "seed": 70000,
+    "episodes": 60,
+    "backend": "nominal",
+    "workers": 8
+  },
+  "checkpoint_sha256": "0ef0cf9669778915bc6ccffbe04caf904587b3dcb74c851a6b94b6bc2ca843eb",
+  "status": "completed"
+}

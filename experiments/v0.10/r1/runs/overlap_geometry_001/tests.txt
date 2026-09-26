@@ -1,0 +1,21 @@
+test_aligned_identity (dummy_loop.wall_cycle_v10.r1.test_overlap.OverlapTests.test_aligned_identity) ... ok
+test_random_conservation_and_no_double_ownership (dummy_loop.wall_cycle_v10.r1.test_overlap.OverlapTests.test_random_conservation_and_no_double_ownership) ... ok
+test_rotation_continuity_at_grid_alignment (dummy_loop.wall_cycle_v10.r1.test_overlap.OverlapTests.test_rotation_continuity_at_grid_alignment) ... ok
+test_unequal_grid_sizes (dummy_loop.wall_cycle_v10.r1.test_overlap.OverlapTests.test_unequal_grid_sizes) ... ok
+test_actual_material_cost (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_actual_material_cost) ... ok
+test_contact_state_mask (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_contact_state_mask) ... ok
+test_continuation_inherits_actual_start (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_continuation_inherits_actual_start) ... ok
+test_cycle_is_costly (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_cycle_is_costly) ... ok
+test_gae_terminal_and_rollout_bootstrap (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_gae_terminal_and_rollout_bootstrap) ... ok
+test_outside_proposal_rejected_not_projected (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_outside_proposal_rejected_not_projected) ... ok
+test_temporary_damage_not_permanent_penalty (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_temporary_damage_not_permanent_penalty) ... ok
+test_terminal_shaping_accounting (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_terminal_shaping_accounting) ... ok
+test_continuation_unused_dimensions (dummy_loop.wall_cycle_v10.r1.test_policy.PolicyContracts.test_continuation_unused_dimensions) ... ok
+test_cuda_forward_if_available (dummy_loop.wall_cycle_v10.r1.test_policy.PolicyContracts.test_cuda_forward_if_available) ... ok
+test_gradient_reaches_shared_network (dummy_loop.wall_cycle_v10.r1.test_policy.PolicyContracts.test_gradient_reaches_shared_network) ... ok
+test_sample_and_evaluate_match (dummy_loop.wall_cycle_v10.r1.test_policy.PolicyContracts.test_sample_and_evaluate_match) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.830s
+
+OK

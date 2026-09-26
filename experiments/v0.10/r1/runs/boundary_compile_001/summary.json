@@ -1,0 +1,17 @@
+{
+  "source_head": "93e17f133a27d2ec51a49ca42e797aad3c31317d",
+  "rate_max_abs_error_m2_per_time": 3.621235256101585e-16,
+  "rate_seconds": {
+    "reference": 0.31648360000690445,
+    "compiled": 0.04725709999911487
+  },
+  "rate_speedup": 6.697059278136665,
+  "adaptive_seconds": [
+    5.131174799986184,
+    0.9970856999862008
+  ],
+  "adaptive_speedup": 5.146172289961832,
+  "adaptive_max_area_difference_m2": 3.6422416731934915e-20,
+  "scope": "warm CPU geometry component only, not end-to-end RL",
+  "training_started": false
+}

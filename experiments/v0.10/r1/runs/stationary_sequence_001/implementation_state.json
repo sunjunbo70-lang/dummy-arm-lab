@@ -1,0 +1,7 @@
+{
+  "status": "four_operation_sequence_running",
+  "pid": 27260,
+  "training_started": false,
+  "physics_version": "v8.4",
+  "record": "records/STATIONARY_CONTINUATION_FIX.md"
+}

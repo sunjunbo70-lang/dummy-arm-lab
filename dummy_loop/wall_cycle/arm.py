@@ -51,6 +51,8 @@ class StrokePlan:
     q_rotate: list = field(default_factory=list)
     carry_face_up_min: float = 1.0
     approach_distances_m: list = field(default_factory=list)
+    q_scan_path: list = field(default_factory=list)   # v0.7: dense, collision-checked path
+                                                        # back to the scan pose (physics=='v0.6')
 
 
 def scene_config(cfg: CycleConfig) -> SceneConfig:
@@ -92,6 +94,15 @@ class ArmExecutor:
         self.q_scan = self._solve_seeded(self._uvn(0.0, cfg.height_m / 2, -cfg.wall_clearance_m), 0.0, 0.0)
         self.q_last = self.q_scan
         self.q_feed = np.clip(np.asarray(cfg.feed_pose_q_rad, float), self.ik.lo, self.ik.hi)
+        # v0.7: the scan<->feed transition is a fixed pair of poses, so its dense, collision-
+        # checked path is computed once here rather than every stroke (see plan()/execute() for
+        # the per-stroke scan-return path, which DOES vary with where the stroke landed). Before
+        # this, execute() jumped straight to q_feed in one _run() call with a single recorded
+        # frame; the motion was physically simulated but only the final pose was ever recorded,
+        # so the replay showed a teleport even though nothing actually skipped a step.
+        _fp = self._dense_path(self.q_scan, self.q_feed, n=20)
+        self.feed_path_degraded = _fp is None
+        self.q_feed_path = _fp if _fp is not None else [self.q_feed.copy()]
         self.stats = {'planned': 0, 'rejected': 0}
 
     def reset(self):
@@ -161,6 +172,22 @@ class ArmExecutor:
                for g in self.arm_geoms)
         self.data.qpos[:]=oldq;self.data.qvel[:]=oldv;mujoco.mj_forward(self.model,self.data)
         return ok
+
+    def _dense_path(self, q_from, q_to, n=20):
+        """v0.7: joint-space linear interpolation from q_from to q_to, checked point by point
+        for wall clearance, so execute() has something to record a frame at every step of a
+        free-space move instead of only its endpoint (see q_feed_path in __init__ and
+        q_scan_path in plan()). Returns n-1 waypoints ending exactly at q_to, or None if any
+        waypoint fails clearance -- callers must not silently fall back to a single-frame jump
+        on None, they should reject/replan instead (see plan()'s use of this)."""
+        q_from = np.asarray(q_from, float); q_to = np.asarray(q_to, float)
+        path = []
+        for t in np.linspace(0, 1, n)[1:]:
+            q = q_from + (q_to - q_from) * t
+            if not self.clear_of_wall(q):
+                return None
+            path.append(q.copy())
+        return path
 
     def _solve(self, uvn, psi, pitch, seed, iters=60):
         p, R = self._pose(uvn, psi, pitch)
@@ -332,9 +359,20 @@ class ArmExecutor:
             return self._reject('retreat unreachable')
         ql.append(q)
         self.q_last = q
+        # v0.7: dense, collision-checked path from this stroke's actual retreat pose back to
+        # the scan pose (the retreat pose varies stroke by stroke, unlike q_feed_path above, so
+        # this has to be planned per stroke rather than once). A failure here must reject and
+        # let the caller re-plan/project -- degrading silently to a single-frame jump would
+        # bring back the same "teleport" this is meant to fix, just for a different transition.
+        q_scan_path = []
+        if c.physics == 'v0.6':
+            q_scan_path = self._dense_path(ql[-1], self.q_scan, n=20)
+            if q_scan_path is None:
+                return self._reject('no dense path back to scan pose')
         plan = StrokePlan(True, '', [x.copy() for x in qa], [x.copy() for x in q_work], [x.copy() for x in ql],
                           [x.copy() for x in q_feed_path], [x.copy() for x in q_carry],
-                          [x.copy() for x in q_rotate], carry_min, approach_d)
+                          [x.copy() for x in q_rotate], carry_min, approach_d,
+                          [x.copy() for x in q_scan_path])
         plan.meta = dict(p0=p0, p2=p2, pc=pc, psi=psi, s0=s0, s1=s1, direction=direction)
         return plan
 
@@ -400,7 +438,20 @@ class ArmExecutor:
             # permitted only at the verified face-up pose; transport loss uses measured
             # orientation after every dynamically executed waypoint.
             if d.mode == 'DEPOSIT' and d.requested_load_ml > 0:
-                self._run(self.q_feed,self._move_time(self.q_feed,joint_speed_deg_s=20.0,settle_s=0.8));mark('FEED_ALIGN_UP')
+                # v0.7: was one _run() straight to q_feed with a single mark() -- physically
+                # simulated but only its endpoint ever recorded, so replays showed a teleport.
+                # q_feed_path (built once in __init__) gives this a dense, checked trajectory.
+                # v0.8: only the final (verified face-up) waypoint is FEED_ALIGN_UP; the frames on
+                # the way from the scan pose are FEED_TRANSIT. The blade can still carry residual
+                # material here, so with feed_transit_physics the measured orientation drives the
+                # same transport model as CARRY/ROTATE/SCAN_RETURN (v0.6/v0.7 skipped it).
+                n_feed = len(self.q_feed_path)
+                for k_feed, q in enumerate(self.q_feed_path):
+                    dt = self._move_time(q, joint_speed_deg_s=20.0, settle_s=0.05)
+                    self._run(q, dt)
+                    mark('FEED_ALIGN_UP' if k_feed == n_feed - 1 else 'FEED_TRANSIT')
+                    if c.feed_transit_physics:
+                        mortar.transport(trace[-1]['face_up_score'], dt, stats=stats)
                 score=trace[-1]['face_up_score']
                 if score < np.cos(np.deg2rad(c.face_up_hard_deg)):
                     raise RuntimeError(f'executed feed pose is not face-up: score={score:.4f}')
@@ -461,10 +512,15 @@ class ArmExecutor:
             self._run(q, self._move_time(q)); mark('SEPARATE')
         mortar.air(0.0, stats)
         if c.physics == 'v0.6':
-            dt=self._move_time(self.q_scan,joint_speed_deg_s=30.0,settle_s=0.4)
-            self._run(self.q_scan,dt);mark('SCAN_RETURN')
-            mortar.transport(trace[-1]['face_up_score'],dt,stats=stats)
+            # v0.7: was one _run() straight to q_scan with a single mark() -- same teleport
+            # issue as the feed-alignment move above. plan.q_scan_path (computed per stroke in
+            # plan(), since the retreat pose it starts from varies) gives this a dense trajectory.
+            for q in (plan.q_scan_path or [self.q_scan]):
+                dt=self._move_time(q,joint_speed_deg_s=30.0,settle_s=0.05)
+                self._run(q,dt);mark('SCAN_RETURN')
+                mortar.transport(trace[-1]['face_up_score'],dt,stats=stats)
         self.q_last = self.data.qpos[:6].copy()
+        stats['feed_path_degraded'] = self.feed_path_degraded
         stats['peak_force_N'] = peak
         stats['force_mean_N'] = float(np.mean(forces)); stats['force_target_N'] = d.force_N
         stats['force_rmse_N'] = float(np.sqrt(np.mean((np.asarray(forces) - d.force_N) ** 2)))
@@ -484,6 +540,12 @@ class ArmExecutor:
             stats['face_down_frames'] = int(sum(x['face_up_score'] < -1e-3 for x in trace
                                                 if x['phase'] in ('FEED_ALIGN_UP', 'FEED_SCOOP',
                                                                   'CARRY_FACE_UP', 'ROTATE_TO_WALL')))
+            # v0.8 diagnostic: residual material carried through the feed transit while tilted
+            # past the hard face-up limit (0.1 mL threshold is a diagnostic, not a calibrated one).
+            cos_hard = np.cos(np.deg2rad(c.face_up_hard_deg)); A_b = mortar.blade_cell_area
+            stats['feed_transit_loaded_tilted_frames'] = int(sum(
+                x['face_up_score'] < cos_hard and x['blade'].sum() * A_b > 1e-7
+                for x in trace if x['phase'] == 'FEED_TRANSIT'))
             stats['approach_reversal_count'] = int(sum(
                 b > a + 5e-4 for a, b in zip(plan.approach_distances_m,
                                              plan.approach_distances_m[1:])))

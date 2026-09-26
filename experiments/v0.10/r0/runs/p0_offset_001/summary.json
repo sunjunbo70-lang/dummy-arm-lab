@@ -1,0 +1,1713 @@
+{
+  "cases": 1296,
+  "scenes_with_candidate": 13,
+  "scenes": 24,
+  "best": [
+    {
+      "scene_index": 0,
+      "scene": {
+        "index": 0,
+        "seed": 270000,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.003240243227423478,
+        "width_m": 0.009070111840875751,
+        "share": 0.8001535102059109,
+        "center": [
+          -0.08885460045137103,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 25,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        -0.12385460045137103,
+        0.35
+      ],
+      "end": [
+        -0.12385460045137103,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.35909337964383004,
+        "rmse_mm": 0.9013889937790013,
+        "coverage": 0.85,
+        "edge_rmse_mm": 1.2616066345092676,
+        "edge_excess_m3": 9.903130762047115e-06,
+        "roughness_mm": 0.20877198765292437,
+        "edge_coverage": 0.7058823529411765,
+        "p95_error_mm": 2.557759759186225,
+        "excess_ml": 9.903130762047114,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.22466058378868037,
+        "rmse_mm": 0.5467522430973815,
+        "coverage": 0.86875,
+        "edge_rmse_mm": 0.7183037569022468,
+        "edge_excess_m3": 6.261449011464395e-07,
+        "roughness_mm": 0.2817691221387338,
+        "edge_coverage": 0.7745098039215687,
+        "p95_error_mm": 1.617574220033534,
+        "excess_ml": 0.6261449011464396,
+        "damage_fraction_initial_good": 0.026470588235294117,
+        "blade_ml": 1.5096551644521214,
+        "supplied_ml": 0.0,
+        "dropped_ml": 10.39004837983736,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -1.5246593050577406e-14
+      },
+      "excess_reduction_fraction": 0.9367730350945092,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 1,
+      "scene": {
+        "index": 1,
+        "seed": 270001,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0016976982170151134,
+        "width_m": 0.011680240539917095,
+        "share": 0.8948771799945034,
+        "center": [
+          0.08515346655399089,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 8,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        0.1201534665539909,
+        0.35
+      ],
+      "end": [
+        0.1201534665539909,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.2233136870803068,
+        "rmse_mm": 0.5368564434502612,
+        "coverage": 0.825,
+        "edge_rmse_mm": 0.7432017969423113,
+        "edge_excess_m3": 5.008624634917881e-06,
+        "roughness_mm": 0.10033986473833449,
+        "edge_coverage": 0.6911764705882353,
+        "p95_error_mm": 1.4060875366316963,
+        "excess_ml": 5.037874415200844,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.19356375563418177,
+        "rmse_mm": 0.44803009723671583,
+        "coverage": 0.870625,
+        "edge_rmse_mm": 0.6183388966024566,
+        "edge_excess_m3": 3.1171297885053274e-06,
+        "roughness_mm": 0.18126876934184527,
+        "edge_coverage": 0.758578431372549,
+        "p95_error_mm": 1.2388990511269864,
+        "excess_ml": 3.16796061558991,
+        "damage_fraction_initial_good": 0.008333333333333333,
+        "blade_ml": 0.38747045202016894,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -6.088049308390284e-15
+      },
+      "excess_reduction_fraction": 0.37117118163343227,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 2,
+      "scene": {
+        "index": 2,
+        "seed": 270002,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0033053961583871883,
+        "width_m": 0.00991625926470597,
+        "share": 0.7656782276874725,
+        "center": [
+          0.0,
+          0.15931962310874026
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 25,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.12431962310874026
+      ],
+      "end": [
+        0.1,
+        0.12431962310874026
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.3676918609063229,
+        "rmse_mm": 0.9361898276648086,
+        "coverage": 0.85,
+        "edge_rmse_mm": 1.310275811109487,
+        "edge_excess_m3": 1.0333319064875804e-05,
+        "roughness_mm": 0.1883044134985732,
+        "edge_coverage": 0.7058823529411765,
+        "p95_error_mm": 2.6358047687693835,
+        "excess_ml": 10.333319064875804,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.1672096303195184,
+        "rmse_mm": 0.40044079017633366,
+        "coverage": 0.889375,
+        "edge_rmse_mm": 0.5430401983096576,
+        "edge_excess_m3": 6.148338213875366e-07,
+        "roughness_mm": 0.18969382334079357,
+        "edge_coverage": 0.8174019607843137,
+        "p95_error_mm": 0.8313990192288542,
+        "excess_ml": 0.6148338213875366,
+        "damage_fraction_initial_good": 0.029411764705882353,
+        "blade_ml": 1.6896733012437481,
+        "supplied_ml": 0.0,
+        "dropped_ml": 7.850756495971815,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -1.1858461261560205e-14
+      },
+      "excess_reduction_fraction": 0.9404998706100705,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 3,
+      "scene": {
+        "index": 3,
+        "seed": 270003,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0023625172330640765,
+        "width_m": 0.010282283158995658,
+        "share": 0.7134320320461248,
+        "center": [
+          0.0,
+          0.3353419511754361
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 15,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.3703419511754361
+      ],
+      "end": [
+        0.1,
+        0.3703419511754361
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.2896968515005012,
+        "rmse_mm": 0.7060533770544664,
+        "coverage": 0.825,
+        "edge_rmse_mm": 0.9831236702870726,
+        "edge_excess_m3": 7.4701145235083436e-06,
+        "roughness_mm": 0.15341881051464165,
+        "edge_coverage": 0.6911764705882353,
+        "p95_error_mm": 1.8751174223289748,
+        "excess_ml": 7.4871013569549145,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.2305611698827147,
+        "rmse_mm": 0.5495373470394855,
+        "coverage": 0.859375,
+        "edge_rmse_mm": 0.7666555895136355,
+        "edge_excess_m3": 3.712598361365502e-06,
+        "roughness_mm": 0.19793833462624996,
+        "edge_coverage": 0.7267156862745098,
+        "p95_error_mm": 1.542257127761841,
+        "excess_ml": 3.713230346036907,
+        "damage_fraction_initial_good": 0.006818181818181818,
+        "blade_ml": 1.5353321550898154,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.8501482091244059,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -1.0270274485458392e-14
+      },
+      "excess_reduction_fraction": 0.5040496757015831,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 4,
+      "scene": {
+        "index": 4,
+        "seed": 270004,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.001672660522209815,
+        "width_m": 0.007548623723430909,
+        "share": 0.7476986337027357,
+        "center": [
+          -0.08474983749126894,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 8,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        -0.11974983749126894,
+        0.35
+      ],
+      "end": [
+        -0.11974983749126894,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.17764613364114543,
+        "rmse_mm": 0.4322972989509343,
+        "coverage": 0.9,
+        "edge_rmse_mm": 0.6048956527469604,
+        "edge_excess_m3": 3.2073435035706547e-06,
+        "roughness_mm": 0.13680179644376123,
+        "edge_coverage": 0.803921568627451,
+        "p95_error_mm": 1.0801849791865639,
+        "excess_ml": 3.207343503570655,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.16852252175967725,
+        "rmse_mm": 0.3857973359647604,
+        "coverage": 0.898125,
+        "edge_rmse_mm": 0.533497043839842,
+        "edge_excess_m3": 2.0627003479773615e-06,
+        "roughness_mm": 0.1956317321286499,
+        "edge_coverage": 0.8075980392156863,
+        "p95_error_mm": 1.0240433203234567,
+        "excess_ml": 2.0627003479773616,
+        "damage_fraction_initial_good": 0.02638888888888889,
+        "blade_ml": 0.9065833098056947,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -1.0270274485458392e-14
+      },
+      "excess_reduction_fraction": 0.35688199730368475,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 5,
+      "scene": {
+        "index": 5,
+        "seed": 270005,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0027730912413933347,
+        "width_m": 0.006388442927668548,
+        "share": 0.8737561384525643,
+        "center": [
+          0.08399886212466791,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 15,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        0.11899886212466791,
+        0.35
+      ],
+      "end": [
+        0.11899886212466791,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.27565844103307874,
+        "rmse_mm": 0.6597997604291391,
+        "coverage": 0.875,
+        "edge_rmse_mm": 0.9237215640658172,
+        "edge_excess_m3": 5.929998692525621e-06,
+        "roughness_mm": 0.25009903187187965,
+        "edge_coverage": 0.7549019607843137,
+        "p95_error_mm": 1.6895716648003005,
+        "excess_ml": 5.929998692525621,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.24134444309986713,
+        "rmse_mm": 0.5500899685611919,
+        "coverage": 0.864375,
+        "edge_rmse_mm": 0.7432045709230782,
+        "edge_excess_m3": 2.800464196597198e-06,
+        "roughness_mm": 0.3139311098078999,
+        "edge_coverage": 0.7683823529411765,
+        "p95_error_mm": 1.32100191095525,
+        "excess_ml": 2.8004641965971975,
+        "damage_fraction_initial_good": 0.04857142857142857,
+        "blade_ml": 0.7901536956789058,
+        "supplied_ml": 0.0,
+        "dropped_ml": 1.620434635248895,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -3.1763735522036263e-15
+      },
+      "excess_reduction_fraction": 0.5277462370899,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 6,
+      "scene": {
+        "index": 6,
+        "seed": 270006,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0015535160591140416,
+        "width_m": 0.009014733886026556,
+        "share": 0.6304396075902614,
+        "center": [
+          0.0,
+          0.16721650354376372
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.12,
+      "pitch_deg": 4,
+      "force_N": 0.5,
+      "phi": -4.71238898038469,
+      "start": [
+        0.06,
+        0.1322165035437637
+      ],
+      "end": [
+        -0.06,
+        0.1322165035437637
+      ],
+      "contact_samples": 97,
+      "before": {
+        "J": 0.18169926140376702,
+        "rmse_mm": 0.438487376483427,
+        "coverage": 0.875,
+        "edge_rmse_mm": 0.6097297490354155,
+        "edge_excess_m3": 3.395425503453604e-06,
+        "roughness_mm": 0.11646665353146804,
+        "edge_coverage": 0.7549019607843137,
+        "p95_error_mm": 1.3106722753754192,
+        "excess_ml": 3.395425503453604,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.18049425784897752,
+        "rmse_mm": 0.40948938738089263,
+        "coverage": 0.888125,
+        "edge_rmse_mm": 0.563498230925556,
+        "edge_excess_m3": 2.640699328514766e-06,
+        "roughness_mm": 0.20425048823753883,
+        "edge_coverage": 0.7928921568627451,
+        "p95_error_mm": 1.0737434567610162,
+        "excess_ml": 2.6510841880298277,
+        "damage_fraction_initial_good": 0.012142857142857143,
+        "blade_ml": 1.5563157730444241,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 3.8116482626443515e-15
+      },
+      "excess_reduction_fraction": 0.21921886216224776,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 7,
+      "scene": {
+        "index": 7,
+        "seed": 270007,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0029476211233470935,
+        "width_m": 0.00962724466661709,
+        "share": 0.6024206960424638,
+        "center": [
+          0.0,
+          0.33259360975210506
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 35,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.3675936097521051
+      ],
+      "end": [
+        0.1,
+        0.3675936097521051
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.3497721121307419,
+        "rmse_mm": 0.8590631063412619,
+        "coverage": 0.825,
+        "edge_rmse_mm": 1.1905210934763113,
+        "edge_excess_m3": 9.533726228922429e-06,
+        "roughness_mm": 0.2120671517000051,
+        "edge_coverage": 0.6911764705882353,
+        "p95_error_mm": 2.5639308170954505,
+        "excess_ml": 9.78742649506024,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.20548669779129242,
+        "rmse_mm": 0.5203172623827921,
+        "coverage": 0.874375,
+        "edge_rmse_mm": 0.6897265569257213,
+        "edge_excess_m3": 6.580245271463349e-07,
+        "roughness_mm": 0.20614829947273686,
+        "edge_coverage": 0.7879901960784313,
+        "p95_error_mm": 1.3735105975323005,
+        "excess_ml": 0.6580245271463349,
+        "damage_fraction_initial_good": 0.01893939393939394,
+        "blade_ml": 4.4301377809585265,
+        "supplied_ml": 0.0,
+        "dropped_ml": 6.4197431301938614,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -1.1011428314305904e-14
+      },
+      "excess_reduction_fraction": 0.9327683812002632,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 8,
+      "scene": {
+        "index": 8,
+        "seed": 270008,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.002602018306448962,
+        "width_m": 0.007057545969806142,
+        "share": 0.8447009627611889,
+        "center": [
+          -0.08680226417638402,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 15,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        -0.12180226417638403,
+        0.35
+      ],
+      "end": [
+        -0.12180226417638403,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.26787122151730025,
+        "rmse_mm": 0.6497946851713927,
+        "coverage": 0.875,
+        "edge_rmse_mm": 0.9098216186365237,
+        "edge_excess_m3": 6.044987376556156e-06,
+        "roughness_mm": 0.21463759054517742,
+        "edge_coverage": 0.7549019607843137,
+        "p95_error_mm": 1.8924846704873755,
+        "excess_ml": 6.044987376556157,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.2357043559246192,
+        "rmse_mm": 0.5375075655568256,
+        "coverage": 0.858125,
+        "edge_rmse_mm": 0.7240450751694489,
+        "edge_excess_m3": 2.7271084320272997e-06,
+        "roughness_mm": 0.29515053088582416,
+        "edge_coverage": 0.7561274509803921,
+        "p95_error_mm": 1.3707972653796117,
+        "excess_ml": 2.7271084320272996,
+        "damage_fraction_initial_good": 0.04857142857142857,
+        "blade_ml": 0.9650292488235404,
+        "supplied_ml": 0.0,
+        "dropped_ml": 1.5848719648048848,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -1.0587911840678754e-14
+      },
+      "excess_reduction_fraction": 0.548864495134655,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 9,
+      "scene": {
+        "index": 9,
+        "seed": 270009,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0027582393488301987,
+        "width_m": 0.008419384918050235,
+        "share": 0.6486332161790903,
+        "center": [
+          0.09110684350157522,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 8,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        0.12610684350157522,
+        0.35
+      ],
+      "end": [
+        0.12610684350157522,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.2889892333070131,
+        "rmse_mm": 0.7297838345443196,
+        "coverage": 0.875,
+        "edge_rmse_mm": 1.0218513098524298,
+        "edge_excess_m3": 7.187514952732283e-06,
+        "roughness_mm": 0.17274559875933668,
+        "edge_coverage": 0.7549019607843137,
+        "p95_error_mm": 2.0898577862006364,
+        "excess_ml": 7.1875149527322835,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.2672671757102374,
+        "rmse_mm": 0.6460435986279265,
+        "coverage": 0.88,
+        "edge_rmse_mm": 0.9014671058213458,
+        "edge_excess_m3": 5.134224452548239e-06,
+        "roughness_mm": 0.24892066760481163,
+        "edge_coverage": 0.7708333333333334,
+        "p95_error_mm": 1.7536938521470102,
+        "excess_ml": 5.135759259276602,
+        "damage_fraction_initial_good": 0.017857142857142856,
+        "blade_ml": 1.1867792533241486,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 3.5998900258307764e-15
+      },
+      "excess_reduction_fraction": 0.2854610678306444,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 10,
+      "scene": {
+        "index": 10,
+        "seed": 270010,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0032242714678565173,
+        "width_m": 0.007376318883950987,
+        "share": 0.897637396276857,
+        "center": [
+          0.0,
+          0.1658951732618596
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 25,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.1308951732618596
+      ],
+      "end": [
+        0.1,
+        0.1308951732618596
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.3403656046378184,
+        "rmse_mm": 0.8240525752581824,
+        "coverage": 0.85,
+        "edge_rmse_mm": 1.1529009870286413,
+        "edge_excess_m3": 8.450848393730699e-06,
+        "roughness_mm": 0.2693221605402697,
+        "edge_coverage": 0.7058823529411765,
+        "p95_error_mm": 2.19643452264115,
+        "excess_ml": 8.450848393730698,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.19185838644222572,
+        "rmse_mm": 0.45995305108967305,
+        "coverage": 0.870625,
+        "edge_rmse_mm": 0.6158359754304894,
+        "edge_excess_m3": 8.559684542906109e-07,
+        "roughness_mm": 0.21506592259379437,
+        "edge_coverage": 0.8149509803921569,
+        "p95_error_mm": 0.9156526019122226,
+        "excess_ml": 0.855968454290611,
+        "damage_fraction_initial_good": 0.058823529411764705,
+        "blade_ml": 0.8431928965649041,
+        "supplied_ml": 0.0,
+        "dropped_ml": 6.350473540142278,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -8.470329472543003e-16
+      },
+      "excess_reduction_fraction": 0.8987121275390982,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 11,
+      "scene": {
+        "index": 11,
+        "seed": 270011,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.002304314773050327,
+        "width_m": 0.01108818464631386,
+        "share": 0.7502485694433572,
+        "center": [
+          0.0,
+          0.3365773329935982
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 15,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.3715773329935982
+      ],
+      "end": [
+        0.1,
+        0.3715773329935982
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.2878717833720804,
+        "rmse_mm": 0.7074632187702551,
+        "coverage": 0.825,
+        "edge_rmse_mm": 0.9849393093140332,
+        "edge_excess_m3": 7.551339395911808e-06,
+        "roughness_mm": 0.1366406162285772,
+        "edge_coverage": 0.6911764705882353,
+        "p95_error_mm": 2.00575090569909,
+        "excess_ml": 7.568495200037472,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.23068939002303152,
+        "rmse_mm": 0.5525690740610255,
+        "coverage": 0.859375,
+        "edge_rmse_mm": 0.7708373467846965,
+        "edge_excess_m3": 3.830825505305767e-06,
+        "roughness_mm": 0.190075846243265,
+        "edge_coverage": 0.7267156862745098,
+        "p95_error_mm": 1.5367342376708988,
+        "excess_ml": 3.832180919171824,
+        "damage_fraction_initial_good": 0.006818181818181818,
+        "blade_ml": 1.3387681329336634,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.8250901768809438,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 1.2281977735187355e-14
+      },
+      "excess_reduction_fraction": 0.49366673058696653,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 12,
+      "scene": {
+        "index": 12,
+        "seed": 270012,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0026648850076604275,
+        "width_m": 0.0063210548658758775,
+        "share": 0.8481613690673726,
+        "center": [
+          -0.08907482463975966,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 8,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        -0.12407482463975966,
+        0.35
+      ],
+      "end": [
+        -0.12407482463975966,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.25627386316581546,
+        "rmse_mm": 0.6291557691529976,
+        "coverage": 0.9,
+        "edge_rmse_mm": 0.8809930841952442,
+        "edge_excess_m3": 5.5321806293646046e-06,
+        "roughness_mm": 0.22308193333784926,
+        "edge_coverage": 0.803921568627451,
+        "p95_error_mm": 1.5889552625143022,
+        "excess_ml": 5.532180629364604,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.23924532894891448,
+        "rmse_mm": 0.5627670013454854,
+        "coverage": 0.899375,
+        "edge_rmse_mm": 0.7840316028339623,
+        "edge_excess_m3": 3.9121788200161015e-06,
+        "roughness_mm": 0.2794607206399279,
+        "edge_coverage": 0.8088235294117647,
+        "p95_error_mm": 1.2823676438339406,
+        "excess_ml": 3.9121788200161016,
+        "damage_fraction_initial_good": 0.021527777777777778,
+        "blade_ml": 0.49800879643309764,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 1.514071393217062e-14
+      },
+      "excess_reduction_fraction": 0.2928324141749087,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 13,
+      "scene": {
+        "index": 13,
+        "seed": 270013,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0031659744400195132,
+        "width_m": 0.011944214990552416,
+        "share": 0.6005222559280415,
+        "center": [
+          0.09103139544807269,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 25,
+      "force_N": 0.5,
+      "phi": 0.0,
+      "start": [
+        0.12603139544807268,
+        0.15
+      ],
+      "end": [
+        0.12603139544807268,
+        0.35
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.3708989087534874,
+        "rmse_mm": 0.9549233061619112,
+        "coverage": 0.85,
+        "edge_rmse_mm": 1.3340236039169497,
+        "edge_excess_m3": 1.097670080069566e-05,
+        "roughness_mm": 0.1593502319192624,
+        "edge_coverage": 0.7058823529411765,
+        "p95_error_mm": 2.748951638866209,
+        "excess_ml": 10.976700800695658,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.2155105520054576,
+        "rmse_mm": 0.5233891198891821,
+        "coverage": 0.870625,
+        "edge_rmse_mm": 0.6934834735166591,
+        "edge_excess_m3": 4.409131529186434e-07,
+        "roughness_mm": 0.2677188828782858,
+        "edge_coverage": 0.7659313725490197,
+        "p95_error_mm": 1.5765304243446328,
+        "excess_ml": 0.44091315291864336,
+        "damage_fraction_initial_good": 0.019852941176470587,
+        "blade_ml": 2.880598213038458,
+        "supplied_ml": 0.0,
+        "dropped_ml": 11.196246277747463,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -6.776263578034403e-15
+      },
+      "excess_reduction_fraction": 0.9598319056951339,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 14,
+      "scene": {
+        "index": 14,
+        "seed": 270014,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0030627497679970336,
+        "width_m": 0.006117770680148033,
+        "share": 0.7201043177133135,
+        "center": [
+          0.0,
+          0.16101181642262388
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 25,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.12601181642262388
+      ],
+      "end": [
+        0.1,
+        0.12601181642262388
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.2948391233192015,
+        "rmse_mm": 0.7118792628212169,
+        "coverage": 0.875,
+        "edge_rmse_mm": 0.9968296446761249,
+        "edge_excess_m3": 6.505048914054594e-06,
+        "roughness_mm": 0.26305765613901877,
+        "edge_coverage": 0.7549019607843137,
+        "p95_error_mm": 1.7879217428436083,
+        "excess_ml": 6.505048914054594,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.1790823793769175,
+        "rmse_mm": 0.4340295022381715,
+        "coverage": 0.875625,
+        "edge_rmse_mm": 0.5868415986021345,
+        "edge_excess_m3": 4.2740648819447475e-07,
+        "roughness_mm": 0.19231631198606944,
+        "edge_coverage": 0.7904411764705882,
+        "p95_error_mm": 0.9745494644307664,
+        "excess_ml": 0.42740648819447474,
+        "damage_fraction_initial_good": 0.05714285714285714,
+        "blade_ml": 2.0183026819310745,
+        "supplied_ml": 0.0,
+        "dropped_ml": 5.306110097402789,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -2.456395547037471e-14
+      },
+      "excess_reduction_fraction": 0.9342961914904231,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 15,
+      "scene": {
+        "index": 15,
+        "seed": 270015,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.001963781861466638,
+        "width_m": 0.011075850077307929,
+        "share": 0.8079632593889878,
+        "center": [
+          0.0,
+          0.33510963374562847
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 15,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.37010963374562844
+      ],
+      "end": [
+        0.1,
+        0.37010963374562844
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.2506841154884869,
+        "rmse_mm": 0.6070351197839213,
+        "coverage": 0.825,
+        "edge_rmse_mm": 0.8423946708018544,
+        "edge_excess_m3": 6.045389002096282e-06,
+        "roughness_mm": 0.12109123720043441,
+        "edge_coverage": 0.6911764705882353,
+        "p95_error_mm": 1.5887694703861746,
+        "excess_ml": 6.083791205981561,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.20862460261020582,
+        "rmse_mm": 0.49289713570045895,
+        "coverage": 0.86375,
+        "edge_rmse_mm": 0.6860342986455442,
+        "edge_excess_m3": 2.9893273581762102e-06,
+        "roughness_mm": 0.18564285519760423,
+        "edge_coverage": 0.7365196078431373,
+        "p95_error_mm": 1.4210779853636357,
+        "excess_ml": 2.993864731441154,
+        "damage_fraction_initial_good": 0.006818181818181818,
+        "blade_ml": 1.0305228298530984,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.43093707586484187,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 1.1699642583950023e-14
+      },
+      "excess_reduction_fraction": 0.5078948915114645,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 16,
+      "scene": {
+        "index": 16,
+        "seed": 270016,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0028789173798079307,
+        "width_m": 0.01093782834337502,
+        "share": 0.7574718432155884,
+        "center": [
+          -0.08806007053499458,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 25,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        -0.12306007053499458,
+        0.35
+      ],
+      "end": [
+        -0.12306007053499458,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.34309404204082233,
+        "rmse_mm": 0.8699281112541953,
+        "coverage": 0.85,
+        "edge_rmse_mm": 1.2141803707072096,
+        "edge_excess_m3": 9.893123513885455e-06,
+        "roughness_mm": 0.16543340438262136,
+        "edge_coverage": 0.7058823529411765,
+        "p95_error_mm": 2.5360457499075015,
+        "excess_ml": 9.893123513885454,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.22008820698084675,
+        "rmse_mm": 0.5336920537093468,
+        "coverage": 0.870625,
+        "edge_rmse_mm": 0.701234172057783,
+        "edge_excess_m3": 5.107393311409834e-07,
+        "roughness_mm": 0.28105509059647754,
+        "edge_coverage": 0.7769607843137255,
+        "p95_error_mm": 1.5545721435546875,
+        "excess_ml": 0.5107393311409835,
+        "damage_fraction_initial_good": 0.026470588235294117,
+        "blade_ml": 1.831979542177922,
+        "supplied_ml": 0.0,
+        "dropped_ml": 10.61974938014805,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -1.0164395367051604e-14
+      },
+      "excess_reduction_fraction": 0.9483743096480967,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 17,
+      "scene": {
+        "index": 17,
+        "seed": 270017,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0026649806928349005,
+        "width_m": 0.006653842360355356,
+        "share": 0.7630878048119636,
+        "center": [
+          0.08955595831003539,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 8,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        0.1245559583100354,
+        0.35
+      ],
+      "end": [
+        0.1245559583100354,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.2647507036612481,
+        "rmse_mm": 0.6439253979796709,
+        "coverage": 0.875,
+        "edge_rmse_mm": 0.9016736165080228,
+        "edge_excess_m3": 5.7989474548548986e-06,
+        "roughness_mm": 0.2111658170199946,
+        "edge_coverage": 0.7549019607843137,
+        "p95_error_mm": 1.5637078886287101,
+        "excess_ml": 5.798947454854899,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.24318737557406844,
+        "rmse_mm": 0.5759507953671441,
+        "coverage": 0.896875,
+        "edge_rmse_mm": 0.8025982069918621,
+        "edge_excess_m3": 4.099488094969313e-06,
+        "roughness_mm": 0.2722552544122345,
+        "edge_coverage": 0.803921568627451,
+        "p95_error_mm": 1.4476467603007173,
+        "excess_ml": 4.099488094969312,
+        "damage_fraction_initial_good": 0.015714285714285715,
+        "blade_ml": 0.7774364883434141,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 3.3881317890172014e-15
+      },
+      "excess_reduction_fraction": 0.2930634176487999,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 18,
+      "scene": {
+        "index": 18,
+        "seed": 270018,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0019443667693287096,
+        "width_m": 0.008068927253072268,
+        "share": 0.7068259297093531,
+        "center": [
+          0.0,
+          0.16526141209799652
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 15,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.13026141209799652
+      ],
+      "end": [
+        0.1,
+        0.13026141209799652
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.21953136067285595,
+        "rmse_mm": 0.5191985234051666,
+        "coverage": 0.85,
+        "edge_rmse_mm": 0.7260474457087059,
+        "edge_excess_m3": 4.401411905067223e-06,
+        "roughness_mm": 0.1524345078368135,
+        "edge_coverage": 0.7058823529411765,
+        "p95_error_mm": 1.326914849921861,
+        "excess_ml": 4.401411905067223,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.19565769948406547,
+        "rmse_mm": 0.46145494486934435,
+        "coverage": 0.8775,
+        "edge_rmse_mm": 0.6393217824107228,
+        "edge_excess_m3": 2.0376010386830587e-06,
+        "roughness_mm": 0.2034406614887706,
+        "edge_coverage": 0.7683823529411765,
+        "p95_error_mm": 1.27912075423163,
+        "excess_ml": 2.0376010386830585,
+        "damage_fraction_initial_good": 0.019852941176470587,
+        "blade_ml": 1.5748005922523027,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.6290213572112902,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -3.3881317890172014e-15
+      },
+      "excess_reduction_fraction": 0.5370574073430335,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 19,
+      "scene": {
+        "index": 19,
+        "seed": 270019,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0027782728780094464,
+        "width_m": 0.010064347046664377,
+        "share": 0.8825015123112143,
+        "center": [
+          0.0,
+          0.33256410428233524
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 25,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.3675641042823352
+      ],
+      "end": [
+        0.1,
+        0.3675641042823352
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.33607863408095556,
+        "rmse_mm": 0.8271655717434875,
+        "coverage": 0.825,
+        "edge_rmse_mm": 1.1436070953555348,
+        "edge_excess_m3": 9.126966886017718e-06,
+        "roughness_mm": 0.19392042311758234,
+        "edge_coverage": 0.6911764705882353,
+        "p95_error_mm": 2.4486956462162306,
+        "excess_ml": 9.411402603841585,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.1753650260091777,
+        "rmse_mm": 0.42682790201585347,
+        "coverage": 0.89875,
+        "edge_rmse_mm": 0.5790101125640086,
+        "edge_excess_m3": 7.365365755276454e-07,
+        "roughness_mm": 0.2032131626220793,
+        "edge_coverage": 0.8468137254901961,
+        "p95_error_mm": 0.7052960426994928,
+        "excess_ml": 0.7365365755276453,
+        "damage_fraction_initial_good": 0.02803030303030303,
+        "blade_ml": 0.9683097885925752,
+        "supplied_ml": 0.0,
+        "dropped_ml": 6.866793206009262,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -2.117582368135751e-14
+      },
+      "excess_reduction_fraction": 0.9217399779256066,
+      "material_gate": false,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 20,
+      "scene": {
+        "index": 20,
+        "seed": 270020,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0023432440414571654,
+        "width_m": 0.011320680866351438,
+        "share": 0.7962429533282318,
+        "center": [
+          -0.08583599712293084,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 15,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        -0.12083599712293085,
+        0.35
+      ],
+      "end": [
+        -0.12083599712293085,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.2955162225666079,
+        "rmse_mm": 0.728719317316191,
+        "coverage": 0.825,
+        "edge_rmse_mm": 1.0121691596454399,
+        "edge_excess_m3": 7.907328676225382e-06,
+        "roughness_mm": 0.13946898463322113,
+        "edge_coverage": 0.6911764705882353,
+        "p95_error_mm": 1.984140707598519,
+        "excess_ml": 7.999155628027871,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.251205299695275,
+        "rmse_mm": 0.5801415204122661,
+        "coverage": 0.86125,
+        "edge_rmse_mm": 0.7902728802824234,
+        "edge_excess_m3": 3.824243430479631e-06,
+        "roughness_mm": 0.2889804340718821,
+        "edge_coverage": 0.7622549019607843,
+        "p95_error_mm": 1.4992719772529661,
+        "excess_ml": 3.867662495530938,
+        "damage_fraction_initial_good": 0.016666666666666666,
+        "blade_ml": 1.381448953584206,
+        "supplied_ml": 0.0,
+        "dropped_ml": 1.0294165232224781,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 5.293955920339377e-15
+      },
+      "excess_reduction_fraction": 0.51649115539405,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 21,
+      "scene": {
+        "index": 21,
+        "seed": 270021,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0017810424957800147,
+        "width_m": 0.008015343569158272,
+        "share": 0.6160790017315086,
+        "center": [
+          0.08967376619921606,
+          0.25
+        ],
+        "direction": [
+          0.0,
+          1.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": -1,
+      "length_m": 0.2,
+      "pitch_deg": 8,
+      "force_N": 0.5,
+      "phi": -3.141592653589793,
+      "start": [
+        0.12467376619921607,
+        0.35
+      ],
+      "end": [
+        0.12467376619921607,
+        0.15
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.192719614006768,
+        "rmse_mm": 0.4675614827144967,
+        "coverage": 0.875,
+        "edge_rmse_mm": 0.6546767244764626,
+        "edge_excess_m3": 3.7514579670387082e-06,
+        "roughness_mm": 0.12217062848752286,
+        "edge_coverage": 0.7549019607843137,
+        "p95_error_mm": 1.217274488757493,
+        "excess_ml": 3.751457967038708,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.18050456164948028,
+        "rmse_mm": 0.4189037011127387,
+        "coverage": 0.893125,
+        "edge_rmse_mm": 0.5816091038836193,
+        "edge_excess_m3": 2.3632076717389275e-06,
+        "roughness_mm": 0.19629888396778247,
+        "edge_coverage": 0.7965686274509803,
+        "p95_error_mm": 1.1472832363162118,
+        "excess_ml": 2.364724469043081,
+        "damage_fraction_initial_good": 0.017142857142857144,
+        "blade_ml": 1.1433805610125145,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -1.6517142471458857e-14
+      },
+      "excess_reduction_fraction": 0.3696518820628754,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 22,
+      "scene": {
+        "index": 22,
+        "seed": 270022,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0018319550254313759,
+        "width_m": 0.010426465080307626,
+        "share": 0.6583037150269444,
+        "center": [
+          0.0,
+          0.16322261382370637
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 15,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.12822261382370637
+      ],
+      "end": [
+        0.1,
+        0.12822261382370637
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.22428383463411636,
+        "rmse_mm": 0.5474047955506173,
+        "coverage": 0.85,
+        "edge_rmse_mm": 0.7636917059982866,
+        "edge_excess_m3": 5.11750445044865e-06,
+        "roughness_mm": 0.11326393402971617,
+        "edge_coverage": 0.7058823529411765,
+        "p95_error_mm": 1.5812151128866423,
+        "excess_ml": 5.11750445044865,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.2005648638273913,
+        "rmse_mm": 0.47414353938240517,
+        "coverage": 0.87,
+        "edge_rmse_mm": 0.6576578291170553,
+        "edge_excess_m3": 2.414774447283141e-06,
+        "roughness_mm": 0.19199801850444254,
+        "edge_coverage": 0.7512254901960784,
+        "p95_error_mm": 1.3583078114879008,
+        "excess_ml": 2.414774447283141,
+        "damage_fraction_initial_good": 0.01838235294117647,
+        "blade_ml": 1.8363823608095786,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.4363538230168532,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 1.3817224952085774e-14
+      },
+      "excess_reduction_fraction": 0.5281343727856576,
+      "material_gate": true,
+      "inside_buffer": true
+    },
+    {
+      "scene_index": 23,
+      "scene": {
+        "index": 23,
+        "seed": 270023,
+        "kind": "edge_ridge",
+        "amplitude_m": 0.0026069021057909354,
+        "width_m": 0.010711272074116325,
+        "share": 0.768849138057159,
+        "center": [
+          0.0,
+          0.33662531538048446
+        ],
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      "offset_m": 0.035,
+      "reverse": 1,
+      "length_m": 0.2,
+      "pitch_deg": 25,
+      "force_N": 0.5,
+      "phi": -1.5707963267948966,
+      "start": [
+        -0.1,
+        0.3716253153804845
+      ],
+      "end": [
+        0.1,
+        0.3716253153804845
+      ],
+      "contact_samples": 161,
+      "before": {
+        "J": 0.3190932823976149,
+        "rmse_mm": 0.7885885326066135,
+        "coverage": 0.825,
+        "edge_rmse_mm": 1.099146921069228,
+        "edge_excess_m3": 8.733732282998222e-06,
+        "roughness_mm": 0.1585400035715734,
+        "edge_coverage": 0.6911764705882353,
+        "p95_error_mm": 2.251760896371462,
+        "excess_ml": 8.754353761721672,
+        "damage_fraction_initial_good": 0.0,
+        "blade_ml": 0.0,
+        "supplied_ml": 0.0,
+        "dropped_ml": 0.0,
+        "outside_ml": 0.0,
+        "ledger_error_ml": 0.0
+      },
+      "after": {
+        "J": 0.16532219266970208,
+        "rmse_mm": 0.4055846258257663,
+        "coverage": 0.895625,
+        "edge_rmse_mm": 0.5441097741890919,
+        "edge_excess_m3": 4.931636005038752e-07,
+        "roughness_mm": 0.18256946602991483,
+        "edge_coverage": 0.8541666666666666,
+        "p95_error_mm": 0.7663846382560359,
+        "excess_ml": 0.4931636005038752,
+        "damage_fraction_initial_good": 0.030303030303030304,
+        "blade_ml": 1.904923600835641,
+        "supplied_ml": 0.0,
+        "dropped_ml": 6.423268032625055,
+        "outside_ml": 0.0,
+        "ledger_error_ml": -2.541098841762901e-15
+      },
+      "excess_reduction_fraction": 0.9436664756843357,
+      "material_gate": false,
+      "inside_buffer": true
+    }
+  ],
+  "elapsed_s": 41.431400100002065,
+  "note": "expanded diagnostic, not a replacement of the failed frozen P0 gate"
+}

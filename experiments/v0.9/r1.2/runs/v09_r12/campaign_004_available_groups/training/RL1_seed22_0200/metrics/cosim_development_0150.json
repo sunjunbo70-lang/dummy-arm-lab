@@ -1,0 +1,84 @@
+{
+  "episodes": [
+    {
+      "seed": 60080,
+      "task": "edge_ridge",
+      "backend": "cosim",
+      "return": -51.23345188819985,
+      "decisions": 54,
+      "end_reason": "give_up",
+      "invalid_fraction": 0.0,
+      "final": {
+        "coverage": 0.5825,
+        "mean_thickness_mm": 2.761428515611544,
+        "rmse_mm": 2.141870626468537,
+        "p95_error_mm": 3.904510229588227,
+        "under_frac": 0.095,
+        "over_frac": 0.3225,
+        "roughness_mm": 2.0411791788902343,
+        "blade_load_ml": 16.923256309921815,
+        "waste_frac": 0.32371565030719734,
+        "edge_coverage": 0.6176470588235294,
+        "edge_bare_frac": 0.0012254901960784314,
+        "score_side_m": 0.2,
+        "J": 1.04052448767705,
+        "edge_rmse_mm": 2.58520034313321,
+        "edge_excess_m3": 1.9324779256296467e-05,
+        "carry_loss_ml": 45.0776940111511,
+        "outside_ml": 0.0,
+        "volume_error_m3": -1.3552527156068805e-20
+      },
+      "best_J": 0.3447157664119064,
+      "initial_J": 0.3447157664119064,
+      "initial_material_parameters": {
+        "wall_share": 0.657787687437013
+      },
+      "max_tracking_mm": 8.49536802053892,
+      "face_down_frames": 0,
+      "contact_requests": 36,
+      "executed_contacts": 36
+    },
+    {
+      "seed": 60081,
+      "task": "corner",
+      "backend": "cosim",
+      "return": -48.46792318892916,
+      "decisions": 43,
+      "end_reason": "give_up",
+      "invalid_fraction": 0.06976744186046512,
+      "final": {
+        "coverage": 0.558125,
+        "mean_thickness_mm": 2.7860642141326557,
+        "rmse_mm": 1.9317972790826718,
+        "p95_error_mm": 3.6693982075604024,
+        "under_frac": 0.018125,
+        "over_frac": 0.42375,
+        "roughness_mm": 1.3518992080609304,
+        "blade_load_ml": 3.299353254368161,
+        "waste_frac": 0.3225352510471142,
+        "edge_coverage": 0.6421568627450981,
+        "edge_bare_frac": 0.0012254901960784314,
+        "score_side_m": 0.2,
+        "J": 0.8323796899789615,
+        "edge_rmse_mm": 1.969761490762289,
+        "edge_excess_m3": 1.4816946450084273e-05,
+        "carry_loss_ml": 33.57363721445208,
+        "outside_ml": 0.0,
+        "volume_error_m3": -2.710505431213761e-20
+      },
+      "best_J": 0.22421575364428753,
+      "initial_J": 0.22421575364428753,
+      "initial_material_parameters": {
+        "wall_share": 0.7051087225661766
+      },
+      "max_tracking_mm": 7.360086957935687,
+      "face_down_frames": 0,
+      "contact_requests": 31,
+      "executed_contacts": 28
+    }
+  ],
+  "mean_J": 0.9364520888280058,
+  "mean_coverage": 0.5703125,
+  "mean_edge_coverage": 0.6299019607843137,
+  "mean_rmse_mm": 2.0368339527756043
+}

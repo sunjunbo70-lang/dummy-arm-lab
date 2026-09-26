@@ -1,0 +1,6 @@
+{
+  "source": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\teacher_400_002",
+  "change": "Replace duplicate since_load scalar with command-history estimated inventory; no material truth read. All actions and measured map channels identical.",
+  "schema": "v09r12.measured-height.v3",
+  "episodes": 400
+}

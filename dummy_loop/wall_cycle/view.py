@@ -1,7 +1,7 @@
 """Whole-wall plastering replay on the REAL Dummy V2 MuJoCo model (not a stick figure).
 
     python -m dummy_loop.wall_cycle.view --policy <policy.npz> --seed 3
-    python -m dummy_loop.wall_cycle.view --record outputs/wall_cycle/replay/rollout.npz
+    python -m dummy_loop.wall_cycle.view --record experiments/00_initial_debug/runs/wall_cycle_unclassified/replay/rollout.npz
     python -m dummy_loop.wall_cycle.view --teacher technique --seed 3      # no policy needed
 
 Opens MuJoCo's own 3-D window: the Dummy V2 meshes, the J6 reducer + holder + trowel,
@@ -17,7 +17,7 @@ simulated (servos, torque limits, mortar reaction force), and the mortar on the 
 on the trowel face is the mortar model's state after that sample. Approach / lift poses
 are the planned ones; moves between them (to the scan pose, to the loading pose) are
 joint interpolation in free space, labelled "move", and are checked for wall clearance.
-Evidence level L1. Why this replaced the v0.2 web player: docs/changes/2026-09-22_wall_cycle_v0.3.md C11.
+Evidence level L1. Why this replaced the v0.2 web player: experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md C11.
 """
 import argparse
 import json
@@ -42,7 +42,7 @@ PHASE_TEXT = {
     'PRECONTACT': 'pre-contact waypoint', 'ROTATE_TO_WALL': 'rotate near wall',
     'SEPARATE': 'separate from wall', 'RECOVER_RETURN': 'recover / return',
     'FINISH': 'finish check', 'move': 'move',
-    'FEED_ALIGN_UP': 'align material face upward', 'FEED_SCOOP': 'load at face-up pose',
+    'FEED_TRANSIT': 'move to the loading pose', 'FEED_ALIGN_UP': 'align material face upward', 'FEED_SCOOP': 'load at face-up pose',
     'CARRY_FACE_UP': 'carry with measured face-up pose',
 }
 
@@ -74,6 +74,9 @@ def load_policy(env, path):
     return PPO(env.obs_dim, env.act_dim, PPOConfig(hidden=hidden)).load(path)
 
 
+MODES_ = ('DEPOSIT', 'REUSE', 'LEVEL', 'RESCAN', 'FINISH')   # env.MODES order, for progress lines
+
+
 def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique',
            max_deg_per_frame=2.0, initial_mix=False):
     """Run one episode with the arm executor and return display frames (numpy arrays)."""
@@ -84,9 +87,13 @@ def record(cfg: CycleConfig, seed=3, policy=None, teacher_style='technique',
     if policy is not None:
         agent = load_policy(env, policy)
     obs = env.reset(); done = False; total = 0.0
+    print('recording one full MuJoCo co-simulation episode (progress per stroke) ...', flush=True)
     while not done:
         a = env.teacher_action() if agent is None else agent.act(obs, deterministic=True)[0]
         obs, r, done, info = env.step(a); total += r
+        m = info['metrics']
+        print(f"  stroke {info['cycles']:3d}  {MODES_[env.last_mode]:<7s}  coverage {m['coverage']*100:5.1f} %  "
+              f"rmse {m['rmse_mm']:.2f} mm", flush=True)
 
     q_load = load_pose(ex)
     keys = []           # (phase, q, wall, blade_ml, metrics, pitch, cycle, action)
@@ -319,24 +326,36 @@ def text_lines(z, i, speed, paused):
     return left, right
 
 
-def play(path: Path):
+SPEED_LEVELS = (0.25, 0.5, 1.0, 2.0, 3.0, 5.0, 10.0)
+FRAME_DT_S = 0.05     # recorded frames are shown at 20 fps at 1x
+
+
+def play(path: Path, speed=1.0):
     import mujoco.viewer
     cfg, z = load(path)
     st = Stage(cfg)
-    state = {'i': 0, 'paused': False, 'speed': 1.0, 'step': 0}
+    speed = float(min(SPEED_LEVELS, key=lambda s: abs(s - speed)))
+    # 'pos' is a fractional frame index advanced by wall-clock time, so N x speed really is
+    # N x even when drawing one frame takes longer than 50 ms (frames are skipped, not slowed).
+    state = {'i': 0, 'pos': 0.0, 'paused': False, 'speed': speed, 'step': 0}
+
+    def shift_speed(d):
+        k = SPEED_LEVELS.index(state['speed']) + d
+        state['speed'] = SPEED_LEVELS[int(np.clip(k, 0, len(SPEED_LEVELS) - 1))]
 
     def key(k):
         if k == 32: state['paused'] = not state['paused']
         elif k == 262: state['step'] = 1
         elif k == 263: state['step'] = -1
-        elif k == 93: state['speed'] = min(state['speed'] * 2, 8)
-        elif k == 91: state['speed'] = max(state['speed'] / 2, 0.125)
-        elif k == 82: state['i'] = 0
+        elif k == 93: shift_speed(+1)
+        elif k == 91: shift_speed(-1)
+        elif k == 82: state['i'] = 0; state['pos'] = 0.0
 
     with mujoco.viewer.launch_passive(st.model, st.data, key_callback=key,
                                       show_left_ui=False, show_right_ui=False) as v:
         st.camera(v.cam)
         n = len(z['q'])
+        last = time.monotonic()
         while v.is_running():
             t0 = time.monotonic()
             i = state['i']
@@ -350,17 +369,25 @@ def play(path: Path):
             left, right = text_lines(z, i, state['speed'], state['paused'])
             v.set_texts([(mujoco.mjtFontScale.mjFONTSCALE_150, mujoco.mjtGridPos.mjGRID_TOPLEFT, left, right),
                          (None, mujoco.mjtGridPos.mjGRID_BOTTOMLEFT,
-                          'space pause   <- -> step   [ ] speed   R restart', 'L1 simulation, not hardware')])
+                          'space pause   <- -> step   [ slower  ] faster (0.25x-10x)   R restart',
+                          'L1 simulation, not hardware')])
             vp = v.viewport
             if vp is not None and vp.width > 400:
                 s = 220
                 v.set_images((mujoco.MjrRect(vp.width - s - 10, 10, s, s), st.heatmap(z['wall_mm'][i].astype(float), s)))
             v.sync()
+            now = time.monotonic(); elapsed = now - last; last = now
             if state['step']:
                 state['i'] = int(np.clip(i + state['step'], 0, n - 1)); state['step'] = 0; state['paused'] = True
+                state['pos'] = float(state['i'])
             elif not state['paused']:
-                state['i'] = (i + 1) % n
-            time.sleep(max(0.0, 0.05 / state['speed'] - (time.monotonic() - t0)))
+                # at least one frame per redraw, otherwise as many as wall-clock time x speed asks for
+                state['pos'] = max(state['pos'] + elapsed * state['speed'] / FRAME_DT_S, state['i'] + 1.0)
+                if state['pos'] >= n: state['pos'] = 0.0
+                state['i'] = int(state['pos'])
+            else:
+                state['pos'] = float(i)
+            time.sleep(max(0.0, FRAME_DT_S / state['speed'] - (time.monotonic() - t0)))
 
 
 def render_png(path: Path, out: Path, indices, size=(960, 640)):
@@ -392,20 +419,23 @@ def main(argv=None):
                     help='run the hand-written teacher instead')
     ap.add_argument('--v05', action='store_true', help='use v0.5 lab tool, loading and transport physics')
     ap.add_argument('--v06', action='store_true', help='use v0.6 pose-derived loading and continuous trajectory')
+    ap.add_argument('--v08', action='store_true', help='v0.6 physics with the v0.8 recipe (recipes.py)')
     ap.add_argument('--seed', type=int, default=3)
-    ap.add_argument('--out', type=Path, default=Path('outputs/wall_cycle/replay'))
+    ap.add_argument('--out', type=Path, default=Path('experiments/00_initial_debug/runs/wall_cycle_unclassified/replay'))
     ap.add_argument('--no-window', action='store_true', help='only record (and write report.json)')
+    ap.add_argument('--speed', type=float, default=1.0,
+                    help='initial playback speed, snapped to 0.25/0.5/1/2/3/5/10x; [ and ] change it live')
     ap.add_argument('--mixed-initial', action='store_true',
                     help='use the same bare/partial initial-state distribution as evaluation')
     a = ap.parse_args(argv)
     path = a.record
     if path is None:
         from .area import load_work_area
-        if a.v06:
-            cfg=CycleConfig(physics='v0.6',tool_profile='lab_20260922',lift_wall_fraction=.75,
-                            base_steps=12000,max_steps=24000,extension_steps=2000,
-                            max_cycles=160,max_reload_cycles=60,stall_limit=1,
-                            stall_window=12,min_cycles_before_stall=25)
+        from .recipes import make_config
+        if a.v08:
+            cfg=make_config('v0.8')
+        elif a.v06:
+            cfg=make_config('v0.7')          # identical to the inline v0.6 config used before v0.8
         elif a.v05:
             cfg=CycleConfig(physics='v0.5',tool_profile='lab_20260922',lift_wall_fraction=.75)
         else:
@@ -416,7 +446,7 @@ def main(argv=None):
         path = save(frames, report, a.out)
         print(json.dumps({k: v for k, v in report.items() if k != 'config'}, ensure_ascii=False, indent=1))
     if not a.no_window:
-        play(path)
+        play(path, a.speed)
 
 
 if __name__ == '__main__':

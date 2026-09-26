@@ -1,0 +1,10 @@
+{
+  "no_edge_seed11": {
+    "common_full_J_mean": 1.1197296162870412,
+    "n": 60
+  },
+  "RL1_100_reference": {
+    "common_full_J_mean": 1.0441182415155112,
+    "n": 60
+  }
+}

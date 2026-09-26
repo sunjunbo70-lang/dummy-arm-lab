@@ -1,0 +1,26 @@
+{
+  "source": "55845c7b44d91a4a6fe63833cc91e54997796ff9",
+  "scenes": [
+    0,
+    4,
+    8,
+    12,
+    17,
+    21,
+    25,
+    29,
+    34,
+    38,
+    42,
+    47
+  ],
+  "spacings": [
+    0.000625,
+    0.0003125,
+    0.00015625,
+    7.8125e-05
+  ],
+  "variant": "stable_index",
+  "physics_changed": true,
+  "training_started": false
+}

@@ -1,0 +1,14 @@
+{
+  "args": {
+    "checkpoint": null,
+    "teacher": "T+",
+    "reach": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\reach_a1_001\\reach.npz",
+    "out": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_005_a0_log_recovery\\evaluation\\test_nominal_T+",
+    "seed": 80000,
+    "episodes": 60,
+    "backend": "nominal",
+    "workers": 8
+  },
+  "checkpoint_sha256": null,
+  "status": "completed"
+}

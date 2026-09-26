@@ -1,0 +1,9 @@
+{"step": 0, "seconds": 0.0018338999943807721, "ledger_error_ml": 0.0}
+{"step": 64, "seconds": 6.911336499993922, "ledger_error_ml": 1.3552527156068805e-14}
+{"step": 128, "seconds": 14.162253399990732, "ledger_error_ml": 0.0}
+{"step": 192, "seconds": 22.455746599996928, "ledger_error_ml": 1.3552527156068805e-14}
+{"step": 256, "seconds": 30.57691179998801, "ledger_error_ml": 1.3552527156068805e-14}
+{"step": 320, "seconds": 39.372724899993045, "ledger_error_ml": 0.0}
+{"step": 384, "seconds": 47.804330699989805, "ledger_error_ml": 1.3552527156068805e-14}
+{"step": 448, "seconds": 56.865329699998256, "ledger_error_ml": 0.0}
+{"step": 512, "seconds": 66.14413309999509, "ledger_error_ml": 0.0}

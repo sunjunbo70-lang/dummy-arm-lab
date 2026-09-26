@@ -1,0 +1,39 @@
+[
+  {
+    "id": "RL0_11_400",
+    "group": "RL0",
+    "seed": 11,
+    "stage": 400,
+    "out": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_005_a0_log_recovery\\training\\RL0_seed11_0400",
+    "status": "complete",
+    "argv": [
+      "D:\\VLA\\dummy_arm\\.venv-loop\\Scripts\\python.exe",
+      "-m",
+      "dummy_loop.wall_cycle_v09.train",
+      "--reach",
+      "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\reach_a1_001\\reach.npz",
+      "--demo",
+      "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\teacher_A0_400_002",
+      "--out",
+      "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_005_a0_log_recovery\\training\\RL0_seed11_0400",
+      "--workers",
+      "23",
+      "--updates",
+      "400",
+      "--seed",
+      "11",
+      "--mode",
+      "RL1",
+      "--lr",
+      "0.000003",
+      "--action-space",
+      "A0",
+      "--dagger",
+      "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\dagger_A0_40_round1_001",
+      "--resume",
+      "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL0_seed11_0400\\checkpoints\\0328.pt"
+    ],
+    "pid": 25840,
+    "started_utc": 1790289956.9996114
+  }
+]

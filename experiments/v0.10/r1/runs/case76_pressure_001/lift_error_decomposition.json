@@ -1,0 +1,17 @@
+{
+  "max_postlift_cell": [
+    51,
+    35
+  ],
+  "at_cell_mm": {
+    "prelift_wall": 3.745585572014203e-05,
+    "bead_deposition": 0.013440084771761271,
+    "blade_lift_residual": 0.0028505750582148177,
+    "postlift": 0.016328115685696233
+  },
+  "component_max_mm": {
+    "prelift_wall": 0.005407147891545767,
+    "bead_deposition": 0.0144801701035852,
+    "blade_lift_residual": 0.011045785886063319
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "level": "L1",
+  "tests": 5,
+  "passed": 5,
+  "backend": "synthetic IK/FK/collision callbacks",
+  "real_mujoco_gate": false,
+  "training_started": false
+}

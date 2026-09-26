@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "D:\VLA\dummy_arm\dummy_loop\wall_cycle_v09\preflight.py", line 23, in main
+    action=actions[k];t=time.perf_counter();o,r,done,info=e.step(action)
+                                                          ^^^^^^^^^^^^^^
+  File "D:\VLA\dummy_arm\dummy_loop\wall_cycle_v09\clean_env.py", line 53, in step
+    _,_,done,info=super().step(a)
+                  ^^^^^^^^^^^^^^^
+  File "D:\VLA\dummy_arm\dummy_loop\wall_cycle\env.py", line 551, in step
+    stats = self.executor.execute(plan, d, self.material, StrokeStats(), callback=work_frame)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\VLA\dummy_arm\dummy_loop\wall_cycle_v09\timed_arm.py", line 115, in execute
+    from .mortar import solve_gap
+ModuleNotFoundError: No module named 'dummy_loop.wall_cycle_v09.mortar'

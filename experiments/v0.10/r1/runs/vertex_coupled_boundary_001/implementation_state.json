@@ -1,0 +1,16 @@
+{
+  "status": "initial_pickup_fixed_vertex_interval_passed_full_combined_running",
+  "training_started": false,
+  "full_material_gate": false,
+  "component_tests": 76,
+  "active_audit_pid": 33596,
+  "active_diagnostic_pid": 40456,
+  "active_diagnostic_dir": "vertex_coupled_boundary_001",
+  "completed": [
+    "boundary_pressure_002",
+    "boundary_pressure_path_001",
+    "quadrature_trace_001",
+    "vertex_crossing_001"
+  ],
+  "next_action": "check full combined summary without duplicate launch; then broaden full pressure/lift numerical validation"
+}

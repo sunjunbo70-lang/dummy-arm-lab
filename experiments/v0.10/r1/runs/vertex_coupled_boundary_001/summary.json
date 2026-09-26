@@ -1,0 +1,35 @@
+{
+  "source_head": "5b4c92a8e293788518d56e62c5b6b62f72292a79",
+  "version": "v10r1.coupled_boundary_exchange.midpoint.v1",
+  "adaptive": true,
+  "rows": [
+    {
+      "status": "completed",
+      "steps": 128,
+      "seconds": 336.4878160999797,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_iterations": 6,
+      "geometric_area_correction_m2": 9.717648059029921e-14,
+      "endpoint_support_area_m2": 0.0,
+      "quadrature_nodes": 38293,
+      "case": "case13"
+    },
+    {
+      "status": "completed",
+      "steps": 256,
+      "seconds": 334.39536270001554,
+      "ledger_error_ml": 1.0842021724855044e-13,
+      "minimum_volume": 0.0,
+      "max_iterations": 5,
+      "geometric_area_correction_m2": 1.0098511067038696e-13,
+      "endpoint_support_area_m2": 0.0,
+      "quadrature_nodes": 37947,
+      "max_wall_difference_mm": 0.03012290645105713,
+      "case": "case13"
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false,
+  "scope": "finite blade boundary exchange, no pressure/bead/lift"
+}

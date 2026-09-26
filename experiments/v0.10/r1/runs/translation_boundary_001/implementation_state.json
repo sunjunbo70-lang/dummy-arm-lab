@@ -1,0 +1,7 @@
+{
+  "status": "translation_geometry_component_validated_not_full_physics",
+  "tests_passed": 49,
+  "training_started": false,
+  "existing_audit_pid": 33596,
+  "next_action": "rotating boundary time integration and transient pickup/exit inventories; cannot bypass rotations or full G0"
+}

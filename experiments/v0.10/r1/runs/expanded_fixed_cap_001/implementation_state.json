@@ -1,0 +1,14 @@
+{
+  "training_started": false,
+  "status": "expanded_material_audit_running",
+  "pid": 22620,
+  "physics_version": "v8_11_fixed_step_wall_cap",
+  "singles": 100,
+  "sequences": 50,
+  "steps": 100,
+  "workers": 8,
+  "old_audit_pid": 40668,
+  "monitor_pid": 13564,
+  "monitor_scope": "global resources and old audit process tree",
+  "full_material_gate": false
+}

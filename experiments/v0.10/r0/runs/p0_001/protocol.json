@@ -1,0 +1,29 @@
+{
+  "stage": "P0_nominal_counterfactual",
+  "source_head": "fce783df81d9cca389cc34df80bc4654e353bc92",
+  "seed_base": 270000,
+  "scenes": 60,
+  "loads_ml": [
+    0,
+    6,
+    12,
+    18
+  ],
+  "lengths_m": [
+    0.06,
+    0.12,
+    0.2
+  ],
+  "spacing_m": 0.0025,
+  "pitch_deg": 4,
+  "force_N": 2,
+  "workers": 8,
+  "gate": {
+    "fraction": 0.8,
+    "excess_reduction": 0.2,
+    "max_initial_good_damage": 0.02
+  },
+  "logging": "scalar per branch; initial/final arrays for representative branches only",
+  "status": "running",
+  "started_utc": 1790346622.4503417
+}

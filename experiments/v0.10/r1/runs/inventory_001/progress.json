@@ -1,0 +1,278 @@
+[
+  {
+    "seed": 0,
+    "samples": 51,
+    "seconds": 0.3446599999733735,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 1.4954141277105293e-16
+  },
+  {
+    "seed": 0,
+    "samples": 101,
+    "seconds": 0.3778399000002537,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 7.691032116678551e-16
+  },
+  {
+    "seed": 0,
+    "samples": 201,
+    "seconds": 0.7531457000004593,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 1.5125400311831386e-15,
+    "coarse_medium_max_mm": 0.13656218569832804,
+    "medium_fine_max_mm": 0.06777110598202643
+  },
+  {
+    "seed": 1,
+    "samples": 51,
+    "seconds": 0.21345589999691583,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 3.1400837448767117e-16
+  },
+  {
+    "seed": 1,
+    "samples": 101,
+    "seconds": 0.42678939999314025,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 1.391646159604267e-15
+  },
+  {
+    "seed": 1,
+    "samples": 201,
+    "seconds": 0.856374599999981,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 2.5884685437133626e-15,
+    "coarse_medium_max_mm": 0.16426767327111166,
+    "medium_fine_max_mm": 0.08240205469615958
+  },
+  {
+    "seed": 2,
+    "samples": 51,
+    "seconds": 0.18632770000840537,
+    "ledger_error_mL": 2.1684043449710089e-13,
+    "min_volume_m3": 5.835033583057936e-16
+  },
+  {
+    "seed": 2,
+    "samples": 101,
+    "seconds": 0.37491109999245964,
+    "ledger_error_mL": 2.1684043449710089e-13,
+    "min_volume_m3": 2.5519651286595467e-15
+  },
+  {
+    "seed": 2,
+    "samples": 201,
+    "seconds": 0.747810999979265,
+    "ledger_error_mL": 3.2526065174565133e-13,
+    "min_volume_m3": 4.7251015073248235e-15,
+    "coarse_medium_max_mm": 0.22896844698769986,
+    "medium_fine_max_mm": 0.1145400790148847
+  },
+  {
+    "seed": 3,
+    "samples": 51,
+    "seconds": 0.21743489999789745,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 2.384799526366534e-17
+  },
+  {
+    "seed": 3,
+    "samples": 101,
+    "seconds": 0.43339980000746436,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 1.5855057028975142e-16
+  },
+  {
+    "seed": 3,
+    "samples": 201,
+    "seconds": 0.8626219000143465,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 3.4578917723882876e-16,
+    "coarse_medium_max_mm": 0.43313354208694005,
+    "medium_fine_max_mm": 0.2115739240217268
+  },
+  {
+    "seed": 4,
+    "samples": 51,
+    "seconds": 0.2178859999985434,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 6.055128399743527e-15
+  },
+  {
+    "seed": 4,
+    "samples": 101,
+    "seconds": 0.43270080001093447,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 1.8347097460816778e-14
+  },
+  {
+    "seed": 4,
+    "samples": 201,
+    "seconds": 0.8691009000176564,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 2.937255594356915e-14,
+    "coarse_medium_max_mm": 0.07182233150494419,
+    "medium_fine_max_mm": 0.036779705169177196
+  },
+  {
+    "seed": 5,
+    "samples": 51,
+    "seconds": 0.22278449998702854,
+    "ledger_error_mL": 2.1684043449710089e-13,
+    "min_volume_m3": 2.2529613770629377e-14
+  },
+  {
+    "seed": 5,
+    "samples": 101,
+    "seconds": 0.4420782000233885,
+    "ledger_error_mL": 3.2526065174565133e-13,
+    "min_volume_m3": 5.2826156808261934e-14
+  },
+  {
+    "seed": 5,
+    "samples": 201,
+    "seconds": 0.8902506999729667,
+    "ledger_error_mL": 3.2526065174565133e-13,
+    "min_volume_m3": 7.682366327792285e-14,
+    "coarse_medium_max_mm": 0.021962034489724273,
+    "medium_fine_max_mm": 0.010378678066984628
+  },
+  {
+    "seed": 6,
+    "samples": 51,
+    "seconds": 0.19545430000289343,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 1.907682301663674e-16
+  },
+  {
+    "seed": 6,
+    "samples": 101,
+    "seconds": 0.38907489998382516,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 1.2020812807197448e-15
+  },
+  {
+    "seed": 6,
+    "samples": 201,
+    "seconds": 0.778520199994091,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 2.519248040860531e-15,
+    "coarse_medium_max_mm": 0.32451005685287315,
+    "medium_fine_max_mm": 0.1621703221904927
+  },
+  {
+    "seed": 7,
+    "samples": 51,
+    "seconds": 0.218680799996946,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 2.753946109917282e-15
+  },
+  {
+    "seed": 7,
+    "samples": 101,
+    "seconds": 0.4367930000007618,
+    "ledger_error_mL": 2.1684043449710089e-13,
+    "min_volume_m3": 8.891030676516652e-15
+  },
+  {
+    "seed": 7,
+    "samples": 201,
+    "seconds": 0.8730464999971446,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 1.4616251958629163e-14,
+    "coarse_medium_max_mm": 0.1097861493741907,
+    "medium_fine_max_mm": 0.055417390546007306
+  },
+  {
+    "seed": 8,
+    "samples": 51,
+    "seconds": 0.21763949998421595,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 4.2403345941975906e-16
+  },
+  {
+    "seed": 8,
+    "samples": 101,
+    "seconds": 0.437629799998831,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 1.9591156541359253e-15
+  },
+  {
+    "seed": 8,
+    "samples": 201,
+    "seconds": 0.8749517000105698,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 3.6866933293471996e-15,
+    "coarse_medium_max_mm": 0.2614498862648709,
+    "medium_fine_max_mm": 0.13147929339307404
+  },
+  {
+    "seed": 9,
+    "samples": 51,
+    "seconds": 0.20290569998905994,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 1.6411998517593963e-18
+  },
+  {
+    "seed": 9,
+    "samples": 101,
+    "seconds": 0.40253459999803454,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 2.0933979684999826e-17
+  },
+  {
+    "seed": 9,
+    "samples": 201,
+    "seconds": 0.8037068999838084,
+    "ledger_error_mL": 0.0,
+    "min_volume_m3": 5.693179569008337e-17,
+    "coarse_medium_max_mm": 0.4475961692764763,
+    "medium_fine_max_mm": 0.22531701155201894
+  },
+  {
+    "seed": 10,
+    "samples": 51,
+    "seconds": 0.22199520000140183,
+    "ledger_error_mL": 2.1684043449710089e-13,
+    "min_volume_m3": 3.62595894212118e-15
+  },
+  {
+    "seed": 10,
+    "samples": 101,
+    "seconds": 0.4549451000057161,
+    "ledger_error_mL": 1.0842021724855044e-13,
+    "min_volume_m3": 1.2274012402077582e-14
+  },
+  {
+    "seed": 10,
+    "samples": 201,
+    "seconds": 0.9036274999962188,
+    "ledger_error_mL": 2.1684043449710089e-13,
+    "min_volume_m3": 2.055931468680598e-14,
+    "coarse_medium_max_mm": 0.11632816760529137,
+    "medium_fine_max_mm": 0.058253288131139905
+  },
+  {
+    "seed": 11,
+    "samples": 51,
+    "seconds": 0.21668130002217367,
+    "ledger_error_mL": 2.1684043449710089e-13,
+    "min_volume_m3": 3.0287264778439436e-16
+  },
+  {
+    "seed": 11,
+    "samples": 101,
+    "seconds": 0.43381229997612536,
+    "ledger_error_mL": 3.2526065174565133e-13,
+    "min_volume_m3": 1.5742054700049409e-15
+  },
+  {
+    "seed": 11,
+    "samples": 201,
+    "seconds": 0.8654868000012357,
+    "ledger_error_mL": 3.2526065174565133e-13,
+    "min_volume_m3": 3.086504716976547e-15,
+    "coarse_medium_max_mm": 0.4169410373781428,
+    "medium_fine_max_mm": 0.20768817959072872
+  }
+]

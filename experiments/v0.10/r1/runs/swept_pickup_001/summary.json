@@ -1,0 +1,87 @@
+{
+  "source_head": "089cb1a6d52c03e93fdbe49f36b65a512f8cb9e4",
+  "rows": [
+    {
+      "dx": 0.02,
+      "dy": 0.0,
+      "steps": 10,
+      "picked_ml": 4.799999999999995,
+      "continuous_expected_ml": 4.8,
+      "deficit_ml": 4.235164736271502e-15,
+      "predicted_endpoint_deficit_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    {
+      "dx": 0.02,
+      "dy": 0.0,
+      "steps": 20,
+      "picked_ml": 4.799999999999986,
+      "continuous_expected_ml": 4.8,
+      "deficit_ml": 1.4399560103323106e-14,
+      "predicted_endpoint_deficit_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    {
+      "dx": 0.02,
+      "dy": 0.0,
+      "steps": 40,
+      "picked_ml": 4.799999999999989,
+      "continuous_expected_ml": 4.8,
+      "deficit_ml": 1.1011428314305904e-14,
+      "predicted_endpoint_deficit_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    {
+      "dx": 0.02,
+      "dy": 0.0,
+      "steps": 80,
+      "picked_ml": 4.799999999999989,
+      "continuous_expected_ml": 4.8,
+      "deficit_ml": 1.1011428314305904e-14,
+      "predicted_endpoint_deficit_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    {
+      "dx": 0.02,
+      "dy": 0.02,
+      "steps": 10,
+      "picked_ml": 5.907878787878787,
+      "continuous_expected_ml": 5.999999999999999,
+      "deficit_ml": 0.09212121212121191,
+      "predicted_endpoint_deficit_ml": 0.08,
+      "ledger_error_ml": 0.0
+    },
+    {
+      "dx": 0.02,
+      "dy": 0.02,
+      "steps": 20,
+      "picked_ml": 5.9524882586500185,
+      "continuous_expected_ml": 5.999999999999999,
+      "deficit_ml": 0.04751174134998056,
+      "predicted_endpoint_deficit_ml": 0.04,
+      "ledger_error_ml": 0.0
+    },
+    {
+      "dx": 0.02,
+      "dy": 0.02,
+      "steps": 40,
+      "picked_ml": 5.967629099121907,
+      "continuous_expected_ml": 5.999999999999999,
+      "deficit_ml": 0.032370900878092586,
+      "predicted_endpoint_deficit_ml": 0.02,
+      "ledger_error_ml": 0.0
+    },
+    {
+      "dx": 0.02,
+      "dy": 0.02,
+      "steps": 80,
+      "picked_ml": 5.974716974279919,
+      "continuous_expected_ml": 5.999999999999999,
+      "deficit_ml": 0.02528302572008064,
+      "predicted_endpoint_deficit_ml": 0.01,
+      "ledger_error_ml": 0.0
+    }
+  ],
+  "scope": "analytic uniform-wall zero-exit pickup; no production physics change",
+  "training_started": false
+}

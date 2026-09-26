@@ -1,0 +1,74 @@
+[
+  {
+    "index": 0,
+    "variant": "rotating",
+    "max_mm": 0.4449374154975663,
+    "roi_max_mm": 0.4449374154975663,
+    "pixels_above_01mm": 11,
+    "absolute_difference_ml": 0.036785583766735463
+  },
+  {
+    "index": 0,
+    "variant": "fixed_angle",
+    "max_mm": 0.04640023790653902,
+    "roi_max_mm": 0.02523868343319753,
+    "pixels_above_01mm": 2,
+    "absolute_difference_ml": 0.0058026311089904815
+  },
+  {
+    "index": 0,
+    "variant": "aligned_axis",
+    "max_mm": 0.003619160036423194,
+    "roi_max_mm": 0.003619160036423194,
+    "pixels_above_01mm": 0,
+    "absolute_difference_ml": 0.0045762614442971744
+  },
+  {
+    "index": 6,
+    "variant": "rotating",
+    "max_mm": 1.2115123456237653,
+    "roi_max_mm": 0.02236249351142582,
+    "pixels_above_01mm": 15,
+    "absolute_difference_ml": 0.08571015819579116
+  },
+  {
+    "index": 6,
+    "variant": "fixed_angle",
+    "max_mm": 0.018844479750377077,
+    "roi_max_mm": 0.01680910539422764,
+    "pixels_above_01mm": 3,
+    "absolute_difference_ml": 0.006620624500874624
+  },
+  {
+    "index": 6,
+    "variant": "aligned_axis",
+    "max_mm": 0.005557433679534776,
+    "roi_max_mm": 0.005557433679534776,
+    "pixels_above_01mm": 0,
+    "absolute_difference_ml": 0.005634898099838141
+  },
+  {
+    "index": 17,
+    "variant": "rotating",
+    "max_mm": 1.9998127446038696,
+    "roi_max_mm": 1.9998127446038696,
+    "pixels_above_01mm": 12,
+    "absolute_difference_ml": 0.07498814651227459
+  },
+  {
+    "index": 17,
+    "variant": "fixed_angle",
+    "max_mm": 0.006061097693794157,
+    "roi_max_mm": 0.006061097693794157,
+    "pixels_above_01mm": 0,
+    "absolute_difference_ml": 0.005421332818750424
+  },
+  {
+    "index": 17,
+    "variant": "aligned_axis",
+    "max_mm": 0.001369788632236968,
+    "roi_max_mm": 0.001369788632236968,
+    "pixels_above_01mm": 0,
+    "absolute_difference_ml": 0.002885686377950025
+  }
+]

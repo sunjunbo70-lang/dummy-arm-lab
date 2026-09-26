@@ -1,0 +1,12 @@
+{
+  "physics_version": "v10r1.area_pressure_candidate.v5_inventory_adaptive",
+  "source_head": "a6413c422854a7facb97bb769c108056aedf1e0e",
+  "case": 13,
+  "budgets_mm": [
+    0.01,
+    0.005
+  ],
+  "max_trial_budget_per_run": 20000,
+  "training_started": false,
+  "scope": "bounded diagnostic, not gate"
+}

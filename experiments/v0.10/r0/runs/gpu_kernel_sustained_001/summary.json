@@ -1,0 +1,164 @@
+{
+  "scope": "pressure solve microbenchmark; NOT full material environment or training",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "cpu_tensor_threads": 1,
+  "warmup_excluded": true,
+  "results": [
+    {
+      "batch": 1,
+      "backend": "numpy_one_core",
+      "replicate_median_ms": [
+        0.6176999886520207,
+        1.639399997657165,
+        1.6176000062841922
+      ],
+      "median_ms": 1.5605000080540776,
+      "p95_ms": 2.037350001046434,
+      "calls": 7691,
+      "elapsed_s": 10.214579299994512
+    },
+    {
+      "batch": 1,
+      "backend": "torch_cpu_one_core",
+      "replicate_median_ms": [
+        6.711550013278611,
+        6.670949995168485,
+        6.530600003316067
+      ],
+      "median_ms": 6.65615001344122,
+      "p95_ms": 8.183500004815869,
+      "calls": 1492,
+      "elapsed_s": 10.208172300015576
+    },
+    {
+      "batch": 1,
+      "backend": "torch_cuda",
+      "replicate_median_ms": [
+        19.023500004550442,
+        18.831599998520687,
+        18.555250004283153
+      ],
+      "median_ms": 18.851100001484156,
+      "p95_ms": 23.610849976830647,
+      "calls": 522,
+      "elapsed_s": 10.21359470000607
+    },
+    {
+      "batch": 16,
+      "backend": "numpy_one_core",
+      "replicate_median_ms": [
+        26.558100013062358,
+        26.51319999131374,
+        26.565350010059774
+      ],
+      "median_ms": 26.53109998209402,
+      "p95_ms": 30.22339998278767,
+      "calls": 381,
+      "elapsed_s": 10.259972100000596
+    },
+    {
+      "batch": 16,
+      "backend": "torch_cpu_one_core",
+      "replicate_median_ms": [
+        8.194499998353422,
+        8.216400019591674,
+        8.293699997011572
+      ],
+      "median_ms": 8.23179999133572,
+      "p95_ms": 9.847950006951578,
+      "calls": 1219,
+      "elapsed_s": 10.2147474999947
+    },
+    {
+      "batch": 16,
+      "backend": "torch_cuda",
+      "replicate_median_ms": [
+        19.036499987123534,
+        19.02400000835769,
+        18.914950007456355
+      ],
+      "median_ms": 18.96649999252986,
+      "p95_ms": 21.970775007503107,
+      "calls": 526,
+      "elapsed_s": 10.219833000010112
+    },
+    {
+      "batch": 64,
+      "backend": "numpy_one_core",
+      "replicate_median_ms": [
+        107.56674999720417,
+        107.54520000773482,
+        106.77530000975821
+      ],
+      "median_ms": 107.35385000589304,
+      "p95_ms": 115.37240000325255,
+      "calls": 96,
+      "elapsed_s": 10.394536499981768
+    },
+    {
+      "batch": 64,
+      "backend": "torch_cpu_one_core",
+      "replicate_median_ms": [
+        13.449599995510653,
+        13.45160001073964,
+        13.543999986723065
+      ],
+      "median_ms": 13.472499995259568,
+      "p95_ms": 15.236000006552786,
+      "calls": 751,
+      "elapsed_s": 10.217551400011871
+    },
+    {
+      "batch": 64,
+      "backend": "torch_cuda",
+      "replicate_median_ms": [
+        19.097149997833185,
+        19.25989998562727,
+        19.507199991494417
+      ],
+      "median_ms": 19.25625001604203,
+      "p95_ms": 23.085599998012185,
+      "calls": 516,
+      "elapsed_s": 10.229292100004386
+    },
+    {
+      "batch": 256,
+      "backend": "numpy_one_core",
+      "replicate_median_ms": [
+        512.4704999907408,
+        517.3902999958955,
+        535.5765999993309
+      ],
+      "median_ms": 518.2325000059791,
+      "p95_ms": 563.2781999884173,
+      "calls": 21,
+      "elapsed_s": 11.051809199998388
+    },
+    {
+      "batch": 256,
+      "backend": "torch_cpu_one_core",
+      "replicate_median_ms": [
+        45.17710002255626,
+        44.05550000956282,
+        44.25454999727663
+      ],
+      "median_ms": 44.44129999319557,
+      "p95_ms": 54.26315500226337,
+      "calls": 224,
+      "elapsed_s": 10.27542469999753
+    },
+    {
+      "batch": 256,
+      "backend": "torch_cuda",
+      "replicate_median_ms": [
+        27.151250003953464,
+        28.061999983037822,
+        27.191100001800805
+      ],
+      "median_ms": 27.366300026187673,
+      "p95_ms": 33.631700003752485,
+      "calls": 361,
+      "elapsed_s": 10.223557999997865
+    }
+  ]
+}

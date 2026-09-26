@@ -1,0 +1,8 @@
+{
+  "status": "matched_time_divergence_running",
+  "pid": 2408,
+  "long_sequence_pid": 40668,
+  "telemetry_pid": 13564,
+  "training_started": false,
+  "record": "records/SUBCYCLE_FAILURE_AND_DIVERGENCE.md"
+}

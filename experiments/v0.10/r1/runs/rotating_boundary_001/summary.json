@@ -1,0 +1,49 @@
+{
+  "geometry_version": "v10r1.rigid_boundary_flux.v1",
+  "source_head": "be25516ae18259736db13ba50b7d57f34e6f61e5",
+  "rows": [
+    {
+      "intervals": 16,
+      "seconds": 0.04410890000872314,
+      "max_cell_closure_error_m2": 3.854541641903804e-05,
+      "sum_abs_closure_error_m2": 0.0075329034123812234,
+      "net_area_error_m2": 1.8997254941019448e-17,
+      "equivalent_uniform_2mm_max_thickness_error_mm": 3.083633313523043
+    },
+    {
+      "intervals": 32,
+      "seconds": 0.12306280000484549,
+      "max_cell_closure_error_m2": 1.60921071035074e-05,
+      "sum_abs_closure_error_m2": 0.0026837939643438377,
+      "net_area_error_m2": 1.8568656269708772e-17,
+      "equivalent_uniform_2mm_max_thickness_error_mm": 1.287368568280592
+    },
+    {
+      "intervals": 64,
+      "seconds": 0.23640799999702722,
+      "max_cell_closure_error_m2": 5.8426337521449665e-06,
+      "sum_abs_closure_error_m2": 0.0010970657358642863,
+      "net_area_error_m2": 1.870418154126946e-17,
+      "equivalent_uniform_2mm_max_thickness_error_mm": 0.4674107001715973
+    },
+    {
+      "intervals": 128,
+      "seconds": 0.47328350000316277,
+      "max_cell_closure_error_m2": 2.977202341523862e-06,
+      "sum_abs_closure_error_m2": 0.0003488038239985606,
+      "net_area_error_m2": 1.8793649396323196e-17,
+      "equivalent_uniform_2mm_max_thickness_error_mm": 0.23817618732190893
+    },
+    {
+      "intervals": 256,
+      "seconds": 0.9276366000121925,
+      "max_cell_closure_error_m2": 1.158637971350232e-06,
+      "sum_abs_closure_error_m2": 0.00011324737559070678,
+      "net_area_error_m2": 1.8589878415504433e-17,
+      "equivalent_uniform_2mm_max_thickness_error_mm": 0.09269103770801856
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false,
+  "scope": "case13 rigid boundary area closure only"
+}

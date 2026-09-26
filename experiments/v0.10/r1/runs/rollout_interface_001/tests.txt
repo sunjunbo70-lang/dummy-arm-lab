@@ -1,0 +1,4 @@
+python -m unittest discover -s dummy_loop/wall_cycle_v10/r1 -t . -p test_*.py
+Ran 38 tests in 5.784s
+OK
+Evidence: L1 components only; no robot RL training.

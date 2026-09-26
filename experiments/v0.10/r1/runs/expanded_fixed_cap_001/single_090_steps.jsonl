@@ -1,0 +1,2 @@
+{"step": 0, "op": "contact", "max_wall_diff_mm": 9.307692036809101e-06, "rmse_diff_mm": 4.283000709648377e-08, "coverage_diff": 0.0, "ledger_error_ml": 5.421010862427522e-14, "min_volume_m3": 0.0}
+{"step": 1, "op": "final_lift", "max_wall_diff_mm": 9.307692036809101e-06, "rmse_diff_mm": 4.283000709648377e-08, "coverage_diff": 0.0, "ledger_error_ml": 5.421010862427522e-14, "min_volume_m3": 0.0}

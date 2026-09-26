@@ -1,0 +1,44 @@
+{
+  "source_head": "089cb1a6d52c03e93fdbe49f36b65a512f8cb9e4",
+  "geometry_version": "v10r1.translation_swept_boundary.v1",
+  "rows": [
+    {
+      "n": 10,
+      "expected_area_m2": 0.003,
+      "endpoint_area_m2": 0.002960000000000039,
+      "boundary_area_m2": 0.003000000000000002,
+      "endpoint_area_deficit_m2": 3.9999999999961074e-05,
+      "theoretical_missing_area_m2": 4e-05,
+      "boundary_error_m2": 1.734723475976807e-18
+    },
+    {
+      "n": 20,
+      "expected_area_m2": 0.003,
+      "endpoint_area_m2": 0.0029800000000000755,
+      "boundary_area_m2": 0.002999999999999997,
+      "endpoint_area_deficit_m2": 1.9999999999924592e-05,
+      "theoretical_missing_area_m2": 2e-05,
+      "boundary_error_m2": 3.0357660829594124e-18
+    },
+    {
+      "n": 40,
+      "expected_area_m2": 0.003,
+      "endpoint_area_m2": 0.002990000000000153,
+      "boundary_area_m2": 0.002999999999999995,
+      "endpoint_area_deficit_m2": 9.999999999846937e-06,
+      "theoretical_missing_area_m2": 1e-05,
+      "boundary_error_m2": 5.204170427930421e-18
+    },
+    {
+      "n": 80,
+      "expected_area_m2": 0.003,
+      "endpoint_area_m2": 0.002995000000000308,
+      "boundary_area_m2": 0.003,
+      "endpoint_area_deficit_m2": 4.999999999691883e-06,
+      "theoretical_missing_area_m2": 5e-06,
+      "boundary_error_m2": 0.0
+    }
+  ],
+  "scope": "translation geometry only; not rotating/pressure/material gate",
+  "training_started": false
+}

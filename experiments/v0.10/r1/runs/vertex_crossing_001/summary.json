@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "stats": {
+    "nodes": 590,
+    "leaves": 333,
+    "max_depth": 15,
+    "max_accepted_closure_m2": 1.0925957395972025e-16,
+    "max_accepted_difference_m2": 1.6370769354821801e-15,
+    "event_intervals": 76
+  },
+  "source_head": "5b4c92a8e293788518d56e62c5b6b62f72292a79",
+  "version": "v10r1.boundary_quadrature.adaptive_support.v3_vertex_crossings",
+  "seconds": 5.216392700007418,
+  "scope": "single previously failed outer interval; not whole path",
+  "training_started": false
+}

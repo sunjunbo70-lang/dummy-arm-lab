@@ -1,15 +1,16 @@
 """Conservative 2.5-D wall and trowel material fields.
 
 This is the v0.2 material model, kept byte-for-byte in behaviour so that
-experiments/2026-09-22_wall_cycle_rl stays reproducible (CycleConfig(physics='v0.2')).
+experiments/v0.2/r0/records/2026-09-22_wall_cycle_rl stays reproducible (CycleConfig(physics='v0.2')).
 v0.3 replaces the stroke physics with dummy_loop/wall_cycle/mortar.py (see
-docs/changes/2026-09-22_wall_cycle_v0.3.md for why each rule here was replaced).
+experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md for why each rule here was replaced).
 
 This is deliberately a reduced-order proxy, not CFD. Unlike the first experiment,
 material on the trowel has a spatial distribution and can only appear on the wall
 after it is removed from a corresponding trowel cell.
 """
 from dataclasses import dataclass
+import math
 import numpy as np
 
 from .config import CycleConfig
@@ -41,6 +42,26 @@ class MaterialSystem:
         self.dropped_m3 = 0.0
         self.outside_m3 = 0.0
         self.initial_m3 = 0.0
+        # v0.7: scored sub-window inside the (possibly larger) simulation grid. metrics() only
+        # looks here; overtravel into the margin outside it is not counted as waste (see
+        # config.py: score_width_m/score_height_m, area.py: load_work_area()). Concentric crop,
+        # so if score==sim (v0.2/pre-v0.7 configs) this is a no-op full-grid slice.
+        score_w = getattr(cfg, 'score_width_m', cfg.width_m)
+        score_h = getattr(cfg, 'score_height_m', cfg.height_m)
+        # v0.8: the per-side margin is rounded UP explicitly, so the scored square never exceeds
+        # the nominal one. v0.7 used round() on 2.5000000000000018 cells, which also gave 3 --
+        # i.e. v0.7 already scored 40x40 cells = 200 mm, not the nominal 205 mm. This keeps
+        # exactly that mask and makes it explicit (score_cells / score_side_m in metrics).
+        du = max(0, int(math.ceil((cfg.width_m - score_w) / 2 / cfg.cell_m - 1e-6)))
+        dv = max(0, int(math.ceil((cfg.height_m - score_h) / 2 / cfg.cell_m - 1e-6)))
+        self._score_rows = slice(dv, nv - dv)
+        self._score_cols = slice(du, nu - du)
+        self.score_cells = (nv - 2 * dv, nu - 2 * du)
+        # Edge band of the scored square (reported only; not part of reward or gates).
+        band = max(1, int(round(getattr(cfg, 'edge_band_m', 0.03) / cfg.cell_m)))
+        ii, jj = np.indices(self.score_cells)
+        dist = np.minimum.reduce([ii, jj, self.score_cells[0] - 1 - ii, self.score_cells[1] - 1 - jj])
+        self._edge_mask = dist < band
 
     @property
     def wall_cell_area(self):
@@ -116,7 +137,7 @@ class MaterialSystem:
 
     def stroke(self, mode, start, end, phi, bend, force_N, speed_m_s, callback=None):
         """v0.2 stroke (hand-written transfer fractions). Kept unchanged for reproducing
-        experiments/2026-09-22_wall_cycle_rl. v0.3 uses mortar.MortarSystem.stroke."""
+        experiments/v0.2/r0/records/2026-09-22_wall_cycle_rl. v0.3 uses mortar.MortarSystem.stroke."""
         c = self.cfg
         stats = TransferStats()
         p0, p2 = np.asarray(start, float), np.asarray(end, float)
@@ -182,7 +203,7 @@ class MaterialSystem:
         return stats
 
     def metrics(self):
-        c = self.cfg; h = self.wall
+        c = self.cfg; h = self.wall[self._score_rows, self._score_cols]
         err = np.abs(h - c.target_m)
         acceptable = (h >= c.acceptable_low_m) & (h <= c.acceptable_high_m)
         rough_u = np.abs(np.diff(h, axis=1)).mean() if h.shape[1] > 1 else 0
@@ -195,7 +216,10 @@ class MaterialSystem:
                 'over_frac': float(np.mean(h > c.acceptable_high_m)),
                 'roughness_mm': float((rough_u+rough_v)*500),
                 'blade_load_ml': self.blade_volume_m3*1e6,
-                'waste_frac': (self.dropped_m3+self.outside_m3)/max(self.supplied_m3+self.initial_m3, 1e-12)}
+                'waste_frac': (self.dropped_m3+self.outside_m3)/max(self.supplied_m3+self.initial_m3, 1e-12),
+                'edge_coverage': float(acceptable[self._edge_mask].mean()),
+                'edge_bare_frac': float(np.mean(h[self._edge_mask] < 0.0005)),
+                'score_side_m': float(self.score_cells[1] * c.cell_m)}
 
     def quality_cost(self):
         m = self.metrics(); c = self.cfg

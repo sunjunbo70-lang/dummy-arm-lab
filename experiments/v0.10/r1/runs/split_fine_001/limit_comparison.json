@@ -1,0 +1,35 @@
+{
+  "scope": "Richardson first-order limit estimate only; not proof of same physical limit",
+  "rows": [
+    {
+      "seed": 0,
+      "raw_fine_cross_difference_mm": 0.014951632379394536,
+      "estimated_limit_cross_difference_mm": 5.181865689492249e-05
+    },
+    {
+      "seed": 1,
+      "raw_fine_cross_difference_mm": 0.028468597609115215,
+      "estimated_limit_cross_difference_mm": 0.0001247508996035651
+    },
+    {
+      "seed": 2,
+      "raw_fine_cross_difference_mm": 0.02367391260936144,
+      "estimated_limit_cross_difference_mm": 0.00010016681164387326
+    },
+    {
+      "seed": 3,
+      "raw_fine_cross_difference_mm": 0.015635227165808688,
+      "estimated_limit_cross_difference_mm": 0.00017094855245573196
+    },
+    {
+      "seed": 4,
+      "raw_fine_cross_difference_mm": 0.0380803921217962,
+      "estimated_limit_cross_difference_mm": 0.0001856936537569234
+    },
+    {
+      "seed": 5,
+      "raw_fine_cross_difference_mm": 0.01805988158168348,
+      "estimated_limit_cross_difference_mm": 0.00011407003510288585
+    }
+  ]
+}

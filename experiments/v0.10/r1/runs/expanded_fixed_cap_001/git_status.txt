@@ -1,0 +1,24 @@
+ M docs/STATUS.md
+ M dummy_loop/wall_cycle/area.py
+ M dummy_loop/wall_cycle/arm.py
+ M dummy_loop/wall_cycle/config.py
+ M dummy_loop/wall_cycle/env.py
+ M dummy_loop/wall_cycle/material.py
+ M dummy_loop/wall_cycle/reach_table_lab_v05.npz
+ M dummy_loop/wall_cycle/train.py
+ M dummy_loop/wall_cycle/view.py
+ M dummy_loop/wall_cycle/work_area.json
+ M tests/test_wall_cycle_v03.py
+ M tools/simulation/v2_trowel_reach.py
+?? dummy_loop/wall_cycle/parallel.py
+?? dummy_loop/wall_cycle/recipes.py
+?? dummy_loop/wall_cycle_v10/r1/case76_fixed_cap_audit.py
+?? dummy_loop/wall_cycle_v10/r1/expanded_fixed_cap_audit.py
+?? dummy_loop/wall_cycle_v10/r1/fixed_cap_pressure.py
+?? dummy_loop/wall_cycle_v10/r1/test_wall_cap_contract.py
+?? experiments/00_initial_debug/records/2026-09-24_tool_adapter_v1/tool_adapter_v1_print_package/
+?? experiments/_organization/2026-09-25/files_before.json
+?? experiments/v0.8/r0/records/2026-09-24_teacher_visual_review/frames/
+?? experiments/v0.8/r0/records/2026-09-24_teacher_visual_review/viewer.stderr.log
+?? experiments/v0.8/r0/records/2026-09-24_teacher_visual_review/viewer.stdout.log
+?? tests/test_wall_cycle_v08.py

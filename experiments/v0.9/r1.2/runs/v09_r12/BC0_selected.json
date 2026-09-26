@@ -1,0 +1,14 @@
+{
+  "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\BC0_seed11_dagger_003\\checkpoints\\bc.pt",
+  "dagger": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\dagger_A0_40_round1_001",
+  "gate": {
+    "executable_fraction": 0.9259259259259259,
+    "contact_requests": 216,
+    "improves": true,
+    "pass": true
+  },
+  "bc_dagger_sampling_repeat": 5,
+  "teacher_episodes": 400,
+  "dagger_episodes": 40,
+  "note": "formal RL0 preserves frozen BC normalization; no further teacher intervention"
+}

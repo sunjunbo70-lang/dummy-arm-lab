@@ -1,0 +1,11 @@
+{
+  "index": 24,
+  "sequence": false,
+  "steps": 1,
+  "passed": true,
+  "seconds": 52.97558320002281,
+  "max_wall_diff_mm": 0.0019862484356953534,
+  "rmse_diff_mm": 3.0153112832165263e-05,
+  "coverage_diff": 0.0,
+  "ledger_error_ml": 8.131516293641283e-14
+}

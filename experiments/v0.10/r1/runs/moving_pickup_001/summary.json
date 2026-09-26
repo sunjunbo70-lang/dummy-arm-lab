@@ -1,0 +1,113 @@
+{
+  "source_head": "2531fe7d7dcc0b108a3d43c1f8a5cd6b9a2545e1",
+  "version": "v10r1.moving_wall_exchange.analytic.v1",
+  "scope": "zero-gap pickup only with explicit area closure projection, not G0",
+  "rows": [
+    {
+      "steps": 32,
+      "picked_ml": 4.799999999999995,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 3.409307612698559e-19,
+      "cumulative_area_correction_m2": 5.2601593057439305e-17,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 0.40116420001140796,
+      "case": "axial"
+    },
+    {
+      "steps": 64,
+      "picked_ml": 4.799999999999996,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 3.618948267143998e-19,
+      "cumulative_area_correction_m2": 5.5493787055839114e-17,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 0.4132212999975309,
+      "case": "axial",
+      "max_wall_change_mm": 1.3635518648149438e-15
+    },
+    {
+      "steps": 128,
+      "picked_ml": 4.799999999999996,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 3.706827935421632e-19,
+      "cumulative_area_correction_m2": 8.394795309471601e-17,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 0.8596986999909859,
+      "case": "axial",
+      "max_wall_change_mm": 4.795166503539604e-15
+    },
+    {
+      "steps": 32,
+      "picked_ml": 5.981064646148056,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 4.1165801236558996e-19,
+      "cumulative_area_correction_m2": 6.340655709085197e-17,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 0.2536186999932397,
+      "case": "diagonal"
+    },
+    {
+      "steps": 64,
+      "picked_ml": 5.981378087289041,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 4.23092957153523e-19,
+      "cumulative_area_correction_m2": 8.731269883345511e-17,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 0.5292369999806397,
+      "case": "diagonal",
+      "max_wall_change_mm": 0.0015672057049328264
+    },
+    {
+      "steps": 128,
+      "picked_ml": 5.981456606433927,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 4.248929021664384e-19,
+      "cumulative_area_correction_m2": 1.2291889013286965e-16,
+      "negative_raw_capacity_cells": 0,
+      "seconds": 1.0394027000002097,
+      "case": "diagonal",
+      "max_wall_change_mm": 0.00039259572440937274
+    },
+    {
+      "steps": 32,
+      "picked_ml": 2.264682178888471,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 4.134437753143077e-09,
+      "cumulative_area_correction_m2": 4.638156829567952e-07,
+      "negative_raw_capacity_cells": 12,
+      "seconds": 0.29520500000217,
+      "case": "rotation"
+    },
+    {
+      "steps": 64,
+      "picked_ml": 2.2649147594125614,
+      "ledger_error_ml": 1.0842021724855044e-13,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 1.5269325239833981e-09,
+      "cumulative_area_correction_m2": 1.1368513041759592e-07,
+      "negative_raw_capacity_cells": 20,
+      "seconds": 0.5931564000202343,
+      "case": "rotation",
+      "max_wall_change_mm": 0.001006042207334044
+    },
+    {
+      "steps": 128,
+      "picked_ml": 2.2649697819766668,
+      "ledger_error_ml": 1.0842021724855044e-13,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 2.8004297946749487e-10,
+      "cumulative_area_correction_m2": 2.324305613489932e-08,
+      "negative_raw_capacity_cells": 26,
+      "seconds": 1.2598605999955907,
+      "case": "rotation",
+      "max_wall_change_mm": 0.0002747032833735511
+    }
+  ],
+  "training_started": false
+}

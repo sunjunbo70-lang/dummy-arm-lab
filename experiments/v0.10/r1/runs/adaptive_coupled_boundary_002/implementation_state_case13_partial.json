@@ -1,0 +1,7 @@
+{
+  "status": "case13_128_failed_depth_budget_256_pending",
+  "training_started": false,
+  "diagnostic_pid": 40724,
+  "completed_case13_steps_128": false,
+  "next_action": "await final summary; diagnose roundoff-limited estimator without changing running process"
+}

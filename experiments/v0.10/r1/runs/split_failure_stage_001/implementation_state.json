@@ -1,0 +1,7 @@
+{
+  "status": "stage_diagnosis_completed_material_gate_failed",
+  "training_started": false,
+  "active_audit_pid": 33596,
+  "physics_version": "v10r1.area_pressure_candidate.v4_split_ssprk2",
+  "next_action": "independent new candidate with blade/bead and projected-lift error control; do not change running v4 audit"
+}

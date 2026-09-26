@@ -1,0 +1,155 @@
+{
+  "cases": [
+    {
+      "index": 0,
+      "max_diff_mm": 2.42861286636753e-14,
+      "passed": true
+    },
+    {
+      "index": 1,
+      "max_diff_mm": 3.122502256758253e-14,
+      "passed": true
+    },
+    {
+      "index": 2,
+      "max_diff_mm": 1.3877787807814457e-14,
+      "passed": true
+    },
+    {
+      "index": 3,
+      "max_diff_mm": 2.949029909160572e-14,
+      "passed": true
+    },
+    {
+      "index": 4,
+      "max_diff_mm": 2.0816681711721685e-14,
+      "passed": true
+    },
+    {
+      "index": 5,
+      "max_diff_mm": 1.0408340855860843e-14,
+      "passed": true
+    },
+    {
+      "index": 6,
+      "max_diff_mm": 2.7755575615628914e-14,
+      "passed": true
+    },
+    {
+      "index": 7,
+      "max_diff_mm": 1.9081958235744878e-14,
+      "passed": true
+    },
+    {
+      "index": 8,
+      "max_diff_mm": 1.5612511283791264e-14,
+      "passed": true
+    },
+    {
+      "index": 9,
+      "max_diff_mm": 1.0408340855860843e-14,
+      "passed": true
+    },
+    {
+      "index": 10,
+      "max_diff_mm": 2.7755575615628914e-14,
+      "passed": true
+    },
+    {
+      "index": 11,
+      "max_diff_mm": 1.1275702593849246e-14,
+      "passed": true
+    },
+    {
+      "index": 12,
+      "max_diff_mm": 8.673617379884035e-15,
+      "passed": true
+    },
+    {
+      "index": 13,
+      "max_diff_mm": 2.7755575615628914e-14,
+      "passed": true
+    },
+    {
+      "index": 14,
+      "max_diff_mm": 3.642919299551295e-14,
+      "passed": true
+    },
+    {
+      "index": 15,
+      "max_diff_mm": 2.211772431870429e-14,
+      "passed": true
+    },
+    {
+      "index": 16,
+      "max_diff_mm": 1.5612511283791264e-14,
+      "passed": true
+    },
+    {
+      "index": 17,
+      "max_diff_mm": 1.5612511283791264e-14,
+      "passed": true
+    },
+    {
+      "index": 18,
+      "max_diff_mm": 1.214306433183765e-14,
+      "passed": true
+    },
+    {
+      "index": 19,
+      "max_diff_mm": 1.734723475976807e-14,
+      "passed": true
+    },
+    {
+      "index": 20,
+      "max_diff_mm": 7.806255641895632e-15,
+      "passed": true
+    },
+    {
+      "index": 21,
+      "max_diff_mm": 1.3877787807814457e-14,
+      "passed": true
+    },
+    {
+      "index": 22,
+      "max_diff_mm": 1.9081958235744878e-14,
+      "passed": true
+    },
+    {
+      "index": 23,
+      "max_diff_mm": 6.938893903907228e-15,
+      "passed": true
+    },
+    {
+      "index": 24,
+      "max_diff_mm": 2.2551405187698492e-14,
+      "passed": true
+    },
+    {
+      "index": 25,
+      "max_diff_mm": 2.949029909160572e-14,
+      "passed": true
+    },
+    {
+      "index": 26,
+      "max_diff_mm": 1.734723475976807e-14,
+      "passed": true
+    },
+    {
+      "index": 27,
+      "max_diff_mm": 1.214306433183765e-14,
+      "passed": true
+    },
+    {
+      "index": 28,
+      "max_diff_mm": 2.0816681711721685e-14,
+      "passed": true
+    },
+    {
+      "index": 29,
+      "max_diff_mm": 8.673617379884035e-15,
+      "passed": true
+    }
+  ],
+  "passed": 30
+}

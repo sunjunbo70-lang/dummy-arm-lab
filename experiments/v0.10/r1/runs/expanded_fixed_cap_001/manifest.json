@@ -1,0 +1,16 @@
+{
+  "status": "started",
+  "pid": 22620,
+  "source_head": "a54ac6e38402a49980d1c15fd2854ab1cea150d2",
+  "physics_version": "v10r1.area_pressure_candidate.v8_11_fixed_step_wall_cap",
+  "singles": 100,
+  "sequences": 50,
+  "steps": 100,
+  "spacings_m": [
+    5e-05,
+    2.5e-05
+  ],
+  "workers": 8,
+  "scope": "material subsystem; no full environment/robot/transport claim",
+  "training_started": false
+}

@@ -1,0 +1,58 @@
+{
+  "source_head": "5b4c92a8e293788518d56e62c5b6b62f72292a79",
+  "physics_version": "v10r1.area_pressure_candidate.v8_1_bounded_initial_pickup",
+  "rows": [
+    {
+      "initial_wall_thickness_m": 0.0,
+      "status": "completed",
+      "ledger_error_ml": 2.541098841762901e-15,
+      "events": [
+        {
+          "step": 0,
+          "wall_min_m3": 0.0,
+          "blade_min_m3": 1.2416833174691328e-08,
+          "ledger_error_ml": 0.0
+        },
+        {
+          "step": 1,
+          "wall_min_m3": 0.0,
+          "blade_min_m3": 1.2769200261223379e-08,
+          "ledger_error_ml": 0.0
+        },
+        {
+          "step": 2,
+          "wall_min_m3": 0.0,
+          "blade_min_m3": 1.3113734600208455e-08,
+          "ledger_error_ml": 0.0
+        }
+      ]
+    },
+    {
+      "initial_wall_thickness_m": 0.002,
+      "status": "completed",
+      "ledger_error_ml": 0.0,
+      "events": [
+        {
+          "step": 0,
+          "wall_min_m3": 0.0,
+          "blade_min_m3": 2.7492305529580252e-08,
+          "ledger_error_ml": 0.0
+        },
+        {
+          "step": 1,
+          "wall_min_m3": 0.0,
+          "blade_min_m3": 2.762475768872208e-08,
+          "ledger_error_ml": 1.0842021724855044e-13
+        },
+        {
+          "step": 2,
+          "wall_min_m3": 0.0,
+          "blade_min_m3": 2.7751292010973284e-08,
+          "ledger_error_ml": 1.0842021724855044e-13
+        }
+      ]
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false
+}

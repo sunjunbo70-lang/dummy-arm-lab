@@ -1,0 +1,112 @@
+[
+  {
+    "ProcessId": 25032,
+    "ParentProcessId": 27296,
+    "CommandLine": "\"D:\\VLA\\dummy_arm\\.venv-loop\\Scripts\\python.exe\" -m dummy_loop.wall_cycle_v10.r1.expanded_stationary_audit --out D:/VLA/dummy_arm/experiments/v0.10/r1/runs/expanded_stationary_sequences_001 --workers 4 --singles 0 --sequences 50 --steps 100"
+  },
+  {
+    "ProcessId": 40008,
+    "ParentProcessId": 25032,
+    "CommandLine": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+  },
+  {
+    "ProcessId": 40668,
+    "ParentProcessId": 25032,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -m dummy_loop.wall_cycle_v10.r1.expanded_stationary_audit --out D:/VLA/dummy_arm/experiments/v0.10/r1/runs/expanded_stationary_sequences_001 --workers 4 --singles 0 --sequences 50 --steps 100"
+  },
+  {
+    "ProcessId": 14448,
+    "ParentProcessId": 40668,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=40668, pipe_handle=652)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 29300,
+    "ParentProcessId": 40668,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=40668, pipe_handle=600)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 38512,
+    "ParentProcessId": 40668,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=40668, pipe_handle=1008)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 38168,
+    "ParentProcessId": 40668,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=40668, pipe_handle=984)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 13564,
+    "ParentProcessId": 31740,
+    "CommandLine": "\"C:\\Users\\28017\\anaconda3\\python.exe\" -m dummy_loop.wall_cycle_v09.telemetry --out D:/VLA/dummy_arm/experiments/v0.10/r1/runs/expanded_stationary_sequences_001/resources_resumed.jsonl --pid 40668 --interval 5"
+  },
+  {
+    "ProcessId": 30840,
+    "ParentProcessId": 13564,
+    "CommandLine": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+  },
+  {
+    "ProcessId": 24180,
+    "ParentProcessId": 30920,
+    "CommandLine": "\"D:\\VLA\\dummy_arm\\.venv-loop\\Scripts\\python.exe\" -m dummy_loop.wall_cycle_v10.r1.expanded_fixed_cap_audit --out D:/VLA/dummy_arm/experiments/v0.10/r1/runs/expanded_fixed_cap_001 --workers 8 --singles 100 --sequences 50 --steps 100"
+  },
+  {
+    "ProcessId": 29876,
+    "ParentProcessId": 24180,
+    "CommandLine": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+  },
+  {
+    "ProcessId": 22620,
+    "ParentProcessId": 24180,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -m dummy_loop.wall_cycle_v10.r1.expanded_fixed_cap_audit --out D:/VLA/dummy_arm/experiments/v0.10/r1/runs/expanded_fixed_cap_001 --workers 8 --singles 100 --sequences 50 --steps 100"
+  },
+  {
+    "ProcessId": 8180,
+    "ParentProcessId": 22620,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=22620, pipe_handle=892)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 12784,
+    "ParentProcessId": 22620,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=22620, pipe_handle=584)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 33328,
+    "ParentProcessId": 22620,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=22620, pipe_handle=752)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 39712,
+    "ParentProcessId": 22620,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=22620, pipe_handle=576)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 17684,
+    "ParentProcessId": 22620,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=22620, pipe_handle=180)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 2400,
+    "ParentProcessId": 22620,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=22620, pipe_handle=1100)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 38540,
+    "ParentProcessId": 22620,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=22620, pipe_handle=1128)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 29252,
+    "ParentProcessId": 22620,
+    "CommandLine": "\"C:\\Users\\28017\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=22620, pipe_handle=1156)\" \"--multiprocessing-fork\""
+  },
+  {
+    "ProcessId": 37988,
+    "ParentProcessId": 13564,
+    "CommandLine": null
+  },
+  {
+    "ProcessId": 11380,
+    "ParentProcessId": 37988,
+    "CommandLine": null
+  }
+]

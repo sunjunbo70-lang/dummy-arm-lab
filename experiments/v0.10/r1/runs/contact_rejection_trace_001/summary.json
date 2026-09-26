@@ -1,0 +1,9 @@
+{
+  "status": "rejection_captured",
+  "step": 2314,
+  "reason": "Contact error budget exhausted: error=1.6884622421669214e-08, tolerance=1.562132848758938e-08, depth=6",
+  "seconds": 204.49516039999435,
+  "head": "e3e2382f3c2646c9db572dc4a620999c21b6e406",
+  "physics_version": "v10r1.area_pressure_candidate.v8_9_precise_gap_error_control",
+  "training_started": false
+}

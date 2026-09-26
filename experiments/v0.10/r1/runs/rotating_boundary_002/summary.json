@@ -1,0 +1,30 @@
+{
+  "source_head": "be25516ae18259736db13ba50b7d57f34e6f61e5",
+  "geometry_version": "v10r1.rigid_boundary_flux.v1",
+  "rows": [
+    {
+      "intervals": 1024,
+      "seconds": 3.6164165000081994,
+      "max_cell_error_m2": 1.8389885077043058e-07,
+      "net_area_error_m2": 1.8949622572626194e-17,
+      "uniform_2mm_equivalent_max_error_mm": 0.014711908061634445
+    },
+    {
+      "intervals": 2048,
+      "seconds": 7.179101400019135,
+      "max_cell_error_m2": 5.679624652496325e-08,
+      "net_area_error_m2": 1.8506942805748028e-17,
+      "uniform_2mm_equivalent_max_error_mm": 0.004543699721997059
+    },
+    {
+      "intervals": 4096,
+      "seconds": 15.079582899983507,
+      "max_cell_error_m2": 1.2949041375558986e-08,
+      "net_area_error_m2": 1.9231791250360896e-17,
+      "uniform_2mm_equivalent_max_error_mm": 0.0010359233100447189
+    }
+  ],
+  "scope": "geometry only; uniform thickness conversion is illustrative, not actual material",
+  "training_started": false,
+  "full_material_gate": false
+}

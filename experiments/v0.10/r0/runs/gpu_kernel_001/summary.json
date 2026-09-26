@@ -1,0 +1,56 @@
+{
+  "scope": "squeeze/extrusion kernel microbenchmark only, not full GPU environment or end-to-end training",
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "equivalence": [
+    {
+      "dtype": "torch.float64",
+      "max_gap_error_mm": 0.0,
+      "max_support_error_N": 3.552713678800501e-15,
+      "max_extrusion_error_mm": 6.938893903907228e-15,
+      "max_extrusion_conservation_error_ml": 4.163336342344337e-15,
+      "pass": true,
+      "cases": 256
+    },
+    {
+      "dtype": "torch.float32",
+      "max_gap_error_mm": 4.307925700192117e-07,
+      "max_support_error_N": 1.1581583656550265e-06,
+      "max_extrusion_error_mm": 4.457551043557384e-06,
+      "max_extrusion_conservation_error_ml": 1.4901161193847656e-06,
+      "pass": true,
+      "cases": 256
+    }
+  ],
+  "benchmarks": [
+    {
+      "batch": 1,
+      "numpy_one_cpu_median_ms": 0.025699991965666413,
+      "cuda_median_ms": 7.602399971801788,
+      "kernel_speedup_vs_one_cpu": 0.003380510373170415,
+      "repetitions": 3
+    },
+    {
+      "batch": 16,
+      "numpy_one_cpu_median_ms": 2.5695000076666474,
+      "cuda_median_ms": 8.779800002230331,
+      "kernel_speedup_vs_one_cpu": 0.2926604258655001,
+      "repetitions": 3
+    },
+    {
+      "batch": 64,
+      "numpy_one_cpu_median_ms": 10.506999999051914,
+      "cuda_median_ms": 7.756100007100031,
+      "kernel_speedup_vs_one_cpu": 1.3546756732679666,
+      "repetitions": 3
+    },
+    {
+      "batch": 256,
+      "numpy_one_cpu_median_ms": 38.97360002156347,
+      "cuda_median_ms": 8.527199999662116,
+      "kernel_speedup_vs_one_cpu": 4.570503802315856,
+      "repetitions": 3
+    }
+  ],
+  "pass": true
+}

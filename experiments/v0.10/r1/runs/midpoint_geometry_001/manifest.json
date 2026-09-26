@@ -1,0 +1,31 @@
+{
+  "source": "D:/VLA/dummy_arm/experiments/v0.10/r1/runs/expanded_split_001",
+  "index": 13,
+  "recipe": {
+    "step": 0,
+    "op": "contact",
+    "begin": [
+      -0.10713833817469519,
+      0.257099247962316
+    ],
+    "end": [
+      0.07505089508713815,
+      0.15554471470089837
+    ],
+    "angle": [
+      1.4246301895306503,
+      1.9614687772363983
+    ],
+    "pitch": [
+      0.380347421389736,
+      0.4844046534194607
+    ],
+    "force": [
+      14.080140288441337,
+      10.604391687051294
+    ]
+  },
+  "source_head": "1d30a6962c1be3719f190a9b948847fb4eadc608",
+  "physics": "v10r1.area_pressure_candidate.v6_midpoint_geometry",
+  "scope": "stage diagnosis only, no training"
+}

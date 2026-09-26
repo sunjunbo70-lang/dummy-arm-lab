@@ -1,0 +1,23 @@
+{
+  "args": {
+    "reach": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\reach_a1_001\\reach.npz",
+    "demo": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\teacher_400_001",
+    "out": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\RL1_seed11_stage100_001",
+    "updates": 100,
+    "workers": 23,
+    "seed": 11,
+    "mode": "RL1",
+    "resume": null,
+    "straight": false,
+    "no_edge": false,
+    "old_stop": false,
+    "buffer": 0.03
+  },
+  "schema": "v09r12.measured-height.v1/contact19.v1",
+  "status": "blocked_at_bc_gate",
+  "obs_dim": 5775,
+  "reach_sha256": "b29927cea1620f3201e4ec0ec1f671f8003272f3acb75651132b103de4d9b947",
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "scope": "A1 unified nominal training with scheduled cosim validation"
+}

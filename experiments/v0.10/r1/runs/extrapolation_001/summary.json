@@ -1,0 +1,207 @@
+{
+  "status": "completed",
+  "physics_version": "v10r1.area_pressure_candidate.v3_extrapolation",
+  "full_G0_passed": false,
+  "training_started": false,
+  "wall_seconds": 11.117002699989825,
+  "rows": [
+    {
+      "seed": 0,
+      "levels": [
+        {
+          "samples": 101,
+          "seconds": 1.6476904999872204,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 1.6176579324091024e-09,
+          "accepted": 0,
+          "fallback": 100
+        },
+        {
+          "samples": 201,
+          "seconds": 2.986099000001559,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 1.5847815674818783e-09,
+          "accepted": 0,
+          "fallback": 200
+        },
+        {
+          "samples": 401,
+          "seconds": 5.927677400002722,
+          "ledger_error_mL": 0.0,
+          "min_volume_m3": 1.5657151645915346e-09,
+          "accepted": 1,
+          "fallback": 399
+        }
+      ],
+      "max_diff_101_201_mm": 0.10805745567705853,
+      "max_diff_201_401_mm": 0.05386245863874331,
+      "empirical_order": 1.004446627156723,
+      "local_single_thickness_tolerance_pass": false
+    },
+    {
+      "seed": 1,
+      "levels": [
+        {
+          "samples": 101,
+          "seconds": 1.6610266000207048,
+          "ledger_error_mL": 0.0,
+          "min_volume_m3": 4.826490127838478e-10,
+          "accepted": 0,
+          "fallback": 100
+        },
+        {
+          "samples": 201,
+          "seconds": 2.9851975000055972,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 4.662480558429844e-10,
+          "accepted": 0,
+          "fallback": 200
+        },
+        {
+          "samples": 401,
+          "seconds": 5.929425400012406,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 4.542253099149654e-10,
+          "accepted": 9,
+          "fallback": 391
+        }
+      ],
+      "max_diff_101_201_mm": 0.17501403941186724,
+      "max_diff_201_401_mm": 0.08769824384811595,
+      "empirical_order": 0.9968507997354396,
+      "local_single_thickness_tolerance_pass": false
+    },
+    {
+      "seed": 2,
+      "levels": [
+        {
+          "samples": 101,
+          "seconds": 1.6199520000081975,
+          "ledger_error_mL": 0.0,
+          "min_volume_m3": 3.246589153999775e-10,
+          "accepted": 0,
+          "fallback": 100
+        },
+        {
+          "samples": 201,
+          "seconds": 2.8554184999957215,
+          "ledger_error_mL": 0.0,
+          "min_volume_m3": 3.1161432093285266e-10,
+          "accepted": 0,
+          "fallback": 200
+        },
+        {
+          "samples": 401,
+          "seconds": 5.732384800008731,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 3.0524921678293764e-10,
+          "accepted": 8,
+          "fallback": 392
+        }
+      ],
+      "max_diff_101_201_mm": 0.14667186071604976,
+      "max_diff_201_401_mm": 0.07263290627861074,
+      "empirical_order": 1.0138969004450284,
+      "local_single_thickness_tolerance_pass": false
+    },
+    {
+      "seed": 3,
+      "levels": [
+        {
+          "samples": 101,
+          "seconds": 1.466086800006451,
+          "ledger_error_mL": 0.0,
+          "min_volume_m3": 9.785847687739294e-10,
+          "accepted": 0,
+          "fallback": 100
+        },
+        {
+          "samples": 201,
+          "seconds": 2.544624500005739,
+          "ledger_error_mL": 0.0,
+          "min_volume_m3": 9.414418881892702e-10,
+          "accepted": 0,
+          "fallback": 200
+        },
+        {
+          "samples": 401,
+          "seconds": 5.1306083999807015,
+          "ledger_error_mL": 0.0,
+          "min_volume_m3": 9.230472107398563e-10,
+          "accepted": 0,
+          "fallback": 400
+        }
+      ],
+      "max_diff_101_201_mm": 0.11678091752691244,
+      "max_diff_201_401_mm": 0.05843280118830382,
+      "empirical_order": 0.9989541944121905,
+      "local_single_thickness_tolerance_pass": false
+    },
+    {
+      "seed": 4,
+      "levels": [
+        {
+          "samples": 101,
+          "seconds": 1.6131217000074685,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 1.5423595068805274e-10,
+          "accepted": 0,
+          "fallback": 100
+        },
+        {
+          "samples": 201,
+          "seconds": 2.8925535999878775,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 1.5190102266329788e-10,
+          "accepted": 0,
+          "fallback": 200
+        },
+        {
+          "samples": 401,
+          "seconds": 5.787224500003504,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 1.507261068627504e-10,
+          "accepted": 0,
+          "fallback": 400
+        }
+      ],
+      "max_diff_101_201_mm": 0.2533571820526326,
+      "max_diff_201_401_mm": 0.12688197398518994,
+      "empirical_order": 0.9976856050223618,
+      "local_single_thickness_tolerance_pass": false
+    },
+    {
+      "seed": 5,
+      "levels": [
+        {
+          "samples": 101,
+          "seconds": 1.5976664000190794,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 1.1676810047302596e-09,
+          "accepted": 0,
+          "fallback": 100
+        },
+        {
+          "samples": 201,
+          "seconds": 2.908094699989306,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 1.125992965047181e-09,
+          "accepted": 0,
+          "fallback": 200
+        },
+        {
+          "samples": 401,
+          "seconds": 5.744022800005041,
+          "ledger_error_mL": 1.0842021724855044e-13,
+          "min_volume_m3": 1.108751419500618e-09,
+          "accepted": 4,
+          "fallback": 396
+        }
+      ],
+      "max_diff_101_201_mm": 0.1312562419221539,
+      "max_diff_201_401_mm": 0.06617281243335993,
+      "empirical_order": 0.9880755296734741,
+      "local_single_thickness_tolerance_pass": false
+    }
+  ]
+}

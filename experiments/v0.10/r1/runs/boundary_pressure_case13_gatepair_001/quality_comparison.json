@@ -1,0 +1,12 @@
+{
+  "prelift": {
+    "max_wall_difference_mm": 5.477038397236557e-05,
+    "rmse_difference_mm": 1.6327713441288694e-06,
+    "coverage_difference": 0.0
+  },
+  "final": {
+    "max_wall_difference_mm": 0.0005508730110965869,
+    "rmse_difference_mm": 1.5987463464206542e-06,
+    "coverage_difference": 0.0
+  }
+}

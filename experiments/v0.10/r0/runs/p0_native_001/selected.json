@@ -1,0 +1,2222 @@
+[
+  {
+    "scene": {
+      "index": 0,
+      "seed": 270000,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.003240243227423478,
+      "width_m": 0.009070111840875751,
+      "share": 0.8001535102059109,
+      "center": [
+        -0.08885460045137103,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.08885460045137103,
+      0.22
+    ],
+    "end": [
+      -0.08885460045137103,
+      0.28
+    ],
+    "phi": 0.0,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.35909337964383004,
+      "rmse_mm": 0.9013889937790013,
+      "coverage": 0.85,
+      "edge_rmse_mm": 1.2616066345092676,
+      "edge_excess_m3": 9.903130762047115e-06,
+      "roughness_mm": 0.20877198765292437,
+      "edge_coverage": 0.7058823529411765,
+      "p95_error_mm": 2.557759759186225,
+      "excess_ml": 9.903130762047114,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.39318643492610506,
+      "rmse_mm": 0.9540709095803517,
+      "coverage": 0.8525,
+      "edge_rmse_mm": 1.3223179007470502,
+      "edge_excess_m3": 9.537382531616001e-06,
+      "roughness_mm": 0.35520068032074675,
+      "edge_coverage": 0.7401960784313726,
+      "p95_error_mm": 2.5350719780163917,
+      "excess_ml": 9.567360156040516,
+      "damage_fraction_initial_good": 0.01764705882352941,
+      "blade_ml": 1.2319276659719063,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -5.505714157152952e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.03390550060122497,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.04917699997895397,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 0,
+      "seed": 270000,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.003240243227423478,
+      "width_m": 0.009070111840875751,
+      "share": 0.8001535102059109,
+      "center": [
+        -0.08885460045137103,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.08885460045137103,
+      0.19
+    ],
+    "end": [
+      -0.08885460045137103,
+      0.31
+    ],
+    "phi": 0.0,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.35909337964383004,
+      "rmse_mm": 0.9013889937790013,
+      "coverage": 0.85,
+      "edge_rmse_mm": 1.2616066345092676,
+      "edge_excess_m3": 9.903130762047115e-06,
+      "roughness_mm": 0.20877198765292437,
+      "edge_coverage": 0.7058823529411765,
+      "p95_error_mm": 2.557759759186225,
+      "excess_ml": 9.903130762047114,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.4106833485098329,
+      "rmse_mm": 0.9820461663953614,
+      "coverage": 0.850625,
+      "edge_rmse_mm": 1.3632148837581084,
+      "edge_excess_m3": 9.69152837150066e-06,
+      "roughness_mm": 0.41032877441231874,
+      "edge_coverage": 0.7438725490196079,
+      "p95_error_mm": 2.6425654272064207,
+      "excess_ml": 9.762980573964189,
+      "damage_fraction_initial_good": 0.023529411764705882,
+      "blade_ml": 1.2265803652210687,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 2.1175823681357508e-16
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.014152109211769558,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.09545270001399331,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 0,
+      "seed": 270000,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.003240243227423478,
+      "width_m": 0.009070111840875751,
+      "share": 0.8001535102059109,
+      "center": [
+        -0.08885460045137103,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 25,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.08885460045137103,
+      0.15
+    ],
+    "end": [
+      -0.08885460045137103,
+      0.35
+    ],
+    "phi": 0.0,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.35909337964383004,
+      "rmse_mm": 0.9013889937790013,
+      "coverage": 0.85,
+      "edge_rmse_mm": 1.2616066345092676,
+      "edge_excess_m3": 9.903130762047115e-06,
+      "roughness_mm": 0.20877198765292437,
+      "edge_coverage": 0.7058823529411765,
+      "p95_error_mm": 2.557759759186225,
+      "excess_ml": 9.903130762047114,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.2999239718434419,
+      "rmse_mm": 0.704383353626012,
+      "coverage": 0.775625,
+      "edge_rmse_mm": 0.8963103262882518,
+      "edge_excess_m3": 2.9797232487331376e-06,
+      "roughness_mm": 0.3253704752377773,
+      "edge_coverage": 0.6776960784313726,
+      "p95_error_mm": 1.7377765846252442,
+      "excess_ml": 2.9797232487331375,
+      "damage_fraction_initial_good": 0.12941176470588237,
+      "blade_ml": 2.59285321309236,
+      "supplied_ml": 0.0,
+      "dropped_ml": 5.179325345873001,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 1.6940658945086007e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.6991130057423187,
+    "quality_improved": true,
+    "material_gate": false,
+    "wall_seconds": 0.1592950999911409,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 1,
+      "seed": 270001,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0016976982170151134,
+      "width_m": 0.011680240539917095,
+      "share": 0.8948771799945034,
+      "center": [
+        0.08515346655399089,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 0,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      0.08515346655399089,
+      0.22
+    ],
+    "end": [
+      0.08515346655399089,
+      0.28
+    ],
+    "phi": 0.0,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.2233136870803068,
+      "rmse_mm": 0.5368564434502612,
+      "coverage": 0.825,
+      "edge_rmse_mm": 0.7432017969423113,
+      "edge_excess_m3": 5.008624634917881e-06,
+      "roughness_mm": 0.10033986473833449,
+      "edge_coverage": 0.6911764705882353,
+      "p95_error_mm": 1.4060875366316963,
+      "excess_ml": 5.037874415200844,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.24044290665216186,
+      "rmse_mm": 0.5519975388623987,
+      "coverage": 0.814375,
+      "edge_rmse_mm": 0.7447088346707456,
+      "edge_excess_m3": 4.790583948886289e-06,
+      "roughness_mm": 0.18956634244783313,
+      "edge_coverage": 0.7034313725490197,
+      "p95_error_mm": 1.3933344426229362,
+      "excess_ml": 4.899266421043048,
+      "damage_fraction_initial_good": 0.029545454545454545,
+      "blade_ml": 0.603753969758633,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 3.8116482626443515e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.02751318963798936,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.04432660000748001,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 1,
+      "seed": 270001,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0016976982170151134,
+      "width_m": 0.011680240539917095,
+      "share": 0.8948771799945034,
+      "center": [
+        0.08515346655399089,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      0.08515346655399089,
+      0.19
+    ],
+    "end": [
+      0.08515346655399089,
+      0.31
+    ],
+    "phi": 0.0,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.2233136870803068,
+      "rmse_mm": 0.5368564434502612,
+      "coverage": 0.825,
+      "edge_rmse_mm": 0.7432017969423113,
+      "edge_excess_m3": 5.008624634917881e-06,
+      "roughness_mm": 0.10033986473833449,
+      "edge_coverage": 0.6911764705882353,
+      "p95_error_mm": 1.4060875366316963,
+      "excess_ml": 5.037874415200844,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.2562887073823155,
+      "rmse_mm": 0.5876699773833486,
+      "coverage": 0.816875,
+      "edge_rmse_mm": 0.7861054566554821,
+      "edge_excess_m3": 4.93646386345916e-06,
+      "roughness_mm": 0.2316926727024736,
+      "edge_coverage": 0.7022058823529411,
+      "p95_error_mm": 1.4837513021248663,
+      "excess_ml": 5.257898267078077,
+      "damage_fraction_initial_good": 0.03787878787878788,
+      "blade_ml": 0.7088172523940561,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -7.72917564369549e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": -0.0436739453475363,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.0835056999931112,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 1,
+      "seed": 270001,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0016976982170151134,
+      "width_m": 0.011680240539917095,
+      "share": 0.8948771799945034,
+      "center": [
+        0.08515346655399089,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      0.08515346655399089,
+      0.15
+    ],
+    "end": [
+      0.08515346655399089,
+      0.35
+    ],
+    "phi": 0.0,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.2233136870803068,
+      "rmse_mm": 0.5368564434502612,
+      "coverage": 0.825,
+      "edge_rmse_mm": 0.7432017969423113,
+      "edge_excess_m3": 5.008624634917881e-06,
+      "roughness_mm": 0.10033986473833449,
+      "edge_coverage": 0.6911764705882353,
+      "p95_error_mm": 1.4060875366316963,
+      "excess_ml": 5.037874415200844,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.2222658126887978,
+      "rmse_mm": 0.5104344215188069,
+      "coverage": 0.828125,
+      "edge_rmse_mm": 0.6988614505190234,
+      "edge_excess_m3": 3.6833031796513164e-06,
+      "roughness_mm": 0.18598632401021883,
+      "edge_coverage": 0.6727941176470589,
+      "p95_error_mm": 1.3202822755672188,
+      "excess_ml": 3.7428452437204855,
+      "damage_fraction_initial_good": 0.04015151515151515,
+      "blade_ml": 0.5147208688610735,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 6.03510974918689e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.25705864512478716,
+    "quality_improved": true,
+    "material_gate": false,
+    "wall_seconds": 0.15039779999642633,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 2,
+      "seed": 270002,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0033053961583871883,
+      "width_m": 0.00991625926470597,
+      "share": 0.7656782276874725,
+      "center": [
+        0.0,
+        0.15931962310874026
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.03,
+      0.15931962310874026
+    ],
+    "end": [
+      0.03,
+      0.15931962310874026
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.3676918609063229,
+      "rmse_mm": 0.9361898276648086,
+      "coverage": 0.85,
+      "edge_rmse_mm": 1.310275811109487,
+      "edge_excess_m3": 1.0333319064875804e-05,
+      "roughness_mm": 0.1883044134985732,
+      "edge_coverage": 0.7058823529411765,
+      "p95_error_mm": 2.6358047687693835,
+      "excess_ml": 10.333319064875804,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.4076043616747982,
+      "rmse_mm": 0.9768684347350642,
+      "coverage": 0.801875,
+      "edge_rmse_mm": 1.3335089120550105,
+      "edge_excess_m3": 9.698202126733327e-06,
+      "roughness_mm": 0.34962033587560987,
+      "edge_coverage": 0.7218137254901961,
+      "p95_error_mm": 2.6092844112155147,
+      "excess_ml": 9.904811166988644,
+      "damage_fraction_initial_good": 0.0661764705882353,
+      "blade_ml": 1.615967933990517,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 6.352747104407253e-16
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.04146856350770295,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.056279300013557076,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 2,
+      "seed": 270002,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0033053961583871883,
+      "width_m": 0.00991625926470597,
+      "share": 0.7656782276874725,
+      "center": [
+        0.0,
+        0.15931962310874026
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.06,
+      0.15931962310874026
+    ],
+    "end": [
+      0.06,
+      0.15931962310874026
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.3676918609063229,
+      "rmse_mm": 0.9361898276648086,
+      "coverage": 0.85,
+      "edge_rmse_mm": 1.310275811109487,
+      "edge_excess_m3": 1.0333319064875804e-05,
+      "roughness_mm": 0.1883044134985732,
+      "edge_coverage": 0.7058823529411765,
+      "p95_error_mm": 2.6358047687693835,
+      "excess_ml": 10.333319064875804,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.4190245902233406,
+      "rmse_mm": 1.0160560799571727,
+      "coverage": 0.861875,
+      "edge_rmse_mm": 1.4125719623526034,
+      "edge_excess_m3": 1.0049949843930314e-05,
+      "roughness_mm": 0.4052375798670312,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 2.8215810585982144,
+      "excess_ml": 10.087002695899598,
+      "damage_fraction_initial_good": 0.016176470588235296,
+      "blade_ml": 1.4505366905445134,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -1.0587911840678754e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.023837100880148496,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.09575259999837726,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 2,
+      "seed": 270002,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0033053961583871883,
+      "width_m": 0.00991625926470597,
+      "share": 0.7656782276874725,
+      "center": [
+        0.0,
+        0.15931962310874026
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 15,
+    "force_N": 2,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.1,
+      0.15931962310874026
+    ],
+    "end": [
+      0.1,
+      0.15931962310874026
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.3676918609063229,
+      "rmse_mm": 0.9361898276648086,
+      "coverage": 0.85,
+      "edge_rmse_mm": 1.310275811109487,
+      "edge_excess_m3": 1.0333319064875804e-05,
+      "roughness_mm": 0.1883044134985732,
+      "edge_coverage": 0.7058823529411765,
+      "p95_error_mm": 2.6358047687693835,
+      "excess_ml": 10.333319064875804,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.25912865987503564,
+      "rmse_mm": 0.661707703723416,
+      "coverage": 0.71875,
+      "edge_rmse_mm": 0.7413650565982789,
+      "edge_excess_m3": 1.4418703595535251e-07,
+      "roughness_mm": 0.1930393283986712,
+      "edge_coverage": 0.7230392156862745,
+      "p95_error_mm": 1.7107517195700765,
+      "excess_ml": 0.1441870359553525,
+      "damage_fraction_initial_good": 0.22941176470588234,
+      "blade_ml": 2.0695712378992877,
+      "supplied_ml": 0.0,
+      "dropped_ml": 14.196138608706534,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -2.879912020664621e-14
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.9860463966078952,
+    "quality_improved": true,
+    "material_gate": false,
+    "wall_seconds": 0.37216860000626184,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 3,
+      "seed": 270003,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0023625172330640765,
+      "width_m": 0.010282283158995658,
+      "share": 0.7134320320461248,
+      "center": [
+        0.0,
+        0.3353419511754361
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.03,
+      0.3353419511754361
+    ],
+    "end": [
+      0.03,
+      0.3353419511754361
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.2896968515005012,
+      "rmse_mm": 0.7060533770544664,
+      "coverage": 0.825,
+      "edge_rmse_mm": 0.9831236702870726,
+      "edge_excess_m3": 7.4701145235083436e-06,
+      "roughness_mm": 0.15341881051464165,
+      "edge_coverage": 0.6911764705882353,
+      "p95_error_mm": 1.8751174223289748,
+      "excess_ml": 7.4871013569549145,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.3104110732877935,
+      "rmse_mm": 0.7167384010643425,
+      "coverage": 0.798125,
+      "edge_rmse_mm": 0.9622344763750206,
+      "edge_excess_m3": 6.61893751222175e-06,
+      "roughness_mm": 0.2797835760105967,
+      "edge_coverage": 0.7132352941176471,
+      "p95_error_mm": 1.8541247116909532,
+      "excess_ml": 6.7000595574840895,
+      "damage_fraction_initial_good": 0.05378787878787879,
+      "blade_ml": 2.110685833748053,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -1.9058241313221758e-14
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.10511969344981907,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.12407929997425526,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 3,
+      "seed": 270003,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0023625172330640765,
+      "width_m": 0.010282283158995658,
+      "share": 0.7134320320461248,
+      "center": [
+        0.0,
+        0.3353419511754361
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.06,
+      0.3353419511754361
+    ],
+    "end": [
+      0.06,
+      0.3353419511754361
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.2896968515005012,
+      "rmse_mm": 0.7060533770544664,
+      "coverage": 0.825,
+      "edge_rmse_mm": 0.9831236702870726,
+      "edge_excess_m3": 7.4701145235083436e-06,
+      "roughness_mm": 0.15341881051464165,
+      "edge_coverage": 0.6911764705882353,
+      "p95_error_mm": 1.8751174223289748,
+      "excess_ml": 7.4871013569549145,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.3235948078860821,
+      "rmse_mm": 0.7296291016034586,
+      "coverage": 0.758125,
+      "edge_rmse_mm": 0.9535310536301934,
+      "edge_excess_m3": 6.5079117170131155e-06,
+      "roughness_mm": 0.3099746084274225,
+      "edge_coverage": 0.7058823529411765,
+      "p95_error_mm": 1.8574696387088494,
+      "excess_ml": 6.960493947988206,
+      "damage_fraction_initial_good": 0.10454545454545454,
+      "blade_ml": 2.1049252211269502,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -4.658681209898652e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.07033528516046238,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.26104969999869354,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 3,
+      "seed": 270003,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0023625172330640765,
+      "width_m": 0.010282283158995658,
+      "share": 0.7134320320461248,
+      "center": [
+        0.0,
+        0.3353419511754361
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 25,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.1,
+      0.3353419511754361
+    ],
+    "end": [
+      0.1,
+      0.3353419511754361
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.2896968515005012,
+      "rmse_mm": 0.7060533770544664,
+      "coverage": 0.825,
+      "edge_rmse_mm": 0.9831236702870726,
+      "edge_excess_m3": 7.4701145235083436e-06,
+      "roughness_mm": 0.15341881051464165,
+      "edge_coverage": 0.6911764705882353,
+      "p95_error_mm": 1.8751174223289748,
+      "excess_ml": 7.4871013569549145,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.24405823694421577,
+      "rmse_mm": 0.5690888988410696,
+      "coverage": 0.77375,
+      "edge_rmse_mm": 0.7458762435130042,
+      "edge_excess_m3": 1.7702054118353833e-06,
+      "roughness_mm": 0.21566113090004782,
+      "edge_coverage": 0.7218137254901961,
+      "p95_error_mm": 1.5399078788576634,
+      "excess_ml": 1.7702054118353834,
+      "damage_fraction_initial_good": 0.15151515151515152,
+      "blade_ml": 3.9638061550759676,
+      "supplied_ml": 0.0,
+      "dropped_ml": 3.220855075636671,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -7.199780051661553e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.76356598803207,
+    "quality_improved": true,
+    "material_gate": false,
+    "wall_seconds": 0.39562810002826154,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 4,
+      "seed": 270004,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.001672660522209815,
+      "width_m": 0.007548623723430909,
+      "share": 0.7476986337027357,
+      "center": [
+        -0.08474983749126894,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.08474983749126894,
+      0.22
+    ],
+    "end": [
+      -0.08474983749126894,
+      0.28
+    ],
+    "phi": 0.0,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.17764613364114543,
+      "rmse_mm": 0.4322972989509343,
+      "coverage": 0.9,
+      "edge_rmse_mm": 0.6048956527469604,
+      "edge_excess_m3": 3.2073435035706547e-06,
+      "roughness_mm": 0.13680179644376123,
+      "edge_coverage": 0.803921568627451,
+      "p95_error_mm": 1.0801849791865639,
+      "excess_ml": 3.207343503570655,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.18905281841601695,
+      "rmse_mm": 0.4440814970707096,
+      "coverage": 0.8925,
+      "edge_rmse_mm": 0.5892639319740074,
+      "edge_excess_m3": 2.8895830363260583e-06,
+      "roughness_mm": 0.20927155741795586,
+      "edge_coverage": 0.8125,
+      "p95_error_mm": 1.1154356238340246,
+      "excess_ml": 2.8896726347187887,
+      "damage_fraction_initial_good": 0.017361111111111112,
+      "blade_ml": 1.662883403433943,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 1.0376153603865179e-14
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.09904485394165331,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.1167661999934353,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 4,
+      "seed": 270004,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.001672660522209815,
+      "width_m": 0.007548623723430909,
+      "share": 0.7476986337027357,
+      "center": [
+        -0.08474983749126894,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.08474983749126894,
+      0.19
+    ],
+    "end": [
+      -0.08474983749126894,
+      0.31
+    ],
+    "phi": 0.0,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.17764613364114543,
+      "rmse_mm": 0.4322972989509343,
+      "coverage": 0.9,
+      "edge_rmse_mm": 0.6048956527469604,
+      "edge_excess_m3": 3.2073435035706547e-06,
+      "roughness_mm": 0.13680179644376123,
+      "edge_coverage": 0.803921568627451,
+      "p95_error_mm": 1.0801849791865639,
+      "excess_ml": 3.207343503570655,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.2026731385537192,
+      "rmse_mm": 0.4654480312830784,
+      "coverage": 0.8875,
+      "edge_rmse_mm": 0.629037295495653,
+      "edge_excess_m3": 3.0995618484165353e-06,
+      "roughness_mm": 0.2403783755971503,
+      "edge_coverage": 0.8125,
+      "p95_error_mm": 1.1257798203540315,
+      "excess_ml": 3.115947630472111,
+      "damage_fraction_initial_good": 0.027777777777777776,
+      "blade_ml": 1.646059487209473,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 1.2705494208814505e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.028495816864266287,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.23734630001126789,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 4,
+      "seed": 270004,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.001672660522209815,
+      "width_m": 0.007548623723430909,
+      "share": 0.7476986337027357,
+      "center": [
+        -0.08474983749126894,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 0,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.08474983749126894,
+      0.15
+    ],
+    "end": [
+      -0.08474983749126894,
+      0.35
+    ],
+    "phi": 0.0,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.17764613364114543,
+      "rmse_mm": 0.4322972989509343,
+      "coverage": 0.9,
+      "edge_rmse_mm": 0.6048956527469604,
+      "edge_excess_m3": 3.2073435035706547e-06,
+      "roughness_mm": 0.13680179644376123,
+      "edge_coverage": 0.803921568627451,
+      "p95_error_mm": 1.0801849791865639,
+      "excess_ml": 3.207343503570655,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.190272260705312,
+      "rmse_mm": 0.4479951141021337,
+      "coverage": 0.8875,
+      "edge_rmse_mm": 0.6267717311415572,
+      "edge_excess_m3": 2.6866236344182265e-06,
+      "roughness_mm": 0.18679018468159886,
+      "edge_coverage": 0.7794117647058824,
+      "p95_error_mm": 1.11609548011617,
+      "excess_ml": 2.686623634418227,
+      "damage_fraction_initial_good": 0.025694444444444443,
+      "blade_ml": 0.4903326428807609,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 1.2599615090407718e-14
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.16235238557164944,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.4025467000028584,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 5,
+      "seed": 270005,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0027730912413933347,
+      "width_m": 0.006388442927668548,
+      "share": 0.8737561384525643,
+      "center": [
+        0.08399886212466791,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      0.08399886212466791,
+      0.22
+    ],
+    "end": [
+      0.08399886212466791,
+      0.28
+    ],
+    "phi": 0.0,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.27565844103307874,
+      "rmse_mm": 0.6597997604291391,
+      "coverage": 0.875,
+      "edge_rmse_mm": 0.9237215640658172,
+      "edge_excess_m3": 5.929998692525621e-06,
+      "roughness_mm": 0.25009903187187965,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 1.6895716648003005,
+      "excess_ml": 5.929998692525621,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.30506970247914117,
+      "rmse_mm": 0.706437942239862,
+      "coverage": 0.85125,
+      "edge_rmse_mm": 0.9618473566302002,
+      "edge_excess_m3": 5.830880030039232e-06,
+      "roughness_mm": 0.34488144364116025,
+      "edge_coverage": 0.7745098039215687,
+      "p95_error_mm": 1.652896306494585,
+      "excess_ml": 6.028712376894707,
+      "damage_fraction_initial_good": 0.041428571428571426,
+      "blade_ml": 0.8240336072180748,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -1.4823076576950256e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": -0.016646493445859962,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.11406120000174269,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 5,
+      "seed": 270005,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0027730912413933347,
+      "width_m": 0.006388442927668548,
+      "share": 0.8737561384525643,
+      "center": [
+        0.08399886212466791,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      0.08399886212466791,
+      0.19
+    ],
+    "end": [
+      0.08399886212466791,
+      0.31
+    ],
+    "phi": 0.0,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.27565844103307874,
+      "rmse_mm": 0.6597997604291391,
+      "coverage": 0.875,
+      "edge_rmse_mm": 0.9237215640658172,
+      "edge_excess_m3": 5.929998692525621e-06,
+      "roughness_mm": 0.25009903187187965,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 1.6895716648003005,
+      "excess_ml": 5.929998692525621,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.3153373362675112,
+      "rmse_mm": 0.7279750474921853,
+      "coverage": 0.865,
+      "edge_rmse_mm": 0.9978749327489463,
+      "edge_excess_m3": 5.98612634248648e-06,
+      "roughness_mm": 0.38230512288784485,
+      "edge_coverage": 0.7794117647058824,
+      "p95_error_mm": 1.700949965914584,
+      "excess_ml": 6.156373828318332,
+      "damage_fraction_initial_good": 0.03642857142857143,
+      "blade_ml": 0.8200564418957257,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -1.725829630030637e-14
+    },
+    "feed": null,
+    "excess_reduction_fraction": -0.03817456757250918,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.23710339999524876,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 5,
+      "seed": 270005,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0027730912413933347,
+      "width_m": 0.006388442927668548,
+      "share": 0.8737561384525643,
+      "center": [
+        0.08399886212466791,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 15,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      0.08399886212466791,
+      0.15
+    ],
+    "end": [
+      0.08399886212466791,
+      0.35
+    ],
+    "phi": 0.0,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.27565844103307874,
+      "rmse_mm": 0.6597997604291391,
+      "coverage": 0.875,
+      "edge_rmse_mm": 0.9237215640658172,
+      "edge_excess_m3": 5.929998692525621e-06,
+      "roughness_mm": 0.25009903187187965,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 1.6895716648003005,
+      "excess_ml": 5.929998692525621,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.27240866757016674,
+      "rmse_mm": 0.6151317066440999,
+      "coverage": 0.808125,
+      "edge_rmse_mm": 0.8320702789753693,
+      "edge_excess_m3": 3.562228898012148e-06,
+      "roughness_mm": 0.30306969269274237,
+      "edge_coverage": 0.7009803921568627,
+      "p95_error_mm": 1.5352472691928338,
+      "excess_ml": 3.562228898012148,
+      "damage_fraction_initial_good": 0.11357142857142857,
+      "blade_ml": 1.0323521615100852,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.6808448496755518,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -1.7152417181899582e-14
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.3992867312935319,
+    "quality_improved": true,
+    "material_gate": false,
+    "wall_seconds": 0.37623600001097657,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 6,
+      "seed": 270006,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0015535160591140416,
+      "width_m": 0.009014733886026556,
+      "share": 0.6304396075902614,
+      "center": [
+        0.0,
+        0.16721650354376372
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.03,
+      0.16721650354376372
+    ],
+    "end": [
+      0.03,
+      0.16721650354376372
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.18169926140376702,
+      "rmse_mm": 0.438487376483427,
+      "coverage": 0.875,
+      "edge_rmse_mm": 0.6097297490354155,
+      "edge_excess_m3": 3.395425503453604e-06,
+      "roughness_mm": 0.11646665353146804,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 1.3106722753754192,
+      "excess_ml": 3.395425503453604,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.19528820446808748,
+      "rmse_mm": 0.44914317244048535,
+      "coverage": 0.865,
+      "edge_rmse_mm": 0.5750277708579031,
+      "edge_excess_m3": 2.794409760055176e-06,
+      "roughness_mm": 0.22093590814602573,
+      "edge_coverage": 0.7990196078431373,
+      "p95_error_mm": 1.3083498970017553,
+      "excess_ml": 2.794409760055176,
+      "damage_fraction_initial_good": 0.03857142857142857,
+      "blade_ml": 2.5577326573173003,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -2.117582368135751e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.17700748927847607,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.1275074000004679,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 6,
+      "seed": 270006,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0015535160591140416,
+      "width_m": 0.009014733886026556,
+      "share": 0.6304396075902614,
+      "center": [
+        0.0,
+        0.16721650354376372
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.06,
+      0.16721650354376372
+    ],
+    "end": [
+      0.06,
+      0.16721650354376372
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.18169926140376702,
+      "rmse_mm": 0.438487376483427,
+      "coverage": 0.875,
+      "edge_rmse_mm": 0.6097297490354155,
+      "edge_excess_m3": 3.395425503453604e-06,
+      "roughness_mm": 0.11646665353146804,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 1.3106722753754192,
+      "excess_ml": 3.395425503453604,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.20215927063109276,
+      "rmse_mm": 0.4598593427903107,
+      "coverage": 0.87625,
+      "edge_rmse_mm": 0.6171952959155953,
+      "edge_excess_m3": 3.0501410512545704e-06,
+      "roughness_mm": 0.23664723837386728,
+      "edge_coverage": 0.7867647058823529,
+      "p95_error_mm": 1.2605973385101157,
+      "excess_ml": 3.0700395750003344,
+      "damage_fraction_initial_good": 0.02214285714285714,
+      "blade_ml": 2.453850064282723,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 7.199780051661553e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.0958306781056773,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.2535840000200551,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 6,
+      "seed": 270006,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0015535160591140416,
+      "width_m": 0.009014733886026556,
+      "share": 0.6304396075902614,
+      "center": [
+        0.0,
+        0.16721650354376372
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 2,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.1,
+      0.16721650354376372
+    ],
+    "end": [
+      0.1,
+      0.16721650354376372
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.18169926140376702,
+      "rmse_mm": 0.438487376483427,
+      "coverage": 0.875,
+      "edge_rmse_mm": 0.6097297490354155,
+      "edge_excess_m3": 3.395425503453604e-06,
+      "roughness_mm": 0.11646665353146804,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 1.3106722753754192,
+      "excess_ml": 3.395425503453604,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.18615818808344226,
+      "rmse_mm": 0.4126148183480612,
+      "coverage": 0.84125,
+      "edge_rmse_mm": 0.5440659545732913,
+      "edge_excess_m3": 2.2084585784086388e-06,
+      "roughness_mm": 0.19993357910032433,
+      "edge_coverage": 0.7267156862745098,
+      "p95_error_mm": 0.9585097464462836,
+      "excess_ml": 2.310676020678109,
+      "damage_fraction_initial_good": 0.05928571428571429,
+      "blade_ml": 1.500328499113296,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 6.352747104407253e-16
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.3194737984008658,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.4342962999944575,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 7,
+      "seed": 270007,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0029476211233470935,
+      "width_m": 0.00962724466661709,
+      "share": 0.6024206960424638,
+      "center": [
+        0.0,
+        0.33259360975210506
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.03,
+      0.33259360975210506
+    ],
+    "end": [
+      0.03,
+      0.33259360975210506
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.3497721121307419,
+      "rmse_mm": 0.8590631063412619,
+      "coverage": 0.825,
+      "edge_rmse_mm": 1.1905210934763113,
+      "edge_excess_m3": 9.533726228922429e-06,
+      "roughness_mm": 0.2120671517000051,
+      "edge_coverage": 0.6911764705882353,
+      "p95_error_mm": 2.5639308170954505,
+      "excess_ml": 9.78742649506024,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.3710875691685728,
+      "rmse_mm": 0.8702545898796459,
+      "coverage": 0.81125,
+      "edge_rmse_mm": 1.183996263996216,
+      "edge_excess_m3": 8.493715975562253e-06,
+      "roughness_mm": 0.3544857154535029,
+      "edge_coverage": 0.7279411764705882,
+      "p95_error_mm": 2.5626301444008073,
+      "excess_ml": 8.63040637084006,
+      "damage_fraction_initial_good": 0.04696969696969697,
+      "blade_ml": 2.9583719737945486,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -1.4399560103323106e-14
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.1182149490271149,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.12682000000495464,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 7,
+      "seed": 270007,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0029476211233470935,
+      "width_m": 0.00962724466661709,
+      "share": 0.6024206960424638,
+      "center": [
+        0.0,
+        0.33259360975210506
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 8,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.06,
+      0.33259360975210506
+    ],
+    "end": [
+      0.06,
+      0.33259360975210506
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.3497721121307419,
+      "rmse_mm": 0.8590631063412619,
+      "coverage": 0.825,
+      "edge_rmse_mm": 1.1905210934763113,
+      "edge_excess_m3": 9.533726228922429e-06,
+      "roughness_mm": 0.2120671517000051,
+      "edge_coverage": 0.6911764705882353,
+      "p95_error_mm": 2.5639308170954505,
+      "excess_ml": 9.78742649506024,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.37977298833958495,
+      "rmse_mm": 0.8626647395285613,
+      "coverage": 0.795,
+      "edge_rmse_mm": 1.1654457967346288,
+      "edge_excess_m3": 8.112138702991746e-06,
+      "roughness_mm": 0.4200310559173568,
+      "edge_coverage": 0.7316176470588235,
+      "p95_error_mm": 2.2057412475684073,
+      "excess_ml": 8.423450042359605,
+      "damage_fraction_initial_good": 0.07424242424242425,
+      "blade_ml": 3.4989045403094696,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -8.046812998915853e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.13936007114730728,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.25256520000402816,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 7,
+      "seed": 270007,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0029476211233470935,
+      "width_m": 0.00962724466661709,
+      "share": 0.6024206960424638,
+      "center": [
+        0.0,
+        0.33259360975210506
+      ],
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 25,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.1,
+      0.33259360975210506
+    ],
+    "end": [
+      0.1,
+      0.33259360975210506
+    ],
+    "phi": -1.5707963267948966,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.3497721121307419,
+      "rmse_mm": 0.8590631063412619,
+      "coverage": 0.825,
+      "edge_rmse_mm": 1.1905210934763113,
+      "edge_excess_m3": 9.533726228922429e-06,
+      "roughness_mm": 0.2120671517000051,
+      "edge_coverage": 0.6911764705882353,
+      "p95_error_mm": 2.5639308170954505,
+      "excess_ml": 9.78742649506024,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.22877966856806034,
+      "rmse_mm": 0.5339553413125154,
+      "coverage": 0.79125,
+      "edge_rmse_mm": 0.7007398137933789,
+      "edge_excess_m3": 1.566569796051074e-06,
+      "roughness_mm": 0.20735292141497075,
+      "edge_coverage": 0.7107843137254902,
+      "p95_error_mm": 1.682913589477539,
+      "excess_ml": 1.566569796051074,
+      "damage_fraction_initial_good": 0.13333333333333333,
+      "blade_ml": 5.523767867687559,
+      "supplied_ml": 0.0,
+      "dropped_ml": 4.45699092508708,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -3.3881317890172014e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.8399405812302418,
+    "quality_improved": true,
+    "material_gate": false,
+    "wall_seconds": 0.392954600014491,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 8,
+      "seed": 270008,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.002602018306448962,
+      "width_m": 0.007057545969806142,
+      "share": 0.8447009627611889,
+      "center": [
+        -0.08680226417638402,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.08680226417638402,
+      0.22
+    ],
+    "end": [
+      -0.08680226417638402,
+      0.28
+    ],
+    "phi": 0.0,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.26787122151730025,
+      "rmse_mm": 0.6497946851713927,
+      "coverage": 0.875,
+      "edge_rmse_mm": 0.9098216186365237,
+      "edge_excess_m3": 6.044987376556156e-06,
+      "roughness_mm": 0.21463759054517742,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 1.8924846704873755,
+      "excess_ml": 6.044987376556157,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.29486890588807146,
+      "rmse_mm": 0.6878444502832132,
+      "coverage": 0.848125,
+      "edge_rmse_mm": 0.9369805033038865,
+      "edge_excess_m3": 5.801549335788289e-06,
+      "roughness_mm": 0.308599750106528,
+      "edge_coverage": 0.7683823529411765,
+      "p95_error_mm": 1.8783623355628558,
+      "excess_ml": 5.926796724221811,
+      "damage_fraction_initial_good": 0.041428571428571426,
+      "blade_ml": 1.01843652384737,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 9.317362419797304e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.019551844358305242,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.12680180001189,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 8,
+      "seed": 270008,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.002602018306448962,
+      "width_m": 0.007057545969806142,
+      "share": 0.8447009627611889,
+      "center": [
+        -0.08680226417638402,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 1,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.08680226417638402,
+      0.19
+    ],
+    "end": [
+      -0.08680226417638402,
+      0.31
+    ],
+    "phi": 0.0,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.26787122151730025,
+      "rmse_mm": 0.6497946851713927,
+      "coverage": 0.875,
+      "edge_rmse_mm": 0.9098216186365237,
+      "edge_excess_m3": 6.044987376556156e-06,
+      "roughness_mm": 0.21463759054517742,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 1.8924846704873755,
+      "excess_ml": 6.044987376556157,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.3065840237144301,
+      "rmse_mm": 0.7120534938137333,
+      "coverage": 0.86125,
+      "edge_rmse_mm": 0.9767238945376682,
+      "edge_excess_m3": 5.948065646184262e-06,
+      "roughness_mm": 0.349904811890094,
+      "edge_coverage": 0.7720588235294118,
+      "p95_error_mm": 1.8787462622732072,
+      "excess_ml": 6.083490904653729,
+      "damage_fraction_initial_good": 0.030714285714285715,
+      "blade_ml": 1.008139665905278,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 1.9058241313221758e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": -0.006369496857329724,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.2415684000006877,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 8,
+      "seed": 270008,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.002602018306448962,
+      "width_m": 0.007057545969806142,
+      "share": 0.8447009627611889,
+      "center": [
+        -0.08680226417638402,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 8,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      -0.08680226417638402,
+      0.15
+    ],
+    "end": [
+      -0.08680226417638402,
+      0.35
+    ],
+    "phi": 0.0,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.26787122151730025,
+      "rmse_mm": 0.6497946851713927,
+      "coverage": 0.875,
+      "edge_rmse_mm": 0.9098216186365237,
+      "edge_excess_m3": 6.044987376556156e-06,
+      "roughness_mm": 0.21463759054517742,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 1.8924846704873755,
+      "excess_ml": 6.044987376556157,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.2673345643422156,
+      "rmse_mm": 0.6170520798600968,
+      "coverage": 0.840625,
+      "edge_rmse_mm": 0.8308713720926241,
+      "edge_excess_m3": 4.455468412290634e-06,
+      "roughness_mm": 0.28956144386227134,
+      "edge_coverage": 0.7316176470588235,
+      "p95_error_mm": 1.5757227790535933,
+      "excess_ml": 4.505112740884841,
+      "damage_fraction_initial_good": 0.06357142857142857,
+      "blade_ml": 0.9261768250565975,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 4.446922973085077e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.254735790126428,
+    "quality_improved": true,
+    "material_gate": false,
+    "wall_seconds": 0.39065210000262596,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 9,
+      "seed": 270009,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0027582393488301987,
+      "width_m": 0.008419384918050235,
+      "share": 0.6486332161790903,
+      "center": [
+        0.09110684350157522,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.06,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      0.09110684350157522,
+      0.22
+    ],
+    "end": [
+      0.09110684350157522,
+      0.28
+    ],
+    "phi": 0.0,
+    "contact_samples": 49,
+    "before": {
+      "J": 0.2889892333070131,
+      "rmse_mm": 0.7297838345443196,
+      "coverage": 0.875,
+      "edge_rmse_mm": 1.0218513098524298,
+      "edge_excess_m3": 7.187514952732283e-06,
+      "roughness_mm": 0.17274559875933668,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 2.0898577862006364,
+      "excess_ml": 7.1875149527322835,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.31197326216121,
+      "rmse_mm": 0.7439958707068256,
+      "coverage": 0.83625,
+      "edge_rmse_mm": 1.001605732755538,
+      "edge_excess_m3": 6.380662462136271e-06,
+      "roughness_mm": 0.2933666026942091,
+      "edge_coverage": 0.7757352941176471,
+      "p95_error_mm": 2.0674080584245758,
+      "excess_ml": 6.381999960822024,
+      "damage_fraction_initial_good": 0.060714285714285714,
+      "blade_ml": 2.4544568609804527,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": -8.893845946170154e-15
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.11207141789723142,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.12017949999426492,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 9,
+      "seed": 270009,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0027582393488301987,
+      "width_m": 0.008419384918050235,
+      "share": 0.6486332161790903,
+      "center": [
+        0.09110684350157522,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.12,
+    "spacing_m": 0.00125,
+    "pitch_deg": 4,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      0.09110684350157522,
+      0.19
+    ],
+    "end": [
+      0.09110684350157522,
+      0.31
+    ],
+    "phi": 0.0,
+    "contact_samples": 97,
+    "before": {
+      "J": 0.2889892333070131,
+      "rmse_mm": 0.7297838345443196,
+      "coverage": 0.875,
+      "edge_rmse_mm": 1.0218513098524298,
+      "edge_excess_m3": 7.187514952732283e-06,
+      "roughness_mm": 0.17274559875933668,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 2.0898577862006364,
+      "excess_ml": 7.1875149527322835,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.33248129986136443,
+      "rmse_mm": 0.7703360631953983,
+      "coverage": 0.79125,
+      "edge_rmse_mm": 1.0202096407650734,
+      "edge_excess_m3": 6.479352788677961e-06,
+      "roughness_mm": 0.3289251756478167,
+      "edge_coverage": 0.7610294117647058,
+      "p95_error_mm": 2.0674080584245758,
+      "excess_ml": 6.73947768186644,
+      "damage_fraction_initial_good": 0.11428571428571428,
+      "blade_ml": 2.240399353213537,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 1.1858461261560205e-14
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.06233549061286134,
+    "quality_improved": false,
+    "material_gate": false,
+    "wall_seconds": 0.24002490000566468,
+    "evidence": "nominal material only; reach/physical execution not established"
+  },
+  {
+    "scene": {
+      "index": 9,
+      "seed": 270009,
+      "kind": "edge_ridge",
+      "amplitude_m": 0.0027582393488301987,
+      "width_m": 0.008419384918050235,
+      "share": 0.6486332161790903,
+      "center": [
+        0.09110684350157522,
+        0.25
+      ],
+      "direction": [
+        0.0,
+        1.0
+      ]
+    },
+    "requested_ml": 0.0,
+    "length_m": 0.2,
+    "spacing_m": 0.00125,
+    "pitch_deg": 25,
+    "force_N": 0.5,
+    "speed_m_s": 0.06,
+    "start": [
+      0.09110684350157522,
+      0.15
+    ],
+    "end": [
+      0.09110684350157522,
+      0.35
+    ],
+    "phi": 0.0,
+    "contact_samples": 161,
+    "before": {
+      "J": 0.2889892333070131,
+      "rmse_mm": 0.7297838345443196,
+      "coverage": 0.875,
+      "edge_rmse_mm": 1.0218513098524298,
+      "edge_excess_m3": 7.187514952732283e-06,
+      "roughness_mm": 0.17274559875933668,
+      "edge_coverage": 0.7549019607843137,
+      "p95_error_mm": 2.0898577862006364,
+      "excess_ml": 7.1875149527322835,
+      "damage_fraction_initial_good": 0.0,
+      "blade_ml": 0.0,
+      "supplied_ml": 0.0,
+      "dropped_ml": 0.0,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 0.0
+    },
+    "after": {
+      "J": 0.2684930794792539,
+      "rmse_mm": 0.6403130595888538,
+      "coverage": 0.77,
+      "edge_rmse_mm": 0.7855609676419937,
+      "edge_excess_m3": 1.5565264157382005e-06,
+      "roughness_mm": 0.2811166679296909,
+      "edge_coverage": 0.6862745098039216,
+      "p95_error_mm": 1.719508149543135,
+      "excess_ml": 1.5565264157382006,
+      "damage_fraction_initial_good": 0.15428571428571428,
+      "blade_ml": 4.69293874973298,
+      "supplied_ml": 0.0,
+      "dropped_ml": 4.098043937227122,
+      "outside_ml": 0.0,
+      "ledger_error_ml": 1.1011428314305904e-14
+    },
+    "feed": null,
+    "excess_reduction_fraction": 0.7834402535543251,
+    "quality_improved": true,
+    "material_gate": false,
+    "wall_seconds": 0.36124329999438487,
+    "evidence": "nominal material only; reach/physical execution not established"
+  }
+]

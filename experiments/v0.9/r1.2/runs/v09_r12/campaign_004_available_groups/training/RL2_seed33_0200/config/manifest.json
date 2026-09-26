@@ -1,0 +1,30 @@
+{
+  "args": {
+    "reach": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\reach_a1_001\\reach.npz",
+    "demo": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\teacher_400_003_inventory",
+    "out": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL2_seed33_0200",
+    "updates": 200,
+    "workers": 23,
+    "seed": 33,
+    "mode": "RL2",
+    "resume": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001\\training\\RL2_seed33_0100\\checkpoints\\0100.pt",
+    "bc_from": null,
+    "dagger": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\dagger40_round2_001",
+    "straight": false,
+    "no_edge": false,
+    "old_stop": false,
+    "buffer": 0.03,
+    "components": 8,
+    "bc_iterations": 6000,
+    "lr": 3e-06,
+    "action_space": "A1",
+    "dagger_repeat": 1
+  },
+  "schema": "v09r12.measured-height.v3/contact19.mixture8",
+  "status": "training_stage_completed",
+  "obs_dim": 12175,
+  "reach_sha256": "b29927cea1620f3201e4ec0ec1f671f8003272f3acb75651132b103de4d9b947",
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "scope": "A1 unified nominal training with scheduled cosim validation"
+}

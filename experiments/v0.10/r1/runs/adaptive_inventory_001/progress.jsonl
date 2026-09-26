@@ -1,0 +1,7 @@
+{"budget_mm": 0.01, "segment": 0, "stats": {"trials": 0, "accepted": 0, "rejected": 0, "max_depth": 0, "min_accepted_travel_m": null}, "elapsed_s": 0.21405949999461882}
+{"budget_mm": 0.01, "segment": 1, "stats": {"trials": 2051, "accepted": 1026, "rejected": 1025, "max_depth": 11, "min_accepted_travel_m": 4.540698763174521e-06}, "elapsed_s": 67.12564749998273}
+{"budget_mm": 0.01, "segment": 2, "stats": {"trials": 6708, "accepted": 3355, "rejected": 3353, "max_depth": 13, "min_accepted_travel_m": 1.1351746907671893e-06}, "elapsed_s": 216.97973849999835}
+{"budget_mm": 0.01, "segment": 3, "stats": {"trials": 12311, "accepted": 6157, "rejected": 6154, "max_depth": 13, "min_accepted_travel_m": 1.1351746907671893e-06}, "elapsed_s": 392.78536829998484}
+{"budget_mm": 0.005, "segment": 0, "stats": {"trials": 0, "accepted": 0, "rejected": 0, "max_depth": 0, "min_accepted_travel_m": null}, "elapsed_s": 0.0012669000134337693}
+{"budget_mm": 0.005, "segment": 1, "stats": {"trials": 4097, "accepted": 2049, "rejected": 2048, "max_depth": 12, "min_accepted_travel_m": 2.2703493815872606e-06}, "elapsed_s": 166.40804989999742}
+{"budget_mm": 0.005, "segment": 2, "stats": {"trials": 13412, "accepted": 6707, "rejected": 6705, "max_depth": 14, "min_accepted_travel_m": 5.675873453767283e-07}, "elapsed_s": 544.2363621000259}

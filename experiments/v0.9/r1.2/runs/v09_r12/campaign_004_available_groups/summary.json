@@ -1,0 +1,169 @@
+{
+  "status": "budget_decision",
+  "evaluations": {},
+  "timings": {
+    "RL1_11_100": {
+      "policy_s": 0.655541853757677,
+      "environment_ipc_s": 5.815374216255259,
+      "gpu_update_s": 0.8084767012500379,
+      "checkpoint_s": 0.12721773500034034,
+      "total_s": 9.972787686250195,
+      "other_including_io_s": 2.56617717998688,
+      "updates": 80
+    },
+    "RL2_11_100": {
+      "policy_s": 0.6293778049986577,
+      "environment_ipc_s": 5.70323077498877,
+      "gpu_update_s": 0.8443831270003284,
+      "checkpoint_s": 0.1315963359999296,
+      "total_s": 9.86314859300037,
+      "other_including_io_s": 2.5545605500126847,
+      "updates": 100
+    },
+    "RL1_22_100": {
+      "policy_s": 0.6655926959871431,
+      "environment_ipc_s": 5.595032934000773,
+      "gpu_update_s": 0.7799681610010157,
+      "checkpoint_s": 0.13262212499932502,
+      "total_s": 9.745441201000068,
+      "other_including_io_s": 2.57222528501181,
+      "updates": 100
+    },
+    "RL1_33_100": {
+      "policy_s": 0.6331676600062929,
+      "environment_ipc_s": 5.538547494992381,
+      "gpu_update_s": 0.7609622829998262,
+      "checkpoint_s": 0.12737514200038277,
+      "total_s": 9.642804085000826,
+      "other_including_io_s": 2.5827515050019434,
+      "updates": 100
+    },
+    "RL2_22_100": {
+      "policy_s": 0.6010274300044693,
+      "environment_ipc_s": 5.4282605349954975,
+      "gpu_update_s": 0.7737130159992376,
+      "checkpoint_s": 0.13215341000075567,
+      "total_s": 9.509251712999976,
+      "other_including_io_s": 2.574097322000016,
+      "updates": 100
+    },
+    "RL2_33_100": {
+      "policy_s": 0.6014017010004318,
+      "environment_ipc_s": 5.509786261995323,
+      "gpu_update_s": 0.7854174660000717,
+      "checkpoint_s": 0.1362136829990777,
+      "total_s": 9.595491685000598,
+      "other_including_io_s": 2.5626725730056927,
+      "updates": 100
+    },
+    "RL0_11_100": {
+      "policy_s": 0.6026435429989943,
+      "environment_ipc_s": 5.979601695009041,
+      "gpu_update_s": 1.4049262339997222,
+      "checkpoint_s": 0.13106756599983782,
+      "total_s": 10.63936658799983,
+      "other_including_io_s": 2.521127549992233,
+      "updates": 100
+    },
+    "Scratch_11_100": {
+      "policy_s": 0.46205503299366685,
+      "environment_ipc_s": 1.0569440010000835,
+      "gpu_update_s": 0.8073137689995928,
+      "checkpoint_s": 0.13496475099920643,
+      "total_s": 5.037979630000191,
+      "other_including_io_s": 2.576702076007641,
+      "updates": 100
+    },
+    "no_edge_11_100": {
+      "policy_s": 0.6354054749981151,
+      "environment_ipc_s": 5.711527028996643,
+      "gpu_update_s": 0.7577908029998071,
+      "checkpoint_s": 0.1318522519999533,
+      "total_s": 9.835886745000025,
+      "other_including_io_s": 2.5993111860055063,
+      "updates": 100
+    },
+    "old_stop_11_100": {
+      "policy_s": 0.529851634992665,
+      "environment_ipc_s": 5.088268407998694,
+      "gpu_update_s": 0.7389196149994678,
+      "checkpoint_s": 0.1272514489997411,
+      "total_s": 8.944654283999407,
+      "other_including_io_s": 2.4603631770088397,
+      "updates": 100
+    },
+    "RL1_11_200": {
+      "policy_s": 0.6555190259963274,
+      "environment_ipc_s": 5.941817913998093,
+      "gpu_update_s": 0.7637169779997203,
+      "checkpoint_s": 0.1331281569993007,
+      "total_s": 10.096798603999341,
+      "other_including_io_s": 2.6026165290059,
+      "updates": 100
+    },
+    "RL2_11_200": {
+      "policy_s": 0.6542723250000563,
+      "environment_ipc_s": 5.964395430000586,
+      "gpu_update_s": 0.7737766559999727,
+      "checkpoint_s": 0.13885538700036704,
+      "total_s": 10.110927705999929,
+      "other_including_io_s": 2.5796279079989475,
+      "updates": 100
+    },
+    "RL1_22_200": {
+      "policy_s": 0.6084249040033319,
+      "environment_ipc_s": 5.777276341003598,
+      "gpu_update_s": 0.7470640380000987,
+      "checkpoint_s": 0.1392068299991661,
+      "total_s": 9.922864289998978,
+      "other_including_io_s": 2.650892176992783,
+      "updates": 100
+    },
+    "RL1_33_200": {
+      "policy_s": 0.6140119400118419,
+      "environment_ipc_s": 5.82308331499502,
+      "gpu_update_s": 0.7804696479995619,
+      "checkpoint_s": 0.14185399499954657,
+      "total_s": 9.99805247900018,
+      "other_including_io_s": 2.6386335809942096,
+      "updates": 100
+    },
+    "RL2_22_200": {
+      "policy_s": 0.6121033120024367,
+      "environment_ipc_s": 5.843881829998136,
+      "gpu_update_s": 0.7719757380001829,
+      "checkpoint_s": 0.135036474000226,
+      "total_s": 9.970533670000295,
+      "other_including_io_s": 2.6075363159993135,
+      "updates": 100
+    },
+    "RL2_33_200": {
+      "policy_s": 0.6141415869964112,
+      "environment_ipc_s": 5.864348945998936,
+      "gpu_update_s": 0.7749553789988568,
+      "checkpoint_s": 0.13772736899918528,
+      "total_s": 10.002557268000091,
+      "other_including_io_s": 2.611383987006702,
+      "updates": 100
+    },
+    "RL0_11_200": {
+      "policy_s": 0.5060619839986612,
+      "environment_ipc_s": 5.663236694012012,
+      "gpu_update_s": 1.3310426100000041,
+      "checkpoint_s": 0.1309222339988628,
+      "total_s": 10.066753052999703,
+      "other_including_io_s": 2.4354895309901625,
+      "updates": 100
+    },
+    "Scratch_11_200": {
+      "policy_s": 0.5034018000040669,
+      "environment_ipc_s": 1.0550108519985224,
+      "gpu_update_s": 0.8719844029993692,
+      "checkpoint_s": 0.14170383600023342,
+      "total_s": 5.235779630999459,
+      "other_including_io_s": 2.663678739997267,
+      "updates": 100
+    }
+  },
+  "paired_comparisons": {}
+}

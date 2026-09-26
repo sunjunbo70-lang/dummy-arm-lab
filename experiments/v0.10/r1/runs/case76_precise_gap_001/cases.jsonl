@@ -1,0 +1,2 @@
+{"steps": 3344, "status": "failed", "failed_step": 2314, "reason": "Contact error budget exhausted: error=1.6884622421669214e-08, tolerance=1.562132848758938e-08, depth=6", "min_wall_m3": 0.0, "min_blade_m3": 1.9407221120846363e-08, "seconds": 196.76319460000377}
+{"steps": 6688, "status": "failed", "failed_step": 5517, "reason": "Contact error budget exhausted: error=7.81117690331918e-09, tolerance=7.811164243800855e-09, depth=6", "min_wall_m3": 0.0, "min_blade_m3": 1.83574482137409e-08, "seconds": 2836.02656150001}

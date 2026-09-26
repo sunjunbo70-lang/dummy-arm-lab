@@ -1,0 +1,32 @@
+{
+  "source_head": "93e17f133a27d2ec51a49ca42e797aad3c31317d",
+  "rows": [
+    {
+      "steps": 4836,
+      "status": "completed",
+      "ledger_error_ml": 1.3552527156068805e-14,
+      "minimum_volume": 0.0,
+      "boundary_stats": {
+        "nodes": 33241,
+        "area_correction_m2": 9.519468564516427e-12,
+        "moves": 9672
+      },
+      "seconds": 102.2765636999975
+    },
+    {
+      "steps": 9672,
+      "status": "completed",
+      "ledger_error_ml": 2.710505431213761e-14,
+      "minimum_volume": 0.0,
+      "boundary_stats": {
+        "nodes": 37585,
+        "area_correction_m2": 3.505921922967586e-11,
+        "moves": 19344
+      },
+      "max_wall_difference_mm": 0.0005508730110965869,
+      "seconds": 152.5405962000077
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false
+}

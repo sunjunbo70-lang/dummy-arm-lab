@@ -1,0 +1,16 @@
+{
+  "status": "started",
+  "pid": 27028,
+  "source_head": "a91af22c0a723c250a92d53fa4bf4d1ec6034d61",
+  "physics_version": "v10r1.area_pressure_candidate.v4_split_ssprk2",
+  "singles": 1,
+  "sequences": 1,
+  "steps": 1,
+  "spacings_m": [
+    5e-05,
+    2.5e-05
+  ],
+  "workers": 2,
+  "scope": "material subsystem; no full environment/robot/transport claim",
+  "training_started": false
+}

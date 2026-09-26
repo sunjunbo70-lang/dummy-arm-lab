@@ -1,0 +1,8 @@
+{
+  "training_started": false,
+  "status": "inventory_rejection_diagnostic",
+  "trace_pid": 26144,
+  "precise_gap_pid": 17240,
+  "long_sequence_pid": 40668,
+  "telemetry_pid": 13564
+}

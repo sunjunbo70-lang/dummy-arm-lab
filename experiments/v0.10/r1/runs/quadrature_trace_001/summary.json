@@ -1,0 +1,63 @@
+{
+  "status": "failure_traced",
+  "message": "Adaptive boundary depth budget exhausted at 0.83592987060546875:0.83593368530273438: support=True, closure=5.118463911755981e-18, difference=3.440734361786066e-17",
+  "context": {
+    "begin": [
+      -0.06586109001381107,
+      0.23409079902027605
+    ],
+    "end": [
+      -0.064437736628953,
+      0.23329740422917122
+    ],
+    "alpha": 1.5462576820577338,
+    "beta": 1.550451733524185,
+    "lo": 0.8359298706054688,
+    "hi": 0.8359336853027344,
+    "depth": 18,
+    "budget_m2": 2.595367431640625e-17,
+    "closure_m2": 5.118463911755981e-18,
+    "difference_m2": 3.440734361786066e-17,
+    "terms": [
+      {
+        "kind": 0,
+        "blade": 0,
+        "wall": 4348,
+        "signed_difference_m2": -3.440734361786066e-17
+      },
+      {
+        "kind": 0,
+        "blade": 0,
+        "wall": 4349,
+        "signed_difference_m2": 3.440734358070215e-17
+      },
+      {
+        "kind": 0,
+        "blade": 120,
+        "wall": 4849,
+        "signed_difference_m2": -7.754818242684634e-26
+      },
+      {
+        "kind": 1,
+        "blade": 23,
+        "wall": 4425,
+        "signed_difference_m2": -8.077935669463161e-26
+      },
+      {
+        "kind": 1,
+        "blade": 23,
+        "wall": 4325,
+        "signed_difference_m2": 7.936571795247556e-26
+      },
+      {
+        "kind": 1,
+        "blade": 138,
+        "wall": 4930,
+        "signed_difference_m2": 7.431700815906108e-26
+      }
+    ]
+  },
+  "source_head": "5b4c92a8e293788518d56e62c5b6b62f72292a79",
+  "seconds": 129.59294289999525,
+  "training_started": false
+}

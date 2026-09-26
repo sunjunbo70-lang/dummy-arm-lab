@@ -1,0 +1,8 @@
+{
+  "status": "expanded_boundary_material_gate_running",
+  "pid": 32992,
+  "workers": 4,
+  "training_started": false,
+  "full_material_gate_passed": false,
+  "record": "records/CASE13_FIXED_SPACING_AND_EXPANDED_BOUNDARY.md"
+}

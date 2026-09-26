@@ -1,0 +1,43 @@
+{
+  "status": "needs_attention",
+  "created_utc": 1790273737.6381068,
+  "scope": "L1 simulation only",
+  "reach": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\reach_a1_001\\reach.npz",
+  "reach_sha256": "b29927cea1620f3201e4ec0ec1f671f8003272f3acb75651132b103de4d9b947",
+  "bc": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\BC1_seed11_dagger2_005\\checkpoints\\bc.pt",
+  "bc_gate": {
+    "executable_fraction": 0.888283378746594,
+    "contact_requests": 367,
+    "improves": true,
+    "pass": true
+  },
+  "core_seeds": [
+    11,
+    22,
+    33
+  ],
+  "core_groups": [
+    "RL1",
+    "RL2"
+  ],
+  "updates": [
+    100,
+    200,
+    400
+  ],
+  "rollout_decisions": 2048,
+  "lr": 3e-06,
+  "KL_guard": 0.03,
+  "max_parallel_training": 2,
+  "expansion_rule": "At each boundary, compare best validation J in earlier/later halves of the new 100 or 200 updates, per run. Expand all core groups plus RL0/Scratch if median relative improvement of either core family exceeds 2%. Stop expansion if both scheduled cosim checks in the stage show requested contacts with less than 30% execution or downward material-face frames. Do not use final tests.",
+  "selection_rule": "Minimum mean J on fixed six lightweight validation scenes across all completed stages, ties earlier update. Full 60 validation scenes reported after selection; no tuning on final tests.",
+  "baseline_budget": "RL0 and Scratch follow core budget if expansion occurs; three ablations remain at 100 and compare to matched RL1_100 reference. BC/teachers are evaluation-only.",
+  "final_tests": "60 paired nominal scenes per group; 20 paired full MuJoCo scenes for T,T+,BC1 and all six core policies; expand core full tests to 60 only when first20 meet stage coverage70%/edge65%/RMSE1mm.",
+  "absolute_success": "coverage>=95%, edge>=95%, RMSE<=0.5mm, P95<=1mm; failure is retained, thresholds unchanged",
+  "test_seed_start": 80000,
+  "validation_seed_start": 70000,
+  "completed_is_not_task_success": true,
+  "parent_campaign": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001",
+  "recovery_note": "Original straight transfer BC gate failed at 72.3%. Two straight-specific 40-episode DAgger rounds (80 total), sampled 5x relative to teacher data, plus 6000 BC updates; other completed jobs adopted without rerun. Adapted initialization is a confound, not a clean single-factor comparison.",
+  "reason": "At least one planned group failed or did not pass BC; no success claim."
+}

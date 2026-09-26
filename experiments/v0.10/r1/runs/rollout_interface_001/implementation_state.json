@@ -1,0 +1,19 @@
+{
+  "utc": "2026-09-25T20:47:23.127213+00:00",
+  "material_audit_pid": 33596,
+  "single_completed": 100,
+  "single_passed": 69,
+  "single_max_wall_diff_mm": 0.061788644737383554,
+  "single_max_ledger_error_ml": 2.574980159653073e-13,
+  "tests_passed": 38,
+  "training_started": false,
+  "full_environment_gate": false,
+  "missing": [
+    "full material G0",
+    "continuous robot G1 executor",
+    "complete GPU environment",
+    "environment rollout collector",
+    "development and formal PPO runs",
+    "evaluation and native full-job replays"
+  ]
+}

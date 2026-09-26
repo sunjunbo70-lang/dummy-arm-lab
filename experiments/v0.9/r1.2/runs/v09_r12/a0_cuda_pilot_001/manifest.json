@@ -1,0 +1,10 @@
+{
+  "stage": "A0 CUDA backend pilot; NOT A1/full experiment",
+  "updates": 2,
+  "rollout_steps": 2048,
+  "teacher_episodes": 4,
+  "seed": 9,
+  "device": "NVIDIA GeForce RTX 4080 SUPER",
+  "physics": "legacy nominal table, not TimedArm cosim",
+  "status": "completed A0 pilot only"
+}

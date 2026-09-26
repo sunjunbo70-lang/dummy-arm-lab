@@ -1,0 +1,21 @@
+{
+  "index": 26,
+  "sequence": false,
+  "max_wall_diff_mm": 0.3591874778759163,
+  "rmse_diff_mm": 0.00019255126997075322,
+  "coverage_diff": 0.0,
+  "ledger_error_ml": 1.5500702934753696e-13,
+  "passed": false,
+  "seconds": 0.4684074000106193,
+  "steps": [
+    {
+      "step": 0,
+      "op": "contact",
+      "max_wall_diff_mm": 0.3591874778759163,
+      "rmse_diff_mm": 0.00019255126997075322,
+      "coverage_diff": 0.0,
+      "ledger_ml": 1.5500702934753696e-13
+    }
+  ],
+  "scope": "material subsystem; no robot/observation claim"
+}

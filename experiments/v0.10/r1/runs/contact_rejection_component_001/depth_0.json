@@ -1,0 +1,46 @@
+{
+  "depth": 0,
+  "reason": "Contact error budget exhausted: error=0.0004312757379868031, tolerance=1e-12, depth=0",
+  "start_controls": [
+    0.2,
+    2.0
+  ],
+  "target_controls": [
+    0.22,
+    2.1
+  ],
+  "start_gap": 0.0,
+  "coarse_gap": 0.0,
+  "fine_gap": 0.0,
+  "components": {
+    "wall": {
+      "max_diff_mm": 1.6213685919991584e-05,
+      "index": [
+        61,
+        49
+      ],
+      "coarse_m3": 2.7116871419104566e-09,
+      "fine_m3": 2.711281799762457e-09,
+      "sum_diff_ml": -1.201358262026552e-06
+    },
+    "blade": {
+      "max_diff_mm": 0.0004312757379868031,
+      "index": [
+        1,
+        0
+      ],
+      "coarse_m3": 3.797921487298784e-08,
+      "fine_m3": 3.796843297953817e-08,
+      "sum_diff_ml": 1.201358262042057e-06
+    },
+    "bead": {
+      "max_diff_mm": 0.0,
+      "index": [
+        0
+      ],
+      "coarse_m3": 0.0,
+      "fine_m3": 0.0,
+      "sum_diff_ml": 0.0
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "status": "running",
+  "cases": 150,
+  "physics": "v10r1.displacement_flux_candidate.v1",
+  "training_started": false
+}

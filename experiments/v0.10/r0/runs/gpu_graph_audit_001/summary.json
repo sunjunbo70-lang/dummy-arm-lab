@@ -1,0 +1,20 @@
+{
+  "mutable_inputs_test": [
+    {
+      "input_factor": 1.0,
+      "max_gap_error_mm": 1.1471211910918377e-05,
+      "pass": true
+    },
+    {
+      "input_factor": 0.5,
+      "max_gap_error_mm": 1.1461190878737232e-05,
+      "pass": true
+    },
+    {
+      "input_factor": 1.5,
+      "max_gap_error_mm": 1.1281520128671174e-05,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

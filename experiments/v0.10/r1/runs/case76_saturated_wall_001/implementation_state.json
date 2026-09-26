@@ -1,0 +1,8 @@
+{
+  "training_started": false,
+  "status": "wall_cap_ordering_candidate_pair_running",
+  "pid": 7244,
+  "long_sequence_pid": 40668,
+  "monitor_pid": 13564,
+  "full_material_gate": false
+}

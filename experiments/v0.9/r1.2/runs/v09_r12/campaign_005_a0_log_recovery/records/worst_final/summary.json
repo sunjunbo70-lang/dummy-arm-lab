@@ -1,0 +1,46 @@
+{
+  "episodes": [
+    {
+      "seed": 80007,
+      "task": "corner",
+      "backend": "cosim",
+      "return": -88.3263326532138,
+      "decisions": 82,
+      "end_reason": "give_up",
+      "invalid_fraction": 0.0,
+      "final": {
+        "coverage": 0.201875,
+        "mean_thickness_mm": 2.9107064040800403,
+        "rmse_mm": 2.585578604769942,
+        "p95_error_mm": 5.23531969660245,
+        "under_frac": 0.355625,
+        "over_frac": 0.4425,
+        "roughness_mm": 2.26430894011978,
+        "blade_load_ml": 16.79182372811742,
+        "waste_frac": 0.5496127437135241,
+        "edge_coverage": 0.12622549019607843,
+        "edge_bare_frac": 0.003676470588235294,
+        "score_side_m": 0.2,
+        "J": 1.2370272703143728,
+        "edge_rmse_mm": 2.7187705107257267,
+        "edge_excess_m3": 2.1227447802268975e-05,
+        "carry_loss_ml": 85.41819771411292,
+        "outside_ml": 0.0,
+        "volume_error_m3": -8.673617379884035e-19
+      },
+      "best_J": 0.4008689520463829,
+      "initial_J": 0.4008689520463829,
+      "initial_material_parameters": {
+        "wall_share": 0.7232299641723854
+      },
+      "max_tracking_mm": 8.227674308126689,
+      "face_down_frames": 0,
+      "contact_requests": 55,
+      "executed_contacts": 55
+    }
+  ],
+  "complete": true,
+  "backend": "cosim",
+  "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL1_seed33_0400\\checkpoints\\0320.pt",
+  "teacher": null
+}

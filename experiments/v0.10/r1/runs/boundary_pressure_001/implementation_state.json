@@ -1,0 +1,13 @@
+{
+  "status": "global_rates_combined_failed_pressure_integration_initial_stock_failed",
+  "training_started": false,
+  "full_material_gate": false,
+  "component_tests": 73,
+  "active_audit_pid": 33596,
+  "active_new_diagnostic": false,
+  "evidence": [
+    "adaptive_global_rates_001/summary.json",
+    "boundary_pressure_001/summary.json"
+  ],
+  "next_action": "trace failing sparse quadrature term and initial pickup negative roundoff; no threshold relaxation or duplicate runs"
+}

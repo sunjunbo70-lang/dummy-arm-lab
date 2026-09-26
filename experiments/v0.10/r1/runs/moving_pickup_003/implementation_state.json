@@ -1,0 +1,15 @@
+{
+  "status": "moving_area_zero_gap_diagnostic_improved_not_full_physics",
+  "training_started": false,
+  "component_tests": 62,
+  "full_material_gate": false,
+  "active_audit_pid": 33596,
+  "case13_uniform_zero_gap_1024_2048_maxdiff_mm": 0.002197876375078396,
+  "next_action": "couple boundary pickup allocation and bounded blade deposition before pressure/bead/lift and full G0",
+  "limitations": [
+    "prescribed exit deposition in analytic component",
+    "diagnostic zero-gap only",
+    "explicit geometric closure projection",
+    "no tool-cell inventory distribution yet"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "status": "quarter_gap_diagnostic_running",
+  "pid": 29260,
+  "long_sequence_pid": 40668,
+  "telemetry_pid": 13564,
+  "training_started": false,
+  "record": "records/QUARTER_GAP_DIAGNOSTIC.md"
+}

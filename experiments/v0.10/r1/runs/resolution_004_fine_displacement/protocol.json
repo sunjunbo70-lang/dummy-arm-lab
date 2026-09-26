@@ -1,0 +1,26 @@
+{
+  "source": "55845c7b44d91a4a6fe63833cc91e54997796ff9",
+  "scenes": [
+    0,
+    4,
+    8,
+    12,
+    17,
+    21,
+    25,
+    29,
+    34,
+    38,
+    42,
+    47
+  ],
+  "spacings": [
+    3.90625e-05,
+    1.953125e-05,
+    9.765625e-06,
+    4.8828125e-06
+  ],
+  "variant": "displacement",
+  "physics_changed": true,
+  "training_started": false
+}

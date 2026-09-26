@@ -1,0 +1,25 @@
+{
+  "scene": {
+    "index": 0,
+    "seed": 270000,
+    "kind": "edge_ridge",
+    "amplitude_m": 0.003240243227423478,
+    "width_m": 0.009070111840875751,
+    "share": 0.8001535102059109,
+    "center": [
+      -0.08885460045137103,
+      0.25
+    ],
+    "direction": [
+      0.0,
+      1.0
+    ]
+  },
+  "recipes": [
+    {
+      "step": 0,
+      "op": "load",
+      "requested_ml": 12
+    }
+  ]
+}

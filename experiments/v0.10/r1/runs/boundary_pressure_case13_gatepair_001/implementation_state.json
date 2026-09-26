@@ -1,0 +1,16 @@
+{
+  "status": "case13_coarse_pressure_inaccurate_frozen_resolution_pair_running",
+  "training_started": false,
+  "full_material_gate": false,
+  "component_tests": 77,
+  "active_audit_pid": 33596,
+  "active_diagnostic_pid": 31416,
+  "active_diagnostic_dir": "boundary_pressure_case13_gatepair_001",
+  "steps": [
+    4836,
+    9672
+  ],
+  "coarse_pressure_difference_mm": 0.06330179360723108,
+  "geometry_fine_difference_mm": 0.0021631435299577376,
+  "next_action": "read gatepair progress/summary without duplicate launch; compare prelift/postlift/RMSE/coverage/ledger before expanded gate"
+}

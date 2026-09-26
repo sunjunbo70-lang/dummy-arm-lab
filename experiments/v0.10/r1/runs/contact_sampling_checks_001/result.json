@@ -1,0 +1,7 @@
+{
+  "tests": 4,
+  "errors": 0,
+  "failures": 0,
+  "scope": "geometric sampling only; not robot G1",
+  "training_started": false
+}

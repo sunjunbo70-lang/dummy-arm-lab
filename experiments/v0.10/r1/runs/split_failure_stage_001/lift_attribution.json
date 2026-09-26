@@ -1,0 +1,15 @@
+{
+  "max_cell": [
+    38,
+    74
+  ],
+  "before_lift_signed_mm": -0.0017036656261515061,
+  "bead_deposit_signed_mm": -0.04837319539786037,
+  "blade_deposit_signed_mm": -0.011711783713374854,
+  "after_lift_signed_mm": -0.061788644737383554,
+  "lift_reconstruction_max_residual_m3": [
+    2.117582368135751e-22,
+    1.0587911840678754e-22
+  ],
+  "original_final_arrays_equal": true
+}

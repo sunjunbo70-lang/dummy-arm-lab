@@ -1,0 +1,91 @@
+{
+  "stage": "P0 only",
+  "observation_mutation_check": true,
+  "runs": [
+    {
+      "dt": 0.02,
+      "elapsed_s": 14.24178050000046,
+      "final": {
+        "success": false,
+        "metrics": {
+          "coverage": 0.044375,
+          "mean_thickness_mm": 0.5271920392117584,
+          "rmse_mm": 1.7434406574510934,
+          "p95_error_mm": 2.0,
+          "under_frac": 0.925625,
+          "over_frac": 0.03,
+          "roughness_mm": 0.212950371419211,
+          "blade_load_ml": 0.6029887624434122,
+          "waste_frac": 0.09622206954526036,
+          "edge_coverage": 0.00980392156862745,
+          "edge_bare_frac": 0.7830882352941176,
+          "score_side_m": 0.2
+        },
+        "cycles": 8,
+        "reloads": 2,
+        "control_steps": 1598,
+        "budget": 100000,
+        "stall_count": 0,
+        "unreachable_strokes": 0,
+        "projected_strokes": 0,
+        "end_reason": null,
+        "loss_ledger_m3": {
+          "carry_m3": 2.3093296690862487e-06,
+          "other_drop_m3": 0.0,
+          "outside_m3": 0.0
+        },
+        "volume_balance_m3": 0.0,
+        "carry_loss_m3": 2.3093296690862487e-06,
+        "wall_share": 0.7297451868376353
+      },
+      "transport_samples": 6810,
+      "loaded_tilt_samples": 3372,
+      "max_frame_jump_deg": 16.21298379342151,
+      "max_frame_gap_s": 0.06000000000028649
+    },
+    {
+      "dt": 0.01,
+      "elapsed_s": 5.088207599997986,
+      "final": {
+        "success": false,
+        "metrics": {
+          "coverage": 0.044375,
+          "mean_thickness_mm": 0.5273276190556816,
+          "rmse_mm": 1.743608781804606,
+          "p95_error_mm": 2.0,
+          "under_frac": 0.925625,
+          "over_frac": 0.03,
+          "roughness_mm": 0.21306166917917876,
+          "blade_load_ml": 0.6029890187313299,
+          "waste_frac": 0.09599609246005852,
+          "edge_coverage": 0.00980392156862745,
+          "edge_bare_frac": 0.7830882352941176,
+          "score_side_m": 0.2
+        },
+        "cycles": 8,
+        "reloads": 2,
+        "control_steps": 1598,
+        "budget": 100000,
+        "stall_count": 0,
+        "unreachable_strokes": 0,
+        "projected_strokes": 0,
+        "end_reason": null,
+        "loss_ledger_m3": {
+          "carry_m3": 2.3039062190414045e-06,
+          "other_drop_m3": 0.0,
+          "outside_m3": 0.0
+        },
+        "volume_balance_m3": -3.3881317890172014e-21,
+        "carry_loss_m3": 2.3039062190414045e-06,
+        "wall_share": 0.7297451868376353
+      },
+      "transport_samples": 13378,
+      "loaded_tilt_samples": 6608,
+      "max_frame_jump_deg": 14.242007314659338,
+      "max_frame_gap_s": 0.05000000000023874
+    }
+  ],
+  "coverage_dt_difference": 0.0,
+  "physics_freeze_approved": false,
+  "next": "Review convergence, pose constraints and reward contract before training."
+}

@@ -1,7 +1,10 @@
 """Dummy V2 + 刚性抹刀：墙面上真正够得到的区域，以及按用户规则选出的作业正方形。
 
-用户规则（2026-09-22）：
-    在机械臂操作范围内找「最大的圆」，取它的内接正方形，边长再取 80% 留安全冗余。
+用户规则（2026-09-23 修正）：
+    在机械臂操作范围内找「最大的圆」，圆面积先留 80%（同心缩圆），再取缩小后圆的内接正方形
+    作为评分区；未缩减那个圆的内接正方形作为仿真/物理区（越界不扣分，仍逐刀受可行性检查）。
+    2026-09-22 的最初版本把 80% 直接乘在内接正方形边长上，不是这条规则，边长少留了约 11.8%
+    （面积少留了约 25%），2026-09-23 修正。
 
 做法（L1 软件分析，不连接硬件）：
   1. 墙是机械臂正前方的竖直平面（墙面系 u=+Y 水平、v=+Z 向上、n=+X 指向墙内），
@@ -16,12 +19,12 @@
        - 解出来的姿态下，除刀片外的连杆、电机、减速器离墙 ≥ 5 mm，所有部件（含刀片）离桌面 ≥ 5 mm
          （用 mj_geomDistance 几何距离判定：场景里臂的几何体 contype=0，普通碰撞检测不会报它们）。
   3. 在可作业区域里找最大内切圆（距离变换），圆心可以不在正中。
-     内接正方形边长 = √2·r，作业区 = 同一中心、边长 × 0.8 的正方形。
+     r_scored = r·√0.8；评分区边长 = √2·r_scored；仿真/物理区边长 = √2·r（同一圆心）。
   4. 挑出作业正方形最大的墙距。
 
 限位全部是 V2 固件候选值（M3 实测前未标定）；只检查运动学与连杆碰墙，不检查力矩。
 
-  python tools/simulation/v2_trowel_reach.py --out outputs/wall/reach
+  python tools/simulation/v2_trowel_reach.py --out experiments/v0.1/r0/runs/reach
 """
 import argparse, json, time
 from pathlib import Path
@@ -139,29 +142,40 @@ def scan(distance, step=0.01, u_half=0.45, v_range=(0.0, 0.60), passes=4, pitche
     return us, vs, ok
 
 
-def work_square(us, vs, ok, safety=SAFETY):
-    """最大内切圆 → 内接正方形 → 边长 × safety。"""
+def work_square(us, vs, ok, area_safety=SAFETY):
+    """最大内切圆 → 面积先按 area_safety 同心缩圆 → 内接正方形 = 评分区（score_square）；
+    未缩减的内接正方形 = 仿真/物理区（sim_square，越界不扣分，仍逐刀受 IK/碰撞检查约束）。
+
+    2026-09-23 修正：此前把 safety 直接乘在内接正方形的边长上（side = safety * side_inscribed），
+    不是用户设计意图的"圆面积先留 area_safety，同心缩圆，再在缩小后的圆里取最大内接正方形"
+    （r_scored = r * sqrt(area_safety)），边长系数应是 sqrt(area_safety) 而不是 area_safety 本身，
+    面积相差约 1/area_safety 倍（area_safety=0.8 时评分区面积比旧算法多约 25%）。"""
     step = float(us[1] - us[0])
     # 可达区域外一圈当作不可达，距离变换给出每个可达格到最近不可达格的距离
     padded = np.pad(ok, 1, constant_values=False)
     dist = ndimage.distance_transform_edt(padded)[1:-1, 1:-1] * step
     i, j = np.unravel_index(int(np.argmax(dist)), dist.shape)
     r = float(dist[i, j]) - step / 2          # 格心到边界：保守减半格
-    side_inscribed = np.sqrt(2) * r
-    side = safety * side_inscribed
+    r_scored = r * np.sqrt(area_safety)
+    side_scored = np.sqrt(2) * r_scored        # 缩圆后的内接正方形 = 评分区边长
+    side_sim = np.sqrt(2) * r                    # 原始（未缩减）内接正方形 = 仿真/物理区边长
     cu, cv = float(us[j]), float(vs[i])
     return {'circle_centre_uv_m': [round(cu, 4), round(cv, 4)], 'circle_radius_m': round(r, 4),
-            'inscribed_square_side_m': round(side_inscribed, 4), 'safety_factor': safety,
-            'work_square_side_m': round(side, 4),
-            'work_square_u_m': [round(cu - side / 2, 4), round(cu + side / 2, 4)],
-            'work_square_v_m': [round(cv - side / 2, 4), round(cv + side / 2, 4)],
-            'work_area_cm2': round(side * side * 1e4, 1),
+            'area_safety_factor': area_safety,
+            'score_square_side_m': round(side_scored, 4),
+            'sim_square_side_m': round(side_sim, 4),
+            'score_square_u_m': [round(cu - side_scored / 2, 4), round(cu + side_scored / 2, 4)],
+            'score_square_v_m': [round(cv - side_scored / 2, 4), round(cv + side_scored / 2, 4)],
+            'sim_square_u_m': [round(cu - side_sim / 2, 4), round(cu + side_sim / 2, 4)],
+            'sim_square_v_m': [round(cv - side_sim / 2, 4), round(cv + side_sim / 2, 4)],
+            'score_area_cm2': round(side_scored * side_scored * 1e4, 1),
+            'sim_area_cm2': round(side_sim * side_sim * 1e4, 1),
             'reachable_area_cm2': round(float(ok.sum()) * step * step * 1e4, 1)}
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--out', type=Path, default=Path('outputs/wall/reach'))
+    ap.add_argument('--out', type=Path, default=Path('experiments/v0.1/r0/runs/reach'))
     ap.add_argument('--distances', type=float, nargs='+', default=[0.25, 0.30, 0.35, 0.40, 0.45])
     ap.add_argument('--step', type=float, default=0.01)
     ap.add_argument('--pitches', type=float, nargs='+', default=list(PITCHES_DEG),
@@ -176,9 +190,11 @@ def main():
         rows.append({'wall_distance_m': D, **sq, 'elapsed_s': round(time.time() - t, 1)})
         np.savez(a.out / f'reach_D{int(round(D * 100))}.npz', u=us, v=vs, ok=ok)
         print(json.dumps(rows[-1], ensure_ascii=False), flush=True)
-    best = max(rows, key=lambda r: r['work_square_side_m'])
+    best = max(rows, key=lambda r: r['score_square_side_m'])
     result = {'evidence_level': 'L1', 'hardware_motion': False,
-              'rule': 'largest circle inside the reachable set -> inscribed square -> side x 0.8',
+              'rule': ('largest circle inside the reachable set -> reduce AREA by area_safety, '
+                       'same centre -> inscribed square = scored work area; the un-reduced '
+                       'circle\'s own inscribed square = simulation/physical work area'),
               'poses': {'pitch_deg': list(a.pitches), 'psi_deg': 0, 'roll': 'weak (w_roll=0.1)'},
               'joint_limits': 'V2 firmware candidates, J6 clipped to +/-180 deg; NOT calibrated (M3)',
               'collision': 'arm geoms other than the blade >= 5 mm from the wall; every geom incl. blade >= 5 mm above the table',

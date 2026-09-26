@@ -1,0 +1,206 @@
+[
+  {
+    "pair": [
+      {
+        "seed": 60030,
+        "dt": 0.02,
+        "metrics": {
+          "coverage": 0.115,
+          "mean_thickness_mm": 0.9437124312571326,
+          "rmse_mm": 1.793356184945181,
+          "p95_error_mm": 2.0,
+          "under_frac": 0.74375,
+          "over_frac": 0.14125,
+          "roughness_mm": 0.48548732846699827,
+          "blade_load_ml": 0.008358435672098659,
+          "waste_frac": 0.28677775623282725,
+          "edge_coverage": 0.11274509803921569,
+          "edge_bare_frac": 0.6985294117647058,
+          "score_side_m": 0.2,
+          "J": 0.6996243603682258,
+          "edge_rmse_mm": 1.7505733032973818,
+          "edge_excess_m3": 1.5614168232517258e-06,
+          "carry_loss_ml": 15.181560096659306,
+          "outside_ml": 0.0,
+          "volume_error_m3": -6.776263578034403e-21
+        },
+        "contacts": 3,
+        "face_down": 0,
+        "max_tracking_mm": 7.725725268363799
+      },
+      {
+        "seed": 60030,
+        "dt": 0.01,
+        "metrics": {
+          "coverage": 0.115,
+          "mean_thickness_mm": 0.9441210502646279,
+          "rmse_mm": 1.7936565422484565,
+          "p95_error_mm": 2.0,
+          "under_frac": 0.74375,
+          "over_frac": 0.14125,
+          "roughness_mm": 0.48576387558518347,
+          "blade_load_ml": 0.007282413657283755,
+          "waste_frac": 0.2864893316916074,
+          "edge_coverage": 0.11274509803921569,
+          "edge_bare_frac": 0.6985294117647058,
+          "score_side_m": 0.2,
+          "J": 0.699736768966856,
+          "edge_rmse_mm": 1.750776958689941,
+          "edge_excess_m3": 1.5629148350059197e-06,
+          "carry_loss_ml": 15.1662913583743,
+          "outside_ml": 0.0,
+          "volume_error_m3": 3.3881317890172014e-21
+        },
+        "contacts": 3,
+        "face_down": 0,
+        "max_tracking_mm": 7.725725268363799
+      }
+    ],
+    "absolute_difference": {
+      "J": 0.00011240859863015373,
+      "coverage": 0.0,
+      "carry_loss_ml": 0.015268738285005412
+    },
+    "relative_difference": {
+      "J": 0.00016064412164037376,
+      "coverage": 0.0,
+      "carry_loss_ml": 0.0010057423734972594
+    }
+  },
+  {
+    "pair": [
+      {
+        "seed": 60031,
+        "dt": 0.02,
+        "metrics": {
+          "coverage": 0.11,
+          "mean_thickness_mm": 0.9440733404376476,
+          "rmse_mm": 1.9067232867593311,
+          "p95_error_mm": 2.0,
+          "under_frac": 0.744375,
+          "over_frac": 0.145625,
+          "roughness_mm": 0.8633558264188387,
+          "blade_load_ml": 0.022610962592606806,
+          "waste_frac": 0.28623417436584864,
+          "edge_coverage": 0.0857843137254902,
+          "edge_bare_frac": 0.7009803921568627,
+          "score_side_m": 0.2,
+          "J": 0.7808947780439559,
+          "edge_rmse_mm": 1.793265579497217,
+          "edge_excess_m3": 2.1913280479623987e-06,
+          "carry_loss_ml": 15.152783733773303,
+          "outside_ml": 0.0,
+          "volume_error_m3": -1.0164395367051604e-20
+        },
+        "contacts": 3,
+        "face_down": 0,
+        "max_tracking_mm": 7.3462076771750136
+      },
+      {
+        "seed": 60031,
+        "dt": 0.01,
+        "metrics": {
+          "coverage": 0.11,
+          "mean_thickness_mm": 0.9444610595752952,
+          "rmse_mm": 1.9072538275557491,
+          "p95_error_mm": 2.0,
+          "under_frac": 0.744375,
+          "over_frac": 0.145625,
+          "roughness_mm": 0.8642425424590497,
+          "blade_load_ml": 0.022557452594635617,
+          "waste_frac": 0.28594222571503114,
+          "edge_coverage": 0.0857843137254902,
+          "edge_bare_frac": 0.7009803921568627,
+          "score_side_m": 0.2,
+          "J": 0.7811325239825829,
+          "edge_rmse_mm": 1.7934262229131772,
+          "edge_excess_m3": 2.1938013634203414e-06,
+          "carry_loss_ml": 15.137328434709152,
+          "outside_ml": 0.0,
+          "volume_error_m3": 8.470329472543003e-21
+        },
+        "contacts": 3,
+        "face_down": 0,
+        "max_tracking_mm": 7.3462076771750136
+      }
+    ],
+    "absolute_difference": {
+      "J": 0.00023774593862702087,
+      "coverage": 0.0,
+      "carry_loss_ml": 0.015455299064150552
+    },
+    "relative_difference": {
+      "J": 0.00030436056792883194,
+      "coverage": 0.0,
+      "carry_loss_ml": 0.0010199643402619802
+    }
+  },
+  {
+    "pair": [
+      {
+        "seed": 60032,
+        "dt": 0.02,
+        "metrics": {
+          "coverage": 0.150625,
+          "mean_thickness_mm": 0.9434986573274008,
+          "rmse_mm": 1.5793582242391468,
+          "p95_error_mm": 2.0,
+          "under_frac": 0.703125,
+          "over_frac": 0.14625,
+          "roughness_mm": 0.31216455042345476,
+          "blade_load_ml": 0.1403732909890927,
+          "waste_frac": 0.28444553876272555,
+          "edge_coverage": 0.08700980392156862,
+          "edge_bare_frac": 0.6740196078431373,
+          "score_side_m": 0.2,
+          "J": 0.6352500113840902,
+          "edge_rmse_mm": 1.73596864464561,
+          "edge_excess_m3": 2.1895267558778032e-06,
+          "carry_loss_ml": 15.05809619853158,
+          "outside_ml": 0.0,
+          "volume_error_m3": -1.6940658945086007e-21
+        },
+        "contacts": 3,
+        "face_down": 0,
+        "max_tracking_mm": 12.369669563197032
+      },
+      {
+        "seed": 60032,
+        "dt": 0.01,
+        "metrics": {
+          "coverage": 0.15125,
+          "mean_thickness_mm": 0.9438870964128981,
+          "rmse_mm": 1.5797355129964603,
+          "p95_error_mm": 2.0,
+          "under_frac": 0.703125,
+          "over_frac": 0.145625,
+          "roughness_mm": 0.3122183124926957,
+          "blade_load_ml": 0.1409459214329361,
+          "waste_frac": 0.2841410723695347,
+          "edge_coverage": 0.08700980392156862,
+          "edge_bare_frac": 0.6740196078431373,
+          "score_side_m": 0.2,
+          "J": 0.635250742158225,
+          "edge_rmse_mm": 1.736324355913226,
+          "edge_excess_m3": 2.196463306239856e-06,
+          "carry_loss_ml": 15.041978230017007,
+          "outside_ml": 0.0,
+          "volume_error_m3": 1.6940658945086007e-21
+        },
+        "contacts": 3,
+        "face_down": 0,
+        "max_tracking_mm": 11.840165715613013
+      }
+    ],
+    "absolute_difference": {
+      "J": 7.307741347606367e-07,
+      "coverage": 0.0006249999999999867,
+      "carry_loss_ml": 0.016117968514572922
+    },
+    "relative_difference": {
+      "J": 1.1503711625394988e-06,
+      "coverage": 0.004132231404958589,
+      "carry_loss_ml": 0.0010703855455608457
+    }
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "source_head": "783c80b61118d5036f73020b823d45adc957c5b0",
+  "version": "v10r1.coupled_boundary_exchange.midpoint.v1",
+  "rows": [
+    {
+      "status": "completed",
+      "steps": 128,
+      "seconds": 0.8884726999967825,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_iterations": 2,
+      "geometric_area_correction_m2": 5.757473524900612e-17,
+      "case": "axial"
+    },
+    {
+      "status": "completed",
+      "steps": 256,
+      "seconds": 1.810116200009361,
+      "ledger_error_ml": 1.0842021724855044e-13,
+      "minimum_volume": 0.0,
+      "max_iterations": 2,
+      "geometric_area_correction_m2": 8.775451915967684e-17,
+      "max_wall_difference_mm": 2.245654893241845e-05,
+      "case": "axial"
+    },
+    {
+      "status": "completed",
+      "steps": 128,
+      "seconds": 1.107567500002915,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_iterations": 3,
+      "geometric_area_correction_m2": 9.627356295285431e-17,
+      "case": "diagonal"
+    },
+    {
+      "status": "completed",
+      "steps": 256,
+      "seconds": 2.238552199996775,
+      "ledger_error_ml": 1.0842021724855044e-13,
+      "minimum_volume": 0.0,
+      "max_iterations": 3,
+      "geometric_area_correction_m2": 1.8847750978851104e-16,
+      "max_wall_difference_mm": 4.9099369525552415e-05,
+      "case": "diagonal"
+    },
+    {
+      "steps": 128,
+      "status": "failed",
+      "reason": "step 42: corrected flow has no blade-cell support; max area=2.95818125e-15",
+      "case": "rotation"
+    },
+    {
+      "steps": 256,
+      "status": "failed",
+      "reason": "step 84: corrected flow has no blade-cell support; max area=2.95818125e-15",
+      "case": "rotation"
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false,
+  "scope": "finite blade boundary exchange, no pressure/bead/lift"
+}

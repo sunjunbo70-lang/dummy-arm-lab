@@ -1,0 +1,8 @@
+{
+  "status": "candidate_failed_numerical_threshold",
+  "physics_version": "v10r1.area_pressure_candidate.v6_midpoint_geometry",
+  "training_started": false,
+  "tests_passed": 44,
+  "active_audit_pid": 33596,
+  "next_action": "isolate flux and geometry integration errors before another coupled candidate"
+}

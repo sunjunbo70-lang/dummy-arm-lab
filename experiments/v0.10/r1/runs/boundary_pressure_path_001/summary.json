@@ -1,0 +1,46 @@
+{
+  "source_head": "5b4c92a8e293788518d56e62c5b6b62f72292a79",
+  "physics_version": "v10r1.area_pressure_candidate.v8_1_bounded_initial_pickup",
+  "rows": [
+    {
+      "steps": 16,
+      "status": "completed",
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "boundary_stats": {
+        "nodes": 1972,
+        "area_correction_m2": 9.312313171407528e-15,
+        "moves": 32
+      },
+      "seconds": 18.3022934999899
+    },
+    {
+      "steps": 32,
+      "status": "completed",
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "boundary_stats": {
+        "nodes": 1794,
+        "area_correction_m2": 8.424507780819576e-14,
+        "moves": 64
+      },
+      "max_wall_difference_mm": 0.01591146478152452,
+      "seconds": 17.606393299996853
+    },
+    {
+      "steps": 64,
+      "status": "completed",
+      "ledger_error_ml": 1.0842021724855044e-13,
+      "minimum_volume": 0.0,
+      "boundary_stats": {
+        "nodes": 1606,
+        "area_correction_m2": 1.0651537419715292e-13,
+        "moves": 128
+      },
+      "max_wall_difference_mm": 0.007919213634610065,
+      "seconds": 16.53028100001393
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false
+}

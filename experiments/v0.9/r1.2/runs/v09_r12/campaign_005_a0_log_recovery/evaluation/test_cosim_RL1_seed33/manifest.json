@@ -1,0 +1,14 @@
+{
+  "args": {
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL1_seed33_0400\\checkpoints\\0320.pt",
+    "teacher": null,
+    "reach": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\reach_a1_001\\reach.npz",
+    "out": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_005_a0_log_recovery\\evaluation\\test_cosim_RL1_seed33",
+    "seed": 80000,
+    "episodes": 20,
+    "backend": "cosim",
+    "workers": 4
+  },
+  "checkpoint_sha256": "2e57e8ace8db480e4c282329ab8c5a3ab5da4fd404e725baf2505302e45d5f1c",
+  "status": "completed"
+}

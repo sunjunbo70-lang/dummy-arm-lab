@@ -1,0 +1,16 @@
+{
+  "seed": 0,
+  "accepted": 0,
+  "fallback": 100,
+  "reasons": {
+    "wall": 100,
+    "outside_decrease": 5
+  },
+  "minimum_proposal_m3": {
+    "wall": -9.228759302352143e-13,
+    "blade": 0.0,
+    "bead": 0.0,
+    "outside": 0.0,
+    "dropped": 0.0
+  }
+}

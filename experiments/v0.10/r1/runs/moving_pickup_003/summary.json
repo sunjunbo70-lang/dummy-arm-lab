@@ -1,0 +1,31 @@
+{
+  "source_head": "2531fe7d7dcc0b108a3d43c1f8a5cd6b9a2545e1",
+  "version": "v10r1.moving_wall_exchange.analytic.v1",
+  "scope": "zero-gap pickup only with explicit area closure projection, not G0",
+  "rows": [
+    {
+      "steps": 1024,
+      "picked_ml": 38.937985798467814,
+      "ledger_error_ml": 0.0,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 3.5011631065661684e-08,
+      "cumulative_area_correction_m2": 5.079584538931659e-06,
+      "negative_raw_capacity_cells": 288,
+      "seconds": 9.113170299999183,
+      "case": "case13"
+    },
+    {
+      "steps": 2048,
+      "picked_ml": 38.93848450141192,
+      "ledger_error_ml": 1.0842021724855044e-13,
+      "minimum_volume": 0.0,
+      "max_raw_area_residual_m2": 1.2908120945477218e-08,
+      "cumulative_area_correction_m2": 1.3988023026059283e-06,
+      "negative_raw_capacity_cells": 257,
+      "seconds": 18.347077600017656,
+      "case": "case13",
+      "max_wall_change_mm": 0.002197876375078396
+    }
+  ],
+  "training_started": false
+}

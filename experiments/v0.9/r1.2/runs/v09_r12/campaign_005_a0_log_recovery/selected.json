@@ -1,0 +1,100 @@
+{
+  "RL1_seed11": {
+    "update": 360,
+    "mean_J": 0.7729314428323099,
+    "coverage": 0.30302083333333335,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL1_seed11_0400\\checkpoints\\0360.pt",
+    "group": "RL1",
+    "seed": 11
+  },
+  "RL2_seed11": {
+    "update": 330,
+    "mean_J": 0.8028385626877546,
+    "coverage": 0.3671875,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL2_seed11_0400\\checkpoints\\0330.pt",
+    "group": "RL2",
+    "seed": 11
+  },
+  "RL1_seed22": {
+    "update": 220,
+    "mean_J": 0.8386729902677114,
+    "coverage": 0.30541666666666667,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL1_seed22_0400\\checkpoints\\0220.pt",
+    "group": "RL1",
+    "seed": 22
+  },
+  "RL1_seed33": {
+    "update": 320,
+    "mean_J": 0.7498268522276575,
+    "coverage": 0.29781250000000004,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL1_seed33_0400\\checkpoints\\0320.pt",
+    "group": "RL1",
+    "seed": 33
+  },
+  "RL2_seed22": {
+    "update": 360,
+    "mean_J": 0.7682650212700087,
+    "coverage": 0.3634375,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL2_seed22_0400\\checkpoints\\0360.pt",
+    "group": "RL2",
+    "seed": 22
+  },
+  "RL2_seed33": {
+    "update": 320,
+    "mean_J": 0.8252780599550725,
+    "coverage": 0.37322916666666667,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL2_seed33_0400\\checkpoints\\0320.pt",
+    "group": "RL2",
+    "seed": 33
+  },
+  "RL0_seed11": {
+    "update": 200,
+    "mean_J": 0.848710773767298,
+    "coverage": 0.305,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_004_available_groups\\training\\RL0_seed11_0200\\checkpoints\\0200.pt",
+    "group": "RL0",
+    "seed": 11
+  },
+  "Scratch_seed11": {
+    "update": 10,
+    "mean_J": 0.4006607251123544,
+    "coverage": 0.5584375,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001\\training\\Scratch_seed11_0100\\checkpoints\\0010.pt",
+    "group": "Scratch",
+    "seed": 11
+  },
+  "no_edge_seed11": {
+    "update": 40,
+    "mean_J": 0.6426190905882702,
+    "coverage": 0.22875,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001\\training\\no_edge_seed11_0100\\checkpoints\\0040.pt",
+    "group": "no_edge",
+    "seed": 11
+  },
+  "old_stop_seed11": {
+    "update": 30,
+    "mean_J": 0.9726885993528066,
+    "coverage": 0.3022916666666666,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001\\training\\old_stop_seed11_0100\\checkpoints\\0030.pt",
+    "group": "old_stop",
+    "seed": 11
+  },
+  "RL1_100_reference": {
+    "update": 90,
+    "mean_J": 0.9126622026839474,
+    "coverage": 0.29083333333333333,
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\RL1_seed11_stage100_008\\checkpoints\\0090.pt",
+    "group": "reference",
+    "seed": 11
+  },
+  "BC1": {
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\BC1_seed11_dagger2_005\\checkpoints\\bc.pt",
+    "group": "BC1",
+    "seed": 11
+  },
+  "BC0": {
+    "checkpoint": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\campaign_001\\training\\RL0_seed11_0100\\checkpoints\\bc.pt",
+    "group": "BC0",
+    "seed": 11
+  }
+}

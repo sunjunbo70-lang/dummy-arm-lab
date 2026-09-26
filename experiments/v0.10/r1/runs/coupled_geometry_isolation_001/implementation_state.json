@@ -1,0 +1,10 @@
+{
+  "status": "geometry_first_order_confirmed_gate_unmet",
+  "training_started": false,
+  "active_expanded_audit_pid": 33596,
+  "diagnostics_completed": [
+    "coupled_geometry_isolation_001",
+    "geometry_probes_001"
+  ],
+  "next_action": "analytic swept-boundary transport benchmark and endpoint allocation diagnosis; preserve all old candidates"
+}

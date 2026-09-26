@@ -1,0 +1,9 @@
+{
+  "training_started": false,
+  "full_material_gate": false,
+  "diagnostic_pid": 17240,
+  "long_sequence_pid": 40668,
+  "monitor_pid": 13564,
+  "record": "D:\\VLA\\dummy_arm\\experiments\\v0.10\\r1\\records\\PRESSURE_PRECISION_DIAGNOSTIC.md",
+  "status": "pressure_precision_diagnostic_running"
+}

@@ -1,0 +1,266 @@
+{
+  "source_head": "ab8b3449cd51efb6dd7297ffbb279416d488550d",
+  "exchange_version": "v10r1.boundary_inventory.frozen_exponential.v1",
+  "scope": "32 independent frozen geometry states; not chronological trajectory, pressure or G0",
+  "passed": 0,
+  "rejected": 32,
+  "rows": [
+    {
+      "index": 0,
+      "negative_free_cells": 88,
+      "minimum_free_area": -3.9641141931501256e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0026294999988749623
+    },
+    {
+      "index": 1,
+      "negative_free_cells": 30,
+      "minimum_free_area": -1.5585406229479126e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0034508999960962683
+    },
+    {
+      "index": 2,
+      "negative_free_cells": 23,
+      "minimum_free_area": -1.0842021724855044e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0033343999821227044
+    },
+    {
+      "index": 3,
+      "negative_free_cells": 59,
+      "minimum_free_area": -3.2187251995663413e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.003363700001500547
+    },
+    {
+      "index": 4,
+      "negative_free_cells": 40,
+      "minimum_free_area": -3.8963515573697816e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0024336999922525138
+    },
+    {
+      "index": 5,
+      "negative_free_cells": 41,
+      "minimum_free_area": -3.083199928005653e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.003286799998022616
+    },
+    {
+      "index": 6,
+      "negative_free_cells": 112,
+      "minimum_free_area": -3.2526065174565133e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.003281099983723834
+    },
+    {
+      "index": 7,
+      "negative_free_cells": 105,
+      "minimum_free_area": -1.9989977555201488e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0034293000062461942
+    },
+    {
+      "index": 8,
+      "negative_free_cells": 105,
+      "minimum_free_area": -2.303929616531697e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0024332999892067164
+    },
+    {
+      "index": 9,
+      "negative_free_cells": 109,
+      "minimum_free_area": -3.015437292225309e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0012627000105567276
+    },
+    {
+      "index": 10,
+      "negative_free_cells": 103,
+      "minimum_free_area": -2.879912020664621e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0012368999887257814
+    },
+    {
+      "index": 11,
+      "negative_free_cells": 109,
+      "minimum_free_area": -9.825582188149884e-20,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0012387000024318695
+    },
+    {
+      "index": 12,
+      "negative_free_cells": 104,
+      "minimum_free_area": -2.0328790734103208e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0012883999734185636
+    },
+    {
+      "index": 13,
+      "negative_free_cells": 103,
+      "minimum_free_area": -2.202285662861181e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0012401000130921602
+    },
+    {
+      "index": 14,
+      "negative_free_cells": 66,
+      "minimum_free_area": -1.0842021724855044e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0012454999960027635
+    },
+    {
+      "index": 15,
+      "negative_free_cells": 20,
+      "minimum_free_area": -1.1180834903756764e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0021041999862063676
+    },
+    {
+      "index": 16,
+      "negative_free_cells": 110,
+      "minimum_free_area": -2.371692252312041e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0023638999846298248
+    },
+    {
+      "index": 17,
+      "negative_free_cells": 96,
+      "minimum_free_area": -1.8634724839594607e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0023277000000234693
+    },
+    {
+      "index": 18,
+      "negative_free_cells": 109,
+      "minimum_free_area": -1.9989977555201488e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0023225999902933836
+    },
+    {
+      "index": 19,
+      "negative_free_cells": 103,
+      "minimum_free_area": -6.437450399132683e-20,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0014731000119354576
+    },
+    {
+      "index": 20,
+      "negative_free_cells": 29,
+      "minimum_free_area": -3.7269449679189215e-20,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0024779000086709857
+    },
+    {
+      "index": 21,
+      "negative_free_cells": 101,
+      "minimum_free_area": -2.608861477543245e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0024228999973274767
+    },
+    {
+      "index": 22,
+      "negative_free_cells": 100,
+      "minimum_free_area": -1.3213713977167085e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0024312999739777297
+    },
+    {
+      "index": 23,
+      "negative_free_cells": 34,
+      "minimum_free_area": -6.437450399132683e-20,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.002506699995137751
+    },
+    {
+      "index": 24,
+      "negative_free_cells": 100,
+      "minimum_free_area": -3.4220131069073734e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0024688999983482063
+    },
+    {
+      "index": 25,
+      "negative_free_cells": 67,
+      "minimum_free_area": -4.404571325722362e-20,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.002405199978966266
+    },
+    {
+      "index": 26,
+      "negative_free_cells": 101,
+      "minimum_free_area": -1.3891340334970526e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.002418200019747019
+    },
+    {
+      "index": 27,
+      "negative_free_cells": 107,
+      "minimum_free_area": -2.0667603913004928e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0013343000027816743
+    },
+    {
+      "index": 28,
+      "negative_free_cells": 21,
+      "minimum_free_area": -1.1180834903756764e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.00133050000295043
+    },
+    {
+      "index": 29,
+      "negative_free_cells": 24,
+      "minimum_free_area": -8.131516293641283e-20,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.001652300008572638
+    },
+    {
+      "index": 30,
+      "negative_free_cells": 82,
+      "minimum_free_area": -1.9989977555201488e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.0035370000114198774
+    },
+    {
+      "index": 31,
+      "negative_free_cells": 101,
+      "minimum_free_area": -3.5236570605778894e-19,
+      "status": "rejected",
+      "reason": "Expected finite nonnegative inventories/areas/time",
+      "seconds": 0.003533500013872981
+    }
+  ],
+  "training_started": false
+}

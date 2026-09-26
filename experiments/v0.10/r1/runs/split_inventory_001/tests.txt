@@ -1,0 +1,38 @@
+test_flux_conserves_and_positive_euler_stage (dummy_loop.wall_cycle_v10.r1.test_split_inventory.SplitTests.test_flux_conserves_and_positive_euler_stage) ... ok
+test_sequence_conservation (dummy_loop.wall_cycle_v10.r1.test_split_inventory.SplitTests.test_sequence_conservation) ... ok
+test_conservative_nonnegative_and_irreversible (dummy_loop.wall_cycle_v10.r1.test_extrapolated_inventory.ExtrapolationTests.test_conservative_nonnegative_and_irreversible) ... ok
+test_empty_stays_empty (dummy_loop.wall_cycle_v10.r1.test_extrapolated_inventory.ExtrapolationTests.test_empty_stays_empty) ... ok
+test_coupled_conservation (dummy_loop.wall_cycle_v10.r1.test_ordered_inventory.OrderedTests.test_coupled_conservation) ... ok
+test_exit_material_not_picked_up_in_same_transition (dummy_loop.wall_cycle_v10.r1.test_ordered_inventory.OrderedTests.test_exit_material_not_picked_up_in_same_transition) ... ok
+test_clipping_sign_and_detachment (dummy_loop.wall_cycle_v10.r1.test_ppo.PPOTests.test_clipping_sign_and_detachment) ... ok
+test_nonfinite_rejected (dummy_loop.wall_cycle_v10.r1.test_ppo.PPOTests.test_nonfinite_rejected) ... ok
+test_real_network_update_and_optimizer_restore (dummy_loop.wall_cycle_v10.r1.test_ppo.PPOTests.test_real_network_update_and_optimizer_restore) ... ok
+test_no_implicit_loading (dummy_loop.wall_cycle_v10.r1.test_pressure_inventory.PressureTests.test_no_implicit_loading) ... ok
+test_pure_rotation_has_flux (dummy_loop.wall_cycle_v10.r1.test_pressure_inventory.PressureTests.test_pure_rotation_has_flux) ... ok
+test_sequence_ledger (dummy_loop.wall_cycle_v10.r1.test_pressure_inventory.PressureTests.test_sequence_ledger) ... ok
+test_stationary_flux_zero (dummy_loop.wall_cycle_v10.r1.test_pressure_inventory.PressureTests.test_stationary_flux_zero) ... ok
+test_partition_identity (dummy_loop.wall_cycle_v10.r1.test_contact_inventory.InventoryTests.test_partition_identity) ... ok
+test_rotating_sequence_ledger (dummy_loop.wall_cycle_v10.r1.test_contact_inventory.InventoryTests.test_rotating_sequence_ledger) ... ok
+test_stationary_no_repeated_pickup (dummy_loop.wall_cycle_v10.r1.test_contact_inventory.InventoryTests.test_stationary_no_repeated_pickup) ... ok
+test_straight_pickup_subdivision (dummy_loop.wall_cycle_v10.r1.test_contact_inventory.InventoryTests.test_straight_pickup_subdivision) ... ok
+test_aligned_identity (dummy_loop.wall_cycle_v10.r1.test_overlap.OverlapTests.test_aligned_identity) ... ok
+test_random_conservation_and_no_double_ownership (dummy_loop.wall_cycle_v10.r1.test_overlap.OverlapTests.test_random_conservation_and_no_double_ownership) ... ok
+test_rotation_continuity_at_grid_alignment (dummy_loop.wall_cycle_v10.r1.test_overlap.OverlapTests.test_rotation_continuity_at_grid_alignment) ... ok
+test_unequal_grid_sizes (dummy_loop.wall_cycle_v10.r1.test_overlap.OverlapTests.test_unequal_grid_sizes) ... ok
+test_actual_material_cost (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_actual_material_cost) ... ok
+test_contact_state_mask (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_contact_state_mask) ... ok
+test_continuation_inherits_actual_start (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_continuation_inherits_actual_start) ... ok
+test_cycle_is_costly (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_cycle_is_costly) ... ok
+test_gae_terminal_and_rollout_bootstrap (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_gae_terminal_and_rollout_bootstrap) ... ok
+test_outside_proposal_rejected_not_projected (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_outside_proposal_rejected_not_projected) ... ok
+test_temporary_damage_not_permanent_penalty (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_temporary_damage_not_permanent_penalty) ... ok
+test_terminal_shaping_accounting (dummy_loop.wall_cycle_v10.r1.test_r1_contracts.Contracts.test_terminal_shaping_accounting) ... ok
+test_continuation_unused_dimensions (dummy_loop.wall_cycle_v10.r1.test_policy.PolicyContracts.test_continuation_unused_dimensions) ... ok
+test_cuda_forward_if_available (dummy_loop.wall_cycle_v10.r1.test_policy.PolicyContracts.test_cuda_forward_if_available) ... ok
+test_gradient_reaches_shared_network (dummy_loop.wall_cycle_v10.r1.test_policy.PolicyContracts.test_gradient_reaches_shared_network) ... ok
+test_sample_and_evaluate_match (dummy_loop.wall_cycle_v10.r1.test_policy.PolicyContracts.test_sample_and_evaluate_match) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 4.316s
+
+OK

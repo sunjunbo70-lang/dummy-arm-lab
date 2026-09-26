@@ -1,0 +1,48 @@
+{
+  "source_head": "1b07829bb5104b98a09e65b5927d527191a99dec",
+  "physics_version": "v10r1.area_pressure_candidate.v8_adaptive_boundary",
+  "rows": [
+    {
+      "initial_wall_thickness_m": 0.0,
+      "status": "completed",
+      "ledger_error_ml": 2.541098841762901e-15,
+      "events": [
+        {
+          "step": 0,
+          "wall_min_m3": 0.0,
+          "blade_min_m3": 1.2416833174691328e-08,
+          "ledger_error_ml": 0.0
+        },
+        {
+          "step": 1,
+          "wall_min_m3": 0.0,
+          "blade_min_m3": 1.2769200261223379e-08,
+          "ledger_error_ml": 0.0
+        },
+        {
+          "step": 2,
+          "wall_min_m3": 0.0,
+          "blade_min_m3": 1.3113734600208455e-08,
+          "ledger_error_ml": 0.0
+        }
+      ]
+    },
+    {
+      "initial_wall_thickness_m": 0.002,
+      "status": "failed",
+      "reason": "Invalid state",
+      "wall_min_m3": -4.499862532288471e-22,
+      "blade_min_m3": 2.7492305529580252e-08,
+      "events": [
+        {
+          "step": 0,
+          "wall_min_m3": -4.499862532288471e-22,
+          "blade_min_m3": 2.7492305529580252e-08,
+          "ledger_error_ml": 0.0
+        }
+      ]
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false
+}

@@ -1,0 +1,17 @@
+{
+  "status": "coupled_boundary_candidate_rotation_support_failed",
+  "training_started": false,
+  "full_material_gate": false,
+  "component_tests": 67,
+  "active_audit_pid": 33596,
+  "latest_evidence": "coupled_boundary_003/summary.json",
+  "next_action": "event-resolved rotating boundary maps with supported newborn/disappearing patches; then pressure/bead/lift integration",
+  "passed_diagnostics": [
+    "axial_128_256",
+    "diagonal_128_256"
+  ],
+  "failed_diagnostics": [
+    "rotation_128",
+    "rotation_256"
+  ]
+}

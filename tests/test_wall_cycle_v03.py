@@ -1,4 +1,4 @@
-"""L1 tests for the v0.3 whole-wall plastering experiment (docs/changes/2026-09-22_wall_cycle_v0.3.md).
+"""L1 tests for the v0.3 whole-wall plastering experiment (experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md).
 
 Each test pins one of the reasons for a change, so that a later edit that quietly undoes
 the change fails here instead of silently bringing the v0.2 problem back.
@@ -17,7 +17,7 @@ from dummy_loop.wall_cycle import mortar as M
 from dummy_loop.wall_cycle.sensor import coarse_map, coarse_shape
 
 ROOT = Path(__file__).resolve().parents[1]
-V02_POLICY = ROOT / 'experiments/2026-09-22_wall_cycle_rl/raw/model/policy_ppo.npz'
+V02_POLICY = ROOT / 'experiments/v0.2/r0/records/2026-09-22_wall_cycle_rl/raw/model/policy_ppo.npz'
 SMALL = CycleConfig(width_m=0.12, height_m=0.12)
 
 
@@ -154,18 +154,27 @@ class ActionAndObservation(unittest.TestCase):
 
 class WorkArea(unittest.TestCase):
     def test_square_is_derived_by_the_users_rule(self):
+        """v0.7: area_safety is applied to the reachable circle's AREA (r*sqrt(area_safety)),
+        not to the inscribed square's side -- score_square is the scored/aimed-at region,
+        sim_square (always >= score_square, same centre) is the physical/action-range extent."""
         from dummy_loop.wall_cycle.area import square_from_reach, WORK_AREA_FILE, load_work_area
-        best = {'wall_distance_m': .33, 'circle_centre_uv_m': [0.0, .18], 'circle_radius_m': .15,
-                'work_square_side_m': .8 * np.sqrt(2) * .15}
+        r = .15
+        best = {'wall_distance_m': .33, 'circle_centre_uv_m': [0.0, .18], 'circle_radius_m': r,
+                'score_square_side_m': np.sqrt(2) * r * np.sqrt(.8),
+                'sim_square_side_m': np.sqrt(2) * r}
         sq = square_from_reach(best, .005)
-        self.assertLessEqual(sq['side_m'], .8 * np.sqrt(2) * .15 + 1e-12)     # never more than 80 %
-        self.assertGreater(sq['side_m'], .8 * np.sqrt(2) * .15 - .005)
+        self.assertLessEqual(sq['score_square']['side_m'], np.sqrt(2) * r * np.sqrt(.8) + 1e-12)
+        self.assertGreater(sq['score_square']['side_m'], np.sqrt(2) * r * np.sqrt(.8) - .005)
+        self.assertGreaterEqual(sq['sim_square']['side_m'], sq['score_square']['side_m'])
         if WORK_AREA_FILE.is_file():
             a = json.loads(WORK_AREA_FILE.read_text(encoding='utf-8'))
             cfg = load_work_area(CycleConfig())
-            self.assertAlmostEqual(cfg.width_m, a['square']['side_m'])
+            self.assertAlmostEqual(cfg.width_m, a['sim_square']['side_m'])
+            self.assertAlmostEqual(cfg.score_width_m, a['score_square']['side_m'])
             self.assertAlmostEqual(cfg.width_m, cfg.height_m)
-            self.assertGreater(cfg.width_m * cfg.height_m, 0.28 * 0.07)        # bigger than the v0.2 strip
+            self.assertGreaterEqual(cfg.width_m, cfg.score_width_m)
+            # scored region bigger than the v0.2 strip
+            self.assertGreater(cfg.score_width_m * cfg.score_height_m, 0.28 * 0.07)
         self.assertEqual(load_work_area(CycleConfig(physics='v0.2')).width_m, 0.28)
 
 

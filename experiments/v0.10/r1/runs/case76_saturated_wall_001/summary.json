@@ -1,0 +1,25 @@
+{
+  "source_head": "e318d83734468285e526d4cbce254aa5b1698aab",
+  "rows": [
+    {
+      "steps": 3344,
+      "status": "failed",
+      "failed_step": 3199,
+      "reason": "Contact error budget exhausted: error=7.720726887093323e-08, tolerance=1.562132848758938e-08, depth=6",
+      "min_wall_m3": 0.0,
+      "min_blade_m3": 1.7447462834175876e-08,
+      "seconds": 291.2239074000099
+    },
+    {
+      "steps": 6688,
+      "status": "failed",
+      "failed_step": 6398,
+      "reason": "Contact error budget exhausted: error=3.5545933507895766e-08, tolerance=7.811164243788524e-09, depth=6",
+      "min_wall_m3": 0.0,
+      "min_blade_m3": 1.7446494133453533e-08,
+      "seconds": 252.69623709999723
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false
+}

@@ -1,0 +1,19 @@
+{
+  "physics_version": "v10r1.area_pressure_candidate.v2_entry_before_exit",
+  "workers": 6,
+  "samples": [
+    801,
+    1601,
+    3201
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "status": "started",
+  "scope": "isolated six-case convergence; no G0 pass claim"
+}

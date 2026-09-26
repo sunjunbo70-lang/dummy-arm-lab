@@ -1,0 +1,7 @@
+{
+  "status": "failure_input_capture_running",
+  "pid": 35368,
+  "audit_pid": 32992,
+  "training_started": false,
+  "record": "records/EXPANDED_BOUNDARY_ZERO_AREA_TRACE.md"
+}

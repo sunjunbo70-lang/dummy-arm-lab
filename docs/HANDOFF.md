@@ -1,33 +1,57 @@
-# 交接与迁移
+# 跨电脑开发交接（2026-09-27）
 
-## 交付物
+## 当前状态
 
-- releases/dummy-experiment-runtime-2026-09-18-workspace.zip：当前源码、全部模型、USB客户端、依赖、文档、分类实验结果、兼容入口。排除venv、Git元数据、外部账户配置、历史Studio程序和旧交付包。
-- releases/dummy-experiment-history-2026-09-18.zip：整理前源码、旧交付包、历史诊断副本和原始上游归档。作为取证，不作为执行目录。
-- 每个zip有SHA-256文件和内容清单。解压运行包后按SETUP重新创建环境，不复制原电脑venv。
+开发分支：codex/wall-cycle-v06。当前不是已完成施工任务的产品。全部仿真实验仅为 L1 软件证据。
+v0.9 已执行可用组训练和评估，但 straight 消融未过门槛，矩阵不完整，施工质量未达标。
+v0.10 r1 已暂停，正式 RL 未开始；新材料单段100/100通过，长序列验证未完成。不得自动重启训练。
+详见 [暂停复盘](../experiments/v0.10/r1/records/PAUSE_AND_RETROSPECTIVE_20260926.md)。
 
-在 `D:\VLA` 执行 `python tools/maintenance/package_release.py --tag 新标签` 重新打包；只更新运行包可加 `--kind runtime`；已有同名文件时拒绝覆盖，改用 --tag 新标签。运行包不自动下载外部资料、不写系统注册表、不发送实机命令。
+## 文件入口
 
-## 完整性和范围
+- [模型索引](MODEL_INDEX.md)：22个正式实验最终/对照模型；[机器可读清单](retained_models.json)含 SHA256。
+- [实验目录](../experiments/)：按大版本/修订查找 design、records、runs、scripts。
+- [v0.10实现进度](../experiments/v0.10/r1/records/IMPLEMENTATION_PROGRESS.md)：历史过程记录；最后状态以暂停复盘为准。
+- [清理记录](../experiments/_organization/2026-09-27_cleanup/README.md)：删除了周期检查点和原始rollout，不能恢复任意历史轮次。
+- [项目状态](STATUS.md)、[第三方资源](../THIRD_PARTY.md)。
 
-本项目目录中的源码、网格、配置和实验记录均有归档。原始D:/VLA工程的源码、固件、硬件资料、Studio资产和原始压缩包在独立上游zip中；大体积虚拟机镜像及安装器仅列清单，原件仍在原路径。服务器助手仅归档源码和依赖工具，账户配置、known_hosts、preferences和快捷方式排除，目标电脑重新配置。
+## 新电脑安装
 
-models/UPSTREAM_LICENSE仅适用于对应来源，不能套用于其他上游。归档包适用于内部交接，公开发布前核对各来源许可和日志中的设备/路径标识。没有把整个混合工程擅自改为统一开源许可。
+先安装 Git、Git LFS、Python 3.12。以下命令在仓库根目录执行：
 
-## 接手者检查
+```powershell
+git lfs install
+git lfs pull
+py -3.12 -m venv .venv-loop
+.venv-loop\Scripts\python -m pip install -r requirements/core.txt
+```
 
-1. 校验zip哈希、解压、建立环境。
-2. 运行verify_evidence和单元测试。
-3. 离线渲染和GUI预览。
-4. 阅读STATUS、HARDWARE，再检查本机设备身份/权限。
-5. 在新实验目录继续，不修改既有基线。
+学习模块另需 PyTorch，数值编译需 numba，资源监测需 psutil；依据新电脑 CUDA/驱动安装匹配的 PyTorch。requirements/loop-observed-freeze.txt 是原机实际环境快照，不是跨平台锁文件。不要直接复制旧虚拟环境。
 
-旧README_实验闭环.md及docs/history原文保留，可能包含已过时状态；新README优先。2026-09-18整理只验证软件和迁移包，不宣称Linux实机或服务器训练已完成。
+## 查看已有结果
 
-## 迁移包自动核验
+运行 experiments/v0.9/r1.2/scripts/visualization/v09_final_RL.cmd，或在根目录执行：
 
-`python tools/maintenance/verify_release.py releases/dummy-experiment-runtime-2026-09-18-workspace.zip --extract-to "releases/new verification"`
+```powershell
+.venv-loop\Scripts\python -m dummy_loop.wall_cycle_v09.replay experiments/v0.9/r1.2/runs/v09_r12/campaign_005_a0_log_recovery/records/RL1_seed33/60090/trajectory.npz
+```
 
-该命令校验压缩包和每个文件的SHA-256，再解压到不存在的新目录，执行离线测试。使用当前Python环境，不安装驱动、不连接机械臂。历史包可用同一工具验证，但不带 --extract-to。
+这是记录回放，不是重新运行策略，也不代表完整作业达标。最终RL选模为RL1_seed33的0320.pt，详见模型索引。同一records目录含教师、BC、最好/最差等记录。
 
-Git尚未建立提交基线；当前完整版本由带文件清单和哈希的release固定。archive、releases、原始diagnostics和当前outputs不进入常规Git；代码与experiments基线可纳入版本控制。后续首次提交前检查第三方许可及体积，模型网格适合用Git LFS管理。
+## 后续开发顺序
+
+1. 阅读暂停复盘和现有失败证据，确认材料数值验证尚未完成的范围。
+2. 在新运行目录继续开发/验证，不覆盖旧结果，不凭单段通过启动正式大训练。
+3. 完成连续接触执行器、环境/PPO集成与端到端效率验证后，再决定恢复训练。
+4. 新实验只长期保留最终选定模型、关键指标及代表性回放；调试检查点需设置保留数量。
+
+## 跨电脑限制
+
+项目内运行入口使用相对路径；历史manifest和日志可能仍记录D:/VLA原机绝对路径，不保证旧campaign可直接恢复。加载最终模型须使用当前仓库根目录重新定位路径。
+models/studio_meshes和studio_source遵循THIRD_PARTY.md，不随本仓库发布；依赖它们的特定功能需自行获取资产。基础V2仿真资产随仓库提供。
+本次没有在第二台机器实际验证CUDA、GUI和驱动，不把原机检查视作跨平台验收。
+
+## 新增方案与本次检查
+
+[v0.10 r2](../experiments/v0.10/r2/README.md)是待审查设计稿，未实现、未运行。
+2026-09-27原机L1检查：最终RL检查点CPU读取通过，2343帧回放读取通过，MuJoCo场景构建通过（6关节）；暂存普通Git对象无超过100MiB项。尚未在新电脑安装及启动GUI验收。

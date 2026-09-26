@@ -1,0 +1,386 @@
+[
+  {
+    "amount": 6,
+    "force": 0.5,
+    "pitch": 0,
+    "J": 0.6989086760878541,
+    "coverage": 0.02,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 0.5,
+    "pitch": 4,
+    "J": 0.6900087196829333,
+    "coverage": 0.02125,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 0.5,
+    "pitch": 8,
+    "J": 0.6926435434778172,
+    "coverage": 0.0,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 0.5,
+    "pitch": 20,
+    "J": 0.7193190664129008,
+    "coverage": 0.008125,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 2,
+    "pitch": 0,
+    "J": 0.6865603862513929,
+    "coverage": 0.023125,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 2,
+    "pitch": 4,
+    "J": 0.6901540681124619,
+    "coverage": 0.0,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 2,
+    "pitch": 8,
+    "J": 0.7008381035751892,
+    "coverage": 0.01375,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 2,
+    "pitch": 20,
+    "J": 0.7577155423755455,
+    "coverage": 0.01625,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 6,
+    "pitch": 0,
+    "J": 0.6978763312909632,
+    "coverage": 0.00875,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 6,
+    "pitch": 4,
+    "J": 0.6930445681417468,
+    "coverage": 0.005,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 6,
+    "pitch": 8,
+    "J": 0.7248836993150272,
+    "coverage": 0.025625,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 6,
+    "pitch": 20,
+    "J": 0.7577155423755455,
+    "coverage": 0.01625,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 12,
+    "pitch": 0,
+    "J": 0.7119809875718588,
+    "coverage": 0.009375,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 12,
+    "pitch": 4,
+    "J": 0.7688364331297346,
+    "coverage": 0.01,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 12,
+    "pitch": 8,
+    "J": 0.7248836993150272,
+    "coverage": 0.025625,
+    "invalid": false
+  },
+  {
+    "amount": 6,
+    "force": 12,
+    "pitch": 20,
+    "J": 0.7577155423755455,
+    "coverage": 0.01625,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 0.5,
+    "pitch": 0,
+    "J": 0.723510260611934,
+    "coverage": 0.0325,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 0.5,
+    "pitch": 4,
+    "J": 0.7068294569332672,
+    "coverage": 0.0425,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 0.5,
+    "pitch": 8,
+    "J": 0.6904850422008615,
+    "coverage": 0.05,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 0.5,
+    "pitch": 20,
+    "J": 0.7028973724424543,
+    "coverage": 0.053125,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 2,
+    "pitch": 0,
+    "J": 0.7151455521354182,
+    "coverage": 0.03875,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 2,
+    "pitch": 4,
+    "J": 0.6788250382784067,
+    "coverage": 0.04125,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 2,
+    "pitch": 8,
+    "J": 0.6858433168103578,
+    "coverage": 0.03375,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 2,
+    "pitch": 20,
+    "J": 0.7977075658628664,
+    "coverage": 0.01625,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 6,
+    "pitch": 0,
+    "J": 0.7863158284290308,
+    "coverage": 0.014375,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 6,
+    "pitch": 4,
+    "J": 0.6977542849606312,
+    "coverage": 0.014375,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 6,
+    "pitch": 8,
+    "J": 0.8657193447451925,
+    "coverage": 0.025,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 6,
+    "pitch": 20,
+    "J": 0.8020351571980116,
+    "coverage": 0.0175,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 12,
+    "pitch": 0,
+    "J": 0.827093884694253,
+    "coverage": 0.011875,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 12,
+    "pitch": 4,
+    "J": 0.9170238086570057,
+    "coverage": 0.01125,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 12,
+    "pitch": 8,
+    "J": 0.9076137172509696,
+    "coverage": 0.030625,
+    "invalid": false
+  },
+  {
+    "amount": 12,
+    "force": 12,
+    "pitch": 20,
+    "J": 0.8020351571980116,
+    "coverage": 0.0175,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 0.5,
+    "pitch": 0,
+    "J": 0.7270310126151682,
+    "coverage": 0.034375,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 0.5,
+    "pitch": 4,
+    "J": 0.7132737555357866,
+    "coverage": 0.0375,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 0.5,
+    "pitch": 8,
+    "J": 0.694561419010359,
+    "coverage": 0.051875,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 0.5,
+    "pitch": 20,
+    "J": 0.7003002825379996,
+    "coverage": 0.063125,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 2,
+    "pitch": 0,
+    "J": 0.7295050545554045,
+    "coverage": 0.03375,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 2,
+    "pitch": 4,
+    "J": 0.6809748987597202,
+    "coverage": 0.041875,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 2,
+    "pitch": 8,
+    "J": 0.6827453457765947,
+    "coverage": 0.045,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 2,
+    "pitch": 20,
+    "J": 0.8021270684065669,
+    "coverage": 0.016875,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 6,
+    "pitch": 0,
+    "J": 0.8101459148326666,
+    "coverage": 0.0175,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 6,
+    "pitch": 4,
+    "J": 0.7000786486325347,
+    "coverage": 0.014375,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 6,
+    "pitch": 8,
+    "J": 0.8782641165567248,
+    "coverage": 0.02625,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 6,
+    "pitch": 20,
+    "J": 0.811560109651682,
+    "coverage": 0.016875,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 12,
+    "pitch": 0,
+    "J": 0.8454411571909392,
+    "coverage": 0.0125,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 12,
+    "pitch": 4,
+    "J": 0.9241891817939496,
+    "coverage": 0.023125,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 12,
+    "pitch": 8,
+    "J": 0.9251615434851979,
+    "coverage": 0.029375,
+    "invalid": false
+  },
+  {
+    "amount": 18,
+    "force": 12,
+    "pitch": 20,
+    "J": 0.811560109651682,
+    "coverage": 0.016875,
+    "invalid": false
+  }
+]

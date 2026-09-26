@@ -1,0 +1,48 @@
+{
+  "rows": [
+    {
+      "stage": "first_contact",
+      "max_wall_diff_mm": 0.0,
+      "max_cell": [
+        0,
+        0
+      ],
+      "wall_l1_ml": 0.0,
+      "blade_l1_ml": 0.0,
+      "bead_l1_ml": 0.0,
+      "dropped_diff_ml": 0.0,
+      "ledger_error_ml": 1.3552527156068805e-14
+    },
+    {
+      "stage": "before_lift",
+      "max_wall_diff_mm": 0.005871119968897875,
+      "max_cell": [
+        38,
+        73
+      ],
+      "wall_l1_ml": 0.007210082440641975,
+      "blade_l1_ml": 0.001676967733490696,
+      "bead_l1_ml": 0.0013431413740806624,
+      "dropped_diff_ml": 1.5672856293076358e-10,
+      "ledger_error_ml": 2.710505431213761e-14
+    },
+    {
+      "stage": "after_lift",
+      "max_wall_diff_mm": 0.047162477408254945,
+      "max_cell": [
+        38,
+        74
+      ],
+      "wall_l1_ml": 0.009253836348858027,
+      "blade_l1_ml": 0.0006699112870562972,
+      "bead_l1_ml": 0.0,
+      "dropped_diff_ml": 1.5672856293076358e-10,
+      "ledger_error_ml": 2.710505431213761e-14
+    }
+  ],
+  "seconds": [
+    52.7965102000162,
+    105.34057709999615
+  ],
+  "training_started": false
+}

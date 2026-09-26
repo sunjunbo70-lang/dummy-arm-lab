@@ -1,0 +1,83 @@
+[
+  {
+    "kp": 35,
+    "kv": 4,
+    "max_tracking_mm": 28.424363211713278,
+    "mean_tracking_mm": 13.889435202621573,
+    "quality": {
+      "coverage": 0.0375,
+      "mean_thickness_mm": 0.7880171715067419,
+      "rmse_mm": 1.777826529692002,
+      "p95_error_mm": 2.0,
+      "under_frac": 0.895625,
+      "over_frac": 0.066875,
+      "roughness_mm": 1.1180824766338207,
+      "blade_load_ml": 1.0574136307589848,
+      "waste_frac": 0.1781501990525881,
+      "edge_coverage": 0.012254901960784314,
+      "edge_bare_frac": 0.6360294117647058,
+      "score_side_m": 0.2,
+      "J": 0.8042482124504853,
+      "edge_rmse_mm": 1.7556006030741973,
+      "edge_excess_m3": 4.90089924820261e-07,
+      "carry_loss_ml": 6.6751279966655845,
+      "outside_ml": 0.0,
+      "volume_error_m3": 2.541098841762901e-21
+    },
+    "ik_failures": 0
+  },
+  {
+    "kp": 70,
+    "kv": 8,
+    "max_tracking_mm": 17.852378723497925,
+    "mean_tracking_mm": 10.204451962600592,
+    "quality": {
+      "coverage": 0.07625,
+      "mean_thickness_mm": 0.7768622453918448,
+      "rmse_mm": 1.973881376336506,
+      "p95_error_mm": 2.0,
+      "under_frac": 0.87625,
+      "over_frac": 0.0475,
+      "roughness_mm": 1.3701925742929384,
+      "blade_load_ml": 1.4858545444218203,
+      "waste_frac": 0.1799189333810179,
+      "edge_coverage": 0.025735294117647058,
+      "edge_bare_frac": 0.8272058823529411,
+      "score_side_m": 0.2,
+      "J": 0.8697773779560837,
+      "edge_rmse_mm": 1.8174428399793416,
+      "edge_excess_m3": 4.547843709353622e-07,
+      "carry_loss_ml": 6.781826999080001,
+      "outside_ml": 0.0,
+      "volume_error_m3": -1.6940658945086007e-20
+    },
+    "ik_failures": 0
+  },
+  {
+    "kp": 120,
+    "kv": 12,
+    "max_tracking_mm": 12.955424084821114,
+    "mean_tracking_mm": 7.788958841083998,
+    "quality": {
+      "coverage": 0.074375,
+      "mean_thickness_mm": 0.7746969265750769,
+      "rmse_mm": 2.014374081102116,
+      "p95_error_mm": 2.0,
+      "under_frac": 0.878125,
+      "over_frac": 0.0475,
+      "roughness_mm": 1.4509440499490551,
+      "blade_load_ml": 1.3490834122425306,
+      "waste_frac": 0.18554519127704278,
+      "edge_coverage": 0.024509803921568627,
+      "edge_bare_frac": 0.7794117647058824,
+      "score_side_m": 0.2,
+      "J": 0.948660092985169,
+      "edge_rmse_mm": 2.2676404124743224,
+      "edge_excess_m3": 4.616746325776638e-06,
+      "carry_loss_ml": 6.740896580101161,
+      "outside_ml": 0.0,
+      "volume_error_m3": -1.9481757786848908e-20
+    },
+    "ik_failures": 0
+  }
+]

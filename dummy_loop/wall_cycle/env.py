@@ -12,6 +12,46 @@ from .material import MaterialSystem
 from .mortar import MortarSystem, StrokeStats
 from .sensor import D435Proxy, coarse_map, coarse_shape
 
+# v0.8 local teacher: candidate strokes (length x direction x centre) and the score-grid cells
+# each one sweeps, as a 0/1 matrix. Pure geometry, so it is built once per process and
+# work-area shape. Swept cells = blade footprint (blade_length across the path, blade_width
+# along it) over a straight path -- a binary heuristic kernel, not a transfer model.
+_LOCAL_LENGTHS = (0.06, 0.10, 0.14)
+_LOCAL_STEP_M = 0.01
+_LOCAL_DIRS = np.array([(0., 1.), (1., 0.), (1., 1.), (-1., 1.)]) / np.array([1., 1., np.sqrt(2), np.sqrt(2)])[:, None]
+_CANDIDATES = {}
+
+
+def _stroke_footprint(U, V, centre, direction, length, blade_len, blade_w):
+    ru, rv = U - centre[0], V - centre[1]
+    along = ru * direction[0] + rv * direction[1]
+    perp = -ru * direction[1] + rv * direction[0]
+    return (np.abs(along) <= length / 2 + blade_w / 2) & (np.abs(perp) <= blade_len / 2)
+
+
+def local_candidates(cfg, u_score, v_score):
+    # dense float32 (~7k x 1.6k, ~44 MB): numpy only -- scipy is not in the lab .venv-loop
+    key = (cfg.width_m, cfg.height_m, cfg.blade_length_m, cfg.blade_width_m, len(u_score), len(v_score),
+           float(u_score[0]), float(v_score[0]))
+    if key not in _CANDIDATES:
+        U, V = np.meshgrid(u_score, v_score)
+        us = np.arange(-cfg.width_m / 2, cfg.width_m / 2 + 1e-9, _LOCAL_STEP_M)
+        vs = np.arange(0.0, cfg.height_m + 1e-9, _LOCAL_STEP_M)
+        CU, CV = np.meshgrid(us, vs); centres = np.c_[CU.ravel(), CV.ravel()]
+        rows, meta = [], []
+        for L in _LOCAL_LENGTHS:
+            for dvec in _LOCAL_DIRS:
+                ru = U.ravel()[None] - centres[:, :1]; rv = V.ravel()[None] - centres[:, 1:]
+                along = ru * dvec[0] + rv * dvec[1]; perp = -ru * dvec[1] + rv * dvec[0]
+                m = (np.abs(along) <= L / 2 + cfg.blade_width_m / 2) & (np.abs(perp) <= cfg.blade_length_m / 2)
+                keep = m.any(axis=1)
+                rows.append(m[keep]); meta += [(c_, dvec, L) for c_ in centres[keep]]
+        M = np.vstack(rows).astype(np.float32)
+        norm = np.array([1.0 + 0.15 * L / 0.06 for _, _, L in meta])
+        cells = M.sum(axis=1).astype(float)
+        _CANDIDATES[key] = (M, meta, norm, np.array([c_ for c_, _, _ in meta]), cells)
+    return _CANDIDATES[key]
+
 MODES = ('DEPOSIT', 'REUSE', 'LEVEL', 'RESCAN', 'FINISH')
 ACTION_NAMES_V2 = ('mode', 'start_u', 'start_v', 'end_u', 'end_v',
                    'blade_cos', 'blade_sin', 'bend', 'force', 'speed', 'load')
@@ -58,16 +98,18 @@ class WallCycleEnv:
         self.executor = executor
         self.teacher_style = 'technique'
         # v0.3 teacher settings that are NEUTRAL to the pitch question (same for both styles);
-        # chosen by the average over both styles, see docs/changes/2026-09-22_wall_cycle_v0.3.md C14
+        # chosen by the average over both styles, see experiments/v0.3/r0/design/2026-09-22_wall_cycle_v0.3.md C14
         self.teacher_force_N = 1.0
         self.teacher_load_ml = 12.0
-        self.teacher_edge_margin_m = 0.02
+        # v0.7: was a hardcoded 0.02 (2 cm); now reads cfg.teacher_edge_margin_m (default 0.003)
+        # now that overtravel past the scored square is allowed and not penalised as waste.
+        self.teacher_edge_margin_m = self.cfg.teacher_edge_margin_m
         self.seed = seed; self.rng = np.random.default_rng(seed)
         self.material = (MortarSystem if self.cfg.physics != 'v0.2' else MaterialSystem)(self.cfg, seed)
         self.sensor = D435Proxy(self.cfg, seed+1)
         self.initial_mix = initial_mix; self.record = record
         nv, nu2 = coarse_shape(self.cfg.wall_shape)
-        self.obs_dim = nv*nu2*3 + (10 if self.v5 else 8)
+        self.obs_dim = nv*nu2*3 + (10 if self.v5 else 8) + (nv*nu2 + 2 if self.cfg.obs_memory else 0)
         self.events = []
 
     def _scan(self):
@@ -94,7 +136,40 @@ class WallCycleEnv:
             material_scale = max(self.material.supplied_m3 + self.material.initial_m3, 18e-6)
             scalar = np.r_[scalar, self.last_carry_face_up,
                            np.clip(self.material.carry_loss_m3/material_scale, 0, 1)]
+        if c.obs_memory:
+            # v0.8: what the local teacher remembers is observed too, so BC can reproduce it:
+            # decayed map of recent non-improving strokes and strokes since the sensor score
+            # last improved (the teacher's plateau stop).
+            memory = np.r_[np.clip(coarse_map(self.fail_map), 0, 3).ravel() / 3,
+                           min((self.cycles - self.best_score_cycle) / max(c.teacher_plateau_n, 1), 2.0),
+                           np.clip(self.best_score, -1, 1)]
+            return np.r_[thickness.ravel(), error.ravel(), conf.ravel(), scalar, memory]
         return np.r_[thickness.ravel(), error.ravel(), conf.ravel(), scalar]
+
+    def sensor_score(self):
+        """Sensor-only quality estimate on the scored square: coverage - rmse_mm/10."""
+        c = self.cfg; rows, cols = self.material._score_rows, self.material._score_cols
+        h, conf = self.scan['height'][rows, cols], self.scan['confidence'][rows, cols]
+        valid = conf > .5
+        cov = np.mean(valid & (h >= c.acceptable_low_m) & (h <= c.acceptable_high_m))
+        rmse = np.sqrt(np.mean(np.where(valid, (h - c.target_m) ** 2, 0))) * 1000
+        return float(cov - rmse / 10.0)
+
+    def _update_memory(self, d, executed, improvement):
+        """v0.8: decay the fail map and add the swept footprint of a stroke that was actually
+        attempted (executed or rejected as unreachable) but did not improve the true quality
+        cost by progress_epsilon; then refresh the sensor-score plateau tracker."""
+        c = self.cfg
+        self.fail_map *= c.fail_decay
+        if d is not None and d.mode not in ('RESCAN', 'FINISH') and (not executed or improvement < c.progress_epsilon):
+            # mark a disc (fail_radius_m) around the stroke's midpoint: the teacher avoids
+            # re-aiming there, not the whole area the blade swept (that suppressed too much)
+            mid = (np.asarray(d.start, float) + np.asarray(d.end, float)) / 2
+            U, V = np.meshgrid(self.material.u, self.material.v)
+            self.fail_map += (U - mid[0]) ** 2 + (V - mid[1]) ** 2 <= c.fail_radius_m ** 2
+        score = self.sensor_score()
+        if score > self.best_score + c.teacher_plateau_eps:
+            self.best_score, self.best_score_cycle = score, self.cycles
 
     def reset(self):
         # Cached MuJoCo executors retain q_last as an IK continuation seed within an
@@ -118,7 +193,11 @@ class WallCycleEnv:
                                                    if self.cfg.randomize_interface
                                                    else self.cfg.lift_wall_fraction)
         self.done = False; self.events = []; self.unreachable = 0; self.projected = 0
+        self.fail_map = np.zeros(self.cfg.wall_shape)
+        self.loss_ledger = {'carry_m3': 0.0, 'other_drop_m3': 0.0, 'outside_m3': 0.0}
+        self.end_reason = None
         self._scan(); self.previous_cost = self.material.quality_cost()
+        self.best_score, self.best_score_cycle = self.sensor_score(), 0
         self._event('SCAN', {'initial': initial})
         return self._observe()
 
@@ -185,7 +264,14 @@ class WallCycleEnv:
 
     def teacher_action(self):
         """Sensor-only spatial heuristic used for behaviour-cloning warm start."""
-        c = self.cfg; h = self.scan['height']; conf = self.scan['confidence']
+        c = self.cfg
+        if self.v6 and c.teacher_targeting == 'local':
+            return self._teacher_local()
+        # v0.7: aim only at the scored sub-region (material._score_rows/_score_cols); the
+        # simulation grid may be larger (overtravel margin, see area.py/material.py), and the
+        # teacher should not chase coverage/RMSE targets in cells that are never scored.
+        rows, cols = self.material._score_rows, self.material._score_cols
+        h, conf = self.scan['height'][rows, cols], self.scan['confidence'][rows, cols]
         valid = conf > .5
         est_coverage = np.mean(valid & (h >= c.acceptable_low_m) & (h <= c.acceptable_high_m))
         est_rmse = np.sqrt(np.mean(np.where(valid, (h-c.target_m)**2, 0)))*1000
@@ -213,7 +299,7 @@ class WallCycleEnv:
             if self.v5:
                 # Balanced skill teacher. An anisotropic defect follows its principal
                 # direction; broad/ambiguous regions cycle through four useful families.
-                U, V = np.meshgrid(self.material.u, self.material.v)
+                U, V = np.meshgrid(self.material.u[cols], self.material.v[rows])
                 center = np.array([(U*weight).sum()/total, (V*weight).sum()/total])
                 X = np.c_[U.ravel()-center[0], V.ravel()-center[1]]
                 w = weight.ravel()/total
@@ -229,11 +315,11 @@ class WallCycleEnv:
                 column_need = weight.sum(axis=0)
                 window = max(1, round(c.blade_length_m/c.cell_m))
                 score = np.convolve(column_need, np.ones(window), mode='same')
-                center = np.array([self.material.u[int(np.argmax(score))], c.height_m/2])
+                center = np.array([self.material.u[cols][int(np.argmax(score))], c.height_m/2])
                 direction = np.array([0., 1.])
                 cov = np.diag([1e-5, (c.height_m/2)**2])
         else:
-            U, V = np.meshgrid(self.material.u, self.material.v)
+            U, V = np.meshgrid(self.material.u[cols], self.material.v[rows])
             center = np.array([(U*weight).sum()/total, (V*weight).sum()/total])
             X = np.c_[U.ravel()-center[0], V.ravel()-center[1]]
             w = weight.ravel()/total
@@ -294,20 +380,94 @@ class WallCycleEnv:
                     self.executor.stats['rejected'] -= 1
         return self.encode(d)
 
+    def _teacher_local(self):
+        """v0.8 teacher: pick the candidate stroke whose swept footprint covers the most local
+        deficit (or, if larger, twice the local excess -> LEVEL), instead of aiming every stroke
+        at the global centroid of the deficit map. Uses only the scan, the blade load and the
+        observed memory (fail map, plateau counter). Weights (0.5 excess penalty, level weight,
+        fail damping, length normalisation) are heuristics, not physical constants."""
+        c = self.cfg
+        rows, cols = self.material._score_rows, self.material._score_cols
+        h, conf = self.scan['height'][rows, cols], self.scan['confidence'][rows, cols]
+        valid = conf > .5
+        est_coverage = np.mean(valid & (h >= c.acceptable_low_m) & (h <= c.acceptable_high_m))
+        est_rmse = np.sqrt(np.mean(np.where(valid, (h-c.target_m)**2, 0)))*1000
+        idle = lambda mode: self.encode(DecodedAction(mode, (0, .01), (0, .06), 0, 0, 6, .05, 0))
+        if conf.mean() < .82:
+            return idle('RESCAN')
+        if est_coverage >= c.finish_coverage and est_rmse <= c.finish_rmse_mm:
+            return idle('FINISH')
+        if self.cycles - self.best_score_cycle >= c.teacher_plateau_n:
+            return idle('FINISH')               # no measured progress for n strokes: stop, do not overwork
+        under = np.where(valid, np.maximum(c.acceptable_low_m + 0.0002 - h, 0), 0).ravel()
+        over = np.where(valid, np.maximum(h - c.acceptable_high_m, 0), 0).ravel()
+        M, meta, norm, centres, cells = local_candidates(c, self.material.u[cols], self.material.v[rows])
+        # fail-map value at each candidate's centre (nearest simulation cell)
+        iu = np.clip(np.round((centres[:, 0] + c.width_m / 2) / c.cell_m - .5).astype(int), 0, self.fail_map.shape[1] - 1)
+        iv = np.clip(np.round(centres[:, 1] / c.cell_m - .5).astype(int), 0, self.fail_map.shape[0] - 1)
+        damp = 1.0 - c.teacher_fail_damp * np.clip(self.fail_map[iv, iu], 0, 1)
+        s_dep = (M @ under - 0.5 * (M @ over)) / norm * damp
+        s_lev = c.teacher_level_weight * (M @ over) / norm * damp
+        if s_lev.max() > s_dep.max():
+            mode = 'LEVEL'; centre, direction, L = meta[int(np.argmax(s_lev))]
+        else:
+            need = float(under.sum() * c.cell_m ** 2)
+            enough = self.material.blade_volume_m3 >= min(8e-6, .65 * need)
+            mode = 'REUSE' if enough or need < 2e-6 else 'DEPOSIT'
+            centre, direction, L = meta[int(np.argmax(s_dep))]
+        direction = np.array(direction, float)
+        if mode == 'LEVEL':
+            # push the excess towards the nearest side, i.e. into the overtravel margin
+            hw = c.width_m / 2
+            dist = {(-1, 0): centre[0] + hw, (1, 0): hw - centre[0], (0, -1): centre[1], (0, 1): c.height_m - centre[1]}
+            if direction @ np.array(min(dist, key=dist.get), float) < 0:
+                direction = -direction
+        elif direction[1] < 0:
+            direction = -direction
+        start = np.array(centre) - direction * L / 2; end = np.array(centre) + direction * L / 2
+        mgn = self.teacher_edge_margin_m
+        for pt in (start, end):
+            pt[0] = np.clip(pt[0], -c.width_m / 2 + mgn, c.width_m / 2 - mgn)
+            pt[1] = np.clip(pt[1], mgn, c.height_m - mgn)
+        phi = np.arctan2(direction[1], direction[0]) + np.pi / 2
+        load = self.teacher_load_ml if mode == 'DEPOSIT' else 0
+        force = self.teacher_force_N
+        profiles = ([(np.deg2rad(5), np.deg2rad(5)), (0.0, 0.0)] if mode == 'LEVEL' else
+                    [(np.deg2rad(a_), np.deg2rad(b_)) for a_, b_ in ((25, 8), (20, 6), (10, 4))] + [(0.0, 0.0)])
+        if self.executor is not None and hasattr(self.executor, 'plan'):
+            # explicit priority: every tilt profile in place first, only then pull the stroke
+            # towards the square centre (v0.7 teacher shrank before trying the next tilt)
+            ctr = np.array([0.0, c.height_m / 2])
+            for shrink in (0.0, 0.15, 0.3, 0.5):
+                for pp in profiles:
+                    cand = DecodedAction(mode, tuple(start + (ctr - start) * shrink), tuple(end + (ctr - end) * shrink),
+                                         phi, 0, force, .06, load, *pp, 1.0)
+                    ok = self.executor.plan(cand).ok
+                    self.executor.stats['planned'] -= 1
+                    if ok:
+                        return self.encode(cand)
+                    self.executor.stats['rejected'] -= 1
+        return self.encode(DecodedAction(mode, tuple(start), tuple(end), phi, 0, force, .06, load,
+                                         *profiles[0], 1.0))
+
     def step(self, action):
         if self.done:
             raise RuntimeError('step after episode finished')
         c = self.cfg; d = self.decode(action); self.cycles += 1; self.last_mode = MODES.index(d.mode)
         before = self.material.quality_cost(); before_waste = self.material.dropped_m3+self.material.outside_m3
+        led0 = (self.material.dropped_m3, self.material.outside_m3, getattr(self.material, 'carry_loss_m3', 0.0))
+        coverage_before = self.material.metrics()['coverage']
         steps_before = self.control_steps
         self._event('DECIDE', {'action': d.to_dict()})
         reward = -.02
         if d.mode == 'FINISH':
-            m = self.material.metrics(); confident = self.scan['confidence'].mean() >= c.finish_confidence
+            m = self.material.metrics()
+            rows, cols = self.material._score_rows, self.material._score_cols
+            confident = self.scan['confidence'][rows, cols].mean() >= c.finish_confidence
             success = (m['coverage'] >= c.finish_coverage and m['rmse_mm'] <= c.finish_rmse_mm and
                        m['p95_error_mm'] <= c.finish_p95_mm and confident)
-            reward += 100 if success else -20
-            self.done = True; self._event('FINISH', {'success': success})
+            reward += 100 if success else -c.finish_fail_penalty
+            self.done = True; self.end_reason = 'finish'; self._event('FINISH', {'success': success})
             return self._observe(), reward, True, self.info(success)
         plan = self.executor.plan(d) if (self.executor is not None and d.mode != 'RESCAN') else None
         if plan is not None and not plan.ok and self.v3:
@@ -316,11 +476,16 @@ class WallCycleEnv:
             # Nothing infeasible is ever executed; the episode is not ended by one bad proposal.
             # (v0.3 first training run without it: ~half the strokes rejected, episodes ended
             # after ~8 cycles by the stall rule; see change log C16.)
+            # v0.7: the flat -0.5 was cheaper than a genuine risky stroke, so PPO learned to
+            # propose infeasible actions and let this safety layer bail it out cheaply (P2-A
+            # reward-hacking). Cost now scales with how much tilt/reach was given up, plus a
+            # per-episode count penalty so repeatedly leaning on this layer keeps getting worse.
             proj = self._project(d)
             if proj is not None:
-                d, plan = proj
+                d, plan, f_tilt, shrink = proj
                 self.projected += 1
-                reward -= 0.5
+                reward -= (c.project_base_penalty * (1 + (1 - f_tilt) + 2 * shrink) +
+                          c.project_count_penalty * self.projected)
                 self._event('PROJECTED', {'action': d.to_dict()})
         if plan is not None and not plan.ok:
             # The real arm cannot execute this stroke (IK, joint limit or arm hits the wall).
@@ -403,15 +568,46 @@ class WallCycleEnv:
             self._event('SCAN_RETURN')
             self._scan(); self._event('SCAN')
             after = self.material.quality_cost(); improvement = before-after
-            carry_loss = self.material.dropped_m3-carry_before if self.v5 else 0.0
-            waste = (self.material.dropped_m3+self.material.outside_m3)-before_waste-carry_loss
-            reward += 30*improvement - 4*waste/max(18e-6, 1e-12)
-            if self.v5:
+            coverage_after = self.material.metrics()['coverage']
+            if c.loss_accounting == 'v0.8':
+                # three ledgers, each charged per 18 mL: transport loss (the material's own
+                # carry_loss_m3 counter), every other drop (feed overflow, air drop, wall slump)
+                # and material pushed off the simulated grid
+                d_carry = getattr(self.material, 'carry_loss_m3', 0.0) - led0[2]
+                d_other = (self.material.dropped_m3 - led0[0]) - d_carry
+                d_out = self.material.outside_m3 - led0[1]
+                out_coef = c.waste_coef if c.outside_coef is None else c.outside_coef
+                reward += 30*improvement - (c.waste_coef*d_other + out_coef*d_out + c.carry_loss_coef*d_carry)/18e-6
+                carry_loss = 0.0          # already charged above
+            else:
+                carry_loss = self.material.dropped_m3-carry_before if self.v5 else 0.0
+                waste = (self.material.dropped_m3+self.material.outside_m3)-before_waste-carry_loss
+                reward += 30*improvement - c.waste_coef*waste/max(18e-6, 1e-12)
+            # v0.7: explicit potential-based coverage shaping. Does not change the optimal
+            # policy (it's a difference of the same potential at two successive states), but
+            # gives PPO an earlier, denser signal than waiting for quality_cost/FINISH alone.
+            reward += c.coverage_shaping_coef * (coverage_after - coverage_before)
+            if self.v5 and c.loss_accounting != 'v0.8':
                 material_scale = max(self.material.supplied_m3 + self.material.initial_m3, 18e-6)
-                reward -= 4*carry_loss/material_scale
-            if (stats.peak_force_N or 0.0) > c.max_force_N:
-                reward -= 50; self.done = True
+                reward -= c.carry_loss_coef*carry_loss/material_scale
+            # v0.7: graded penalty instead of a fixed -50 cliff at exactly max_force_N. The old
+            # cliff made one risky stroke catastrophic relative to the cheap safety-layer path
+            # (see _project() above), pushing PPO towards low-force, low-coverage strokes.
+            over_force = max(0.0, (stats.peak_force_N or 0.0) - c.max_force_N)
+            if over_force > 0:
+                reward -= min(c.force_over_penalty_cap,
+                              c.force_over_coef * (over_force / c.max_force_N) ** 2)
+            if (stats.peak_force_N or 0.0) > c.force_terminate_mult * c.max_force_N:
+                self.done = True; self.end_reason = 'force'
         self.last_improvement = improvement
+        # loss ledgers (reported for every accounting mode; transport loss = material counter)
+        d_carry = getattr(self.material, 'carry_loss_m3', 0.0) - led0[2]
+        self.loss_ledger['carry_m3'] += d_carry
+        self.loss_ledger['other_drop_m3'] += (self.material.dropped_m3 - led0[0]) - d_carry
+        self.loss_ledger['outside_m3'] += self.material.outside_m3 - led0[1]
+        if c.obs_memory or c.teacher_targeting == 'local':
+            executed = not (plan is not None and not plan.ok) and d.mode != 'RESCAN'
+            self._update_memory(d, executed, improvement)
         if self.v6:
             self.progress_history.append(float(improvement))
             self.progress_history = self.progress_history[-max(1, c.stall_window):]
@@ -423,13 +619,15 @@ class WallCycleEnv:
             self.stall_count += 1; reward -= min(.5*2**(self.stall_count-1), 8)
         else:
             self.stall_count = 0
-        reward -= .0002*(self.control_steps-steps_before)
+        reward -= c.time_coef*(self.control_steps-steps_before)
         if self.control_steps >= self.budget and self.budget < c.max_steps and improvement >= c.progress_epsilon:
             self.budget = min(self.budget+c.extension_steps, c.max_steps)
         stall_done = self.cycles >= c.min_cycles_before_stall and self.stall_count >= c.stall_limit
         if (stall_done or self.cycles >= c.max_cycles or
                 self.control_steps >= self.budget or self.control_steps >= c.max_steps):
             self.done = True
+        if self.done and self.end_reason is None:
+            self.end_reason = ('stall' if stall_done else 'cycles' if self.cycles >= c.max_cycles else 'budget')
         self.previous_cost = self.material.quality_cost()
         return self._observe(), float(reward), self.done, self.info(False)
 
@@ -447,7 +645,7 @@ class WallCycleEnv:
                                      d.carry_face_up)
                 plan = self.executor.plan(cand)
                 if plan.ok:
-                    return cand, plan
+                    return cand, plan, f_tilt, shrink
         return None
 
     def info(self, success=False):
@@ -456,6 +654,8 @@ class WallCycleEnv:
                 'budget': self.budget, 'stall_count': self.stall_count,
                 'unreachable_strokes': getattr(self, 'unreachable', 0),
                 'projected_strokes': getattr(self, 'projected', 0),
+                'end_reason': getattr(self, 'end_reason', None),
+                'loss_ledger_m3': dict(getattr(self, 'loss_ledger', {})),
                 'volume_balance_m3': self.material.volume_balance(),
                 'carry_loss_m3': float(getattr(self.material, 'carry_loss_m3', 0.0)),
                 'wall_share': float(getattr(getattr(self.material, 'p', None),

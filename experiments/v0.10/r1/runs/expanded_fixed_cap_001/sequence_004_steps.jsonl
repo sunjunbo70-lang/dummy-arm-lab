@@ -1,0 +1,7 @@
+{"step": 0, "op": "load", "max_wall_diff_mm": 0.0, "rmse_diff_mm": 0.0, "coverage_diff": 0.0, "ledger_error_ml": 6.776263578034403e-15, "min_volume_m3": 0.0}
+{"step": 1, "op": "contact", "max_wall_diff_mm": 0.0007605932645344198, "rmse_diff_mm": 3.334602831750466e-06, "coverage_diff": 0.0, "ledger_error_ml": 3.3881317890172014e-14, "min_volume_m3": 0.0}
+{"step": 2, "op": "continue", "max_wall_diff_mm": 0.0004080881299801052, "rmse_diff_mm": 1.3155740200554433e-05, "coverage_diff": 0.0, "ledger_error_ml": 6.098637220230962e-14, "min_volume_m3": 0.0}
+{"step": 3, "op": "continue", "max_wall_diff_mm": 0.0004080881299801052, "rmse_diff_mm": 1.1826325663655268e-05, "coverage_diff": 0.0, "ledger_error_ml": 1.0164395367051604e-13, "min_volume_m3": 0.0}
+{"step": 4, "op": "contact", "max_wall_diff_mm": 0.0007105208921811712, "rmse_diff_mm": 2.9306824066432924e-05, "coverage_diff": 0.0, "ledger_error_ml": 1.2874900798265365e-13, "min_volume_m3": 0.0}
+{"step": 5, "op": "contact", "max_wall_diff_mm": 0.0007105208921811712, "rmse_diff_mm": 1.881765451416939e-05, "coverage_diff": 0.0, "ledger_error_ml": 1.6940658945086007e-13, "min_volume_m3": 0.0}
+{"step": 6, "op": "contact", "max_wall_diff_mm": 0.0007105208921811712, "rmse_diff_mm": 2.137446649874697e-05, "coverage_diff": 0.0, "ledger_error_ml": 1.6940658945086007e-13, "min_volume_m3": 0.0}

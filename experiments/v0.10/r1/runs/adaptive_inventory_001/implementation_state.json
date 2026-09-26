@@ -1,0 +1,9 @@
+{
+  "status": "candidate_diagnostic_running",
+  "pid": 6180,
+  "existing_expanded_audit_pid": 33596,
+  "tests_passed": 41,
+  "training_started": false,
+  "full_gate": false,
+  "physics_version": "v10r1.area_pressure_candidate.v5_inventory_adaptive"
+}

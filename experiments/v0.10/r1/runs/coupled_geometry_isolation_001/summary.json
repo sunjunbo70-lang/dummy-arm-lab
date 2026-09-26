@@ -1,0 +1,68 @@
+{
+  "flux": {
+    "rows": [
+      {
+        "steps": 1000,
+        "seconds": 0.07744530000491068,
+        "ledger_error_ml": 6.245004513516506e-15,
+        "min_thickness_m": 0.0
+      },
+      {
+        "steps": 2000,
+        "seconds": 0.16273079998791218,
+        "ledger_error_ml": 6.938893903907228e-16,
+        "min_thickness_m": 0.0
+      },
+      {
+        "steps": 4000,
+        "seconds": 0.3268844000122044,
+        "ledger_error_ml": 3.469446951953614e-15,
+        "min_thickness_m": 0.0
+      }
+    ],
+    "max_component_difference_mm": [
+      1.5953633949929852e-05,
+      3.929353031319194e-06
+    ],
+    "scope": "prescribed flux clock only; not actual full trajectory"
+  },
+  "geometry": {
+    "rows": [
+      {
+        "spacing_m": 5e-05,
+        "seconds": 25.091307399998186,
+        "ledger_error_ml": 1.3552527156068805e-14
+      },
+      {
+        "spacing_m": 2.5e-05,
+        "seconds": 50.58323719998589,
+        "ledger_error_ml": 2.710505431213761e-14
+      },
+      {
+        "spacing_m": 1.25e-05,
+        "seconds": 101.54931750000105,
+        "ledger_error_ml": 6.776263578034403e-14
+      }
+    ],
+    "before_lift_max_diff_mm": 0.0029381177732337167,
+    "after_lift_max_diff_mm": 0.048676787121933594,
+    "blade_l1_diff_ml": 0.00200422620234083,
+    "scope": "constant 2mm exit gap, no constitutive flux/slump/bead; not full physics",
+    "adjacent_comparisons": [
+      {
+        "coarse_m": 5e-05,
+        "fine_m": 2.5e-05,
+        "after_lift_max_diff_mm": 0.048676787121933594,
+        "blade_l1_diff_ml": 0.00200422620234083
+      },
+      {
+        "coarse_m": 2.5e-05,
+        "fine_m": 1.25e-05,
+        "after_lift_max_diff_mm": 0.024335647123118944,
+        "blade_l1_diff_ml": 0.0010019202014276082
+      }
+    ]
+  },
+  "training_started": false,
+  "full_gate": false
+}

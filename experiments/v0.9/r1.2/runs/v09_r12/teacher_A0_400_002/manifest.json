@@ -1,0 +1,9 @@
+{
+  "source": "D:\\VLA\\dummy_arm\\experiments\\v0.9\\r1.2\\runs\\v09_r12\\teacher_400_003_inventory",
+  "mapping": "A0 five operation families, quadratic path; DEPOSIT pairs existing LOAD+CONTACT; unpaired LOAD has no equivalent and is explicitly excluded",
+  "counts": {
+    "paired_load_contact": 6265,
+    "unpaired_load_excluded": 370,
+    "samples": 21552
+  }
+}

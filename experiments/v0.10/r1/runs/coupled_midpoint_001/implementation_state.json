@@ -1,0 +1,9 @@
+{
+  "status": "partial_numerical_improvement_gate_failed",
+  "training_started": false,
+  "tests_passed": 46,
+  "physics_version": "v10r1.area_pressure_candidate.v7_coupled_midpoint_geometry",
+  "max_wall_diff_mm": 0.047162477408254945,
+  "existing_audit_pid": 33596,
+  "next_action": "repeat geometry isolation for v7 and isolate variable pressure-gap splitting; no formal training yet"
+}

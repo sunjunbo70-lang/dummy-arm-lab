@@ -1,0 +1,11 @@
+{
+  "status": "rotation_coupled_diagnostic_passed_combined_running",
+  "training_started": false,
+  "full_material_gate": false,
+  "component_tests": 70,
+  "active_audit_pid": 33596,
+  "active_combined_diagnostic_pid": 40724,
+  "active_output": "adaptive_coupled_boundary_002",
+  "completed_evidence": "adaptive_coupled_boundary_001/summary.json",
+  "next_action": "read combined trajectory result without duplicate launch; integrate separate pressure/lift candidate only after checking"
+}

@@ -1,0 +1,22 @@
+{
+  "source_head": "f1c9e18166462c1f73418772bfbfe0e45f093250",
+  "version": "v10r1.coupled_boundary_exchange.midpoint.v1",
+  "adaptive": true,
+  "rows": [
+    {
+      "steps": 128,
+      "status": "failed",
+      "reason": "Adaptive boundary depth budget exhausted: support=True, closure=5.1248742448481885e-18, difference=3.4407343529003365e-17",
+      "case": "case13"
+    },
+    {
+      "steps": 256,
+      "status": "failed",
+      "reason": "Adaptive boundary depth budget exhausted: support=True, closure=1.5525755521321542e-19, difference=2.8736000956669744e-17",
+      "case": "case13"
+    }
+  ],
+  "training_started": false,
+  "full_material_gate": false,
+  "scope": "finite blade boundary exchange, no pressure/bead/lift"
+}
