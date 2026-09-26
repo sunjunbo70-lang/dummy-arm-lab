@@ -316,3 +316,7 @@ Added joint_path.py as an independent offline preflight building block: caller-p
 Five synthetic callback tests pass: accepted continuous path with mutating solver callback, interior collision rejection even with clear endpoints, rate-limit rejection, orientation residual rejection, IK branch-jump rejection. Evidence runs/joint_path_component_001/result.json. This is NOT a MuJoCo robot execution test: callbacks still need integration, material tool-frame/pitch conventions need verification, approach/load/lift and dynamic tracking remain missing. Collision sampling is discrete, not a proof of continuous clearance; acceleration/torque constraints also remain outstanding. No G1/full executor claim.
 
 Next: continue same-version100+50x100 material validation and integrate physical robot targets/IK callback into preflight without touching active material audit sources. Formal RL, GPU environment, complete PPO training/evaluation/native full-job replay not yet completed. Hardware untouched; user dirty sources preserved.
+
+
+# USER PAUSED 2026-09-26
+All identified audit processes/descendants and telemetry stopped (22 targets,0 remaining); automation v0-10-r1 PAUSED. Latest v8.11 singles100/100, long sequences0/50 completed (8partial); oldv8.4 sequences7/50 completed. No formal RL started. Do not automatically resume on stale heartbeat. See PAUSE_AND_RETROSPECTIVE_20260926.md and runs/user_pause_001/pause_state.json.
