@@ -85,3 +85,6 @@ v5两档预算均耗尽，未完成case13，见ADAPTIVE_INVENTORY_FAILED.md。�
 
 ## 续做：组件隔离与v7联合中点交换
 内部通量规定输入下约二阶；纯几何交换case13抬刀差0.04868mm，证明几何侧也有误差。v7联合中点交换完整同例差0.04716mm，比v4降约24%但未过0.01mm门槛。46组件测试通过；原审计已完成12条长序列（10通过2失败）仍运行。记录COMPONENT_ISOLATION_RESULT.md、COUPLED_MIDPOINT_RESULT.md，runs/component_isolation_001、coupled_midpoint_001。无PPO。
+
+## 续做：v7仍是一阶几何交换
+v7纯几何50/25/12.5μm抬刀相邻差0.048677/0.024336mm，仍一阶且未过门槛。固定方向移动/原地旋转/组合三种轨迹200/400/800区间均近一阶，不能只归因旋转或压力。详见V7_GEOMETRY_ORDER_DIAGNOSIS.md，runs/coupled_geometry_isolation_001、geometry_probes_001。两个诊断已结束，旧审计33596继续；无PPO。下一步检验端点覆盖流量分配与运动边界积分。
