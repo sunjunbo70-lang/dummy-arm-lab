@@ -88,3 +88,6 @@ v5两档预算均耗尽，未完成case13，见ADAPTIVE_INVENTORY_FAILED.md。�
 
 ## 续做：v7仍是一阶几何交换
 v7纯几何50/25/12.5μm抬刀相邻差0.048677/0.024336mm，仍一阶且未过门槛。固定方向移动/原地旋转/组合三种轨迹200/400/800区间均近一阶，不能只归因旋转或压力。详见V7_GEOMETRY_ORDER_DIAGNOSIS.md，runs/coupled_geometry_isolation_001、geometry_probes_001。两个诊断已结束，旧审计33596继续；无PPO。下一步检验端点覆盖流量分配与运动边界积分。
+
+## 续做：证实端点漏算与平移边界几何核
+解析基准证明端点覆盖差漏掉斜向角部步内先入后出的区域，累计漏面积|DxDy|/N。新增平移边界核消除此纯几何误差，4种分段差≤5.21e-18m²，49组件测试通过。仅平移几何，尚未接旋转/库存，不能说完整物理修复。详见TRANSLATION_BOUNDARY_RESULT.md，runs/swept_pickup_001、translation_boundary_001。旧审计33596继续，无PPO。
