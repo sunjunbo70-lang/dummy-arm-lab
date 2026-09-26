@@ -7,13 +7,29 @@ from .coupled_boundary_exchange import exchange
 from .overlap import planar_overlap
 
 class BoundaryPressure(SplitPressure):
- physics_version='v10r1.area_pressure_candidate.v8_adaptive_boundary'
+ physics_version='v10r1.area_pressure_candidate.v8_1_bounded_initial_pickup'
  def __init__(self,*args,**kwargs):
   super().__init__(*args,**kwargs)
   if self.wall.shape!=(100,100) or self.blade.shape!=(6,24) or self.bc!=.005 or self.wc!=.005 or tuple(self.origin)!=(-.25,0.):raise ValueError('Candidate currently requires standard audit grids')
   self.boundary_stats=dict(nodes=0,area_correction_m2=0.,moves=0)
  def move(self,center,angle,exit_height):
-  if self.pose is None:return ContactInventory.move(self,center,angle,exit_height)
+  if self.pose is None:
+   center=np.asarray(center,float);angle=float(angle)
+   m=planar_overlap(center,angle,self.blade.shape,self.bc,self.wall.shape,self.wc,np.array(self.origin))
+   bi,wi,areas,_=m
+   covered=np.bincount(wi,weights=areas,minlength=self.wall.size)
+   cell_area=self.wc**2
+   if covered.max()>cell_area+2.5e-17:raise ValueError('Initial coverage exceeds geometric roundoff budget')
+   # Compute the wall donor total ONCE, then distribute it to blade cells.
+   # Independently summing rounded requested pickups can overdraw a full cell.
+   covered_bounded=np.where(abs(covered-cell_area)<2.5e-17,cell_area,covered)
+   picked=self.wall.ravel()*(covered_bounded/cell_area)
+   share=np.divide(picked,covered,out=np.zeros_like(picked),where=covered>0)
+   gain=np.bincount(bi,weights=areas*share[wi],minlength=self.blade.size)
+   self.wall=(self.wall.ravel()-picked).reshape(self.wall.shape)
+   self.blade+=gain.reshape(self.blade.shape)
+   self.pose=(center,angle);self.mapping=m
+   return
   center=np.asarray(center,float);angle=float(angle)
   old=self.mapping;new=planar_overlap(center,angle,self.blade.shape,self.bc,self.wall.shape,self.wc,np.array(self.origin))
   def free(m):
