@@ -165,3 +165,14 @@ At snapshot v8.1 had144 completed/95passed: single76 precision0.0163213mm exceed
 New isolated typed_boundary_pressure.py v8.3 explicitly allocates floating divide output for empty raw bincount. It inherits v8.2 edge handling; copied move method otherwise unchanged. Mocked empty-boundary zero-motion regression passes. Running audits' sources not modified. This fixes a demonstrable dtype vulnerability; sequence stack trace still pending in sequence_type_trace_001 (session53518). Separate same-pose real contact reproduction session99645 still pending, suggesting geometry zero-motion performance also needs examination. Do not duplicate these jobs; check actual process/captured summary. No formal RL yet.
 
 Next: inspect expanded v8.2 results and completed trace; integrate/test v8.3 in a separate sequence diagnostic before further matrix runs. Single76 numerical failure needs independent investigation. Preserve all old data and do not relax gates.
+
+
+# Continuous-contact empty-map fix and stationary identity
+
+L1 software session. sequence_type_trace_001/summary.json confirms the original long-sequence failure at boundary_pressure.py:49 (np.divide output integer empty bincount), so v8.3 addresses the observed stack, not just a hypothetical bug.
+
+New independent StationaryBoundaryPressure v8.4 inherits v8.3/v8.2. Exactly equal pose coordinates and angle return from geometry move only; pressure is still recomputed by contact. No approximate-motion tolerance or action removal. This avoids expensive integration of identically zero boundary flux. Three targeted tests passed (stationary inventory unchanged, pressure responds to force, empty-map floating output). Full component suite launched, result pending at recording time (exec session85155); do not claim full-suite pass until completion.
+
+Four-operation sequence0 diagnostic with frozen50/25micrometre spacing is running in runs/stationary_sequence_001, actual PID27260 (launcher37848), using v8.4. This includes load/contact/continuation and does not substitute for100-action sequences. Check summary and step logs; do not duplicate.
+
+Expanded v8.2 remains PID6544, snapshot67/67 singles passing; full audit unfinished. Historical v8.1 ended; prior case76 numerical error must still be checked for v8.2. Old v4 auditPID33596 still alive. No formal training has begun and full G0/G1, GPU environment, PPO campaign and final replays remain outstanding. All original sources/results retained.
