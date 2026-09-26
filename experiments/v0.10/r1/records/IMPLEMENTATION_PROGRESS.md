@@ -130,3 +130,12 @@ Evidence: runs/boundary_pressure_case13_gatepair_001/{summary.json,quality_compa
 Started expanded_boundary_001: 100 single cases plus 50 sequences of 100 actions, unchanged spacings/thresholds/scenes/action recipes from expanded_split_audit, BoundaryPressure v8.1. Manager PID 32992 (launcher 40600), four workers to coexist with old 12-worker v4 audit. No duplicate resource monitor. Existing resource stream continues; new audit records per-case elapsed time. Source snapshot includes current dirty source; do not infer snapshot equals git HEAD alone.
 
 Next: check actual processes and cases/summary in expanded_boundary_001; do not restart. Preserve exceptions and failed cases. Passing case13 does not prove broad equivalence. Full continuous robot executor/GPU environment/trainer and training/evaluation/replay remain outstanding.
+
+
+# Expanded boundary audit: zero-area inventory diagnostic
+
+L1 software session. Expanded v8.1 audit PID32992 continues unchanged. Snapshot: 32 completed cases, 29 passed. Failures: [(1, "ValueError('Material in zero-area initial reservoir')"), (18, "ValueError('Material in zero-area initial reservoir')"), (21, "ValueError('Material in zero-area initial reservoir')")].
+
+Started independent case21 input capture in runs/zero_area_trace_001, actual PID35368, launcher31772. The diagnostic wraps exchange only in its own process and dumps area, target, wall/blade inventories and incoming/outgoing sparse maps before the original solver rejects. No tolerance change, no clearing material, no mutation to running audit modules. Do not duplicate. Inspect zero_area.json, failure_inputs.npz and summary.json when finished. If a nonzero wall inventory occupies snapped zero area, first quantify its magnitude and upstream source (initial pickup, edge deposition, pressure/slump or exchange); do not assume roundoff without evidence.
+
+Full material G0 has not passed and formal RL has not begun. Original expanded_split_001 PID33596 remains preserved. Followups should read this record and live cases rather than the historical root implementation_state.json.
